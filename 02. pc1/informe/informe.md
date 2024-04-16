@@ -289,76 +289,79 @@ Caso de Uso #7: Realizar reubicación de productos
 ### Prototipos
 ### Módulo 1: Pedidos
 
-![image](../entregables%20parciales/entregable%202/imagenes/prototipo-1.png)
+## Prototipo
+### Módulo 1: Pedidos
 
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%202/imagenes/prototipo-1.png"></p>
 
-![image](../entregables%20parciales/entregable%202/imagenes/prototipo-2.png)
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%202/imagenes/prototipo-2.png"></p>
 
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%202/imagenes/prototipo-3.png"></p>
 
-![image](../entregables%20parciales/entregable%202/imagenes/prototipo-3.png)
+[Prototipo en Figma](https://www.figma.com/file/KQ34ScwxvuSCmmvHqfIPRP/Untitled?type=design&node-id=88-59745&mode=design&t=03oJT67oaRqSUxFI-0)
+
 
 ### Módulo 2: Seguimiento
 
-![image](../entregables%20parciales/entregable%203/imagenes/prototipo/seguimiento-1.jpeg)
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/seguimiento-1.jpeg"></p>
 
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/seguimiento-2.jpeg"></p>
 
-![image](../entregables%20parciales/entregable%203/imagenes/prototipo/seguimiento-2.jpeg)
-
-
-![image](../entregables%20parciales/entregable%203/imagenes/prototipo/seguimiento-3.jpeg)
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/seguimiento-3.jpeg"></p>
 
 ### Módulo 3: Almacén
 
-![image](../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-1.png)
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-1.png"></p>
 
-![image](../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-2.png)
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-2.png"></p>
 
-![image](../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-3.png)
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-3.png"></p>
 
-![image](../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-4.png)
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-4.png"></p>
 
-![image](../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-5.png)
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-5.png"></p>
 
-![image](../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-6.png)
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-6.png"></p>
 
-[Figma](https://www.figma.com/file/nnoiQDwJ9WstLLZmVisdpw/Untitled?type=design&node-id=0-1&mode=design&t=ztZFDIkEuNp6ykcn-0)
+[Prototipo en Figma](https://www.figma.com/file/nnoiQDwJ9WstLLZmVisdpw/Untitled?type=design&node-id=0-1&mode=design&t=ztZFDIkEuNp6ykcn-0)
 
 ### Módulo 4: Control
-![figma 1](https://github.com/fiis-bd241/grupo01/assets/164266999/651613ad-ddf6-4944-a55e-7d3b2e321051)
 
-![figma 2](https://github.com/fiis-bd241/grupo01/assets/164266999/5ccfc679-16d9-425b-9d93-3a7b09ef6e9f)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/651613ad-ddf6-4944-a55e-7d3b2e321051"></p>
 
-![figma 3](https://github.com/fiis-bd241/grupo01/assets/164266999/1df37adb-5e43-4da9-85e0-4fa9fc754d71)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/5ccfc679-16d9-425b-9d93-3a7b09ef6e9f"></p>
 
-![figma 4](https://github.com/fiis-bd241/grupo01/assets/164266999/b07618fc-3915-401b-a3aa-ee89c369919c)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/1df37adb-5e43-4da9-85e0-4fa9fc754d71"></p>
 
-![figma 5](https://github.com/fiis-bd241/grupo01/assets/164266999/dc5589dd-1e80-4d45-9f79-6bf5eff4d08e)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/b07618fc-3915-401b-a3aa-ee89c369919c"></p>
 
-![figma 6](https://github.com/fiis-bd241/grupo01/assets/164266999/960ce6b6-906f-4389-b970-b19b511758b6)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/dc5589dd-1e80-4d45-9f79-6bf5eff4d08e"></p>
 
-![figma 7](https://github.com/fiis-bd241/grupo01/assets/164266999/c8c21cc8-f7f0-4374-8828-8d11ea403bad)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/960ce6b6-906f-4389-b970-b19b511758b6"></p>
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/c8c21cc8-f7f0-4374-8828-8d11ea403bad"></p>
 
 ### Módulo 5: Reportes
 
-![modulo-5f](../entregables%20parciales/entregable%203/imagenes/prototipo/reportes.png)
+<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/reportes.png"></p>
 
 ### Módulo 6: Reclamos
 
-![PANTALLA 7](https://github.com/fiis-bd241/grupo01/assets/130238034/6a54fabb-9fa0-49ae-951d-8ae66687e68b)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/6a54fabb-9fa0-49ae-951d-8ae66687e68b"></p>
 
-![PANTALLA 1](https://github.com/fiis-bd241/grupo01/assets/130238034/a9f229d4-b4c1-42b0-ae0b-fca8a0976e45)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/a9f229d4-b4c1-42b0-ae0b-fca8a0976e45"></p>
 
-![PANTALLA 2](https://github.com/fiis-bd241/grupo01/assets/130238034/09f6360d-4671-4515-8a6e-b9b5a13bbf7d)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/09f6360d-4671-4515-8a6e-b9b5a13bbf7d"></p>
 
-![PANTALLA 3](https://github.com/fiis-bd241/grupo01/assets/130238034/90edd206-2f40-4b35-8226-604e00e682ca)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/90edd206-2f40-4b35-8226-604e00e682ca"></p>
 
-![PANTALLA 4](https://github.com/fiis-bd241/grupo01/assets/130238034/eeea2e9b-1559-470b-92ac-245324178beb)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/eeea2e9b-1559-470b-92ac-245324178beb"></p>
 
-![PANTALLA 5](https://github.com/fiis-bd241/grupo01/assets/130238034/7270a60b-abf0-4b84-8c93-bf903aae1235)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/7270a60b-abf0-4b84-8c93-bf903aae1235"></p>
 
-![PANTALLA 6](https://github.com/fiis-bd241/grupo01/assets/130238034/07287c54-cdc5-421b-8b3f-c06f2947fb90)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/07287c54-cdc5-421b-8b3f-c06f2947fb90"></p>
 
-![PANTALLA 8](https://github.com/fiis-bd241/grupo01/assets/130238034/9beb1d0a-569b-400d-9db0-f4f34059f099)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/9beb1d0a-569b-400d-9db0-f4f34059f099"></p>
 
 Link del Figma: https://www.figma.com/file/kZLR8sf4PPRQyQf9dsDxDp/PROTOTIPO-DE-RECLAMOS?type=design&node-id=0-1&mode=design&t=7KtYyZiyPe04xOE2-0
 
