@@ -159,8 +159,7 @@ Interacción con otros módulos:
 
 a. Usuarios
 - Administrador: Puede realizar todas las operaciones del módulo de pedidos.
-- Usuario de Almacén: Puede registrar y gestionar los pedidos de materia prima de la planta Huaral.
-- Usuario de Planta Huaral: Puede registrar y gestionar los pedidos al almacén general.
+- Usuario(Almacenista de cada departamento) de Planta Huaral: Puede registrar los pedidos al almacén general.
 
 b. Casos de uso
 
