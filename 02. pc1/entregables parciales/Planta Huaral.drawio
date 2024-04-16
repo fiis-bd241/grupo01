@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-04-16T03:43:14.103Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="-fiAfNZ6Q6WCaOZIh6Pi" version="24.2.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-04-16T03:56:21.921Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="nsSDZnronsI3Zrm5S-Ra" version="24.2.5" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="3183" dy="2551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -24,6 +24,9 @@
         </mxCell>
         <mxCell id="WpR4HrJ7JRZAoJs09nRu-4" value="Dirección" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1360" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FY_X2xGory58CLV302vH-114" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;strokeWidth=9;" edge="1" parent="1" source="WpR4HrJ7JRZAoJs09nRu-5" target="FY_X2xGory58CLV302vH-113">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="WpR4HrJ7JRZAoJs09nRu-5" value="Ubicación" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1870" y="80" width="120" height="60" as="geometry" />
@@ -514,6 +517,9 @@
         </mxCell>
         <mxCell id="FY_X2xGory58CLV302vH-110" value="Terminada en" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
           <mxGeometry x="290" y="970" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FY_X2xGory58CLV302vH-113" value="Almacén" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="550" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
