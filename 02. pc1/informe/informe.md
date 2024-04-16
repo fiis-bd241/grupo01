@@ -155,74 +155,136 @@ Interacción con otros módulos:
 
 ## Requerimientos
 
-### 1. Requerimientos funcionales
+### 1. Requerimientos del módulo de Pedidos
 
-a. Usuarios y casos de uso
+### 2. Requerimientos del módulo de Seguimiento
 
-- Perfil de usuario de Planta de Beneficio Huaral (Supervisor de Almacén, Asistente de Almacén, etc.)
+### 3. Requerimientos del módulo de Almacén
 
-   - Realizar pedidos de materiales (suministros, repuestos, insumos, etiquetas, etc.)
-   - Verificar pedidos en tránsito y recepcionar pedidos entrantes
-   - Gestionar devoluciones de productos terminados
-   - Visualizar estadísticas de recepción/despacho de productos
+#### 3.1. Requerimientos funcionales
 
-- Perfil de usuario de Almacén Central
+a. Usuarios
+- Almacenero
+- Tecnico de almacén
+- Asistente Operativo
+- Encargado de Almacén
+- Supervisor de almacén
 
-   - Gestionar pedidos de las distintas plantas
-   - Asignar vehículos y conductores para el despacho
-   - Realizar despachos hacia las plantas
-   - Gestionar devoluciones de plantas
-   - Visualizar estadísticas de despachos
+b. Casos de uso
 
-- Perfil de usuario de Área de Transporte
+Caso de Uso #1: Registrar ingreso de productos
+| Código | R001 | 
+|----------|----------|
+|Objetivo | Registrar los productos que ingresan al almacén|
+|Descripción | El usuario registra los datos del producto, como código, descripción, cantidad, fecha de ingreso, ubicación en el almacén, etc.|
+|Actor Primario | Almacenero|
+|Actor Secundario|-|
+|Precondiciones|Productos disponibles para ser recibidos en almacén|
+|Paso|Acción|
+|1|El usuario selecciona la opción "Registrar ingreso de productos"|
+|2|Ingresa la información del producto: código, descripción, cantidad, fecha de ingreso, ubicación en el almacén, etc.|
+|3|Verifica los datos y confirma el registro|
+|4|El sistema actualiza el inventario con el nuevo ingreso|
 
-   - Gestionar flota de vehículos y conductores
-   - Asignar vehículos y conductores para despachos
-   - Realizar seguimiento de entregas
-   - Visualizar estadísticas de transporte
+Caso de Uso #2: Consultar disponibilidad de productos
+| Código | R002 | 
+|----------|----------|
+|Objetivo|Verificar la cantidad disponible de un producto específico en el almacén|
+|Descripción|El usuario busca un producto por código o descripción y puede ver la cantidad disponible en existencias|
+|Actor Primario|Técnico de Almacén|
+|Actor Secundario|Asistente Operativo|
+|Precondiciones|Productos registrados en el sistema|
+|Paso|Acción|	
+|1|El usuario selecciona la opción "Consultar disponibilidad de productos"|
+|2|Ingresa el código o descripción del producto a buscar|
+|3|El sistema muestra la información del producto, incluyendo la cantidad disponible en existencias|
+|4|El usuario puede imprimir o descargar el reporte de disponibilidad|
 
-- Perfil de usuario de Área de Programación
+Caso de Uso #3: Realizar picking de pedidos
+| Código | R003 | 
+|----------|----------|
+|Objetivo|Seleccionar y retirar los productos del almacén para atender un pedido|
+|Descripción|El usuario verifica el pedido pendiente, ubica los productos en el almacén, retira las cantidades solicitadas y prepara el pedido para despacho|
+|Actor Primario|Almacenero|
+|Actor Secundario|Encargado de Almacén|
+|Precondiciones|Pedidos pendientes de atención|
+|Paso|Acción|
+|1|El usuario selecciona la opción "Realizar picking de pedidos"|
+|2|Visualiza los pedidos pendientes de atención|
+|3|Selecciona el pedido a procesar|
+|4|Ubica en el almacén los productos solicitados y retira las cantidades indicadas|
+|5|Registra el picking realizado en el sistema|
+|6|Prepara el pedido para despacho|
 
-   - Planificar producción diaria/semanal
-   - Coordinar con granjas para envío de aves
-   - Visualizar estadísticas de producción
-  
-- Perfil de usuario de Área de Producción
+Caso de Uso #4: Registrar salida de productos
+| Código | R004 | 
+|----------|----------|
+|Objetivo|Registrar la salida de productos del almacén al momento del despacho|
+|Descripción|El usuario registra los datos del producto, cantidad, destino, fecha de salida y el personal a cargo de la entrega|
+|Actor Primario|Almacenero|
+|Actor Secundario|Encargado de Almacén|
+|Precondiciones|Productos preparados para despacho|
+|Paso|Acción|	
+|1|El usuario selecciona la opción "Registrar salida de productos"|
+|2|Ingresa los datos del producto, como código, descripción, cantidad, fecha de salida y destino|
+|3|Selecciona el personal a cargo de la entrega|
+|4|Verifica la información y confirma el registro|
+|5|El sistema actualiza el inventario con la salida del producto|
 
-   - Gestionar proceso de producción (recepción de aves, viscerado, corte, marinado, etc.)
-   - Coordinar con despacho para cumplir ventanas horarias
-   - Visualizar estadísticas de producció
-  
-- Perfil de usuario de Área de Calidad
+Caso de Uso #5: Generar reporte de inventario
+| Código | R005 | 
+|----------|----------|
+|Objetivo|Obtener un reporte detallado del estado actual del inventario en el almacén|
+|Descripción|El usuario genera un reporte que muestra la cantidad, ubicación y demás información de los productos en el almacén|
+|Actor Primario|Supervisor de Almacén|
+|Actor Secundario|Asistente Operativo|
+|Precondiciones|Productos registrados en el sistema|
+|Paso|Acción|
+|1|El usuario selecciona la opción "Generar reporte de inventario"|
+|2|Selecciona los filtros y opciones de visualización deseados|
+|3|El sistema genera el reporte detallado del inventario actual|
+|4|El usuario puede visualizar, imprimir o descargar el reporte|
 
-   - Gestionar devoluciones de clientes
-   - Analizar causas de devoluciones
-   - Visualizar estadísticas de calidad
-  
-- Perfil de usuario de Proveedor
+Caso de Uso #6: Registrar productos próximos a vencer
+| Código | R006 | 
+|----------|----------|
+|Objetivo|Identificar y registrar los productos con fechas de vencimiento cercanas|
+|Descripción|El usuario revisa las fechas de vencimiento de los productos y registra aquellos que están próximos a caducar para su seguimiento|
+|Actor Primario|Técnico de Almacén|
+|Actor Secundario|Encargado de Almacén|
+|Precondiciones|Productos con fecha de vencimiento registrados en el sistema|
+|Paso|Acción|
+|1|El usuario selecciona la opción "Registrar productos próximos a vencer"|
+|2|Revisa las fechas de vencimiento de los productos en el sistema|
+|3|Selecciona los productos que están próximos a caducar y registra la información|
+|4|El sistema guarda el registro de los productos próximos a vencer para su seguimiento|
 
-   - Visualizar pedidos de Almacén Central
-   - Confirmar fechas de entrega
-   - Realizar seguimiento de pedidos
+Caso de Uso #7: Realizar reubicación de productos
+| Código | R007 | 
+|----------|----------|
+|Objetivo|Modificar la ubicación de los productos en el almacén
+|Descripción|El usuario cambia la ubicación de los productos en el sistema, ya sea por optimización de espacios, reorganización o nuevos ingresos
+|Actor Primario|Asistente Operativo
+|Actor Secundario|Encargado de Almacén
+|Precondiciones|Productos registrados en el sistema|
+|Paso|Acción|	
+|1|El usuario selecciona la opción "Realizar reubicación de productos"|
+|2|Busca el producto que requiere ser reubicado|
+|3|Ingresa la nueva ubicación del producto en el almacén|
+|4|Verifica la información y confirma la reubicación|
+|5|El sistema actualiza la ubicación del producto en el inventario|
 
-### 2. Requerimientos de atributos de calidad
-- Rendimiento: El sistema debe ser capaz de manejar grandes volúmenes de transacciones y datos, especialmente en áreas como despacho y producción, donde se manejan operaciones críticas con ventanas de tiempo limitadas.
-- Procesos batch: Ciertos procesos, como la planificación de producción y la generación de pedidos, pueden requerir ejecuciones periódicas (diarias, semanales, mensuales) de acuerdo con los ciclos de negocio.
-- Integración con sistemas existentes: El sistema debe integrarse con el sistema SAP existente para intercambiar información de pedidos, inventarios, entregas, etc.
-- Trazabilidad y auditoría: El sistema debe mantener un registro detallado de todas las transacciones y operaciones realizadas, permitiendo la trazabilidad y auditoría de los procesos.
-- Seguridad y control de acceso: El sistema debe implementar medidas de seguridad adecuadas, como control de acceso basado en roles y perfiles de usuario, para proteger la información confidencial de la empresa.
-- Mantenibilidad: El sistema debe estar diseñado de manera modular para facilitar la incorporación de nuevas funcionalidades y correcciones de errores.
-- Usabilidad: La interfaz de usuario debe ser intuitiva y de fácil aprendizaje, con procesos guiados y retroalimentación clara para los usuarios.
-- Eficiencia: El sistema debe procesar los pedidos de manera eficiente para minimizar los tiempos de espera.
+#### 3.2. Requerimientos de atributos de calidad
 
-### 3. Restricciones
-
+#### 3.3. Restricciones
 - El diseño del modelo relacional de datos debe ser compatible con las características y funcionalidades de PostgreSQL.
 - El acceso a la base de datos desde el backend debe realizarse utilizando sentencias SQL nativas de PostgreSQL.
-- La base de datos del sistema se implementará utilizando PostgreSQL como sistema de gestión de base de datos.
-- Para el desarrollo del backend de la aplicación se utilizará el lenguaje de programación Java, junto con el framework Spring Boot, y para la implementación del frontend de la aplicación se utilizará el framework Angular, debido a que los integrantes del equipo tienen un mayor conocimiento y experiencia con estas tecnologías.
-- La comunicación entre el frontend y el backend se realizará a través de una API RESTful, siguiendo los principios de diseño de APIs modernas.
-- Se deberá hacer uso de las convenciones y mejores prácticas establecidas por los frameworks Spring Boot y Angular para garantizar la consistencia y mantenibilidad del código.
+
+### 4. Requerimientos del módulo de Control
+
+### 5. Requerimientos del módulo de Reportes
+
+### 6. Requerimientos del módulo de Reclamos
 
 ### Prototipos
 ### Módulo 1: Pedidos
