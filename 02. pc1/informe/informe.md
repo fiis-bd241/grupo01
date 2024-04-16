@@ -167,15 +167,16 @@ b. Casos de uso
 Caso de Uso #1: Registrar Pedido
 | Código | R001 | 
 |----------|----------|
-|Objetivo | Permitir a los usuarios registrar un nuevo pedido.|
-|Descripción |
-|Actor Primario |
-|Actor Secundario |
-|Precondiciones |
-|Paso | Acción |
-|1 |
-|2 |
-|3 |
+|Objetivo | Permitir a los almacenistas de cada departamento a registrar un nuevo pedido.|
+|Descripción | El almacenista ingresa la información del cliente, como nombre, correo electrónico empresarial y personal, fecha de solicitud, fecha de entrega, DNI, departamento y justificación. |
+|Actor Primario | Almacenista de cada departamento. |
+|Actor Secundario | N/A |
+|Precondiciones | El almacenista debe estar registrado en el sistema SAP | 
+|Paso | Acción | 
+|1 | El Almacenista selecciona la opción para registrar un nuevo pedido. |
+|2 | El sistema muestra un formulario para que el almacenista ingrese los datos personales y datos del pedido. | 
+|3 | El almacenista completa el formulario y selecciona la opción para agregar productos. |
+
 
 ### 2. Requerimientos del módulo de Seguimiento
 
