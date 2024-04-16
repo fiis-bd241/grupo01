@@ -205,6 +205,25 @@ a. Usuarios y casos de uso
    - Confirmar fechas de entrega
    - Realizar seguimiento de pedidos
 
+### 2. Requerimientos de atributos de calidad
+- Rendimiento: El sistema debe ser capaz de manejar grandes volúmenes de transacciones y datos, especialmente en áreas como despacho y producción, donde se manejan operaciones críticas con ventanas de tiempo limitadas.
+- Procesos batch: Ciertos procesos, como la planificación de producción y la generación de pedidos, pueden requerir ejecuciones periódicas (diarias, semanales, mensuales) de acuerdo con los ciclos de negocio.
+- Integración con sistemas existentes: El sistema debe integrarse con el sistema SAP existente para intercambiar información de pedidos, inventarios, entregas, etc.
+- Trazabilidad y auditoría: El sistema debe mantener un registro detallado de todas las transacciones y operaciones realizadas, permitiendo la trazabilidad y auditoría de los procesos.
+- Seguridad y control de acceso: El sistema debe implementar medidas de seguridad adecuadas, como control de acceso basado en roles y perfiles de usuario, para proteger la información confidencial de la empresa.
+- Mantenibilidad: El sistema debe estar diseñado de manera modular para facilitar la incorporación de nuevas funcionalidades y correcciones de errores.
+- Usabilidad: La interfaz de usuario debe ser intuitiva y de fácil aprendizaje, con procesos guiados y retroalimentación clara para los usuarios.
+- Eficiencia: El sistema debe procesar los pedidos de manera eficiente para minimizar los tiempos de espera.
+
+### 3. Restricciones
+
+- El diseño del modelo relacional de datos debe ser compatible con las características y funcionalidades de PostgreSQL.
+- El acceso a la base de datos desde el backend debe realizarse utilizando sentencias SQL nativas de PostgreSQL.
+- La base de datos del sistema se implementará utilizando PostgreSQL como sistema de gestión de base de datos.
+- Para el desarrollo del backend de la aplicación se utilizará el lenguaje de programación Java, junto con el framework Spring Boot, y para la implementación del frontend de la aplicación se utilizará el framework Angular, debido a que los integrantes del equipo tienen un mayor conocimiento y experiencia con estas tecnologías.
+- La comunicación entre el frontend y el backend se realizará a través de una API RESTful, siguiendo los principios de diseño de APIs modernas.
+- Se deberá hacer uso de las convenciones y mejores prácticas establecidas por los frameworks Spring Boot y Angular para garantizar la consistencia y mantenibilidad del código.
+
 ### Prototipos
 ### Módulo 1: Pedidos
 
@@ -268,14 +287,6 @@ a. Usuarios y casos de uso
 Elaboracion propia.
 
 Link del Figma: https://www.figma.com/file/KQ34ScwxvuSCmmvHqfIPRP/Untitled?type=design&node-id=0-1&mode=design&t=Hbv9cdOoQzm0mQQy-0
-
-### 2. Requerimientos de atributos de calidad
-- Rendimiento: El sistema debe ser capaz de manejar grandes volúmenes de transacciones y datos, especialmente en áreas como despacho y producción, donde se manejan operaciones críticas con ventanas de tiempo limitadas.
-- Procesos batch: Ciertos procesos, como la planificación de producción y la generación de pedidos, pueden requerir ejecuciones periódicas (diarias, semanales, mensuales) de acuerdo con los ciclos de negocio.
-- Integración con sistemas existentes: El sistema debe integrarse con el sistema SAP existente para intercambiar información de pedidos, inventarios, entregas, etc.
-- Trazabilidad y auditoría: El sistema debe mantener un registro detallado de todas las transacciones y operaciones realizadas, permitiendo la trazabilidad y auditoría de los procesos.
-- Seguridad y control de acceso: El sistema debe implementar medidas de seguridad adecuadas, como control de acceso basado en roles y perfiles de usuario, para proteger la información confidencial de la empresa.
-
 
 ## Entrevista
 A continuación, se muestra la grabación de la entrevista realizada a la ingeniera Joselin Alexandra Torres Robles, supervisora del área de almacén de la planta Huaral de San Fernando.
