@@ -282,11 +282,23 @@ a. Usuarios y casos de uso
 
 ### Módulo 6: Reclamos
 
-![modulo-6](../entregables%20parciales/entregable%203/imagenes/prototipo/reclamos.png)
+![PANTALLA 7](https://github.com/fiis-bd241/grupo01/assets/130238034/f9f9b7e8-2f2b-4a75-8112-661286c9e462)
+
+![PANTALLA 1](https://github.com/fiis-bd241/grupo01/assets/130238034/30756930-79af-4176-9526-5a92721c076f)
+
+![PANTALLA 2](https://github.com/fiis-bd241/grupo01/assets/130238034/ca3e9b1e-76ac-4ab0-8ff0-a30ca5e1d207)
+
+![PANTALLA 3](https://github.com/fiis-bd241/grupo01/assets/130238034/ebc6c280-ad84-4b13-a017-4d85fc6888f5)
+
+![PANTALLA 4](https://github.com/fiis-bd241/grupo01/assets/130238034/de05a579-b27d-4b2b-83d9-278ad9f2a92e)
+
+![PANTALLA 5](https://github.com/fiis-bd241/grupo01/assets/130238034/463270ff-ba87-4db8-af58-dbd648075008)
+
+![PANTALLA 6](https://github.com/fiis-bd241/grupo01/assets/130238034/c5a12917-ea25-4882-883f-08e8e12080f0)
 
 Elaboracion propia.
 
-Link del Figma: https://www.figma.com/file/KQ34ScwxvuSCmmvHqfIPRP/Untitled?type=design&node-id=0-1&mode=design&t=Hbv9cdOoQzm0mQQy-0
+Link del Figma: https://www.figma.com/file/kZLR8sf4PPRQyQf9dsDxDp/PROTOTIPO-DE-RECLAMOS?type=design&node-id=0-1&mode=design&t=7KtYyZiyPe04xOE2-0
 
 ## Entrevista
 A continuación, se muestra la grabación de la entrevista realizada a la ingeniera Joselin Alexandra Torres Robles, supervisora del área de almacén de la planta Huaral de San Fernando.
