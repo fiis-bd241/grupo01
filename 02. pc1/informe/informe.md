@@ -346,6 +346,20 @@ Caso de Uso #7: Realizar reubicación de productos
 
 ![PANTALLA 7](https://github.com/fiis-bd241/grupo01/assets/130238034/6a54fabb-9fa0-49ae-951d-8ae66687e68b)
 
+![PANTALLA 1](https://github.com/fiis-bd241/grupo01/assets/130238034/a9f229d4-b4c1-42b0-ae0b-fca8a0976e45)
+
+![PANTALLA 2](https://github.com/fiis-bd241/grupo01/assets/130238034/09f6360d-4671-4515-8a6e-b9b5a13bbf7d)
+
+![PANTALLA 3](https://github.com/fiis-bd241/grupo01/assets/130238034/90edd206-2f40-4b35-8226-604e00e682ca)
+
+![PANTALLA 4](https://github.com/fiis-bd241/grupo01/assets/130238034/eeea2e9b-1559-470b-92ac-245324178beb)
+
+![PANTALLA 5](https://github.com/fiis-bd241/grupo01/assets/130238034/7270a60b-abf0-4b84-8c93-bf903aae1235)
+
+![PANTALLA 6](https://github.com/fiis-bd241/grupo01/assets/130238034/07287c54-cdc5-421b-8b3f-c06f2947fb90)
+
+![PANTALLA 8](https://github.com/fiis-bd241/grupo01/assets/130238034/9beb1d0a-569b-400d-9db0-f4f34059f099)
+
 Link del Figma: https://www.figma.com/file/kZLR8sf4PPRQyQf9dsDxDp/PROTOTIPO-DE-RECLAMOS?type=design&node-id=0-1&mode=design&t=7KtYyZiyPe04xOE2-0
 
 ## Entrevista
