@@ -176,6 +176,36 @@ Caso de Uso #1: Registrar Pedido
 |2 | El sistema muestra un formulario para que el almacenista ingrese los datos personales y datos del pedido. | 
 |3 | El almacenista completa el formulario y selecciona la opción para agregar productos. |
 
+Caso de Uso #2: Agregar productos al pedido. 
+| Código | R002 | 
+|----------|----------|
+|Objetivo | Permitir al almacenista (usuario) agregar los productos solicitados al pedido.|
+|Descripción | Después de ingresar la información del usuario (Almacenista) en el formulario de registro de pedido, el usuario puede agregar los productos solicitados a través de una tabla. | 
+|Actor Primario | Almacenista departamental |
+|Actor Secundario | N/A. |
+|Precondiciones | El usuario debe haber completado el formulario de registro de pedido. |
+|Paso | Acción |
+|1 | Después de ingresar los datos del usuario y pedido, el usuario selecciona la opción para agregar productos.|
+|2 | El sistema muestra una tabla vacía para que el usuario ingrese los detalles de los productos solicitados, como código, nombre, descripción, cantidad, unidad de medida y precio unitario. |
+|3 | El usuario ingresa la información de los productos. |
+|4 | El usuario revisa la información de los productos ingresados y selecciona la opción para confirmar el pedido. |
+|5 | El sistema asigna un número de pedido único al nuevo pedido. |
+|6 | El sistema guarda la información del pedido, incluyendo los productos solicitados, y actualiza el estado a "pendiente". |
+
+Caso de Uso #4: Ver lista de pedidos.
+| Código | R004 | 
+|----------|----------|
+|Objetivo | | Permitir a los almacenista (usuarios) consultar la lista de todos los pedidos registrados.
+|Descripción | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
+|Actor Primario | Almacenista de cada departamento. |
+|Actor Secundario | N/A. |
+|Precondiciones | El usuario debe estar registrado en el sistema SAP. |
+|Paso | Acción |
+|1 | El usuario selecciona la opción para ver la lista de pedidos. |
+|2 | El sistema muestra la lista de todos los pedidos registrados, incluyendo el número de pedido, departamento, la fecha de solicitud, la fecha de entrega y el estado del pedido. |
+|3 | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
+|4 | El sistema SAP actualiza la lista de pedidos según los filtros y ordenamiento aplicados por el usuario. |
+
 
 ### 2. Requerimientos del módulo de Seguimiento
 
