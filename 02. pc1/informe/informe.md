@@ -242,6 +242,21 @@ a. Usuarios y casos de uso
 
 [Figma](https://www.figma.com/file/nnoiQDwJ9WstLLZmVisdpw/Untitled?type=design&node-id=0-1&mode=design&t=ztZFDIkEuNp6ykcn-0)
 
+### Módulo 4: Control
+![figma 1](https://github.com/fiis-bd241/grupo01/assets/164266999/651613ad-ddf6-4944-a55e-7d3b2e321051)
+
+![figma 2](https://github.com/fiis-bd241/grupo01/assets/164266999/5ccfc679-16d9-425b-9d93-3a7b09ef6e9f)
+
+![figma 3](https://github.com/fiis-bd241/grupo01/assets/164266999/1df37adb-5e43-4da9-85e0-4fa9fc754d71)
+
+![figma 4](https://github.com/fiis-bd241/grupo01/assets/164266999/b07618fc-3915-401b-a3aa-ee89c369919c)
+
+![figma 5](https://github.com/fiis-bd241/grupo01/assets/164266999/dc5589dd-1e80-4d45-9f79-6bf5eff4d08e)
+
+![figma 6](https://github.com/fiis-bd241/grupo01/assets/164266999/960ce6b6-906f-4389-b970-b19b511758b6)
+
+![figma 7](https://github.com/fiis-bd241/grupo01/assets/164266999/c8c21cc8-f7f0-4374-8828-8d11ea403bad)
+
 ### Módulo 5: Reportes
 
 ![modulo-5f](../entregables%20parciales/entregable%203/imagenes/prototipo/reportes.png)
