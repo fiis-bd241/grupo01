@@ -284,7 +284,7 @@ a. Usuarios y casos de uso
 
 ![PANTALLA 7](https://github.com/fiis-bd241/grupo01/assets/130238034/f9f9b7e8-2f2b-4a75-8112-661286c9e462)
 
-![PANTALLA 1](https://github.com/fiis-bd241/grupo01/assets/130238034/30756930-79af-4176-9526-5a92721c076f)
+![PANTALLA 1](https://github.com/fiis-bd241/grupo01/assets/130238034/5612a130-c549-441b-825a-970c7905db0c)
 
 ![PANTALLA 2](https://github.com/fiis-bd241/grupo01/assets/130238034/ca3e9b1e-76ac-4ab0-8ff0-a30ca5e1d207)
 
