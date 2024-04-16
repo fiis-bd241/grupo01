@@ -363,19 +363,19 @@ Caso de Uso #7: Realizar reubicación de productos
 
 ### Módulo 5: Reportes
 
-![reporte-1](https://github.com/fiis-bd241/grupo01/assets/161625149/8682aa22-fa65-428b-80bf-8d341253fc94)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/8682aa22-fa65-428b-80bf-8d341253fc94"></p>
 
-![reporte-2](https://github.com/fiis-bd241/grupo01/assets/161625149/6aef7713-0319-46e1-b543-0c244cbaddf1)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/6aef7713-0319-46e1-b543-0c244cbaddf1"></p>
 
-![reporte-3](https://github.com/fiis-bd241/grupo01/assets/161625149/77bf2785-e6ea-47e2-a090-749c42d3b934)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/77bf2785-e6ea-47e2-a090-749c42d3b934"></p>
 
-![reporte-4](https://github.com/fiis-bd241/grupo01/assets/161625149/fda9824a-c546-4d64-96c2-5584c177c168)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/fda9824a-c546-4d64-96c2-5584c177c168"></p>
 
-![reporte-5](https://github.com/fiis-bd241/grupo01/assets/161625149/d604cddb-4f37-4e7b-b77b-dcc19b403b89)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/d604cddb-4f37-4e7b-b77b-dcc19b403b89"></p>
 
-![reporte-6](https://github.com/fiis-bd241/grupo01/assets/161625149/8a8cae18-726b-44be-b6c7-4667eecac03f)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/8a8cae18-726b-44be-b6c7-4667eecac03f"></p>
 
-![reporte-7](https://github.com/fiis-bd241/grupo01/assets/161625149/cd480806-9a03-4282-b8af-d0d6d471ce65)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/cd480806-9a03-4282-b8af-d0d6d471ce65"></p>
 
 ### Módulo 6: Reclamos
 
