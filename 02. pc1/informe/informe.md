@@ -157,6 +157,11 @@ Interacción con otros módulos:
 
 ### 1. Requerimientos del módulo de Pedidos
 
+a. Usuarios
+- Administrador: Puede realizar todas las operaciones del módulo de pedidos.
+- Usuario de Almacén: Puede registrar y gestionar los pedidos de materia prima de la planta Huaral.
+- Usuario de Planta Huaral: Puede registrar y gestionar los pedidos al almacén general.
+
 ### 2. Requerimientos del módulo de Seguimiento
 
 ### 3. Requerimientos del módulo de Almacén
