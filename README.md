@@ -12,4 +12,7 @@ Bienvenidos al repositorio del Proyecto de Diseño de Base de Datos del Grupo 1.
       * [Entregable 2](02.%20pc1/entregables%20parciales/entregable%202/entregable%202.md)
       * [Entregable 3](02.%20pc1/entregables%20parciales/entregable%203/entregable%203.md)
 
+   * Presentación final
+      * [Informe](02.%20pc1/informe/informe.md)
+
 3. [Glosario](03.%20glosario/glosario.md)
