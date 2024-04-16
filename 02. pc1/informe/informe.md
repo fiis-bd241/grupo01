@@ -162,6 +162,21 @@ a. Usuarios
 - Usuario de Almacén: Puede registrar y gestionar los pedidos de materia prima de la planta Huaral.
 - Usuario de Planta Huaral: Puede registrar y gestionar los pedidos al almacén general.
 
+b. Casos de uso
+
+Caso de Uso #1: Registrar Pedido
+| Código | R001 | 
+|----------|----------|
+|Objetivo | Permitir a los usuarios registrar un nuevo pedido.|
+|Descripción |
+|Actor Primario |
+|Actor Secundario |
+|Precondiciones |
+|Paso | Acción |
+|1 |
+|2 |
+|3 |
+
 ### 2. Requerimientos del módulo de Seguimiento
 
 ### 3. Requerimientos del módulo de Almacén
