@@ -937,7 +937,7 @@ Entidades involucradas:
 
 #### Diccionario de datos:
 
-Entidad: Persona
+**Entidad**: Persona
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -950,7 +950,7 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-Entidad: Empleado
+**Entidad**: Empleado
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -1015,6 +1015,83 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
+Entidad: Contacto
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+Entidad: Rutas
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+Entidad: Ubicación
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+Entidad: Local
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+Entidad: Almacén
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+Entidad: GPS
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
 
 ## Entrevista
 A continuación, se muestra la grabación de la entrevista realizada a la ingeniera Joselin Alexandra Torres Robles, supervisora del área de almacén de la planta Huaral de San Fernando.
