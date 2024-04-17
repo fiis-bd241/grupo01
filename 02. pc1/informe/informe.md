@@ -392,7 +392,7 @@ a. Usuarios
 b. Casos de uso
 
 Caso de Uso #1: Registrar ingreso de productos
-| Código | R001 | 
+| Código | R301 | 
 |----------|----------|
 |Objetivo | Registrar los productos que ingresan al almacén|
 |Descripción | El usuario registra los datos del producto, como código, descripción, cantidad, fecha de ingreso, ubicación en el almacén, etc.|
