@@ -92,7 +92,6 @@ Proceso de negocio mejorado: Elaboración de despacho. Elaboración propia.
 
 | Secuencia | Actividad                  | Descripción                                                                   | Responsable          | Entrada                           | Salida                               |
 |-----------|----------------------------|-------------------------------------------------------------------------------|----------------------|-----------------------------------|--------------------------------------|
-
 | 1         | Crear Pedido   | Ingresar detalles de un pedido, como productos, cantidades y cliente ya sea interno o externo para generar una solicitud de compra | Técnico de almacén           | Información como la lista de productos o insumos solicitados cantidades, detalles del cliente | Generación de un pedido completo, que puede incluir un número de pedido único, la lista de productos, precios, fechas de entrega, y cualquier otra información relacionada con el pedido |
 | 2         | Seguimiento de Traslado    | Consulta de ubicación de los vehículos que transportan los pedidos             | Supervisor           | Código de pedido / Código de Traslado | Ubicación geográfica del pedido       |
 | 3         | Reporte de incidencias    | Registro de problemas, describiendo el incidente, su impacto, responsable y estado actual.      | Encargado de almacén  | Evidencias de reclamos o problemas durante los procesos internos  | Creación de un registro de incidencias  |
