@@ -671,8 +671,8 @@ Caso de Uso #1: Crear un reclamo de un cliente interno
 |----------|----------|
 |Objetivo | |
 |Descripción | |
-|Actor Primario | |
-|Actor Secundario||
+|Actor Primario | Encargado de Atención a Reclamos|
+|Actor Secundario| -|
 |Precondiciones||
 |Paso||
 |1||
