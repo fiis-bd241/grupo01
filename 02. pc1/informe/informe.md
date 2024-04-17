@@ -1472,6 +1472,8 @@ Semántica:
 |-----------------|------------|--------------|-----------------|--------|-------------|--------------------------------------------------------------------------------------------------|
 | cod_representante | CHAR | 999999999| 9 dígitos | -      | -           | Código único que identifica al representante.|
 | cargo           | CHAR | X(32) | Cargo 1, Cargo 2, Cargo 3, ...       | -      | -           | Cargo o posición del representante en la empresa.|
+| correo empresarial | CHAR | X(32) | Cargo 1, Cargo 2, Cargo 3, ...       | -      | -           | Correo de contacto del representante en la empresa.|
+| Número de telefono | INT |999999999| 9 dígitos | -      | -           | Número de contacto del representante en la empresa.|
 | cod_persona     | CHAR | 999999999 | 9 dígitos | -      | -           | Código de identificación de la persona asociada al representante. |
 | cod_pedido      | CHAR | 999999999 | 9 dígitos | -      | -           | Código del pedido asociado al representante, si aplica.|
 | cod_cliente     | CHAR | 999999999 | 9 dígitos | -      | -           | Código del cliente asociado al representante, si aplica.|
