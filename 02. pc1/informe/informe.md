@@ -941,7 +941,7 @@ Entidad: Persona
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|          |            |         |                 |        |             |             |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
@@ -954,7 +954,7 @@ Entidad: Empleado
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|          |            |         |                 |        |             |             |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
@@ -967,7 +967,7 @@ Entidad: Transportista
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|          |            |         |                 |        |             |             |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
@@ -980,7 +980,7 @@ Entidad: Traslado
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|          |            |         |                 |        |             |             |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
@@ -993,7 +993,7 @@ Entidad: Pedido
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|          |            |         |                 |        |             |             |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
@@ -1006,7 +1006,7 @@ Entidad: Operación
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|          |            |         |                 |        |             |             |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
