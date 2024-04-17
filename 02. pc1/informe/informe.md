@@ -414,6 +414,91 @@ Caso de Uso #7: Realizar reubicación de productos
 
 ### 4. Requerimientos del módulo de Control
 
+#### 4.1. Requerimientos funcionales
+
+a. Usuarios
+- Encargado de almacén
+- Asistente operativo
+- Almacenero
+- Transportista
+- Técnico de almacén
+
+
+b. Casos de uso
+
+Caso de Uso #1: Verificar los procesos sobre pedido de abastecimiento 
+| Código | R001 | 
+|----------|----------|
+|Objetivo | Registrar el correcto procedimiento de los pedidos de abastecimiento|
+|Descripción | El usuario registra los datos del pedido solicitado por Planta Huaral, como fecha,id del usuario, insumo solicitado, guía de remisión, además de datos generales de cada proceso que atraviesa el pedido como estado, fecha, hora, id encargado, etc. Adicionalmente hay una opción de descarga de la guía de remisión. |
+|Actor Primario | Técnico de almacén|
+|Actor Secundario|Almacenero|
+|Precondiciones|Pedido de abastecimiento registrado en sistema|
+|Paso|Acción|
+|1|El usuario selecciona la opción "Usuario" y luego  le da a segunda opción "Abastecimiento"|
+|2|Se registra la información del pedido, incluyendo la fecha, ID y el insumo solicitado, así como los detalles de cada etapa del proceso por el que pasa, como el picking, precintado, paletizado y carga. Estos detalles incluyen el estado, fecha, hora y el ID del encargado correspondiente.|
+|3|Verifica los datos y confirma el registro|
+|4|El sistema actualiza el registro con el nuevo ingreso|
+
+Caso de Uso #2: Verificar los procesos sobre pedido de venta 
+| Código | R001 | 
+|----------|----------|
+|Objetivo | Registrar el correcto procedimiento de los pedidos de venta|
+|Descripción | El usuario ingresa los datos del pedido solicitado por el cliente, incluyendo la fecha, ID del usuario, dirección y tipo de producto. Además, se registran los detalles de cada etapa del proceso del pedido, como su estado, fecha, hora y el ID del encargado correspondiente. También se ofrece la opción de descargar una factura electrónica, junto con la indicación de la fecha y hora de salida, así como la fecha y hora estimadas de llegada. |
+|Actor Primario | Encargado de almacén|
+|Actor Secundario|Almacenero|
+|Precondiciones|Pedido de cliente registrado en sistema|
+|Paso|Acción|
+|1|El usuario selecciona la opción "Usuario" y luego le da a segunda opcion "Venta"|
+|2|Se registra la información del pedido, incluyendo la fecha, ID y el insumo solicitado, así como los detalles de cada etapa del proceso por el que pasa, como el picking, precintado, paletizado y carga. Estos detalles incluyen el estado, fecha, hora y el ID del encargado correspondiente.|
+|3|Verifica los datos y confirma el registro|
+|4|El sistema actualiza el registro con el nuevo ingreso|
+
+Caso de Uso #3:  Registro de disponibilidad de conductores
+| Código | R001 | 
+|----------|----------|
+|Objetivo |Asignarle el traslado de un determinado pedido|
+|Descripción | El usuario verifica en base a los datos del conductor como nombre completo, id conductor,fecha de contratación, número de licencia, fecha de vencimiento de licencia, fecha y hora de última actividad, para registrar su disponibilidad y poder asignarle un pedido. |
+|Actor Primario | Transportista|
+|Actor Secundario||
+|Precondiciones|Registro de conductores en sistema|
+|Paso|Acción|
+|1|El usuario selecciona la opción "Transporte" y luego le da a segunda opción "Conductor"|
+|2|Verifica los atributos específicos del conductor como: nombre completo, id conductor,fecha de contratación, numero de licencia, fecha de vencimiento de licencia, fecha y hora de última actividad |
+|3|Registra su disponibilidad|
+|4|Verifica los datos y confirma el registro|
+|5|El sistema actualiza el registro con el nuevo ingreso|
+
+Caso de Uso #4: Registro de disponibilidad de vehículos
+| Código | R001 | 
+|----------|----------|
+|Objetivo |Asignar a un conductor como medio de traslado del pedido|
+|Descripción | El usuario verifica en base a los datos del vehículo como número de placa, modelo,año de fabricación, capacidad de carga, fecha de último mantenimiento, fecha y hora de última de actividad, para registrar su disponibilidad y poder asignarle como medio de traslado de un pedido. |
+|Actor Primario | Transportista|
+|Actor Secundario||
+|Precondiciones|Registro de vehículos en sistema|
+|Paso|Acción|
+|1|El usuario selecciona la opción "Transporte" y le da a segunda opción "Vehículo"|
+|2|Verifica los atributos específicos del vehículo como: número de placa, modelo,año de fabricación, capacidad de carga, fecha de último mantenimiento, fecha y hora de última de actividad |
+|3|Registra su disponibilidad |
+|4|Verifica los datos y confirma el registro|
+|5|El sistema actualiza el registro con el nuevo ingreso|
+
+Caso de Uso #5: Registro de incidencias internas
+| Código | R001 | 
+|----------|----------|
+|Objetivo |Gestionar a nivel general el correcto funcionamiento de los procesos internos de San Fernando |
+|Descripción | El usuario ingresa los datos del incidente como descripción detallada del incidente, fecha incidente, hora incidente, tipo de incidencia, además de tener la opción de adjuntar alguna foto para más detalle.|
+|Actor Primario | Encargado de almacén|
+|Actor Secundario|Almacenero y Transportista|
+|Precondiciones|Comunicación con cada módulo sobre incidencias en sus procesos internos|
+|Paso|Acción|
+|1|El usuario selecciona la opción "Incidencia"|
+|2|Ingresa la información del incidente: descripción detallada del incidente,fecha incidente,hora de incidente, tipo de incidencia,etc|
+|3|Verifica los datos y confirma el registro|
+|4|El sistema actualiza el registro con el nuevo ingreso|
+
+
 ### 5. Requerimientos del módulo de Reportes
 
 ### 6. Requerimientos del módulo de Reclamos
