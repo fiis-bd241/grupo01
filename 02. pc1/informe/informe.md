@@ -37,6 +37,21 @@ Principales servicios:
 
 ## Descripción del Proceso de Negocio
 
+### 1. Roles del proceso de negocio
+
+- Encargado de Almacén
+- Supervisor
+- Almacenero
+- Asistente de Almacén
+- Técnico de Almacén
+- Gestor de Compras
+- Técnico de logística
+- Asistente Operativo
+- Transportista
+- Enargado de Planeación
+
+### 2. Tabla de actividades
+
 | Secuencia | Actividad                                          | Descripción         | Responsable  |
 | --------- | -------------------------------------------------- | ------------------- | ------------ |
 | 1         |  Evaluacion de actividades |  Se evalúa las necesidades de cada área interna para seguir con la operatividad de los procesos | Supervisor
@@ -61,23 +76,7 @@ Principales servicios:
 | 6         | Picking, precintado y carga de productos   | Toda esta información migra al  área de gestión documentaria y despacho,  que crean las guías de remisión que son electrónicas a la vez que crea las respectivas facturas electrónicas asignadas para cada cliente, también incluye el proceso de precintado, picking y carga de productos. | Almacenero |
 | 7         | Verificación de entrega   |  El proceso de verificación de la entrega del pedido se realiza a través del sistema SAP. En caso de incidentes, San Fernando se comunica directamente con el cliente para validar el reclamo mediante el departamento de calidad. Si el reclamo es procedente, se reemplaza el producto en un plazo máximo de 24 horas desde su registro. | Transportista y Encargado de Almacén |
 
-
-
-### 1. Roles del proceso de negocio
-
-- Encargado de Almacén
-- Supervisor
-- Almacenero
-- Asistente de Almacén
-- Técnico de Almacén
-- Gestor de Compras
-- Técnico de logística
-- Asistente Operativo
-- Transportista
-- Enargado de Planeación
-
-
-### 2. Diagrama del proceso de negocio
+### 3. Diagrama del proceso de negocio
 
 a. Diagrama AS-IS
 
