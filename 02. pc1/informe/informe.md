@@ -1384,12 +1384,12 @@ Semántica: Entidad que interactúan con la empresa San fernando.
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
 |codigo_Persona | CHAR | 9999999 | 9 digitos | - | - | Identificador unico de la Persona|
-| Primer apellido | CHAR | Texto | X(32) | - | - | Apellido paterno de la persona. |
-| Segundo apellido | CHAR | Texto | X(32) | - | - | Apellido materno de la persona. |
+| Primer_apellido | CHAR | Texto | X(32) | - | - | Apellido paterno de la persona. |
+| Segundo_apellido | CHAR | Texto | X(32) | - | - | Apellido materno de la persona. |
 | Prenombre | CHAR | Texto | X(32) | - | - | Nombre(s) de la persona. |
 | Género | CHAR | Texto | "Masculino" , "Femenino" | - | - | Género de la persona. |
 | Nacionalidad | CHAR | Texto | X(32) | - | - | Nacionalidad de la persona. |
-| Estado civil | CHAR | Texto | "Soltero", "Casado", "Divorciado", "Viudo" | - | - | Estado civil de la persona. |
+| Estado_civil | CHAR | Texto | "Soltero", "Casado", "Divorciado", "Viudo" | - | - | Estado civil de la persona. |
 | Dirección | CHAR | Texto | X()32 | - | - | Dirección de residencia de la persona. |
 
 
