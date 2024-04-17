@@ -876,6 +876,18 @@ Entidades involucradas:
 - Seguimiento
 - Fecha
 
+#### Cuestionario
+1. ¿Existe alguna consideración especial en cuanto a rendimiento? Por ejemplo, en sistemas que llegan a usuario final, un bajo rendimiento puede tener como consecuencia la pérdida de una venta.
+
+ Considero que en sistemas que llegan al usuario final, el rendimiento es crítico. Un bajo rendimiento puede afectar la experiencia del cliente y, en última
+ instancia, resultar en la pérdida de ventas o insatisfacción. Además es crucial evaluar el tiempo de respuesta de las consultas y procesos. Si las operaciones
+ de verificación de pedidos o registro de incidencias son lentas, podríamos considerar optimizarlas mediante procesos batch o índices eficientes en la base de
+ datos.
+
+2.¿El volumen de información con el que trata la opción del sistema es significativo? En esos casos, por ejemplo, podríamos tener procesos batch que permitan optimizar estas consultas (¿hemos considerado ello en nuestros módulos?).
+
+Efectivamente, al tratar con la parte de logística de una empresa como San Fernando estamos obligados a trabajar con un gran número de datos. Por lo tanto, como grupo y teniendo en cuenta mi módulo de Control donde debo verificar el estado de los procesos ya sea del almacén central a la planta, como de la planta al cliente final, así como observar la disponibilidad de conductores, vehículos y los registros de incidencias, me he planteado utilizar los procesos batch con ese fin y orientarlo hacia tareas intensivas en datos que pueden ayudar a reducir la carga en tiempo real y mejorar el rendimiento general.
+
 
 ### Módulo 5: Reportes
 
