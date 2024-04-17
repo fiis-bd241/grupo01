@@ -845,7 +845,9 @@ Este módulo está relacionado a la entidad pedidos y dirección.
 
 ## Modelo Conceptual
 
-![Planta Huaral Diagrama Cheng](https://github.com/fiis-bd241/grupo01/assets/130238034/8e2f3f21-a01c-4662-9b16-83f309211b9c)
+### Planta Huaral Diagrama Cheng
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/8e2f3f21-a01c-4662-9b16-83f309211b9c"></p>
 
 [Modelo Cheng en Draw.io](https://app.diagrams.net/#G1sYHbkonVotVIohr2sUkFBC17Pi2aDmhR#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D)
 
@@ -862,13 +864,10 @@ Los detalles de la reunión fueron registrados en la [acta](../entregables%20par
 Se tomó como referencia el siguiente gráfico que identifica la relación de algunas variables de la empresa San Fernando:
 ![guía](../entregables%20parciales/entregable%203/imagenes/diagramas/mr.jpeg)
 
-
 La siguiente imagen nos muestra un fragmento de los diagramas Entidad-Relación:
 ![Entidad Relacion](../entregables%20parciales/entregable%203/imagenes/diagramas/mer.png)
 
 Finalmente adjuntamos un link donde se ven los diagramas de cada una de las variables registradas hasta el momento:
 https://app.diagrams.net/#Wb!B6iW_HyZ9Uu006YT7wrOYtAgE85DSMBNgtvqP4jjpusfjQlxbKwHQbw161ArWf7P%2F01ZOJ7WU2RUCTY52DUKFEJ4FQ5DCEEUOK2#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D
-
-
 
 [Regresar al índice](../../../README.md)
