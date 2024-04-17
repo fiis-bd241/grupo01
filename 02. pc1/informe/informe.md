@@ -658,6 +658,64 @@ Caso de Uso #5: Registro de incidencias internas
 
 ### 6. Requerimientos del módulo de Reclamos
 
+#### 6.1. Requerimientos funcionales
+
+a. Usuarios
+-
+-
+-
+-
+
+b. Casos de uso
+
+Caso de Uso #1: Crear un reclamo de un cliente interno
+| Código | R001 | 
+|----------|----------|
+|Objetivo | |
+|Descripción | |
+|Actor Primario | |
+|Actor Secundario||
+|Precondiciones||
+|Paso||
+|1||
+|2||
+|3||
+|4||
+
+Caso de Uso #2: Crear un reclamo de un cliente externo
+| Código | R002 | 
+|----------|----------|
+|Objetivo | |
+|Descripción | |
+|Actor Primario | |
+|Actor Secundario||
+|Precondiciones||
+|Paso||
+|1||
+|2||
+|3||
+|4||
+
+Caso de Uso #3: Visualizar un reclamo
+| Código | R003 | 
+|----------|----------|
+|Objetivo | |
+|Descripción | |
+|Actor Primario | |
+|Actor Secundario||
+|Precondiciones||
+|Paso||
+|1||
+|2||
+|3||
+|4||
+
+#### 3.2. Requerimientos de atributos de calidad
+
+#### 3.3. Restricciones
+- El diseño del modelo relacional de datos debe ser compatible con las características y funcionalidades de PostgreSQL.
+- El acceso a la base de datos desde el backend debe realizarse utilizando sentencias SQL nativas de PostgreSQL.
+
 ### Prototipos
 ### Módulo 1: Pedidos
 
