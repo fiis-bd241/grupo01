@@ -317,7 +317,7 @@ Caso de Uso #1: Verificar Pedido en Progreso
 |Objetivo | Permitir al encargado de almacén revisar los detalles del proceso de traslado de un pedido. |
 |Descripción | El encargado ingresa al módulo en la pantalla de Pedidos en progreso y con el número de pedido que le corresponde busca y accede a los detalles del pedido en cuestión. |
 |Actor Primario | Encargado de almacén. |
-|Actor Secundario | N/A |
+|Actor Secundario | N/A. |
 |Precondiciones | El encargado debe estar registrado en el sistema SAP | 
 |Paso | Acción | 
 |1 | El encargado selecciona la pantalla de Pedidos en Progreso en la pantalla Menú. |
@@ -397,7 +397,7 @@ Caso de Uso #1: Registrar ingreso de productos
 |Objetivo | Registrar los productos que ingresan al almacén|
 |Descripción | El usuario registra los datos del producto, como código, descripción, cantidad, fecha de ingreso, ubicación en el almacén, etc.|
 |Actor Primario | Almacenero|
-|Actor Secundario|-|
+|Actor Secundario|N/A.|
 |Precondiciones|Productos disponibles para ser recibidos en almacén|
 |Paso|Acción|
 |1|El usuario selecciona la opción "Registrar ingreso de productos"|
@@ -582,7 +582,7 @@ Caso de Uso #3:  Registro de disponibilidad de conductores
 |Objetivo |Asignarle el traslado de un determinado pedido|
 |Descripción | El usuario verifica en base a los datos del conductor como nombre completo, id conductor,fecha de contratación, número de licencia, fecha de vencimiento de licencia, fecha y hora de última actividad, para registrar su disponibilidad y poder asignarle un pedido. |
 |Actor Primario | Transportista|
-|Actor Secundario||
+|Actor Secundario|N/A. |
 |Precondiciones|Registro de conductores en sistema|
 |Paso|Acción|
 |1|El usuario selecciona la opción "Transporte" y luego le da a segunda opción "Conductor"|
@@ -597,7 +597,7 @@ Caso de Uso #4: Registro de disponibilidad de vehículos
 |Objetivo |Asignar a un conductor como medio de traslado del pedido|
 |Descripción | El usuario verifica en base a los datos del vehículo como número de placa, modelo,año de fabricación, capacidad de carga, fecha de último mantenimiento, fecha y hora de última de actividad, para registrar su disponibilidad y poder asignarle como medio de traslado de un pedido. |
 |Actor Primario | Transportista|
-|Actor Secundario||
+|Actor Secundario|N/A. |
 |Precondiciones|Registro de vehículos en sistema|
 |Paso|Acción|
 |1|El usuario selecciona la opción "Transporte" y le da a segunda opción "Vehículo"|
@@ -672,7 +672,7 @@ Caso de Uso #1: Crear un reclamo de un cliente interno
 |Objetivo | |
 |Descripción | |
 |Actor Primario | Encargado de Atención a Reclamos|
-|Actor Secundario| -|
+|Actor Secundario| N/A. |
 |Precondiciones||
 |Paso||
 |1||
@@ -685,8 +685,8 @@ Caso de Uso #2: Crear un reclamo de un cliente externo
 |----------|----------|
 |Objetivo | |
 |Descripción | |
-|Actor Primario | |
-|Actor Secundario||
+|Actor Primario | Encargado de Atención a Reclamos|
+|Actor Secundario| N/A. |
 |Precondiciones||
 |Paso||
 |1||
@@ -699,8 +699,8 @@ Caso de Uso #3: Visualizar un reclamo
 |----------|----------|
 |Objetivo | |
 |Descripción | |
-|Actor Primario | |
-|Actor Secundario||
+|Actor Primario | Encargado de Atención a Reclamos|
+|Actor Secundario| N/A. |
 |Precondiciones||
 |Paso||
 |1||
