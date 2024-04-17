@@ -674,7 +674,7 @@ Caso de Uso #1: Crear un reclamo de un cliente interno
 |Actor Primario | Encargado de Atención a Reclamos|
 |Actor Secundario| N/A |
 |Precondiciones||
-|Paso||
+|Paso | Acción | 
 |1||
 |2||
 |3||
@@ -688,7 +688,7 @@ Caso de Uso #2: Crear un reclamo de un cliente externo
 |Actor Primario | Encargado de Atención a Reclamos|
 |Actor Secundario| N/A |
 |Precondiciones||
-|Paso||
+|Paso | Acción | 
 |1||
 |2||
 |3||
@@ -702,7 +702,7 @@ Caso de Uso #3: Visualizar un reclamo
 |Actor Primario | Encargado de Atención a Reclamos|
 |Actor Secundario| N/A |
 |Precondiciones||
-|Paso||
+|Paso | Acción | 
 |1||
 |2||
 |3||
