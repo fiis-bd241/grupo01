@@ -1102,32 +1102,6 @@ Entidades Involucradas:
 
 #### Diccionario de datos:
 
-**Entidad**: Almacén
-
-Semántica: Local, cuyo propietario es San Fernando, dedicado a guardar bienes de la empresa.
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Cod_local        | CHAR       | 999999999   | Alfanuméricos    | ---     | ---         | Código de local que identifica al lugar                |
-| Cod_almacen      | CHAR       | 999999999   | Alfanuméricos    | ---     | ---         | Identificador del almacén específico                   |
-| Nombre_almacen   | CHAR       | X(64)       | Alfanuméricos    | ---     | ---         | Denominación del almacén                               |
-| Cod_almacenero   | CHAR       | 999999999   | Alfanuméricos    | ---     | ---         | Identificador de la persona encargada del almacén       |
-| Cantidad_sectores| INT        | 999         | >0               | ---     | ---         | Número de divisiones en las cuales se distribuye el local. |
-
-**Entidad**: CentroFrigorífico
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
 **Entidad**: Cliente
 
 Semántica:
@@ -1444,21 +1418,6 @@ Semántica:
 |          |            |         |                 |        |             |             |
 
 **Entidad**: ProgramacionReporte
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-
-**Entidad**: PuntoEntrega
 
 Semántica:
 
