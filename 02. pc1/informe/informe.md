@@ -1654,7 +1654,7 @@ Integrante: [Inocente Caro Miguel Anderson](../../01.%20integrantes/Miguel%20Ino
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=fToWdVgMKb4
 " target="_blank"><img src="http://img.youtube.com/vi/fToWdVgMKb4/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="30" /></a>
+alt="IMAGE ALT TEXT HERE" width="800" height="500" border="30" /></a>
 
 ### Módulo 2
 Integrante: [Campos Herrera Dennis](../../01.%20integrantes/Dennis%20Campos%20/Dennis%20Campos.md)
