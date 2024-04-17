@@ -86,7 +86,7 @@ Proceso de negocio: Elaboración de despacho. Elaboración propia.
 
 b. Diagrama TO-BE
 
-(AGREGAR IMAGEN)
+![Diagrama de flujo drawio (1)](https://github.com/fiis-bd241/grupo01/assets/164358065/3c68e0f5-7002-4343-95a2-fc82fea684a5)
 
 Proceso de negocio mejorado: Elaboración de despacho. Elaboración propia.
 | Secuencia | Actividad                  | Descripción                                                                   | Responsable          | Entrada                           | Salida                               |
