@@ -84,7 +84,7 @@ a. Diagrama AS-IS
 
 Proceso de negocio: Elaboración de despacho. Elaboración propia.
 
-Link del diagrama: https://app.diagrams.net/?src=about#G1dXQysSmCzSni56V_scq2cCQqn8lhpNzT#%7B%22pageId%22%3A%22prtHgNgQTEPvFCAcTncT%22%7D
+Link del diagrama: [https://app.diagrams.net/?src=about#G1dXQysSmCzSni56V_scq2cCQqn8lhpNzT#%7B%22pageId%22%3A%22prtHgNgQTEPvFCAcTncT%22%7D](https://app.diagrams.net/?src=about#G1nwVLNkUNbD_joILjk6pRH49kTC3cYcXy#%7B%22pageId%22%3A%22c4acf3e9-155e-7222-9cf6-157b1a14988f%22%7D)
 
 b. Diagrama TO-BE
 
@@ -195,6 +195,7 @@ Interacción con otros módulos:
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/7537e725-235a-413d-9370-229e327a56fc"></p>
 
+Link del diagrama: https://drive.google.com/file/d/1nwVLNkUNbD_joILjk6pRH49kTC3cYcXy/view?usp=sharing
 ## Requerimientos
 
 ### 1. Requerimientos del módulo de Pedidos
