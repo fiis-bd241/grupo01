@@ -1685,7 +1685,7 @@ A continuación, se muestra la grabación de la entrevista realizada a la ingeni
 A continuación, se muestra los links de los videos invididuales de cada módulo realizados por los integrantes.
 
 ### Módulo 1
-Integrante: [Inocente Caro Miguel Anderson](../02.%02%02pc1/../01.%02integrantes/Miguel%20Inocente/Miguel-Inocente.md)
+Integrante: [Inocente Caro Miguel Anderson](../../../01.%20integrantes/Miguel%20Inocente/Miguel-Inocente.md)
 
 (Link 1)
 
