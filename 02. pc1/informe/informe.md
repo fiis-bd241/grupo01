@@ -193,7 +193,7 @@ Diagrama de paquetes:
 
 ### 1. Requerimientos del módulo de Pedidos
 
-2.1. Requerimientos funcionales
+1.1. Requerimientos funcionales
 
 a. Usuarios
 - Administrador: Puede realizar todas las operaciones del módulo de pedidos.
@@ -257,7 +257,7 @@ Caso de Uso #4: Ver lista de pedidos.
 |3 | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
 |4 | El sistema SAP actualiza la lista de pedidos según los filtros y ordenamiento aplicados por el usuario. |
 
-2.2. Requerimientos de atributos de calidad.
+1.2. Requerimientos de atributos de calidad.
 
 1. Usabilidad:
 - El sistema debe ser intuitivo y fácil de usar para los almacenistas de cada departamento, minimizando el esfuerzo y el tiempo requerido para registrar y gestionar los pedidos.
@@ -279,7 +279,7 @@ Caso de Uso #4: Ver lista de pedidos.
 - El sistema debe implementar mecanismos de autenticación y autorización robustos, restringiendo el acceso solo a los usuarios autorizados.
 - El sistema debe garantizar la integridad y confidencialidad de la información de los pedidos, protegiendo los datos sensibles de los clientes y la empresa.
 
-2.3. Requerimientos de restricciones.
+1.3. Requerimientos de restricciones.
 
 1. Base de datos:
 - El sistema de pedidos se implementará utilizando el sistema de gestión de base de datos PostgreSQL.
