@@ -300,7 +300,6 @@ Caso de Uso #4: Ver lista de pedidos.
 - El frontend del sistema se desarrollará utilizando HTML, CSS, JavaScript y Bootstrap.
 
 ### 2. Requerimientos del módulo de Seguimiento
-### 2. Requerimientos del módulo de Seguimiento
 #### 2.1. Requerimientos funcionales
 
 a. Usuarios
