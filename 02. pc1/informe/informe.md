@@ -1689,7 +1689,7 @@ alt="Hola k ase" width="240" height="180" border="10" /></a>
 ### Módulo 3
 Integrante: [Alvarado Usucachi José Joaquín](../../01.%20integrantes/Joaquín%20Alvarado/Joaquín%20Alvarado.md)
 
-(Link 1)
+[![Almacén](https://github.com/fiis-bd241/grupo01/assets/130816094/014486c9-402b-4489-8824-227f871970d8)](https://www.youtube.com/watch?v=kWeuiXoDFiI)
 
 ### Módulo 4
 Integrante: [Espinoza Cerna Alex](../../01.%20integrantes/Alex%20Espinoza/alex.md)
