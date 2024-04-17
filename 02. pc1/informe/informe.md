@@ -1660,7 +1660,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 Integrante: [Campos Herrera Dennis](../../01.%20integrantes/Dennis%20Campos%20/Dennis%20Campos.md)
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=QgKg1K2R5Wc" target="_blank"><img src="http://img.youtube.com/vi/QgKg1K2R5Wc/0.jpg" 
-alt="Hola k ase" width="240" height="180" border="10" /></a>
+alt="Hola k ase" width="500" height="300" border="10" /></a>
 
 ### Módulo 3
 Integrante: [Alvarado Usucachi José Joaquín](../../01.%20integrantes/Joaquín%20Alvarado/Joaquín%20Alvarado.md)
