@@ -681,6 +681,8 @@ Caso de Uso #5: Registro de incidencias internas
 
 [Modelo Cheng en Draw.io](https://app.diagrams.net/#G1sYHbkonVotVIohr2sUkFBC17Pi2aDmhR#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D)
 
+###Diccionario de datos:
+
 ## Entrevista
 A continuación, se muestra la grabación de la entrevista realizada a la ingeniera Joselin Alexandra Torres Robles, supervisora del área de almacén de la planta Huaral de San Fernando.
 
