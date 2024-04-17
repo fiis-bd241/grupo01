@@ -391,107 +391,109 @@ a. Usuarios
 
 b. Casos de uso
 
-Caso de Uso #1: Registrar ingreso de productos
+Caso de Uso #1: Registrar picking
 | Código | R301 | 
 |----------|----------|
-|Objetivo | Registrar los productos que ingresan al almacén|
-|Descripción | El usuario registra los datos del producto, como código, descripción, cantidad, fecha de ingreso, ubicación en el almacén, etc.|
-|Actor Primario | Almacenero|
-|Actor Secundario|N/A |
-|Precondiciones|Productos disponibles para ser recibidos en almacén|
-|Paso|Acción|
-|1|El usuario selecciona la opción "Registrar ingreso de productos"|
-|2|Ingresa la información del producto: código, descripción, cantidad, fecha de ingreso, ubicación en el almacén, etc.|
-|3|Verifica los datos y confirma el registro|
-|4|El sistema actualiza el inventario con el nuevo ingreso|
+|Objetivo | Registrar el proceso de agrupamiento de ítems o stock de productos, materiales o materias primas en grupos |
+|Descripción | El usuario registra los ítems seleccionados indicando sus códigos|
+|Actor Primario | Almacenero |
+|Actor Secundario| N/A |
+|Precondiciones| Ítems disponibles en el almacén |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar picking"|
+|2|Ingresa los ítems para el picking|
+|3|Asigna los ítems seleccionados a un grupo|
+|4|Ingresa los datos de fecha y hora de inicio y fin del proceso|
+|5|Confirma el registro del picking|
+|6|El sistema registra la operación de picking y almacena los grupos (mercadería) con los ítems seleccionados|
 
-Caso de Uso #2: Consultar disponibilidad de productos
+Caso de Uso #2: Registrar precintado
 | Código | R302 | 
 |----------|----------|
-|Objetivo|Verificar la cantidad disponible de un producto específico en el almacén|
-|Descripción|El usuario busca un producto por código o descripción y puede ver la cantidad disponible en existencias|
-|Actor Primario|Técnico de Almacén|
-|Actor Secundario|Asistente Operativo|
-|Precondiciones|Productos registrados en el sistema|
-|Paso|Acción|	
-|1|El usuario selecciona la opción "Consultar disponibilidad de productos"|
-|2|Ingresa el código o descripción del producto a buscar|
-|3|El sistema muestra la información del producto, incluyendo la cantidad disponible en existencias|
-|4|El usuario puede imprimir o descargar el reporte de disponibilidad|
+|Objetivo | Registrar el proceso de embalaje y sellado de seguridad de los grupos de ítems previamente seleccionados en el picking |
+|Descripción | El usuario registra los grupos de ítems que han sido previamente seleccionados en el picking para el proceso de precintado |
+|Actor Primario | Almacenero |
+|Actor Secundario| N/A |
+|Precondiciones| Grupos de ítems seleccionados en el proceso de picking |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar precintado"|
+|2|Selecciona los grupos de ítems previamente seleccionados en el proceso de picking|
+|3|Registra los datos de fecha y hora de inicio y fin del proceso de embalaje y sellado de seguridad de los grupos de ítems, así como los códigos de precintado de cada grupo|
+|4|Confirma el registro del precintado|
+|5|El sistema registra la operación y registra el código de precinto de la mercadería|
 
-Caso de Uso #3: Realizar picking de pedidos
+Caso de Uso #3: Registrar paletizado
 | Código | R303 | 
 |----------|----------|
-|Objetivo|Seleccionar y retirar los productos del almacén para atender un pedido|
-|Descripción|El usuario verifica el pedido pendiente, ubica los productos en el almacén, retira las cantidades solicitadas y prepara el pedido para despacho|
-|Actor Primario|Almacenero|
-|Actor Secundario|Encargado de Almacén|
-|Precondiciones|Pedidos pendientes de atención|
-|Paso|Acción|
-|1|El usuario selecciona la opción "Realizar picking de pedidos"|
-|2|Visualiza los pedidos pendientes de atención|
-|3|Selecciona el pedido a procesar|
-|4|Ubica en el almacén los productos solicitados y retira las cantidades indicadas|
-|5|Registra el picking realizado en el sistema|
-|6|Prepara el pedido para despacho|
+|Objetivo | Registrar el proceso de paletizado de los grupos de ítems precintados |
+|Descripción | El usuario registra los grupos de ítems precintados que serán paletizados para su posterior carga |
+|Actor Primario | Almacenero |
+|Actor Secundario| N/A |
+|Precondiciones| Grupos de ítems precintados |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar paletizado"|
+|2|Selecciona los grupos de ítems precintados que serán paletizados|
+|3|Registra el proceso de paletizado de los grupos de ítems|
+|4|Confirma el registro del paletizado|
+|5|El sistema registra la operación|
 
-Caso de Uso #4: Registrar salida de productos
+Caso de Uso #4: Registrar carga
 | Código | R304 | 
 |----------|----------|
-|Objetivo|Registrar la salida de productos del almacén al momento del despacho|
-|Descripción|El usuario registra los datos del producto, cantidad, destino, fecha de salida y el personal a cargo de la entrega|
-|Actor Primario|Almacenero|
-|Actor Secundario|Encargado de Almacén|
-|Precondiciones|Productos preparados para despacho|
-|Paso|Acción|	
-|1|El usuario selecciona la opción "Registrar salida de productos"|
-|2|Ingresa los datos del producto, como código, descripción, cantidad, fecha de salida y destino|
-|3|Selecciona el personal a cargo de la entrega|
-|4|Verifica la información y confirma el registro|
-|5|El sistema actualiza el inventario con la salida del producto|
+|Objetivo | Registrar el proceso de carga de los grupos de ítems paletizados |
+|Descripción | El usuario registra los grupos de ítems paletizados que serán cargados en un vehículo para su posterior envío |
+|Actor Primario | Almacenero |
+|Actor Secundario| N/A |
+|Precondiciones| Grupos de ítems paletizados |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar carga"|
+|2|Selecciona los grupos de ítems paletizados que serán cargados|
+|3|Registra el proceso de carga de los grupos de ítems en el vehículo|
+|4|Confirma el registro de la carga|
+|5|El sistema registra la operación|
 
-Caso de Uso #5: Generar reporte de inventario
+Caso de Uso #5: Registrar guía de remisión
 | Código | R305 | 
 |----------|----------|
-|Objetivo|Obtener un reporte detallado del estado actual del inventario en el almacén|
-|Descripción|El usuario genera un reporte que muestra la cantidad, ubicación y demás información de los productos en el almacén|
-|Actor Primario|Supervisor de Almacén|
-|Actor Secundario|Asistente Operativo|
-|Precondiciones|Productos registrados en el sistema|
-|Paso|Acción|
-|1|El usuario selecciona la opción "Generar reporte de inventario"|
-|2|Selecciona los filtros y opciones de visualización deseados|
-|3|El sistema genera el reporte detallado del inventario actual|
-|4|El usuario puede visualizar, imprimir o descargar el reporte|
+|Objetivo | Registrar el proceso de envío de los grupos de ítems cargados |
+|Descripción | El usuario registra los datos del envío, incluyendo datos del transportista y vehículo, entre otros |
+|Actor Primario | Encargado de Almacén |
+|Actor Secundario| N/A |
+|Precondiciones| Grupos de ítems cargados en el vehículo |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar guía de remisión"|
+|2|Ingresa los datos del envío: código de guía de remisión, identificación del transportista y vehículo, el o los pedidos que se están atendiendo, la operación de carga, la ruta asignada y la fecha y hora de salida|
+|3|Confirma el registro del envío|
+|4|El sistema registra el inicio del traslado|
 
-Caso de Uso #6: Registrar productos próximos a vencer
+Caso de Uso #6: Registrar recepción
 | Código | R306 | 
 |----------|----------|
-|Objetivo|Identificar y registrar los productos con fechas de vencimiento cercanas|
-|Descripción|El usuario revisa las fechas de vencimiento de los productos y registra aquellos que están próximos a caducar para su seguimiento|
-|Actor Primario|Técnico de Almacén|
-|Actor Secundario|Encargado de Almacén|
-|Precondiciones|Productos con fecha de vencimiento registrados en el sistema|
-|Paso|Acción|
-|1|El usuario selecciona la opción "Registrar productos próximos a vencer"|
-|2|Revisa las fechas de vencimiento de los productos en el sistema|
-|3|Selecciona los productos que están próximos a caducar y registra la información|
-|4|El sistema guarda el registro de los productos próximos a vencer para su seguimiento|
+|Objetivo | Registrar el proceso de recepción de los grupos de ítems enviados |
+|Descripción | El usuario registra la fecha y hora de recepción de los grupos de ítems en el lugar de destino |
+|Actor Primario | Encargado de Almacén |
+|Actor Secundario| N/A |
+|Precondiciones| Guía de remisión |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar recepción"|
+|2|Ingresa la fecha y hora de recepción de los grupos de ítems, seleccionando la guía de remisión respectiva|
+|3|Confirma el registro de la recepción|
+|4|El sistema registra la finalización del traslado|
 
-Caso de Uso #7: Realizar reubicación de productos
+Caso de Uso #7: Registrar descarga
 | Código | R307 | 
 |----------|----------|
-|Objetivo|Modificar la ubicación de los productos en el almacén
-|Descripción|El usuario cambia la ubicación de los productos en el sistema, ya sea por optimización de espacios, reorganización o nuevos ingresos
-|Actor Primario|Asistente Operativo|
-|Actor Secundario|Encargado de Almacén|
-|Precondiciones|Productos registrados en el sistema|
-|Paso|Acción|	
-|1|El usuario selecciona la opción "Realizar reubicación de productos"|
-|2|Busca el producto que requiere ser reubicado|
-|3|Ingresa la nueva ubicación del producto en el almacén|
-|4|Verifica la información y confirma la reubicación|
-|5|El sistema actualiza la ubicación del producto en el inventario|
+|Objetivo | Registrar el proceso de descarga de los grupos de ítems recibidos |
+|Descripción | El usuario registra la fecha y hora de inicio y finalización de la descarga de los grupos de ítems en el lugar de destino |
+|Actor Primario | Encargado de Almacén |
+|Actor Secundario| Transportista |
+|Precondiciones| Grupos de ítems recibidos en el lugar de destino |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar descarga"|
+|2|Ingresa la fecha y hora de inicio de la descarga de los grupos de ítems|
+|3|Registra la fecha y hora de finalización de la descarga de los grupos de ítems|
+|4|Confirma el registro de la descarga|
+|5|El sistema actualiza el estado de los grupos de ítems como "descargados"|
 
 Para explicar de manera más sencilla la relación entre estos casos de uso y el modelado conceptual, se presenta a continuación un ejemplo de poblamiento de datos de las entidades ProductoStock, Mercancía y Operación
 
