@@ -631,21 +631,25 @@ Caso de Uso #5: Registro de incidencias internas
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/8682aa22-fa65-428b-80bf-8d341253fc94"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/6aef7713-0319-46e1-b543-0c244cbaddf1"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/428b2d2a-c75c-4e8b-910f-3a05e69d70d8"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/77bf2785-e6ea-47e2-a090-749c42d3b934"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/c7097a19-584b-4e04-92d3-8cb68bfa554d"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/fda9824a-c546-4d64-96c2-5584c177c168"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/0510fdec-f74a-4469-9e40-17ec3e5a9298"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/d604cddb-4f37-4e7b-b77b-dcc19b403b89"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/d3c699b6-9060-4e1f-8568-da774d10eba3"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/8a8cae18-726b-44be-b6c7-4667eecac03f"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/950b5a85-51c9-4749-a29b-2275f6bb717d"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/cd480806-9a03-4282-b8af-d0d6d471ce65"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/169df0b4-d650-4b10-baea-58c37ca83029"></p>
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/c4e68d67-1cb2-4645-9668-9678fb2e0e8f"></p>
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/4349f40c-fb58-4bda-ab29-63954880c1ec"></p>
 
 ### Módulo 6: Reclamos
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/6a54fabb-9fa0-49ae-951d-8ae66687e68b"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/3d50d3df-febb-4ee2-8b36-9422ff082f9b"></p>
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/a9f229d4-b4c1-42b0-ae0b-fca8a0976e45"></p>
 
