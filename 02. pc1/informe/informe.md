@@ -1383,16 +1383,15 @@ Semántica: Entidad que interactúan con la empresa San fernando.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-| Primer apellido | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Apellido paterno de la persona. |
-| Segundo apellido | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Apellido materno de la persona. |
-| Prenombre | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Nombre(s) de la persona. |
-| Teléfono | Atributo | Numérico | 9 dígitos | - | - | Número de teléfono a través del cual se puede contactar a la persona. |
-| Fecha de nacimiento | Atributo | Fecha | Formato DD/MM/AAAA | - | - | Fecha de nacimiento de la persona. |
-| Género | Atributo | Texto | "Masculino", "Femenino" | - | - | Género de la persona. |
-| Nacionalidad | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Nacionalidad de la persona. |
-| Estado civil | Atributo | Texto | "Soltero", "Casado", "Divorciado", "Viudo" | - | - | Estado civil de la persona. |
-| Dirección | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Dirección de residencia de la persona. |
-|Codigo contacto| CHAR | 9999999999 | 9 digitos | -- | -- | Identificador del contacto | 
+|codigo_Persona | CHAR | 9999999 | 9 digitos | - | - | Identificador unico de la Persona|
+| Primer apellido | CHAR | Texto | X(32) | - | - | Apellido paterno de la persona. |
+| Segundo apellido | CHAR | Texto | X(32) | - | - | Apellido materno de la persona. |
+| Prenombre | CHAR | Texto | X(32) | - | - | Nombre(s) de la persona. |
+| Género | CHAR | Texto | "Masculino" , "Femenino" | - | - | Género de la persona. |
+| Nacionalidad | CHAR | Texto | X(32) | - | - | Nacionalidad de la persona. |
+| Estado civil | CHAR | Texto | "Soltero", "Casado", "Divorciado", "Viudo" | - | - | Estado civil de la persona. |
+| Dirección | CHAR | Texto | X()32 | - | - | Dirección de residencia de la persona. |
+
 
 **Entidad:** ProductoCatalogo 
 
