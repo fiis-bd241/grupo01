@@ -933,24 +933,109 @@ Entidades Involucradas:
 
 ### Módulo 3: Almacén
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/1602f66f-2e61-4c04-ae2f-e76494108d00"></p>
+#### Pantalla Registro de Picking:
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/8c4020b9-35b8-409f-aca8-3eb6286ca21c"></p>
+- Requerimiento asociado: Caso de uso R301
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/74419c4b-d52a-406f-b5f6-5e766feb317b"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/55e471b0-dc53-4445-b891-d03e02f15d64"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/6766c399-2161-47ea-896a-2a205689ff42"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/659780d4-3122-4eec-83fd-1479494f1502"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/000c1c1d-b480-4d18-9ca5-985d8e4bbd72"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/e7f4c736-a0e8-4a97-838d-2749f04bdd6a"></p>
+- Imagen de la interfaz:
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/9c0caabb-f98a-4ce1-a778-86345d20d77a"></p>
 
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/e7f4c736-a0e8-4a97-838d-2749f04bdd6a"></p>
+
+- Entidades involucradas:
+  * Mercancía
+  * Stock
+  * ElementoCatálogo
+  * Fecha
+  * Empleado
+  * Operación
+
+#### Pantalla Registro de Precintado:
+
+- Requerimiento asociado: Caso de uso R302
+
+- Imagen de la interfaz:
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/000c1c1d-b480-4d18-9ca5-985d8e4bbd72"></p>
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/659780d4-3122-4eec-83fd-1479494f1502"></p>
+
+- Entidades involucradas:
+  * Mercancía
+  * Stock
+  * Fecha
+  * Empleado
+  * Operación
+
+#### Pantalla Registro de Paletizado:
+
+- Requerimiento asociado: Caso de uso R303
+
+- Imagen de la interfaz:
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/6766c399-2161-47ea-896a-2a205689ff42"></p>
+
+- Entidades involucradas:
+  * Fecha
+  * Empleado
+  * Operación
+
+#### Pantalla Registro de Carga:
+
+- Requerimiento asociado: Caso de uso R304
+
+- Imagen de la interfaz:
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/55e471b0-dc53-4445-b891-d03e02f15d64"></p>
+
+- Entidades involucradas:
+  * Fecha
+  * Empleado
+  * Operación
+
+#### Pantalla Registro de Guía de Remisión:
+
+- Requerimiento asociado: Caso de uso R305
+
+- Imagen de la interfaz:
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/5bcc34f0-55fd-4e55-9be6-473292731a76"></p>
+
+- Entidades involucradas:
+  * Operación
+  * Pedido
+  * Fecha
+  * Vehículo
+  * Transportista
+  * Ruta
+  * Empleado
+
+#### Pantalla Registro de Recepción:
+
+- Requerimiento asociado: Caso de uso R306
+
+- Imagen de la interfaz:
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/8c4020b9-35b8-409f-aca8-3eb6286ca21c"></p>
+
+- Entidades involucradas:
+  * Fecha
+  * Empleado
+  * Operación
+
+#### Pantalla Registro de Descarga:
+
+- Requerimiento asociado: Caso de uso R307
+
+- Imagen de la interfaz:
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/1602f66f-2e61-4c04-ae2f-e76494108d00"></p>
+
+- Entidades involucradas:
+  * Fecha
+  * Empleado
+  * Operación
 
 [Prototipo en Figma](https://www.figma.com/file/Lrq1F0qg06qLWHrVxUnk8p/Almac%C3%A9n?type=design&node-id=0%3A1&mode=design&t=tfzkqQTL0uNO9rXI-1)
 
