@@ -115,7 +115,6 @@ Interacción con otros módulos:
 - Según la información del módulo de seguimiento se actualiza el estado del pedido como pendiente, en proceso o completado. 
 - Registra la información necesaria para realizar un reporte de pedidos en el módulo de Reporte. 
 
-
 ### Modulo #2: Seguimiento
 
 Responsabilidades:  
@@ -164,7 +163,6 @@ Interacción con otros módulos:
 - Vínculo directo al módulo de seguimiento del envío en determinado tiempo durante el proceso de control.
 - Vínculo con el módulo de pedidos y el de reclamos para generar el registro de incidencias en caso lo verificado no coincida con la documentación.
 
-
 ### Modulo #5: Reportes 
 
 Responsabilidades: 
@@ -178,7 +176,6 @@ Interacción con otros módulos:
 
 - Requiere conexión con todos los demás módulos para recopilar, procesar y generar información a partir de sus datos.
 - Un botón en cada módulo puede generar resúmenes predefinidos de información diaria o la necesaria para tomar decisiones.
-
 
 ### Modulo #6: Reclamos
 
@@ -194,7 +191,7 @@ Interacción con otros módulos:
 - Conexión con el módulo de seguimiento y control para registros de incidencias.
 - Conexión con el módulo de pedidos para verificación de requerimientos y entregas. 
 
-Diagrama de paquetes:
+### Diagrama de paquetes
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/7537e725-235a-413d-9370-229e327a56fc"></p>
 
