@@ -661,10 +661,8 @@ Caso de Uso #5: Registro de incidencias internas
 #### 6.1. Requerimientos funcionales
 
 a. Usuarios
--
--
--
--
+
+- Encargado de Atención a Reclamos
 
 b. Casos de uso
 
