@@ -1560,17 +1560,27 @@ Semántica: Entidad que representa a los empleados de la empresa San Fernando qu
 
 **Entidad**: Traslado
 
-Semántica:
+Semántica: Entidad que representa los movimientos de mercancía realizados tanto dentro de la empresa San Fernando.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| Número de traslado | Atributo | Numérico | Entero positivo | - | - | Identificador único del traslado realizado. |
+| Tipo de traslado | Atributo | Texto | "Interno", "Externo" | - | - | Indica si el traslado se realizó dentro de la organización o con un proveedor externo. |
+| Fecha de inicio | Atributo | Fecha | Formato DD/MM/AAAA | - | Entidad Fecha | Fecha en la que se inició el traslado. |
+| Hora de inicio | Atributo | Hora | Formato HH:MM | - | Entidad Fecha | Hora en la que se inició el traslado. |
+| Fecha de entrega | Atributo | Fecha | Formato DD/MM/AAAA | - | Entidad Fecha | Fecha en la que se entregó la mercancía. |
+| Hora de entrega | Atributo | Hora | Formato HH:MM | - | Entidad Fecha | Hora en la que se entregó la mercancía. |
+| Estado del traslado | Atributo | Texto | "Programado", "En tránsito", "Entregado", "Cancelado" | - | - | Indica el estado actual del traslado. |
+| Distancia recorrida | Atributo | Numérico | Decimal positivo | Kilómetros | - | Distancia total recorrida durante el traslado. |
+| Observaciones | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Información adicional sobre el traslado. |
+| Transportista asignado | Atributo | Numérico | Entero positivo | - | Entidad Transportista | Número de empleado del transportista asignado al traslado. |
+| Incidencias registradas | Atributo | Numérico | Entero positivo | - | Entidad Incidencia | Número de incidencias registradas durante el traslado. |
+| Ruta seguida | Atributo | Numérico | Entero positivo | - | Entidad Ruta | Número de ruta que se siguió durante el traslado. |
+| Vehículo utilizado | Atributo | Numérico | Entero positivo | - | Entidad Vehículo | Número de vehículo utilizado para el traslado. |
+| Operación asociada | Atributo | Numérico | Entero positivo | - | Entidad Operación | Número de operación asociada al traslado. |
+| Pedido asociado | Atributo | Numérico | Entero positivo | - | Entidad Pedido | Número de pedido asociado al traslado. |
+
+
 
 **Entidad**: Ubicación
 
