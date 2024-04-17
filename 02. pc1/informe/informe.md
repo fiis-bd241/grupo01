@@ -1445,10 +1445,11 @@ Semántica:
 | nivel_urgencia       | CHAR | X(32) | Bajo, Medio, Alto  | -      | -   | Nivel de urgencia del reclamo, indicando la prioridad con la que debe ser atendido.|
 | estado               | CHAR| X(32)| Pendiente, En Proceso, Resuelto, Cerrado | -      | -    | Estado actual del reclamo.|
 | comentario           | CHAR| X(128) | -      | -      | -      | Comentario detallado sobre el reclamo, describiendo el problema o situación reportada.|
-| cod_representante    | CHAR| 999999999 | 9 dígitos    | -      | -    | Código del representante asignado al reclamo.|
-| cod_seguimiento      | CHAR | 999999999 | 9 dígitos   | -      | -    | Código de seguimiento del reclamo, si aplica.|
-| cod_pedido           | CHAR | 999999999 | 9 dígitos   | -      | -    | Código del pedido asociado al reclamo, si aplica.|
-| cod_fecha_incidente  | CHAR | 999999999 | 9 dígitos   | -      | -    | Código de la fecha en la que el cliente encontró el problema/incidente. Puede ser el código único de la fecha. |
+| cod_representante    | CHAR| 999999999 | 9 dígitos    | -      | -    | Código único del representante asignado al reclamo.|
+| cod_evidencia    | CHAR| 999999999 | 9 dígitos    | -      | -    | Código único de la evidencia de un reclamo.|
+| cod_seguimiento      | CHAR | 999999999 | 9 dígitos   | -      | -    | Código único de seguimiento del reclamo, si aplica.|
+| cod_pedido           | CHAR | 999999999 | 9 dígitos   | -      | -    | Código único del pedido asociado al reclamo, si aplica.|
+| cod_fecha_incidente  | CHAR | 999999999 | 9 dígitos   | -      | -    | Código único de la fecha en la que el cliente encontró el problema/incidente. Puede ser el código único de la fecha. |
 
 **Entidad**: Reporte
 Semántica:
@@ -1554,8 +1555,6 @@ Semántica: Entidad que representa los movimientos de mercancía realizados tant
 | Vehículo utilizado | Atributo | Numérico | Entero positivo | - | Entidad Vehículo | Número de vehículo utilizado para el traslado. |
 | Operación asociada | Atributo | Numérico | Entero positivo | - | Entidad Operación | Número de operación asociada al traslado. |
 | Pedido asociado | Atributo | Numérico | Entero positivo | - | Entidad Pedido | Número de pedido asociado al traslado. |
-
-
 
 **Entidad**: Ubicación
 
