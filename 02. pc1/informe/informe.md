@@ -999,24 +999,36 @@ Efectivamente, al tratar con la parte de logística de una empresa como San Fern
 
 
 ### Módulo 5: Reportes
+#### Pantalla Principal
+![reporte-1](https://github.com/fiis-bd241/grupo01/assets/161625149/611afe2d-e585-4362-b0ec-77458d10a393)
+![reporte-2](https://github.com/fiis-bd241/grupo01/assets/161625149/8804dc50-eff3-4ab0-906c-3fc0cad4d032)
+![reporte-3](https://github.com/fiis-bd241/grupo01/assets/161625149/9d7f02da-e60c-4688-ba0f-c65bcca96d94)
+![reporte-4](https://github.com/fiis-bd241/grupo01/assets/161625149/b30a5e5b-fd8a-452d-b498-66d18c6462a7)
+Entidades involucradas:
+- Local
+- Almacén
+- Fecha
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/8682aa22-fa65-428b-80bf-8d341253fc94"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/428b2d2a-c75c-4e8b-910f-3a05e69d70d8"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/c7097a19-584b-4e04-92d3-8cb68bfa554d"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/0510fdec-f74a-4469-9e40-17ec3e5a9298"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/d3c699b6-9060-4e1f-8568-da774d10eba3"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/950b5a85-51c9-4749-a29b-2275f6bb717d"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/169df0b4-d650-4b10-baea-58c37ca83029"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/c4e68d67-1cb2-4645-9668-9678fb2e0e8f"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/4349f40c-fb58-4bda-ab29-63954880c1ec"></p>
+#### Pantalla para Generar reporte
+![reporte-5](https://github.com/fiis-bd241/grupo01/assets/161625149/e7722d15-543b-450e-94d3-96f92eac99be)
+Entidades involucradas:
+- Empleado
+- Reporte
+- Fecha
+  
+#### Pantalla para Programar reporte
+![reporte-6](https://github.com/fiis-bd241/grupo01/assets/161625149/7419efe2-fd43-46e7-a8de-a84ffa8a36cb)
+Entidades involucradas:
+- Empleado
+- Programacion reporte
+- Fecha
+  
+#### Pantalla para Enviar reporte
+![reporte-7](https://github.com/fiis-bd241/grupo01/assets/161625149/b868a1b1-98b0-450b-93ac-6fd70dce3d31)
+Entidades involucradas:
+- Empleado
+- Envio reporte
+- Fecha
 
 ### Módulo 6: Reclamos
 
