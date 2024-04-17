@@ -20,6 +20,8 @@ Misión: Contribuir al bienestar de la humanidad, suministrando alimentos de con
 
 ## Organigrama
 
+![Sitemap](https://github.com/fiis-bd241/grupo01/assets/130238034/6b14a490-920e-4a05-9182-d5732f981497)
+
 ## Productos y Servicios
 
 Principales productos:
