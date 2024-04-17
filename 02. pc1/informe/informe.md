@@ -21,7 +21,6 @@
   6. Huevos
 - Principales servicios:
   1. Distribución y Logística: San Fernando provee servicios de distribución y logística para asegurar que sus productos lleguen frescos y a tiempo a los puntos de venta, incluyendo supermercados, tiendas minoristas, y restaurantes.
-- Descripción del proceso de negocio:
 
 ## Descripción del Proceso de Negocio
 
