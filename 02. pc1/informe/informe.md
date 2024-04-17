@@ -1,6 +1,6 @@
 # Primera práctica calificada - Informe
 
-## Presentación Grupal 01: Selección de Empresa y Proceso
+## Datos de la Empresa
 
 ### Parte 1
 
