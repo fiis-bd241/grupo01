@@ -1232,7 +1232,7 @@ Entidades Involucradas:
 
 **Entidad**: Cliente
 
-Semántica: 
+Semántica: Persona o entidad que utiliza productos o servicios de una empresa.
 
 | ATRIBUTO       | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                      |
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------|
@@ -1285,7 +1285,6 @@ Semántica: Representa los productos ofrecidos por sanfernando
 
 Semántica: Entidad que representa a los trabajadores de la empresa San fernando.
 
-
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
 |codigo Empleado| CHAR | 9999999 | 9 digitos | -  | -  | Identificador único del empleado dentro de la organización. Permite diferenciar a cada empleado de manera inequívoca. |
@@ -1313,18 +1312,18 @@ Semántica:
 
 **Entidad**: Fecha
 
-Semántica:
+Semántica: Momento específico en el tiempo.
 
 | ATRIBUTO    | NATURALEZA | FORMATO        | VALORES VÁLIDOS                         | UNIDAD   | DERIVADA DE | DESCRIPCIÓN                                                                                      |
 |-------------|------------|----------------|-----------------------------------------|----------|-------------|--------------------------------------------------------------------------------------------------|
-| cod_fecha   | CHAR     | Alfanumérico   | -                                       | -        | -           | Código único que identifica la fecha.                                                             |
-| tipo        | CHAR      | X(32)  | Laborable, No Laborable, Feriado        | -        | -           | Tipo de día, indicando si es laborable, no laborable o un feriado.                               |
-| segundo     | INT   | 99  | 0-59                                    | Segundos | -           | Segundos en la hora de la fecha.                                                                 |
-| minuto      | INT   | 99  | 0-59                                    | Minutos  | -           | Minutos en la hora de la fecha.                                                                  |
-| hora        | INT   | 99  | 0-23                                    | Horas    | -           | Hora del día en la fecha.                                                                       |
-| dia         | INT   | 99  | 1-31                                    | Día      | -           | Día del mes en la fecha.                                                                        |
-| mes         | INT   | 99  | 1-12                                    | Mes      | -           | Mes del año en la fecha.                                                                        |
-| año         | INT   | 9999       | Año calendario                          | Año      | -           | Año de la fecha.                                                                                |
+| cod_fecha   | CHAR  | Alfanumérico   | -      | -        | -  | Código único que identifica la fecha.|
+| tipo        | CHAR  | X(32)  | Laborable, No Laborable, Feriado  | -   | -   | Tipo de día, indicando si es laborable, no laborable o un feriado.|
+| segundo     | INT   | 99  | 0-59 | Segundos| -   | Segundos en la hora de la fecha.|
+| minuto      | INT   | 99  | 0-59| Minutos  | -   | Minutos en la hora de la fecha.|
+| hora        | INT   | 99  | 0-23 | Horas   | -   | Hora del día en la fecha.|
+| dia         | INT   | 99  | 1-31 |  Día    | -   | Día del mes en la fecha.|
+| mes         | INT   | 99  | 1-12 | Mes     | -   | Mes del año en la fecha.|
+| año         | INT   | 9999       | Año calendario       | Año      | -   | Año de la fecha.|
 
 **Entidad**: GPS
 
@@ -1334,11 +1333,11 @@ Semántica: Registro del momento en el tiempo y ubicación en el que estuvo un v
 |----------|------------|---------|-----------------|--------|-------------|-------------|
 | Cod_fecha      | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador de la fecha y hora específicas en las que el vehículo se encuentra en la ubicación |
 | Cod_vehículo   | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador del vehículo cuya ubicación se registra en determinado tiempo              |
-| Cod_ubicación  | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador de la ubicación que registra un vehículo en un instante                    |
+| Cod_ubicación  | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador de la ubicación que registra un vehículo en un instante |
 
 **Entidad**: Incidencia
 
-Semántica:
+Semántica: Problema, situación anormal o evento no planificado.
 
 | ATRIBUTO             | NATURALEZA | FORMATO      | VALORES VÁLIDOS                         | UNIDAD | DERIVADA DE      | DESCRIPCIÓN  |
 |----------------------|------------|--------------|-----------------------------------------|--------|------------------|---------------------------------------------------------------------------------------------------|
@@ -1539,7 +1538,7 @@ Semántica:
 
 **Entidad**: Reclamo
 
-Semántica:
+Semántica: Queja formal expresada por un cliente sobre un producto o servicio.
 
 | ATRIBUTO             | NATURALEZA | FORMATO      | VALORES VÁLIDOS                         | UNIDAD | DERIVADA DE      | DESCRIPCIÓN                                                                                            |
 |----------------------|------------|--------------|-----------------------------------------|--------|------------------|--------------------------------------------------------------------------------------------------------|
@@ -1555,6 +1554,7 @@ Semántica:
 | cod_fecha_incidente  | CHAR | 999999999 | 9 dígitos   | -      | -    | Código único de la fecha en la que el cliente encontró el problema/incidente. Puede ser el código único de la fecha. |
 
 **Entidad**: Reporte
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -1569,7 +1569,7 @@ Semántica:
 
 **Entidad**: Representante
 
-Semántica:
+Semántica: Persona que actúa en nombre de una empresa o entidad en particular.
 
 | ATRIBUTO        | NATURALEZA | FORMATO      | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
 |-----------------|------------|--------------|-----------------|--------|-------------|--------------------------------------------------------------------------------------------------|
@@ -1655,7 +1655,6 @@ Semántica: Entidad que representa los movimientos de mercancía realizados tant
 | codigo_operacion | CHAR | 9999999999 |  9 digitos | - | - | Identificador unico de la operacion asociada al traslado| 
 | codigo_pedido | CHAR | 99999999999 | 9 digitos | - | - | Identificador unico del pedido asociado al traslado |
 
-
 **Entidad**: Ubicación
 
 Semántica: Latitud y Longitud de un lugar geográfico
@@ -1690,7 +1689,6 @@ Los detalles de la reunión fueron registrados en la [acta](../entregables%20par
 ## Avance de Diagramas Entidad-Relación
 Se tomó como referencia el siguiente gráfico que identifica la relación de algunas variables de la empresa San Fernando:
 ![guía](../entregables%20parciales/entregable%203/imagenes/diagramas/mr.jpeg)
-
 
 Finalmente adjuntamos un link donde se ven los diagramas de cada una de las variables registradas hasta el momento:
 https://app.diagrams.net/#Wb!B6iW_HyZ9Uu006YT7wrOYtAgE85DSMBNgtvqP4jjpusfjQlxbKwHQbw161ArWf7P%2F01ZOJ7WU2RUCTY52DUKFEJ4FQ5DCEEUOK2#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D
