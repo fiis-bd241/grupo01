@@ -1397,17 +1397,22 @@ Semántica: Pedido realizado por un cliente interno
 
 **Entidad**: Persona
 
-Semántica:
+Semántica: Entidad que interactúan con la empresa San fernando.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| Primer apellido | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Apellido paterno de la persona. |
+| Segundo apellido | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Apellido materno de la persona. |
+| Prenombre | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Nombre(s) de la persona. |
+| DNI | Atributo | Numérico | 8 dígitos | - | - | Número de Documento Nacional de Identidad de la persona. |
+| Teléfono | Atributo | Numérico | 9 dígitos | - | - | Número de teléfono a través del cual se puede contactar a la persona. |
+| Correo electrónico | Atributo | Texto | Cadena de caracteres alfanuméricos siguiendo el patrón "nombre.apellido@dominio.com" | - | - | Dirección de correo electrónico de la persona. |
+| Fecha de nacimiento | Atributo | Fecha | Formato DD/MM/AAAA | - | - | Fecha de nacimiento de la persona. |
+| Género | Atributo | Texto | "Masculino", "Femenino" | - | - | Género de la persona. |
+| Nacionalidad | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Nacionalidad de la persona. |
+| Estado civil | Atributo | Texto | "Soltero", "Casado", "Divorciado", "Viudo" | - | - | Estado civil de la persona. |
+| Dirección | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Dirección de residencia de la persona. |
+| Ocupación | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Ocupación o profesión de la persona. |
 
 **Entidad:** ProductoCatalogo 
 
