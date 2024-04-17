@@ -54,7 +54,7 @@ Principales servicios:
 
 | Secuencia | Actividad                                          | Descripción         | Responsable           | Entrada                                | Salida                                 |
 | --------- | -------------------------------------------------- | ------------------- | --------------------- | -------------------------------------- | -------------------------------------- |
-| 1         |  Evaluacion de actividades                         | Se evalúa las necesidades de cada área interna para seguir con la operatividad de los procesos | Supervisor            | N/A                                    | Informe de evaluación de necesidades   |
+| 1         |  Evaluacion de actividades                         | Se evalúa las necesidades de cada área interna para seguir con la operatividad de los procesos | Supervisor            | Lista de Actividades                                    | Informe de evaluación de necesidades   |
 | 2         |  Elaboracion de requerimientos                     | Se crea una solicitud formal de las necesidades del área para la carga en el sistema SAP | Almacenero            | Informe de evaluación de necesidades   | Requerimientos elaborados              |
 | 3         |  Cargar requerimientos al WMS                      | Subida de requerimientos mediante el programa SAP con el requerimiento MRP | Asistente de almacén | Requerimientos elaborados              | Requerimientos cargados en el sistema  |
 | 4         |  Recepcion de solicitud de requerimientos          | El almacén se encarga de recibir y verificar las solicitudes del software SAP | Técnico de almacén   | Requerimientos cargados en el sistema  | Solicitudes de requerimientos verificadas |
