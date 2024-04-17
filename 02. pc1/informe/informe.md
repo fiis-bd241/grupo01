@@ -910,6 +910,8 @@ Entidades involucradas:
 
 #### Pantallas de Crear Reclamo de Cliente Externo
 
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/fe3f5dfc-a23b-4c96-b78a-02a1ab323225"></p>
+
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/7f5d7bf1-0108-4b2f-b6e5-35959e933b8c"></p>
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/8b1a6ff5-bbde-4ef0-a437-02a6e11f45a5"></p>
@@ -919,8 +921,6 @@ Entidades involucradas:
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/d912d7c6-32e3-4306-9c7a-a80bae940abc"></p>
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/55c4105c-40ca-4d80-b618-73b44102b51f"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/fe3f5dfc-a23b-4c96-b78a-02a1ab323225"></p>
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/1e57978b-2aba-4fa5-a26d-ac3a4375c357"></p>
 
