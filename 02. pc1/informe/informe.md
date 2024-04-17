@@ -1703,7 +1703,7 @@ Integrante: [Cruz Mamani Cristhian Samir](../../01.%20integrantes/Cristhian%20Cr
 ### Módulo 6
 Integrante: [Cárdenas Palacios Leonardo Gustavo](../../01.%20integrantes/Leonardo%20Cárdenas/Leonardo%20Cárdenas.md)
 
-(Link 1)
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=3Sji5_U5_JA" target="_blank"><img src="http://img.youtube.com/vi/3Sji5_U5_JA/0.jpg" alt="Awa de uwu" width="240" height="180" border="10" /></a>
 
 Los detalles de la reunión fueron registrados en la [acta](../entregables%20parciales/entregable%202/acta-entrevista-20240401.md) respectiva, así como también se elaboró una [transcripción](../entregables%20parciales/entregable%202/transcripcion-entrevista-20240401.md) de las preguntas y respuestas realizadas durante la entrevista, además se generó un [resumen](../entregables%20parciales/entregable%202/Resumen-transcripcion.md) donde se sintetiza los procesos más importantes con un cierto orden, con el fin de comprender mejor los procesos de San Fernando.
 
