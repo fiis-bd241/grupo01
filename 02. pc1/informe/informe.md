@@ -837,10 +837,10 @@ Por supuesto, aquí tienes un resumen de dos líneas para cada requerimiento de 
 - El diseño del modelo relacional de datos debe ser compatible con las características y funcionalidades de PostgreSQL.
 - El acceso a la base de datos desde el backend debe realizarse utilizando sentencias SQL nativas de PostgreSQL.
 
-### Prototipos
+## Prototipo
 ### Módulo 1: Pedidos
 
-## Pantalla para enviar los datos del usuario
+#### Pantalla para enviar los datos del usuario
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/069a79c8-4a00-48db-8e46-652a0ab06f8d"></p>
 Entidades:
 
@@ -850,7 +850,7 @@ Entidades:
 
 -Pedido
 
-## Pantalla para solicitar los productos
+#### Pantalla para solicitar los productos
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/821d9171-5559-4bca-a751-5f86b46dca10"></p>
 Entidades:
 
@@ -859,7 +859,7 @@ Entidades:
 -Operacion
 
 -Mercancia
-## Pantalla para ver la orden de pedido
+#### Pantalla para ver la orden de pedido
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/49dfc0e5-710d-490c-b201-58bd785044da"></p>
 
 Entidades:
@@ -867,7 +867,7 @@ Entidades:
 -Pedido
 
 -Orden de pedido
-## Pantalla para ver todos los pedidos realizados
+#### Pantalla para ver todos los pedidos realizados
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/6a3f5696-d896-48f3-bf29-00fba6369d3d"></p>
 
 Entidades:
@@ -920,19 +920,26 @@ Entidades Involucradas:
 
 ### Módulo 3: Almacén
 
-<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-1.png"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/1602f66f-2e61-4c04-ae2f-e76494108d00"></p>
 
-<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-2.png"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/8c4020b9-35b8-409f-aca8-3eb6286ca21c"></p>
 
-<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-3.png"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/74419c4b-d52a-406f-b5f6-5e766feb317b"></p>
 
-<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-4.png"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/55e471b0-dc53-4445-b891-d03e02f15d64"></p>
 
-<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-5.png"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/6766c399-2161-47ea-896a-2a205689ff42"></p>
 
-<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/almacen-6.png"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/659780d4-3122-4eec-83fd-1479494f1502"></p>
 
-[Prototipo en Figma](https://www.figma.com/file/nnoiQDwJ9WstLLZmVisdpw/Untitled?type=design&node-id=0-1&mode=design&t=ztZFDIkEuNp6ykcn-0)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/000c1c1d-b480-4d18-9ca5-985d8e4bbd72"></p>
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/e7f4c736-a0e8-4a97-838d-2749f04bdd6a"></p>
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130816094/9c0caabb-f98a-4ce1-a778-86345d20d77a"></p>
+
+
+[Prototipo en Figma](https://www.figma.com/file/Lrq1F0qg06qLWHrVxUnk8p/Almac%C3%A9n?type=design&node-id=0%3A1&mode=design&t=tfzkqQTL0uNO9rXI-1)
 
 ### Módulo 4: Control
 
