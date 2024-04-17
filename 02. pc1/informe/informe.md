@@ -1707,7 +1707,8 @@ alt="san fernando control" width="240" height="180" border="10" /></a>
 ### Módulo 5
 Integrante: [Cruz Mamani Cristhian Samir](../../01.%20integrantes/Cristhian%20Cruz/Cristhian%20Cruz.md)
 
-[![Hola0]([https://github.com/fiis-bd241/grupo01/assets/130238034/ff3458e7-57f3-42f0-8f22-06675b4c6723](https://github.com/fiis-bd241/grupo01/assets/161625149/2893f601-77f3-4b8f-b885-653577e12049))](https://www.youtube.com/watch?v=NrOYQeA2n-I)
+[![miniatura-reporte](https://github.com/fiis-bd241/grupo01/assets/161625149/29a79e7f-28f3-4f48-b41d-d8d7d9a766ba)
+](https://www.youtube.com/watch?v=NrOYQeA2n-I)
 
 ### Módulo 6
 Integrante: [Cárdenas Palacios Leonardo Gustavo](../../01.%20integrantes/Leonardo%20Cárdenas/Leonardo%20Cárdenas.md)
