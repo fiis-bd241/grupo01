@@ -1432,7 +1432,7 @@ Semántica: Representa a un producto terminado en la planta
 | Cod_productoCat    | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del producto catalogo.                                   |
 | Temperatura_maxima | FLOAT      | 99.99     | No nulo         | --     | --          | Máxima temperatura que resiste el producto terminado para preservarlo. |
 | Temperatura_mínima | FLOAT      | 99.99     | No nulo         | --     | --          | Mínima temperatura a la quede mantenerse el producto para preservarlo. |
-| Categoría          | CHAR       | X(64)     |                 | --     | --          | Indica a la categoria que pertenece para almacenarlo correctamente     |
+| Categoría          | CHAR       | X(64)     |       Pollo, Pavita, Cerdo, Huevo ...          | --     | --          | Indica a la categoria que pertenece para almacenarlo correctamente     |
 | Vida útil          | FLOAT      | 99        | x>0             | --     | --          | Máximo de días en el que el producto es consumible.                    |
 | Cod_elementoCat    | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador de la entidad elemento categoría                         |
 
