@@ -666,47 +666,37 @@ a. Usuarios
 
 b. Casos de uso
 
+Claro, aquí tienes la tabla completada:
+
 Caso de Uso #1: Crear un reclamo de un cliente interno
 | Código | R001 | 
 |----------|----------|
-|Objetivo | |
-|Descripción | |
+|Objetivo | Registrar un reclamo realizado por un cliente interno de la empresa. |
+|Descripción | Este caso de uso describe el proceso mediante el cual el Encargado de Atención a Reclamos registra un reclamo generado por un empleado interno de la empresa, relacionado con algún problema o incidencia. |
 |Actor Primario | Encargado de Atención a Reclamos|
 |Actor Secundario| N/A |
-|Precondiciones||
+|Precondiciones| El Encargado de Atención a Reclamos tiene acceso al sistema de registro de reclamos. |
 |Paso | Acción | 
-|1||
-|2||
-|3||
-|4||
 
 Caso de Uso #2: Crear un reclamo de un cliente externo
 | Código | R002 | 
 |----------|----------|
-|Objetivo | |
-|Descripción | |
+|Objetivo | Registrar un reclamo realizado por un cliente externo de la empresa. |
+|Descripción | Este caso de uso describe el proceso mediante el cual el Encargado de Atención a Reclamos registra un reclamo generado por un cliente externo de la empresa, relacionado con algún producto, servicio o atención recibida. |
 |Actor Primario | Encargado de Atención a Reclamos|
 |Actor Secundario| N/A |
-|Precondiciones||
+|Precondiciones| El Encargado de Atención a Reclamos tiene acceso al sistema de registro de reclamos. |
 |Paso | Acción | 
-|1||
-|2||
-|3||
-|4||
 
 Caso de Uso #3: Visualizar un reclamo
 | Código | R003 | 
 |----------|----------|
-|Objetivo | |
-|Descripción | |
+|Objetivo | Visualizar la información detallada de un reclamo registrado en el sistema. |
+|Descripción | Este caso de uso describe el proceso mediante el cual el Encargado de Atención a Reclamos puede acceder y visualizar todos los detalles de un reclamo específico registrado en el sistema, incluyendo la descripción, estado, fecha de registro, y acciones tomadas. |
 |Actor Primario | Encargado de Atención a Reclamos|
 |Actor Secundario| N/A |
-|Precondiciones||
+|Precondiciones| El Encargado de Atención a Reclamos tiene acceso al sistema de registro de reclamos. |
 |Paso | Acción | 
-|1||
-|2||
-|3||
-|4||
 
 #### 3.2. Requerimientos de atributos de calidad
 
