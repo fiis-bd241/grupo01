@@ -1503,17 +1503,16 @@ Semántica: Representa a un producto terminado en la planta
 
 **Entidad**: ProductoStock
 
-Semántica:
+Semántica: Se refiere a su función en representar la cantidad de un producto específico disponible en el inventario de una empresa en un momento dado.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+|ID_Producto_Stock |   CHAR         |  999999    |    -    |    -    |    -         |  Identificador único del registro de producto en stock |
+| Producto_ID      |  CHAR        |   99999      |    -   |    -    |   producto    |  Identificador del producto asociado al stock |
+|  Cantidad        |   INT        |    >=0    |   unidades |   -     |     -        |  Cantidad del producto disponible en el stock  |
+| Fecha_Ingreso      |   DATE         |   YYYY-MM-DD      |     -            |   -     |   -       |  Fecha de ingreso del producto al stock |
+| Fecha_Vencimiento   | DATE        |  YYYY-MM-DD       |      -         |    -    |     -        |   Fecha de vencimiento del producto en stock     |
+
 
 **Entidad:** ProgramacionReporte 
 
