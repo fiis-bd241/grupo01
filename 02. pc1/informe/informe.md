@@ -1603,17 +1603,13 @@ Semántica: Permitir el seguimiento y la gestión de casos, incidencias o evento
 
 **Entidad**: Stock
 
-Semántica:
+Semántica: Se refiere a la representación de los productos físicos disponibles en el inventario de una empresa en un momento dado
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| Codigo_Stock       |    CHAR        |   9999999      |     -            |  -      |   -          | Código único de identificación del registro de stock |
+|    N° Lote      |   INT         | 999        |     >=0      |    -    |     -        |   Número de lote asociado al stock     
+
 
 **Entidad**: Transportista
 
