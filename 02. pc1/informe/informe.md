@@ -228,7 +228,7 @@ Caso de Uso #2: Agregar productos al pedido.
 |Objetivo | Permitir al almacenista (usuario) agregar los productos solicitados al pedido.|
 |Descripción | Después de ingresar la información del usuario (Almacenista) en el formulario de registro de pedido, el usuario puede agregar los productos solicitados a través de una tabla. | 
 |Actor Primario | Almacenista departamental |
-|Actor Secundario | N/A. |
+|Actor Secundario | N/A |
 |Precondiciones | El usuario debe haber completado el formulario de registro de pedido. |
 |Paso | Acción |
 |1 | Después de ingresar los datos del usuario y pedido, el usuario selecciona la opción para agregar productos.|
@@ -244,7 +244,7 @@ Caso de Uso #3: Ver detalle pedido.
 |Objetivo | | 	Permitir a los almacenistas de cada departamento (usuarios) consultar los detalles de un pedido específico. |
 |Descripción | Despúes de completar todos los productos solicitados y el sistema muestra la información detallada, incluyendo los datos del usuario, los productos solicitados y sus detalles. |
 |Actor Primario | Almacenista de cada departamento. |
-|Actor Secundario | N/A. |
+|Actor Secundario |N/A |
 |Precondiciones | El usuario debio completar la tabla de los productos solicitados. |
 |Paso | Acción |
 |1 | Después de agregar los productos al pedido, el usuario selecciona la opción para ver el detalle del pedido. |
@@ -257,7 +257,7 @@ Caso de Uso #4: Ver lista de pedidos.
 |Objetivo | | Permitir a los almacenista (usuarios) consultar la lista de todos los pedidos registrados.
 |Descripción | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
 |Actor Primario | Almacenista de cada departamento. |
-|Actor Secundario | N/A. |
+|Actor Secundario | N/A |
 |Precondiciones | El usuario debe estar registrado en el sistema SAP. |
 |Paso | Acción |
 |1 | El usuario selecciona la opción para ver la lista de pedidos. |
@@ -397,7 +397,7 @@ Caso de Uso #1: Registrar ingreso de productos
 |Objetivo | Registrar los productos que ingresan al almacén|
 |Descripción | El usuario registra los datos del producto, como código, descripción, cantidad, fecha de ingreso, ubicación en el almacén, etc.|
 |Actor Primario | Almacenero|
-|Actor Secundario|-|
+|Actor Secundario|N/A |
 |Precondiciones|Productos disponibles para ser recibidos en almacén|
 |Paso|Acción|
 |1|El usuario selecciona la opción "Registrar ingreso de productos"|
@@ -483,8 +483,8 @@ Caso de Uso #7: Realizar reubicación de productos
 |----------|----------|
 |Objetivo|Modificar la ubicación de los productos en el almacén
 |Descripción|El usuario cambia la ubicación de los productos en el sistema, ya sea por optimización de espacios, reorganización o nuevos ingresos
-|Actor Primario|Asistente Operativo
-|Actor Secundario|Encargado de Almacén
+|Actor Primario|Asistente Operativo|
+|Actor Secundario|Encargado de Almacén|
 |Precondiciones|Productos registrados en el sistema|
 |Paso|Acción|	
 |1|El usuario selecciona la opción "Realizar reubicación de productos"|
@@ -582,7 +582,7 @@ Caso de Uso #3:  Registro de disponibilidad de conductores
 |Objetivo |Asignarle el traslado de un determinado pedido|
 |Descripción | El usuario verifica en base a los datos del conductor como nombre completo, id conductor,fecha de contratación, número de licencia, fecha de vencimiento de licencia, fecha y hora de última actividad, para registrar su disponibilidad y poder asignarle un pedido. |
 |Actor Primario | Transportista|
-|Actor Secundario||
+|Actor Secundario|N/A |
 |Precondiciones|Registro de conductores en sistema|
 |Paso|Acción|
 |1|El usuario selecciona la opción "Transporte" y luego le da a segunda opción "Conductor"|
@@ -597,7 +597,7 @@ Caso de Uso #4: Registro de disponibilidad de vehículos
 |Objetivo |Asignar a un conductor como medio de traslado del pedido|
 |Descripción | El usuario verifica en base a los datos del vehículo como número de placa, modelo,año de fabricación, capacidad de carga, fecha de último mantenimiento, fecha y hora de última de actividad, para registrar su disponibilidad y poder asignarle como medio de traslado de un pedido. |
 |Actor Primario | Transportista|
-|Actor Secundario||
+|Actor Secundario|N/A |
 |Precondiciones|Registro de vehículos en sistema|
 |Paso|Acción|
 |1|El usuario selecciona la opción "Transporte" y le da a segunda opción "Vehículo"|
@@ -672,7 +672,7 @@ Caso de Uso #1: Crear un reclamo de un cliente interno
 |Objetivo | |
 |Descripción | |
 |Actor Primario | Encargado de Atención a Reclamos|
-|Actor Secundario| -|
+|Actor Secundario| N/A |
 |Precondiciones||
 |Paso||
 |1||
@@ -685,8 +685,8 @@ Caso de Uso #2: Crear un reclamo de un cliente externo
 |----------|----------|
 |Objetivo | |
 |Descripción | |
-|Actor Primario | |
-|Actor Secundario||
+|Actor Primario | Encargado de Atención a Reclamos|
+|Actor Secundario| N/A |
 |Precondiciones||
 |Paso||
 |1||
@@ -699,8 +699,8 @@ Caso de Uso #3: Visualizar un reclamo
 |----------|----------|
 |Objetivo | |
 |Descripción | |
-|Actor Primario | |
-|Actor Secundario||
+|Actor Primario | Encargado de Atención a Reclamos|
+|Actor Secundario| N/A |
 |Precondiciones||
 |Paso||
 |1||
