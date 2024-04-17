@@ -497,6 +497,39 @@ Caso de Uso #5: Registro de incidencias internas
 |3|Verifica los datos y confirma el registro|
 |4|El sistema actualiza el registro con el nuevo ingreso|
 
+#### 3.2. Requerimientos de atributos de calidad
+
+1. Verificación de procesos sobre pedido de abastecimiento:
+- Exactitud en la Recepción de Pedidos de Insumos
+- Cumplimiento de Especificaciones de Insumos (como calidad, cantidad, fecha de vencimiento)
+- Gestión Eficiente de Inventarios en el Almacén General
+
+2. Verificación de procesos sobre pedido de venta:
+- Precisión en el Picking de Productos para el Pedido
+- Correcto Precintado de Productos para su Seguridad
+- Eficiencia en el Paletizado y Carga de Productos para la Entrega
+- Cumplimiento de Plazos de Entrega al Cliente
+  
+3. Registro de disponibilidad de conductores:
+- Actualización en Tiempo Real de la Disponibilidad de Conductores
+- Asignación Equitativa y Eficiente de Conductores a Tareas y Rutas
+- Seguimiento de Horarios de Trabajo y Descanso de Conductores
+  
+4. Registro de disponibilidad de vehículos:
+- Mantenimiento Preventivo de la Flota de Vehículos
+- Registro de Kilometraje y Estado de los Vehículos
+- Disponibilidad de Vehículos adecuados para las Tareas y Rutas planificadas
+
+5. Registro de incidencias internas:
+- Reporte Inmediato y Preciso de Incidencias en Procesos Internos 
+- Seguimiento de Acciones Correctivas y Preventivas para Resolver Incidencias
+- Análisis de Causa Raíz de las Incidencias para evitar su recurrencia
+
+
+#### 3.3. Restricciones
+- El diseño del modelo relacional de datos debe ser compatible con las características y funcionalidades de PostgreSQL.
+- El acceso a la base de datos desde el backend debe realizarse utilizando sentencias SQL nativas de PostgreSQL.
+
 
 ### 5. Requerimientos del módulo de Reportes
 
