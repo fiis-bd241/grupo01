@@ -1244,32 +1244,19 @@ Semántica: Persona o entidad que utiliza productos o servicios de una empresa.
 | cod_representante | CHAR     | 999999999 | 9 dígitos      | -      | -      | Código único que identifica al representante |
 
 **Entidad**: ClienteInterno
+Semántica: Representa un área interna de la empresa San Fernando, que puede ser un departamento, una sección o cualquier otra subdivisión dentro de la organización.
 
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| NombreÁrea | CHAR | X(255) | NOT NULL | - | - | Nombre del área interna de la empresa |
 
 **Entidad**: ClienteExterno
+Semántica: Representa a una empresa externa que interactúa con la empresa San Fernando como cliente.
 
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| NombreEmpresa | CHAR | X(255) | NOT NULL | - | - | Nombre de la empresa cliente |
+| Sector | CHAR | X(255) | - | - | - | Sector de actividad de la empresa cliente |
 
 **Entidad:** ElementoCatálogo
 
@@ -1360,62 +1347,36 @@ Semántica: Lugar físico que cuenta con una dirección legal registrada.
 | Numero         | INT        | 9999        | >0                      | ---              | ---         | Identificador numérico de domicilio                                       |
 | Cod_ubicacion  | CHAR       | 999999999   | Alfanumérico            | ---              | ---         | Identificador de la longitud y latitud exactas del local                 |
 
-**Entidad**: MaterialCatalágo
+**Entidad**: MaterialCatálogo
+Semántica: Describe los diferentes tipos de materiales que pueden ser gestionados en el sistema logístico de San Fernando, agrupados por segmentos.
 
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| Segmento | CHAR | X(255) | "Materiales peligrosos", "Suministros y repuestos", "Insumos y etiquetas" | - | - | Segmento al que pertenece el material en el catálogo |
 
 **Entidad**: MaterialStock
+Semántica: Representa las existencias de materiales en el almacén de San Fernando.
 
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| IDMaterialCatálogo | INT | 999999 | ID válido de MaterialCatálogo | - | - | Identificador del material en el catálogo |
 
 **Entidad**: MateriaPrimaCatálogo
+Semántica: Describe las diferentes materias primas utilizadas en la producción de productos derivados del pollo por parte de San Fernando.
 
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| TemperaturaMáxima | INT | 999 | - | Grados Celsius | - | Temperatura máxima permitida para la materia prima |
+| TemperaturaMínima | INT | 999 | - | Grados Celsius | - | Temperatura mínima permitida para la materia prima |
+| Categoría | CHAR | X(255) | - | - | - | Categoría a la que pertenece la materia prima |
+| VidaÚtil | INT | 999 | - | Días | - | Vida útil de la materia prima |
 
 **Entidad**: MateriaPrimaStock
+Semántica: Representa las existencias de materias primas en el almacén de San Fernando.
 
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
+| IDMateriaPrimaCatálogo | INT | 999999 | ID válido de MateriaPrimaCatálogo | - | - | Identificador de la materia prima en el catálogo |
 
 **Entidad**: Mercancía
 
