@@ -185,6 +185,7 @@ Interacción con otros módulos:
 - Conexión con el módulo de seguimiento y control para registros de incidencias.
 - Conexión con el módulo de pedidos para verificación de requerimientos y entregas. 
 
+![DIAGRAMA DE PAQUETES](https://github.com/fiis-bd241/grupo01/assets/161625149/7537e725-235a-413d-9370-229e327a56fc)
 
 ## Requerimientos
 
