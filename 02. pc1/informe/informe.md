@@ -136,18 +136,19 @@ Interacción con otros módulos:
 
 Responsabilidades: 
 
-- Registrar los ingresos y salidas del almacén de la planta Huaral, con información de los productos y las cantidades respectivas, empleado que registró el movimiento de inventario, así como la fecha y hora del movimiento. 
-- Permitir tener un registro de la ubicación de los productos. 
-- Registrar la información referente al picking, precintado y carga de productos. 
-- Mantener un control de los productos próximos a caducar y de existencias bajas. 
-- Confirmación inmediata de pedidos y seguimiento del estado dentro del almacén. 
-- *Slotting* o colocación de la mercancía y reorganización. 
+- Gestionar el proceso de preparación de pedidos.
+- Supervisar el proceso de embalaje y sellado de seguridad.
+- Coordinar el paletizado de los productos.
+- Encargarse del proceso de carga de los pedidos en los vehículos.
+- Administrar la generación y registro de guías de remisión.
+- Coordinar la recepción de los envíos en el lugar de destino.
+- Gestionar el proceso de descarga de los envíos recibidos.
 
-Interacción con otros módulos: 
+Interacción con otros módulos:
 
-- Realizar un pedido a almacén (módulo de Pedido) en caso de existencias bajas. 
-- Brindar la información necesaria al módulo de Reporte para generar un reporte de los productos existentes en almacén. 
-
+- Brinda la información necesaria al módulo de Control sobre un traslado de mercancía para el registro de una posible incidencia.
+- Atiende los pedidos previamente generados por el módulo de Pedidos por medio de traslados de mercancía.
+- Mediante el ingreso de información sobre la salida e ingreso de mercancías hace posible que el módulo de Seguimiento realice el seguimiento respectivo en cada ubicación.
 
 ### Modulo #4: Control
 
