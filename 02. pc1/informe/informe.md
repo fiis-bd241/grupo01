@@ -1629,14 +1629,13 @@ Semántica: Entidad que representa a los empleados de la empresa San Fernando qu
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-| Número de empleado | Atributo | Numérico | Entero positivo | - | Entidad Empleado | Identificador único del transportista dentro de la organización. |
-| Fecha de última actividad | Atributo | Fecha | Formato DD/MM/AAAA | - | - | Fecha en la que el transportista realizó su última actividad. |
-| Estado | Atributo | Texto | "Activo", "Inactivo" | - | - | Indica si el transportista se encuentra activo o inactivo en este momento. |
-| Número de licencia | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Número de la licencia de conducir del transportista. |
-| Tipo de licencia | Atributo | Texto | "Categoría A", "Categoría B", "Categoría C", etc. | - | - | Tipo de licencia de conducir que posee el transportista. |
-| Fecha de vencimiento de licencia | Atributo | Fecha | Formato DD/MM/AAAA | - | - | Fecha en la que vence la licencia de conducir del transportista. |
-| Hora de la última actividad | Atributo | Hora | Formato HH:MM | - | - | Hora en la que el transportista realizó su última actividad. |
-| Traslados realizados | Atributo | Numérico | Entero positivo | - | Entidad Traslado | Número de traslados que ha realizado el transportista. |
+| codigo_transportista | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del transportista dentro de la organización. |
+| codifo_Fecha_última_actividad | CHAR | 999999999 | 9 digitos | - | - | Identificador unico de la fecha en la que el transportista realizó su última actividad. |
+| codigo_Empleado| CHAR | 99999999 | 9 digitos | - | - | Identificador unico del empleado en la organización | 
+| Estado | CHAR | Texto | "Activo", "Inactivo" | - | - | Indica si el transportista se encuentra activo o inactivo en este momento. |
+| Número de licencia | CHAR | Texto | X(32) | - | - | Número de la licencia de conducir del transportista. |
+| Tipo de licencia | CHAR | Texto | "Categoría A", "Categoría B", "Categoría C", etc. | - | - | Tipo de licencia de conducir que posee el transportista. |
+| codigo_Traslado | CHAR | 9999999999 | 9 digitos | - | - | Identificador unico de traslado que ha realizado el transportista. |
 
 **Entidad**: Traslado
 
