@@ -1548,17 +1548,18 @@ Semántica:
 
 **Entidad**: Transportista
 
-Semántica:
+Semántica: Entidad que representa a los empleados de la empresa San Fernando que se encargan de realizar los traslados de mercancía.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| Número de empleado | Atributo | Numérico | Entero positivo | - | Entidad Empleado | Identificador único del transportista dentro de la organización. |
+| Fecha de última actividad | Atributo | Fecha | Formato DD/MM/AAAA | - | - | Fecha en la que el transportista realizó su última actividad. |
+| Estado | Atributo | Texto | "Activo", "Inactivo" | - | - | Indica si el transportista se encuentra activo o inactivo en este momento. |
+| Número de licencia | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Número de la licencia de conducir del transportista. |
+| Tipo de licencia | Atributo | Texto | "Categoría A", "Categoría B", "Categoría C", etc. | - | - | Tipo de licencia de conducir que posee el transportista. |
+| Fecha de vencimiento de licencia | Atributo | Fecha | Formato DD/MM/AAAA | - | - | Fecha en la que vence la licencia de conducir del transportista. |
+| Hora de la última actividad | Atributo | Hora | Formato HH:MM | - | - | Hora en la que el transportista realizó su última actividad. |
+| Traslados realizados | Atributo | Numérico | Entero positivo | - | Entidad Traslado | Número de traslados que ha realizado el transportista. |
 
 **Entidad**: Traslado
 
