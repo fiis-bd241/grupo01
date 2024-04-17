@@ -700,6 +700,16 @@ Caso de Uso #3: Visualizar un reclamo
 
 #### 3.2. Requerimientos de atributos de calidad
 
+Por supuesto, aquí tienes un resumen de dos líneas para cada requerimiento de calidad:
+
+- Seguridad: Debe tener un acceso seguro con autenticación robusta y control de acceso por rol. Además una protección de datos según regulaciones y registro detallado de actividades para privacidad y trazabilidad.
+
+- Confiabilidad: Debe tener una alta disponibilidad con mínimos tiempos de inactividad. Contar con un sistema de emergencia de resplado de datos.
+
+- Usabilidad: Debe tener una interfaz intuitiva para tareas eficientes y experiencia amigable, con guías integradas y ayuda contextual para navegación fluida.
+  
+- Eficiencia: Debe ofrecer respuestas rápidas con automatización de tareas y uso optimizado de recursos del sistema. Escalabilidad para manejar volúmenes crecientes de reclamos sin comprometer el rendimiento.
+
 #### 3.3. Restricciones
 - El diseño del modelo relacional de datos debe ser compatible con las características y funcionalidades de PostgreSQL.
 - El acceso a la base de datos desde el backend debe realizarse utilizando sentencias SQL nativas de PostgreSQL.
@@ -744,7 +754,6 @@ Este módulo interactúa con las entidades Transportista y Vehículo puesto que 
 Esta pantalla, al igual que la anterior, es accesible desde la pantalla principal y la de Pedidos en progreso, aunque está restringida a ciertos usuarios. Su función es mostrar los pedidos de un traslado en particular que aún no han sido entregados, esto le permite a un supervisor verificar los pedidos que faltan entregar y al transportista a registrar cuando realiza una entrega, para eso se genera un botón con el vínculo al modulo de control para verificar el proceso de entrega. Una vez culminado el proceso en ese otro modulo el sistema se actualizará y generará una notificación para los usuarios asignados.
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/d04fc44c-ef3b-4682-9c31-7912a648c48e"></p>
 Este módulo está relacionado a la entidad pedidos y dirección.
-
 
 [Prototipo en Figma](https://www.figma.com/file/Jfo2z2Mh3c5yoxamTw56gg/Seguimiento?type=design&node-id=0%3A1&mode=design&t=wmoz54XJ5USPhnU3-1)
 
