@@ -157,6 +157,8 @@ Interacción con otros módulos:
 
 ### 1. Requerimientos del módulo de Pedidos
 
+2.1. Requerimientos funcionales
+
 a. Usuarios
 - Administrador: Puede realizar todas las operaciones del módulo de pedidos.
 - Usuario (Almacenista de cada departamento) de Planta Huaral: Puede registrar los pedidos al almacén general.
@@ -219,6 +221,39 @@ Caso de Uso #4: Ver lista de pedidos.
 |3 | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
 |4 | El sistema SAP actualiza la lista de pedidos según los filtros y ordenamiento aplicados por el usuario. |
 
+2.2. Requerimientos de atributos de calidad.
+
+1. Usabilidad:
+- El sistema debe ser intuitivo y fácil de usar para los almacenistas de cada departamento, minimizando el esfuerzo y el tiempo requerido para registrar y gestionar los pedidos.
+- El sistema debe proporcionar una interfaz de usuario clara y coherente, con un diseño responsivo y adaptable a diferentes dispositivos.
+
+2. Fiabilidad:
+- El sistema debe ser confiable y consistente en el registro y procesamiento de los pedidos, evitando errores o pérdida de información.
+- El sistema debe tener un mecanismo de recuperación ante fallas, permitiendo a los usuarios continuar con sus tareas en caso de interrupciones.
+
+3. Eficiencia:
+- El sistema debe ser lo suficientemente rápido y receptivo al procesar las solicitudes de los usuarios, proporcionando una experiencia fluida y sin demoras.
+- El sistema debe optimizar el uso de recursos (CPU, memoria, almacenamiento) para garantizar un rendimiento adecuado, especialmente en momentos de alta carga de trabajo.
+
+4. Mantenibilidad:
+- El sistema debe ser fácil de mantener y actualizar, con una arquitectura modular y bien documentada que facilite la incorporación de nuevas funcionalidades o la corrección de problemas.
+- El sistema debe contar con herramientas y procesos de monitoreo y registro de eventos que permitan identificar y solucionar problemas de manera oportuna.
+
+5. Seguridad:
+- El sistema debe implementar mecanismos de autenticación y autorización robustos, restringiendo el acceso solo a los usuarios autorizados.
+- El sistema debe garantizar la integridad y confidencialidad de la información de los pedidos, protegiendo los datos sensibles de los clientes y la empresa.
+
+2.3. Requerimientos de restricciones.
+
+1. Base de datos:
+- El sistema de pedidos se implementará utilizando el sistema de gestión de base de datos PostgreSQL.
+
+2. Tecnologías de backend:
+- El backend del sistema se desarrollará utilizando el lenguaje de programación Java.
+- Se empleará el framework Angular, Node y Express para el desarrollo del backend.
+
+3. Tecnologías de frontend:
+- El frontend del sistema se desarrollará utilizando HTML, CSS, JavaScript y Bootstrap.
 
 ### 2. Requerimientos del módulo de Seguimiento
 
