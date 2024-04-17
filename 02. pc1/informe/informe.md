@@ -1681,11 +1681,11 @@ A continuación, se muestra la grabación de la entrevista realizada a la ingeni
 
 [![Entrevista](../entregables%20parciales/entregable%202/imagenes/video_preview.png)](http://www.youtube.com/watch?v=DPxvZC3R6Ws "Entrevista a Joselin Torres")
 
-## Entrevista
+## Videos individuales
 A continuación, se muestra los links de los videos invididuales de cada módulo realizados por los integrantes.
 
 ### Módulo 1
-Integrante: [Inocente Caro Miguel Anderson](Miguel%20Inocente/Miguel-Inocente.md)
+Integrante: [Inocente Caro Miguel Anderson](../02.%02%02pc1/../01.%02integrantes/Miguel%20Inocente/Miguel-Inocente.md)
 
 (Link 1)
 
