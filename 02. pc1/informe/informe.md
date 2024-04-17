@@ -406,8 +406,8 @@ Caso de Uso #1: Registrar picking
 |----------|----------|
 |Objetivo | Registrar el proceso de agrupamiento de ítems o stock de productos, materiales o materias primas en grupos |
 |Descripción | El usuario registra los ítems seleccionados indicando sus códigos|
-|Actor Primario | Almacenero |
-|Actor Secundario| N/A |
+|Actor Primario | Gestor de compras |
+|Actor Secundario| Supervisor de almacén |
 |Precondiciones| Ítems disponibles en el almacén |
 |Paso| Acción |
 |1|El usuario selecciona la opción "Registrar picking"|
@@ -423,7 +423,7 @@ Caso de Uso #2: Registrar precintado
 |Objetivo | Registrar el proceso de embalaje y sellado de seguridad de los grupos de ítems previamente seleccionados en el picking |
 |Descripción | El usuario registra los grupos de ítems que han sido previamente seleccionados en el picking para el proceso de precintado |
 |Actor Primario | Almacenero |
-|Actor Secundario| N/A |
+|Actor Secundario| Supervisor de almacén |
 |Precondiciones| Grupos de ítems seleccionados en el proceso de picking |
 |Paso| Acción |
 |1|El usuario selecciona la opción "Registrar precintado"|
@@ -438,7 +438,7 @@ Caso de Uso #3: Registrar paletizado
 |Objetivo | Registrar el proceso de paletizado de los grupos de ítems precintados |
 |Descripción | El usuario registra los grupos de ítems precintados que serán paletizados para su posterior carga |
 |Actor Primario | Almacenero |
-|Actor Secundario| N/A |
+|Actor Secundario| Supervisor de almacén |
 |Precondiciones| Grupos de ítems precintados |
 |Paso| Acción |
 |1|El usuario selecciona la opción "Registrar paletizado"|
@@ -452,8 +452,8 @@ Caso de Uso #4: Registrar carga
 |----------|----------|
 |Objetivo | Registrar el proceso de carga de los grupos de ítems paletizados |
 |Descripción | El usuario registra los grupos de ítems paletizados que serán cargados en un vehículo para su posterior envío |
-|Actor Primario | Almacenero |
-|Actor Secundario| N/A |
+|Actor Primario | Encargado de almacén |
+|Actor Secundario| Supervisor de almacén |
 |Precondiciones| Grupos de ítems paletizados |
 |Paso| Acción |
 |1|El usuario selecciona la opción "Registrar carga"|
@@ -468,7 +468,7 @@ Caso de Uso #5: Registrar guía de remisión
 |Objetivo | Registrar el proceso de envío de los grupos de ítems cargados |
 |Descripción | El usuario registra los datos del envío, incluyendo datos del transportista y vehículo, entre otros |
 |Actor Primario | Encargado de Almacén |
-|Actor Secundario| N/A |
+|Actor Secundario| Supervisor de almacén |
 |Precondiciones| Grupos de ítems cargados en el vehículo |
 |Paso| Acción |
 |1|El usuario selecciona la opción "Registrar guía de remisión"|
@@ -482,7 +482,7 @@ Caso de Uso #6: Registrar recepción
 |Objetivo | Registrar el proceso de recepción de los grupos de ítems enviados |
 |Descripción | El usuario registra la fecha y hora de recepción de los grupos de ítems en el lugar de destino |
 |Actor Primario | Encargado de Almacén |
-|Actor Secundario| N/A |
+|Actor Secundario| Supervisor de almacén |
 |Precondiciones| Guía de remisión |
 |Paso| Acción |
 |1|El usuario selecciona la opción "Registrar recepción"|
@@ -496,7 +496,7 @@ Caso de Uso #7: Registrar descarga
 |Objetivo | Registrar el proceso de descarga de los grupos de ítems recibidos |
 |Descripción | El usuario registra la fecha y hora de inicio y finalización de la descarga de los grupos de ítems en el lugar de destino |
 |Actor Primario | Encargado de Almacén |
-|Actor Secundario| Transportista |
+|Actor Secundario| Supervisor de almacén |
 |Precondiciones| Grupos de ítems recibidos en el lugar de destino |
 |Paso| Acción |
 |1|El usuario selecciona la opción "Registrar descarga"|
