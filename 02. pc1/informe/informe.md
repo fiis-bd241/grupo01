@@ -86,6 +86,14 @@ Proceso de negocio: Elaboración de despacho. Elaboración propia.
 
 Link del diagrama: https://app.diagrams.net/?src=about#G1dXQysSmCzSni56V_scq2cCQqn8lhpNzT#%7B%22pageId%22%3A%22prtHgNgQTEPvFCAcTncT%22%7D
 
+b. Diagrama TO-BE
+
+(AGREGAR IMAGEN)
+
+Proceso de negocio mejorado: Elaboración de despacho. Elaboración propia.
+
+Link del diagrama: 
+
 ## Módulos del Sistema
 El objetivo principal es encontrar una estructura optima de forma que su software pueda cumplir con sus requerimientos.
 
