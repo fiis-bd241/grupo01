@@ -1195,18 +1195,14 @@ Semántica: Entidad que representa a los trabajadores de la empresa San fernando
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-| Primer apellido | Atributo | Texto | Cadena de caracteres alfanuméricos | - | Persona | Apellido paterno del empleado. Identifica al empleado dentro de su familia. |
-| Segundo apellido | Atributo | Texto | Cadena de caracteres alfanuméricos | - | Persona | Apellido materno del empleado. Complementa la identidad del empleado dentro de su familia. |
-| Prenombre | Atributo | Texto | Cadena de caracteres alfanuméricos | - | Persona | Nombre(s) del empleado. Identifica al individuo dentro de su familia y organización. |
-| DNI | Atributo | Numérico | 8 dígitos | - | Persona | Número de Documento Nacional de Identidad del empleado. Identifica de manera única al empleado a nivel legal y administrativo. |
-| Teléfono | Atributo | Numérico | 9 dígitos | - | Persona | Número de teléfono a través del cual se puede contactar al empleado. Permite la comunicación con el empleado. |
-| Correo empresarial | Atributo | Texto | Cadena de caracteres alfanuméricos siguiendo el patrón "nombre.apellido@empresa.com" | - | Persona | Dirección de correo electrónico asociada a la empresa donde labora el empleado. Permite la comunicación del empleado en el contexto laboral. |
-| Correo personal | Atributo | Texto | Cadena de caracteres alfanuméricos siguiendo el patrón "nombre.apellido@dominio.com" | - | Persona | Dirección de correo electrónico personal del empleado. Permite la comunicación del empleado en el contexto personal. |
-| Número de empleado | Atributo | Numérico | Entero positivo | - | - | Identificador único del empleado dentro de la organización. Permite diferenciar a cada empleado de manera inequívoca. |
-| Puesto | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Cargo o función que desempeña el empleado en la organización. Describe el rol del empleado dentro de la empresa. |
-| Departamento | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Área o departamento al que pertenece el empleado. Ubica al empleado dentro de la estructura organizacional. |
-| Fecha de ingreso | Atributo | Fecha | Formato DD/MM/AAAA | - | - | Fecha en la que el empleado comenzó a trabajar en la organización. Permite conocer la antigüedad del empleado. |
-| Salario | Atributo | Numérico | Decimal positivo | Moneda | - | Remuneración mensual del empleado. Describe la compensación económica del empleado por sus servicios. |
+|codigo Empleado| CHAR | 9999999 | 9 digitos | -  | -  | Identificador único del empleado dentro de la organización. Permite diferenciar a cada empleado de manera inequívoca. |
+|codigo Persona | CHAR | 9999999 | 9 digitos | -  | -  | Identificador de la persona dentro de la sociedad | 
+| Cargo | CHAR | Texto | X(32) | - | - | Cargo o función que desempeña el empleado en la organización. Describe el rol del empleado dentro de la empresa. |
+| codigo Fecha | CHAR | 9999999 | 9 digitos | - | - | Identificador en la que empezo a trabajar el empleado |
+| codigo Traslado | CHAR | 9999999 | 9 digitos | - | - | Identificador del pedido de traslado |
+| codigo Operacion |  CHAR | 9999999 | 9 digitos | - | - | Identificador de la operacion |
+| codigo Reporte | CHAR | 9999999 | 9 digitos | - | - | Identificador del reporte |
+
 
 **Entidad**: Evidencia
 
