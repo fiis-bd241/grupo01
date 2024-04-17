@@ -96,7 +96,7 @@ Proceso de negocio mejorado: Elaboración de despacho. Elaboración propia.
 | 5         | Toma de decisiones         | Elección de ruta de acción en base a las evidencias mostradas y las condiciones del pedido | Encargado de Planeación | Evaluación de calidad / Evidencias de reclamo | Acción para realizar a partir del reclamo |
 
 
-Link del diagrama: 
+Link de los diagramas: [Diagramas](https://drive.google.com/file/d/1dXQysSmCzSni56V_scq2cCQqn8lhpNzT/view?usp=sharing)
 
 ## Módulos del Sistema
 El objetivo principal es encontrar una estructura optima de forma que su software pueda cumplir con sus requerimientos.
