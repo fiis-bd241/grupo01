@@ -436,7 +436,7 @@ Caso de Uso #3: Realizar picking de pedidos
 |6|Prepara el pedido para despacho|
 
 Caso de Uso #4: Registrar salida de productos
-| Código | R004 | 
+| Código | R304 | 
 |----------|----------|
 |Objetivo|Registrar la salida de productos del almacén al momento del despacho|
 |Descripción|El usuario registra los datos del producto, cantidad, destino, fecha de salida y el personal a cargo de la entrega|
