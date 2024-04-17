@@ -507,41 +507,6 @@ Caso de Uso #7: Registrar descarga
 |4|Confirma el registro de la descarga|
 |5|El sistema actualiza el estado de los grupos de ítems como "descargados"|
 
-Para explicar de manera más sencilla la relación entre estos casos de uso y el modelado conceptual, se presenta a continuación un ejemplo de poblamiento de datos de las entidades ProductoStock, Mercancía y Operación
-
-ProductoStock
-
-|CodStock|NroLote|FechaCaduc|IDProductCat|IDMercancía|
-|----------|----------|----------|----------|----------|
-|PS-001|LOTE-001|20240831001|P-001|MC-001|
-|PS-002|LOTE-002|20240930002|P-002|MC-001|
-|PS-003|LOTE-003|20241031124|P-003|MC-002|
-|PS-004|LOTE-004|20241130489|P-004|MC-002|
-|PS-005|LOTE-005|20241231125|P-005|MC-003|
-
-Mercancía
-
-|IDMercancía|Cantidad|PesoTotal|NúmeroPrecinto|IDOperación|
-|----------|----------|----------|----------|----------|
-|MC-001|2|150|PRECINTO-001|OP-001|
-|MC-002|2|120|PRECINTO-002|OP-001|
-|MC-003|1|75|NULL|OP-006|
-
-Operación
-
-|IDOperación|Tipo|IDOpAfectada|FechaInicio|FechaFin|IDEmpEjecutor|IDEmpSupervisor|
-|----------|----------|----------|----------|----------|----------|----------|
-|OP-001|Picking|NULL|20240415001|20240415002|EMP-001|EMP-102|
-|OP-002|Precintado|OP-001|20240415003|20240415004|EMP-002|EMP-102|
-|OP-003|Paletizado|OP-002|20240415005|20240415006|EMP-003|EMP-102|
-|OP-004|Carga|OP-003|20240415007|20240415008|EMP-004|EMP-105|
-|OP-005|Descarga|OP-004|20240416003|20240416004|EMP-009|EMP-118|
-|OP-006|Picking|NULL|20240417001|20240417002|EMP-001|EMP-102|
-
-Las existencias de un producto (instancias de ProductoStock) se agrupan en mercancías mediante una operación conocida como picking (el ID de esta operación tipo "Picking" va en el campo IDOperación de la entidad Mercancía). La secuencia de las operaciones es la siguiente: picking -> precintado -> paletizado -> carga -> descarga. Cada una de estas operaciones tiene un campo IDOpAfectada con el ID de la operación que le precede, excepto las operaciones tipo "Picking" que no les precede ninguna operación. Cuando se realiza una operación tipo "Precintado", el campo "NúmeroPrecinto" de las instancias de Mercancía asociadas a la operación tipo "Picking" que le precede se actualizan con su respectivo código de precinto.
-
-Tomar en cuenta también que la entidad Traslado tiene un campo referido a un identificador de una instancia de Operación tipo "Carga" que sirve para dar información de la mercancía que se está transportando.
-
 #### 3.2. Requerimientos de atributos de calidad
 
 Usabilidad:
@@ -1038,6 +1003,41 @@ Entidades Involucradas:
   * Operación
 
 [Prototipo en Figma](https://www.figma.com/file/Lrq1F0qg06qLWHrVxUnk8p/Almac%C3%A9n?type=design&node-id=0%3A1&mode=design&t=tfzkqQTL0uNO9rXI-1)
+
+Para explicar de manera más sencilla la relación entre los casos de uso, las interfaces y el modelado conceptual, se presenta a continuación un ejemplo de poblamiento de datos de las entidades ProductoStock, Mercancía y Operación
+
+ProductoStock
+
+|CodStock|NroLote|FechaCaduc|IDProductCat|IDMercancía|
+|----------|----------|----------|----------|----------|
+|PS-001|LOTE-001|20240831001|P-001|MC-001|
+|PS-002|LOTE-002|20240930002|P-002|MC-001|
+|PS-003|LOTE-003|20241031124|P-003|MC-002|
+|PS-004|LOTE-004|20241130489|P-004|MC-002|
+|PS-005|LOTE-005|20241231125|P-005|MC-003|
+
+Mercancía
+
+|IDMercancía|Cantidad|PesoTotal|NúmeroPrecinto|IDOperación|
+|----------|----------|----------|----------|----------|
+|MC-001|2|150|PRECINTO-001|OP-001|
+|MC-002|2|120|PRECINTO-002|OP-001|
+|MC-003|1|75|NULL|OP-006|
+
+Operación
+
+|IDOperación|Tipo|IDOpAfectada|FechaInicio|FechaFin|IDEmpEjecutor|IDEmpSupervisor|
+|----------|----------|----------|----------|----------|----------|----------|
+|OP-001|Picking|NULL|20240415001|20240415002|EMP-001|EMP-102|
+|OP-002|Precintado|OP-001|20240415003|20240415004|EMP-002|EMP-102|
+|OP-003|Paletizado|OP-002|20240415005|20240415006|EMP-003|EMP-102|
+|OP-004|Carga|OP-003|20240415007|20240415008|EMP-004|EMP-105|
+|OP-005|Descarga|OP-004|20240416003|20240416004|EMP-009|EMP-118|
+|OP-006|Picking|NULL|20240417001|20240417002|EMP-001|EMP-102|
+
+Las existencias de un producto (instancias de ProductoStock) se agrupan en mercancías mediante una operación conocida como picking (el ID de esta operación tipo "Picking" va en el campo IDOperación de la entidad Mercancía). La secuencia de las operaciones es la siguiente: picking -> precintado -> paletizado -> carga -> descarga. Cada una de estas operaciones tiene un campo IDOpAfectada con el ID de la operación que le precede, excepto las operaciones tipo "Picking" que no les precede ninguna operación. Cuando se realiza una operación tipo "Precintado", el campo "NúmeroPrecinto" de las instancias de Mercancía asociadas a la operación tipo "Picking" que le precede se actualizan con su respectivo código de precinto.
+
+Tomar en cuenta también que la entidad Traslado tiene un campo referido a un identificador de una instancia de Operación tipo "Carga" que sirve para dar información de la mercancía que se está transportando.
 
 ### Módulo 4: Control
 
