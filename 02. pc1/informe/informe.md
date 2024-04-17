@@ -210,7 +210,7 @@ a. Usuarios
 b. Casos de uso
 
 Caso de Uso #1: Registrar Pedido
-| Código | R001 | 
+| Código | R101 | 
 |----------|----------|
 |Objetivo | Permitir a los almacenistas de cada departamento a registrar un nuevo pedido.|
 |Descripción | El almacenista ingresa la información del cliente, como nombre, correo electrónico empresarial y personal, fecha de solicitud, fecha de entrega, DNI, departamento y justificación. |
