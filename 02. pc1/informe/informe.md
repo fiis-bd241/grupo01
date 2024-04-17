@@ -1020,10 +1020,7 @@ Entidades involucradas:
 
 1. ¿Existe alguna consideración especial en cuanto a rendimiento? Por ejemplo, en sistemas que llegan a usuario final, un bajo rendimiento puede tener como consecuencia la pérdida de una venta.
 
-Considero que en sistemas que llegan al usuario final, el rendimiento es crítico. Un bajo rendimiento puede afectar la experiencia del cliente y, en última
-instancia, resultar en la pérdida de ventas o insatisfacción. Además es crucial evaluar el tiempo de respuesta de las consultas y procesos. Si las operaciones
-de verificación de pedidos o registro de incidencias son lentas, podríamos considerar optimizarlas mediante procesos batch o índices eficientes en la base de
-datos.
+Considero que en sistemas que llegan al usuario final, el rendimiento es crítico. Un bajo rendimiento puede afectar la experiencia del cliente y, en última instancia, resultar en la pérdida de ventas o insatisfacción. Además es crucial evaluar el tiempo de respuesta de las consultas y procesos. Si las operaciones de verificación de pedidos o registro de incidencias son lentas, podríamos considerar optimizarlas mediante procesos batch o índices eficientes en la base de datos.
 
 2. ¿El volumen de información con el que trata la opción del sistema es significativo? En esos casos, por ejemplo, podríamos tener procesos batch que permitan optimizar estas consultas (¿hemos considerado ello en nuestros módulos?).
 
@@ -1128,7 +1125,7 @@ Entidades Involucradas:
 
 ### Planta Huaral Diagrama Cheng
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/8e2f3f21-a01c-4662-9b16-83f309211b9c"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/79b14c4c-3a32-484d-b7ac-35edda3e7408"></p>
 
 [Modelo Cheng en Draw.io](https://app.diagrams.net/#G1sYHbkonVotVIohr2sUkFBC17Pi2aDmhR#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D)
 
