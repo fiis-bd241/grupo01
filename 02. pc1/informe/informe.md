@@ -1143,6 +1143,7 @@ Semántica:
 |          |            |         |                 |        |             |             |
 
 **Entidad**: Contacto
+
 Semántica: Forma de contactar con una persona
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
