@@ -712,6 +712,9 @@ Caso de Uso #3: Visualizar un reclamo
 |Actor Secundario| N/A |
 |Precondiciones| El Encargado de Atención a Reclamos tiene acceso al sistema de registro de reclamos. |
 |Paso | Acción | 
+|1| Buscar el reclamo en la lista editando los diferentes campos.|
+|2| Seleccionar el reclamo a visualizar|
+|3| Visualizar el reclamo, que presenta campos que pueden ser editados. |
 
 #### 3.2. Requerimientos de atributos de calidad
 
