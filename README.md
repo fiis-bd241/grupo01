@@ -14,5 +14,6 @@ Bienvenidos al repositorio del Proyecto de Diseño de Base de Datos del Grupo 1.
 
    * Presentación final
       * [Informe](02.%20pc1/informe/informe.md)
+      * [Documentación de soporte](https://drive.google.com/drive/folders/1tnv4Kpnk2LkaWO62ETXYgzs6sObJmlSZ?usp=sharing)
 
 3. [Glosario](03.%20glosario/glosario.md)
