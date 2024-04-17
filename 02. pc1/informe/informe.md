@@ -1547,17 +1547,18 @@ Semántica: Queja formal expresada por un cliente sobre un producto o servicio.
 
 **Entidad**: Reporte
 
-Semántica:
+Semántica: Representación de registros que documentan incidentes, eventos o problemas dentro de un sistema, proceso o entorno.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+|  ID_reporte        |    CHAR        |   9999999   |    -     |   -     |   -          |  Identificador único del reporte |
+|  fecha       |   DATE         | YYYY-MM-DD        |    -     |    -    |    -         | Fecha en que se generó el reporte  |
+|  hora        |    TIME        |  HH:MM:SS   |      -    |    -    |      -       |  Hora en que se generó el reporte  |
+|  usuario_id        |   CHAR         |  9999999       |   -     |   -     |     -     |   Identificador del usuario que generó el reporte|
+|  tipo        |    CHAR        |  X(10)       |     -      |   -     |     -        | Indica el tipo de reporte (por ejemplo, "Incidente", "Error", etc.) |
+|  descripción        |   CHAR       |   X(150)     |      -     |   -     |     -      | Descripción detallada del reporte  |
+|  prioridad        |   CHAR         |   X(8)      | 1 (Baja), 2 (Media), 3 (Alta)  |   -     |    -      | Nivel de prioridad del reporte  |
+
 
 **Entidad**: Representante
 
