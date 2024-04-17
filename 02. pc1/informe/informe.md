@@ -1677,8 +1677,7 @@ A continuación, se muestra los links de los videos invididuales de cada módulo
 ### Módulo 1
 Integrante: [Inocente Caro Miguel Anderson](../../01.%20integrantes/Miguel%20Inocente/Miguel-Inocente.md)
 
-<a href="https://www.youtube.com/watch?v=fToWdVgMKb4" target="_blank"><img src="" 
-alt="Hola k ase" width="240" height="180" border="10" /></a>
+
 
 ### Módulo 2
 Integrante: [Campos Herrera Dennis](../../01.%20integrantes/Dennis%20Campos%20/Dennis%20Campos.md)
