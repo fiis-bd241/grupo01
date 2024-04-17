@@ -2,24 +2,36 @@
 
 ## Datos de la Empresa
 
-### Parte 1
+Nombre de la empresa: San Fernando
 
-- Nombre de la empresa: San Fernando
-- Nombre del contacto: Ingeniera Joselin Torres
-- Cargo del contacto: Jefe del área de Logística
+Descripción de la empresa:
+San Fernando S.A. es una empresa peruana dedicada a la producción y comercialización de alimentos de consumo masivo de las líneas pollo, pavo, cerdo, huevo y productos procesados.
 
-### Parte 2
+RUC:
 
-- Descripción de la empresa:
-  San Fernando S.A. es una empresa peruana dedicada a la producción y comercialización de alimentos de consumo masivo de las líneas pollo, pavo, cerdo, huevo y productos procesados.
-- Principales productos:
+Razón Social:
+
+Dirección:
+
+Telefono:
+
+Visión:
+
+Misión:
+
+## Organigrama
+
+## Productos y Servicios
+
+Principales productos:
   1. Pollo fresco, congelado y saborizado.
   2. Pavo congelado, horneado y macerado.
   3. Embutidos (chorizos, jamonadas, jamones, hot-dog, especiales).
   4. Congelados (apanado, nuggets).
   5. Cerdo congelado, fresco.
   6. Huevos
-- Principales servicios:
+
+Principales servicios:
   1. Distribución y Logística: San Fernando provee servicios de distribución y logística para asegurar que sus productos lleguen frescos y a tiempo a los puntos de venta, incluyendo supermercados, tiendas minoristas, y restaurantes.
 
 ## Descripción del Proceso de Negocio
