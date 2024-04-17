@@ -682,6 +682,7 @@ Caso de Uso #5: Registro de incidencias internas
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/d04fc44c-ef3b-4682-9c31-7912a648c48e"></p>
 
+[Prototipo en Figma](https://www.figma.com/file/Jfo2z2Mh3c5yoxamTw56gg/Seguimiento?type=design&node-id=0%3A1&mode=design&t=wmoz54XJ5USPhnU3-1)
 
 ### Módulo 3: Almacén
 
