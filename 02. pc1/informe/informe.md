@@ -728,7 +728,7 @@ Por supuesto, aquí tienes un resumen de dos líneas para cada requerimiento de 
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/6a3f5696-d896-48f3-bf29-00fba6369d3d"></p>
 
-[Prototipo en Figma](https://www.figma.com/file/KQ34ScwxvuSCmmvHqfIPRP/Untitled?type=design&node-id=88-59745&mode=design&t=03oJT67oaRqSUxFI-0)
+[Prototipo en Figma](https://www.figma.com/file/KQ34ScwxvuSCmmvHqfIPRP/Untitled?type=design&node-id=85-33763&mode=design&t=t2m1MihV991qcCyH-0)
 
 
 ### Módulo 2: Seguimiento
