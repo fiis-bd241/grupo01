@@ -1335,16 +1335,12 @@ Semántica: Entidad que representa las diferentes transacciones o movimientos de
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-| Número de operación | Atributo | Numérico | Entero positivo | - | - | Identificador único de la operación. |
-| Tipo de operación | Atributo | Texto | "Entrada", "Salida", "Traslado" | - | - | Indica el tipo de movimiento realizado en la operación. |
-| Fecha | Atributo | Fecha | Formato DD/MM/AAAA | - | Entidad Fecha | Fecha en la que se realizó la operación. |
-| Cantidad | Atributo | Numérico | Decimal positivo | Unidad de medida | Entidad Mercancía | Cantidad de mercancía involucrada en la operación. |
-| Observaciones | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Información adicional sobre la operación. |
-| Operación relacionada | Atributo | Numérico | Entero positivo | - | Entidad Operación | Número de operación relacionada, en caso de que la operación actual sea un traslado. |
-| Empleado responsable | Atributo | Numérico | Entero positivo | - | Entidad Empleado | Número de empleado responsable de la operación. |
-| Tipo de traslado | Atributo | Texto | "Interno", "Externo" | - | Entidad Traslado | Indica si el traslado es dentro de la empresa o a otra ubicación. |
-| Origen | Atributo | Texto | Cadena de caracteres alfanuméricos | - | Entidad Traslado | Lugar de origen del traslado. |
-| Destino | Atributo | Texto | Cadena de caracteres alfanuméricos | - | Entidad Traslado | Lugar de destino del traslado. |
+| codigo de operacion | CHAR | 9999999 | 9 digitos | - | - | Identificador único de la operación. |
+| Tipo de operación | CHAR | X(32) | "Entrada", "Salida", "Traslado" | - | - | Indica el tipo de movimiento realizado en la operación. |
+| codigo Fecha inicio | CHAR | 9999999 | 9 digitos | - | - | codigo de la fecha en la que se realizó la operación. |
+| codigo empleado | CHAR | 9999999 |  9 digitos |  - |  - | identificador unico de la empleado |
+| codigo mercancia | CHAR | 9999999 | 9 digitos | -  |  - |  identificador unico de la mercancia |
+| codigo Fecha fin | CHAR | 9999999 | 9 digitos | -  |  - |  identificadro unico de la Fecha fin |
 
 **Entidad**: Pedido
 
