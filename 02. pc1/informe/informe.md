@@ -1230,7 +1230,7 @@ Entidades Involucradas:
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/f60afffe-ba29-49e0-b592-c45b671dc58e"></p>
 
-
+[Diagrama Cheng](https://github.com/fiis-bd241/grupo01/assets/164358065/f60afffe-ba29-49e0-b592-c45b671dc58e)
 
 #### Diccionario de datos:
 
