@@ -212,22 +212,22 @@ b. Casos de uso
 Caso de Uso #1: Registrar Pedido
 | Código | R101 | 
 |----------|----------|
-|Objetivo | Permitir a los almacenistas de cada departamento a registrar un nuevo pedido.|
+|Objetivo | Permitir a los Representante de cada departamento a registrar un nuevo pedido.|
 |Descripción | El almacenista ingresa la información del cliente, como nombre, correo electrónico empresarial y personal, fecha de solicitud, fecha de entrega, DNI, departamento y justificación. |
-|Actor Primario | Almacenista de cada departamento. |
+|Actor Primario | Representante de cada area. |
 |Actor Secundario | N/A |
-|Precondiciones | El almacenista debe estar registrado en el sistema SAP | 
+|Precondiciones | El representante debe estar registrado en el sistema SAP | 
 |Paso | Acción | 
-|1 | El Almacenista selecciona la opción para registrar un nuevo pedido. |
-|2 | El sistema muestra un formulario para que el almacenista ingrese los datos personales y datos del pedido. | 
-|3 | El almacenista completa el formulario y selecciona la opción para agregar productos. |
+|1 | El representante selecciona la opción para registrar un nuevo pedido. |
+|2 | El sistema muestra un formulario para que el representante ingrese los datos personales y datos del pedido. | 
+|3 | El representante completa el formulario y selecciona la opción para agregar productos. |
 
 Caso de Uso #2: Agregar productos al pedido. 
 | Código | R102 | 
 |----------|----------|
-|Objetivo | Permitir al almacenista (usuario) agregar los productos solicitados al pedido.|
-|Descripción | Después de ingresar la información del usuario (Almacenista) en el formulario de registro de pedido, el usuario puede agregar los productos solicitados a través de una tabla. | 
-|Actor Primario | Almacenista departamental |
+|Objetivo | Permitir al representante (usuario) agregar los productos solicitados al pedido.|
+|Descripción | Después de ingresar la información del usuario (representante) en el formulario de registro de pedido, el usuario puede agregar los productos solicitados a través de una tabla. | 
+|Actor Primario | representante departamental |
 |Actor Secundario | N/A |
 |Precondiciones | El usuario debe haber completado el formulario de registro de pedido. |
 |Paso | Acción |
@@ -241,9 +241,9 @@ Caso de Uso #2: Agregar productos al pedido.
 Caso de Uso #3: Ver detalle pedido. 
 | Código | R103 | 
 |----------|----------|
-|Objetivo | | 	Permitir a los almacenistas de cada departamento (usuarios) consultar los detalles de un pedido específico. |
+|Objetivo | | 	Permitir a los almacenistas de cada area (usuarios) consultar los detalles de un pedido específico. |
 |Descripción | Despúes de completar todos los productos solicitados y el sistema muestra la información detallada, incluyendo los datos del usuario, los productos solicitados y sus detalles. |
-|Actor Primario | Almacenista de cada departamento. |
+|Actor Primario | representante de cada departamento. |
 |Actor Secundario |N/A |
 |Precondiciones | El usuario debio completar la tabla de los productos solicitados. |
 |Paso | Acción |
@@ -254,9 +254,9 @@ Caso de Uso #3: Ver detalle pedido.
 Caso de Uso #4: Ver lista de pedidos.
 | Código | R104 | 
 |----------|----------|
-|Objetivo | | Permitir a los almacenista (usuarios) consultar la lista de todos los pedidos registrados.
+|Objetivo | | Permitir a los representante (usuarios) consultar la lista de todos los pedidos registrados.
 |Descripción | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
-|Actor Primario | Almacenista de cada departamento. |
+|Actor Primario | representante de cada departamento. |
 |Actor Secundario | N/A |
 |Precondiciones | El usuario debe estar registrado en el sistema SAP. |
 |Paso | Acción |
@@ -861,7 +861,11 @@ Entidades:
 -Mercancia
 ## Pantalla para ver la orden de pedido
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/49dfc0e5-710d-490c-b201-58bd785044da"></p>
+
+Entidades:
+
 -Pedido
+
 -Orden de pedido
 ## Pantalla para ver todos los pedidos realizados
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/6a3f5696-d896-48f3-bf29-00fba6369d3d"></p>
