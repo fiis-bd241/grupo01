@@ -627,7 +627,7 @@ Caso de Uso #5: Registro de incidencias internas
 
 ## Modelo Conceptual
 
-(Imagen representativa)
+![Planta Huaral Diagrama Cheng](https://github.com/fiis-bd241/grupo01/assets/130238034/8e2f3f21-a01c-4662-9b16-83f309211b9c)
 
 [Modelo Cheng en Draw.io](https://app.diagrams.net/#G1sYHbkonVotVIohr2sUkFBC17Pi2aDmhR#%7B"pageId"%3A"R2lEEEUBdFMjLlhIrx00"%7D)
 
