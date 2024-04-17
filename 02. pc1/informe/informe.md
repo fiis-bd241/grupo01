@@ -406,7 +406,7 @@ Caso de Uso #1: Registrar ingreso de productos
 |4|El sistema actualiza el inventario con el nuevo ingreso|
 
 Caso de Uso #2: Consultar disponibilidad de productos
-| Código | R002 | 
+| Código | R302 | 
 |----------|----------|
 |Objetivo|Verificar la cantidad disponible de un producto específico en el almacén|
 |Descripción|El usuario busca un producto por código o descripción y puede ver la cantidad disponible en existencias|
