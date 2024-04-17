@@ -673,6 +673,20 @@ Caso de Uso #5: Registro de incidencias internas
 
 #### Pantallas de Crear Reclamo de Cliente Externo
 
+![PROTOTIPO 11](https://github.com/fiis-bd241/grupo01/assets/130238034/d094316b-068c-459e-8f83-4960706eee6c)
+
+![PROTOTIPO 12](https://github.com/fiis-bd241/grupo01/assets/130238034/819ad6fa-6454-4550-b615-7fc3c9f38109)
+
+![PROTOTIPO 13](https://github.com/fiis-bd241/grupo01/assets/130238034/48d2bc5c-47f3-49e2-a820-00928274ed08)
+
+![PROTOTIPO 14](https://github.com/fiis-bd241/grupo01/assets/130238034/2c66eb9b-a9bc-409b-8c4f-96496da8b049)
+
+![PROTOTIPO 15](https://github.com/fiis-bd241/grupo01/assets/130238034/f17162cb-025c-43ec-bf51-c5ce79bc3133)
+
+![PROTOTIPO 16](https://github.com/fiis-bd241/grupo01/assets/130238034/0dcb4921-0a5f-41b1-8ec2-2e619f9dfcd4)
+
+![PROTOTIPO 10](https://github.com/fiis-bd241/grupo01/assets/130238034/d6af040b-be23-45fa-9cfe-e610481bec9e)
+
 [Prototipo en Figma](https://www.figma.com/file/kZLR8sf4PPRQyQf9dsDxDp/PROTOTIPO-DE-RECLAMOS?type=design&node-id=0-1&mode=design&t=7KtYyZiyPe04xOE2-0)
 
 ## Modelo Conceptual
