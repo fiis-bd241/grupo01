@@ -1411,19 +1411,18 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
+
 **Entidad**: Mercancía
 
-Semántica:
+Semántica: Representar los diferentes productos que una empresa tiene en su inventario para la venta o distribución. 
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| Cantidad de producto  |     INT       |   9999      |     unidades    |   -     |   -          |    Cantidad de productos disponibles         |
+| Número de precinto    |    CHAR       |   999999    |    -         | -       |     -        |   Número de precinto asociado a la mercancía      |
+| Descripción  |    CHAR       |   x(100)      |     -            |   -     |   -          |  Nombre o descripción de la mercancía           |
+| Peso total             |    INT      |  999       |     >=0            |   -     |      -       | Peso total de la mercancía     |
+
 
 **Entidad**: Operación
 
