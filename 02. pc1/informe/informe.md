@@ -1685,32 +1685,32 @@ A continuación, se muestra la grabación de la entrevista realizada a la ingeni
 A continuación, se muestra los links de los videos invididuales de cada módulo realizados por los integrantes.
 
 ### Módulo 1
-Integrante: [Inocente Caro Miguel Anderson](../../../01.%20integrantes/Miguel%20Inocente/Miguel-Inocente.md)
+Integrante: [Inocente Caro Miguel Anderson](../../01.%20integrantes/Miguel%20Inocente/Miguel-Inocente.md)
 
 (Link 1)
 
 ### Módulo 2
-Integrante: [Campos Herrera Dennis](Dennis%20Campos%20/Dennis%20Campos.md)
+Integrante: [Campos Herrera Dennis](../../01.%20integrantes/Dennis%20Campos%20/Dennis%20Campos.md)
 
 (Link 1)
 
 ### Módulo 3
-Integrante: [Alvarado Usucachi José Joaquín](Joaquín%20Alvarado/Joaquín%20Alvarado.md)
+Integrante: [Alvarado Usucachi José Joaquín](../../01.%20integrantes/Joaquín%20Alvarado/Joaquín%20Alvarado.md)
 
 (Link 1)
 
 ### Módulo 4
-Integrante: [Espinoza Cerna Alex](Alex%20Espinoza/alex.md)
+Integrante: [Espinoza Cerna Alex](../../01.%20integrantes/Alex%20Espinoza/alex.md)
 
 (Link 1)
 
 ### Módulo 5
-Integrante: [Cruz Mamani Cristhian Samir](Cristhian%20Cruz/Cristhian%20Cruz.md)
+Integrante: [Cruz Mamani Cristhian Samir](../../01.%20integrantes/Cristhian%20Cruz/Cristhian%20Cruz.md)
 
 (Link 1)
 
 ### Módulo 6
-Integrante: [Cárdenas Palacios Leonardo Gustavo](Leonardo%20Cárdenas/Leonardo%20Cárdenas.md)
+Integrante: [Cárdenas Palacios Leonardo Gustavo](../../01.%20integrantes/Leonardo%20Cárdenas/Leonardo%20Cárdenas.md)
 
 (Link 1)
 
