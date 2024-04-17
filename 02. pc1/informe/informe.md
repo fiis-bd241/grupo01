@@ -957,6 +957,7 @@ Entidades Involucradas:
 #### Diccionario de datos:
 
 **Entidad**: Persona
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -970,6 +971,7 @@ Semántica:
 |          |            |         |                 |        |             |             |
 
 **Entidad**: Empleado
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -982,7 +984,8 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-Entidad: Transportista
+**Entidad**: Transportista
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -995,7 +998,8 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-Entidad: Traslado
+**Entidad**: Traslado
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -1008,7 +1012,8 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-Entidad: Pedido
+**Entidad**: Pedido
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -1021,7 +1026,8 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-Entidad: Operación
+**Entidad**: Operación
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -1047,7 +1053,8 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-Entidad: Rutas
+**Entidad**: Rutas
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -1060,7 +1067,8 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-Entidad: Ubicación
+**Entidad**: Ubicación
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -1073,7 +1081,8 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-Entidad: Local
+**Entidad**: Local
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -1086,7 +1095,8 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-Entidad: Almacén
+**Entidad**: Almacén
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -1099,7 +1109,8 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-Entidad: GPS
+**Entidad**: GPS
+
 Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
@@ -1111,6 +1122,329 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
+
+**Entidad**: Centro Frigorífico
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Punto de Entrega
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Fecha
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Reclamo
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Cliente
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Representante
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Reclamo
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Cliente
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Representante
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Evidencia
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Seguimiento
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Mercancía
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Stock
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: ProductoStock
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: MaterialStock
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: MateriaPrimaStock
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: MateriaPrimaCatálogo
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: MaterialCatalágo
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: ProductoCatálogo
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: ElementoCatálogo
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Pedido Externo
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Pedido Interno
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Vehículo
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
 
 ## Entrevista
 A continuación, se muestra la grabación de la entrevista realizada a la ingeniera Joselin Alexandra Torres Robles, supervisora del área de almacén de la planta Huaral de San Fernando.
