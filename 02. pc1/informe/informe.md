@@ -531,6 +531,32 @@ Tomar en cuenta también que la entidad Traslado tiene un campo referido a un id
 
 #### 3.2. Requerimientos de atributos de calidad
 
+Usabilidad:
+
+- El sistema debe ser intuitivo y fácil de usar para los almaceneros de cada departamento, minimizando el esfuerzo y el tiempo requerido para registrar y gestionar los procesos de picking, precintado, paletizado, carga, descarga y envío.
+- La interfaz de usuario debe ser clara y coherente, facilitando la navegación y la ejecución de tareas.
+- Se debe proporcionar retroalimentación adecuada al usuario durante cada etapa del proceso, informando sobre el progreso y cualquier error que pueda ocurrir.
+
+Fiabilidad:
+
+- El sistema debe ser confiable y consistente en el registro y procesamiento de los procesos de almacén, evitando errores, duplicaciones o pérdida de información.
+- Debe contar con mecanismos de validación de datos para garantizar la integridad de la información ingresada por los usuarios.
+
+Eficiencia:
+
+- Debe optimizar el uso de recursos del sistema, como CPU, memoria y almacenamiento, para garantizar un rendimiento óptimo sin comprometer la experiencia del usuario.
+- Se deben minimizar los tiempos de espera y los cuellos de botella en el sistema, asegurando una respuesta rápida a las acciones del usuario.
+
+Mantenibilidad:
+
+- El sistema debe ser fácil de mantener y actualizar, con una arquitectura modular y bien documentada que facilite la incorporación de nuevas funcionalidades o la corrección de problemas.
+- Debe seguir buenas prácticas de desarrollo de software, como el uso de estándares de codificación, comentarios descriptivos y control de versiones, para facilitar la colaboración entre desarrolladores y mantener un código limpio y legible.
+
+Seguridad:
+
+- El sistema debe implementar medidas robustas de autenticación y autorización, garantizando que solo los usuarios autorizados puedan acceder y realizar acciones en el sistema.
+
+
 #### 3.3. Restricciones
 - El diseño del modelo relacional de datos debe ser compatible con las características y funcionalidades de PostgreSQL.
 - El acceso a la base de datos desde el backend debe realizarse utilizando sentencias SQL nativas de PostgreSQL.
