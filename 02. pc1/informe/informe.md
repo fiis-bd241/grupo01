@@ -239,7 +239,7 @@ Caso de Uso #2: Agregar productos al pedido.
 |6 | El sistema guarda la información del pedido, incluyendo los productos solicitados, y actualiza el estado a "pendiente". |
 
 Caso de Uso #3: Ver detalle pedido. 
-| Código | R003 | 
+| Código | R103 | 
 |----------|----------|
 |Objetivo | | 	Permitir a los almacenistas de cada departamento (usuarios) consultar los detalles de un pedido específico. |
 |Descripción | Despúes de completar todos los productos solicitados y el sistema muestra la información detallada, incluyendo los datos del usuario, los productos solicitados y sus detalles. |
