@@ -787,41 +787,42 @@ Caso de Uso #3: Visualizar un reclamo
 
 #### Pantalla Principal
 
-![PROTOTIPO 1](https://github.com/fiis-bd241/grupo01/assets/130238034/2c747c51-3884-4ed8-b26a-6b3ad7328d83)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/2c747c51-3884-4ed8-b26a-6b3ad7328d83"></p>
 
-![PROTOTIPO 2](https://github.com/fiis-bd241/grupo01/assets/130238034/593c1895-b88c-4b27-a2fc-7f1e01f1ae56)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/593c1895-b88c-4b27-a2fc-7f1e01f1ae56"></p>
 
 #### Pantallas de Crear Reclamo de Cliente Interno
 
-![PROTOTIPO 3](https://github.com/fiis-bd241/grupo01/assets/130238034/c2f43051-d0bb-4d39-a5b0-2b953c7f9c16)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/c2f43051-d0bb-4d39-a5b0-2b953c7f9c16"></p>
 
-![PROTOTIPO 4](https://github.com/fiis-bd241/grupo01/assets/130238034/9fef7f12-466e-4a03-b6ea-c769ab700640)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/9fef7f12-466e-4a03-b6ea-c769ab700640"></p>
 
-![PROTOTIPO 5](https://github.com/fiis-bd241/grupo01/assets/130238034/e03c0d7d-4e2c-44d2-8d9c-29ffef5bfddf)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/e03c0d7d-4e2c-44d2-8d9c-29ffef5bfddf"></p>
 
-![PROTOTIPO 6](https://github.com/fiis-bd241/grupo01/assets/130238034/7a6bd1f1-494e-43c2-8e9b-2491286c038b)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/7a6bd1f1-494e-43c2-8e9b-2491286c038b"></p>
 
-![PROTOTIPO 7](https://github.com/fiis-bd241/grupo01/assets/130238034/d21db883-c515-4f2e-800f-ba75c587a550)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/d21db883-c515-4f2e-800f-ba75c587a550"></p>
 
-![PROTOTIPO 8](https://github.com/fiis-bd241/grupo01/assets/130238034/6742ef99-e2d6-4106-bc2b-dee30bdafce7)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/6742ef99-e2d6-4106-bc2b-dee30bdafce7"></p>
 
-![PROTOTIPO 9](https://github.com/fiis-bd241/grupo01/assets/130238034/803d07a8-3d54-4980-9ebe-02d79d5ec990)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/803d07a8-3d54-4980-9ebe-02d79d5ec990"></p>
 
 #### Pantallas de Crear Reclamo de Cliente Externo
 
-![PROTOTIPO 11](https://github.com/fiis-bd241/grupo01/assets/130238034/d094316b-068c-459e-8f83-4960706eee6c)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/d094316b-068c-459e-8f83-4960706eee6c"></p>
 
-![PROTOTIPO 12](https://github.com/fiis-bd241/grupo01/assets/130238034/819ad6fa-6454-4550-b615-7fc3c9f38109)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/819ad6fa-6454-4550-b615-7fc3c9f38109"></p>
 
-![PROTOTIPO 13](https://github.com/fiis-bd241/grupo01/assets/130238034/48d2bc5c-47f3-49e2-a820-00928274ed08)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/48d2bc5c-47f3-49e2-a820-00928274ed08"></p>
 
-![PROTOTIPO 14](https://github.com/fiis-bd241/grupo01/assets/130238034/2c66eb9b-a9bc-409b-8c4f-96496da8b049)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/2c66eb9b-a9bc-409b-8c4f-96496da8b049"></p>
 
-![PROTOTIPO 15](https://github.com/fiis-bd241/grupo01/assets/130238034/f17162cb-025c-43ec-bf51-c5ce79bc3133)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/f17162cb-025c-43ec-bf51-c5ce79bc3133"></p>
 
-![PROTOTIPO 16](https://github.com/fiis-bd241/grupo01/assets/130238034/0dcb4921-0a5f-41b1-8ec2-2e619f9dfcd4)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/0dcb4921-0a5f-41b1-8ec2-2e619f9dfcd4"></p>
 
-![PROTOTIPO 10](https://github.com/fiis-bd241/grupo01/assets/130238034/d6af040b-be23-45fa-9cfe-e610481bec9e)
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/d6af040b-be23-45fa-9cfe-e610481bec9e"></p>
+
 
 [Prototipo en Figma](https://www.figma.com/file/kZLR8sf4PPRQyQf9dsDxDp/PROTOTIPO-DE-RECLAMOS?type=design&node-id=0-1&mode=design&t=7KtYyZiyPe04xOE2-0)
 
