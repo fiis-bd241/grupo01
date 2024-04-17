@@ -679,6 +679,13 @@ Caso de Uso #1: Crear un reclamo de un cliente interno
 |Actor Secundario| N/A |
 |Precondiciones| El Encargado de Atención a Reclamos tiene acceso al sistema de registro de reclamos. |
 |Paso | Acción | 
+|1| Ingresar datos del área (cliente) y del representante.|
+|2| Ingresar detalladamente el pedido, descripción, fecha de adquisición, etc.|
+|3| Ingresar la naturaleza del reclamo.|
+|4| Ingresar la documentación y evidencia en formato Word o PDF.|
+|5| Ingresar los datos para la resolución deseada.|
+|6| Confirmar el seguimiento al reclamo.|
+
 
 Caso de Uso #2: Crear un reclamo de un cliente externo
 | Código | R602 | 
@@ -689,6 +696,12 @@ Caso de Uso #2: Crear un reclamo de un cliente externo
 |Actor Secundario| N/A |
 |Precondiciones| El Encargado de Atención a Reclamos tiene acceso al sistema de registro de reclamos. |
 |Paso | Acción | 
+|1| Ingresar datos de la empresa (cliente) y del representante.|
+|2| Ingresar detalladamente el pedido, descripción, fecha de compra, etc.|
+|3| Ingresar la naturaleza del reclamo.|
+|4| Ingresar la documentación y evidencia en formato Word o PDF.|
+|5| Ingresar los datos para la resolución deseada.|
+|6| Confirmar el seguimiento al reclamo.|
 
 Caso de Uso #3: Visualizar un reclamo
 | Código | R603 | 
