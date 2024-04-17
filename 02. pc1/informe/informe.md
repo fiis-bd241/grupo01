@@ -148,8 +148,7 @@ Responsabilidades:
 - Registrar la hora de salida de los pedidos de la planta hacia los clientes finales, así como actualizar en tiempo real el progreso de la entrega, incluyendo el lugar actual del transporte y las estimaciones de llegada. 
 - Permitir el seguimiento de cada uno de los pasos requeridos para llevar un producto desde la planta Huaral hasta el cliente final pasando por los procesos de picking, precintado, cargado, transporte y verificación de llegada.
 - Registrar los procesos de verificación necesarios durante el transporte de abastecimiento proveniente de almacén general hacia la planta Huaral, incluyendo los datos relevantes del transporte, información de llegada, verificación de paquetes y registro específico de los materiales entregados.
-- Permitir la identificación y gestión proactiva de incidencias durante la entrega, como retrasos en el transporte, cambios en la ruta planificada, o problemas imprevistos que puedan afectar la entrega puntual, y proporcionar comunicación transparente al cliente sobre cualquier cambio en el plan de entrega.
-- Registrar un historial completo de las entregas realizadas, con detalles como fecha y hora de entrega, y observaciones relevantes, además de un registro de los reportes de desempeño para evaluar la eficiencia y calidad del servicio de entrega. 
+- Permitir la identificación y gestión proactiva de incidencias internas durante la entrega, como retrasos en el transporte, problemas con procesos(picking,precintado,paletizado,carga),cambios en la ruta planificada, o problemas imprevistos que puedan afectar la entrega puntual, y proporcionar comunicación transparente al cliente sobre cualquier cambio en el plan de entrega.
 
 Interacción con otros módulos: 
 
