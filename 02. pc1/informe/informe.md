@@ -549,7 +549,7 @@ a. Usuarios
 b. Casos de uso
 
 Caso de Uso #1: Verificar los procesos sobre pedido de abastecimiento 
-| Código | R001 | 
+| Código | R401 | 
 |----------|----------|
 |Objetivo | Registrar el correcto procedimiento de los pedidos de abastecimiento|
 |Descripción | El usuario registra los datos del pedido solicitado por Planta Huaral, como fecha,id del usuario, insumo solicitado, guía de remisión, además de datos generales de cada proceso que atraviesa el pedido como estado, fecha, hora, id encargado, etc. Adicionalmente hay una opción de descarga de la guía de remisión. |
@@ -563,7 +563,7 @@ Caso de Uso #1: Verificar los procesos sobre pedido de abastecimiento
 |4|El sistema actualiza el registro con el nuevo ingreso|
 
 Caso de Uso #2: Verificar los procesos sobre pedido de venta 
-| Código | R001 | 
+| Código | R402 | 
 |----------|----------|
 |Objetivo | Registrar el correcto procedimiento de los pedidos de venta|
 |Descripción | El usuario ingresa los datos del pedido solicitado por el cliente, incluyendo la fecha, ID del usuario, dirección y tipo de producto. Además, se registran los detalles de cada etapa del proceso del pedido, como su estado, fecha, hora y el ID del encargado correspondiente. También se ofrece la opción de descargar una factura electrónica, junto con la indicación de la fecha y hora de salida, así como la fecha y hora estimadas de llegada. |
@@ -577,7 +577,7 @@ Caso de Uso #2: Verificar los procesos sobre pedido de venta
 |4|El sistema actualiza el registro con el nuevo ingreso|
 
 Caso de Uso #3:  Registro de disponibilidad de conductores
-| Código | R001 | 
+| Código | R403 | 
 |----------|----------|
 |Objetivo |Asignarle el traslado de un determinado pedido|
 |Descripción | El usuario verifica en base a los datos del conductor como nombre completo, id conductor,fecha de contratación, número de licencia, fecha de vencimiento de licencia, fecha y hora de última actividad, para registrar su disponibilidad y poder asignarle un pedido. |
@@ -592,7 +592,7 @@ Caso de Uso #3:  Registro de disponibilidad de conductores
 |5|El sistema actualiza el registro con el nuevo ingreso|
 
 Caso de Uso #4: Registro de disponibilidad de vehículos
-| Código | R001 | 
+| Código | R404 | 
 |----------|----------|
 |Objetivo |Asignar a un conductor como medio de traslado del pedido|
 |Descripción | El usuario verifica en base a los datos del vehículo como número de placa, modelo,año de fabricación, capacidad de carga, fecha de último mantenimiento, fecha y hora de última de actividad, para registrar su disponibilidad y poder asignarle como medio de traslado de un pedido. |
@@ -607,7 +607,7 @@ Caso de Uso #4: Registro de disponibilidad de vehículos
 |5|El sistema actualiza el registro con el nuevo ingreso|
 
 Caso de Uso #5: Registro de incidencias internas
-| Código | R001 | 
+| Código | R405 | 
 |----------|----------|
 |Objetivo |Gestionar a nivel general el correcto funcionamiento de los procesos internos de San Fernando |
 |Descripción | El usuario ingresa los datos del incidente como descripción detallada del incidente, fecha incidente, hora incidente, tipo de incidencia, además de tener la opción de adjuntar alguna foto para más detalle.|
@@ -669,7 +669,7 @@ b. Casos de uso
 Claro, aquí tienes la tabla completada:
 
 Caso de Uso #1: Crear un reclamo de un cliente interno
-| Código | R001 | 
+| Código | R601 | 
 |----------|----------|
 |Objetivo | Registrar un reclamo realizado por un cliente interno de la empresa. |
 |Descripción | Este caso de uso describe el proceso mediante el cual el Encargado de Atención a Reclamos registra un reclamo generado por un empleado interno de la empresa, relacionado con algún problema o incidencia. |
@@ -679,7 +679,7 @@ Caso de Uso #1: Crear un reclamo de un cliente interno
 |Paso | Acción | 
 
 Caso de Uso #2: Crear un reclamo de un cliente externo
-| Código | R002 | 
+| Código | R602 | 
 |----------|----------|
 |Objetivo | Registrar un reclamo realizado por un cliente externo de la empresa. |
 |Descripción | Este caso de uso describe el proceso mediante el cual el Encargado de Atención a Reclamos registra un reclamo generado por un cliente externo de la empresa, relacionado con algún producto, servicio o atención recibida. |
@@ -689,7 +689,7 @@ Caso de Uso #2: Crear un reclamo de un cliente externo
 |Paso | Acción | 
 
 Caso de Uso #3: Visualizar un reclamo
-| Código | R003 | 
+| Código | R603 | 
 |----------|----------|
 |Objetivo | Visualizar la información detallada de un reclamo registrado en el sistema. |
 |Descripción | Este caso de uso describe el proceso mediante el cual el Encargado de Atención a Reclamos puede acceder y visualizar todos los detalles de un reclamo específico registrado en el sistema, incluyendo la descripción, estado, fecha de registro, y acciones tomadas. |
