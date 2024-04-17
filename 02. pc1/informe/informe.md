@@ -2,7 +2,7 @@
 
 ## Datos de la Empresa
 
-Nombre de la empresa: San Fernando
+Nombre de la empresa: San Fernando S.A
 
 Descripción de la empresa:
 San Fernando S.A. es una empresa peruana dedicada a la producción y comercialización de alimentos de consumo masivo de las líneas pollo, pavo, cerdo, huevo y productos procesados.
