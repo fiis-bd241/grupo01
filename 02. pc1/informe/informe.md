@@ -1685,31 +1685,33 @@ A continuación, se muestra la grabación de la entrevista realizada a la ingeni
 A continuación, se muestra los links de los videos invididuales de cada módulo realizados por los integrantes.
 
 ### Módulo 1
-Integrante: 
+Integrante: [Inocente Caro Miguel Anderson](Miguel%20Inocente/Miguel-Inocente.md)
 
 (Link 1)
 
 ### Módulo 2
-Integrante: 
+Integrante: [Campos Herrera Dennis](Dennis%20Campos%20/Dennis%20Campos.md)
 
 (Link 1)
 
 ### Módulo 3
-Integrante: 
+Integrante: [Alvarado Usucachi José Joaquín](Joaquín%20Alvarado/Joaquín%20Alvarado.md)
 
 (Link 1)
 
 ### Módulo 4
-Integrante: 
+Integrante: [Espinoza Cerna Alex](Alex%20Espinoza/alex.md)
 
 (Link 1)
 
 ### Módulo 5
-Integrante: 
+Integrante: [Cruz Mamani Cristhian Samir](Cristhian%20Cruz/Cristhian%20Cruz.md)
+
 (Link 1)
 
 ### Módulo 6
-Integrante: 
+Integrante: [Cárdenas Palacios Leonardo Gustavo](Leonardo%20Cárdenas/Leonardo%20Cárdenas.md)
+
 (Link 1)
 
 Los detalles de la reunión fueron registrados en la [acta](../entregables%20parciales/entregable%202/acta-entrevista-20240401.md) respectiva, así como también se elaboró una [transcripción](../entregables%20parciales/entregable%202/transcripcion-entrevista-20240401.md) de las preguntas y respuestas realizadas durante la entrevista, además se generó un [resumen](../entregables%20parciales/entregable%202/Resumen-transcripcion.md) donde se sintetiza los procesos más importantes con un cierto orden, con el fin de comprender mejor los procesos de San Fernando.
