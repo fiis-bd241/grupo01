@@ -92,6 +92,7 @@ Proceso de negocio mejorado: Elaboración de despacho. Elaboración propia.
 | Secuencia | Actividad                  | Descripción                                                                   | Responsable          | Entrada                           | Salida                               |
 |-----------|----------------------------|-------------------------------------------------------------------------------|----------------------|-----------------------------------|--------------------------------------|
 | 2         | Seguimiento de Traslado    | Consulta de ubicación de los vehículos que transportan los pedidos             | Supervisor           | Código de pedido / Código de Traslado | Ubicación geográfica del pedido       |
+| 4         | Reclamo   | El representante de un cliente adjunta evidencias a una queja respecto al pedido recibido | Cliente | Evidencias del reclamo / Motivo de queja | Inicio de proceso de seguimiento de la queja y derivación a una evaluación de calidad |
 | 5         | Toma de decisiones         | Elección de ruta de acción en base a las evidencias mostradas y las condiciones del pedido | Encargado de Planeación | Evaluación de calidad / Evidencias de reclamo | Acción para realizar a partir del reclamo |
 
 
