@@ -1681,6 +1681,37 @@ A continuación, se muestra la grabación de la entrevista realizada a la ingeni
 
 [![Entrevista](../entregables%20parciales/entregable%202/imagenes/video_preview.png)](http://www.youtube.com/watch?v=DPxvZC3R6Ws "Entrevista a Joselin Torres")
 
+## Entrevista
+A continuación, se muestra los links de los videos invididuales de cada módulo realizados por los integrantes.
+
+### Módulo 1
+Integrante: 
+
+(Link 1)
+
+### Módulo 2
+Integrante: 
+
+(Link 1)
+
+### Módulo 3
+Integrante: 
+
+(Link 1)
+
+### Módulo 4
+Integrante: 
+
+(Link 1)
+
+### Módulo 5
+Integrante: 
+(Link 1)
+
+### Módulo 6
+Integrante: 
+(Link 1)
+
 Los detalles de la reunión fueron registrados en la [acta](../entregables%20parciales/entregable%202/acta-entrevista-20240401.md) respectiva, así como también se elaboró una [transcripción](../entregables%20parciales/entregable%202/transcripcion-entrevista-20240401.md) de las preguntas y respuestas realizadas durante la entrevista, además se generó un [resumen](../entregables%20parciales/entregable%202/Resumen-transcripcion.md) donde se sintetiza los procesos más importantes con un cierto orden, con el fin de comprender mejor los procesos de San Fernando.
 
 ## Avance de Diagramas Entidad-Relación
