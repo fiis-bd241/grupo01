@@ -741,8 +741,14 @@ Al elegir el vínculo a “Pedidos en progreso” se dirigirá a la pantalla pri
 Si por ejemplo el usuario solo cuenta con el código del pedido basta con buscarlo y automáticamente se completará el código del traslado debido a la relación entre ambas entidades.
 En esta pantalla también están incluidas las funciones de inicio de Incidente y visualización de la guía de remisión, pero esto está sujeto al nivel de acceso del usuario.
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/f00dc926-ce6e-4098-8100-607abf265f7f"></p>
-Esta pantalla usa las entidades Traslado y Pedidos como principales fuentes de información. Consecuentemente, se relaciona con las entidades Rutas y Vehículo-Ubicación para brindar la información de posicionamiento en tiempo real.
 Para evitar manejar una cantidad grande de datos se plantea generar una actualización de la ubicación en el momento en el que se ingresa a esta pantalla y en periodos específicos de tiempo durante la permanencia del usuario en la pantalla (alrededor de 1 minuto de intervalo entre actualización y actualización).
+
+Entidades involucradas:
+- Traslados
+- Pedidos
+- Rutas
+- Vehículos
+- Ubicación
 
 #### Pantalla Detalles de Traslado:
 Se puede llegar a la pantalla de Detalles de Traslado desde el Menú principal o desde la pantalla Pedidos en Progreso; la diferencia radica que al usar la pantalla de Pedidos en Progreso el rellenado del campo “Código de traslado” sería automático y proveniente de lo último que se esté viendo en la otra pantalla. 
@@ -750,10 +756,17 @@ Una vez colocado el código respectivo el usuario tendrá acceso a la informaci�
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/95ef1cc0-4498-4372-aec9-654c03fb9d91"></p>
 Este módulo interactúa con las entidades Transportista y Vehículo puesto que toma y muestra sus atributos.
 
+Entidades involucradas:
+- Transportista
+- Vehículo
+
 #### Pantalla Pedidos Pendientes:
 Esta pantalla, al igual que la anterior, es accesible desde la pantalla principal y la de Pedidos en progreso, aunque está restringida a ciertos usuarios. Su función es mostrar los pedidos de un traslado en particular que aún no han sido entregados, esto le permite a un supervisor verificar los pedidos que faltan entregar y al transportista a registrar cuando realiza una entrega, para eso se genera un botón con el vínculo al modulo de control para verificar el proceso de entrega. Una vez culminado el proceso en ese otro modulo el sistema se actualizará y generará una notificación para los usuarios asignados.
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/d04fc44c-ef3b-4682-9c31-7912a648c48e"></p>
-Este módulo está relacionado a la entidad pedidos y dirección.
+
+Entidades Involucradas:
+- Pedidos
+- Dirección
 
 [Prototipo en Figma](https://www.figma.com/file/Jfo2z2Mh3c5yoxamTw56gg/Seguimiento?type=design&node-id=0%3A1&mode=design&t=wmoz54XJ5USPhnU3-1)
 
@@ -933,8 +946,6 @@ Los detalles de la reunión fueron registrados en la [acta](../entregables%20par
 Se tomó como referencia el siguiente gráfico que identifica la relación de algunas variables de la empresa San Fernando:
 ![guía](../entregables%20parciales/entregable%203/imagenes/diagramas/mr.jpeg)
 
-La siguiente imagen nos muestra un fragmento de los diagramas Entidad-Relación:
-![Entidad Relacion](../entregables%20parciales/entregable%203/imagenes/diagramas/mer.png)
 
 Finalmente adjuntamos un link donde se ven los diagramas de cada una de las variables registradas hasta el momento:
 https://app.diagrams.net/#Wb!B6iW_HyZ9Uu006YT7wrOYtAgE85DSMBNgtvqP4jjpusfjQlxbKwHQbw161ArWf7P%2F01ZOJ7WU2RUCTY52DUKFEJ4FQ5DCEEUOK2#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D
