@@ -1632,9 +1632,9 @@ Semántica: Entidad que representa a los empleados de la empresa San Fernando qu
 | codigo_transportista | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del transportista dentro de la organización. |
 | codifo_Fecha_última_actividad | CHAR | 999999999 | 9 digitos | - | - | Identificador unico de la fecha en la que el transportista realizó su última actividad. |
 | codigo_Empleado| CHAR | 99999999 | 9 digitos | - | - | Identificador unico del empleado en la organización | 
-| Estado | CHAR | Texto | "Activo", "Inactivo" | - | - | Indica si el transportista se encuentra activo o inactivo en este momento. |
-| Número de licencia | CHAR | Texto | X(32) | - | - | Número de la licencia de conducir del transportista. |
-| Tipo de licencia | CHAR | Texto | "Categoría A", "Categoría B", "Categoría C", etc. | - | - | Tipo de licencia de conducir que posee el transportista. |
+| Estado | CHAR | X(32) | "Activo", "Inactivo" | - | - | Indica si el transportista se encuentra activo o inactivo en este momento. |
+| codigo_licencia | CHAR | 9999999999 | 9 digitos | - | - | codigo de la licencia de conducir del transportista. |
+| Tipo de licencia | CHAR | X(32) | "Categoría A", "Categoría B", "Categoría C", etc. | - | - | Tipo de licencia de conducir que posee el transportista. |
 | codigo_Traslado | CHAR | 9999999999 | 9 digitos | - | - | Identificador unico de traslado que ha realizado el transportista. |
 
 **Entidad**: Traslado
