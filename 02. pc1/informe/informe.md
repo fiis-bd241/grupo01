@@ -451,7 +451,7 @@ Caso de Uso #4: Registrar salida de productos
 |5|El sistema actualiza el inventario con la salida del producto|
 
 Caso de Uso #5: Generar reporte de inventario
-| Código | R005 | 
+| Código | R305 | 
 |----------|----------|
 |Objetivo|Obtener un reporte detallado del estado actual del inventario en el almacén|
 |Descripción|El usuario genera un reporte que muestra la cantidad, ubicación y demás información de los productos en el almacén|
@@ -465,7 +465,7 @@ Caso de Uso #5: Generar reporte de inventario
 |4|El usuario puede visualizar, imprimir o descargar el reporte|
 
 Caso de Uso #6: Registrar productos próximos a vencer
-| Código | R006 | 
+| Código | R306 | 
 |----------|----------|
 |Objetivo|Identificar y registrar los productos con fechas de vencimiento cercanas|
 |Descripción|El usuario revisa las fechas de vencimiento de los productos y registra aquellos que están próximos a caducar para su seguimiento|
@@ -479,7 +479,7 @@ Caso de Uso #6: Registrar productos próximos a vencer
 |4|El sistema guarda el registro de los productos próximos a vencer para su seguimiento|
 
 Caso de Uso #7: Realizar reubicación de productos
-| Código | R007 | 
+| Código | R307 | 
 |----------|----------|
 |Objetivo|Modificar la ubicación de los productos en el almacén
 |Descripción|El usuario cambia la ubicación de los productos en el sistema, ya sea por optimización de espacios, reorganización o nuevos ingresos
