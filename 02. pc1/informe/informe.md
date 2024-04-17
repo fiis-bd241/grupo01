@@ -666,11 +666,14 @@ Caso de Uso #5: Registro de incidencias internas
 
 ### Módulo 2: Seguimiento
 
-<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/seguimiento-1.jpeg"></p>
+![Pantallla 1](https://github.com/fiis-bd241/grupo01/assets/164358065/0dc9d667-3f1c-4c7c-a8d0-3d78e583d0ef)
 
-<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/seguimiento-2.jpeg"></p>
+![Pantallla 2](https://github.com/fiis-bd241/grupo01/assets/164358065/f00dc926-ce6e-4098-8100-607abf265f7f)
 
-<p align="center" width="90%"><img width="90%" src="../entregables%20parciales/entregable%203/imagenes/prototipo/seguimiento-3.jpeg"></p>
+![Pantallla 3](https://github.com/fiis-bd241/grupo01/assets/164358065/95ef1cc0-4498-4372-aec9-654c03fb9d91)
+
+![Pantallla 4](https://github.com/fiis-bd241/grupo01/assets/164358065/d04fc44c-ef3b-4682-9c31-7912a648c48e)
+
 
 ### Módulo 3: Almacén
 
