@@ -840,13 +840,16 @@ Por supuesto, aquí tienes un resumen de dos líneas para cada requerimiento de 
 ### Prototipos
 ### Módulo 1: Pedidos
 
-
+### Pantalla para enviar los datos del usuario
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/069a79c8-4a00-48db-8e46-652a0ab06f8d"></p>
 
+### Pantalla para solicitar los productos
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/821d9171-5559-4bca-a751-5f86b46dca10"></p>
 
+### Pantalla para ver la orden de pedido
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/49dfc0e5-710d-490c-b201-58bd785044da"></p>
 
+### Pantalla para ver todos los pedidos realizados
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/6a3f5696-d896-48f3-bf29-00fba6369d3d"></p>
 
 [Prototipo en Figma](https://www.figma.com/file/KQ34ScwxvuSCmmvHqfIPRP/Untitled?type=design&node-id=85-33763&mode=design&t=t2m1MihV991qcCyH-0)
