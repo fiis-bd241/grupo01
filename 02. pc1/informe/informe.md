@@ -621,7 +621,7 @@ Caso de Uso #5: Registro de incidencias internas
 |3|Verifica los datos y confirma el registro|
 |4|El sistema actualiza el registro con el nuevo ingreso|
 
-#### 3.2. Requerimientos de atributos de calidad
+#### 4.2. Requerimientos de atributos de calidad
 
 1. Verificación de procesos sobre pedido de abastecimiento:
 - Exactitud en la Recepción de Pedidos de Insumos
@@ -650,7 +650,7 @@ Caso de Uso #5: Registro de incidencias internas
 - Análisis de Causa Raíz de las Incidencias para evitar su recurrencia
 
 
-#### 3.3. Restricciones
+#### 4.3. Restricciones
 - El diseño del modelo relacional de datos debe ser compatible con las características y funcionalidades de PostgreSQL.
 - El acceso a la base de datos desde el backend debe realizarse utilizando sentencias SQL nativas de PostgreSQL.
 
@@ -715,7 +715,7 @@ Caso de Uso #3: Visualizar un reclamo
 |2| Seleccionar el reclamo a visualizar|
 |3| Visualizar el reclamo, que presenta campos que pueden ser editados. |
 
-#### 3.2. Requerimientos de atributos de calidad
+#### 6.2. Requerimientos de atributos de calidad
 
 Por supuesto, aquí tienes un resumen de dos líneas para cada requerimiento de calidad:
 
@@ -727,7 +727,7 @@ Por supuesto, aquí tienes un resumen de dos líneas para cada requerimiento de 
   
 - Eficiencia: Debe ofrecer respuestas rápidas con automatización de tareas y uso optimizado de recursos del sistema. Escalabilidad para manejar volúmenes crecientes de reclamos sin comprometer el rendimiento.
 
-#### 3.3. Restricciones
+#### 6.3. Restricciones
 - El diseño del modelo relacional de datos debe ser compatible con las características y funcionalidades de PostgreSQL.
 - El acceso a la base de datos desde el backend debe realizarse utilizando sentencias SQL nativas de PostgreSQL.
 
@@ -1489,4 +1489,4 @@ Se tomó como referencia el siguiente gráfico que identifica la relación de al
 Finalmente adjuntamos un link donde se ven los diagramas de cada una de las variables registradas hasta el momento:
 https://app.diagrams.net/#Wb!B6iW_HyZ9Uu006YT7wrOYtAgE85DSMBNgtvqP4jjpusfjQlxbKwHQbw161ArWf7P%2F01ZOJ7WU2RUCTY52DUKFEJ4FQ5DCEEUOK2#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D
 
-[Regresar al índice](../../../README.md)
+[Regresar al índice](../../README.md)
