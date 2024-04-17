@@ -920,7 +920,7 @@ Entidades involucradas:
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/d912d7c6-32e3-4306-9c7a-a80bae940abc"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/55c4105c-40ca-4d80-b618-73b44102b51f"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/635b40a4-2d96-4135-9acc-4a0e4c564956"></p>
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/fe3f5dfc-a23b-4c96-b78a-02a1ab323225"></p>
 
