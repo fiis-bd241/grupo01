@@ -1519,19 +1519,19 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: ProgramacionReporte
+**Entidad:** ProgramacionReporte 
 
-Semántica:
+Semántica: Datos necesarios para la generación automática de cada reporte.
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| ATRIBUTO                | NATURALEZA | FORMATO   | VALORES VÁLIDOS  | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                           |
+| ----------------------- | ---------- | --------- | ---------------- | ------ | ----------- | ----------------------------------------------------- |
+| Cod_ProgramacionReporte | CHAR       | 999999999 | 9 dígitos        | --     | --          | Identificador de la programación del reporte.         |
+| Filtros                 | CHAR       | X(128)    | NO NULO          | --     | --          | Filtros necesarios para el reporte guardados.         |
+| Frecuencia              | INT        | X(32)     | Activo, Inactivo | --     | --          | Cada cuanto debe generarse automaticamente el reporte |
+| Estado                  | CHAR       | X(32)     | Activo, Inactivo | --     | --          | Indica si la programación este activa o inactiva      |
+| Cod_empleado            | CHAR       | 999999999 | 9 dígitos        | --     | --          | Empleado que programó el reporte                      |
+| Cod_fechaInicio         | CHAR       | 999999999 | 9 dígitos        | --     | --          | Referencia a la fecha donde inicia la programación    |
+| Cod_fechaFin            | CHAR       | 999999999 | 9 dígitos        | --     | --          | Referencia a la fecha donde termina la programación   |
 
 **Entidad**: Reclamo
 
