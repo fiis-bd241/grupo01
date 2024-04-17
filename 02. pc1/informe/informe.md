@@ -1366,17 +1366,23 @@ Semántica: Entidad que representa las diferentes transacciones o movimientos de
 
 **Entidad**: Pedido
 
-Semántica:
+Semántica: La entidad que representa las solicitudes de compra o de suministros realizadas por la empresa San Fernando.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| Número de pedido | Atributo | Numérico | Entero positivo | - | - | Identificador único del pedido. |
+| Tipo de pedido | Atributo | Texto | "Interno", "Externo" | - | - | Indica si el pedido es interno (entre áreas de la empresa) o externo (con un proveedor). |
+| Fecha de pedido | Atributo | Fecha | Formato DD/MM/AAAA | - | Entidad Fecha | Fecha en la que se realizó el pedido. |
+| Fecha de entrega | Atributo | Fecha | Formato DD/MM/AAAA | - | Entidad Fecha | Fecha en la que se espera la entrega del pedido. |
+| Estado del pedido | Atributo | Texto | "Pendiente", "En proceso", "Entregado", "Cancelado" | - | - | Indica el estado actual del pedido. |
+| Cantidad total | Atributo | Numérico | Decimal positivo | Unidad de medida | - | Cantidad total de elementos solicitados en el pedido. |
+| Monto total | Atributo | Numérico | Decimal positivo | Moneda | - | Monto total del pedido. |
+| Observaciones | Atributo | Texto | Cadena de caracteres alfanuméricos | - | - | Información adicional sobre el pedido. |
+| Representante | Atributo | Numérico | Entero positivo | - | Entidad Representante | Número de representante que realizó el pedido. |
+| Orden de pedido | Atributo | Numérico | Entero positivo | - | Entidad Orden de Pedido | Número de orden de pedido asociada al pedido. |
+| Elementos solicitados | Atributo | Texto | Cadena de caracteres alfanuméricos | - | Entidad Elemento Catálogo | Información sobre los elementos solicitados en el pedido. |
+| Traslado asociado | Atributo | Numérico | Entero positivo | - | Entidad Traslado | Número de traslado asociado al pedido, en caso de que sea necesario. |
+| Reclamo asociado | Atributo | Numérico | Entero positivo | - | Entidad Reclamo | Número de reclamo asociado al pedido, en caso de que se haya presentado. |
 
 **Entidad:** PedidoExterno
 
