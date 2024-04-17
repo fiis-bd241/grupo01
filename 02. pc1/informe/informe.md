@@ -1114,7 +1114,7 @@ Semántica: Local, cuyo propietario es San Fernando, dedicado a guardar bienes d
 | Cod_almacenero   | CHAR       | 999999999   | Alfanuméricos    | ---     | ---         | Identificador de la persona encargada del almacén       |
 | Cantidad_sectores| INT        | 999         | >0               | ---     | ---         | Número de divisiones en las cuales se distribuye el local. |
 
-**Entidad**: Centro Frigorífico
+**Entidad**: CentroFrigorífico
 
 Semántica:
 
@@ -1129,6 +1129,34 @@ Semántica:
 |          |            |         |                 |        |             |             |
 
 **Entidad**: Cliente
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: ClienteInterno
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: ClienteExterno
 
 Semántica:
 
@@ -1218,6 +1246,20 @@ Semántica: Registro del momento en el tiempo y ubicación en el que estuvo un v
 | Cod_fecha      | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador de la fecha y hora específicas en las que el vehículo se encuentra en la ubicación |
 | Cod_vehículo   | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador del vehículo cuya ubicación se registra en determinado tiempo              |
 | Cod_ubicación  | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador de la ubicación que registra un vehículo en un instante                    |
+
+**Entidad**: Incidencia
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
 
 **Entidad**: Local
 
@@ -1331,7 +1373,7 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: Pedido Externo
+**Entidad**: PedidoExterno
 
 Semántica:
 
@@ -1345,7 +1387,7 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: Pedido Interno
+**Entidad**: PedidoInterno
 
 Semántica:
 
@@ -1401,7 +1443,22 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: Punto de Entrega
+**Entidad**: ProgramacionReporte
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+
+**Entidad**: PuntoEntrega
 
 Semántica:
 
@@ -1429,6 +1486,19 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
+**Entidad**: Reporte
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
 **Entidad**: Representante
 
 Semántica:
@@ -1443,7 +1513,7 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: Rutas
+**Entidad**: Ruta
 
 Semántica: Conjunto de ubicaciones que va a visitar el vehículo en su transcurso de su origen a su destino.
 
