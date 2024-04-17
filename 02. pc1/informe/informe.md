@@ -223,7 +223,7 @@ Caso de Uso #1: Registrar Pedido
 |3 | El almacenista completa el formulario y selecciona la opción para agregar productos. |
 
 Caso de Uso #2: Agregar productos al pedido. 
-| Código | R002 | 
+| Código | R102 | 
 |----------|----------|
 |Objetivo | Permitir al almacenista (usuario) agregar los productos solicitados al pedido.|
 |Descripción | Después de ingresar la información del usuario (Almacenista) en el formulario de registro de pedido, el usuario puede agregar los productos solicitados a través de una tabla. | 
