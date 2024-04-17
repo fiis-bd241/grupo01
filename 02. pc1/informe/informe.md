@@ -197,7 +197,7 @@ Interacción con otros módulos:
 
 ### Diagrama de paquetes
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/7537e725-235a-413d-9370-229e327a56fc"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/161625149/5da420f3-77e1-4041-bb2d-a56b96548828"></p>
 
 Link del diagrama: [https://drive.google.com/file/d/1nwVLNkUNbD_joILjk6pRH49kTC3cYcXy/view?usp=sharing](https://app.diagrams.net/?src=about#G1nwVLNkUNbD_joILjk6pRH49kTC3cYcXy#%7B%22pageId%22%3A%22c4acf3e9-155e-7222-9cf6-157b1a14988f%22%7D)
 ## Requerimientos
