@@ -766,19 +766,79 @@ Este módulo está relacionado a la entidad pedidos y dirección.
 
 ### Módulo 4: Control
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/651613ad-ddf6-4944-a55e-7d3b2e321051"></p>
+#### Pantalla principal
+![figma 1](https://github.com/fiis-bd241/grupo01/assets/164266999/96c913fd-cbcf-402a-b9eb-3604ea65d8f4)
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/5ccfc679-16d9-425b-9d93-3a7b09ef6e9f"></p>
+Entidades involucradas:
+-Incidencia
+-Vehículo
+-Transportista
+-Cliente
+-Fecha
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/1df37adb-5e43-4da9-85e0-4fa9fc754d71"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/b07618fc-3915-401b-a3aa-ee89c369919c"></p>
+#### Pantalla de verificación de procesos sobre pedido de abastecimiento
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/dc5589dd-1e80-4d45-9f79-6bf5eff4d08e"></p>
+![figma 2](https://github.com/fiis-bd241/grupo01/assets/164266999/df1df8e0-d8e8-46ea-94a3-bc3b572341db)
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/960ce6b6-906f-4389-b970-b19b511758b6"></p>
+Entidades involucradas:
+-Traslado
+-Pedido
+-Vehículo
+-Empleado
+-Seguimiento
+-Cliente interno
+-Incidencia
+-Local
+-Fecha
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164266999/c8c21cc8-f7f0-4374-8828-8d11ea403bad"></p>
+#### Pantalla de verificación de procesos sobre pedido de venta
+
+![figma 3](https://github.com/fiis-bd241/grupo01/assets/164266999/1efa3191-7bec-4e87-93eb-1f6263231dae)
+
+Entidades involucradas:
+-Traslado
+-Pedido
+-Vehículo
+-Empleado
+-Seguimiento
+-Cliente externo
+-Incidencia
+-Fecha
+
+#### Pantalla de disponibilidad de conductores
+
+![figma 4](https://github.com/fiis-bd241/grupo01/assets/164266999/88de757e-a9e2-429f-809f-a3b8593bbdc1)
+
+Entidades involucradas:
+-Trasportista
+-Empleado
+-Fecha
+
+#### Pantalla de disponibilidad de vehículos
+
+![figma 5](https://github.com/fiis-bd241/grupo01/assets/164266999/a8fe5ec9-9ac9-4995-85c7-8ae945ba7952)
+
+Entidades involucradas:
+-Vehículo
+-Ubicación
+-Empleado
+-Fecha
+
+#### Pantalla de registro de incidencias internas
+
+![figma 6](https://github.com/fiis-bd241/grupo01/assets/164266999/d9065ac3-c8fc-4608-b740-ad0a9b763888)
+
+Entidades involucradas:
+-Reclamo
+-Incidencia
+-Empleado
+-Traslado
+-Cliente interno
+-Vehículo
+-Seguimiento
+-Fecha
+
 
 ### Módulo 5: Reportes
 
