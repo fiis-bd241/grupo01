@@ -252,7 +252,7 @@ Caso de Uso #3: Ver detalle pedido.
 |3 | El usuario puede confirmar o cancelar el pedido. |
 
 Caso de Uso #4: Ver lista de pedidos.
-| Código | R004 | 
+| Código | R104 | 
 |----------|----------|
 |Objetivo | | Permitir a los almacenista (usuarios) consultar la lista de todos los pedidos registrados.
 |Descripción | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
