@@ -159,7 +159,7 @@ Interacción con otros módulos:
 
 a. Usuarios
 - Administrador: Puede realizar todas las operaciones del módulo de pedidos.
-- Usuario(Almacenista de cada departamento) de Planta Huaral: Puede registrar los pedidos al almacén general.
+- Usuario (Almacenista de cada departamento) de Planta Huaral: Puede registrar los pedidos al almacén general.
 
 b. Casos de uso
 
@@ -191,6 +191,19 @@ Caso de Uso #2: Agregar productos al pedido.
 |4 | El usuario revisa la información de los productos ingresados y selecciona la opción para confirmar el pedido. |
 |5 | El sistema asigna un número de pedido único al nuevo pedido. |
 |6 | El sistema guarda la información del pedido, incluyendo los productos solicitados, y actualiza el estado a "pendiente". |
+
+Caso de Uso #3: Ver detalle pedido. 
+| Código | R001 | 
+|----------|----------|
+|Objetivo | | 	Permitir a los almacenistas de cada departamento (usuarios) consultar los detalles de un pedido específico. |
+|Descripción | Despúes de completar todos los productos solicitados y el sistema muestra la información detallada, incluyendo los datos del usuario, los productos solicitados y sus detalles. |
+|Actor Primario | Almacenista de cada departamento. |
+|Actor Secundario | N/A. |
+|Precondiciones | El usuario debio completar la tabla de los productos solicitados. |
+|Paso | Acción |
+|1 | Después de agregar los productos al pedido, el usuario selecciona la opción para ver el detalle del pedido. |
+|2 | El sistema muestra la información detallada del pedido, incluyendo los datos del usario, los productos solicitados y sus detalles (código de producto, unidad de medida, descripción, precio unitario), la fecha de solicitud, la fecha de entrega, el estado del pedido, el tiempo transcurridos (días) del pedido y cualquier otra información relevante.
+|3 | El usuario puede confirmar o cancelar el pedido. |
 
 Caso de Uso #4: Ver lista de pedidos.
 | Código | R004 | 
