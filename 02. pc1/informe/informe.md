@@ -1294,17 +1294,15 @@ Semántica: Entidad que representa a los trabajadores de la empresa San fernando
 
 **Entidad**: Evidencia
 
-Semántica:
+Semántica: Implica la representación de archivos adjuntos que respaldan o documentan reclamos, incidencias o eventos en un sistema o proceso. 
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| cod_evidencia    |  CHAR     |   9999999    |     -          |   -     |     -        |  Código único de identificación de la evidencia |
+| nombre_evidencia |  CHAR     |   X(16)      |     -           |   -     |     -        |  Nombre o descripción de la evidencia. |
+| tipo_evidencia   |  CHAR     |   X(16)      |  foto, video, documento, etc  |  -      |      -       |  Tipo de evidencia (formato del archivo).|
+| tipo_archivo     |  CHAR     |   X(3)       | jpg, png, mp4, pdf, etc       |    -    |      -       |  Tipo de archivo asociado a la evidencia.|
+
 
 **Entidad**: Fecha
 
