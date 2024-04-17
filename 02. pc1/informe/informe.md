@@ -684,7 +684,7 @@ Caso de Uso #1: Crear un reclamo de un cliente interno
 |3| Ingresar la naturaleza del reclamo.|
 |4| Ingresar la documentación y evidencia en formato Word o PDF.|
 |5| Ingresar los datos para la resolución deseada.|
-|6| Confirmar el seguimiento al reclamo.|
+|6| Confirmar el seguimiento del reclamo.|
 
 
 Caso de Uso #2: Crear un reclamo de un cliente externo
@@ -701,7 +701,7 @@ Caso de Uso #2: Crear un reclamo de un cliente externo
 |3| Ingresar la naturaleza del reclamo.|
 |4| Ingresar la documentación y evidencia en formato Word o PDF.|
 |5| Ingresar los datos para la resolución deseada.|
-|6| Confirmar el seguimiento al reclamo.|
+|6| Confirmar el seguimiento del reclamo.|
 
 Caso de Uso #3: Visualizar un reclamo
 | Código | R603 | 
