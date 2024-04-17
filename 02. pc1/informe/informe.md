@@ -1180,19 +1180,16 @@ Semántica: Forma de contactar con una persona
 | Tipo_contacto | CHAR       | X          | Dirección, Celular, Correo, Código Postal, Teléfono | ---    | ---         | Medio de contacto con el cliente                  |
 | Descripcion   | CHAR       | X(64)      | NO NULO                                    | ---    | ---         | Contenido de la forma del tipo de contacto        |
 
-**Entidad**: ElementoCatálogo
+**Entidad:** ElementoCatálogo
 
-Semántica:
+Semántica: Representa los productos ofrecidos por sanfernando 
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| ATRIBUTO        | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                   |
+| --------------- | ---------- | --------- | --------------- | ------ | ----------- | --------------------------------------------- |
+| Cod_elementoCat | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del elemento en el catálogo.    |
+| Nombre          | CHAR       | X(128)    | No nulo         | --     | --          | Nombre del elemento en el catálogo.           |
+| Descripcion     | CHAR       | X(256)    | No nulo         | --     | --          | Descripción del elemento en el catálogo.      |
+| Unidad          | VARCHAR    | X(32)     | No nulo         | --     | --          | Unidad de medida del elemento en el catálogo. |
 
 **Entidad**: Empleado
 
@@ -1372,33 +1369,25 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: PedidoExterno
+**Entidad:** PedidoExterno
 
-Semántica:
+Semántica: Pedido realizado por un cliente externo
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| ATRIBUTO           | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                     |
+| ------------------ | ---------- | --------- | --------------- | ------ | ----------- | ----------------------------------------------- |
+| Cod_pedidoExterno  | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del pedido externo en el sistema. |
+| Cod_pedido         | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del pedido asociado.              |
+| Cod_clienteExterno | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del cliente externo asociado.     |
 
-**Entidad**: PedidoInterno
+**Entidad:** PedidoInterno
 
-Semántica:
+Semántica: Pedido realizado por un cliente interno
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| ATRIBUTO           | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                     |
+| ------------------ | ---------- | --------- | --------------- | ------ | ----------- | ----------------------------------------------- |
+| Cod_pedidoInterno  | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del pedido interno en el sistema. |
+| Cod_pedido         | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del pedido asociado.              |
+| Cod_clienteInterno | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del cliente interno asociado.     |
 
 **Entidad**: Persona
 
@@ -1414,19 +1403,18 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: ProductoCatálogo
+**Entidad:** ProductoCatalogo 
 
-Semántica:
+Semántica: Representa a un producto terminado en la planta
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| ATRIBUTO           | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                                            |
+| ------------------ | ---------- | --------- | --------------- | ------ | ----------- | ---------------------------------------------------------------------- |
+| Cod_productoCat    | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del producto catalogo.                                   |
+| Temperatura_maxima | FLOAT      | 99.99     | No nulo         | --     | --          | Máxima temperatura que resiste el producto terminado para preservarlo. |
+| Temperatura_mínima | FLOAT      | 99.99     | No nulo         | --     | --          | Mínima temperatura a la quede mantenerse el producto para preservarlo. |
+| Categoría          | CHAR       | X(64)     |                 | --     | --          | Indica a la categoria que pertenece para almacenarlo correctamente     |
+| Vida útil          | FLOAT      | 99        | x>0             | --     | --          | Máximo de días en el que el producto es consumible.                    |
+| Cod_elementoCat    | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador de la entidad elemento categoría                         |
 
 **Entidad**: ProductoStock
 
@@ -1576,19 +1564,19 @@ Semántica: Latitud y Longitud de un lugar geográfico
 | Longitud        | FLOAT      | 999.999999  | Positivos y negativos         | ---                  | ---         | Ubicación de un punto respecto al meridiano de Greenwich                   |
 | Latitud         | FLOAT      | 999.999999  | Positivos y negativos         | ---                  | ---         | Ubicación de un punto del globo respecto a la línea imaginaria del ecuador |
 
-**Entidad**: Vehículo
+**Entidad:** Vehículo
 
-Semántica:
+Semántica: 
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| ATRIBUTO         | NATURALEZA | FORMATO   | VALORES VÁLIDOS  | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                 |
+| ---------------- | ---------- | --------- | ---------------- | ------ | ----------- | ------------------------------------------- |
+| Cod_vehículo     | CHAR       | 999999999 | 9 dígitos        | --     | --          | Identificador del vehículo en el sistema.   |
+| Placa            | CHAR       | XXX999    | Alfanumérico     | --     | --          | Número de placa del vehículo.               |
+| Estado           | CHAR       | X(32)     | Activo, Inactivo | --     | --          | Estado actual del vehículo.                 |
+| Anio_fabricacion | INTEGER    | 9999      | Año válido       | --     | --          | Año en que fue fabricado el vehículo.       |
+| Capacidad_carga  | FLOAT      | 999.99    | x>0              | --     | --          | Capacidad máxima de carga del vehículo.     |
+| Modelo           | CHAR       | X(64)     | NO NULO          | --     | --          | Modelo del vehículo.                        |
+| Cod_fecha        | CHAR       | 999999999 | 9 dígitos        | --     | --          | Identificador de la entidad fecha asociada. |
 
 ## Entrevista
 A continuación, se muestra la grabación de la entrevista realizada a la ingeniera Joselin Alexandra Torres Robles, supervisora del área de almacén de la planta Huaral de San Fernando.
