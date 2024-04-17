@@ -1698,7 +1698,6 @@ Integrante: [Espinoza Cerna Alex](../../01.%20integrantes/Alex%20Espinoza/alex.m
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=6ixwsKJIGqA" target="_blank"><img src="http://img.youtube.com/vi/6ixwsKJIGqA/0.jpg" 
 alt="san fernando control" width="240" height="180" border="10" /></a>
 
-(Link 1)
 
 ### Módulo 5
 Integrante: [Cruz Mamani Cristhian Samir](../../01.%20integrantes/Cristhian%20Cruz/Cristhian%20Cruz.md)
