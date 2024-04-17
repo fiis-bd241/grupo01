@@ -1591,17 +1591,15 @@ Semántica: Conjunto de ubicaciones que va a visitar el vehículo en su transcur
 
 **Entidad**: Seguimiento
 
-Semántica:
+Semántica: Permitir el seguimiento y la gestión de casos, incidencias o eventos dentro de San Fernando.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+|  numero_caso       |   INT       |   9999      |      >0           | -       |     -        |   Número de caso asociado al seguimiento          |
+| tipo_acción        |    CHAR     |   X(150)     |      -           |  -      |    -         | Tipo de acción realizada en el seguimiento            |
+| area_responsable   |    CHAR     |  X(10)       |    -             |  -      |    -         |  Área responsable del seguimiento           |
+|  comentario        |   CHAR      |  X(200)       |       -          |     -   |      -       |Comentario o descripción detallada del seguimiento             |
+
 
 **Entidad**: Stock
 
