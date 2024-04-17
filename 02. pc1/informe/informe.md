@@ -1129,7 +1129,7 @@ Entidades Involucradas:
 
 **Entidad**: Cliente
 
-Semántica:
+Semántica: 
 
 | ATRIBUTO       | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                      |
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------|
@@ -1137,6 +1137,7 @@ Semántica:
 | estado         | CHAR     | x(32)| Activo, Inactivo, Pendiente | - | -           | Estado actual del cliente en la plataforma.      |
 | prioridad      | INT  |  9   | 1, 2, 3, ...    | -      | -           | Prioridad asignada al cliente para atención.     |
 | cod_fecha_registro | CHAR     | 999999999 | 9 dígitos      | -      | -      | Fecha en que el cliente fue registrado en el sistema. |
+| cod_representante | CHAR     | 999999999 | 9 dígitos      | -      | -      | Código único que identifica al representante |
 
 **Entidad**: ClienteInterno
 
@@ -1166,17 +1167,6 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: Contacto
-
-Semántica: Forma de contactar con una persona
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|---------------|------------|------------|--------------------------------------------|--------|-------------|---------------------------------------------------|
-| Cod_persona   | CHAR       | 999999999  | 9 dígitos                                  | ---    | ---         | Identificador de la persona asociada a la persona |
-| Cod_contacto  | CHAR       | 999999999  | 9 dígitos                                  | ---    | ---         | Identificador del contacto asociado              |
-| Tipo_contacto | CHAR       | X          | Dirección, Celular, Correo, Código Postal, Teléfono | ---    | ---         | Medio de contacto con el cliente                  |
-| Descripcion   | CHAR       | X(64)      | NO NULO                                    | ---    | ---         | Contenido de la forma del tipo de contacto        |
-
 **Entidad:** ElementoCatálogo
 
 Semántica: Representa los productos ofrecidos por sanfernando 
@@ -1186,7 +1176,7 @@ Semántica: Representa los productos ofrecidos por sanfernando
 | Cod_elementoCat | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del elemento en el catálogo.    |
 | Nombre          | CHAR       | X(128)    | No nulo         | --     | --          | Nombre del elemento en el catálogo.           |
 | Descripcion     | CHAR       | X(256)    | No nulo         | --     | --          | Descripción del elemento en el catálogo.      |
-| Unidad          | VARCHAR    | X(32)     | No nulo         | --     | --          | Unidad de medida del elemento en el catálogo. |
+| Unidad          | CHAR       | X(32)     | No nulo         | --     | --          | Unidad de medida del elemento en el catálogo. |
 
 **Entidad**: Empleado
 
@@ -1202,7 +1192,7 @@ Semántica: Entidad que representa a los trabajadores de la empresa San fernando
 | codigo Traslado | CHAR | 9999999 | 9 digitos | - | - | Identificador del pedido de traslado |
 | codigo Operacion |  CHAR | 9999999 | 9 digitos | - | - | Identificador de la operacion |
 | codigo Reporte | CHAR | 9999999 | 9 digitos | - | - | Identificador del reporte |
-
+| codigo Representante | CHAR | 9999999 | 9 digitos | - | - | Identificador del representante |
 
 **Entidad**: Evidencia
 
@@ -1249,10 +1239,11 @@ Semántica:
 
 | ATRIBUTO             | NATURALEZA | FORMATO      | VALORES VÁLIDOS                         | UNIDAD | DERIVADA DE      | DESCRIPCIÓN  |
 |----------------------|------------|--------------|-----------------------------------------|--------|------------------|---------------------------------------------------------------------------------------------------|
-| cod_incidencia       | 999999999    | 9 digitos | -                                       | -      | -                | Código único que identifica la incidencia.                                                         |
-| tipo_incidencia      | CHAR      | x(32)| -                                       | -      | -                | Tipo de incidencia que ha ocurrido. Puede ser de diferentes categorías, como técnica, operativa, etc. |
-| descripcion          | CHAR    | x(128) | -                                       | -      | -                | Descripción detallada de la incidencia.                                                           |
-| cod_fecha_incidencia | 999999999    | 9 digitos | -                                       | -      | -                | Código de la fecha en la que ocurrió la incidencia. Puede ser el código único de la fecha.          |
+| cod_incidencia       | CHAR | 999999999 | 9 digitos | -  | -  | -  | Código único que identifica la incidencia.|
+| tipo_incidencia      | CHAR | x(32)| - | -  | -  | Tipo de incidencia que ha ocurrido. Puede ser de diferentes categorías, como técnica, operativa, etc. |
+| descripcion          | CHAR | x(128) | -  | -  | -  | Descripción detallada de la incidencia.|
+| cod_fecha_incidencia | CHAR | 999999999    | 9 digitos | -  | -    | -  | Código de la fecha en la que ocurrió la incidencia. Puede ser el código único de la fecha.          |
+| cod_traslado | CHAR | 999999999    | 9 digitos | -  | -    | -  | Código único que identifica un traslado|
 
 **Entidad**: Local
 
