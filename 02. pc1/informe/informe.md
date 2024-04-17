@@ -958,8 +958,6 @@ Entidades involucradas:
 - Seguimiento
 - Fecha
 
-[Prototipo en Figma]([https://www.figma.com/file/nnoiQDwJ9WstLLZmVisdpw/Untitled?type=design&node-id=0-1&mode=design&t=ztZFDIkEuNp6ykcn-0](https://www.figma.com/file/fuBq9UP6oEirktX5Z8kees/Modulo-Control?type=design&node-id=0-1&mode=design&t=kxTJaMVHGOlqS8D3-0))
-
 #### Cuestionario
 
 1. ¿Existe alguna consideración especial en cuanto a rendimiento? Por ejemplo, en sistemas que llegan a usuario final, un bajo rendimiento puede tener como consecuencia la pérdida de una venta.
