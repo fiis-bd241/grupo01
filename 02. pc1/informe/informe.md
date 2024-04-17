@@ -1335,12 +1335,12 @@ Semántica: Entidad que representa las diferentes transacciones o movimientos de
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-| codigo de operacion | CHAR | 9999999 | 9 digitos | - | - | Identificador único de la operación. |
-| Tipo de operación | CHAR | X(32) | "Entrada", "Salida", "Traslado" | - | - | Indica el tipo de movimiento realizado en la operación. |
-| codigo Fecha inicio | CHAR | 9999999 | 9 digitos | - | - | codigo de la fecha en la que se realizó la operación. |
-| codigo empleado | CHAR | 9999999 |  9 digitos |  - |  - | identificador unico de la empleado |
-| codigo mercancia | CHAR | 9999999 | 9 digitos | -  |  - |  identificador unico de la mercancia |
-| codigo Fecha fin | CHAR | 9999999 | 9 digitos | -  |  - |  identificadro unico de la Fecha fin |
+| codigo_operacion | CHAR | 9999999 | 9 digitos | - | - | Identificador único de la operación. |
+| Tipo_operación | CHAR | X(32) | "Entrada", "Salida", "Traslado" | - | - | Indica el tipo de movimiento realizado en la operación. |
+| codigo_Fecha_Inicio | CHAR | 9999999 | 9 digitos | - | - | codigo de la fecha en la que se realizó la operación. |
+| codigo_empleado | CHAR | 9999999 |  9 digitos |  - |  - | identificador unico de la empleado |
+| codigo_mercancia | CHAR | 9999999 | 9 digitos | -  |  - |  identificador unico de la mercancia |
+| codigo_Fecha_fin | CHAR | 9999999 | 9 digitos | -  |  - |  identificadro unico de la Fecha fin |
 
 **Entidad**: Pedido
 
