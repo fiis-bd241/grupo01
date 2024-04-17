@@ -363,9 +363,22 @@ Caso de Uso #4: Registrar la entrega de un pedido
 |Actor Secundario | Encargado de almacén planta Huaral, Almacenero Almacén General |
 |Precondiciones | El transportista debe estar logeado y tener el código de pedido y de traslado | 
 |Paso | Acción | 
-|1 | El supervisor entra a la pantalla de Pedidos en Progreso y escribe el código del traslado actual en la barra respectiva. |
-|2 | El supervisor da click en “Registrar entrega” y selecciona el pedido de dicho traslado que cambiará de estatus. | 
+|1 | El Transportista entra a la pantalla de Pedidos en Progreso y escribe el código del traslado actual en la barra respectiva. |
+|2 | El transportista da click en “Registrar entrega” y selecciona el pedido de dicho traslado que cambiará de estatus. | 
 |3 | El sistema guarda los cambios y se ven reflejados en las otras pantallas. |
+
+Caso de Uso #5: Contactar con el transportista
+| Código | R205 | 
+|----------|----------|
+|Objetivo | Facilitar el proceso de busqueda de contacto con el transportista en caso de incidencias. |
+|Descripción | EL supervisor ingresa al sistema, ubica su pedido, visualiza los detalles del proceso de transporte y obtiene la información necesaria para contactar con el transportista o iniciar el registro de una incidencia. |
+|Actor Primario | Supervisor de almacen |
+|Actor Secundario | Encargado de almacén planta Huaral |
+|Precondiciones | El supervisor debe estar logueado y tener la información del pedido del cual necesita información. | 
+|Paso | Acción | 
+|1 | El supervisor entra a la pantalla de Pedidos en Progreso y escribe el código del pedido en la barra de busqueda respectiva. |
+|2 | El supervisor da click en “Detalles de Traslado” y será redirigido a la pantalla Detalle de Traslado con el código del traslado respectivo automáticamente cargado. | 
+|3 | El sistema muestra toda la información relacionada con el traslado, incluyendo la información de contacto del transportista, con la cual puede realizar el contacto respectivo. |
 
 #### 2.2. Requerimientos de atributos de calidad
 - Seguridad: Dado que el sistema manejará datos de ubicación e información sensible sobre las entregas, la seguridad es de suma importancia. Se debe procurar acceso solo a los trabajadores con las autorizaciones adecuadas para asignar lectura y escritura dependiendo del nivel de acceso.
