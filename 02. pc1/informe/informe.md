@@ -1090,7 +1090,57 @@ Entidades Involucradas:
 
 #### Diccionario de datos:
 
-**Entidad**: Persona
+**Entidad**: Almacén
+
+Semántica: Local, cuyo propietario es San Fernando, dedicado a guardar bienes de la empresa.
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+| Cod_local        | CHAR       | 999999999   | Alfanuméricos    | ---     | ---         | Código de local que identifica al lugar                |
+| Cod_almacen      | CHAR       | 999999999   | Alfanuméricos    | ---     | ---         | Identificador del almacén específico                   |
+| Nombre_almacen   | CHAR       | X(64)       | Alfanuméricos    | ---     | ---         | Denominación del almacén                               |
+| Cod_almacenero   | CHAR       | 999999999   | Alfanuméricos    | ---     | ---         | Identificador de la persona encargada del almacén       |
+| Cantidad_sectores| INT        | 999         | >0               | ---     | ---         | Número de divisiones en las cuales se distribuye el local. |
+
+**Entidad**: Centro Frigorífico
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Cliente
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Contacto
+Semántica: Forma de contactar con una persona
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|---------------|------------|------------|--------------------------------------------|--------|-------------|---------------------------------------------------|
+| Cod_persona   | CHAR       | 999999999  | 9 dígitos                                  | ---    | ---         | Identificador de la persona asociada a la persona |
+| Cod_contacto  | CHAR       | 999999999  | 9 dígitos                                  | ---    | ---         | Identificador del contacto asociado              |
+| Tipo_contacto | CHAR       | X          | Dirección, Celular, Correo, Código Postal, Teléfono | ---    | ---         | Medio de contacto con el cliente                  |
+| Descripcion   | CHAR       | X(64)      | NO NULO                                    | ---    | ---         | Contenido de la forma del tipo de contacto        |
+
+**Entidad**: ElementoCatálogo
 
 Semántica:
 
@@ -1118,150 +1168,7 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: Transportista
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Traslado
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Pedido
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Operación
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Contacto
-Semántica: Forma de contactar con una persona
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|---------------|------------|------------|--------------------------------------------|--------|-------------|---------------------------------------------------|
-| Cod_persona   | CHAR       | 999999999  | 9 dígitos                                  | ---    | ---         | Identificador de la persona asociada a la persona |
-| Cod_contacto  | CHAR       | 999999999  | 9 dígitos                                  | ---    | ---         | Identificador del contacto asociado              |
-| Tipo_contacto | CHAR       | X          | Dirección, Celular, Correo, Código Postal, Teléfono | ---    | ---         | Medio de contacto con el cliente                  |
-| Descripcion   | CHAR       | X(64)      | NO NULO                                    | ---    | ---         | Contenido de la forma del tipo de contacto        |
-
-**Entidad**: Rutas
-
-Semántica: Conjunto de ubicaciones que va a visitar el vehículo en su transcurso de su origen a su destino.
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Código_ruta    | CHAR       | 999999999  | 9 dígitos       | ---         | ---         | Identificador primario para relacionar y referenciar la ruta en el sistema. |
-| Local_origen   | CHAR       | 999999999  | 9 dígitos       | ---         | ---         | Representa la ubicación exacta del local de donde parte el vehículo. |
-| Local_destino  | CHAR       | 999999999  | 9 dígitos       | ---         | ---         | Representa la ubicación exacta del local a donde llega el vehículo. |
-| Distancia      | INT        | 9999       | >0              | Kilómetros  | ---         | Indica la distancia en unidades específicas entre el punto de origen y el punto de destino. |
-| Tipo_ruta      | CHAR       | X(64)      | Urbana, Rural   | ---         | ---         | Clasificación que define la naturaleza y características principales de la ruta. |
-| Duracion       | INT        | 999        | >0              | horas       | ---         | Representa la duración estimada de la ruta en el sistema.  |
-
-
-**Entidad**: Ubicación
-
-Semántica: Latitud y Longitud de un lugar geográfico
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Cod_ubicacion   | CHAR       | 999999999   | Alfanumérico                  | ---                  | ---         | Identificador de la ubicación                                              |
-| Longitud        | FLOAT      | 999.999999  | Positivos y negativos         | ---                  | ---         | Ubicación de un punto respecto al meridiano de Greenwich                   |
-| Latitud         | FLOAT      | 999.999999  | Positivos y negativos         | ---                  | ---         | Ubicación de un punto del globo respecto a la línea imaginaria del ecuador |
-
-
-**Entidad**: Local
-
-Semántica: Lugar físico que cuenta con una dirección legal registrada.
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Cod_local      | CHAR       | 999999999   | Alfanuméricos           | ---              | ---         | Identificador del local                                                  |
-| País           | CHAR       | xxx         | ISO 3166-1 alfa-3       | ---              | ---         | República donde se encuentra el local                                    |
-| Región         | CHAR       | xx-xxx      | ISO 3166-2              | ---              | ---         | Departamento / Estado donde se encuentra el local                         |
-| Distrito       | CHAR       | X(64)       | Alfanuméricos           | ---              | ---         | Ciudad donde se encuentra el local                                        |
-| Calle          | CHAR       | X(64)       | Alfanuméricos           | ---              | ---         | Calle, Jr, Av p Psje donde se encuentra el local                         |
-| Numero         | INT        | 9999        | >0                      | ---              | ---         | Identificador numérico de domicilio                                       |
-| Cod_ubicacion  | CHAR       | 999999999   | Alfanumérico            | ---              | ---         | Identificador de la longitud y latitud exactas del local                 |
-
-
-**Entidad**: Almacén
-
-Semántica: Local, cuyo propietario es San Fernando, dedicado a guardar bienes de la empresa.
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Cod_local        | CHAR       | 999999999   | Alfanuméricos    | ---     | ---         | Código de local que identifica al lugar                |
-| Cod_almacen      | CHAR       | 999999999   | Alfanuméricos    | ---     | ---         | Identificador del almacén específico                   |
-| Nombre_almacen   | CHAR       | X(64)       | Alfanuméricos    | ---     | ---         | Denominación del almacén                               |
-| Cod_almacenero   | CHAR       | 999999999   | Alfanuméricos    | ---     | ---         | Identificador de la persona encargada del almacén       |
-| Cantidad_sectores| INT        | 999         | >0               | ---     | ---         | Número de divisiones en las cuales se distribuye el local. |
-
-
-**Entidad**: GPS
-
-Semántica: Registro del momento en el tiempo y ubicación en el que estuvo un vehículo determinado.
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Cod_fecha      | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador de la fecha y hora específicas en las que el vehículo se encuentra en la ubicación |
-| Cod_vehículo   | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador del vehículo cuya ubicación se registra en determinado tiempo              |
-| Cod_ubicación  | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador de la ubicación que registra un vehículo en un instante                    |
-
-**Entidad**: Centro Frigorífico
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Punto de Entrega
+**Entidad**: Evidencia
 
 Semántica:
 
@@ -1289,147 +1196,31 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: Reclamo
+**Entidad**: GPS
 
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Cliente
-
-Semántica:
+Semántica: Registro del momento en el tiempo y ubicación en el que estuvo un vehículo determinado.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| Cod_fecha      | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador de la fecha y hora específicas en las que el vehículo se encuentra en la ubicación |
+| Cod_vehículo   | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador del vehículo cuya ubicación se registra en determinado tiempo              |
+| Cod_ubicación  | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador de la ubicación que registra un vehículo en un instante                    |
 
-**Entidad**: Representante
+**Entidad**: Local
 
-Semántica:
+Semántica: Lugar físico que cuenta con una dirección legal registrada.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
+| Cod_local      | CHAR       | 999999999   | Alfanuméricos           | ---              | ---         | Identificador del local                                                  |
+| País           | CHAR       | xxx         | ISO 3166-1 alfa-3       | ---              | ---         | República donde se encuentra el local                                    |
+| Región         | CHAR       | xx-xxx      | ISO 3166-2              | ---              | ---         | Departamento / Estado donde se encuentra el local                         |
+| Distrito       | CHAR       | X(64)       | Alfanuméricos           | ---              | ---         | Ciudad donde se encuentra el local                                        |
+| Calle          | CHAR       | X(64)       | Alfanuméricos           | ---              | ---         | Calle, Jr, Av p Psje donde se encuentra el local                         |
+| Numero         | INT        | 9999        | >0                      | ---              | ---         | Identificador numérico de domicilio                                       |
+| Cod_ubicacion  | CHAR       | 999999999   | Alfanumérico            | ---              | ---         | Identificador de la longitud y latitud exactas del local                 |
 
-**Entidad**: Reclamo
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Cliente
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Representante
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Evidencia
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Seguimiento
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Mercancía
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: Stock
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
-**Entidad**: ProductoStock
+**Entidad**: MaterialCatalágo
 
 Semántica:
 
@@ -1457,20 +1248,6 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: MateriaPrimaStock
-
-Semántica:
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-|          |            |         |                 |        |             |             |
-
 **Entidad**: MateriaPrimaCatálogo
 
 Semántica:
@@ -1485,7 +1262,7 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: MaterialCatalágo
+**Entidad**: MateriaPrimaStock
 
 Semántica:
 
@@ -1499,7 +1276,7 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: ProductoCatálogo
+**Entidad**: Mercancía
 
 Semántica:
 
@@ -1513,7 +1290,21 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: ElementoCatálogo
+**Entidad**: Operación
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Pedido
 
 Semántica:
 
@@ -1555,7 +1346,7 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
-**Entidad**: Vehículo
+**Entidad**: Persona
 
 Semántica:
 
@@ -1569,6 +1360,168 @@ Semántica:
 |          |            |         |                 |        |             |             |
 |          |            |         |                 |        |             |             |
 
+**Entidad**: ProductoCatálogo
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: ProductoStock
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Punto de Entrega
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Reclamo
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Representante
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Rutas
+
+Semántica: Conjunto de ubicaciones que va a visitar el vehículo en su transcurso de su origen a su destino.
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+| Código_ruta    | CHAR       | 999999999  | 9 dígitos       | ---         | ---         | Identificador primario para relacionar y referenciar la ruta en el sistema. |
+| Local_origen   | CHAR       | 999999999  | 9 dígitos       | ---         | ---         | Representa la ubicación exacta del local de donde parte el vehículo. |
+| Local_destino  | CHAR       | 999999999  | 9 dígitos       | ---         | ---         | Representa la ubicación exacta del local a donde llega el vehículo. |
+| Distancia      | INT        | 9999       | >0              | Kilómetros  | ---         | Indica la distancia en unidades específicas entre el punto de origen y el punto de destino. |
+| Tipo_ruta      | CHAR       | X(64)      | Urbana, Rural   | ---         | ---         | Clasificación que define la naturaleza y características principales de la ruta. |
+| Duracion       | INT        | 999        | >0              | horas       | ---         | Representa la duración estimada de la ruta en el sistema.  |
+
+**Entidad**: Seguimiento
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Stock
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Transportista
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Traslado
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+
+**Entidad**: Ubicación
+
+Semántica: Latitud y Longitud de un lugar geográfico
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+| Cod_ubicacion   | CHAR       | 999999999   | Alfanumérico                  | ---                  | ---         | Identificador de la ubicación                                              |
+| Longitud        | FLOAT      | 999.999999  | Positivos y negativos         | ---                  | ---         | Ubicación de un punto respecto al meridiano de Greenwich                   |
+| Latitud         | FLOAT      | 999.999999  | Positivos y negativos         | ---                  | ---         | Ubicación de un punto del globo respecto a la línea imaginaria del ecuador |
+
+**Entidad**: Vehículo
+
+Semántica:
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
+|----------|------------|---------|-----------------|--------|-------------|-------------|
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
+|          |            |         |                 |        |             |             |
 
 ## Entrevista
 A continuación, se muestra la grabación de la entrevista realizada a la ingeniera Joselin Alexandra Torres Robles, supervisora del área de almacén de la planta Huaral de San Fernando.
