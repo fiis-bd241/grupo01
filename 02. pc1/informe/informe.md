@@ -831,9 +831,8 @@ Entidades:
 
 -Representante
 
--Operacion
+-Pedido
 
--Mercancia
 #### Pantalla para ver la orden de pedido
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/49dfc0e5-710d-490c-b201-58bd785044da"></p>
 
