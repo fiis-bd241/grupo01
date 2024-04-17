@@ -843,6 +843,7 @@ Por supuesto, aquí tienes un resumen de dos líneas para cada requerimiento de 
 ## Pantalla para enviar los datos del usuario
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/069a79c8-4a00-48db-8e46-652a0ab06f8d"></p>
 Entidades:
+
 -Cliente interno
 
 -Representante
@@ -851,6 +852,8 @@ Entidades:
 
 ## Pantalla para solicitar los productos
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/821d9171-5559-4bca-a751-5f86b46dca10"></p>
+Entidades:
+
 -Representante
 
 -Operacion
@@ -862,6 +865,8 @@ Entidades:
 -Orden de pedido
 ## Pantalla para ver todos los pedidos realizados
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/6a3f5696-d896-48f3-bf29-00fba6369d3d"></p>
+
+Entidades:
 
 -Pedido
 
