@@ -649,21 +649,29 @@ Caso de Uso #5: Registro de incidencias internas
 
 ### Módulo 6: Reclamos
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/3d50d3df-febb-4ee2-8b36-9422ff082f9b"></p>
+#### Pantalla Principal
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/a9f229d4-b4c1-42b0-ae0b-fca8a0976e45"></p>
+![PROTOTIPO 1](https://github.com/fiis-bd241/grupo01/assets/130238034/2c747c51-3884-4ed8-b26a-6b3ad7328d83)
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/09f6360d-4671-4515-8a6e-b9b5a13bbf7d"></p>
+![PROTOTIPO 2](https://github.com/fiis-bd241/grupo01/assets/130238034/593c1895-b88c-4b27-a2fc-7f1e01f1ae56)
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/90edd206-2f40-4b35-8226-604e00e682ca"></p>
+#### Pantallas de Crear Reclamo de Cliente Interno
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/eeea2e9b-1559-470b-92ac-245324178beb"></p>
+![PROTOTIPO 3](https://github.com/fiis-bd241/grupo01/assets/130238034/c2f43051-d0bb-4d39-a5b0-2b953c7f9c16)
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/7270a60b-abf0-4b84-8c93-bf903aae1235"></p>
+![PROTOTIPO 4](https://github.com/fiis-bd241/grupo01/assets/130238034/9fef7f12-466e-4a03-b6ea-c769ab700640)
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/07287c54-cdc5-421b-8b3f-c06f2947fb90"></p>
+![PROTOTIPO 5](https://github.com/fiis-bd241/grupo01/assets/130238034/e03c0d7d-4e2c-44d2-8d9c-29ffef5bfddf)
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/9beb1d0a-569b-400d-9db0-f4f34059f099"></p>
+![PROTOTIPO 6](https://github.com/fiis-bd241/grupo01/assets/130238034/7a6bd1f1-494e-43c2-8e9b-2491286c038b)
+
+![PROTOTIPO 7](https://github.com/fiis-bd241/grupo01/assets/130238034/d21db883-c515-4f2e-800f-ba75c587a550)
+
+![PROTOTIPO 8](https://github.com/fiis-bd241/grupo01/assets/130238034/6742ef99-e2d6-4106-bc2b-dee30bdafce7)
+
+![PROTOTIPO 9](https://github.com/fiis-bd241/grupo01/assets/130238034/803d07a8-3d54-4980-9ebe-02d79d5ec990)
+
+#### Pantallas de Crear Reclamo de Cliente Externo
 
 [Prototipo en Figma](https://www.figma.com/file/kZLR8sf4PPRQyQf9dsDxDp/PROTOTIPO-DE-RECLAMOS?type=design&node-id=0-1&mode=design&t=7KtYyZiyPe04xOE2-0)
 
