@@ -1133,10 +1133,10 @@ Semántica:
 
 | ATRIBUTO       | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                      |
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------|
-| cod_cliente    | Texto      | Alfanumérico | -             | -      | -           | Código único que identifica al cliente.          |
-| estado         | Texto      | Alfanumérico | Activo, Inactivo, Pendiente | - | -           | Estado actual del cliente en la plataforma.      |
-| prioridad      | Numérico   | Entero    | 1, 2, 3, ...    | -      | -           | Prioridad asignada al cliente para atención.     |
-| fecha_registro | Fecha      | YYYY-MM-DD | -               | -      | -           | Fecha en que el cliente fue registrado en el sistema. |
+| cod_cliente    | CHAR       | 999999999 | 9 dígitos       | -      | -           | Código único que identifica al cliente.          |
+| estado         | CHAR     | x(32)| Activo, Inactivo, Pendiente | - | -           | Estado actual del cliente en la plataforma.      |
+| prioridad      | INT  |  9   | 1, 2, 3, ...    | -      | -           | Prioridad asignada al cliente para atención.     |
+| cod_fecha_registro | CHAR     | 999999999 | 9 dígitos      | -      | -      | Fecha en que el cliente fue registrado en el sistema. |
 
 **Entidad**: ClienteInterno
 
@@ -1228,14 +1228,14 @@ Semántica:
 
 | ATRIBUTO    | NATURALEZA | FORMATO        | VALORES VÁLIDOS                         | UNIDAD   | DERIVADA DE | DESCRIPCIÓN                                                                                      |
 |-------------|------------|----------------|-----------------------------------------|----------|-------------|--------------------------------------------------------------------------------------------------|
-| cod_fecha   | Texto      | Alfanumérico   | -                                       | -        | -           | Código único que identifica la fecha.                                                             |
-| tipo        | Texto      | Alfanumérico   | Laborable, No Laborable, Feriado        | -        | -           | Tipo de día, indicando si es laborable, no laborable o un feriado.                               |
-| segundo     | Numérico   | Entero (0-59)  | 0-59                                    | Segundos | -           | Segundos en la hora de la fecha.                                                                 |
-| minuto      | Numérico   | Entero (0-59)  | 0-59                                    | Minutos  | -           | Minutos en la hora de la fecha.                                                                  |
-| hora        | Numérico   | Entero (0-23)  | 0-23                                    | Horas    | -           | Hora del día en la fecha.                                                                       |
-| dia         | Numérico   | Entero (1-31)  | 1-31                                    | Día      | -           | Día del mes en la fecha.                                                                        |
-| mes         | Numérico   | Entero (1-12)  | 1-12                                    | Mes      | -           | Mes del año en la fecha.                                                                        |
-| año         | Numérico   | Entero         | Año calendario                          | Año      | -           | Año de la fecha.                                                                                |
+| cod_fecha   | CHAR     | Alfanumérico   | -                                       | -        | -           | Código único que identifica la fecha.                                                             |
+| tipo        | CHAR      | X(32)  | Laborable, No Laborable, Feriado        | -        | -           | Tipo de día, indicando si es laborable, no laborable o un feriado.                               |
+| segundo     | INT   | 99  | 0-59                                    | Segundos | -           | Segundos en la hora de la fecha.                                                                 |
+| minuto      | INT   | 99  | 0-59                                    | Minutos  | -           | Minutos en la hora de la fecha.                                                                  |
+| hora        | INT   | 99  | 0-23                                    | Horas    | -           | Hora del día en la fecha.                                                                       |
+| dia         | INT   | 99  | 1-31                                    | Día      | -           | Día del mes en la fecha.                                                                        |
+| mes         | INT   | 99  | 1-12                                    | Mes      | -           | Mes del año en la fecha.                                                                        |
+| año         | INT   | 9999       | Año calendario                          | Año      | -           | Año de la fecha.                                                                                |
 
 **Entidad**: GPS
 
@@ -1251,12 +1251,12 @@ Semántica: Registro del momento en el tiempo y ubicación en el que estuvo un v
 
 Semántica:
 
-| ATRIBUTO             | NATURALEZA | FORMATO      | VALORES VÁLIDOS                         | UNIDAD | DERIVADA DE      | DESCRIPCIÓN                                                                                       |
+| ATRIBUTO             | NATURALEZA | FORMATO      | VALORES VÁLIDOS                         | UNIDAD | DERIVADA DE      | DESCRIPCIÓN  |
 |----------------------|------------|--------------|-----------------------------------------|--------|------------------|---------------------------------------------------------------------------------------------------|
-| cod_incidencia       | Texto      | Alfanumérico | -                                       | -      | -                | Código único que identifica la incidencia.                                                         |
-| tipo_incidencia      | Texto      | Alfanumérico | -                                       | -      | -                | Tipo de incidencia que ha ocurrido. Puede ser de diferentes categorías, como técnica, operativa, etc. |
-| descripcion          | Texto      | Texto        | -                                       | -      | -                | Descripción detallada de la incidencia.                                                           |
-| cod_fecha_incidencia | Texto      | Alfanumérico | -                                       | -      | -                | Código de la fecha en la que ocurrió la incidencia. Puede ser el código único de la fecha.          |
+| cod_incidencia       | 999999999    | 9 digitos | -                                       | -      | -                | Código único que identifica la incidencia.                                                         |
+| tipo_incidencia      | CHAR      | x(32)| -                                       | -      | -                | Tipo de incidencia que ha ocurrido. Puede ser de diferentes categorías, como técnica, operativa, etc. |
+| descripcion          | CHAR    | x(128) | -                                       | -      | -                | Descripción detallada de la incidencia.                                                           |
+| cod_fecha_incidencia | 999999999    | 9 digitos | -                                       | -      | -                | Código de la fecha en la que ocurrió la incidencia. Puede ser el código único de la fecha.          |
 
 **Entidad**: Local
 
@@ -1465,15 +1465,15 @@ Semántica:
 
 | ATRIBUTO             | NATURALEZA | FORMATO      | VALORES VÁLIDOS                         | UNIDAD | DERIVADA DE      | DESCRIPCIÓN                                                                                            |
 |----------------------|------------|--------------|-----------------------------------------|--------|------------------|--------------------------------------------------------------------------------------------------------|
-| Cod_reclamo          | Texto      | Alfanumérico | -                                       | -      | -                | Código único que identifica el reclamo.                                                                |
-| tipo_reclamo         | Texto      | Alfanumérico | -                                       | -      | -                | Tipo de reclamo, puede ser de diferentes categorías, como técnico, operativo, etc.                    |
-| nivel_urgencia       | Texto      | Alfanumérico | Bajo, Medio, Alto                        | -      | -                | Nivel de urgencia del reclamo, indicando la prioridad con la que debe ser atendido.                   |
-| estado               | Texto      | Alfanumérico | Pendiente, En Proceso, Resuelto, Cerrado | -      | -                | Estado actual del reclamo.                                                                            |
-| comentario           | Texto      | Texto        | -                                       | -      | -                | Comentario detallado sobre el reclamo, describiendo el problema o situación reportada.                 |
-| cod_representante    | Texto      | Alfanumérico | -                                       | -      | -                | Código del representante asignado al reclamo.                                                         |
-| cod_seguimiento      | Texto      | Alfanumérico | -                                       | -      | -                | Código de seguimiento del reclamo, si aplica.                                                          |
-| cod_pedido           | Texto      | Alfanumérico | -                                       | -      | -                | Código del pedido asociado al reclamo, si aplica.                                                     |
-| cod_fecha_incidente  | Texto      | Alfanumérico | -                                       | -      | -                | Código de la fecha en la que el cliente encontró el problema/incidente. Puede ser el código único de la fecha. |
+| Cod_reclamo          | CHAR| 999999999 | 9 dígitos     | -      | -                | Código único que identifica el reclamo.|
+| tipo_reclamo         | CHAR| X(32) | Tipo 1, Tipo 2, Tipo 3, ...  | -      | -     | Tipo de reclamo, puede ser de diferentes categorías, como técnico, operativo, etc.|
+| nivel_urgencia       | CHAR | X(32) | Bajo, Medio, Alto  | -      | -   | Nivel de urgencia del reclamo, indicando la prioridad con la que debe ser atendido.|
+| estado               | CHAR| X(32)| Pendiente, En Proceso, Resuelto, Cerrado | -      | -    | Estado actual del reclamo.|
+| comentario           | CHAR| X(128) | -      | -      | -      | Comentario detallado sobre el reclamo, describiendo el problema o situación reportada.|
+| cod_representante    | CHAR| 999999999 | 9 dígitos    | -      | -    | Código del representante asignado al reclamo.|
+| cod_seguimiento      | CHAR | 999999999 | 9 dígitos   | -      | -    | Código de seguimiento del reclamo, si aplica.|
+| cod_pedido           | CHAR | 999999999 | 9 dígitos   | -      | -    | Código del pedido asociado al reclamo, si aplica.|
+| cod_fecha_incidente  | CHAR | 999999999 | 9 dígitos   | -      | -    | Código de la fecha en la que el cliente encontró el problema/incidente. Puede ser el código único de la fecha. |
 
 **Entidad**: Reporte
 Semántica:
@@ -1492,15 +1492,15 @@ Semántica:
 
 Semántica:
 
-| ATRIBUTO        | NATURALEZA | FORMATO      | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                                                                      |
+| ATRIBUTO        | NATURALEZA | FORMATO      | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
 |-----------------|------------|--------------|-----------------|--------|-------------|--------------------------------------------------------------------------------------------------|
-| cod_representante | Texto      | Alfanumérico | -               | -      | -           | Código único que identifica al representante.                                                     |
-| cargo           | Texto      | Alfanumérico | -               | -      | -           | Cargo o posición del representante en la empresa.                                                |
-| cod_persona     | Texto      | Alfanumérico | -               | -      | -           | Código de identificación de la persona asociada al representante.                                 |
-| cod_pedido      | Texto      | Alfanumérico | -               | -      | -           | Código del pedido asociado al representante, si aplica.                                           |
-| cod_cliente     | Texto      | Alfanumérico | -               | -      | -           | Código del cliente asociado al representante, si aplica.                                         |
-| cod_reclamo     | Texto      | Alfanumérico | -               | -      | -           | Código del reclamo asociado al representante, si aplica.                                         |
-| cod_local       | Texto      | Alfanumérico | -               | -      | -           | Código del local o sucursal asociado al representante.                                            |
+| cod_representante | CHAR | 999999999| 9 dígitos | -      | -           | Código único que identifica al representante.|
+| cargo           | CHAR | X(32) | Cargo 1, Cargo 2, Cargo 3, ...       | -      | -           | Cargo o posición del representante en la empresa.|
+| cod_persona     | CHAR | 999999999 | 9 dígitos | -      | -           | Código de identificación de la persona asociada al representante. |
+| cod_pedido      | CHAR | 999999999 | 9 dígitos | -      | -           | Código del pedido asociado al representante, si aplica.|
+| cod_cliente     | CHAR | 999999999 | 9 dígitos | -      | -           | Código del cliente asociado al representante, si aplica.|
+| cod_reclamo     | CHAR | 999999999 | 9 dígitos | -      | -           | Código del reclamo asociado al representante, si aplica.|
+| cod_local       | CHAR | 999999999 | 9 dígitos | -      | -           | Código del local o sucursal asociado al representante.|
 
 **Entidad**: Ruta
 
