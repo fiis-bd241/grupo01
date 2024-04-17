@@ -420,7 +420,7 @@ Caso de Uso #2: Consultar disponibilidad de productos
 |4|El usuario puede imprimir o descargar el reporte de disponibilidad|
 
 Caso de Uso #3: Realizar picking de pedidos
-| Código | R003 | 
+| Código | R303 | 
 |----------|----------|
 |Objetivo|Seleccionar y retirar los productos del almacén para atender un pedido|
 |Descripción|El usuario verifica el pedido pendiente, ubica los productos en el almacén, retira las cantidades solicitadas y prepara el pedido para despacho|
