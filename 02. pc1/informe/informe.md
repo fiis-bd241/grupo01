@@ -1646,6 +1646,8 @@ A continuación, se muestra la grabación de la entrevista realizada a la ingeni
 
 [![Entrevista](../entregables%20parciales/entregable%202/imagenes/video_preview.png)](http://www.youtube.com/watch?v=DPxvZC3R6Ws "Entrevista a Joselin Torres")
 
+Los detalles de la reunión fueron registrados en la [acta](../entregables%20parciales/entregable%202/acta-entrevista-20240401.md) respectiva, así como también se elaboró una [transcripción](../entregables%20parciales/entregable%202/transcripcion-entrevista-20240401.md) de las preguntas y respuestas realizadas durante la entrevista, además se generó un [resumen](../entregables%20parciales/entregable%202/Resumen-transcripcion.md) donde se sintetiza los procesos más importantes con un cierto orden, con el fin de comprender mejor los procesos de San Fernando.
+
 ## Videos individuales
 A continuación, se muestra los links de los videos invididuales de cada módulo realizados por los integrantes.
 
@@ -1659,8 +1661,12 @@ alt="IMAGE ALT TEXT HERE" width="800" height="500" border="30" /></a>
 ### Módulo 2
 Integrante: [Campos Herrera Dennis](../../01.%20integrantes/Dennis%20Campos%20/Dennis%20Campos.md)
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=QgKg1K2R5Wc" target="_blank"><img src="http://img.youtube.com/vi/QgKg1K2R5Wc/0.jpg" 
-alt="Hola k ase" width="500" height="300" border="10" /></a>
+<div align="center">
+    <a href="http://www.youtube.com/watch?feature=player_embedded&v=QgKg1K2R5Wc" target="_blank">
+        <img src="http://img.youtube.com/vi/QgKg1K2R5Wc/0.jpg" alt="Hola k ase" width="700" height="400" border="10" />
+    </a>
+</div>
+
 
 ### Módulo 3
 Integrante: [Alvarado Usucachi José Joaquín](../../01.%20integrantes/Joaquín%20Alvarado/Joaquín%20Alvarado.md)
@@ -1670,9 +1676,11 @@ Integrante: [Alvarado Usucachi José Joaquín](../../01.%20integrantes/Joaquín%
 ### Módulo 4
 Integrante: [Espinoza Cerna Alex](../../01.%20integrantes/Alex%20Espinoza/alex.md)
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=6ixwsKJIGqA" target="_blank"><img src="http://img.youtube.com/vi/6ixwsKJIGqA/0.jpg" 
-alt="san fernando control" width="240" height="180" border="10" /></a>
-
+<div align="center">
+    <a href="http://www.youtube.com/watch?feature=player_embedded&v=6ixwsKJIGqA" target="_blank">
+        <img src="http://img.youtube.com/vi/6ixwsKJIGqA/0.jpg" alt="Hola k ase" width="700" height="400" border="10" />
+    </a>
+</div>
 
 ### Módulo 5
 Integrante: [Cruz Mamani Cristhian Samir](../../01.%20integrantes/Cristhian%20Cruz/Cristhian%20Cruz.md)
@@ -1685,7 +1693,7 @@ Integrante: [Cárdenas Palacios Leonardo Gustavo](../../01.%20integrantes/Leonar
 
 [![Hola1](https://github.com/fiis-bd241/grupo01/assets/130238034/ff3458e7-57f3-42f0-8f22-06675b4c6723)](https://www.youtube.com/watch?v=3Sji5_U5_JA)
 
-Los detalles de la reunión fueron registrados en la [acta](../entregables%20parciales/entregable%202/acta-entrevista-20240401.md) respectiva, así como también se elaboró una [transcripción](../entregables%20parciales/entregable%202/transcripcion-entrevista-20240401.md) de las preguntas y respuestas realizadas durante la entrevista, además se generó un [resumen](../entregables%20parciales/entregable%202/Resumen-transcripcion.md) donde se sintetiza los procesos más importantes con un cierto orden, con el fin de comprender mejor los procesos de San Fernando.
+
 
 ## Avance de Diagramas Entidad-Relación
 Se tomó como referencia el siguiente gráfico que identifica la relación de algunas variables de la empresa San Fernando:
