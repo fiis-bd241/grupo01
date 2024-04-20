@@ -1406,7 +1406,7 @@ Semántica: Entidad que representa las diferentes transacciones o movimientos de
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
 |----------|------------|---------|-----------------|--------|-------------|-------------|
 | codigo_operacion | CHAR | 9999999 | 9 digitos | - | - | Identificador único de la operación. |
-| Tipo_operación | CHAR | X(32) | "Entrada", "Salida", "Traslado" | - | - | Indica el tipo de movimiento realizado en la operación. |
+| Tipo_operación | CHAR | X(32) | "Picking", "Precintado", "Paletizado", "Carga", "Descarga" | - | - | Indica el tipo de movimiento realizado en la operación. |
 | codigo_Fecha_Inicio | CHAR | 9999999 | 9 digitos | - | - | codigo de la fecha en la que se realizó la operación. |
 | codigo_empleado | CHAR | 9999999 |  9 digitos |  - |  - | identificador unico de la empleado |
 | codigo_mercancia | CHAR | 9999999 | 9 digitos | -  |  - |  identificador unico de la mercancia |
