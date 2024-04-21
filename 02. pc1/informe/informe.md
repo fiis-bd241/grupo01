@@ -1175,27 +1175,28 @@ Efectivamente, al tratar con la parte de logística de una empresa como San Fern
 
 ### Módulo 5: Reportes
 #### Pantalla Principal
-![reporte-1](https://github.com/fiis-bd241/grupo01/assets/161625149/611afe2d-e585-4362-b0ec-77458d10a393)
-![reporte-2](https://github.com/fiis-bd241/grupo01/assets/161625149/8804dc50-eff3-4ab0-906c-3fc0cad4d032)
-![reporte-3](https://github.com/fiis-bd241/grupo01/assets/161625149/9d7f02da-e60c-4688-ba0f-c65bcca96d94)
-![reporte-4](https://github.com/fiis-bd241/grupo01/assets/161625149/b30a5e5b-fd8a-452d-b498-66d18c6462a7)
+![Frame 5](https://github.com/fiis-bd241/grupo01/assets/161625149/bbe265ae-5dde-480a-a845-42621a6c23b9)
+![Frame 6](https://github.com/fiis-bd241/grupo01/assets/161625149/7ba7b92e-1e4e-43aa-8840-4846fa8fc678)
+![Frame 7](https://github.com/fiis-bd241/grupo01/assets/161625149/108fb15a-82e4-42ad-a7d3-783416d7e096)
+![Frame 8](https://github.com/fiis-bd241/grupo01/assets/161625149/b4acf8b1-9c9b-4e00-8049-bce671e82451)
+
 Entidades involucradas:
 - Local
 - Elemento catalogo
 - Stock
 
-#### Pantalla para Generar reporte
-![reporte-5](https://github.com/fiis-bd241/grupo01/assets/161625149/e7722d15-543b-450e-94d3-96f92eac99be)
-
 #### Pantalla para Programar reporte
-![reporte-6](https://github.com/fiis-bd241/grupo01/assets/161625149/7419efe2-fd43-46e7-a8de-a84ffa8a36cb)
+![Frame 2](https://github.com/fiis-bd241/grupo01/assets/161625149/8c82367f-cc94-4e3b-b20c-d19be4aa7cfa)
 Entidades involucradas:
 - Empleado
 - Programacion reporte
 - Reporte
-  
+
+#### Pantalla para Generar reporte
+![Frame 1](https://github.com/fiis-bd241/grupo01/assets/161625149/cba33736-7a25-4785-b1d2-4a97eea92108)
+
 #### Pantalla para Enviar reporte
-![reporte-7](https://github.com/fiis-bd241/grupo01/assets/161625149/b868a1b1-98b0-450b-93ac-6fd70dce3d31)
+![Frame 3](https://github.com/fiis-bd241/grupo01/assets/161625149/af40bc08-873c-48f9-bf28-2e77cac46e1a)
 
 ### Módulo 6: Reclamos
 
