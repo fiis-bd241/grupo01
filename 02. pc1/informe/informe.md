@@ -1707,10 +1707,10 @@ Integrante: [Cárdenas Palacios Leonardo Gustavo](../../01.%20integrantes/Leonar
 
 
 ## Avance de Diagramas Entidad-Relación
-Se tomó como referencia el siguiente gráfico que identifica la relación de algunas variables de la empresa San Fernando:
-![guía](../entregables%20parciales/entregable%203/imagenes/diagramas/mr.jpeg)
 
-Finalmente adjuntamos un link donde se ven los diagramas de cada una de las variables registradas hasta el momento:
-https://app.diagrams.net/#Wb!B6iW_HyZ9Uu006YT7wrOYtAgE85DSMBNgtvqP4jjpusfjQlxbKwHQbw161ArWf7P%2F01ZOJ7WU2RUCTY52DUKFEJ4FQ5DCEEUOK2#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D
+![modelo-logico (1)](https://github.com/fiis-bd241/grupo01/assets/161625149/119543cd-1eae-4ffc-a8c6-bbda8890d068)
+
+Link del diagrama:
+[https://app.diagrams.net/#Wb!B6iW_HyZ9Uu006YT7wrOYtAgE85DSMBNgtvqP4jjpusfjQlxbKwHQbw161ArWf7P%2F01ZOJ7WU2RUCTY52DUKFEJ4FQ5DCEEUOK2#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D](https://drive.google.com/file/d/1GrupzXPfoShdgRXzAIGe09sujAwB4f1J/view?usp=sharing)
 
 [Regresar al índice](../../README.md)
