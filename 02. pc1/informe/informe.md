@@ -1530,16 +1530,16 @@ Semántica: Conjunto de ubicaciones que va a visitar el vehículo en su transcur
 | tipo_ruta | CHAR | X(6) | Urbana, Rural | - | - | Clasificación que define la naturaleza y características principales de la ruta. |  
 | duracion | INT | 999 | >0 | horas | - | Representa la duración estimada de la ruta en el sistema. |  
 
-**Entidad**: Seguimiento  
+**Entidad**: Seguimiento Reclamo
 
 Semántica: Permitir el seguimiento y la gestión de casos, incidencias o eventos dentro de San Fernando.  
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| numero_caso | INT | 9999 | >0 | - | - | Número de caso asociado al seguimiento (Cola) |  
-| tipo_accion | CHAR | X(150) | - | - | - | Tipo de acción realizada en el seguimiento |  
-| area_responsable | CHAR | X(10) | - | - | - | Área responsable del seguimiento |  
-| comentario | CHAR | X(200) | - | - | - |Comentario o descripción detallada del seguimiento |  
+| numero_caso | INT | 9999 | >0 | - | - | Número de caso asociado al seguimiento (Cola) de reclamos |  
+| tipo_accion | CHAR | X(150) | - | - | - | Tipo de acción realizada en el seguimiento del reclamo|  
+| area_responsable | CHAR | X(10) | - | - | - | Área responsable del seguimiento de la queja |  
+| comentario | CHAR | X(200) | - | - | - |Comentario o descripción detallada del seguimiento del reclamo |  
 | fecha_resolucion | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que se espera resolver el reclamo | 
 
 **Entidad**: Stock  
@@ -1550,7 +1550,7 @@ Semántica: Se refiere a la representación de los productos físicos disponible
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
 | cod_stock | CHAR | 999999999 | - | - | - | Código único de identificación del registro de stock |  
 | nro_lote | INT | 999 | >=0 | - | - | Número de lote asociado al stock | 
-| tipo_stock | CHAR | X(32) | - | - | - | Tipo de acción realizada en el seguimiento | 
+| tipo_stock | CHAR | X(32) | - | - | - | Tipo de producto asociado a un stock | 
 | fecha_caducidad | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que el producto pierde su valor o propiedades | 
 | tipo | CHAR | X(32) | Producto, Material, Materia Prima | - | - | Clasificación de elemento por su relación del proceso de producción| 
 
@@ -1644,8 +1644,8 @@ Semántica:
 | Registra | Cliente | 1 | Local | N | --- | No | Cod_cliente + cod_local |
 | Presenta | Representante | 1 | Reclamo | N | --- | No | Cod_representante + cod_reclamo |
 | Tiene | Reclamo | 1 | Evidencia | N | --- | No | Cod_reclamo + cod_evidencia |
-| Presenta | Reclamo | 1 | Seguimiento | 1 | --- | No | Cod_reclamo + cod_seguimiento |
-| Designado a | Seguimiento | N | Cliente Interno | 1 | --- | No | Cod_seguimiento + cod_cliente_int |
+| Presenta | Reclamo | 1 | Seguimiento Reclamo | 1 | --- | No | Cod_reclamo + cod_seguimiento_rec |
+| Designado a | Seguimiento Reclamo | N | Cliente Interno | 1 | --- | No | Cod_seguimiento_rec + cod_cliente_int |
 | Posiciona | GPS | N | Vehículo | 1 | --- | No | Cod_gps + cod_vehículo |
 | Registra | GPS | 1 | Ubicación | N | --- | No | Cod_gps + cod_ubicacion |
 | Conforma | Local | 2 | Tramo | 1 | --- | No | Cod_local + cod_tramo |
