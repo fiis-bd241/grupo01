@@ -869,7 +869,7 @@ Al ingresar al módulo el usuario podrá ver una serie de vínculos que lo lleva
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/0dc9d667-3f1c-4c7c-a8d0-3d78e583d0ef"></p>
 
 #### Pantalla Pedidos en Progreso:
-Requerimiento asociado: [R201](R201) - R202 - R204
+Requerimiento asociado: [R201](#R201) - R202 - R204
 
 Al elegir el vínculo a “Pedidos en progreso” se dirigirá a la pantalla principal del módulo, donde no le aparecerán los datos hasta que escriba el código del traslado o el código del pedido en sus respectivos cuadros de búsqueda. 
 Si por ejemplo el usuario solo cuenta con el código del pedido basta con buscarlo y automáticamente se completará el código del traslado debido a la relación entre ambas entidades.
