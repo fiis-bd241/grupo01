@@ -1052,7 +1052,7 @@ Entidades Involucradas:
 
 [Prototipo en Figma](https://www.figma.com/file/Lrq1F0qg06qLWHrVxUnk8p/Almac%C3%A9n?type=design&node-id=0%3A1&mode=design&t=tfzkqQTL0uNO9rXI-1)
 
-Para explicar de manera más sencilla la relación entre los casos de uso, las interfaces y el modelado conceptual, se presenta a continuación un ejemplo de poblamiento de datos de las entidades ProductoStock, Mercancía y Operación
+Para explicar de manera más sencilla la relación entre los casos de uso, las interfaces y el modelado conceptual, se presenta a continuación un ejemplo de poblamiento de datos preliminar de las entidades ProductoStock, Mercancía y Operación (los atributos están dados de manera representativa, no necesariamente coinciden con el formato especificado en el diccionario):
 
 ProductoStock
 
@@ -1074,18 +1074,26 @@ Mercancía
 
 Operación
 
-|IDOperación|Tipo|IDOpAfectada|FechaInicio|FechaFin|IDEmpEjecutor|IDEmpSupervisor|
-|----------|----------|----------|----------|----------|----------|----------|
-|OP-001|Picking|NULL|20240415001|20240415002|EMP-001|EMP-102|
-|OP-002|Precintado|OP-001|20240415003|20240415004|EMP-002|EMP-102|
-|OP-003|Paletizado|OP-002|20240415005|20240415006|EMP-003|EMP-102|
-|OP-004|Carga|OP-003|20240415007|20240415008|EMP-004|EMP-105|
-|OP-005|Descarga|OP-004|20240416003|20240416004|EMP-009|EMP-118|
-|OP-006|Picking|NULL|20240417001|20240417002|EMP-001|EMP-102|
+|IDOperación|Tipo|IDOpPrevia|Fecha|HoraInicio|HoraFin|IDEmpEjecutor|IDEmpSupervisor|
+|----------|----------|----------|----------|----------|----------|----------|----------|
+|OP-001|Picking|NULL|20240415|12:00|12:32|EMP-001|EMP-102|
+|OP-002|Precintado|OP-001|20240415|12:35|13:10|EMP-002|EMP-102|
+|OP-003|Paletizado|OP-002|20240415|13:12|13:30|EMP-003|EMP-102|
+|OP-004|Carga|OP-003|20240415|13:31|13:45|EMP-004|EMP-105|
+|OP-005|Salida|OP-004|20240416|13:45|13:47|EMP-008|EMP-118|
+|OP-006|Recepción|OP-005|20240416|10:01|10:06|EMP-008|EMP-118|
+|OP-007|Descarga|OP-006|20240416|10:12|10:30|EMP-009|EMP-118|
+|OP-008|Picking|NULL|20240417|10:05|10:12|EMP-001|EMP-102|
 
-Las existencias de un producto (instancias de ProductoStock) se agrupan en mercancías mediante una operación conocida como picking (el ID de esta operación tipo "Picking" va en el campo IDOperación de la entidad Mercancía). La secuencia de las operaciones es la siguiente: picking -> precintado -> paletizado -> carga -> descarga. Cada una de estas operaciones tiene un campo IDOpAfectada con el ID de la operación que le precede, excepto las operaciones tipo "Picking" que no les precede ninguna operación. Cuando se realiza una operación tipo "Precintado", el campo "NúmeroPrecinto" de las instancias de Mercancía asociadas a la operación tipo "Picking" que le precede se actualizan con su respectivo código de precinto.
+Traslado
 
-Tomar en cuenta también que la entidad Traslado tiene un campo referido a un identificador de una instancia de Operación tipo "Carga" que sirve para dar información de la mercancía que se está transportando.
+| CodTraslado | CodVehiculo | CodOperacionSalida | CodOperacionRecepcion |
+|--------------|--------------|----------------------|-------------------------|
+| 111111    | 001          | OP-005           | OP-006              |
+
+Las existencias de un producto (instancias de ProductoStock) se agrupan en mercancías mediante una operación conocida como picking (el ID de esta operación tipo "Picking" va en el campo IDOperación de la entidad Mercancía). La secuencia de las operaciones es la siguiente: picking -> precintado -> paletizado -> carga -> salida -> recepción -> descarga. Cada una de estas operaciones tiene un campo IDOpAfectada con el ID de la operación que le precede, excepto las operaciones tipo "Picking" que no les precede ninguna operación. Cuando se realiza una operación tipo "Precintado", el campo "NúmeroPrecinto" de las instancias de Mercancía asociadas a la operación tipo "Picking" que le precede se actualizan con su respectivo código de precinto.
+
+Tomar en cuenta también que la entidad Traslado tiene un campo referido a un identificador de una instancia de Operación tipo "Salida" que sirve para dar información sobre la salida de la mercancía (esto también permite obtener información de la mercancía que se está trasladando, consultando la operación que le precede con el atributo IDOpPrevia sucesivamente hasta llegar a la operación tipo "Picking" y consultar con la tabla de Mercancía las mercancías asociadas), y un identificador de una instancia de Operación tipo "Recepción" que sirve para dar información sobre la verificación de la recepción de la mercancía.
 
 ### Módulo 4: Control
 
