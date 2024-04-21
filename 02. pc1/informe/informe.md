@@ -1179,29 +1179,21 @@ Efectivamente, al tratar con la parte de logística de una empresa como San Fern
 ![reporte-4](https://github.com/fiis-bd241/grupo01/assets/161625149/b30a5e5b-fd8a-452d-b498-66d18c6462a7)
 Entidades involucradas:
 - Local
-- Almacén
-- Fecha
+- Elemento catalogo
+- Stock
 
 #### Pantalla para Generar reporte
 ![reporte-5](https://github.com/fiis-bd241/grupo01/assets/161625149/e7722d15-543b-450e-94d3-96f92eac99be)
-Entidades involucradas:
-- Empleado
-- Reporte
-- Fecha
-  
+
 #### Pantalla para Programar reporte
 ![reporte-6](https://github.com/fiis-bd241/grupo01/assets/161625149/7419efe2-fd43-46e7-a8de-a84ffa8a36cb)
 Entidades involucradas:
 - Empleado
 - Programacion reporte
-- Fecha
+- Reporte
   
 #### Pantalla para Enviar reporte
 ![reporte-7](https://github.com/fiis-bd241/grupo01/assets/161625149/b868a1b1-98b0-450b-93ac-6fd70dce3d31)
-Entidades involucradas:
-- Empleado
-- Envio reporte
-- Fecha
 
 ### Módulo 6: Reclamos
 
