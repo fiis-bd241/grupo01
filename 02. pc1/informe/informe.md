@@ -1236,414 +1236,356 @@ Entidades Involucradas:
 
 #### Diccionario de datos:
 
-**Entidad**: Cliente
+##### Entidades
 
-Semántica: Persona o entidad que utiliza productos o servicios de una empresa.
+**Entidad:** Catálogo_contingencias 
 
-| ATRIBUTO       | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                      |
-|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------|
-| cod_cliente    | CHAR       | 999999999 | 9 dígitos       | -      | -           | Código único que identifica al cliente.          |
-| estado         | CHAR     | x(32)| Activo, Inactivo, Pendiente | - | -           | Estado actual del cliente en la plataforma.      |
-| prioridad      | INT  |  9   | 1, 2, 3, ...    | -      | -           | Prioridad asignada al cliente para atención.     |
-| cod_fecha_registro | CHAR     | 999999999 | 9 dígitos      | -      | -      | Fecha en que el cliente fue registrado en el sistema. |
-| cod_representante | CHAR     | 999999999 | 9 dígitos      | -      | -      | Código único que identifica al representante |
+Semántica: Recurso que enumera y describe posibles situaciones de emergencia o riesgos, junto con las estrategias o procedimientos diseñados para responder a cada una de ellas de manera efectiva. 
 
-**Entidad**: ClienteInterno
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| código_catalogo_contiengencias | CHAR | 999999999 | 9 dígitos | --- | --- | Identificador del catálogo de contingencias |  
+| comentario | CHAR | X(200) | - | - | - |Comentario o descripción detallada acerca del catálogo de contingencias | 
 
-Semántica: Representa un área interna de la empresa San Fernando, que puede ser un departamento, una sección o cualquier otra subdivisión dentro de la organización.
+**Entidad**: Cliente 
 
-| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| NombreÁrea | CHAR | X(255) | NOT NULL | - | - | Nombre del área interna de la empresa |
+Semántica: Persona o entidad que utiliza productos o servicios de una empresa. 
 
-**Entidad**: ClienteExterno
+| ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN| 
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_cliente| CHAR | 999999999 | 9 dígitos | -  | -  | Código único que identifica al cliente. | 
+| estado | CHAR  | X(32)| Activo, Inactivo, Pendiente | - | - | Estado actual del cliente en la plataforma. | 
+| prioridad | INT  |  9  | 1, 2, 3, ...  | -  | -  | Prioridad asignada al cliente para atención. | 
+| fecha_registro | DATE | AAAAMMDD | NO NULL | -  | - | Fecha en que el cliente fue registrado en el sistema. | 
 
-Semántica: Representa a una empresa externa que interactúa con la empresa San Fernando como cliente.
+**Entidad**: Cliente_interno 
 
-| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| NombreEmpresa | CHAR | X(255) | NOT NULL | - | - | Nombre de la empresa cliente |
-| Sector | CHAR | X(255) | - | - | - | Sector de actividad de la empresa cliente |
+Semántica: Representa un área interna de la empresa San Fernando, que puede ser un departamento, una sección o cualquier otra subdivisión dentro de la organización. 
 
-**Entidad:** ElementoCatálogo
+| ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN| 
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| codigo_area | CHAR | 999999999 | 9 dígitos | -  | -  | Nombre del área interna de la empresa | 
+| nombre_area | CHAR | X(255) | NOT NULL | - | - | Nombre del área interna de la empresa | 
 
-Semántica: Representa los productos ofrecidos por sanfernando 
+**Entidad**: Cliente_externo 
 
-| ATRIBUTO        | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                   |
-| --------------- | ---------- | --------- | --------------- | ------ | ----------- | --------------------------------------------- |
-| Cod_elementoCat | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del elemento en el catálogo.    |
-| Nombre          | CHAR       | X(128)    | No nulo         | --     | --          | Nombre del elemento en el catálogo.           |
-| Descripcion     | CHAR       | X(256)    | No nulo         | --     | --          | Descripción del elemento en el catálogo.      |
-| Unidad          | CHAR       | X(32)     | No nulo         | --     | --          | Unidad de medida del elemento en el catálogo. |
+Semántica: Representa a una empresa externa que interactúa con la empresa San Fernando como cliente. 
 
-**Entidad**: Empleado
+| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción | 
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+|ruc| INT | 99999999999 | 11 dígitos |- |- | Registro Único de Contribuyente de la empresa cliente| 
+| nombre_empresa | CHAR | X(32) | NOT NULL | - | - | Nombre de la empresa cliente | 
+|razon_social| CHAR | X(32) | - | - | - | Razón  social de la empresa cliente | 
 
-Semántica: Entidad que representa a los trabajadores de la empresa San fernando.
+**Entidad:** Elemento_catalogo 
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|codigo Empleado| CHAR | 9999999 | 9 digitos | -  | -  | Identificador único del empleado dentro de la organización. Permite diferenciar a cada empleado de manera inequívoca. |
-|codigo Persona | CHAR | 9999999 | 9 digitos | -  | -  | Identificador de la persona dentro de la sociedad | 
-| Cargo | CHAR | Texto | X(32) | - | - | Cargo o función que desempeña el empleado en la organización. Describe el rol del empleado dentro de la empresa. |
-| codigo Fecha | CHAR | 9999999 | 9 digitos | - | - | Identificador en la que empezo a trabajar el empleado |
-| codigo Traslado | CHAR | 9999999 | 9 digitos | - | - | Identificador del pedido de traslado |
-| codigo Operacion |  CHAR | 9999999 | 9 digitos | - | - | Identificador de la operacion |
-| codigo Reporte | CHAR | 9999999 | 9 digitos | - | - | Identificador del reporte |
-| codigo Representante | CHAR | 9999999 | 9 digitos | - | - | Identificador del representante |
+Semántica: Representa los productos ofrecidos por sanfernando  
 
-**Entidad**: Evidencia
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN | 
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_elemento_catalogo | CHAR | 999999999 | 9 dígitos | --  | --  | Identificador del elemento en el catálogo. | 
+| nombre | CHAR | X(32) | NO NULL  | - | - | Nombre del elemento en el catálogo. | 
+| descripcion | CHAR| X(256) | NO NULL | -  | - | Descripción del elemento en el catálogo. | 
+| unidad  | CHAR  | X(32) | NO NULL | -  | - | Unidad de medida del elemento en el catálogo. | 
+| temperatura_maxima | INT | 999 | - | Grados Celsius | - | Temperatura máxima permitida para la materia prima | 
+| temperatura_mínima | INT | 999 | - | Grados Celsius | - | Temperatura mínima permitida para la materia prima | 
+| categoría | CHAR | X(32) | - | - | - | Es la forma de categorizar los productos | 
+| segmento | CHAR | X(32) | - | - | - | Es la segmentación del material y las materias primas | 
+| tipo | CHAR | X(32) | Producto, Material, Materia Prima | - | - | Clasificación de elemento por su relación del proceso de producción| 
+| vida_util | INT | 999 | - | Días | - | Vida útil de la materia prima | 
+| peso_unitario | CHAR | X(64) | - | - | - | Segmento al que pertenece el material en el catálogo| 
 
-Semántica: Implica la representación de archivos adjuntos que respaldan o documentan reclamos, incidencias o eventos en un sistema o proceso. 
+**Entidad**: Empleado 
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| cod_evidencia    |  CHAR     |   9999999    |     -          |   -     |     -        |  Código único de identificación de la evidencia |
-| nombre_evidencia |  CHAR     |   X(16)      |     -           |   -     |     -        |  Nombre o descripción de la evidencia. |
-| tipo_evidencia   |  CHAR     |   X(16)      |  foto, video, documento, etc  |  -      |      -       |  Tipo de evidencia (formato del archivo).|
-| tipo_archivo     |  CHAR     |   X(3)       | jpg, png, mp4, pdf, etc       |    -    |      -       |  Tipo de archivo asociado a la evidencia.|
+Semántica: Entidad que representa a los trabajadores de la empresa San fernando. 
 
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN | 
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+|cod_empleado| CHAR | 999999999 | 9 digitos | -  | -  | Identificador único del empleado dentro de la organización. Permite diferenciar a cada empleado de manera inequívoca. | 
+| cargo | CHAR | X(32) | - | - | - | Cargo o función que desempeña el empleado en la organización. Describe el rol del empleado dentro de la empresa. | 
+| fecha_contrato | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que empezó a trabajar el empleado | 
 
-**Entidad**: Fecha
+**Entidad**: Evidencia  
 
-Semántica: Momento específico en el tiempo.
+Semántica: Implica la representación de archivos adjuntos que respaldan o documentan reclamos, incidencias o eventos en un sistema o proceso.  
+ 
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_evidencia | CHAR | 999999999 | 9 dígitos | - | - | Código único de identificación de la evidencia |  
+| nombre_evidencia | CHAR | X(32) | - | - | - | Nombre o descripción de la evidencia. |  
+| tipo_evidencia | CHAR | X(16) | foto, video, documento, etc | - | - | Tipo de evidencia (formato del archivo).|  
+| tipo_archivo | CHAR | X(4) | jpg, png, mp4, pdf, etc | - | - | Tipo de archivo asociado a la evidencia.|  
 
-| ATRIBUTO    | NATURALEZA | FORMATO        | VALORES VÁLIDOS                         | UNIDAD   | DERIVADA DE | DESCRIPCIÓN                                                                                      |
-|-------------|------------|----------------|-----------------------------------------|----------|-------------|--------------------------------------------------------------------------------------------------|
-| cod_fecha   | CHAR  | Alfanumérico   | -      | -        | -  | Código único que identifica la fecha.|
-| tipo        | CHAR  | X(32)  | Laborable, No Laborable, Feriado  | -   | -   | Tipo de día, indicando si es laborable, no laborable o un feriado.|
-| segundo     | INT   | 99  | 0-59 | Segundos| -   | Segundos en la hora de la fecha.|
-| minuto      | INT   | 99  | 0-59| Minutos  | -   | Minutos en la hora de la fecha.|
-| hora        | INT   | 99  | 0-23 | Horas   | -   | Hora del día en la fecha.|
-| dia         | INT   | 99  | 1-31 |  Día    | -   | Día del mes en la fecha.|
-| mes         | INT   | 99  | 1-12 | Mes     | -   | Mes del año en la fecha.|
-| año         | INT   | 9999       | Año calendario       | Año      | -   | Año de la fecha.|
+ **Entidad**: GPS  
 
-**Entidad**: GPS
+ Semántica: Registro del momento en el tiempo y ubicación en el que estuvo un vehículo determinado.  
 
-Semántica: Registro del momento en el tiempo y ubicación en el que estuvo un vehículo determinado.
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------|  
+| fecha_ubicacion | DATE | AAAAMMDD | NO NULL | - | - |  Fecha específica en las que el vehículo se encuentra en la ubicación |  
+| hora_ubicacion | TIME| HHMMSS | NO NULL | - | - |  Fecha específica en las que el vehículo se encuentra en la ubicación | 
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Cod_fecha      | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador de la fecha y hora específicas en las que el vehículo se encuentra en la ubicación |
-| Cod_vehículo   | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador del vehículo cuya ubicación se registra en determinado tiempo              |
-| Cod_ubicación  | CHAR       | 999999999   | Alfanuméricos     | ---             | ---         | Identificador de la ubicación que registra un vehículo en un instante |
+**Entidad**: Incidencia  
 
-**Entidad**: Incidencia
+Semántica: Problema, situación anormal o evento no planificado.  
 
-Semántica: Problema, situación anormal o evento no planificado.
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_incidencia | CHAR | 999999999 | 9 digitos | - | - | - | Código único que identifica la incidencia.|  
+| tipo_incidencia | CHAR | x(32)| - | - | - | Tipo de incidencia que ha ocurrido. Puede ser de diferentes categorías, como técnica, operativa, etc. |  
+| descripcion | CHAR | x(128) | - | - | - | Descripción detallada de la incidencia.|  
+| fecha_incidencia | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que ocurrió la incidencia. |  
 
-| ATRIBUTO             | NATURALEZA | FORMATO      | VALORES VÁLIDOS                         | UNIDAD | DERIVADA DE      | DESCRIPCIÓN  |
-|----------------------|------------|--------------|-----------------------------------------|--------|------------------|---------------------------------------------------------------------------------------------------|
-| cod_incidencia       | CHAR | 999999999 | 9 digitos | -  | -  | -  | Código único que identifica la incidencia.|
-| tipo_incidencia      | CHAR | x(32)| - | -  | -  | Tipo de incidencia que ha ocurrido. Puede ser de diferentes categorías, como técnica, operativa, etc. |
-| descripcion          | CHAR | x(128) | -  | -  | -  | Descripción detallada de la incidencia.|
-| cod_fecha_incidencia | CHAR | 999999999    | 9 digitos | -  | -    | -  | Código de la fecha en la que ocurrió la incidencia. Puede ser el código único de la fecha.          |
-| cod_traslado | CHAR | 999999999    | 9 digitos | -  | -    | -  | Código único que identifica un traslado|
+**Entidad**: Local  
 
-**Entidad**: Local
+Semántica: Lugar físico que cuenta con una dirección legal registrada.  
 
-Semántica: Lugar físico que cuenta con una dirección legal registrada.
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_local | CHAR | 999999999 | 9 dígitos | - | - | Identificador del local |  
+| pais | CHAR | xxx | ISO 3166-1 alfa-3 | - | - | República donde se encuentra el local |  
+| region | CHAR | xx-xxx | ISO 3166-2 | - | - | Departamento / Estado donde se encuentra el local |  
+| distrito | CHAR | X(64) | NO NULL | - | - | Ciudad donde se encuentra el local |  
+| calle | CHAR | X(64) | NO NULL | - | - | Calle, Jirón, Avenida, Pasaje donde se encuentra el local |  
+| numero | INT | 9999 | 4 dígitos | - | - | Identificador numérico de domicilio |  
+| tipo_local | CHAR | X(16) | Refrigerante, almacén, recepción,etc | - | - | Indica el tipo de local |  
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Cod_local      | CHAR       | 999999999   | Alfanuméricos           | ---              | ---         | Identificador del local                                                  |
-| País           | CHAR       | xxx         | ISO 3166-1 alfa-3       | ---              | ---         | República donde se encuentra el local                                    |
-| Región         | CHAR       | xx-xxx      | ISO 3166-2              | ---              | ---         | Departamento / Estado donde se encuentra el local                         |
-| Distrito       | CHAR       | X(64)       | Alfanuméricos           | ---              | ---         | Ciudad donde se encuentra el local                                        |
-| Calle          | CHAR       | X(64)       | Alfanuméricos           | ---              | ---         | Calle, Jr, Av p Psje donde se encuentra el local                         |
-| Numero         | INT        | 9999        | >0                      | ---              | ---         | Identificador numérico de domicilio                                       |
-| Cod_ubicacion  | CHAR       | 999999999   | Alfanumérico            | ---              | ---         | Identificador de la longitud y latitud exactas del local                 |
+**Entidad**: Mercancía  
 
-**Entidad**: MaterialCatálogo
+ Semántica: Representar los diferentes productos que una empresa tiene en su inventario para la venta o distribución.  
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cantidad_producto | INT | 9999 | unidades | - | - | Cantidad de productos disponibles |  
+| numero_precinto | CHAR | 999999999 | 9 dígitos | - | - | Número de precinto asociado a la mercancía |  
+| peso_total | INT | 999 | >=0 | - | - | Peso total de la mercancía |  
+| cod_operacion | CHAR | 999999999 | 9 dígitos | - | - | Identificador de la operación tipo picking que asignó las existencias a la mercancía |  
 
-Semántica: Describe los diferentes tipos de materiales que pueden ser gestionados en el sistema logístico de San Fernando, agrupados por segmentos.
+ **Entidad:** Normas  
 
-| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Segmento | CHAR | X(255) | "Materiales peligrosos", "Suministros y repuestos", "Insumos y etiquetas" | - | - | Segmento al que pertenece el material en el catálogo |
+ Semántica: Conjunto de reglas o directrices establecidas para regular un comportamiento específico o para guiar una actividad particular. 
 
-**Entidad**: MaterialStock
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| código_norma | CHAR| 999999999 | 9 dígitos | - | -- | Identificador de la norma |  
+| fecha_emisión | DATE | AAAAMMDD |NO NULL| --- | --- | Indica la fecha de publicación de la norma |  
+| fecha_vigencia | DATE | AAAAMMDD |NO NULL | - | - | Indica la vigencia de la norma para su cumplimiento|  
+| tipo | CHAR | X | X, Y,Z, etc. | - | - | Indica el tipo de norma  |  
 
-Semántica: Representa las existencias de materiales en el almacén de San Fernando.
+**Entidad**: Operación  
 
-| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| IDMaterialCatálogo | INT | 999999 | ID válido de MaterialCatálogo | - | - | Identificador del material en el catálogo |
+Semántica: Entidad que representa las diferentes transacciones o movimientos de mercancía que se realizan dentro de la empresa San Fernando.  
 
-**Entidad**: MateriaPrimaCatálogo
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| codigo_operacion | CHAR | 999999999 | 9 digitos | - | - | Identificador único de la operación. |  
+| tipo_operacion | CHAR | X(32) | "Picking", "Precintado", "Paletizado", "Carga", "Descarga" | - | - | Indica el tipo de movimiento realizado en la operación. |  
+| fecha_inicio | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que la operación inició. | 
+| fecha_fin | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que la operación finalizó. | 
+| codigo_empleado | CHAR | 999999999 | 9 digitos | - | - | identificador único del empleado  
 
-Semántica: Describe las diferentes materias primas utilizadas en la producción de productos derivados del pollo por parte de San Fernando.
+**Entidad:** Pasos  
 
-| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| TemperaturaMáxima | INT | 999 | - | Grados Celsius | - | Temperatura máxima permitida para la materia prima |
-| TemperaturaMínima | INT | 999 | - | Grados Celsius | - | Temperatura mínima permitida para la materia prima |
-| Categoría | CHAR | X(255) | - | - | - | Categoría a la que pertenece la materia prima |
-| VidaÚtil | INT | 999 | - | Días | - | Vida útil de la materia prima |
+Semántica: Conjunto de actividades pertenecientes a un procedimiento. 
 
-**Entidad**: MateriaPrimaStock
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+|cod_paso| CHAR | 999999999 | 9 dígitos | - | - | Identificador de paso| 
+|descripcion|CHAR|X(64)|-|-|-|Describe en que consiste un conjunto de pasos| 
 
-Semántica: Representa las existencias de materias primas en el almacén de San Fernando.
+**Entidad**: Pedido  
 
-| Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| IDMateriaPrimaCatálogo | INT | 999999 | ID válido de MateriaPrimaCatálogo | - | - | Identificador de la materia prima en el catálogo |
+Semántica: La entidad que representa las solicitudes de compra o de suministros realizadas por la empresa San Fernando.  
 
-**Entidad**: Mercancía
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| codigo_pedido | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del pedido. |  
+| descripcion | CHAR | X(32) | - | - | - | Descripcion detallada del pedido |  
+| fecha_registro | DATE | AAAAMMDD | NO NULL | - | - | Fecha de registro del pedido |  
+| tipo_pedido | CHAR | X(32) | - | - | - | Tipología del pedido registrado. |  
+| estado_pedido | CHAR | X(32) | "Pendiente", "En proceso", "Entregado", "Cancelado" | - | - | Indica el estado actual del pedido. |  
 
-Semántica: Representar los diferentes productos que una empresa tiene en su inventario para la venta o distribución. 
+**Entidad**: Persona  
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Cantidad de producto  |     INT       |   9999      |     unidades    |   -     |   -          |    Cantidad de productos disponibles         |
-| Número de precinto    |    CHAR       |   999999    |    -         | -       |     -        |   Número de precinto asociado a la mercancía      |
-| Descripción  |    CHAR       |   x(100)      |     -            |   -     |   -          |  Nombre o descripción de la mercancía           |
-| Peso total             |    INT      |  999       |     >=0            |   -     |      -       | Peso total de la mercancía     |
+Semántica: Entidad que interactúan con la empresa San fernando.  
 
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| dni | CHAR | 9999999 | 7 digitos | - | - | Documento Nacional de Identidad de la persona|  
+| primer_apellido | CHAR | X(16) | - | - | - | Apellido paterno de la persona. |  
+| segundo_apellido | CHAR | X(16) | - | - | - | Apellido materno de la persona. |  
+| prenombre | CHAR | X(16) | - | - | - | Nombre(s) de la persona. |  
+| genero | CHAR | X(16) | "Masculino" , "Femenino" | - | - | Género de la persona. |  
+| nacionalidad | CHAR | X(16) | - | - | - | Nacionalidad de la persona. |  
+| estado_civil | CHAR | X(16) | "Soltero", "Casado", "Divorciado", "Viudo" | - | - | Estado civil de la persona. |  
+| direccion | CHAR | X(32) | - | - | - | Dirección de residencia de la persona. |  
 
-**Entidad**: Operación
+**Entidad:** Procedimiento  
 
-Semántica: Entidad que representa las diferentes transacciones o movimientos de mercancía que se realizan dentro de la empresa San Fernando.
+Semántica: Recurso que engloba una lista da pasos. 
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| codigo_operacion | CHAR | 9999999 | 9 digitos | - | - | Identificador único de la operación. |
-| Tipo_operación | CHAR | X(32) | "Picking", "Precintado", "Paletizado", "Carga", "Descarga" | - | - | Indica el tipo de movimiento realizado en la operación. |
-| codigo_Fecha_Inicio | CHAR | 9999999 | 9 digitos | - | - | codigo de la fecha en la que se realizó la operación. |
-| codigo_empleado | CHAR | 9999999 |  9 digitos |  - |  - | identificador unico de la empleado |
-| codigo_mercancia | CHAR | 9999999 | 9 digitos | -  |  - |  identificador unico de la mercancia |
-| codigo_Fecha_fin | CHAR | 9999999 | 9 digitos | -  |  - |  identificadro unico de la Fecha fin |
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| código_procedimiento | CHAR| 999999999 | 9 dígitos | - | -- | Identificador del procedimiento |  
+| descripción| CHAR | X(64) | NO NULL | - | - | Explicación detallada del procedimiento | 
+| duracion | INT | 999 | >0 | horas | - | Representa la duración estimada de la aplicación del procedimeiento. | 
+| tipo | CHAR | X | X,Y,Z, etc | - | - | Indica el tipo de procedimiento | 
 
-**Entidad**: Pedido
+**Entidad:** Programacion_reporte  
 
-Semántica: La entidad que representa las solicitudes de compra o de suministros realizadas por la empresa San Fernando.
+Semántica: Datos necesarios para la generación automática de cada reporte.  
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| codigo_pedido | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del pedido. |
-| Descripcion | CHAR |  texto |  X(32) |  -  |  -  | Descripcion detallada del pedido |
-| codigo_Orden_Pedido | CHAR | 9999999 | 9 digitos | - | - | Identificador unico de Orden de pedido| 
-| codigo_Fecha_Registro | CHAR | 999999999 | 9 digitos | - | - | Identificador unico de la fecha registro del pedido |
-| codigo_Reclamo | CHAR | 999999999 | 9 digitos | - | - | Identificador unico del reclamo asociado al pedido, en caso de que se haya presentado. |
-| Estado del pedido | CHAR | Texto | "Pendiente", "En proceso", "Entregado", "Cancelado" | - | - | Indica el estado actual del pedido. |
-| codigo_Representante | CHAR | 9999999 | Entero positivo | - | Entidad Representante | Identificador unico del representante que realizó el pedido. |
-| codigo_Reclamo | CHAR | 999999999 | 9 digitos | - | - | Identificador unico del reclamo asociado al pedido, en caso de que se haya presentado. |
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| formato | CHAR | 999999999 | 9 dígitos | - | - | Identificador de la programación del reporte. |  
+| filtros | CHAR | X(128) | NO NULL | - | - | Filtros necesarios para el reporte guardados. |  
+| frecuencia | CHAR | X(32) | - | - | - | Periodo de tiempo de máximo 1 año en el que debe generarse automáticamente el reporte |  
+| estado | CHAR | X(16) | Activo, Inactivo | - | - | Indica si la programación este activa o inactiva |  
+| fecha_inicio | DATE | AAAAMMDD | NO NULL | - | - | Fecha donde inicia la programación |  
+| fecha_fin | DATE | AAAAMMDD | NO NULL | - | - | Fecha donde termina la programación |  
 
-**Entidad:** PedidoExterno
+**Entidad**: Reclamo  
 
-Semántica: Pedido realizado por un cliente externo
+Semántica: Queja formal expresada por un cliente sobre un producto o servicio.  
 
-| ATRIBUTO           | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                     |
-| ------------------ | ---------- | --------- | --------------- | ------ | ----------- | ----------------------------------------------- |
-| Cod_pedidoExterno  | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del pedido externo en el sistema. |
-| Cod_pedido         | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del pedido asociado.              |
-| Cod_clienteExterno | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del cliente externo asociado.     |
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| codigo_reclamo | CHAR| 999999999 | 9 dígitos | - | - | Código único que identifica el reclamo.|  
+| tipo_reclamo | CHAR| X(32) | - | - | - | Tipo de reclamo, puede ser de diferentes categorías, como técnico, operativo, etc.|  
+| nivel_urgencia | CHAR | X(32) | 1 (Baja), 2 (Media), 3 (Alta) | - | - | Nivel de urgencia del reclamo, indicando la prioridad con la que debe ser atendido.|  
+| estado_reclamo | CHAR| X(16)| Pendiente, En Proceso, Resuelto, Cerrado | - | - | Estado actual del reclamo.|  
+| comentario | CHAR| X(128) | - | - | - | Comentario detallado sobre el reclamo, describiendo el problema o situación reportada.|  
+| fecha_incidente | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que el cliente encontró el problema/incidente. Puede ser el código único de la fecha. |  
 
-**Entidad:** PedidoInterno
+**Entidad**: Reporte  
 
-Semántica: Pedido realizado por un cliente interno
+Semántica: Representación de registros que documentan incidentes, eventos o problemas dentro de un sistema, proceso o entorno.  
 
-| ATRIBUTO           | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                     |
-| ------------------ | ---------- | --------- | --------------- | ------ | ----------- | ----------------------------------------------- |
-| Cod_pedidoInterno  | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del pedido interno en el sistema. |
-| Cod_pedido         | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del pedido asociado.              |
-| Cod_clienteInterno | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del cliente interno asociado.     |
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_reporte | CHAR | 999999999 | - | - | - | Identificador único del reporte |  
+| fecha_generacion | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que se generó el reporte |  
+| hora_generacion | TIME | HHMMSS |NO NULL | - | - | Hora en que se generó el reporte |  
 
-**Entidad**: Persona
+**Entidad**: Representante  
 
-Semántica: Entidad que interactúan con la empresa San fernando.
+Semántica: Persona que actúa en nombre de una empohraresa o entidad en particular.  
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|codigo_Persona | CHAR | 9999999 | 9 digitos | - | - | Identificador unico de la Persona|
-| Primer_apellido | CHAR | Texto | X(32) | - | - | Apellido paterno de la persona. |
-| Segundo_apellido | CHAR | Texto | X(32) | - | - | Apellido materno de la persona. |
-| Prenombre | CHAR | Texto | X(32) | - | - | Nombre(s) de la persona. |
-| Género | CHAR | Texto | "Masculino" , "Femenino" | - | - | Género de la persona. |
-| Nacionalidad | CHAR | Texto | X(32) | - | - | Nacionalidad de la persona. |
-| Estado_civil | CHAR | Texto | "Soltero", "Casado", "Divorciado", "Viudo" | - | - | Estado civil de la persona. |
-| Dirección | CHAR | Texto | X()32 | - | - | Dirección de residencia de la persona. |
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_representante | CHAR | 999999999| 9 dígitos | - | - | Código único que identifica al representante.|  
+| tipo_representante | INT |999999999| 9 dígitos | Interno, Externo | - | Indica el tipo de representante.| 
+| cargo | CHAR | X(32) | Cargo 1, Cargo 2, Cargo 3, ... | - | - | Cargo o posición del representante en la empresa.|  
+| correo_empresarial | CHAR | X(32) | - | - | - | Correo de contacto del representante en la empresa.|  
+| nro_telefono | INT |999999999| 9 dígitos | - | - | Número de contacto del representante en la empresa.|  
 
+**Entidad**: Ruta  
 
-**Entidad:** ProductoCatalogo 
+Semántica: Conjunto de ubicaciones que va a visitar el vehículo en su transcurso de su origen a su destino.   
 
-Semántica: Representa a un producto terminado en la planta
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_ruta | CHAR | 999999999 | 9 dígitos | - | - | Identificador primario para relacionar y referenciar la ruta en el sistema. |  
+| punto_origen | CHAR | 999999999 | 9 dígitos | - | - | Representa la ubicación exacta del local de donde parte el vehículo. |  
+| punto_destino | CHAR | 999999999 | 9 dígitos | - | - | Representa la ubicación exacta del local a donde llega el vehículo. |  
+| distancia_total | INT | 9999 | >0 | Kilómetros | - | Indica la distancia total en unidades específicas entre el punto de origen y el punto de destino. |  
+| tipo_ruta | CHAR | X(6) | Urbana, Rural | - | - | Clasificación que define la naturaleza y características principales de la ruta. |  
+| duracion | INT | 999 | >0 | horas | - | Representa la duración estimada de la ruta en el sistema. |  
 
-| ATRIBUTO           | NATURALEZA | FORMATO   | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                                            |
-| ------------------ | ---------- | --------- | --------------- | ------ | ----------- | ---------------------------------------------------------------------- |
-| Cod_productoCat    | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador del producto catalogo.                                   |
-| Temperatura_maxima | FLOAT      | 99.99     | No nulo         | --     | --          | Máxima temperatura que resiste el producto terminado para preservarlo. |
-| Temperatura_mínima | FLOAT      | 99.99     | No nulo         | --     | --          | Mínima temperatura a la quede mantenerse el producto para preservarlo. |
-| Categoría          | CHAR       | X(64)     |       Pollo, Pavita, Cerdo, Huevo ...          | --     | --          | Indica a la categoria que pertenece para almacenarlo correctamente     |
-| Vida útil          | FLOAT      | 99        | x>0             | --     | --          | Máximo de días en el que el producto es consumible.                    |
-| Cod_elementoCat    | CHAR       | 999999999 | 9 dígitos       | --     | --          | Identificador de la entidad elemento categoría                         |
+**Entidad:** Sanción  
 
-**Entidad**: ProductoStock
+Semántica: Medidas disciplinarias en respuesta a violaciones de normativas, reglamentos o leyes establecidas. 
 
-Semántica: Se refiere a su función en representar la cantidad de un producto específico disponible en el inventario de una empresa en un momento dado.
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| código_sancion | CHAR | 999999999 | 9 dígitos | - | - | Identificador de la sanción |  
+| tipo | CHAR | X | A,B,C | - | - | Identificador de tipo de sanción |  
+| duración | TIME | 99 | >0 | meses | - | Identifica la duración de la sanción |  
+| descripción| CHAR | X(64) | NO NULL | - | - | Explicación detallada de la sanción |  
+| monto | CHAR | 99999 | 5 dígitos | >0 | miles de soles | Indica el monto de la sanción |  
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|ID_Producto_Stock |   CHAR         |  999999    |    -    |    -    |    -         |  Identificador único del registro de producto en stock |
-| Producto_ID      |  CHAR        |   99999      |    -   |    -    |   producto    |  Identificador del producto asociado al stock |
-|  Cantidad        |   INT        |    >=0    |   unidades |   -     |     -        |  Cantidad del producto disponible en el stock  |
-| Fecha_Ingreso      |   DATE         |   YYYY-MM-DD      |     -            |   -     |   -       |  Fecha de ingreso del producto al stock |
-| Fecha_Vencimiento   | DATE        |  YYYY-MM-DD       |      -         |    -    |     -        |   Fecha de vencimiento del producto en stock     |
+**Entidad**: Seguimiento  
 
+Semántica: Permitir el seguimiento y la gestión de casos, incidencias o eventos dentro de San Fernando.  
 
-**Entidad:** ProgramacionReporte 
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| numero_caso | INT | 9999 | >0 | - | - | Número de caso asociado al seguimiento (Cola) |  
+| tipo_accion | CHAR | X(150) | - | - | - | Tipo de acción realizada en el seguimiento |  
+| area_responsable | CHAR | X(10) | - | - | - | Área responsable del seguimiento |  
+| comentario | CHAR | X(200) | - | - | - |Comentario o descripción detallada del seguimiento |  
+| fecha_resolucion | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que se espera resolver el reclamo | 
 
-Semántica: Datos necesarios para la generación automática de cada reporte.
+**Entidad**: Stock  
 
-| ATRIBUTO                | NATURALEZA | FORMATO   | VALORES VÁLIDOS  | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                           |
-| ----------------------- | ---------- | --------- | ---------------- | ------ | ----------- | ----------------------------------------------------- |
-| Cod_ProgramacionReporte | CHAR       | 999999999 | 9 dígitos        | --     | --          | Identificador de la programación del reporte.         |
-| Filtros                 | CHAR       | X(128)    | NO NULO          | --     | --          | Filtros necesarios para el reporte guardados.         |
-| Frecuencia              | INT        | X(32)     | Activo, Inactivo | --     | --          | Cada cuanto debe generarse automaticamente el reporte |
-| Estado                  | CHAR       | X(32)     | Activo, Inactivo | --     | --          | Indica si la programación este activa o inactiva      |
-| Cod_empleado            | CHAR       | 999999999 | 9 dígitos        | --     | --          | Empleado que programó el reporte                      |
-| Cod_fechaInicio         | CHAR       | 999999999 | 9 dígitos        | --     | --          | Referencia a la fecha donde inicia la programación    |
-| Cod_fechaFin            | CHAR       | 999999999 | 9 dígitos        | --     | --          | Referencia a la fecha donde termina la programación   |
+Semántica: Se refiere a la representación de los productos físicos disponibles en el inventario de una empresa en un momento dado  
 
-**Entidad**: Reclamo
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_stock | CHAR | 999999999 | - | - | - | Código único de identificación del registro de stock |  
+| nro_lote | INT | 999 | >=0 | - | - | Número de lote asociado al stock | 
+| tipo_stock | CHAR | X(32) | - | - | - | Tipo de acción realizada en el seguimiento | 
+| fecha_caducidad | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que el producto pierde su valor o propiedades | 
+| tipo | CHAR | X(32) | Producto, Material, Materia Prima | - | - | Clasificación de elemento por su relación del proceso de producción| 
 
-Semántica: Queja formal expresada por un cliente sobre un producto o servicio.
+**Entidad:** Tramo 
 
-| ATRIBUTO             | NATURALEZA | FORMATO      | VALORES VÁLIDOS                         | UNIDAD | DERIVADA DE      | DESCRIPCIÓN                                                                                            |
-|----------------------|------------|--------------|-----------------------------------------|--------|------------------|--------------------------------------------------------------------------------------------------------|
-| Cod_reclamo          | CHAR| 999999999 | 9 dígitos     | -      | -                | Código único que identifica el reclamo.|
-| tipo_reclamo         | CHAR| X(32) | Tipo 1, Tipo 2, Tipo 3, ...  | -      | -     | Tipo de reclamo, puede ser de diferentes categorías, como técnico, operativo, etc.|
-| nivel_urgencia       | CHAR | X(32) | Bajo, Medio, Alto  | -      | -   | Nivel de urgencia del reclamo, indicando la prioridad con la que debe ser atendido.|
-| estado               | CHAR| X(32)| Pendiente, En Proceso, Resuelto, Cerrado | -      | -    | Estado actual del reclamo.|
-| comentario           | CHAR| X(128) | -      | -      | -      | Comentario detallado sobre el reclamo, describiendo el problema o situación reportada.|
-| cod_representante    | CHAR| 999999999 | 9 dígitos    | -      | -    | Código único del representante asignado al reclamo.|
-| cod_evidencia    | CHAR| 999999999 | 9 dígitos    | -      | -    | Código único de la evidencia de un reclamo.|
-| cod_seguimiento      | CHAR | 999999999 | 9 dígitos   | -      | -    | Código único de seguimiento del reclamo, si aplica.|
-| cod_pedido           | CHAR | 999999999 | 9 dígitos   | -      | -    | Código único del pedido asociado al reclamo, si aplica.|
-| cod_fecha_incidente  | CHAR | 999999999 | 9 dígitos   | -      | -    | Código único de la fecha en la que el cliente encontró el problema/incidente. Puede ser el código único de la fecha. |
+Semántica: Segmento transitable de ruta entre dos locales  
 
-**Entidad**: Reporte
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN | 
+|----------|------------|---------|------------------|--------|-------------|--------------| 
+| local_origen | CHAR | 999999999| 9 dígitos | - | - | Ubicación del local donde inicia el tramo| 
+| local_destino | CHAR | 999999999 | 9 dígitos | - | - | Ubicación del local destino del tramo | 
+| distancia | FLOAT | 9999 | >0 | Kilómetros | - | Distancia entre el punto origen y destino en kilómetros | 
+| tiempo_estimado | FLOAT| 999 | >0 | Horas | - | Tiempo estimado para recorrer el tramo | 
+| estado_tramo | CHAR| x(32) | "Disponible”, “Tráfico”, “Cerrado” | - | - | Circunstancias en las que se encuentra el tramo | 
 
-Semántica: Representación de registros que documentan incidentes, eventos o problemas dentro de un sistema, proceso o entorno.
+**Entidad**: Transportista  
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|  ID_reporte        |    CHAR        |   9999999   |    -     |   -     |   -          |  Identificador único del reporte |
-|  fecha       |   DATE         | YYYY-MM-DD        |    -     |    -    |    -         | Fecha en que se generó el reporte  |
-|  hora        |    TIME        |  HH:MM:SS   |      -    |    -    |      -       |  Hora en que se generó el reporte  |
-|  usuario_id        |   CHAR         |  9999999       |   -     |   -     |     -     |   Identificador del usuario que generó el reporte|
-|  tipo        |    CHAR        |  X(10)       |     -      |   -     |     -        | Indica el tipo de reporte (por ejemplo, "Incidente", "Error", etc.) |
-|  descripción        |   CHAR       |   X(150)     |      -     |   -     |     -      | Descripción detallada del reporte  |
-|  prioridad        |   CHAR         |   X(8)      | 1 (Baja), 2 (Media), 3 (Alta)  |   -     |    -      | Nivel de prioridad del reporte  |
+Semántica: Entidad que representa a los empleados de la empresa San Fernando que se encargan de realizar los traslados de mercancía.  
 
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_transportista | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del transportista dentro de la organización. |  
+| fecha_ultima_traslado | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que el transportista realizó su última actividad. |  
+| estado | CHAR | X(16) | "Activo", "Inactivo" | - | - | Indica si el transportista se encuentra activo o inactivo en este momento. |  
+| numero_licencia | CHAR | 9999999999 | 9 digitos | - | - | codigo de la licencia de conducir del transportista. |  
+| tipo_licencia | CHAR | X(32) |- | - | - | Tipo de licencia de conducir que posee el transportista. |  
 
-**Entidad**: Representante
+**Entidad**: Traslado  
 
-Semántica: Persona que actúa en nombre de una empresa o entidad en particular.
+Semántica: Entidad que representa los movimientos de mercancía realizados tanto dentro de la empresa San Fernando.  
 
-| ATRIBUTO        | NATURALEZA | FORMATO      | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
-|-----------------|------------|--------------|-----------------|--------|-------------|--------------------------------------------------------------------------------------------------|
-| cod_representante | CHAR | 999999999| 9 dígitos | -      | -           | Código único que identifica al representante.|
-| cargo           | CHAR | X(32) | Cargo 1, Cargo 2, Cargo 3, ...       | -      | -           | Cargo o posición del representante en la empresa.|
-| correo empresarial | CHAR | X(32) | Cargo 1, Cargo 2, Cargo 3, ...       | -      | -           | Correo de contacto del representante en la empresa.|
-| Número de telefono | INT |999999999| 9 dígitos | -      | -           | Número de contacto del representante en la empresa.|
-| cod_persona     | CHAR | 999999999 | 9 dígitos | -      | -           | Código de identificación de la persona asociada al representante. |
-| cod_pedido      | CHAR | 999999999 | 9 dígitos | -      | -           | Código del pedido asociado al representante, si aplica.|
-| cod_cliente     | CHAR | 999999999 | 9 dígitos | -      | -           | Código del cliente asociado al representante, si aplica.|
-| cod_reclamo     | CHAR | 999999999 | 9 dígitos | -      | -           | Código del reclamo asociado al representante, si aplica.|
-| cod_local       | CHAR | 999999999 | 9 dígitos | -      | -           | Código del local o sucursal asociado al representante.|
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| codigo_traslado | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del traslado realizado. |  
 
-**Entidad**: Ruta
+**Entidad**: Ubicación  
 
-Semántica: Conjunto de ubicaciones que va a visitar el vehículo en su transcurso de su origen a su destino.
+Semántica: Latitud y Longitud de un lugar geográfico  
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Código_ruta    | CHAR       | 999999999  | 9 dígitos       | ---         | ---         | Identificador primario para relacionar y referenciar la ruta en el sistema. |
-| Local_origen   | CHAR       | 999999999  | 9 dígitos       | ---         | ---         | Representa la ubicación exacta del local de donde parte el vehículo. |
-| Local_destino  | CHAR       | 999999999  | 9 dígitos       | ---         | ---         | Representa la ubicación exacta del local a donde llega el vehículo. |
-| Distancia      | INT        | 9999       | >0              | Kilómetros  | ---         | Indica la distancia en unidades específicas entre el punto de origen y el punto de destino. |
-| Tipo_ruta      | CHAR       | X(64)      | Urbana, Rural   | ---         | ---         | Clasificación que define la naturaleza y características principales de la ruta. |
-| Duracion       | INT        | 999        | >0              | horas       | ---         | Representa la duración estimada de la ruta en el sistema.  |
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_ubicacion | CHAR | 999999999 | 9 dígitos | - | - | Identificador de la ubicación |  
+| longitud | FLOAT | 999.999999 | - | - | - | Ubicación de un punto respecto al meridiano de Greenwich |  
+| latitud | FLOAT | 999.999999 | - | - | - | Ubicación de un punto del globo respecto a la línea imaginaria del ecuador |  
 
-**Entidad**: Seguimiento
+**Entidad:** Vehículo  
 
-Semántica: Permitir el seguimiento y la gestión de casos, incidencias o eventos dentro de San Fernando.
+Semántica:  
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-|  numero_caso       |   INT       |   9999      |      >0           | -       |     -        |   Número de caso asociado al seguimiento          |
-| tipo_acción        |    CHAR     |   X(150)     |      -           |  -      |    -         | Tipo de acción realizada en el seguimiento            |
-| area_responsable   |    CHAR     |  X(10)       |    -             |  -      |    -         |  Área responsable del seguimiento           |
-|  comentario        |   CHAR      |  X(200)       |       -          |     -   |      -       |Comentario o descripción detallada del seguimiento             |
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_vehiculo | CHAR | 999999999 | 9 dígitos | - | - | Identificador del vehículo en el sistema. |  
+| placa | CHAR | XXX999 | Alfanumérico | - | - | Número de placa del vehículo. |  
+| estado | CHAR | X(32) | Activo, Inactivo | - | - | Estado actual del vehículo. |  
+| anio_fabricacion | INT | 9999 | Año válido | - | - | Año en que fue fabricado el vehículo. |  
+| capacidad_carga | FLOAT | 999.99 | x>0 | - | - | Capacidad máxima de carga del vehículo. |  
+| modelo | CHAR | X(64) | NO NULO | - | - | Modelo del vehículo. |  
+| fecha_último_viaje | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que el vehículo realizó su último viaje. | 
+| fecha_último_mantenimiento | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que el vehículo realizó su último mantenimiento. | 
 
-
-**Entidad**: Stock
-
-Semántica: Se refiere a la representación de los productos físicos disponibles en el inventario de una empresa en un momento dado
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Codigo_Stock       |    CHAR        |   9999999      |     -            |  -      |   -          | Código único de identificación del registro de stock |
-|    N° Lote      |   INT         | 999        |     >=0      |    -    |     -        |   Número de lote asociado al stock     
-
-
-**Entidad**: Transportista
-
-Semántica: Entidad que representa a los empleados de la empresa San Fernando que se encargan de realizar los traslados de mercancía.
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| codigo_transportista | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del transportista dentro de la organización. |
-| codifo_Fecha_última_actividad | CHAR | 999999999 | 9 digitos | - | - | Identificador unico de la fecha en la que el transportista realizó su última actividad. |
-| codigo_Empleado| CHAR | 99999999 | 9 digitos | - | - | Identificador unico del empleado en la organización | 
-| Estado | CHAR | X(32) | "Activo", "Inactivo" | - | - | Indica si el transportista se encuentra activo o inactivo en este momento. |
-| codigo_licencia | CHAR | 9999999999 | 9 digitos | - | - | codigo de la licencia de conducir del transportista. |
-| Tipo de licencia | CHAR | X(32) | "Categoría A", "Categoría B", "Categoría C", etc. | - | - | Tipo de licencia de conducir que posee el transportista. |
-| codigo_Traslado | CHAR | 9999999999 | 9 digitos | - | - | Identificador unico de traslado que ha realizado el transportista. |
-
-**Entidad**: Traslado
-
-Semántica: Entidad que representa los movimientos de mercancía realizados tanto dentro de la empresa San Fernando.
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| codigo_traslado | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del traslado realizado. |
-| codigo_empleado | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del empleado |
-| codigo_transportista | CHAR | 99999999 | 9 digitos | - | Identificador unico del transportista |
-| codigo_Fecha_inicio | CHAR | 99999999 | 9 digitos | - | - | Identificador unico de la Fecha en la que se inició el traslado. |
-| codigo_Fecha_final | CHAR | 99999999 | 9 digitos | - | - | Identificador unico de la Fecha en la que se finalzo el traslado. |
-| codigo_incidencias | CHAR | 999999999 | 9 digitos | - | - | Identificador unico de las incidencias |
-| codigo_vehiculo | CHAR | 99999999999 | 9 digitos | - | - | Identificador unico del vehiculo de transporte|
-| codigo_ruta | CHAR | 99999999999 | 9 digitos | - | - | Identificador unico de la ruta asignada | 
-| codigo_operacion | CHAR | 9999999999 |  9 digitos | - | - | Identificador unico de la operacion asociada al traslado| 
-| codigo_pedido | CHAR | 99999999999 | 9 digitos | - | - | Identificador unico del pedido asociado al traslado |
-
-**Entidad**: Ubicación
-
-Semántica: Latitud y Longitud de un lugar geográfico
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |
-|----------|------------|---------|-----------------|--------|-------------|-------------|
-| Cod_ubicacion   | CHAR       | 999999999   | Alfanumérico                  | ---                  | ---         | Identificador de la ubicación                                              |
-| Longitud        | FLOAT      | 999.999999  | Positivos y negativos         | ---                  | ---         | Ubicación de un punto respecto al meridiano de Greenwich                   |
-| Latitud         | FLOAT      | 999.999999  | Positivos y negativos         | ---                  | ---         | Ubicación de un punto del globo respecto a la línea imaginaria del ecuador |
-
-**Entidad:** Vehículo
-
-Semántica: 
-
-| ATRIBUTO         | NATURALEZA | FORMATO   | VALORES VÁLIDOS  | UNIDAD | DERIVADA DE | DESCRIPCIÓN                                 |
-| ---------------- | ---------- | --------- | ---------------- | ------ | ----------- | ------------------------------------------- |
-| Cod_vehículo     | CHAR       | 999999999 | 9 dígitos        | --     | --          | Identificador del vehículo en el sistema.   |
-| Placa            | CHAR       | XXX999    | Alfanumérico     | --     | --          | Número de placa del vehículo.               |
-| Estado           | CHAR       | X(32)     | Activo, Inactivo | --     | --          | Estado actual del vehículo.                 |
-| Anio_fabricacion | INTEGER    | 9999      | Año válido       | --     | --          | Año en que fue fabricado el vehículo.       |
-| Capacidad_carga  | FLOAT      | 999.99    | x>0              | --     | --          | Capacidad máxima de carga del vehículo.     |
-| Modelo           | CHAR       | X(64)     | NO NULO          | --     | --          | Modelo del vehículo.                        |
-| Cod_fecha        | CHAR       | 999999999 | 9 dígitos        | --     | --          | Identificador de la entidad fecha asociada. |
-
-#### Diccionario de datos:
+##### Relaciones
 
 | Nombre de la relación | Entidad 1 | Cardinalidad 1 | Entidad 2 | Cardinalidad 2 | Atributos propios de la relación | Entidad aparte? | Identificador Único |
 |-|-|-|-|-|-|-|-|
