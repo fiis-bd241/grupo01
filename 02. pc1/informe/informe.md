@@ -336,6 +336,7 @@ Caso de Uso #1: Verificar Pedido en Progreso
 |5 | El encargado puede dar click en el botón de “Ver guía de Remisión” para acceder a una versión digital del documento que consigna los detalles del traslado. |
 
 Caso de Uso #2: Registrar Incidencia de viaje
+<a name="R202"></a>
 | Código | R202 | 
 |----------|----------|
 |Objetivo | Permitir al transportista reportar alguna incidencia no prevista durante el proceso de traslado. |
@@ -350,6 +351,7 @@ Caso de Uso #2: Registrar Incidencia de viaje
 |4 | El sistema registra la incidencia y genera una notificación en los usuarios relacionados con los pedidos del traslado. |
 
 Caso de Uso #3: Revisar los pedidos pendientes de un Traslado
+<a name="R203"></a>
 | Código | R203 | 
 |----------|----------|
 |Objetivo | Permitir a los supervisores informarse si un pedido se encuentra aún en proceso de traslado o de si ya fue registrado como entregado |
@@ -364,6 +366,7 @@ Caso de Uso #3: Revisar los pedidos pendientes de un Traslado
 |4 | El supervisor busca visualmente en la tabla o ingresa el código del pedido en la barra de búsqueda para encontrar el pedido del cual quiere realizar el seguimiento. |
 
 Caso de Uso #4: Registrar la entrega de un pedido
+<a name="R204"></a>
 | Código | R204 | 
 |----------|----------|
 |Objetivo | Permitir cambiar el estatus de los pedidos que están siendo transportados en el Traslado |
@@ -377,7 +380,22 @@ Caso de Uso #4: Registrar la entrega de un pedido
 |3 | El sistema guarda los cambios y se ven reflejados en las otras pantallas. |
 
 Caso de Uso #5: Contactar con el transportista
+<a name="R205"></a>
 | Código | R205 | 
+|----------|----------|
+|Objetivo | Facilitar el proceso de busqueda de contacto con el transportista en caso de incidencias. |
+|Descripción | EL supervisor ingresa al sistema, ubica su pedido, visualiza los detalles del proceso de transporte y obtiene la información necesaria para contactar con el transportista o iniciar el registro de una incidencia. |
+|Actor Primario | Supervisor de almacen |
+|Actor Secundario | Encargado de almacén planta Huaral |
+|Precondiciones | El supervisor debe estar logueado y tener la información del pedido del cual necesita información. | 
+|Paso | Acción | 
+|1 | El supervisor entra a la pantalla de Pedidos en Progreso y escribe el código del pedido en la barra de busqueda respectiva. |
+|2 | El supervisor da click en “Detalles de Traslado” y será redirigido a la pantalla Detalle de Traslado con el código del traslado respectivo automáticamente cargado. | 
+|3 | El sistema muestra toda la información relacionada con el traslado, incluyendo la información de contacto del transportista, con la cual puede realizar el contacto respectivo. |
+
+Caso de Uso #6: Contactar con el transportista
+<a name="R206"></a>
+| Código | R206 | 
 |----------|----------|
 |Objetivo | Facilitar el proceso de busqueda de contacto con el transportista en caso de incidencias. |
 |Descripción | EL supervisor ingresa al sistema, ubica su pedido, visualiza los detalles del proceso de transporte y obtiene la información necesaria para contactar con el transportista o iniciar el registro de una incidencia. |
@@ -869,7 +887,7 @@ Al ingresar al módulo el usuario podrá ver una serie de vínculos que lo lleva
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/0dc9d667-3f1c-4c7c-a8d0-3d78e583d0ef"></p>
 
 #### Pantalla Pedidos en Progreso:
-Requerimiento asociado: [R201](#R201) - R202 - R204
+Requerimiento asociado: [R201](#R201) - [R202](#R202) - [R204](#R204)
 
 Al elegir el vínculo a “Pedidos en progreso” se dirigirá a la pantalla principal del módulo, donde no le aparecerán los datos hasta que escriba el código del traslado o el código del pedido en sus respectivos cuadros de búsqueda. 
 Si por ejemplo el usuario solo cuenta con el código del pedido basta con buscarlo y automáticamente se completará el código del traslado debido a la relación entre ambas entidades.
@@ -886,7 +904,7 @@ Entidades involucradas:
 - Locales
 
 #### Pantalla Detalles de Traslado:
-Requerimiento asociado: R205 - R206
+Requerimiento asociado: [R205](#R205) - [R206](#R206)
 
 Se puede llegar a la pantalla de Detalles de Traslado desde el Menú principal o desde la pantalla Pedidos en Progreso; la diferencia radica que al usar la pantalla de Pedidos en Progreso el rellenado del campo “Código de traslado” sería automático y proveniente de lo último que se esté viendo en la otra pantalla. 
 Una vez colocado el código respectivo el usuario tendrá acceso a la información del conductor y el automóvil con la finalidad de corroboración o en el intento de contactar con el conductor a través de su número celular.
@@ -906,7 +924,7 @@ Entidades involucradas:
 - Locales
 
 #### Pantalla Pedidos Pendientes:
-Requerimiento asociado: R203
+Requerimiento asociado: [R203](#R203)
 
 Esta pantalla, al igual que la anterior, es accesible desde la pantalla principal y la de Pedidos en progreso, aunque está restringida a ciertos usuarios. Su función es mostrar los pedidos de un traslado en particular que aún no han sido entregados, esto le permite a un supervisor verificar los pedidos que faltan entregar y al transportista a registrar cuando realiza una entrega, para eso se genera un botón con el vínculo al modulo de control para verificar el proceso de entrega. Una vez culminado el proceso en ese otro modulo el sistema se actualizará y generará una notificación para los usuarios asignados.
 
@@ -917,6 +935,8 @@ Interfaz:
 Entidades Involucradas:
 - Pedidos
 - Dirección
+- Operación
+- Transportista
 
 [Prototipo en Figma](https://www.figma.com/file/Jfo2z2Mh3c5yoxamTw56gg/Seguimiento?type=design&node-id=0%3A1&mode=design&t=wmoz54XJ5USPhnU3-1)
 
