@@ -834,15 +834,14 @@ Entidades:
 
 -Representante
 
--Pedido
 
 #### Pantalla para solicitar los productos
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/821d9171-5559-4bca-a751-5f86b46dca10"></p>
 Entidades:
 
--Representante
-
 -Pedido
+
+-ElementoCatalogo
 
 #### Pantalla para ver la orden de pedido
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/49dfc0e5-710d-490c-b201-58bd785044da"></p>
@@ -851,7 +850,6 @@ Entidades:
 
 -Pedido
 
--Orden de pedido
 #### Pantalla para ver todos los pedidos realizados
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/121084712/6a3f5696-d896-48f3-bf29-00fba6369d3d"></p>
 
