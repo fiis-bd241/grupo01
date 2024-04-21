@@ -903,6 +903,8 @@ Entidades involucradas:
 - Pedidos
 - Vehículos
 - Ubicación
+- GPS
+- Ruta
 - Locales
 
 #### Pantalla Detalles de Traslado:
