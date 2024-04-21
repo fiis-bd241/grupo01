@@ -1530,18 +1530,6 @@ Semántica: Conjunto de ubicaciones que va a visitar el vehículo en su transcur
 | tipo_ruta | CHAR | X(6) | Urbana, Rural | - | - | Clasificación que define la naturaleza y características principales de la ruta. |  
 | duracion | INT | 999 | >0 | horas | - | Representa la duración estimada de la ruta en el sistema. |  
 
-**Entidad:** Sanción  
-
-Semántica: Medidas disciplinarias en respuesta a violaciones de normativas, reglamentos o leyes establecidas. 
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
-|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| código_sancion | CHAR | 999999999 | 9 dígitos | - | - | Identificador de la sanción |  
-| tipo | CHAR | X | A,B,C | - | - | Identificador de tipo de sanción |  
-| duración | TIME | 99 | >0 | meses | - | Identifica la duración de la sanción |  
-| descripción| CHAR | X(64) | NO NULL | - | - | Explicación detallada de la sanción |  
-| monto | CHAR | 99999 | 5 dígitos | >0 | miles de soles | Indica el monto de la sanción |  
-
 **Entidad**: Seguimiento  
 
 Semántica: Permitir el seguimiento y la gestión de casos, incidencias o eventos dentro de San Fernando.  
