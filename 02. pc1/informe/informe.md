@@ -319,6 +319,7 @@ a. Usuarios
 b. Casos de uso
 
 Caso de Uso #1: Verificar Pedido en Progreso
+<a name="R201"></a>
 | Código | R201 | 
 |----------|----------|
 |Objetivo | Permitir al encargado de almacén revisar los detalles del proceso de traslado de un pedido. |
@@ -868,31 +869,49 @@ Al ingresar al módulo el usuario podrá ver una serie de vínculos que lo lleva
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/0dc9d667-3f1c-4c7c-a8d0-3d78e583d0ef"></p>
 
 #### Pantalla Pedidos en Progreso:
+Requerimiento asociado: [R201](R201) - R202 - R204
+
 Al elegir el vínculo a “Pedidos en progreso” se dirigirá a la pantalla principal del módulo, donde no le aparecerán los datos hasta que escriba el código del traslado o el código del pedido en sus respectivos cuadros de búsqueda. 
 Si por ejemplo el usuario solo cuenta con el código del pedido basta con buscarlo y automáticamente se completará el código del traslado debido a la relación entre ambas entidades.
 En esta pantalla también están incluidas las funciones de inicio de Incidente y visualización de la guía de remisión, pero esto está sujeto al nivel de acceso del usuario.
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/f00dc926-ce6e-4098-8100-607abf265f7f"></p>
+
 Para evitar manejar una cantidad grande de datos se plantea generar una actualización de la ubicación en el momento en el que se ingresa a esta pantalla y en periodos específicos de tiempo durante la permanencia del usuario en la pantalla (alrededor de 1 minuto de intervalo entre actualización y actualización).
 
 Entidades involucradas:
 - Traslados
 - Pedidos
-- Rutas
 - Vehículos
 - Ubicación
+- Locales
 
 #### Pantalla Detalles de Traslado:
+Requerimiento asociado: R205 - R206
+
 Se puede llegar a la pantalla de Detalles de Traslado desde el Menú principal o desde la pantalla Pedidos en Progreso; la diferencia radica que al usar la pantalla de Pedidos en Progreso el rellenado del campo “Código de traslado” sería automático y proveniente de lo último que se esté viendo en la otra pantalla. 
 Una vez colocado el código respectivo el usuario tendrá acceso a la información del conductor y el automóvil con la finalidad de corroboración o en el intento de contactar con el conductor a través de su número celular.
+
+Interfaz: 
+
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/95ef1cc0-4498-4372-aec9-654c03fb9d91"></p>
-Este módulo interactúa con las entidades Transportista y Vehículo puesto que toma y muestra sus atributos.
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/c4a3aa1b-3e98-4a30-9cd3-a1dbfef68e23"></p>
 
 Entidades involucradas:
+- Traslado
 - Transportista
 - Vehículo
+- Rutas
+- Tramos
+- Locales
 
 #### Pantalla Pedidos Pendientes:
+Requerimiento asociado: R203
+
 Esta pantalla, al igual que la anterior, es accesible desde la pantalla principal y la de Pedidos en progreso, aunque está restringida a ciertos usuarios. Su función es mostrar los pedidos de un traslado en particular que aún no han sido entregados, esto le permite a un supervisor verificar los pedidos que faltan entregar y al transportista a registrar cuando realiza una entrega, para eso se genera un botón con el vínculo al modulo de control para verificar el proceso de entrega. Una vez culminado el proceso en ese otro modulo el sistema se actualizará y generará una notificación para los usuarios asignados.
+
+Interfaz:
+
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/d04fc44c-ef3b-4682-9c31-7912a648c48e"></p>
 
 Entidades Involucradas:
