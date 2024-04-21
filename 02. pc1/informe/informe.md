@@ -1096,79 +1096,59 @@ Las existencias de un producto (instancias de ProductoStock) se agrupan en merca
 Tomar en cuenta también que la entidad Traslado tiene un campo referido a un identificador de una instancia de Operación tipo "Salida" que sirve para dar información sobre la salida de la mercancía (esto también permite obtener información de la mercancía que se está trasladando, consultando la operación que le precede con el atributo IDOpPrevia sucesivamente hasta llegar a la operación tipo "Picking" y consultar con la tabla de Mercancía las mercancías asociadas), y un identificador de una instancia de Operación tipo "Recepción" que sirve para dar información sobre la verificación de la recepción de la mercancía.
 
 ### Módulo 4: Control
-
 #### Pantalla principal
-![figma 1](https://github.com/fiis-bd241/grupo01/assets/164266999/96c913fd-cbcf-402a-b9eb-3604ea65d8f4)
+El prototipo del módulo de Control consta de una pantalla central dividida en dos secciones principales. La primera sección aborda el transporte, desglosado en dos subcategorías: conductor y vehículo. Esta división permite gestionar la disponibilidad de ambos aspectos y, posteriormente, transmitir esta información al módulo de seguimiento. De esta manera, el personal asignado puede trabajar eficientemente con conductores y vehículos disponibles para los traslados.
+La segunda sección se centra en las incidencias relacionadas con los traslados antes de que los productos lleguen a manos del cliente. Esta área se encarga de registrar todos los incidentes internos que puedan surgir durante el proceso de transporte.
+
+![pantalla](https://github.com/fiis-bd241/grupo01/assets/164266999/3b4fd6cd-e68d-490e-b279-f1467d76d75c)
 
 Entidades involucradas:
 - Incidencia
 - Vehículo
 - Transportista
-- Cliente
-- Fecha
-
-
-#### Pantalla de verificación de procesos sobre pedido de abastecimiento
-
-![figma 2](https://github.com/fiis-bd241/grupo01/assets/164266999/df1df8e0-d8e8-46ea-94a3-bc3b572341db)
-
-Entidades involucradas:
-- Traslado
-- Pedido
-- Vehículo
-- Empleado
-- Seguimiento Reclamo
-- Cliente interno
-- Incidencia
-- Local
-- Fecha
-
-#### Pantalla de verificación de procesos sobre pedido de venta
-
-![figma 3](https://github.com/fiis-bd241/grupo01/assets/164266999/1efa3191-7bec-4e87-93eb-1f6263231dae)
-
-Entidades involucradas:
-- Traslado
-- Pedido
-- Vehículo
-- Empleado
-- Seguimiento Reclamo
-- Cliente externo
-- Incidencia
-- Fecha
 
 #### Pantalla de disponibilidad de conductores
 
-![figma 4](https://github.com/fiis-bd241/grupo01/assets/164266999/88de757e-a9e2-429f-809f-a3b8593bbdc1)
+El siguiente prototipo aborda la disponibilidad de los conductores, basándose en sus atributos y las políticas de negocio establecidas por San Fernando. Por ejemplo, para prevenir la fatiga y reducir el riesgo de accidentes, la empresa implementó una política que requiere que los conductores permanezcan inactivos durante dos días después de completar un traslado. Esta información se recopila en nuestro sistema, donde destacan atributos como la fecha de vencimiento de la licencia, el tipo de licencia y la fecha del último traslado. Estos datos son fundamentales para facilitar la toma de decisiones y determinar la disponibilidad de los conductores.
+
+![FIGMA 1](https://github.com/fiis-bd241/grupo01/assets/164266999/36906d1e-8af0-4549-889c-452f071d7e1d)
 
 Entidades involucradas:
 - Trasportista
 - Empleado
-- Fecha
+  
 
 #### Pantalla de disponibilidad de vehículos
 
-![figma 5](https://github.com/fiis-bd241/grupo01/assets/164266999/a8fe5ec9-9ac9-4995-85c7-8ae945ba7952)
+Siguiendo la línea del prototipo anterior, en este nos enfocaremos en la disponibilidad de los vehículos, considerando sus atributos y las políticas establecidas por la empresa. Por ejemplo, en términos de inocuidad, si un vehículo ha estado en planta realizando un traslado, debe someterse a un proceso de desinfección antes de poder ser utilizado nuevamente para otro pedido. Este proceso suele tomar alrededor de un día. Sin embargo, si el traslado no implica visitar la planta, el vehículo puede realizar traslados de manera continua, con la única variación siendo el conductor asignado.
+
+![FIGMA 2](https://github.com/fiis-bd241/grupo01/assets/164266999/5676b6bf-3b02-4e3b-b071-ceddd068980f)
 
 Entidades involucradas:
 - Vehículo
 - Ubicación
 - Empleado
-- Fecha
+  
 
 #### Pantalla de registro de incidencias internas
+El siguiente prototipo aborda las incidencias internas a nivel de traslado, dividido en dos secciones. La primera sección registra la incidencia de traslado en sí misma, mientras que la segunda proporciona una visión general del proceso de la incidencia y los pasos o procedimientos que se seguirán. Estos procedimientos se basan en normativas tanto internacionales como nacionales, establecidas por la empresa San Fernando, con el objetivo de garantizar una cierta uniformidad y tener un plan de contingencia para cada incidente.
 
-![figma 6](https://github.com/fiis-bd241/grupo01/assets/164266999/d9065ac3-c8fc-4608-b740-ad0a9b763888)
+Se observa los atributos de la incidencia como el encargado de registrar la incidencia, la fecha y hora del incidente, el tipo de incidencia, etc.
+![FIGMA 3](https://github.com/fiis-bd241/grupo01/assets/164266999/45eeb8e5-beca-41b1-a463-65fa050519c9)
+
+Después de registrar adecuadamente la incidencia, procedemos a la etapa de procedimientos, donde se establecen las acciones a tomar frente a este tipo de incidente. Esto se basa en el tipo de incidencia, una breve descripción y los pasos con sus códigos correspondientes registrados en el sistema para resolver el problema. Nos guiamos tanto por normativas extranjeras como nacionales, dependiendo del tipo de incidente al que nos enfrentamos.
+![FIGMA 4](https://github.com/fiis-bd241/grupo01/assets/164266999/fa36fe66-bf5e-4011-88ff-87df7a7d21ee)
 
 Entidades involucradas:
-- Reclamo
 - Incidencia
 - Empleado
 - Traslado
-- Cliente interno
+- Transportista
 - Vehículo
-- Seguimiento Reclamo
-- Fecha
+- Catálogo contingencias
+- Procedimiento
+- Pasos
+- Normas
 
 #### Cuestionario
 
