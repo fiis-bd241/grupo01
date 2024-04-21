@@ -582,35 +582,7 @@ a. Usuarios
 
 b. Casos de uso
 
-Caso de Uso #1: Verificar los procesos sobre pedido de abastecimiento 
-| Código | R401 | 
-|----------|----------|
-|Objetivo | Registrar el correcto procedimiento de los pedidos de abastecimiento|
-|Descripción | El usuario registra los datos del pedido solicitado por Planta Huaral, como fecha,id del usuario, insumo solicitado, guía de remisión, además de datos generales de cada proceso que atraviesa el pedido como estado, fecha, hora, id encargado, etc. Adicionalmente hay una opción de descarga de la guía de remisión. |
-|Actor Primario | Técnico de almacén|
-|Actor Secundario|Almacenero|
-|Precondiciones|Pedido de abastecimiento registrado en sistema|
-|Paso|Acción|
-|1|El usuario selecciona la opción "Usuario" y luego  le da a segunda opción "Abastecimiento"|
-|2|Se registra la información del pedido, incluyendo la fecha, ID y el insumo solicitado, así como los detalles de cada etapa del proceso por el que pasa, como el picking, precintado, paletizado y carga. Estos detalles incluyen el estado, fecha, hora y el ID del encargado correspondiente.|
-|3|Verifica los datos y confirma el registro|
-|4|El sistema actualiza el registro con el nuevo ingreso|
-
-Caso de Uso #2: Verificar los procesos sobre pedido de venta 
-| Código | R402 | 
-|----------|----------|
-|Objetivo | Registrar el correcto procedimiento de los pedidos de venta|
-|Descripción | El usuario ingresa los datos del pedido solicitado por el cliente, incluyendo la fecha, ID del usuario, dirección y tipo de producto. Además, se registran los detalles de cada etapa del proceso del pedido, como su estado, fecha, hora y el ID del encargado correspondiente. También se ofrece la opción de descargar una factura electrónica, junto con la indicación de la fecha y hora de salida, así como la fecha y hora estimadas de llegada. |
-|Actor Primario | Encargado de almacén|
-|Actor Secundario|Almacenero|
-|Precondiciones|Pedido de cliente registrado en sistema|
-|Paso|Acción|
-|1|El usuario selecciona la opción "Usuario" y luego le da a segunda opcion "Venta"|
-|2|Se registra la información del pedido, incluyendo la fecha, ID y el insumo solicitado, así como los detalles de cada etapa del proceso por el que pasa, como el picking, precintado, paletizado y carga. Estos detalles incluyen el estado, fecha, hora y el ID del encargado correspondiente.|
-|3|Verifica los datos y confirma el registro|
-|4|El sistema actualiza el registro con el nuevo ingreso|
-
-Caso de Uso #3:  Registro de disponibilidad de conductores
+Caso de Uso #1:  Registro de disponibilidad de conductores
 | Código | R403 | 
 |----------|----------|
 |Objetivo |Asignarle el traslado de un determinado pedido|
@@ -625,7 +597,7 @@ Caso de Uso #3:  Registro de disponibilidad de conductores
 |4|Verifica los datos y confirma el registro|
 |5|El sistema actualiza el registro con el nuevo ingreso|
 
-Caso de Uso #4: Registro de disponibilidad de vehículos
+Caso de Uso #2: Registro de disponibilidad de vehículos
 | Código | R404 | 
 |----------|----------|
 |Objetivo |Asignar a un conductor como medio de traslado del pedido|
@@ -640,10 +612,10 @@ Caso de Uso #4: Registro de disponibilidad de vehículos
 |4|Verifica los datos y confirma el registro|
 |5|El sistema actualiza el registro con el nuevo ingreso|
 
-Caso de Uso #5: Registro de incidencias internas
+Caso de Uso #3: Registro de incidencias internas  
 | Código | R405 | 
 |----------|----------|
-|Objetivo |Gestionar a nivel general el correcto funcionamiento de los procesos internos de San Fernando |
+|Objetivo |Gestionar a nivel interno los procesos de traslado de productos o insumos de San Fernando |
 |Descripción | El usuario ingresa los datos del incidente como descripción detallada del incidente, fecha incidente, hora incidente, tipo de incidencia, además de tener la opción de adjuntar alguna foto para más detalle.|
 |Actor Primario | Encargado de almacén|
 |Actor Secundario|Almacenero y Transportista|
@@ -654,33 +626,46 @@ Caso de Uso #5: Registro de incidencias internas
 |3|Verifica los datos y confirma el registro|
 |4|El sistema actualiza el registro con el nuevo ingreso|
 
+Caso de Uso #4: Empleo de procedimientos frente incidencias
+| Código | R405 | 
+|----------|----------|
+|Objetivo |Aglizar el proceso de toma de decisiones y acciones frente a un incidente presentado |
+|Descripción | El usuario adopta una serie de procedimientos registrados en sistema que le permite acceder a una serie de pasos con solo ingresar el código y el tipo de incidencia que se le ha presentado|
+|Actor Primario | Encargado de almacén|
+|Actor Secundario|Almacenero y Transportista|
+|Precondiciones|Comunicación con cada módulo sobre incidencias en sus procesos internos|
+|Paso|Acción|
+|1|El usuario selecciona la opción "Procedimiento", incluido en la opción "Incidencia"|
+|2|Ingresa el código y el tipo de incidente en base al registro anterior|
+|3|Accede al procedimiento que incluye pasos con sus respectivos códigos|
+|4| Verifica los datos y confirmar el registro |
+|5|El sistema actualiza el registro con el nuevo ingreso|
+
+
 #### 4.2. Requerimientos de atributos de calidad
 
-1. Verificación de procesos sobre pedido de abastecimiento:
-- Exactitud en la Recepción de Pedidos de Insumos
-- Cumplimiento de Especificaciones de Insumos (como calidad, cantidad, fecha de vencimiento)
-- Gestión Eficiente de Inventarios en el Almacén General
-
-2. Verificación de procesos sobre pedido de venta:
-- Precisión en el Picking de Productos para el Pedido
-- Correcto Precintado de Productos para su Seguridad
-- Eficiencia en el Paletizado y Carga de Productos para la Entrega
-- Cumplimiento de Plazos de Entrega al Cliente
-  
-3. Registro de disponibilidad de conductores:
+1. Registro de disponibilidad de conductores:
 - Actualización en Tiempo Real de la Disponibilidad de Conductores
 - Asignación Equitativa y Eficiente de Conductores a Tareas y Rutas
 - Seguimiento de Horarios de Trabajo y Descanso de Conductores
   
-4. Registro de disponibilidad de vehículos:
+2. Registro de disponibilidad de vehículos:
 - Mantenimiento Preventivo de la Flota de Vehículos
 - Registro de Kilometraje y Estado de los Vehículos
 - Disponibilidad de Vehículos adecuados para las Tareas y Rutas planificadas
 
-5. Registro de incidencias internas:
+3. Registro de incidencias internas:
 - Reporte Inmediato y Preciso de Incidencias en Procesos Internos 
 - Seguimiento de Acciones Correctivas y Preventivas para Resolver Incidencias
 - Análisis de Causa Raíz de las Incidencias para evitar su recurrencia
+
+4. Empleo de procedimiento frente a incidencias:
+- Los procedimientos deben resolver la incidencia de manera satisfactoria y oportuna.
+- Deben minimizar el uso de recursos, incluyendo tiempo y costos.
+- Deben adherirse a las regulaciones internacionales, nacionales y políticas internas.
+- Deben ser comprensibles para el personal, facilitando su implementación.
+- Deben ajustarse a diferentes situaciones y necesidades.
+- Deben documentar todas las acciones para su revisión y mejora.
 
 
 #### 4.3. Restricciones
