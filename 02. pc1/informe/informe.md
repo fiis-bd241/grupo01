@@ -1166,13 +1166,15 @@ Entidades involucradas:
 
 #### Pantalla Principal
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/2c747c51-3884-4ed8-b26a-6b3ad7328d83"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/0a80b13a-7b1e-4bc4-85ec-191fbd589fcf"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/593c1895-b88c-4b27-a2fc-7f1e01f1ae56"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/a5f52099-5d42-4cc9-b0ee-05dde22fa572"></p>
 
 Entidades Involucradas:
 - Reclamo
 - Cliente
+- Cliente Interno
+- Cliente Externo
 
 #### Pantallas de Crear Reclamo de Cliente Interno
 
@@ -1188,9 +1190,10 @@ Entidades Involucradas:
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/6742ef99-e2d6-4106-bc2b-dee30bdafce7"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/803d07a8-3d54-4980-9ebe-02d79d5ec990"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/9fd3d7ce-c3ff-410a-a6f2-9f50afeb7fe6"></p>
 
 Entidades Involucradas:
+- Cliente
 - Cliente Interno
 - Representante
 - Pedido
@@ -1212,10 +1215,12 @@ Entidades Involucradas:
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/635b40a4-2d96-4135-9acc-4a0e4c564956"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/fe3f5dfc-a23b-4c96-b78a-02a1ab323225"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/ebea0333-9c8b-43fe-8aba-55d5b4f75daf"></p>
 
 Entidades Involucradas:
+- Cliente
 - Cliente Externo
+- Cliente Interno
 - Representante
 - Pedido
 - Reclamo
