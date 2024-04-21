@@ -1109,7 +1109,7 @@ Entidades involucradas:
 - Pedido
 - Vehículo
 - Empleado
-- Seguimiento
+- Seguimiento Reclamo
 - Cliente interno
 - Incidencia
 - Local
@@ -1124,7 +1124,7 @@ Entidades involucradas:
 - Pedido
 - Vehículo
 - Empleado
-- Seguimiento
+- Seguimiento Reclamo
 - Cliente externo
 - Incidencia
 - Fecha
@@ -1159,7 +1159,7 @@ Entidades involucradas:
 - Traslado
 - Cliente interno
 - Vehículo
-- Seguimiento
+- Seguimiento Reclamo
 - Fecha
 
 #### Cuestionario
@@ -1234,7 +1234,7 @@ Entidades Involucradas:
 - Pedido
 - Reclamo
 - Evidencia
-- Seguimiento
+- Seguimiento Reclamo
 
 #### Pantallas de Crear Reclamo de Cliente Externo
 
@@ -1260,7 +1260,7 @@ Entidades Involucradas:
 - Pedido
 - Reclamo
 - Evidencia
-- Seguimiento
+- Seguimiento Reclamo
 
 [Prototipo en Figma](https://www.figma.com/file/kZLR8sf4PPRQyQf9dsDxDp/PROTOTIPO-DE-RECLAMOS?type=design&node-id=0-1&mode=design&t=7KtYyZiyPe04xOE2-0)
 
