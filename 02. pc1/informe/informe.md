@@ -1228,9 +1228,9 @@ Entidades Involucradas:
 
 ### Planta Huaral Diagrama Cheng
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/f60afffe-ba29-49e0-b592-c45b671dc58e"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/f106ee65-538f-4d04-8f18-d180ee2756f0"></p>
 
-[Diagrama Cheng](https://github.com/fiis-bd241/grupo01/assets/164358065/f60afffe-ba29-49e0-b592-c45b671dc58e)
+[Diagrama Cheng](https://app.diagrams.net/#G1sYHbkonVotVIohr2sUkFBC17Pi2aDmhR#%7B"pageId"%3A"R2lEEEUBdFMjLlhIrx00"%7D)
 
 #### Diccionario de datos:
 
