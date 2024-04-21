@@ -1643,6 +1643,47 @@ Semántica:
 | Modelo           | CHAR       | X(64)     | NO NULO          | --     | --          | Modelo del vehículo.                        |
 | Cod_fecha        | CHAR       | 999999999 | 9 dígitos        | --     | --          | Identificador de la entidad fecha asociada. |
 
+#### Diccionario de datos:
+
+| Nombre de la relación | Entidad 1 | Cardinalidad 1 | Entidad 2 | Cardinalidad 2 | Atributos propios de la relación | Entidad aparte? | Identificador Único |
+|-|-|-|-|-|-|-|-|
+| Genera | Empleado | 1 | Reporte | N | --- | No | Cod_empleado + cod_reporte |
+| Genera | Programación Reporte | 1 | Reporte | N | --- | No | Cod_prog_reporte + cod_reporte |
+| Programa | Empleado | 1 | Programación reporte | N | --- | No | Cod_empleado + cod_prog_reporte |
+| Supervisa | Empleado | 1 | Operación | N | --- | No | Sup+ Cod_empleado + cod_operacion |
+| Ejecuta | Empleado | 1 | Operación | N | --- | No | Eje+ Cod_empleado + cod_operacion |
+| Sigue a | Operación | 1 | Operación | 1 | --- | No | Cod_operacion+ cod_operacion |
+| Inicia | Operación | 1 | Traslado | 1 | --- | No | Ini + cod_operacion + cod_traslado |
+| Termina | Operación | 1 | Traslado | 1 | --- | No | Fin + cod_operación + cod_traslado |
+| Acontece | Traslado | 1 | Incidencia | N | --- | No | Cod_traslado + Cod_incidencia |
+| Cumple | Incidencia | 1 | Catálogo Contingencias | N | --- | No | Cod_incidencia + cod_cat_contignencias |
+| Contiene | Catálogo Contingencias | 1 | Procedimiento | N | --- | No | Cod_cat_contingencias + cod_procedimiento |
+| Requiere | Procedimiento | 1 | Pasos | N | --- | No | Cod_procedimiento + cod_pasos |
+| Contiene | Catálogo Contingencias | 1 | Normas | N | --- | No | Cod_cat_contignencias + cod_norma |
+| Evita | Normas | 1 | Sanción | N | --- | No | Cod_norma + cod_sancion |
+| Satisfacen | Traslado | N | Pedido | N | --- | Sí | Cod_traslado + cod_pedido |
+| Asigna | Traslado | 1 | Vehículo | 1 | --- | No | Cod_traslado + cod_vehículo |
+| Modificado | Operación | N | Mercancía | 1 | --- | No | Cod_operacion + cod_mercancia |
+| Compuesto | Mercancía | 1 | Stock | N | --- | No | Cod_mercancía + cod_stock |
+| Describe | Elemento Catálogo | 1 | Stock | N | --- | No | Cod_elem_catalogo + cod_stock |
+| Conforman | Elemento Catálogo | 1 | Pedido | N | --- | No | Cod_elem_catalogo + cod_pedido |
+| Asignado | Transportista | 1 | Traslado | N | --- | No | Cod_transportista + cod_traslado |
+| Realiza | Representante | 1 | Pedido | N | --- | No | Cod_representante + cod_pedido |
+| Sobre | Reclamo | 1 | Pedido | N | --- | No | Cod_reclamo + cod_pedido |
+| Registra | Empleado | 1 | Reclamo | N | --- | No | Cod_empleado + cod_reclamo |
+| Trabaja en | Empleado | N | Cliente Interno | 1 | --- | No | Cod_empleado + cod_cliente_int |
+| Asigna | Cliente | 1 | Representante | N | --- | No | Cod_cliente + cod_representante |
+| Registra | Cliente | 1 | Local | N | --- | No | Cod_cliente + cod_local |
+| Presenta | Representante | 1 | Reclamo | N | --- | No | Cod_representante + cod_reclamo |
+| Tiene | Reclamo | 1 | Evidencia | N | --- | No | Cod_reclamo + cod_evidencia |
+| Presenta | Reclamo | 1 | Seguimiento | 1 | --- | No | Cod_reclamo + cod_seguimiento |
+| Designado a | Seguimiento | N | Cliente Interno | 1 | --- | No | Cod_seguimiento + cod_cliente_int |
+| Posiciona | GPS | N | Vehículo | 1 | --- | No | Cod_gps + cod_vehículo |
+| Registra | GPS | 1 | Ubicación | N | --- | No | Cod_gps + cod_ubicacion |
+| Conforma | Local | 2 | Tramo | 1 | --- | No | Cod_local + cod_tramo |
+| Conforma | Tramo | N | Ruta | 1 | --- | No | Cod_tramo + cod_ruta |
+| Sigue | Traslado | N | Ruta | 1 | --- | No | Cod_traslado +cod_ruta |
+
 ## Entrevista
 A continuación, se muestra la grabación de la entrevista realizada a la ingeniera Joselin Alexandra Torres Robles, supervisora del área de almacén de la planta Huaral de San Fernando.
 
