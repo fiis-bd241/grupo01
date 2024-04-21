@@ -385,7 +385,7 @@ Caso de Uso #5: Contactar con el transportista
 |----------|----------|
 |Objetivo | Facilitar el proceso de busqueda de contacto con el transportista en caso de incidencias. |
 |Descripción | EL supervisor ingresa al sistema, ubica su pedido, visualiza los detalles del proceso de transporte y obtiene la información necesaria para contactar con el transportista o iniciar el registro de una incidencia. |
-|Actor Primario | Supervisor de almacen |
+|Actor Primario | Supervisor de almacén |
 |Actor Secundario | Encargado de almacén planta Huaral |
 |Precondiciones | El supervisor debe estar logueado y tener la información del pedido del cual necesita información. | 
 |Paso | Acción | 
@@ -393,19 +393,21 @@ Caso de Uso #5: Contactar con el transportista
 |2 | El supervisor da click en “Detalles de Traslado” y será redirigido a la pantalla Detalle de Traslado con el código del traslado respectivo automáticamente cargado. | 
 |3 | El sistema muestra toda la información relacionada con el traslado, incluyendo la información de contacto del transportista, con la cual puede realizar el contacto respectivo. |
 
-Caso de Uso #6: Contactar con el transportista
+Caso de Uso #6: Notificar cambio de ruta
 <a name="R206"></a>
 | Código | R206 | 
 |----------|----------|
-|Objetivo | Facilitar el proceso de busqueda de contacto con el transportista en caso de incidencias. |
-|Descripción | EL supervisor ingresa al sistema, ubica su pedido, visualiza los detalles del proceso de transporte y obtiene la información necesaria para contactar con el transportista o iniciar el registro de una incidencia. |
-|Actor Primario | Supervisor de almacen |
-|Actor Secundario | Encargado de almacén planta Huaral |
-|Precondiciones | El supervisor debe estar logueado y tener la información del pedido del cual necesita información. | 
+|Objetivo | Permitir un cambio en la forma en la que están recorridos los tramos durante la realización del transporte en caso de ser necesario. |
+|Descripción | El conductos o el supervisor que realiza el seguimiento pueden acceder al sistema, encontrar el traslado que desean cambiar y ejecutar un cambio de tramos que será notificado a todo el personal pertinente. |
+|Actor Primario | Transportista |
+|Actor Secundario | Supervisor de almacén |
+|Precondiciones | El usuario debe haberse logeado y tener razones válidas para ejecutar el cambio de tramos. | 
 |Paso | Acción | 
-|1 | El supervisor entra a la pantalla de Pedidos en Progreso y escribe el código del pedido en la barra de busqueda respectiva. |
-|2 | El supervisor da click en “Detalles de Traslado” y será redirigido a la pantalla Detalle de Traslado con el código del traslado respectivo automáticamente cargado. | 
-|3 | El sistema muestra toda la información relacionada con el traslado, incluyendo la información de contacto del transportista, con la cual puede realizar el contacto respectivo. |
+|1 | El supervisor o transportista acceden a la pantalla principal del sistema. |
+|2 | El usuario da click en la sección "Detalles de Traslado" para posteriormente ser redirigido a este. | 
+|3 | El sistema muestra toda la información relacionada con el traslado, incluyendo la información de la ruta que se sigue durante el traslado asi como los tramos que conforman dicha ruta. |
+|4 | El usuario selecciona alguno de los tramos posibles mostrados en la parte baja de la pantalla y le da click generando que dicha opción se resalte. |
+|5 | El usuario da click en "Notificar cambio de ruta", lo cual cambia la ruta del traslado y genera una notificación en la bandeja de los usuarios pertinentes |
 
 #### 2.2. Requerimientos de atributos de calidad
 - Seguridad: Dado que el sistema manejará datos de ubicación e información sensible sobre las entregas, la seguridad es de suma importancia. Se debe procurar acceso solo a los trabajadores con las autorizaciones adecuadas para asignar lectura y escritura dependiendo del nivel de acceso.
