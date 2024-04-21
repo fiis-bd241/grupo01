@@ -1362,7 +1362,7 @@ Semántica: Implica la representación de archivos adjuntos que respaldan o docu
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------|  
 | fecha_ubicacion | DATE | AAAAMMDD | NO NULL | - | - |  Fecha específica en las que el vehículo se encuentra en la ubicación |  
-| hora_ubicacion | TIME| HHMMSS | NO NULL | - | - |  Fecha específica en las que el vehículo se encuentra en la ubicación | 
+| hora_ubicacion | TIME| HHMMSS | NO NULL | - | - |  Hora específica en las que el vehículo se encuentra en la ubicación | 
 
 **Entidad**: Incidencia  
 
@@ -1418,10 +1418,12 @@ Semántica: Entidad que representa las diferentes transacciones o movimientos de
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
 | codigo_operacion | CHAR | 999999999 | 9 digitos | - | - | Identificador único de la operación. |  
-| tipo_operacion | CHAR | X(32) | "Picking", "Precintado", "Paletizado", "Carga", "Descarga" | - | - | Indica el tipo de movimiento realizado en la operación. |  
-| fecha_inicio | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que la operación inició. | 
-| fecha_fin | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que la operación finalizó. | 
-| codigo_empleado | CHAR | 999999999 | 9 digitos | - | - | identificador único del empleado  
+| tipo_operacion | CHAR | X(32) | "Picking", "Precintado", "Paletizado", "Carga", "Salida", "Recepción", "Descarga" | - | - | Indica el tipo de movimiento realizado en la operación. |  
+| fecha | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que la operación se realizó. |
+| hora_inicio | TIME| HHMMSS | NO NULL | - | - |  Hora en que la operación inició. | 
+| hora_fin | TIME| HHMMSS | NO NULL | - | - |  Hora en que la operación finalizó. | 
+| cod_emp_ejecutor | CHAR | 999999999 | 9 digitos | - | - | Identificador único del empleado que ejecuta o realiza la operación. |
+| cod_emp_supervisor | CHAR | 999999999 | 9 digitos | - | - | Identificador único del empleado que supervisa la operación.  |
 
 **Entidad:** Pasos  
 
