@@ -915,7 +915,7 @@ Interfaz:
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/95ef1cc0-4498-4372-aec9-654c03fb9d91"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/c4a3aa1b-3e98-4a30-9cd3-a1dbfef68e23"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/164358065/6bf7441d-e3d2-4d43-8e15-c240548a8242"></p>
 
 Entidades involucradas:
 - Traslado
