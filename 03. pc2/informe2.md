@@ -20,7 +20,7 @@ Semántica: Recurso que enumera y describe posibles situaciones de emergencia o 
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| código_catalogo_contiengencias | CHAR | 999999999 | 9 dígitos | --- | --- | Identificador del catálogo de contingencias |  
+| código_catalogo_contingencias | CHAR | 999999999 | 9 dígitos | --- | --- | Identificador del catálogo de contingencias |  
 | comentario | CHAR | X(200) | - | - | - |Comentario o descripción detallada acerca del catálogo de contingencias | 
 
 **Entidad**: Cliente 
@@ -154,11 +154,26 @@ Semántica: Entidad que representa las diferentes transacciones o movimientos de
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_operacion | CHAR | 999999999 | 9 digitos | - | - | Identificador único de la operación. |  
-| tipo_operacion | CHAR | X(32) | "Picking", "Precintado", "Paletizado", "Carga", "Salida", "Recepción", "Descarga" | - | - | Indica el tipo de movimiento realizado en la operación. |  
+| cod_operacion | CHAR | 999999999 | 9 digitos | - | - | Identificador único de la operación. |
+| cod_operacion_previa | CHAR | 999999999 | 9 digitos | - | - | Identificador único de la operación previa. |
+| cod_empleado_ejecutor | CHAR | 999999999 | 9 digitos | - | - | Identificador único del empleado que ejecuta la operación. |
+| cod_empleado_supervisor | CHAR | 999999999 | 9 digitos | - | - | Identificador único del empleado que supervisó la ejecución de la operación. |
+| cod_operacion | CHAR | 999999999 | 9 digitos | - | - | Identificador único de la operación. |
+| tipo_operacion | INT | 9 | TAB | - | - | Indica el tipo de movimiento realizado en la operación. |  
 | fecha | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que la operación se realizó. |
 | hora_inicio | TIME| HHMMSS | NO NULL | - | - |  Hora en que la operación inició. | 
-| hora_fin | TIME| HHMMSS | NO NULL | - | - |  Hora en que la operación finalizó. | 
+| hora_fin | TIME| HHMMSS | NO NULL | - | - |  Hora en que la operación finalizó. |
+
+TAB: Tipo de operación
+|Código|Semántica|
+|------|---------|
+|1|Picking|
+|2|Precintado|
+|3|Paletizado|
+|4|Carga|
+|5|Salida|
+|6|Recepción|
+|7|Descarga|
 
 **Entidad:** Pasos  
 
