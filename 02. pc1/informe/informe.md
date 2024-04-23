@@ -1622,7 +1622,7 @@ Semántica:
 | Presenta | Reclamo | 1 | Seguimiento Reclamo | 1 | --- | No | Cod_reclamo + cod_seguimiento_rec |
 | Designado a | Seguimiento Reclamo | N | Cliente Interno | 1 | --- | No | Cod_seguimiento_rec + cod_cliente_int |
 | Posiciona | GPS | N | Vehículo | 1 | --- | No | Cod_gps + cod_vehículo |
-| Registra | GPS | 1 | Ubicación | N | --- | No | Cod_gps + cod_ubicacion |
+| Registra | GPS | N | Ubicación | 1 | --- | No | Cod_gps + cod_ubicacion |
 | Conforma | Local | 2 | Tramo | 1 | --- | No | Cod_local + cod_tramo |
 | Conforma | Tramo | N | Ruta | 1 | --- | No | Cod_tramo + cod_ruta |
 | Sigue | Traslado | N | Ruta | 1 | --- | No | Cod_traslado +cod_ruta |
