@@ -522,9 +522,8 @@ CREATE TABLE IF NOT EXISTS operacion (
   cod_operacion_previa CHAR(9) NULL DEFAULT NULL,
   cod_empleado_ejecutor CHAR(9) NOT NULL,
   cod_empleado_supervisor CHAR(9) NOT NULL,
-  fecha_inicio DATE NOT NULL,
+  fecha DATE NOT NULL,
   hora_inicio VARCHAR(45) NOT NULL,
-  fecha_fin DATE NULL DEFAULT NULL,
   hora_fin VARCHAR(45) NULL DEFAULT NULL,
   tipo_operacion INT NOT NULL,
   PRIMARY KEY (cod_operacion),
@@ -609,11 +608,10 @@ CREATE TABLE IF NOT EXISTS catalogo_contigencia (
 	
 CREATE TABLE IF NOT EXISTS elemento_catalogo (
   cod_elemento_catalogo CHAR(9) NOT NULL,
-  nombre VARCHAR(45) NULL DEFAULT NULL,
-  tipo_elemento INT NOT NULL,
+  nombre VARCHAR(120) NULL DEFAULT NULL,
   categoria INT NOT NULL,
   segmento INT NOT NULL,
-  descripcion VARCHAR(45) NULL DEFAULT NULL,
+  descripcion VARCHAR(256) NULL DEFAULT NULL,
   unidad VARCHAR(45) NULL DEFAULT NULL,
   temperatura_minima INT NULL DEFAULT NULL,
   temperatura_maxima INT NULL DEFAULT NULL,
@@ -839,7 +837,7 @@ CREATE TABLE IF NOT EXISTS stock (
     FOREIGN KEY (cod_elemento_catalogo)
     REFERENCES elemento_catalogo (cod_elemento_catalogo),
   CONSTRAINT fk_mercancia_has_elemento_catalogo_mercancia1
-    FOREIGN KEY (mercancia_cod_mercancia)
+    FOREIGN KEY (cod_mercancia)
     REFERENCES mercancia (cod_mercancia));
 	
 CREATE TABLE IF NOT EXISTS tramo (
