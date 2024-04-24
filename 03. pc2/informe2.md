@@ -454,7 +454,7 @@ Semántica:
 
 ```sql
 
--- Poblar la tabla Elemento_catalogo
+-- Poblamiento de datos para la entidad Elemento_catalogo
 INSERT INTO Elemento_catalogo (cod_elemento_catalogo, nombre, categoría, segmento, descripcion, unidad, temperatura_maxima, temperatura_minima, vida_util, peso_unitario) VALUES
 ('123456789', 'Filete de pechuga de pollo San Fernando congelado', 31, 4, 'Filete de pechuga de pollo San Fernando congelado, listo para su uso en la preparación de platos.', 'unidad', -18, -20, 90, 900),
 ('223456789', 'Pierna de pollo San Fernando congelada', 31, 4, 'Pierna de pollo San Fernando congelada, perfecta para su uso en la elaboración de diversos platos.', 'unidad', -18, -20, 90, 1200),
@@ -475,7 +475,75 @@ INSERT INTO Elemento_catalogo (cod_elemento_catalogo, nombre, categoría, segmen
 ('723456719', 'Emulsionante Quality para mejorar la textura del producto', 18, 1, 'Emulsionante Quality para mejorar la textura del producto, ideal para aplicaciones culinarias.', 'gramo', NULL, NULL, 365, 40);
 ('923456720', 'Detergente SuperClean', 23, 2, 'Detergente SuperClean para uso industrial, ideal para limpieza profunda y desengrase de equipos y superficies.', 'litro', NULL, NULL, NULL, 1000);
 
--- Poblar la tabla Stock
+-- Poblamiento de datos para la entidad Operación
+INSERT INTO Operación (cod_operacion, cod_operacion_previa, cod_empleado_ejecutor, cod_empleado_supervisor, tipo_operacion, fecha, hora_inicio, hora_fin)
+VALUES 
+  ('000000001', NULL, '123456789', '987654321', 1, '2024-04-01', '08:00:00', '08:30:00'), -- Picking
+  ('000000002', '000000001', '123456789', '987654321', 2, '2024-04-01', '08:45:00', '09:15:00'), -- Precintado
+  ('000000003', '000000002', '123456789', '987654321', 3, '2024-04-01', '09:30:00', '10:30:00'), -- Paletizado
+  ('000000004', '000000003', '123456789', '987654321', 4, '2024-04-01', '10:45:00', '11:15:00'), -- Carga
+  ('000000005', '000000004', '123456789', '987654321', 5, '2024-04-01', '11:30:00', '12:00:00'), -- Salida
+  ('000000006', NULL, '123456789', '987654321', 6, '2024-04-01', '14:00:00', '14:30:00'), -- Recepción
+  ('000000007', '000000006', '123456789', '987654321', 7, '2024-04-01', '14:45:00', '15:15:00'); -- Descarga
+  ('000000008', NULL, '123456789', '987654321', 1, '2024-04-02', '08:00:00', '08:35:00'), -- Picking
+  ('000000009', '000000008', '123456789', '987654321', 2, '2024-04-02', '08:45:00', '09:15:00'), -- Precintado
+  ('000000010', '000000009', '123456789', '987654321', 3, '2024-04-02', '09:30:00', '10:30:00'), -- Paletizado
+  ('000000011', '000000010', '123456789', '987654321', 4, '2024-04-02', '10:45:00', '11:15:00'), -- Carga
+  ('000000012', '000000011', '123456789', '987654321', 5, '2024-04-02', '11:30:00', '12:00:00'), -- Salida
+  ('000000013', NULL, '123456789', '987654321', 1, '2024-04-02', '11:36:00', '11:52:00'), -- Picking
+
+-- Poblamiento de datos para la entidad Mercancía
+INSERT INTO Mercancía (cod_mercancia, cod_operacion_picking, numero_precinto)
+VALUES 
+  ('987654321', '000000001', 'N123456789'),
+  ('987654322', '000000001', 'N223456789'),
+  ('987654323', '000000001', 'N323456789'),
+  ('987654324', '000000008', 'N423456789'),
+  ('987654325', '000000008', 'N523456789'),
+  ('987654326', '000000013', NULL);
+
+-- Funciones para el cálculo de atributos en la tabla Mercancía
+CREATE OR REPLACE FUNCTION calcular_peso_total()
+RETURNS TRIGGER AS $$
+BEGIN
+    UPDATE Mercancía m
+    SET peso_total = (
+        SELECT SUM(ec.peso_unitario)
+        FROM Stock s
+        INNER JOIN Elemento_catalogo ec ON s.cod_elemento_catalogo = ec.cod_elemento_catalogo
+        WHERE s.cod_mercancia = NEW.cod_mercancia
+    )
+    WHERE m.cod_mercancia = NEW.cod_mercancia;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION calcular_cantidad_producto()
+RETURNS TRIGGER AS $$
+BEGIN
+    UPDATE Mercancía m
+    SET cantidad_producto = (
+        SELECT COUNT(*)
+        FROM Stock s
+        WHERE s.cod_mercancia = NEW.cod_mercancia
+    )
+    WHERE m.cod_mercancia = NEW.cod_mercancia;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Asociación de los triggers con la tabla Stock
+CREATE TRIGGER actualizar_peso_total
+AFTER INSERT OR UPDATE ON Stock
+FOR EACH ROW
+EXECUTE FUNCTION calcular_peso_total();
+
+CREATE TRIGGER actualizar_cantidad_producto
+AFTER INSERT OR UPDATE ON Stock
+FOR EACH ROW
+EXECUTE FUNCTION calcular_cantidad_producto();
+
+-- Poblamiento de datos para la entidad Stock
 INSERT INTO Stock (cod_stock, cod_elemento_catalogo, cod_mercancia, nro_lote, tipo_stock, fecha_caducidad) VALUES
 ('987654321', '123456789', '987654321', 123, 3, '2024-04-01'),
 ('987654322', '223456789', '987654321', 124, 3, '2024-04-02'),
@@ -497,5 +565,11 @@ INSERT INTO Stock (cod_stock, cod_elemento_catalogo, cod_mercancia, nro_lote, ti
 ('887654328', '623456719', NULL, 230, 1, '2024-04-08'),
 ('887654329', '723456719', NULL, 231, 1, '2024-04-09'),
 ('887654330', '923456720', NULL, 232, 2, '2024-04-10');
+
+-- Poblamiento de datos para la entidad Traslado
+INSERT INTO Traslado (cod_traslado, cod_vehiculo, cod_ruta, cod_transportista, cod_operacion_inicia, cod_operacion_termina)
+VALUES 
+  ('100000001', '111111111', '222222222', '333333333', '000000005', '000000006'),
+  ('100000002', '444444444', '555555555', '666666666', '000000012', NULL);
 
 ```
