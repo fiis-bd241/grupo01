@@ -871,16 +871,6 @@ CREATE TABLE IF NOT EXISTS detalle_local_tramo (
 ## 5. Poblamiento inicial de datos
 
 ```sql
-
--- Poblamiento de datos para la entidad Elemento_catalogo
-
--- Poblamiento de datos para la entidad Mercancía
-
-
-
-
-
-
 -- Poblamiento de datos para la entidad Ubicación
 INSERT INTO public.ubicacion (cod_ubicacion, longitud, latitud) 
 VALUES  
