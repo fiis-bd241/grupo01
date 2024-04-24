@@ -650,10 +650,10 @@ CREATE TABLE IF NOT EXISTS pedido (
 	
 CREATE TABLE IF NOT EXISTS detalle_pedido_producto (
   pedido_cod_pedido CHAR(9) NOT NULL,
-  elemento_catalogo_cod_elemento_catalogo CHAR(9) NOT NULL,
-  PRIMARY KEY (pedido_cod_pedido, elemento_catalogo_cod_elemento_catalogo),
+  cod_elemento_catalogo CHAR(9) NOT NULL,
+  PRIMARY KEY (pedido_cod_pedido, cod_elemento_catalogo),
   CONSTRAINT fk_pedido_has_elemento_catalogo_elemento_catalogo1
-    FOREIGN KEY (elemento_catalogo_cod_elemento_catalogo)
+    FOREIGN KEY (cod_elemento_catalogo)
     REFERENCES elemento_catalogo (cod_elemento_catalogo),
   CONSTRAINT fk_pedido_has_elemento_catalogo_pedido1
     FOREIGN KEY (pedido_cod_pedido)
