@@ -455,15 +455,15 @@ Semántica:
 
 CREATE TABLE IF NOT EXISTS cliente (
   cod_cliente CHAR(9) NOT NULL,
-  estado VARCHAR(45) NULL,
-  prioridad VARCHAR(45) NULL,
+  estado VARCHAR(120) NULL,
+  prioridad VARCHAR(120) NULL,
   fecha_registro DATE NULL,
   PRIMARY KEY (cod_cliente));
  
 CREATE TABLE IF NOT EXISTS cliente_interno (
   cod_area CHAR(9) NOT NULL,
   cod_cliente CHAR(9) NOT NULL,
-  nombre_area VARCHAR(45) NULL,
+  nombre_area VARCHAR(120) NULL,
   PRIMARY KEY (cod_area),
   CONSTRAINT cod_cliente_interno
     FOREIGN KEY (cod_cliente)
@@ -474,8 +474,8 @@ CREATE TABLE IF NOT EXISTS cliente_interno (
 CREATE TABLE IF NOT EXISTS cliente_externo (
   ruc CHAR(9) NOT NULL,
   cod_cliente CHAR(9) NOT NULL,
-  nombre_empresa VARCHAR(45) NULL,
-  razon_social VARCHAR(45) NULL,
+  nombre_empresa VARCHAR(120) NULL,
+  razon_social VARCHAR(120) NULL,
   PRIMARY KEY (ruc),
   CONSTRAINT cod_cliente_externo
     FOREIGN KEY (cod_cliente)
@@ -485,29 +485,29 @@ CREATE TABLE IF NOT EXISTS cliente_externo (
 	
 CREATE TABLE IF NOT EXISTS ruta (
   cod_ruta CHAR(9) NOT NULL,
-  punto_origen VARCHAR(45) NULL,
-  punto_destino VARCHAR(45) NULL,
+  punto_origen VARCHAR(120) NULL,
+  punto_destino VARCHAR(120) NULL,
   distancia_total FLOAT NULL,
-  tipo_ruta VARCHAR(45) NULL,
-  duracion VARCHAR(45) NULL,
+  tipo_ruta VARCHAR(120) NULL,
+  duracion VARCHAR(120) NULL,
   PRIMARY KEY (cod_ruta));
   
 CREATE TABLE IF NOT EXISTS persona (
   dni CHAR(9) NOT NULL,
-  direccion VARCHAR(45) NULL DEFAULT NULL,
-  estado_civil VARCHAR(45) NULL DEFAULT NULL,
-  nacionalidad VARCHAR(45) NULL DEFAULT NULL,
-  genero VARCHAR(45) NULL DEFAULT NULL,
-  primer_apellido VARCHAR(45) NULL DEFAULT NULL,
-  segundo_apellido VARCHAR(45) NULL DEFAULT NULL,
-  prenombre VARCHAR(45) NULL DEFAULT NULL,
+  direccion VARCHAR(120) NULL DEFAULT NULL,
+  estado_civil VARCHAR(120) NULL DEFAULT NULL,
+  nacionalidad VARCHAR(120) NULL DEFAULT NULL,
+  genero VARCHAR(120) NULL DEFAULT NULL,
+  primer_apellido VARCHAR(120) NULL DEFAULT NULL,
+  segundo_apellido VARCHAR(120) NULL DEFAULT NULL,
+  prenombre VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (dni));
   
 CREATE TABLE IF NOT EXISTS empleado (
   cod_empleado CHAR(9) NOT NULL,
   cod_area CHAR(9) NOT NULL,
   dni CHAR(9) NOT NULL,
-  cargo VARCHAR(45) NULL DEFAULT NULL,
+  cargo VARCHAR(120) NULL DEFAULT NULL,
   fecha_contrato DATE NULL DEFAULT NULL,
   PRIMARY KEY (cod_empleado),
   CONSTRAINT cod_area
@@ -523,8 +523,8 @@ CREATE TABLE IF NOT EXISTS operacion (
   cod_empleado_ejecutor CHAR(9) NOT NULL,
   cod_empleado_supervisor CHAR(9) NOT NULL,
   fecha DATE NOT NULL,
-  hora_inicio VARCHAR(45) NOT NULL,
-  hora_fin VARCHAR(45) NULL DEFAULT NULL,
+  hora_inicio VARCHAR(120) NOT NULL,
+  hora_fin VARCHAR(120) NULL DEFAULT NULL,
   tipo_operacion INT NOT NULL,
   PRIMARY KEY (cod_operacion),
   CONSTRAINT cod_empleado_ejecutor
@@ -540,9 +540,9 @@ CREATE TABLE IF NOT EXISTS operacion (
 CREATE TABLE IF NOT EXISTS transportista (
   cod_transportista CHAR(9) NOT NULL,
   cod_empleado CHAR(9) NOT NULL,
-  num_licencia VARCHAR(45) NULL DEFAULT NULL,
-  estado VARCHAR(45) NULL DEFAULT NULL,
-  tipo_licencia VARCHAR(45) NULL DEFAULT NULL,
+  num_licencia VARCHAR(120) NULL DEFAULT NULL,
+  estado VARCHAR(120) NULL DEFAULT NULL,
+  tipo_licencia VARCHAR(120) NULL DEFAULT NULL,
   fecha_vencimiento_licencia DATE NULL DEFAULT NULL,
   fecha_ultimo_traslado DATE NULL DEFAULT NULL,
   PRIMARY KEY (cod_transportista),
@@ -552,13 +552,13 @@ CREATE TABLE IF NOT EXISTS transportista (
 	
 CREATE TABLE IF NOT EXISTS vehiculo (
   cod_vehiculo CHAR(9) NOT NULL,
-  estado VARCHAR(45) NULL DEFAULT NULL,
-  anio_fabricacion VARCHAR(45) NULL DEFAULT NULL,
-  fecha_ultimo_mantenimiento VARCHAR(45) NULL DEFAULT NULL,
-  fecha_ultimo_viaje VARCHAR(45) NULL DEFAULT NULL,
-  capacidad_carga VARCHAR(45) NULL DEFAULT NULL,
-  modelo VARCHAR(45) NULL DEFAULT NULL,
-  placa VARCHAR(45) NULL DEFAULT NULL,
+  estado VARCHAR(120) NULL DEFAULT NULL,
+  anio_fabricacion VARCHAR(120) NULL DEFAULT NULL,
+  fecha_ultimo_mantenimiento VARCHAR(120) NULL DEFAULT NULL,
+  fecha_ultimo_viaje VARCHAR(120) NULL DEFAULT NULL,
+  capacidad_carga VARCHAR(120) NULL DEFAULT NULL,
+  modelo VARCHAR(120) NULL DEFAULT NULL,
+  placa VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_vehiculo));
 
 
@@ -590,8 +590,8 @@ CREATE TABLE IF NOT EXISTS traslado (
 CREATE TABLE IF NOT EXISTS incidencia (
   cod_incidencia CHAR(9) NOT NULL,
   cod_traslado CHAR(10) NOT NULL,
-  descripcion VARCHAR(45) NULL DEFAULT NULL,
-  tipo VARCHAR(45) NULL DEFAULT NULL,
+  descripcion VARCHAR(120) NULL DEFAULT NULL,
+  tipo VARCHAR(120) NULL DEFAULT NULL,
   fecha_ocurrencia DATE NULL DEFAULT NULL,
   PRIMARY KEY (cod_incidencia),
   CONSTRAINT fk_cod_traslado
@@ -613,7 +613,7 @@ CREATE TABLE IF NOT EXISTS elemento_catalogo (
   categoria INT NOT NULL,
   segmento INT NOT NULL,
   descripcion VARCHAR(256) NULL DEFAULT NULL,
-  unidad VARCHAR(45) NULL DEFAULT NULL,
+  unidad VARCHAR(120) NULL DEFAULT NULL,
   temperatura_minima INT NULL DEFAULT NULL,
   temperatura_maxima INT NULL DEFAULT NULL,
   vida_util INT NULL DEFAULT NULL,
@@ -624,10 +624,10 @@ CREATE TABLE IF NOT EXISTS representante (
   cod_representante CHAR(9) NOT NULL,
   cod_cliente CHAR(9) NOT NULL,
   dni CHAR(9) NOT NULL,
-  tipo_representante VARCHAR(45) NULL DEFAULT NULL,
+  tipo_representante VARCHAR(120) NULL DEFAULT NULL,
   num_telefono VARCHAR(20) NULL DEFAULT NULL,
-  correo_empresarial VARCHAR(45) NULL DEFAULT NULL,
-  cargo VARCHAR(45) NULL DEFAULT NULL,
+  correo_empresarial VARCHAR(120) NULL DEFAULT NULL,
+  cargo VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_representante),
   CONSTRAINT cod_cliente_representante
     FOREIGN KEY (cod_cliente)
@@ -640,9 +640,9 @@ CREATE TABLE IF NOT EXISTS pedido (
   cod_pedido CHAR(9) NOT NULL,
   cod_representante CHAR(9) NOT NULL,
   fecha_registro DATE NULL DEFAULT NULL,
-  tipo_pedido VARCHAR(45) NULL DEFAULT NULL,
-  descripcion VARCHAR(45) NULL DEFAULT NULL,
-  estado_pedido VARCHAR(45) NULL DEFAULT NULL,
+  tipo_pedido VARCHAR(120) NULL DEFAULT NULL,
+  descripcion VARCHAR(120) NULL DEFAULT NULL,
+  estado_pedido VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_pedido),
   CONSTRAINT cod_representante
     FOREIGN KEY (cod_representante)
@@ -673,9 +673,9 @@ CREATE TABLE IF NOT EXISTS detalle_pedido_traslado (
 CREATE TABLE IF NOT EXISTS evidencia (
   cod_evidencia CHAR(9) NOT NULL,
   cod_cliente_interno CHAR(9) NOT NULL,
-  nombre_evidencia VARCHAR(45) NULL DEFAULT NULL,
-  tipo_evidencia VARCHAR(45) NULL DEFAULT NULL,
-  tipo_archivo VARCHAR(45) NULL DEFAULT NULL,
+  nombre_evidencia VARCHAR(120) NULL DEFAULT NULL,
+  tipo_evidencia VARCHAR(120) NULL DEFAULT NULL,
+  tipo_archivo VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_evidencia),
   CONSTRAINT cod_cliente_interno_evidencia
     FOREIGN KEY (cod_cliente_interno)
@@ -683,8 +683,8 @@ CREATE TABLE IF NOT EXISTS evidencia (
 
 CREATE TABLE IF NOT EXISTS ubicacion (
   cod_ubicacion CHAR(9) NOT NULL,
-  longitud VARCHAR(45) NULL DEFAULT NULL,
-  latitud VARCHAR(45) NULL DEFAULT NULL,
+  longitud VARCHAR(120) NULL DEFAULT NULL,
+  latitud VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_ubicacion));
   
 CREATE TABLE IF NOT EXISTS gps (
@@ -692,7 +692,7 @@ CREATE TABLE IF NOT EXISTS gps (
   cod_ubicacion CHAR(9) NOT NULL,
   cod_vehiculo CHAR(9) NOT NULL,
   fecha_ubicacion DATE NULL DEFAULT NULL,
-  hora_ubicacion VARCHAR(45) NULL DEFAULT NULL,
+  hora_ubicacion VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_gps),
   CONSTRAINT cod_ubicacion_gps
     FOREIGN KEY (cod_ubicacion)
@@ -706,12 +706,12 @@ CREATE TABLE IF NOT EXISTS local (
   cod_local CHAR(9) NOT NULL,
   cod_cliente CHAR(9) NOT NULL,
   cod_ubicacion CHAR(9) NOT NULL,
-  tipo_local VARCHAR(45) NULL DEFAULT NULL,
-  distrito VARCHAR(45) NULL DEFAULT NULL,
-  calle VARCHAR(45) NULL DEFAULT NULL,
-  numero VARCHAR(45) NULL DEFAULT NULL,
-  region VARCHAR(45) NULL DEFAULT NULL,
-  pais VARCHAR(45) NULL DEFAULT NULL,
+  tipo_local VARCHAR(120) NULL DEFAULT NULL,
+  distrito VARCHAR(120) NULL DEFAULT NULL,
+  calle VARCHAR(120) NULL DEFAULT NULL,
+  numero VARCHAR(120) NULL DEFAULT NULL,
+  region VARCHAR(120) NULL DEFAULT NULL,
+  pais VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_local),
   CONSTRAINT cod_cliente
     FOREIGN KEY (cod_cliente)
@@ -736,7 +736,7 @@ CREATE TABLE IF NOT EXISTS norma (
   cod_catalogo_contigencia CHAR(9) NOT NULL,
   fecha_emision DATE NULL DEFAULT NULL,
   fecha_vigencia DATE NULL DEFAULT NULL,
-  tipo VARCHAR(45) NULL DEFAULT NULL,
+  tipo VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_norma),
   CONSTRAINT fk_cod_catalogo_contigencia
     FOREIGN KEY (cod_catalogo_contigencia)
@@ -745,9 +745,9 @@ CREATE TABLE IF NOT EXISTS norma (
 CREATE TABLE IF NOT EXISTS procedimiento (
   cod_procedimiento CHAR(9) NOT NULL,
   cod_catalogo_contigencia CHAR(9) NOT NULL,
-  tipo VARCHAR(45) NULL DEFAULT NULL,
-  descripcion VARCHAR(45) NULL DEFAULT NULL,
-  duracion VARCHAR(45) NULL DEFAULT NULL,
+  tipo VARCHAR(120) NULL DEFAULT NULL,
+  descripcion VARCHAR(120) NULL DEFAULT NULL,
+  duracion VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_procedimiento),
   CONSTRAINT fk_cod_catalogo_contigencia_procedimiento
     FOREIGN KEY (cod_catalogo_contigencia)
@@ -756,7 +756,7 @@ CREATE TABLE IF NOT EXISTS procedimiento (
 CREATE TABLE IF NOT EXISTS paso (
   cod_paso CHAR(9) NOT NULL,
   cod_procedimiento CHAR(9) NOT NULL,
-  descripcion VARCHAR(45) NULL DEFAULT NULL,
+  descripcion VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_paso),
   CONSTRAINT fk_cod_procedimiento
     FOREIGN KEY (cod_procedimiento)
@@ -765,10 +765,10 @@ CREATE TABLE IF NOT EXISTS paso (
 CREATE TABLE IF NOT EXISTS programacion_reporte (
   cod_programacion_reporte CHAR(9) NOT NULL,
   cod_empleado CHAR(9) NOT NULL,
-  formato VARCHAR(45) NULL DEFAULT NULL,
-  estado VARCHAR(45) NULL DEFAULT NULL,
-  frecuencia VARCHAR(45) NULL DEFAULT NULL,
-  filtros VARCHAR(45) NULL DEFAULT NULL,
+  formato VARCHAR(120) NULL DEFAULT NULL,
+  estado VARCHAR(120) NULL DEFAULT NULL,
+  frecuencia VARCHAR(120) NULL DEFAULT NULL,
+  filtros VARCHAR(120) NULL DEFAULT NULL,
   fecha_inicio DATE NULL DEFAULT NULL,
   fecha_fin DATE NULL DEFAULT NULL,
   PRIMARY KEY (cod_programacion_reporte),
@@ -779,10 +779,10 @@ CREATE TABLE IF NOT EXISTS programacion_reporte (
 CREATE TABLE IF NOT EXISTS seguimiento (
   cod_seguimiento CHAR(9) NOT NULL,
   cod_cliente_interno CHAR(9) NOT NULL,
-  tipo_accion VARCHAR(45) NULL DEFAULT NULL,
-  comentario VARCHAR(45) NULL DEFAULT NULL,
-  fecha_resolucion VARCHAR(45) NULL DEFAULT NULL,
-  numero_caso VARCHAR(45) NULL DEFAULT NULL,
+  tipo_accion VARCHAR(120) NULL DEFAULT NULL,
+  comentario VARCHAR(120) NULL DEFAULT NULL,
+  fecha_resolucion VARCHAR(120) NULL DEFAULT NULL,
+  numero_caso VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_seguimiento),
   CONSTRAINT cod_cliente_interno_seguimiento
     FOREIGN KEY (cod_cliente_interno)
@@ -796,10 +796,10 @@ CREATE TABLE IF NOT EXISTS reclamo (
   cod_representante CHAR(9) NOT NULL,
   cod_pedido CHAR(9) NOT NULL,
   cod_seguimiento CHAR(9) NOT NULL,
-  tipo_reclamo VARCHAR(45) NULL DEFAULT NULL,
-  nivel_urgencia VARCHAR(45) NULL DEFAULT NULL,
-  estado VARCHAR(45) NULL DEFAULT NULL,
-  comentario VARCHAR(45) NULL DEFAULT NULL,
+  tipo_reclamo VARCHAR(120) NULL DEFAULT NULL,
+  nivel_urgencia VARCHAR(120) NULL DEFAULT NULL,
+  estado VARCHAR(120) NULL DEFAULT NULL,
+  comentario VARCHAR(120) NULL DEFAULT NULL,
   fecha_suceso DATE NULL DEFAULT NULL,
   PRIMARY KEY (cod_reclamo),
   CONSTRAINT cod_empleado_reclamo
@@ -823,7 +823,7 @@ CREATE TABLE IF NOT EXISTS reporte (
   cod_reporte CHAR(9) NOT NULL,
   cod_programacion_reporte CHAR(9) NOT NULL,
   fecha_generacion DATE NULL DEFAULT NULL,
-  hora_generacion VARCHAR(45) NULL DEFAULT NULL,
+  hora_generacion VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_reporte),
   CONSTRAINT cod_programacion_reporte
     FOREIGN KEY (cod_programacion_reporte)
@@ -847,8 +847,8 @@ CREATE TABLE IF NOT EXISTS stock (
 CREATE TABLE IF NOT EXISTS tramo (
   cod_tramo CHAR(9) NOT NULL,
   cod_ruta CHAR(9) NOT NULL,
-  distancia VARCHAR(45) NULL DEFAULT NULL,
-  tiempo_estimado VARCHAR(45) NULL DEFAULT NULL,
+  distancia VARCHAR(120) NULL DEFAULT NULL,
+  tiempo_estimado VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_tramo),
   CONSTRAINT cod_ruta
     FOREIGN KEY (cod_ruta)
@@ -857,7 +857,7 @@ CREATE TABLE IF NOT EXISTS tramo (
 CREATE TABLE IF NOT EXISTS detalle_local_tramo (
   local_cod_local CHAR(9) NOT NULL,
   tramo_cod_tramo CHAR(9) NOT NULL,
-  tipo_punto VARCHAR(45) NULL,
+  tipo_punto VARCHAR(120) NULL,
   PRIMARY KEY (local_cod_local, tramo_cod_tramo),
   CONSTRAINT fk_local_has_tramo_local1
     FOREIGN KEY (local_cod_local)
