@@ -871,7 +871,7 @@ CREATE TABLE IF NOT EXISTS detalle_local_tramo (
 ```sql
 
 -- Poblamiento de datos para la entidad Elemento_catalogo
-INSERT INTO Elemento_catalogo (cod_elemento_catalogo, nombre, categoria, segmento, descripcion, unidad, temperatura_maxima, temperatura_minima, vida_util, peso_unitario) VALUES
+INSERT INTO elemento_catalogo (cod_elemento_catalogo, nombre, categoria, segmento, descripcion, unidad, temperatura_maxima, temperatura_minima, vida_util, peso_unitario) VALUES
 ('123456789', 'Filete de pechuga de pollo San Fernando congelado', 31, 4, 'Filete de pechuga de pollo San Fernando congelado, listo para su uso en la preparación de platos.', 'unidad', -18, -20, 90, 900),
 ('223456789', 'Pierna de pollo San Fernando congelada', 31, 4, 'Pierna de pollo San Fernando congelada, perfecta para su uso en la elaboración de diversos platos.', 'unidad', -18, -20, 90, 1200),
 ('323456789', 'Ala de pollo San Fernando congelada', 31, 4, 'Ala de pollo San Fernando congelada, ideal para recetas fáciles y deliciosas.', 'unidad', -18, -20, 90, 800),
@@ -888,11 +888,11 @@ INSERT INTO Elemento_catalogo (cod_elemento_catalogo, nombre, categoria, segment
 ('423456719', 'Huevo fresco Granja Real para rebozar', 15, 1, 'Huevo fresco Granja Real para rebozar y darle un toque especial a tus recetas.', 'unidad', NULL, NULL, 30, 50),
 ('523456719', 'Conservante natural Biolife para prolongar la vida útil del producto', 16, 1, 'Conservante natural Biolife para prolongar la vida útil del producto, sin aditivos artificiales.', 'gramo', NULL, NULL, 365, 30),
 ('623456719', 'Colorante natural Chroma para mejorar la apariencia del producto', 17, 1, 'Colorante natural Chroma para mejorar la apariencia del producto, seguro y confiable.', 'gramo', NULL, NULL, 365, 20),
-('723456719', 'Emulsionante Quality para mejorar la textura del producto', 18, 1, 'Emulsionante Quality para mejorar la textura del producto, ideal para aplicaciones culinarias.', 'gramo', NULL, NULL, 365, 40);
+('723456719', 'Emulsionante Quality para mejorar la textura del producto', 18, 1, 'Emulsionante Quality para mejorar la textura del producto, ideal para aplicaciones culinarias.', 'gramo', NULL, NULL, 365, 40),
 ('923456720', 'Detergente SuperClean', 23, 2, 'Detergente SuperClean para uso industrial, ideal para limpieza profunda y desengrase de equipos y superficies.', 'litro', NULL, NULL, NULL, 1000);
 
 -- Poblamiento de datos para la entidad Operación
-INSERT INTO Operación (cod_operacion, cod_operacion_previa, cod_empleado_ejecutor, cod_empleado_supervisor, tipo_operacion, fecha, hora_inicio, hora_fin)
+INSERT INTO operacion (cod_operacion, cod_operacion_previa, cod_empleado_ejecutor, cod_empleado_supervisor, tipo_operacion, fecha, hora_inicio, hora_fin)
 VALUES 
   ('000000001', NULL, '123456789', '987654321', 1, '2024-04-01', '08:00:00', '08:30:00'), -- Picking
   ('000000002', '000000001', '123456789', '987654321', 2, '2024-04-01', '08:45:00', '09:15:00'), -- Precintado
@@ -900,16 +900,16 @@ VALUES
   ('000000004', '000000003', '123456789', '987654321', 4, '2024-04-01', '10:45:00', '11:15:00'), -- Carga
   ('000000005', '000000004', '123456789', '987654321', 5, '2024-04-01', '11:30:00', '12:00:00'), -- Salida
   ('000000006', '000000005', '123456789', '987654321', 6, '2024-04-01', '14:00:00', '14:30:00'), -- Recepción
-  ('000000007', '000000006', '123456789', '987654321', 7, '2024-04-01', '14:45:00', '15:15:00'); -- Descarga
+  ('000000007', '000000006', '123456789', '987654321', 7, '2024-04-01', '14:45:00', '15:15:00'), -- Descarga
   ('000000008', NULL, '123456789', '987654321', 1, '2024-04-02', '08:00:00', '08:35:00'), -- Picking
   ('000000009', '000000008', '123456789', '987654321', 2, '2024-04-02', '08:45:00', '09:15:00'), -- Precintado
   ('000000010', '000000009', '123456789', '987654321', 3, '2024-04-02', '09:30:00', '10:30:00'), -- Paletizado
   ('000000011', '000000010', '123456789', '987654321', 4, '2024-04-02', '10:45:00', '11:15:00'), -- Carga
   ('000000012', '000000011', '123456789', '987654321', 5, '2024-04-02', '11:30:00', '12:00:00'), -- Salida
-  ('000000013', NULL, '123456789', '987654321', 1, '2024-04-02', '11:36:00', '11:52:00'), -- Picking
+  ('000000013', NULL, '123456789', '987654321', 1, '2024-04-02', '11:36:00', '11:52:00'); -- Picking
 
 -- Poblamiento de datos para la entidad Mercancía
-INSERT INTO Mercancía (cod_mercancia, cod_operacion_picking, numero_precinto)
+INSERT INTO mercancia (cod_mercancia, cod_operacion_picking, nro_precinto)
 VALUES 
   ('987654321', '000000001', 'N123456789'),
   ('987654322', '000000001', 'N223456789'),
@@ -922,11 +922,11 @@ VALUES
 CREATE OR REPLACE FUNCTION calcular_peso_total()
 RETURNS TRIGGER AS $$
 BEGIN
-    UPDATE Mercancía m
+    UPDATE mercancia m
     SET peso_total = (
         SELECT SUM(ec.peso_unitario)
-        FROM Stock s
-        INNER JOIN Elemento_catalogo ec ON s.cod_elemento_catalogo = ec.cod_elemento_catalogo
+        FROM stock s
+        INNER JOIN elemento_catalogo ec ON s.cod_elemento_catalogo = ec.cod_elemento_catalogo
         WHERE s.cod_mercancia = NEW.cod_mercancia
     )
     WHERE m.cod_mercancia = NEW.cod_mercancia;
@@ -937,10 +937,10 @@ $$ LANGUAGE plpgsql;
 CREATE OR REPLACE FUNCTION calcular_cantidad_producto()
 RETURNS TRIGGER AS $$
 BEGIN
-    UPDATE Mercancía m
-    SET cantidad_producto = (
+    UPDATE mercancia m
+    SET cantidad_productos = (
         SELECT COUNT(*)
-        FROM Stock s
+        FROM stock s
         WHERE s.cod_mercancia = NEW.cod_mercancia
     )
     WHERE m.cod_mercancia = NEW.cod_mercancia;
@@ -950,17 +950,17 @@ $$ LANGUAGE plpgsql;
 
 -- Asociación de los triggers con la tabla Stock
 CREATE TRIGGER actualizar_peso_total
-AFTER INSERT OR UPDATE ON Stock
+AFTER INSERT OR UPDATE ON stock
 FOR EACH ROW
 EXECUTE FUNCTION calcular_peso_total();
 
 CREATE TRIGGER actualizar_cantidad_producto
-AFTER INSERT OR UPDATE ON Stock
+AFTER INSERT OR UPDATE ON stock
 FOR EACH ROW
 EXECUTE FUNCTION calcular_cantidad_producto();
 
 -- Poblamiento de datos para la entidad Stock
-INSERT INTO Stock (cod_stock, cod_elemento_catalogo, cod_mercancia, nro_lote, tipo_stock, fecha_caducidad) VALUES
+INSERT INTO stock (cod_stock, cod_elemento_catalogo, cod_mercancia, nro_lote, tipo_stock, fecha_caducidad) VALUES
 ('987654321', '123456789', '987654321', 123, 3, '2024-04-01'),
 ('987654322', '223456789', '987654321', 124, 3, '2024-04-02'),
 ('987654323', '323456789', '987654321', 125, 3, '2024-04-03'),
@@ -970,7 +970,7 @@ INSERT INTO Stock (cod_stock, cod_elemento_catalogo, cod_mercancia, nro_lote, ti
 ('987654327', '723456789', '987654323', 129, 3, '2024-04-07'),
 ('987654328', '823456789', '987654324', 130, 3, '2024-04-08'),
 ('987654329', '923456789', '987654324', 131, 3, '2024-04-09'),
-('987654330', '123456789', '987654324', 132, 3, '2024-04-10');
+('987654330', '123456789', '987654324', 132, 3, '2024-04-10'),
 ('887654321', '112456719', '987654325', 223, 1, '2024-04-01'),
 ('887654322', '112456719', '987654325', 224, 1, '2024-04-02'),
 ('887654323', '223456719', '987654325', 225, 1, '2024-04-03'),
@@ -983,7 +983,7 @@ INSERT INTO Stock (cod_stock, cod_elemento_catalogo, cod_mercancia, nro_lote, ti
 ('887654330', '923456720', NULL, 232, 2, '2024-04-10');
 
 -- Poblamiento de datos para la entidad Traslado
-INSERT INTO Traslado (cod_traslado, cod_vehiculo, cod_ruta, cod_transportista, cod_operacion_inicia, cod_operacion_termina)
+INSERT INTO traslado (cod_traslado, cod_vehiculo, cod_ruta, cod_transportista, cod_operacion_inicia, cod_operacion_termina)
 VALUES 
   ('100000001', '111111111', '222222222', '333333333', '000000005', '000000006'),
   ('100000002', '444444444', '555555555', '666666666', '000000012', NULL);
