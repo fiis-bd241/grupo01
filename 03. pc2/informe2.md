@@ -60,16 +60,31 @@ Semántica: Representa los productos ofrecidos por sanfernando
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN | 
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
 | cod_elemento_catalogo | CHAR | 999999999 | 9 dígitos | --  | --  | Identificador del elemento en el catálogo. | 
-| nombre | CHAR | X(32) | NO NULL  | - | - | Nombre del elemento en el catálogo. | 
+| nombre | CHAR | X(32) | NO NULL  | - | - | Nombre del elemento en el catálogo. |
+| tipo_elemento  | INT  | 9 | NO NULL | TAB  | - | Tipo de elemento según su relación con el proceso de producción. |
+| segmento | INT  | 9 | NO NULL | TAB  | - | Es la segmentación del material y las materias primas |
+| categoría | CHAR | X(32) | - | - | - | Es la forma de categorizar los productos | 
 | descripcion | CHAR| X(256) | NO NULL | -  | - | Descripción del elemento en el catálogo. | 
 | unidad  | CHAR  | X(32) | NO NULL | -  | - | Unidad de medida del elemento en el catálogo. | 
 | temperatura_maxima | INT | 999 | - | Grados Celsius | - | Temperatura máxima permitida para la materia prima | 
-| temperatura_mínima | INT | 999 | - | Grados Celsius | - | Temperatura mínima permitida para la materia prima | 
-| categoría | CHAR | X(32) | - | - | - | Es la forma de categorizar los productos | 
-| segmento | CHAR | X(32) | - | - | - | Es la segmentación del material y las materias primas | 
-| tipo | CHAR | X(32) | Producto, Material, Materia Prima | - | - | Clasificación de elemento por su relación del proceso de producción| 
+| temperatura_mínima | INT | 999 | - | Grados Celsius | - | Temperatura mínima permitida para la materia prima |
 | vida_util | INT | 999 | - | Días | - | Vida útil de la materia prima | 
-| peso_unitario | CHAR | X(64) | - | - | - | Segmento al que pertenece el material en el catálogo| 
+| peso_unitario | CHAR | X(64) | - | - | - | Segmento al que pertenece el material en el catálogo|
+
+TAB: Tipo de elemento
+|Código|Semántica|
+|------|---------|
+|1|Materia prima|
+|2|Material|
+|3|Producto|
+
+TAB: Segmentación
+|Código|Semántica|
+|------|---------|
+|1|Materiales peligrosos|
+|2|Suministros y repuestos|
+|3|Insumos y etiquetas|
+|4|No aplica|
 
 **Entidad**: Empleado 
 
@@ -301,11 +316,20 @@ Semántica: Se refiere a la representación de los productos físicos disponible
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_stock | CHAR | 999999999 | - | - | - | Código único de identificación del registro de stock |  
+| cod_stock | CHAR | 999999999 | - | - | - | Código único de identificación del registro de stock |
+| cod_elemento_catalogo | CHAR | 999999999 | - | - | - |  Identificador del elemento en catálogo que describe las características generales del stock |
+| cod_mercancía | CHAR | 999999999 | - | - | - | Identificador de la mercancía de la cual forma parte el stock |
 | nro_lote | INT | 999 | >=0 | - | - | Número de lote asociado al stock | 
-| tipo_stock | CHAR | X(32) | - | - | - | Tipo de producto asociado a un stock | 
+| tipo_stock | INT  | 9 | NO NULL | TAB  | - | Tipo de stock según su relación con el proceso de producción | 
 | fecha_caducidad | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que el producto pierde su valor o propiedades | 
 | tipo | CHAR | X(32) | Producto, Material, Materia Prima | - | - | Clasificación de elemento por su relación del proceso de producción| 
+
+TAB: Tipo de stock
+|Código|Semántica|
+|------|---------|
+|1|Materia prima|
+|2|Material|
+|3|Producto|
 
 **Entidad:** Tramo 
 
