@@ -8,7 +8,7 @@
 
 ## 2. Modelo lógico
 
-![modelo-logico (1)](https://github.com/fiis-bd241/grupo01/assets/161625149/119543cd-1eae-4ffc-a8c6-bbda8890d068)
+![Modelo logico (1)](https://github.com/fiis-bd241/grupo01/assets/161625149/da077864-ec9f-42b9-b3d9-d297166ff915)
 
 [Modelo lógico](https://app.diagrams.net/#G1GrupzXPfoShdgRXzAIGe09sujAwB4f1J)
 
