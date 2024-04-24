@@ -451,3 +451,51 @@ Semántica:
 ## 3. Validación del esquema utilizando las Formas Normales
 ## 4. Creación de Tablas
 ## 5. Poblamiento inicial de datos
+
+```sql
+
+-- Poblar la tabla Elemento_catalogo
+INSERT INTO Elemento_catalogo (cod_elemento_catalogo, nombre, categoría, segmento, descripcion, unidad, temperatura_maxima, temperatura_minima, vida_util, peso_unitario) VALUES
+('123456789', 'Filete de pechuga de pollo San Fernando congelado', 31, 4, 'Filete de pechuga de pollo San Fernando congelado, listo para su uso en la preparación de platos.', 'unidad', -18, -20, 90, 900),
+('223456789', 'Pierna de pollo San Fernando congelada', 31, 4, 'Pierna de pollo San Fernando congelada, perfecta para su uso en la elaboración de diversos platos.', 'unidad', -18, -20, 90, 1200),
+('323456789', 'Ala de pollo San Fernando congelada', 31, 4, 'Ala de pollo San Fernando congelada, ideal para recetas fáciles y deliciosas.', 'unidad', -18, -20, 90, 800),
+('423456789', 'Muslo de pollo San Fernando congelado', 31, 4, 'Muslo de pollo San Fernando congelado, versátil y sabroso para preparaciones culinarias.', 'unidad', -18, -20, 90, 1000),
+('523456789', 'Pechuga entera de pollo San Fernando congelada', 31, 4, 'Pechuga entera de pollo San Fernando congelada, fresca y de alta calidad para diversas recetas.', 'unidad', -18, -20, 90, 1500),
+('623456789', 'Pierna con encuentro San Fernando fresca', 32, 4, 'Pierna con encuentro de pollo San Fernando fresca, perfecta para asados y platos principales.', 'unidad', 0, -2, 7, 1300),
+('723456789', 'Muslo de pollo San Fernando fresco', 32, 4, 'Muslo de pollo San Fernando fresco, jugoso y listo para su uso en una amplia variedad de platos.', 'unidad', 0, -2, 7, 1100),
+('823456789', 'Pechuga especial de pollo San Fernando fresca', 32, 4, 'Pechuga especial de pollo San Fernando fresca, de la más alta calidad para platos gourmet.', 'unidad', 0, -2, 7, 1200),
+('923456789', 'Pechuga entera de pollo San Fernando fresca', 32, 4, 'Pechuga entera de pollo San Fernando fresca, versátil y perfecta para diversas preparaciones culinarias.', 'unidad', 0, -2, 7, 1400),
+('123456719', 'Carne molida de pollo San Fernando fresca', 32, 4, 'Carne molida de pollo San Fernando fresca, ideal para hamburguesas, albóndigas y más.', 'unidad', 0, -2, 7, 900),
+('112456719', 'Especias y condimentos Jardín del Sabor para pollo', 11, 1, 'Mezcla de especias y condimentos Jardín del Sabor especialmente seleccionados para realzar el sabor del pollo.', 'gramo', NULL, NULL, 180, 80),
+('223456719', 'Aceite de oliva Aceitunas del Sur para cocinar', 13, 1, 'Aceite de oliva Aceitunas del Sur de alta calidad, perfecto para cocinar y aderezar platos.', 'mililitro', NULL, NULL, 365, 1000),
+('323456719', 'Harina de trigo Trigomar para empanizar', 14, 1, 'Harina de trigo Trigomar ideal para empanizar y darle un acabado crujiente a tus platillos favoritos.', 'gramo', NULL, NULL, 180, 500),
+('423456719', 'Huevo fresco Granja Real para rebozar', 15, 1, 'Huevo fresco Granja Real para rebozar y darle un toque especial a tus recetas.', 'unidad', NULL, NULL, 30, 50),
+('523456719', 'Conservante natural Biolife para prolongar la vida útil del producto', 16, 1, 'Conservante natural Biolife para prolongar la vida útil del producto, sin aditivos artificiales.', 'gramo', NULL, NULL, 365, 30),
+('623456719', 'Colorante natural Chroma para mejorar la apariencia del producto', 17, 1, 'Colorante natural Chroma para mejorar la apariencia del producto, seguro y confiable.', 'gramo', NULL, NULL, 365, 20),
+('723456719', 'Emulsionante Quality para mejorar la textura del producto', 18, 1, 'Emulsionante Quality para mejorar la textura del producto, ideal para aplicaciones culinarias.', 'gramo', NULL, NULL, 365, 40);
+('923456720', 'Detergente SuperClean', 23, 2, 'Detergente SuperClean para uso industrial, ideal para limpieza profunda y desengrase de equipos y superficies.', 'litro', NULL, NULL, NULL, 1000);
+
+-- Poblar la tabla Stock
+INSERT INTO Stock (cod_stock, cod_elemento_catalogo, cod_mercancia, nro_lote, tipo_stock, fecha_caducidad) VALUES
+('987654321', '123456789', '987654321', 123, 3, '2024-04-01'),
+('987654322', '223456789', '987654321', 124, 3, '2024-04-02'),
+('987654323', '323456789', '987654321', 125, 3, '2024-04-03'),
+('987654324', '423456789', '987654322', 126, 3, '2024-04-04'),
+('987654325', '523456789', '987654322', 127, 3, '2024-04-05'),
+('987654326', '623456789', '987654323', 128, 3, '2024-04-06'),
+('987654327', '723456789', '987654323', 129, 3, '2024-04-07'),
+('987654328', '823456789', '987654324', 130, 3, '2024-04-08'),
+('987654329', '923456789', '987654324', 131, 3, '2024-04-09'),
+('987654330', '123456789', '987654324', 132, 3, '2024-04-10');
+('887654321', '112456719', '987654325', 223, 1, '2024-04-01'),
+('887654322', '112456719', '987654325', 224, 1, '2024-04-02'),
+('887654323', '223456719', '987654325', 225, 1, '2024-04-03'),
+('887654324', '223456719', '987654326', 226, 1, '2024-04-04'),
+('887654325', '323456719', '987654326', 227, 1, '2024-04-05'),
+('887654326', '423456719', NULL, 228, 1, '2024-04-06'),
+('887654327', '523456719', NULL, 229, 1, '2024-04-07'),
+('887654328', '623456719', NULL, 230, 1, '2024-04-08'),
+('887654329', '723456719', NULL, 231, 1, '2024-04-09'),
+('887654330', '923456720', NULL, 232, 2, '2024-04-10');
+
+```
