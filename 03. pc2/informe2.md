@@ -563,7 +563,7 @@ CREATE TABLE IF NOT EXISTS vehiculo (
 
 
 CREATE TABLE IF NOT EXISTS traslado (
-  cod_traslado CHAR(9) NOT NULL,
+  cod_traslado CHAR(10) NOT NULL,
   cod_vehiculo CHAR(9) NOT NULL,
   cod_ruta CHAR(9) NOT NULL,
   cod_transportista CHAR(9) NOT NULL,
