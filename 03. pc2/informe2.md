@@ -1147,7 +1147,7 @@ VALUES
 ('INC009012', 'TRSL002345', 'Retraso por congestión de tráfico', 'Operativa', '2024-04-25'),
 ('INC010123', 'TRSL002345', 'Fallo en el sistema de frenos', 'Mecánica', '2024-04-26'),
 ('INC011234', 'TRSL002345', 'Robo de mercancía durante el traslado', 'Seguridad', '2024-04-27'),
-('INC012345', 'TRSL012345', 'Accidente de tráfico', 'Seguridad', '2024-04-28');
+('INC012345', 'TRSL002345', 'Accidente de tráfico', 'Seguridad', '2024-04-28');
 
 INSERT INTO catalogo_contigencia (cod_catalogo_contigencia, cod_incidencia, comentario)
 VALUES
