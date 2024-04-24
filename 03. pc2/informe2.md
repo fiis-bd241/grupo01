@@ -1138,15 +1138,15 @@ INSERT INTO incidencia (cod_incidencia, cod_traslado, descripcion, tipo, fecha_o
 VALUES
 ('INC001234', 'TRSL001234', 'Fallo en el motor', 'Mecánica', '2024-04-20'),
 ('INC002345', 'TRSL002345', 'Ruta bloqueada por accidente', 'Operativa', '2024-04-18'),
-('INC003456', 'TRSL003456', 'Retraso por condiciones climáticas adversas', 'Clima', '2024-04-19'),
-('INC004567', 'TRSL004567', 'Daño en la carga durante el traslado', 'Operativa', '2024-04-20'),
-('INC005678', 'TRSL005678', 'Pérdida de comunicación con el vehículo', 'Tecnológica', '2024-04-21'),
-('INC006789', 'TRSL006789', 'Incumplimiento del tiempo de entrega', 'Operativa', '2024-04-22'),
-('INC007890', 'TRSL007890', 'Ruta cerrada por obras en la carretera', 'Operativa', '2024-04-23'),
-('INC008901', 'TRSL008901', 'Problema con el sistema de navegación', 'Tecnológica', '2024-04-24'),
-('INC009012', 'TRSL009012', 'Retraso por congestión de tráfico', 'Operativa', '2024-04-25'),
-('INC010123', 'TRSL010123', 'Fallo en el sistema de frenos', 'Mecánica', '2024-04-26'),
-('INC011234', 'TRSL011234', 'Robo de mercancía durante el traslado', 'Seguridad', '2024-04-27'),
+('INC003456', 'TRSL002345', 'Retraso por condiciones climáticas adversas', 'Clima', '2024-04-19'),
+('INC004567', 'TRSL002345', 'Daño en la carga durante el traslado', 'Operativa', '2024-04-20'),
+('INC005678', 'TRSL002345', 'Pérdida de comunicación con el vehículo', 'Tecnológica', '2024-04-21'),
+('INC006789', 'TRSL002345', 'Incumplimiento del tiempo de entrega', 'Operativa', '2024-04-22'),
+('INC007890', 'TRSL002345', 'Ruta cerrada por obras en la carretera', 'Operativa', '2024-04-23'),
+('INC008901', 'TRSL002345', 'Problema con el sistema de navegación', 'Tecnológica', '2024-04-24'),
+('INC009012', 'TRSL002345', 'Retraso por congestión de tráfico', 'Operativa', '2024-04-25'),
+('INC010123', 'TRSL002345', 'Fallo en el sistema de frenos', 'Mecánica', '2024-04-26'),
+('INC011234', 'TRSL002345', 'Robo de mercancía durante el traslado', 'Seguridad', '2024-04-27'),
 ('INC012345', 'TRSL012345', 'Accidente de tráfico', 'Seguridad', '2024-04-28');
 
 INSERT INTO catalogo_contigencia (cod_catalogo_contigencia, cod_incidencia, comentario)
