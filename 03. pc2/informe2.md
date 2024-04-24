@@ -601,7 +601,7 @@ CREATE TABLE IF NOT EXISTS incidencia (
 CREATE TABLE IF NOT EXISTS catalogo_contigencia (
   cod_catalogo_contigencia CHAR(9) NOT NULL,
   cod_incidencia CHAR(9) NOT NULL,
-  comentario VARCHAR(45) NULL DEFAULT NULL,
+  comentario VARCHAR(120) NULL DEFAULT NULL,
   PRIMARY KEY (cod_catalogo_contigencia),
   CONSTRAINT fk_cod_incidencia
     FOREIGN KEY (cod_incidencia)
