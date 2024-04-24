@@ -1097,7 +1097,7 @@ VALUES
   ('000000010', '000000009', 'EMP004567', 'EMP012345', 3, '2024-04-02', '09:30:00', '10:30:00'), -- Paletizado
   ('000000011', '000000010', 'EMP004567', 'EMP012345', 4, '2024-04-02', '10:45:00', '11:15:00'), -- Carga
   ('000000012', '000000011', 'EMP004567', 'EMP012345', 5, '2024-04-02', '11:30:00', '12:00:00'), -- Salida
-  ('000000013', NULL, 'EMP004567', '987654321', 1, '2024-04-02', '11:36:00', '11:52:00'); -- Picking
+  ('000000013', NULL, 'EMP004567', 'EMP012345', 1, '2024-04-02', '11:36:00', '11:52:00'); -- Picking
 
 INSERT INTO transportista (cod_transportista, cod_empleado, num_licencia, estado, tipo_licencia, fecha_vencimiento_licencia, fecha_ultimo_traslado) 
 VALUES 
