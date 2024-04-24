@@ -893,22 +893,6 @@ INSERT INTO elemento_catalogo (cod_elemento_catalogo, nombre, categoria, segment
 ('723456719', 'Emulsionante Quality para mejorar la textura del producto', 18, 1, 'Emulsionante Quality para mejorar la textura del producto, ideal para aplicaciones culinarias.', 'gramo', NULL, NULL, 365, 40),
 ('923456720', 'Detergente SuperClean', 23, 2, 'Detergente SuperClean para uso industrial, ideal para limpieza profunda y desengrase de equipos y superficies.', 'litro', NULL, NULL, NULL, 1000);
 
--- Poblamiento de datos para la entidad Operación
-INSERT INTO operacion (cod_operacion, cod_operacion_previa, cod_empleado_ejecutor, cod_empleado_supervisor, tipo_operacion, fecha, hora_inicio, hora_fin)
-VALUES 
-  ('000000001', NULL, '123456789', '987654321', 1, '2024-04-01', '08:00:00', '08:30:00'), -- Picking
-  ('000000002', '000000001', '123456789', '987654321', 2, '2024-04-01', '08:45:00', '09:15:00'), -- Precintado
-  ('000000003', '000000002', '123456789', '987654321', 3, '2024-04-01', '09:30:00', '10:30:00'), -- Paletizado
-  ('000000004', '000000003', '123456789', '987654321', 4, '2024-04-01', '10:45:00', '11:15:00'), -- Carga
-  ('000000005', '000000004', '123456789', '987654321', 5, '2024-04-01', '11:30:00', '12:00:00'), -- Salida
-  ('000000006', '000000005', '123456789', '987654321', 6, '2024-04-01', '14:00:00', '14:30:00'), -- Recepción
-  ('000000007', '000000006', '123456789', '987654321', 7, '2024-04-01', '14:45:00', '15:15:00'), -- Descarga
-  ('000000008', NULL, '123456789', '987654321', 1, '2024-04-02', '08:00:00', '08:35:00'), -- Picking
-  ('000000009', '000000008', '123456789', '987654321', 2, '2024-04-02', '08:45:00', '09:15:00'), -- Precintado
-  ('000000010', '000000009', '123456789', '987654321', 3, '2024-04-02', '09:30:00', '10:30:00'), -- Paletizado
-  ('000000011', '000000010', '123456789', '987654321', 4, '2024-04-02', '10:45:00', '11:15:00'), -- Carga
-  ('000000012', '000000011', '123456789', '987654321', 5, '2024-04-02', '11:30:00', '12:00:00'), -- Salida
-  ('000000013', NULL, '123456789', '987654321', 1, '2024-04-02', '11:36:00', '11:52:00'); -- Picking
 
 -- Poblamiento de datos para la entidad Mercancía
 INSERT INTO mercancia (cod_mercancia, cod_operacion_picking, nro_precinto)
@@ -1213,6 +1197,21 @@ VALUES
 ('OP005678', 'OP004567', 'EMP009012', 'EMP010123', '2022-03-19', '07:30:00', '11:00:00', 1),
 ('OP006789', 'OP005678', 'EMP011234', 'EMP012345', '2022-03-20', '09:45:00', '13:15:00', 2);
 
+INSERT INTO operacion (cod_operacion, cod_operacion_previa, cod_empleado_ejecutor, cod_empleado_supervisor, tipo_operacion, fecha, hora_inicio, hora_fin)
+VALUES 
+  ('000000001', NULL, 'EMP001234', 'EMP012345', 1, '2024-04-01', '08:00:00', '08:30:00'), -- Picking
+  ('000000002', '000000001', 'EMP001234', 'EMP012345', 2, '2024-04-01', '08:45:00', '09:15:00'), -- Precintado
+  ('000000003', '000000002', 'EMP001234', 'EMP012345', 3, '2024-04-01', '09:30:00', '10:30:00'), -- Paletizado
+  ('000000004', '000000003', 'EMP001234', 'EMP012345', 4, '2024-04-01', '10:45:00', '11:15:00'), -- Carga
+  ('000000005', '000000004', 'EMP001234', 'EMP012345', 5, '2024-04-01', '11:30:00', '12:00:00'), -- Salida
+  ('000000006', '000000005', 'EMP001234', 'EMP012345', 6, '2024-04-01', '14:00:00', '14:30:00'), -- Recepción
+  ('000000007', '000000006', 'EMP001234', 'EMP012345', 7, '2024-04-01', '14:45:00', '15:15:00'), -- Descarga
+  ('000000008', NULL, 'EMP004567', 'EMP01234', 1, '2024-04-02', '08:00:00', '08:35:00'), -- Picking
+  ('000000009', '000000008', 'EMP004567', 'EMP012345', 2, '2024-04-02', '08:45:00', '09:15:00'), -- Precintado
+  ('000000010', '000000009', 'EMP004567', 'EMP012345', 3, '2024-04-02', '09:30:00', '10:30:00'), -- Paletizado
+  ('000000011', '000000010', 'EMP004567', 'EMP012345', 4, '2024-04-02', '10:45:00', '11:15:00'), -- Carga
+  ('000000012', '000000011', 'EMP004567', 'EMP012345', 5, '2024-04-02', '11:30:00', '12:00:00'), -- Salida
+  ('000000013', NULL, 'EMP004567', '987654321', 1, '2024-04-02', '11:36:00', '11:52:00'); -- Picking
 
 INSERT INTO transportista (cod_transportista, cod_empleado, num_licencia, estado, tipo_licencia, fecha_vencimiento_licencia, fecha_ultimo_traslado) 
 VALUES 
