@@ -968,11 +968,6 @@ INSERT INTO stock (cod_stock, cod_elemento_catalogo, cod_mercancia, nro_lote, ti
 ('887654329', '723456719', NULL, 231, 1, '2024-04-09'),
 ('887654330', '923456720', NULL, 232, 2, '2024-04-10');
 
--- Poblamiento de datos para la entidad Traslado
-INSERT INTO traslado (cod_traslado, cod_vehiculo, cod_ruta, cod_transportista, cod_operacion_inicia, cod_operacion_termina)
-VALUES 
-  ('100000001', '111111111', '222222222', '333333333', '000000005', '000000006'),
-  ('100000002', '444444444', '555555555', '666666666', '000000012', NULL);
 
 
 
@@ -1188,15 +1183,6 @@ VALUES
 ('EMP011234', 'AREA011', '123456780', 'Inspector de Calidad', '2023-06-30'),
 ('EMP012345', 'AREA012', '234567801', 'Especialista en Comunicaciones', '2024-10-15');
 
-INSERT INTO operacion (cod_operacion, cod_operacion_previa, cod_empleado_ejecutor, cod_empleado_supervisor, fecha, hora_inicio, hora_fin, tipo_operacion) 
-VALUES 
-('OP001234', NULL, 'EMP001234', 'EMP002345', '2022-03-15', '09:00:00', '13:00:00', 1),
-('OP002345', 'OP001234', 'EMP003456', 'EMP004567', '2022-03-16', '10:30:00', '14:30:00', 2),
-('OP003456', 'OP002345', 'EMP005678', 'EMP006789', '2022-03-17', '11:15:00', '15:45:00', 1),
-('OP004567', 'OP003456', 'EMP007890', 'EMP008901', '2022-03-18', '08:45:00', '12:30:00', 2),
-('OP005678', 'OP004567', 'EMP009012', 'EMP010123', '2022-03-19', '07:30:00', '11:00:00', 1),
-('OP006789', 'OP005678', 'EMP011234', 'EMP012345', '2022-03-20', '09:45:00', '13:15:00', 2);
-
 INSERT INTO operacion (cod_operacion, cod_operacion_previa, cod_empleado_ejecutor, cod_empleado_supervisor, tipo_operacion, fecha, hora_inicio, hora_fin)
 VALUES 
   ('000000001', NULL, 'EMP001234', 'EMP012345', 1, '2024-04-01', '08:00:00', '08:30:00'), -- Picking
@@ -1244,19 +1230,9 @@ VALUES
 ('VEH012345', 'Activo', '2017', '2023-07-25', '2024-04-28', 'Furgoneta', 'HIJ456');
 
 INSERT INTO traslado (cod_traslado, cod_vehiculo, cod_ruta, cod_transportista, cod_operacion_inicia, cod_operacion_termina)
-VALUES
-('TRSL001234', 'VEH001234', 'RUTA001', 'TRN001234', 'OP001234', 'OP002345'),
-('TRSL002345', 'VEH002345', 'RUTA002', 'TRN002345', 'OP002345', 'OP003456'),
-('TRSL003456', 'VEH003456', 'RUTA003', 'TRN003456', 'OP003456', 'OP004567'),
-('TRSL004567', 'VEH004567', 'RUTA004', 'TRN004567', 'OP004567', 'OP005678'),
-('TRSL005678', 'VEH005678', 'RUTA005', 'TRN005678', 'OP005678', 'OP006789'),
-('TRSL006789', 'VEH006789', 'RUTA006', 'TRN006789', 'OP006789', NULL),
-('TRSL007890', 'VEH007890', 'RUTA007', 'TRN007890', 'OP007890', NULL),
-('TRSL008901', 'VEH008901', 'RUTA008', 'TRN008901', 'OP008901', NULL),
-('TRSL009012', 'VEH009012', 'RUTA009', 'TRN009012', 'OP009012', NULL),
-('TRSL010123', 'VEH010123', 'RUTA010', 'TRN010123', 'OP010123', NULL),
-('TRSL011234', 'VEH011234', 'RUTA011', 'TRN011234', 'OP011234', NULL),
-('TRSL012345', 'VEH012345', 'RUTA012', 'TRN012345', 'OP012345', NULL);
+VALUES 
+  ('TRSL001234', 'VEH001234', 'RUTA001', 'TRN001234', '000000005', '000000006'),
+  ('TRSL002345', 'VEH002345', 'RUTA002', 'TRN002345', '000000012', NULL);
 
 INSERT INTO incidencia (cod_incidencia, cod_traslado, descripcion, tipo, fecha_ocurrencia)
 VALUES
