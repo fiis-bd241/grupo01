@@ -845,8 +845,6 @@ CREATE TABLE IF NOT EXISTS tramo (
   cod_ruta CHAR(9) NOT NULL,
   distancia VARCHAR(45) NULL DEFAULT NULL,
   tiempo_estimado VARCHAR(45) NULL DEFAULT NULL,
-  origen VARCHAR(45) NULL DEFAULT NULL,
-  fin VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (cod_tramo),
   CONSTRAINT cod_ruta
     FOREIGN KEY (cod_ruta)
