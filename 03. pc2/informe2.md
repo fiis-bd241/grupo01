@@ -336,8 +336,7 @@ Semántica: Se refiere a la representación de los productos físicos disponible
 | cod_mercancía | CHAR | 999999999 | - | - | - | Identificador de la mercancía de la cual forma parte el stock |
 | nro_lote | INT | 999 | >=0 | - | - | Número de lote asociado al stock | 
 | tipo_stock | INT  | 9 | NO NULL | TAB  | - | Tipo de stock según su relación con el proceso de producción | 
-| fecha_caducidad | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que el producto pierde su valor o propiedades | 
-| tipo | CHAR | X(32) | Producto, Material, Materia Prima | - | - | Clasificación de elemento por su relación del proceso de producción| 
+| fecha_caducidad | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que el producto pierde su valor o propiedades |
 
 TAB: Tipo de stock
 |Código|Semántica|
