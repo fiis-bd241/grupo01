@@ -450,6 +450,422 @@ Semántica:
 
 ## 3. Validación del esquema utilizando las Formas Normales
 ## 4. Creación de Tablas
+
+```sql
+
+CREATE TABLE IF NOT EXISTS cliente (
+  cod_cliente INT NOT NULL,
+  estado VARCHAR(45) NULL,
+  prioridad VARCHAR(45) NULL,
+  fecha_registro DATE NULL,
+  PRIMARY KEY (cod_cliente));
+ 
+CREATE TABLE IF NOT EXISTS cliente_interno (
+  cod_area INT NOT NULL,
+  cod_cliente INT NOT NULL,
+  nombre_area VARCHAR(45) NULL,
+  PRIMARY KEY (cod_area),
+  CONSTRAINT cod_cliente_interno
+    FOREIGN KEY (cod_cliente)
+    REFERENCES cliente (cod_cliente)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+	
+CREATE TABLE IF NOT EXISTS cliente_externo (
+  ruc INT NOT NULL,
+  cod_cliente INT NOT NULL,
+  nombre_empresa VARCHAR(45) NULL,
+  razon_social VARCHAR(45) NULL,
+  PRIMARY KEY (ruc),
+  CONSTRAINT cod_cliente_externo
+    FOREIGN KEY (cod_cliente)
+    REFERENCES cliente (cod_cliente)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+	
+CREATE TABLE IF NOT EXISTS ruta (
+  cod_ruta INT NOT NULL,
+  punto_origen VARCHAR(45) NULL,
+  punto_destino VARCHAR(45) NULL,
+  distancia_total FLOAT NULL,
+  tipo_ruta VARCHAR(45) NULL,
+  duracion VARCHAR(45) NULL,
+  PRIMARY KEY (cod_ruta));
+  
+CREATE TABLE IF NOT EXISTS persona (
+  dni INT NOT NULL,
+  direccion VARCHAR(45) NULL DEFAULT NULL,
+  estado_civil VARCHAR(45) NULL DEFAULT NULL,
+  nacionalidad VARCHAR(45) NULL DEFAULT NULL,
+  genero VARCHAR(45) NULL DEFAULT NULL,
+  primer_apellido VARCHAR(45) NULL DEFAULT NULL,
+  segundo_apellido VARCHAR(45) NULL DEFAULT NULL,
+  prenombre VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (dni));
+  
+CREATE TABLE IF NOT EXISTS empleado (
+  cod_empleado INT NOT NULL,
+  cod_area INT NOT NULL,
+  dni INT NOT NULL,
+  cargo VARCHAR(45) NULL DEFAULT NULL,
+  fecha_contrato DATE NULL DEFAULT NULL,
+  PRIMARY KEY (cod_empleado),
+  CONSTRAINT cod_area
+    FOREIGN KEY (cod_area)
+    REFERENCES cliente_interno (cod_area),
+  CONSTRAINT dni
+    FOREIGN KEY (dni)
+    REFERENCES persona (dni));
+	
+CREATE TABLE IF NOT EXISTS operacion (
+  cod_operacion INT NOT NULL,
+  cod_operacion_previa INT NULL,
+  cod_empleado_ejecutor INT NOT NULL,
+  cod_empleado_supervisor INT NOT NULL,
+  fecha_inicio DATE NULL DEFAULT NULL,
+  hora_inicio VARCHAR(45) NULL DEFAULT NULL,
+  fecha_fin DATE NULL DEFAULT NULL,
+  hora_fin VARCHAR(45) NULL DEFAULT NULL,
+  tipo_operacion VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_operacion),
+  CONSTRAINT cod_empleado_ejecutor
+    FOREIGN KEY (cod_empleado_ejecutor)
+    REFERENCES empleado (cod_empleado),
+  CONSTRAINT cod_empleado_supervisor
+    FOREIGN KEY (cod_empleado_supervisor)
+    REFERENCES empleado (cod_empleado),
+  CONSTRAINT cod_operacion_previa
+    FOREIGN KEY (cod_operacion_previa)
+    REFERENCES operacion (cod_operacion));
+	
+CREATE TABLE IF NOT EXISTS transportista (
+  cod_transportista INT NOT NULL,
+  cod_empleado INT NOT NULL,
+  num_licencia VARCHAR(45) NULL DEFAULT NULL,
+  estado VARCHAR(45) NULL DEFAULT NULL,
+  tipo_licencia VARCHAR(45) NULL DEFAULT NULL,
+  fecha_vencimiento_licencia DATE NULL DEFAULT NULL,
+  fecha_ultimo_traslado DATE NULL DEFAULT NULL,
+  PRIMARY KEY (cod_transportista),
+  CONSTRAINT cod_empleado_transportista
+    FOREIGN KEY (cod_empleado)
+    REFERENCES empleado (cod_empleado));
+	
+CREATE TABLE IF NOT EXISTS vehiculo (
+  cod_vehiculo INT NOT NULL,
+  estado VARCHAR(45) NULL DEFAULT NULL,
+  año_fabricacion VARCHAR(45) NULL DEFAULT NULL,
+  fecha_ultimo_mantenimiento VARCHAR(45) NULL DEFAULT NULL,
+  fecha_ultimo_viaje VARCHAR(45) NULL DEFAULT NULL,
+  modelo VARCHAR(45) NULL DEFAULT NULL,
+  placa VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_vehiculo));
+
+
+CREATE TABLE IF NOT EXISTS traslado (
+  cod_traslado INT NOT NULL,
+  cod_vehiculo INT NOT NULL,
+  cod_ruta INT NOT NULL,
+  cod_transportista INT NOT NULL,
+  cod_operacion_inicia INT NOT NULL,
+  cod_operacion_termina INT NOT NULL,
+  PRIMARY KEY (cod_traslado),
+  CONSTRAINT cod_operacion_inicia
+    FOREIGN KEY (cod_operacion_inicia)
+    REFERENCES operacion (cod_operacion),
+  CONSTRAINT cod_operacion_termina
+    FOREIGN KEY (cod_operacion_termina)
+    REFERENCES operacion (cod_operacion),
+  CONSTRAINT cod_ruta_traslado
+    FOREIGN KEY (cod_ruta)
+    REFERENCES ruta (cod_ruta),
+  CONSTRAINT cod_transportista
+    FOREIGN KEY (cod_transportista)
+    REFERENCES transportista (cod_transportista),
+  CONSTRAINT cod_vehiculo_traslado
+    FOREIGN KEY (cod_vehiculo)
+    REFERENCES vehiculo (cod_vehiculo));
+	
+
+CREATE TABLE IF NOT EXISTS incidencia (
+  cod_incidencia INT NOT NULL,
+  cod_traslado INT NOT NULL,
+  descripcion VARCHAR(45) NULL DEFAULT NULL,
+  tipo VARCHAR(45) NULL DEFAULT NULL,
+  fecha_ocurrencia DATE NULL DEFAULT NULL,
+  PRIMARY KEY (cod_incidencia),
+  CONSTRAINT fk_cod_traslado
+    FOREIGN KEY (cod_traslado)
+    REFERENCES traslado (cod_traslado));
+	
+CREATE TABLE IF NOT EXISTS catalogo_contigencia (
+  cod_catalogo_contigencia INT NOT NULL,
+  cod_incidencia INT NOT NULL,
+  comentario VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_catalogo_contigencia),
+  CONSTRAINT fk_cod_incidencia
+    FOREIGN KEY (cod_incidencia)
+    REFERENCES incidencia (cod_incidencia));
+	
+CREATE TABLE IF NOT EXISTS elemento_catalogo (
+  cod_elemento_catalogo INT NOT NULL,
+  nombre VARCHAR(45) NULL DEFAULT NULL,
+  tipo_elemento VARCHAR(45) NULL DEFAULT NULL,
+  segmento VARCHAR(45) NULL DEFAULT NULL,
+  categoria VARCHAR(45) NULL DEFAULT NULL,
+  unidad VARCHAR(45) NULL DEFAULT NULL,
+  peso_unitario VARCHAR(45) NULL DEFAULT NULL,
+  temperatura_minima VARCHAR(45) NULL DEFAULT NULL,
+  temperatura_maxima VARCHAR(45) NULL DEFAULT NULL,
+  vida_util VARCHAR(45) NULL DEFAULT NULL,
+  descripcion VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_elemento_catalogo));
+  
+CREATE TABLE IF NOT EXISTS representante (
+  cod_representante INT NOT NULL,
+  cod_cliente INT NOT NULL,
+  dni INT NOT NULL,
+  tipo_representante VARCHAR(45) NULL DEFAULT NULL,
+  num_telefono VARCHAR(20) NULL DEFAULT NULL,
+  correo_empresarial VARCHAR(45) NULL DEFAULT NULL,
+  cargo VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_representante),
+  CONSTRAINT cod_cliente_representante
+    FOREIGN KEY (cod_cliente)
+    REFERENCES cliente (cod_cliente),
+  CONSTRAINT dni_representante
+    FOREIGN KEY (dni)
+    REFERENCES persona (dni));
+	
+CREATE TABLE IF NOT EXISTS pedido (
+  cod_pedido INT NOT NULL,
+  cod_representante INT NOT NULL,
+  fecha_registro DATE NULL DEFAULT NULL,
+  tipo_pedido VARCHAR(45) NULL DEFAULT NULL,
+  descripcion VARCHAR(45) NULL DEFAULT NULL,
+  estado_pedido VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_pedido),
+  CONSTRAINT cod_representante
+    FOREIGN KEY (cod_representante)
+    REFERENCES representante (cod_representante));
+	
+CREATE TABLE IF NOT EXISTS detalle_pedido_producto (
+  pedido_cod_pedido INT NOT NULL,
+  elemento_catalogo_cod_elemento_catalogo INT NOT NULL,
+  PRIMARY KEY (pedido_cod_pedido, elemento_catalogo_cod_elemento_catalogo),
+  CONSTRAINT fk_pedido_has_elemento_catalogo_elemento_catalogo1
+    FOREIGN KEY (elemento_catalogo_cod_elemento_catalogo)
+    REFERENCES elemento_catalogo (cod_elemento_catalogo),
+  CONSTRAINT fk_pedido_has_elemento_catalogo_pedido1
+    FOREIGN KEY (pedido_cod_pedido)
+    REFERENCES pedido (cod_pedido));
+	
+CREATE TABLE IF NOT EXISTS detalle_pedido_traslado (
+  traslado_cod_traslado INT NOT NULL,
+  pedido_cod_pedido INT NOT NULL,
+  PRIMARY KEY (traslado_cod_traslado, pedido_cod_pedido),
+  CONSTRAINT fk_detalle_pedido_traslado_pedido1
+    FOREIGN KEY (pedido_cod_pedido)
+    REFERENCES pedido (cod_pedido),
+  CONSTRAINT fk_pedido_has_traslado_traslado1
+    FOREIGN KEY (traslado_cod_traslado)
+    REFERENCES traslado (cod_traslado));
+	
+CREATE TABLE IF NOT EXISTS evidencia (
+  cod_evidencia INT NOT NULL,
+  cod_cliente_interno INT NOT NULL,
+  nombre_evidencia VARCHAR(45) NULL DEFAULT NULL,
+  tipo_evidencia VARCHAR(45) NULL DEFAULT NULL,
+  tipo_archivo VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_evidencia),
+  CONSTRAINT cod_cliente_interno_evidencia
+    FOREIGN KEY (cod_cliente_interno)
+    REFERENCES cliente_interno (cod_area));
+
+CREATE TABLE IF NOT EXISTS ubicacion (
+  cod_ubicacion INT NOT NULL,
+  longitud VARCHAR(45) NULL DEFAULT NULL,
+  latitud VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_ubicacion));
+  
+CREATE TABLE IF NOT EXISTS gps (
+  cod_gps INT NOT NULL,
+  cod_ubicacion INT NOT NULL,
+  cod_vehiculo INT NOT NULL,
+  fecha_ubicacion DATE NULL DEFAULT NULL,
+  hora_ubicacion VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_gps),
+  CONSTRAINT cod_ubicacion_gps
+    FOREIGN KEY (cod_ubicacion)
+    REFERENCES ubicacion (cod_ubicacion),
+  CONSTRAINT cod_vehiculo
+    FOREIGN KEY (cod_vehiculo)
+    REFERENCES vehiculo (cod_vehiculo));
+	
+
+CREATE TABLE IF NOT EXISTS local (
+  cod_local INT NOT NULL,
+  cod_cliente INT NOT NULL,
+  cod_ubicacion INT NOT NULL,
+  tipo_local VARCHAR(45) NULL DEFAULT NULL,
+  distrito VARCHAR(45) NULL DEFAULT NULL,
+  calle VARCHAR(45) NULL DEFAULT NULL,
+  numero VARCHAR(45) NULL DEFAULT NULL,
+  region VARCHAR(45) NULL DEFAULT NULL,
+  pais VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_local),
+  CONSTRAINT cod_cliente
+    FOREIGN KEY (cod_cliente)
+    REFERENCES cliente (cod_cliente),
+  CONSTRAINT cod_ubicacion_local
+    FOREIGN KEY (cod_ubicacion)
+    REFERENCES ubicacion (cod_ubicacion));
+	
+CREATE TABLE IF NOT EXISTS mercancia (
+  cod_mercancia INT NOT NULL,
+  cod_operacion_picking INT NOT NULL,
+  cantidad_productos INT NOT NULL DEFAULT 0,
+  nro_prescinto VARCHAR(45) NULL DEFAULT NULL,
+  peso_total INT NOT NULL DEFAULT 0,
+  PRIMARY KEY (cod_mercancia),
+  CONSTRAINT fk_cod_operacion_picking
+    FOREIGN KEY (cod_operacion_picking)
+    REFERENCES operacion (cod_operacion));
+	
+CREATE TABLE IF NOT EXISTS norma (
+  cod_norma INT NOT NULL,
+  cod_catalogo_contigencia INT NOT NULL,
+  PRIMARY KEY (cod_norma),
+  CONSTRAINT fk_cod_catalogo_contigencia
+    FOREIGN KEY (cod_catalogo_contigencia)
+    REFERENCES catalogo_contigencia (cod_catalogo_contigencia));
+	
+CREATE TABLE IF NOT EXISTS procedimiento (
+  cod_procedimiento INT NOT NULL,
+  cod_catalogo_contigencia INT NOT NULL,
+  tipo VARCHAR(45) NULL DEFAULT NULL,
+  descripcion VARCHAR(45) NULL DEFAULT NULL,
+  duracion VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_procedimiento),
+  CONSTRAINT fk_cod_catalogo_contigencia_procedimiento
+    FOREIGN KEY (cod_catalogo_contigencia)
+    REFERENCES catalogo_contigencia (cod_catalogo_contigencia));
+	
+CREATE TABLE IF NOT EXISTS paso (
+  cod_paso INT NOT NULL,
+  cod_procedimiento INT NOT NULL,
+  descripcion VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_paso),
+  CONSTRAINT fk_cod_procedimiento
+    FOREIGN KEY (cod_procedimiento)
+    REFERENCES procedimiento (cod_procedimiento));
+	
+CREATE TABLE IF NOT EXISTS programacion_reporte (
+  cod_programacion_reporte INT NOT NULL,
+  cod_empleado INT NOT NULL,
+  formato VARCHAR(45) NULL DEFAULT NULL,
+  estado VARCHAR(45) NULL DEFAULT NULL,
+  frecuencia VARCHAR(45) NULL DEFAULT NULL,
+  filtros VARCHAR(45) NULL DEFAULT NULL,
+  fecha_inicio DATE NULL DEFAULT NULL,
+  fecha_fin DATE NULL DEFAULT NULL,
+  PRIMARY KEY (cod_programacion_reporte),
+  CONSTRAINT cod_empleado
+    FOREIGN KEY (cod_empleado)
+    REFERENCES empleado (cod_empleado));
+	
+CREATE TABLE IF NOT EXISTS seguimiento (
+  cod_seguimiento INT NOT NULL,
+  cod_cliente_interno INT NOT NULL,
+  tipo_accion VARCHAR(45) NULL DEFAULT NULL,
+  comentario VARCHAR(45) NULL DEFAULT NULL,
+  fecha_resolucion VARCHAR(45) NULL DEFAULT NULL,
+  numero_caso VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_seguimiento),
+  CONSTRAINT cod_cliente_interno_seguimiento
+    FOREIGN KEY (cod_cliente_interno)
+    REFERENCES cliente_interno (cod_area));
+	
+
+CREATE TABLE IF NOT EXISTS reclamo (
+  cod_reclamo INT NOT NULL,
+  cod_evidencia INT NOT NULL,
+  cod_empleado INT NOT NULL,
+  cod_representante INT NOT NULL,
+  cod_pedido INT NOT NULL,
+  cod_seguimiento INT NOT NULL,
+  tipo_reclamo VARCHAR(45) NULL DEFAULT NULL,
+  nivel_urgencia VARCHAR(45) NULL DEFAULT NULL,
+  estado VARCHAR(45) NULL DEFAULT NULL,
+  comentario VARCHAR(45) NULL DEFAULT NULL,
+  fecha_suceso DATE NULL DEFAULT NULL,
+  PRIMARY KEY (cod_reclamo),
+  CONSTRAINT cod_empleado_reclamo
+    FOREIGN KEY (cod_empleado)
+    REFERENCES empleado (cod_empleado),
+  CONSTRAINT cod_evidencia
+    FOREIGN KEY (cod_evidencia)
+    REFERENCES evidencia (cod_evidencia),
+  CONSTRAINT cod_pedido
+    FOREIGN KEY (cod_pedido)
+    REFERENCES pedido (cod_pedido),
+  CONSTRAINT cod_representante_reclamo
+    FOREIGN KEY (cod_representante)
+    REFERENCES representante (cod_representante),
+  CONSTRAINT cod_seguimiento
+    FOREIGN KEY (cod_seguimiento)
+    REFERENCES seguimiento (cod_seguimiento));
+	
+	
+CREATE TABLE IF NOT EXISTS reporte (
+  cod_reporte INT NOT NULL,
+  cod_programacion_reporte INT NOT NULL,
+  fecha_generacion DATE NULL DEFAULT NULL,
+  hora_generacion VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_reporte),
+  CONSTRAINT cod_programacion_reporte
+    FOREIGN KEY (cod_programacion_reporte)
+    REFERENCES programacion_reporte (cod_programacion_reporte));
+	
+CREATE TABLE IF NOT EXISTS stock (
+  mercancia_cod_mercancia INT NOT NULL,
+  elemento_catalogo_cod_elemento_catalogo INT NOT NULL,
+  tipo_stock VARCHAR(45) NULL DEFAULT NULL,
+  nro_lote INT NULL DEFAULT NULL,
+  PRIMARY KEY (mercancia_cod_mercancia, elemento_catalogo_cod_elemento_catalogo),
+  CONSTRAINT fk_mercancia_has_elemento_catalogo_elemento_catalogo1
+    FOREIGN KEY (elemento_catalogo_cod_elemento_catalogo)
+    REFERENCES elemento_catalogo (cod_elemento_catalogo),
+  CONSTRAINT fk_mercancia_has_elemento_catalogo_mercancia1
+    FOREIGN KEY (mercancia_cod_mercancia)
+    REFERENCES mercancia (cod_mercancia));
+	
+CREATE TABLE IF NOT EXISTS tramo (
+  cod_tramo INT NOT NULL,
+  cod_ruta INT NOT NULL,
+  distancia VARCHAR(45) NULL DEFAULT NULL,
+  tiempo_estimado VARCHAR(45) NULL DEFAULT NULL,
+  origen VARCHAR(45) NULL DEFAULT NULL,
+  fin VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (cod_tramo),
+  CONSTRAINT cod_ruta
+    FOREIGN KEY (cod_ruta)
+    REFERENCES ruta (cod_ruta));
+	
+CREATE TABLE IF NOT EXISTS detalle_local_tramo (
+  local_cod_local INT NOT NULL,
+  tramo_cod_tramo INT NOT NULL,
+  tipo_punto VARCHAR(45) NULL,
+  PRIMARY KEY (local_cod_local, tramo_cod_tramo),
+  CONSTRAINT fk_local_has_tramo_local1
+    FOREIGN KEY (local_cod_local)
+    REFERENCES "local" (cod_local),
+  CONSTRAINT fk_local_has_tramo_tramo1
+    FOREIGN KEY (tramo_cod_tramo)
+    REFERENCES tramo (cod_tramo))
+
+```
+
 ## 5. Poblamiento inicial de datos
 
 ```sql
