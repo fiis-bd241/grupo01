@@ -1285,21 +1285,6 @@ VALUES
 ('CAT011234', 'INC011234', 'Se reportó el incidente a las autoridades correspondientes y se procedió con las medidas de seguridad'),
 ('CAT012345', 'INC012345', 'Se prestó asistencia médica a los involucrados y se coordinó con las autoridades para la atención del incidente');
 
-
-INSERT INTO elemento_catalogo (cod_elemento_catalogo, nombre, categoria, segmento, descripcion, unidad, temperatura_minima, temperatura_maxima, vida_util, peso_unitario)
-VALUES
-('ELM001234', 'Caja de cartón', 1, 1, 'Caja de cartón corrugado para embalaje', 'Unidad', 5, 40, 365, 500),
-('ELM002345', 'Paleta de madera', 2, 1, 'Paleta de madera para carga y transporte', 'Unidad', -10, 50, 1825, 1500),
-('ELM003456', 'Contenedor metálico', 3, 1, 'Contenedor metálico estándar de 20 pies', 'Unidad', -20, 80, 7300, 2500),
-('ELM004567', 'Cinta adhesiva', 4, 1, 'Rollo de cinta adhesiva transparente', 'Rollo', -5, 40, 180, 1),
-('ELM005678', 'Etiqueta de envío', 5, 1, 'Etiqueta adhesiva para identificar envíos', 'Unidad', -10, 50, 365, 1),
-('ELM006789', 'Bolsa plástica', 1, 2, 'Bolsa plástica de polietileno para embalaje', 'Unidad', -10, 60, 30, 50),
-('ELM007890', 'Caja de madera', 2, 2, 'Caja de madera resistente para embalaje de productos pesados', 'Unidad', -20, 70, 730, 1000),
-('ELM008901', 'Bidón metálico', 3, 2, 'Bidón metálico para almacenamiento de líquidos', 'Unidad', -30, 80, 1460, 2000),
-('ELM009012', 'Bolsa de poliestireno', 4, 2, 'Bolsa de poliestireno para embalaje de productos frágiles', 'Unidad', -5, 40, 365, 20),
-('ELM010123', 'Etiqueta de advertencia', 5, 2, 'Etiqueta adhesiva de advertencia de fragilidad', 'Unidad', -10, 50, 365, 1);
-
-
 INSERT INTO representante (cod_representante, cod_cliente, dni, tipo_representante, num_telefono, correo_empresarial, cargo)
 VALUES
 ('REP001234', 'CLT001234', '123456789', 'Gerente de Ventas', '+1234567890', 'gerente@empresa.com', 'Gerente'),
