@@ -1108,3 +1108,483 @@ VALUES
 (222527960, 822168329, 822168338, 9.3, 'Urbana', 0.2);
 
 ```
+
+-- Poblamiento de datos 
+
+INSERT INTO cliente (cod_cliente, estado, prioridad, fecha_registro) 
+VALUES 
+('CLT001234', 'Activo', 'Alta', '2023-05-15'),
+('CLT002345', 'Inactivo', 'Media', '2022-11-28'),
+('CLT003456', 'Activo', 'Baja', '2024-02-10'),
+('CLT004567', 'Activo', 'Alta', '2023-09-07'),
+('CLT005678', 'Inactivo', 'Baja', '2022-12-20'),
+('CLT006789', 'Activo', 'Media', '2023-07-03'),
+('CLT007890', 'Activo', 'Alta', '2022-08-18'),
+('CLT008901', 'Inactivo', 'Baja', '2024-01-25'),
+('CLT009012', 'Activo', 'Media', '2023-04-30'),
+('CLT010123', 'Activo', 'Alta', '2022-10-12'),
+('CLT011234', 'Inactivo', 'Baja', '2023-03-08'),
+('CLT012345', 'Activo', 'Media', '2024-06-21');
+
+INSERT INTO cliente_interno (cod_area, cod_cliente, nombre_area) 
+VALUES 
+('AREA001', 'CLT001234', 'Ventas'),
+('AREA002', 'CLT002345', 'Recursos Humanos'),
+('AREA003', 'CLT003456', 'Tecnología'),
+('AREA004', 'CLT004567', 'Marketing'),
+('AREA005', 'CLT005678', 'Finanzas'),
+('AREA006', 'CLT006789', 'Operaciones'),
+('AREA007', 'CLT007890', 'Desarrollo de Producto'),
+('AREA008', 'CLT008901', 'Servicio al Cliente'),
+('AREA009', 'CLT009012', 'Legal'),
+('AREA010', 'CLT010123', 'Logística'),
+('AREA011', 'CLT011234', 'Calidad'),
+('AREA012', 'CLT012345', 'Comunicaciones');
+
+INSERT INTO cliente_externo (ruc, cod_cliente, nombre_empresa, razon_social) 
+VALUES 
+('123456789', 'CLT001234', 'Empresa A', 'Razón A'),
+('234567890', 'CLT002345', 'Empresa B', 'Razón B'),
+('345678901', 'CLT003456', 'Empresa C', 'Razón C'),
+('456789012', 'CLT004567', 'Empresa D', 'Razón D'),
+('567890123', 'CLT005678', 'Empresa E', 'Razón E'),
+('678901234', 'CLT006789', 'Empresa F', 'Razón F'),
+('789012345', 'CLT007890', 'Empresa G', 'Razón G'),
+('890123456', 'CLT008901', 'Empresa H', 'Razón H'),
+('901234567', 'CLT009012', 'Empresa I', 'Razón I'),
+('012345678', 'CLT010123', 'Empresa J', 'Razón J'),
+('123456780', 'CLT011234', 'Empresa K', 'Razón K'),
+('234567801', 'CLT012345', 'Empresa L', 'Razón L');
+
+INSERT INTO ruta (cod_ruta, punto_origen, punto_destino, distancia_total, tipo_ruta, duracion) 
+VALUES 
+('RUTA001', 'Ciudad A', 'Ciudad B', 150.5, 'Carretera', '3 horas'),
+('RUTA002', 'Ciudad B', 'Ciudad C', 200.2, 'Autopista', '4 horas'),
+('RUTA003', 'Ciudad C', 'Ciudad D', 180.7, 'Carretera', '3.5 horas'),
+('RUTA004', 'Ciudad D', 'Ciudad E', 220.9, 'Autopista', '5 horas'),
+('RUTA005', 'Ciudad E', 'Ciudad F', 300.1, 'Carretera', '6 horas'),
+('RUTA006', 'Ciudad F', 'Ciudad G', 250.8, 'Autopista', '5.5 horas'),
+('RUTA007', 'Ciudad G', 'Ciudad H', 400.3, 'Carretera', '8 horas'),
+('RUTA008', 'Ciudad H', 'Ciudad I', 350.6, 'Autopista', '7 horas'),
+('RUTA009', 'Ciudad I', 'Ciudad J', 420.0, 'Carretera', '8.5 horas'),
+('RUTA010', 'Ciudad J', 'Ciudad K', 380.4, 'Autopista', '7.5 horas');
+
+INSERT INTO persona (dni, direccion, estado_civil, nacionalidad, genero, primer_apellido, segundo_apellido, prenombre) 
+VALUES 
+('123456789', 'Calle 123, Ciudad A', 'Soltero/a', 'Peruana', 'Masculino', 'Pérez', 'Gómez', 'Juan'),
+('234567890', 'Avenida XYZ, Ciudad B', 'Casado/a', 'Mexicana', 'Femenino', 'González', 'López', 'María'),
+('345678901', 'Calle Principal, Ciudad C', 'Viudo/a', 'Colombiana', 'Masculino', 'Martínez', 'Rodríguez', 'Carlos'),
+('456789012', 'Carrera 456, Ciudad D', 'Divorciado/a', 'Argentina', 'Femenino', 'López', 'Martínez', 'Laura'),
+('567890123', 'Avenida Central, Ciudad E', 'Casado/a', 'Chilena', 'Masculino', 'García', 'Hernández', 'Pedro'),
+('678901234', 'Calle Secundaria, Ciudad F', 'Soltero/a', 'Ecuatoriana', 'Femenino', 'Hernández', 'González', 'Ana'),
+('789012345', 'Avenida Sur, Ciudad G', 'Casado/a', 'Boliviana', 'Masculino', 'Díaz', 'Pérez', 'Luis'),
+('890123456', 'Calle Norte, Ciudad H', 'Viudo/a', 'Venezolana', 'Femenino', 'Ramírez', 'Sánchez', 'Lucía'),
+('901234567', 'Calle Este, Ciudad I', 'Divorciado/a', 'Uruguaya', 'Masculino', 'Fernández', 'López', 'Diego'),
+('012345678', 'Avenida Oeste, Ciudad J', 'Soltero/a', 'Paraguaya', 'Femenino', 'Suárez', 'Martínez', 'Mariana'),
+('123456780', 'Avenida Este, Ciudad K', 'Casado/a', 'Costarricense', 'Masculino', 'Gómez', 'Fernández', 'Roberto'),
+('234567801', 'Calle Este, Ciudad L', 'Viudo/a', 'Panameña', 'Femenino', 'Pérez', 'García', 'Isabel');
+
+
+INSERT INTO empleado (cod_empleado, cod_area, dni, cargo, fecha_contrato) 
+VALUES 
+('EMP001234', 'AREA001', '123456789', 'Gerente de Ventas', '2022-03-15'),
+('EMP002345', 'AREA002', '234567890', 'Recursos Humanos', '2023-01-20'),
+('EMP003456', 'AREA003', '345678901', 'Ingeniero de Software', '2024-05-10'),
+('EMP004567', 'AREA004', '456789012', 'Especialista en Marketing', '2022-09-05'),
+('EMP005678', 'AREA005', '567890123', 'Analista Financiero', '2023-11-12'),
+('EMP006789', 'AREA006', '678901234', 'Supervisor de Operaciones', '2024-02-28'),
+('EMP007890', 'AREA007', '789012345', 'Desarrollador de Producto', '2022-07-08'),
+('EMP008901', 'AREA008', '890123456', 'Representante de Servicio al Cliente', '2023-04-25'),
+('EMP009012', 'AREA009', '901234567', 'Abogado', '2024-08-17'),
+('EMP010123', 'AREA010', '012345678', 'Coordinador de Logística', '2022-12-10'),
+('EMP011234', 'AREA011', '123456780', 'Inspector de Calidad', '2023-06-30'),
+('EMP012345', 'AREA012', '234567801', 'Especialista en Comunicaciones', '2024-10-15');
+
+INSERT INTO operacion (cod_operacion, cod_operacion_previa, cod_empleado_ejecutor, cod_empleado_supervisor, fecha, hora_inicio, hora_fin, tipo_operacion) 
+VALUES 
+('OP001234', NULL, 'EMP001234', 'EMP002345', '2022-03-15', '09:00:00', '13:00:00', 1),
+('OP002345', 'OP001234', 'EMP003456', 'EMP004567', '2022-03-16', '10:30:00', '14:30:00', 2),
+('OP003456', 'OP002345', 'EMP005678', 'EMP006789', '2022-03-17', '11:15:00', '15:45:00', 1),
+('OP004567', 'OP003456', 'EMP007890', 'EMP008901', '2022-03-18', '08:45:00', '12:30:00', 2),
+('OP005678', 'OP004567', 'EMP009012', 'EMP010123', '2022-03-19', '07:30:00', '11:00:00', 1),
+('OP006789', 'OP005678', 'EMP011234', 'EMP012345', '2022-03-20', '09:45:00', '13:15:00', 2);
+
+
+INSERT INTO transportista (cod_transportista, cod_empleado, num_licencia, estado, tipo_licencia, fecha_vencimiento_licencia, fecha_ultimo_traslado) 
+VALUES 
+('TRN001234', 'EMP001234', '123456789', 'Activo', 'Tipo A', '2025-05-15', '2024-04-20'),
+('TRN002345', 'EMP003456', '234567890', 'Activo', 'Tipo B', '2024-12-28', '2024-04-18'),
+('TRN003456', 'EMP005678', '345678901', 'Inactivo', 'Tipo C', '2023-09-10', '2024-04-19'),
+('TRN004567', 'EMP007890', '456789012', 'Activo', 'Tipo A', '2023-11-07', '2024-04-20'),
+('TRN005678', 'EMP009012', '567890123', 'Activo', 'Tipo B', '2025-03-25', '2024-04-21'),
+('TRN006789', 'EMP011234', '678901234', 'Inactivo', 'Tipo C', '2024-08-12', '2024-04-22'),
+('TRN007890', 'EMP002345', '789012345', 'Activo', 'Tipo A', '2024-10-30', '2024-04-23'),
+('TRN008901', 'EMP004567', '890123456', 'Inactivo', 'Tipo B', '2023-07-20', '2024-04-24'),
+('TRN009012', 'EMP006789', '901234567', 'Activo', 'Tipo C', '2025-01-15', '2024-04-25'),
+('TRN010123', 'EMP008901', '012345678', 'Activo', 'Tipo A', '2024-05-30', '2024-04-26'),
+('TRN011234', 'EMP010123', '123456780', 'Inactivo', 'Tipo B', '2023-10-10', '2024-04-27'),
+('TRN012345', 'EMP012345', '234567801', 'Activo', 'Tipo C', '2025-04-05', '2024-04-28');
+
+INSERT INTO vehiculo (cod_vehiculo, estado, anio_fabricacion, fecha_ultimo_mantenimiento, fecha_ultimo_viaje, modelo, placa)
+VALUES
+('VEH001234', 'Activo', '2019', '2023-03-15', '2024-04-20', 'Sedán', 'ABC123'),
+('VEH002345', 'Activo', '2020', '2023-05-20', '2024-04-18', 'Camioneta', 'DEF456'),
+('VEH003456', 'Inactivo', '2018', '2022-12-10', '2024-04-19', 'Furgoneta', 'GHI789'),
+('VEH004567', 'Activo', '2021', '2023-11-07', '2024-04-20', 'SUV', 'JKL012'),
+('VEH005678', 'Activo', '2020', '2023-09-05', '2024-04-21', 'Camión', 'MNO345'),
+('VEH006789', 'Inactivo', '2019', '2023-06-30', '2024-04-22', 'Sedán', 'PQR678'),
+('VEH007890', 'Activo', '2022', '2024-04-08', '2024-04-23', 'Camioneta', 'STU901'),
+('VEH008901', 'Inactivo', '2017', '2022-10-30', '2024-04-24', 'Furgoneta', 'VWX234'),
+('VEH009012', 'Activo', '2018', '2023-08-17', '2024-04-25', 'SUV', 'YZA567'),
+('VEH010123', 'Activo', '2023', '2024-01-05', '2024-04-26', 'Camión', 'BCD890'),
+('VEH011234', 'Inactivo', '2016', '2022-11-30', '2024-04-27', 'Sedán', 'EFG123'),
+('VEH012345', 'Activo', '2017', '2023-07-25', '2024-04-28', 'Furgoneta', 'HIJ456');
+
+INSERT INTO traslado (cod_traslado, cod_vehiculo, cod_ruta, cod_transportista, cod_operacion_inicia, cod_operacion_termina)
+VALUES
+('TRSL001234', 'VEH001234', 'RUTA001', 'TRN001234', 'OP001234', 'OP002345'),
+('TRSL002345', 'VEH002345', 'RUTA002', 'TRN002345', 'OP002345', 'OP003456'),
+('TRSL003456', 'VEH003456', 'RUTA003', 'TRN003456', 'OP003456', 'OP004567'),
+('TRSL004567', 'VEH004567', 'RUTA004', 'TRN004567', 'OP004567', 'OP005678'),
+('TRSL005678', 'VEH005678', 'RUTA005', 'TRN005678', 'OP005678', 'OP006789'),
+('TRSL006789', 'VEH006789', 'RUTA006', 'TRN006789', 'OP006789', NULL),
+('TRSL007890', 'VEH007890', 'RUTA007', 'TRN007890', 'OP007890', NULL),
+('TRSL008901', 'VEH008901', 'RUTA008', 'TRN008901', 'OP008901', NULL),
+('TRSL009012', 'VEH009012', 'RUTA009', 'TRN009012', 'OP009012', NULL),
+('TRSL010123', 'VEH010123', 'RUTA010', 'TRN010123', 'OP010123', NULL),
+('TRSL011234', 'VEH011234', 'RUTA011', 'TRN011234', 'OP011234', NULL),
+('TRSL012345', 'VEH012345', 'RUTA012', 'TRN012345', 'OP012345', NULL);
+
+INSERT INTO incidencia (cod_incidencia, cod_traslado, descripcion, tipo, fecha_ocurrencia)
+VALUES
+('INC001234', 'TRSL001234', 'Fallo en el motor', 'Mecánica', '2024-04-20'),
+('INC002345', 'TRSL002345', 'Ruta bloqueada por accidente', 'Operativa', '2024-04-18'),
+('INC003456', 'TRSL003456', 'Retraso por condiciones climáticas adversas', 'Clima', '2024-04-19'),
+('INC004567', 'TRSL004567', 'Daño en la carga durante el traslado', 'Operativa', '2024-04-20'),
+('INC005678', 'TRSL005678', 'Pérdida de comunicación con el vehículo', 'Tecnológica', '2024-04-21'),
+('INC006789', 'TRSL006789', 'Incumplimiento del tiempo de entrega', 'Operativa', '2024-04-22'),
+('INC007890', 'TRSL007890', 'Ruta cerrada por obras en la carretera', 'Operativa', '2024-04-23'),
+('INC008901', 'TRSL008901', 'Problema con el sistema de navegación', 'Tecnológica', '2024-04-24'),
+('INC009012', 'TRSL009012', 'Retraso por congestión de tráfico', 'Operativa', '2024-04-25'),
+('INC010123', 'TRSL010123', 'Fallo en el sistema de frenos', 'Mecánica', '2024-04-26'),
+('INC011234', 'TRSL011234', 'Robo de mercancía durante el traslado', 'Seguridad', '2024-04-27'),
+('INC012345', 'TRSL012345', 'Accidente de tráfico', 'Seguridad', '2024-04-28');
+
+INSERT INTO catalogo_contigencia (cod_catalogo_contigencia, cod_incidencia, comentario)
+VALUES
+('CAT001234', 'INC001234', 'Se realizó cambio de vehículo y se reanudó el traslado'),
+('CAT002345', 'INC002345', 'Se modificó la ruta para evitar el bloqueo y se reprogramó el traslado'),
+('CAT003456', 'INC003456', 'Se detuvo temporalmente el traslado hasta mejorar las condiciones climáticas'),
+('CAT004567', 'INC004567', 'Se efectuó la descarga de la carga dañada y se procedió con el traslado'),
+('CAT005678', 'INC005678', 'Se restableció la comunicación y se continuó con el monitoreo del vehículo'),
+('CAT006789', 'INC006789', 'Se gestionó una compensación por el retraso con el cliente'),
+('CAT007890', 'INC007890', 'Se buscó una ruta alternativa y se retomó el traslado'),
+('CAT008901', 'INC008901', 'Se actualizó el sistema de navegación y se reanudó el traslado'),
+('CAT009012', 'INC009012', 'Se coordinó con las autoridades para agilizar el tráfico y reducir el retraso'),
+('CAT010123', 'INC010123', 'Se realizó un mantenimiento de emergencia y se continuó con el traslado'),
+('CAT011234', 'INC011234', 'Se reportó el incidente a las autoridades correspondientes y se procedió con las medidas de seguridad'),
+('CAT012345', 'INC012345', 'Se prestó asistencia médica a los involucrados y se coordinó con las autoridades para la atención del incidente');
+
+
+INSERT INTO elemento_catalogo (cod_elemento_catalogo, nombre, categoria, segmento, descripcion, unidad, temperatura_minima, temperatura_maxima, vida_util, peso_unitario)
+VALUES
+('ELM001234', 'Caja de cartón', 1, 1, 'Caja de cartón corrugado para embalaje', 'Unidad', 5, 40, 365, 500),
+('ELM002345', 'Paleta de madera', 2, 1, 'Paleta de madera para carga y transporte', 'Unidad', -10, 50, 1825, 1500),
+('ELM003456', 'Contenedor metálico', 3, 1, 'Contenedor metálico estándar de 20 pies', 'Unidad', -20, 80, 7300, 2500),
+('ELM004567', 'Cinta adhesiva', 4, 1, 'Rollo de cinta adhesiva transparente', 'Rollo', -5, 40, 180, 1),
+('ELM005678', 'Etiqueta de envío', 5, 1, 'Etiqueta adhesiva para identificar envíos', 'Unidad', -10, 50, 365, 1),
+('ELM006789', 'Bolsa plástica', 1, 2, 'Bolsa plástica de polietileno para embalaje', 'Unidad', -10, 60, 30, 50),
+('ELM007890', 'Caja de madera', 2, 2, 'Caja de madera resistente para embalaje de productos pesados', 'Unidad', -20, 70, 730, 1000),
+('ELM008901', 'Bidón metálico', 3, 2, 'Bidón metálico para almacenamiento de líquidos', 'Unidad', -30, 80, 1460, 2000),
+('ELM009012', 'Bolsa de poliestireno', 4, 2, 'Bolsa de poliestireno para embalaje de productos frágiles', 'Unidad', -5, 40, 365, 20),
+('ELM010123', 'Etiqueta de advertencia', 5, 2, 'Etiqueta adhesiva de advertencia de fragilidad', 'Unidad', -10, 50, 365, 1);
+
+
+INSERT INTO representante (cod_representante, cod_cliente, dni, tipo_representante, num_telefono, correo_empresarial, cargo)
+VALUES
+('REP001234', 'CLT001234', '123456789', 'Gerente de Ventas', '+1234567890', 'gerente@empresa.com', 'Gerente'),
+('REP002345', 'CLT002345', '234567890', 'Jefe de Recursos Humanos', '+2345678901', 'jefe_rrhh@empresa.com', 'Jefe de Recursos Humanos'),
+('REP003456', 'CLT003456', '345678901', 'Director de Tecnología', '+3456789012', 'director_tecnologia@empresa.com', 'Director de Tecnología'),
+('REP004567', 'CLT004567', '456789012', 'Jefe de Marketing', '+4567890123', 'jefe_marketing@empresa.com', 'Jefe de Marketing'),
+('REP005678', 'CLT005678', '567890123', 'Director Financiero', '+5678901234', 'director_finanzas@empresa.com', 'Director Financiero'),
+('REP006789', 'CLT006789', '678901234', 'Director de Operaciones', '+6789012345', 'director_operaciones@empresa.com', 'Director de Operaciones'),
+('REP007890', 'CLT007890', '789012345', 'Gerente de Desarrollo', '+7890123456', 'gerente_desarrollo@empresa.com', 'Gerente de Desarrollo'),
+('REP008901', 'CLT008901', '890123456', 'Jefe de Servicio al Cliente', '+8901234567', 'jefe_servicio_cliente@empresa.com', 'Jefe de Servicio al Cliente'),
+('REP009012', 'CLT009012', '901234567', 'Abogado General', '+9012345678', 'abogado_general@empresa.com', 'Abogado General'),
+('REP010123', 'CLT010123', '012345678', 'Gerente de Logística', '+0123456789', 'gerente_logistica@empresa.com', 'Gerente de Logística'),
+('REP011234', 'CLT011234', '123456780', 'Gerente de Calidad', '+1234567801', 'gerente_calidad@empresa.com', 'Gerente de Calidad'),
+('REP012345', 'CLT012345', '234567801', 'Director de Comunicaciones', '+2345678012', 'director_comunicaciones@empresa.com', 'Director de Comunicaciones');
+
+
+INSERT INTO pedido (cod_pedido, cod_representante, fecha_registro, tipo_pedido, descripcion, estado_pedido)
+VALUES
+('PED001234', 'REP001234', '2024-04-20', 'Venta', 'Pedido de productos para el cliente X', 'En proceso'),
+('PED002345', 'REP002345', '2024-04-18', 'Compra', 'Pedido de suministros para el departamento de RRHH', 'En proceso'),
+('PED003456', 'REP003456', '2024-04-19', 'Venta', 'Pedido de equipo de TI para la empresa', 'En proceso'),
+('PED004567', 'REP004567', '2024-04-20', 'Venta', 'Pedido de material promocional para campaña de marketing', 'En proceso'),
+('PED005678', 'REP005678', '2024-04-21', 'Compra', 'Pedido de suministros de oficina para el departamento financiero', 'En proceso'),
+('PED006789', 'REP006789', '2024-04-22', 'Venta', 'Pedido de equipo de logística para operaciones', 'En proceso'),
+('PED007890', 'REP007890', '2024-04-23', 'Venta', 'Pedido de desarrollo de software para proyecto X', 'En proceso'),
+('PED008901', 'REP008901', '2024-04-24', 'Compra', 'Pedido de atención al cliente para mejorar servicio', 'En proceso'),
+('PED009012', 'REP009012', '2024-04-25', 'Venta', 'Pedido de servicios legales para asesoramiento', 'En proceso'),
+('PED010123', 'REP010123', '2024-04-26', 'Venta', 'Pedido de equipo de logística para operaciones', 'En proceso'),
+('PED011234', 'REP011234', '2024-04-27', 'Compra', 'Pedido de equipo de control de calidad para planta', 'En proceso'),
+('PED012345', 'REP012345', '2024-04-28', 'Venta', 'Pedido de servicios de comunicación para campaña', 'En proceso');
+
+INSERT INTO detalle_pedido_producto (pedido_cod_pedido, elemento_catalogo_cod_elemento_catalogo)
+VALUES
+('PED001234', 'ELM001234'),
+('PED002345', 'ELM002345'),
+('PED003456', 'ELM003456'),
+('PED004567', 'ELM004567'),
+('PED005678', 'ELM005678'),
+('PED006789', 'ELM006789'),
+('PED007890', 'ELM007890'),
+('PED008901', 'ELM008901'),
+('PED009012', 'ELM009012'),
+('PED010123', 'ELM010123'),
+('PED011234', 'ELM011234'),
+('PED012345', 'ELM012345');
+
+INSERT INTO detalle_pedido_traslado (traslado_cod_traslado, pedido_cod_pedido)
+VALUES
+('TRSL001234', 'PED001234'),
+('TRSL002345', 'PED002345'),
+('TRSL003456', 'PED003456'),
+('TRSL004567', 'PED004567'),
+('TRSL005678', 'PED005678'),
+('TRSL006789', 'PED006789'),
+('TRSL007890', 'PED007890'),
+('TRSL008901', 'PED008901'),
+('TRSL009012', 'PED009012'),
+('TRSL010123', 'PED010123'),
+('TRSL011234', 'PED011234'),
+('TRSL012345', 'PED012345');
+
+INSERT INTO evidencia (cod_evidencia, cod_cliente_interno, nombre_evidencia, tipo_evidencia, tipo_archivo)
+VALUES
+('EVD001234', 'CLI001234', 'Informe de Proyecto', 'Informe', 'PDF'),
+('EVD002345', 'CLI002345', 'Presentación de Ventas', 'Presentación', 'PPT'),
+('EVD003456', 'CLI003456', 'Documento de Reclutamiento', 'Documento', 'DOC'),
+('EVD004567', 'CLI004567', 'Fotografía de Producto', 'Fotografía', 'JPG'),
+('EVD005678', 'CLI005678', 'Grabación de Llamada', 'Audio', 'MP3'),
+('EVD006789', 'CLI006789', 'Informe de Logística', 'Informe', 'PDF'),
+('EVD007890', 'CLI007890', 'Prototipo de Software', 'Software', 'ZIP'),
+('EVD008901', 'CLI008901', 'Respuesta de Atención al Cliente', 'Documento', 'DOC'),
+('EVD009012', 'CLI009012', 'Contrato Legal', 'Contrato', 'PDF'),
+('EVD010123', 'CLI010123', 'Informe de Entrega', 'Informe', 'PDF'),
+('EVD011234', 'CLI011234', 'Informe de Calidad', 'Informe', 'PDF'),
+('EVD012345', 'CLI012345', 'Comunicado de Prensa', 'Comunicado', 'PDF');
+
+INSERT INTO ubicacion (cod_ubicacion, longitud, latitud)
+VALUES
+('UBC001234', '40.7128', '-74.0060'),
+('UBC002345', '34.0522', '-118.2437'),
+('UBC003456', '41.8781', '-87.6298'),
+('UBC004567', '51.5074', '-0.1278'),
+('UBC005678', '48.8566', '2.3522'),
+('UBC006789', '35.6895', '139.6917'),
+('UBC007890', '37.7749', '-122.4194'),
+('UBC008901', '19.4326', '-99.1332'),
+('UBC009012', '55.7558', '37.6176'),
+('UBC010123', '22.3193', '114.1694'),
+('UBC011234', '43.6532', '-79.3832'),
+('UBC012345', '37.9838', '23.7275');
+
+INSERT INTO gps (cod_gps, cod_ubicacion, cod_vehiculo, fecha_ubicacion, hora_ubicacion)
+VALUES
+('GPS001234', 'UBC001234', 'VEH001234', '2024-04-20', '09:30:00'),
+('GPS002345', 'UBC002345', 'VEH002345', '2024-04-21', '10:45:00'),
+('GPS003456', 'UBC003456', 'VEH003456', '2024-04-22', '11:20:00'),
+('GPS004567', 'UBC004567', 'VEH004567', '2024-04-23', '12:15:00'),
+('GPS005678', 'UBC005678', 'VEH005678', '2024-04-24', '13:30:00'),
+('GPS006789', 'UBC006789', 'VEH006789', '2024-04-25', '14:40:00'),
+('GPS007890', 'UBC007890', 'VEH007890', '2024-04-26', '15:55:00'),
+('GPS008901', 'UBC008901', 'VEH008901', '2024-04-27', '16:10:00'),
+('GPS009012', 'UBC009012', 'VEH009012', '2024-04-28', '17:25:00'),
+('GPS010123', 'UBC010123', 'VEH010123', '2024-04-29', '18:30:00'),
+('GPS011234', 'UBC011234', 'VEH011234', '2024-04-30', '19:45:00'),
+('GPS012345', 'UBC012345', 'VEH012345', '2024-05-01', '20:55:00');
+
+INSERT INTO "local" (cod_local, cod_cliente, cod_ubicacion, tipo_local, distrito, calle, numero, region, pais)
+VALUES
+('LOC001234', 'CLI001234', 'UBC001234', 'Almacén', 'Miraflores', 'Av. Larco', '123', 'Lima', 'Perú'),
+('LOC002345', 'CLI002345', 'UBC002345', 'Oficina', 'Santa Monica', 'Main St', '456', 'California', 'Estados Unidos'),
+('LOC003456', 'CLI003456', 'UBC003456', 'Centro de Distribución', 'Chicago', 'Michigan Ave', '789', 'Illinois', 'Estados Unidos'),
+('LOC004567', 'CLI004567', 'UBC004567', 'Tienda', 'Londres', 'Oxford St', '1011', 'Londres', 'Reino Unido'),
+('LOC005678', 'CLI005678', 'UBC005678', 'Oficina', 'París', 'Champs-Élysées', '1213', 'Île-de-France', 'Francia'),
+('LOC006789', 'CLI006789', 'UBC006789', 'Almacén', 'Tokio', 'Shibuya', '1415', 'Tokio', 'Japón'),
+('LOC007890', 'CLI007890', 'UBC007890', 'Oficina', 'San Francisco', 'Market St', '1617', 'California', 'Estados Unidos'),
+('LOC008901', 'CLI008901', 'UBC008901', 'Centro de Distribución', 'Ciudad de México', 'Paseo de la Reforma', '1819', 'CDMX', 'México'),
+('LOC009012', 'CLI009012', 'UBC009012', 'Oficina', 'Moscú', 'Tverskaya St', '2021', 'Moscú', 'Rusia'),
+('LOC010123', 'CLI010123', 'UBC010123', 'Almacén', 'Hong Kong', 'Nathan Rd', '2223', 'Kowloon', 'Hong Kong'),
+('LOC011234', 'CLI011234', 'UBC011234', 'Tienda', 'Toronto', 'Yonge St', '2425', 'Ontario', 'Canadá'),
+('LOC012345', 'CLI012345', 'UBC012345', 'Oficina', 'Atenas', 'Syntagma Square', '2627', 'Ática', 'Grecia');
+
+
+INSERT INTO mercancia (cod_mercancia, cod_operacion_picking, cantidad_productos, nro_precinto, peso_total)
+VALUES
+('MRC001234', 'OPC001234', 100, 'PRECINTO123', 5000),
+('MRC002345', 'OPC002345', 200, 'PRECINTO234', 10000),
+('MRC003456', 'OPC003456', 150, 'PRECINTO345', 7500),
+('MRC004567', 'OPC004567', 120, 'PRECINTO456', 6000),
+('MRC005678', 'OPC005678', 180, 'PRECINTO567', 9000),
+('MRC006789', 'OPC006789', 220, 'PRECINTO678', 11000),
+('MRC007890', 'OPC007890', 130, 'PRECINTO789', 6500),
+('MRC008901', 'OPC008901', 240, 'PRECINTO890', 12000),
+('MRC009012', 'OPC009012', 170, 'PRECINTO901', 8500),
+('MRC010123', 'OPC010123', 200, 'PRECINTO012', 10000),
+('MRC011234', 'OPC011234', 160, 'PRECINTO123', 8000),
+('MRC012345', 'OPC012345', 190, 'PRECINTO234', 9500);
+
+INSERT INTO norma (cod_norma, cod_catalogo_contigencia)
+VALUES
+('NRM001234', 'CNTG001234'),
+('NRM002345', 'CNTG002345'),
+('NRM003456', 'CNTG003456'),
+('NRM004567', 'CNTG004567'),
+('NRM005678', 'CNTG005678'),
+('NRM006789', 'CNTG006789'),
+('NRM007890', 'CNTG007890'),
+('NRM008901', 'CNTG008901'),
+('NRM009012', 'CNTG009012'),
+('NRM010123', 'CNTG010123'),
+('NRM011234', 'CNTG011234'),
+('NRM012345', 'CNTG012345');
+
+INSERT INTO procedimiento (cod_procedimiento, cod_catalogo_contigencia, tipo, descripcion, duracion)
+VALUES
+('PROC001234', 'CNTG001234', 'Procedimiento 1', 'Descripción del procedimiento 1', '2 horas'),
+('PROC002345', 'CNTG002345', 'Procedimiento 2', 'Descripción del procedimiento 2', '1.5 horas'),
+('PROC003456', 'CNTG003456', 'Procedimiento 3', 'Descripción del procedimiento 3', '3 horas'),
+('PROC004567', 'CNTG004567', 'Procedimiento 4', 'Descripción del procedimiento 4', '2.5 horas'),
+('PROC005678', 'CNTG005678', 'Procedimiento 5', 'Descripción del procedimiento 5', '1 hora'),
+('PROC006789', 'CNTG006789', 'Procedimiento 6', 'Descripción del procedimiento 6', '4 horas'),
+('PROC007890', 'CNTG007890', 'Procedimiento 7', 'Descripción del procedimiento 7', '2 horas'),
+('PROC008901', 'CNTG008901', 'Procedimiento 8', 'Descripción del procedimiento 8', '3 horas'),
+('PROC009012', 'CNTG009012', 'Procedimiento 9', 'Descripción del procedimiento 9', '1.5 horas'),
+('PROC010123', 'CNTG010123', 'Procedimiento 10', 'Descripción del procedimiento 10', '2 horas'),
+('PROC011234', 'CNTG011234', 'Procedimiento 11', 'Descripción del procedimiento 11', '1 hora'),
+('PROC012345', 'CNTG012345', 'Procedimiento 12', 'Descripción del procedimiento 12', '2.5 horas');
+
+INSERT INTO paso (cod_paso, cod_procedimiento, descripcion)
+VALUES
+('PASO001234', 'PROC001234', 'Descripción del paso 1'),
+('PASO002345', 'PROC002345', 'Descripción del paso 2'),
+('PASO003456', 'PROC003456', 'Descripción del paso 3'),
+('PASO004567', 'PROC004567', 'Descripción del paso 4'),
+('PASO005678', 'PROC005678', 'Descripción del paso 5'),
+('PASO006789', 'PROC006789', 'Descripción del paso 6'),
+('PASO007890', 'PROC007890', 'Descripción del paso 7'),
+('PASO008901', 'PROC008901', 'Descripción del paso 8'),
+('PASO009012', 'PROC009012', 'Descripción del paso 9'),
+('PASO010123', 'PROC010123', 'Descripción del paso 10'),
+('PASO011234', 'PROC011234', 'Descripción del paso 11'),
+('PASO012345', 'PROC012345', 'Descripción del paso 12');
+
+
+INSERT INTO programacion_reporte (cod_programacion_reporte, cod_empleado, formato, estado, frecuencia, filtros, fecha_inicio, fecha_fin)
+VALUES
+('PR001234', 'EMP001234', 'PDF', 'Activo', 'Semanal', 'Filtro1=Filtro1', '2024-04-01', '2024-04-30'),
+('PR002345', 'EMP002345', 'Excel', 'Inactivo', 'Mensual', 'Filtro2=Filtro2', '2024-05-01', '2024-05-31'),
+('PR003456', 'EMP003456', 'CSV', 'Activo', 'Diario', 'Filtro3=Filtro3', '2024-04-20', '2024-04-30'),
+('PR004567', 'EMP004567', 'PDF', 'Activo', 'Trimestral', 'Filtro4=Filtro4', '2024-04-01', '2024-06-30'),
+('PR005678', 'EMP005678', 'Excel', 'Inactivo', 'Semanal', 'Filtro5=Filtro5', '2024-04-01', '2024-04-30'),
+('PR006789', 'EMP006789', 'CSV', 'Activo', 'Mensual', 'Filtro6=Filtro6', '2024-04-01', '2024-04-30'),
+('PR007890', 'EMP007890', 'PDF', 'Inactivo', 'Anual', 'Filtro7=Filtro7', '2024-01-01', '2024-12-31'),
+('PR008901', 'EMP008901', 'Excel', 'Activo', 'Semanal', 'Filtro8=Filtro8', '2024-04-01', '2024-04-30'),
+('PR009012', 'EMP009012', 'CSV', 'Inactivo', 'Diario', 'Filtro9=Filtro9', '2024-04-20', '2024-04-30'),
+('PR010123', 'EMP010123', 'PDF', 'Activo', 'Trimestral', 'Filtro10=Filtro10', '2024-04-01', '2024-06-30'),
+('PR011234', 'EMP011234', 'Excel', 'Inactivo', 'Mensual', 'Filtro11=Filtro11', '2024-05-01', '2024-05-31'),
+('PR012345', 'EMP012345', 'CSV', 'Activo', 'Semanal', 'Filtro12=Filtro12', '2024-04-01', '2024-04-30');
+
+INSERT INTO seguimiento (cod_seguimiento, cod_cliente_interno, tipo_accion, comentario, fecha_resolucion, numero_caso)
+VALUES
+('SGM001234', 'CLI001234', 'Llamada', 'Se realizó seguimiento por teléfono.', '2024-04-05', 'CASO001'),
+('SGM002345', 'CLI002345', 'Correo Electrónico', 'Se envió un correo electrónico para seguimiento.', '2024-04-10', 'CASO002'),
+('SGM003456', 'CLI003456', 'Visita', 'Se realizó una visita para seguimiento en persona.', '2024-04-15', 'CASO003'),
+('SGM004567', 'CLI004567', 'Llamada', 'Se realizó seguimiento por teléfono.', '2024-04-20', 'CASO004'),
+('SGM005678', 'CLI005678', 'Correo Electrónico', 'Se envió un correo electrónico para seguimiento.', '2024-04-25', 'CASO005'),
+('SGM006789', 'CLI006789', 'Visita', 'Se realizó una visita para seguimiento en persona.', '2024-04-30', 'CASO006'),
+('SGM007890', 'CLI007890', 'Llamada', 'Se realizó seguimiento por teléfono.', '2024-05-05', 'CASO007'),
+('SGM008901', 'CLI008901', 'Correo Electrónico', 'Se envió un correo electrónico para seguimiento.', '2024-05-10', 'CASO008'),
+('SGM009012', 'CLI009012', 'Visita', 'Se realizó una visita para seguimiento en persona.', '2024-05-15', 'CASO009'),
+('SGM010123', 'CLI010123', 'Llamada', 'Se realizó seguimiento por teléfono.', '2024-05-20', 'CASO010'),
+('SGM011234', 'CLI011234', 'Correo Electrónico', 'Se envió un correo electrónico para seguimiento.', '2024-05-25', 'CASO011');
+
+
+INSERT INTO reclamo (cod_reclamo, cod_evidencia, cod_empleado, cod_representante, cod_pedido, cod_seguimiento, tipo_reclamo, nivel_urgencia, estado, comentario, fecha_suceso) 
+VALUES
+('REC001234', 'EVD001234', 'EMP001234', 'REP001234', 'PED001234', 'SGM001234', 'Calidad', 'Alto', 'Pendiente', 'El producto recibido estaba dañado', '2024-04-05'),
+('REC002345', 'EVD002345', 'EMP002345', 'REP002345', 'PED002345', 'SGM002345', 'Entrega', 'Medio', 'En Proceso', 'El pedido no llegó en la fecha acordada', '2024-04-10'),
+('REC003456', 'EVD003456', 'EMP003456', 'REP003456', 'PED003456', 'SGM003456', 'Calidad', 'Bajo', 'Pendiente', 'La mercancía recibida no coincide con lo solicitado', '2024-04-15'),
+('REC004567', 'EVD004567', 'EMP004567', 'REP004567', 'PED004567', 'SGM004567', 'Entrega', 'Alto', 'Resuelto', 'El pedido se entregó incompleto', '2024-04-20'),
+('REC005678', 'EVD005678', 'EMP005678', 'REP005678', 'PED005678', 'SGM005678', 'Calidad', 'Medio', 'En Proceso', 'La mercancía recibida está en mal estado', '2024-04-25'),
+('REC006789', 'EVD006789', 'EMP006789', 'REP006789', 'PED006789', 'SGM006789', 'Entrega', 'Bajo', 'Pendiente', 'El pedido no se entregó', '2024-04-30'),
+('REC007890', 'EVD007890', 'EMP007890', 'REP007890', 'PED007890', 'SGM007890', 'Calidad', 'Alto', 'Resuelto', 'El producto recibido está defectuoso', '2024-05-05'),
+('REC008901', 'EVD008901', 'EMP008901', 'REP008901', 'PED008901', 'SGM008901', 'Entrega', 'Medio', 'Pendiente', 'El pedido se entregó con retraso', '2024-05-10'),
+('REC009012', 'EVD009012', 'EMP009012', 'REP009012', 'PED009012', 'SGM009012', 'Calidad', 'Bajo', 'En Proceso', 'El producto recibido no es el solicitado', '2024-05-15'),
+('REC010123', 'EVD010123', 'EMP010123', 'REP010123', 'PED010123', 'SGM010123', 'Entrega', 'Alto', 'Pendiente', 'El pedido nunca llegó', '2024-05-20'),
+('REC011234', 'EVD011234', 'EMP011234', 'REP011234', 'PED011234', 'SGM011234', 'Calidad', 'Medio', 'Resuelto', 'La mercancía recibida está dañada', '2024-05-25'),
+('REC012345', 'EVD012345', 'EMP012345', 'REP012345', 'PED012345', 'SGM012345', 'Entrega', 'Bajo', 'Pendiente', 'El pedido llegó tarde', '2024-05-30');
+
+
+
+INSERT INTO reporte (cod_reporte, cod_programacion_reporte, fecha_generacion, hora_generacion)
+VALUES
+('REP001234', 'PR001234', '2024-04-05', '08:30:00'),
+('REP002345', 'PR002345', '2024-04-10', '09:45:00'),
+('REP003456', 'PR003456', '2024-04-15', '10:15:00'),
+('REP004567', 'PR004567', '2024-04-20', '11:00:00'),
+('REP005678', 'PR005678', '2024-04-25', '12:30:00'),
+('REP006789', 'PR006789', '2024-04-30', '13:45:00'),
+('REP007890', 'PR007890', '2024-05-05', '14:20:00'),
+('REP008901', 'PR008901', '2024-05-10', '15:00:00'),
+('REP009012', 'PR009012', '2024-05-15', '16:10:00'),
+('REP010123', 'PR010123', '2024-05-20', '17:20:00'),
+('REP011234', 'PR011234', '2024-05-25', '18:30:00'),
+('REP012345', 'PR012345', '2024-05-30', '19:40:00');
+
+INSERT INTO stock (cod_stock, cod_elemento_catalogo, cod_mercancia, nro_lote, tipo_stock, fecha_caducidad)
+VALUES
+('STK001234', 'ELC001234', 'MRC001234', 123, 1, '2024-04-05'),
+('STK002345', 'ELC002345', 'MRC002345', 234, 2, '2024-04-10'),
+('STK003456', 'ELC003456', 'MRC003456', 345, 1, '2024-04-15'),
+('STK004567', 'ELC004567', 'MRC004567', 456, 2, '2024-04-20'),
+('STK005678', 'ELC005678', 'MRC005678', 567, 1, '2024-04-25'),
+('STK006789', 'ELC006789', 'MRC006789', 678, 2, '2024-04-30'),
+('STK007890', 'ELC007890', 'MRC007890', 789, 1, '2024-05-05'),
+('STK008901', 'ELC008901', 'MRC008901', 890, 2, '2024-05-10'),
+('STK009012', 'ELC009012', 'MRC009012', 901, 1, '2024-05-15'),
+('STK010123', 'ELC010123', 'MRC010123', 123, 2, '2024-05-20'),
+('STK011234', 'ELC011234', 'MRC011234', 234, 1, '2024-05-25'),
+('STK012345', 'ELC012345', 'MRC012345', 345, 2, '2024-05-30');
+
+INSERT INTO tramo (cod_tramo, cod_ruta, distancia, tiempo_estimado)
+VALUES
+('TRM001234', 'RTA001234', '100 km', '2 horas'),
+('TRM002345', 'RTA002345', '150 km', '3 horas'),
+('TRM003456', 'RTA003456', '200 km', '4 horas'),
+('TRM004567', 'RTA004567', '120 km', '2.5 horas'),
+('TRM005678', 'RTA005678', '180 km', '3.5 horas'),
+('TRM006789', 'RTA006789', '90 km', '2 horas'),
+('TRM007890', 'RTA007890', '160 km', '3 horas'),
+('TRM008901', 'RTA008901', '140 km', '2.5 horas'),
+('TRM009012', 'RTA009012', '110 km', '2.2 horas'),
+('TRM010123', 'RTA010123', '130 km', '2.8 horas');
+
+INSERT INTO detalle_local_tramo (local_cod_local, tramo_cod_tramo, tipo_punto)
+VALUES
+('LOC001234', 'TRM001234', 'Origen'),
+('LOC002345', 'TRM002345', 'Origen'),
+('LOC003456', 'TRM003456', 'Origen'),
+('LOC004567', 'TRM004567', 'Origen'),
+('LOC005678', 'TRM005678', 'Origen'),
+('LOC006789', 'TRM006789', 'Origen'),
+('LOC007890', 'TRM007890', 'Origen'),
+('LOC008901', 'TRM008901', 'Origen'),
+('LOC009012', 'TRM009012', 'Origen'),
+('LOC010123', 'TRM010123', 'Origen');
+
+
+
