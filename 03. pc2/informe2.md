@@ -556,6 +556,7 @@ CREATE TABLE IF NOT EXISTS vehiculo (
   anio_fabricacion VARCHAR(45) NULL DEFAULT NULL,
   fecha_ultimo_mantenimiento VARCHAR(45) NULL DEFAULT NULL,
   fecha_ultimo_viaje VARCHAR(45) NULL DEFAULT NULL,
+  capacidad_carga VARCHAR(45) NULL DEFAULT NULL,
   modelo VARCHAR(45) NULL DEFAULT NULL,
   placa VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (cod_vehiculo));
@@ -733,6 +734,9 @@ CREATE TABLE IF NOT EXISTS mercancia (
 CREATE TABLE IF NOT EXISTS norma (
   cod_norma CHAR(9) NOT NULL,
   cod_catalogo_contigencia CHAR(9) NOT NULL,
+  fecha_emision DATE NULL DEFAULT NULL,
+  fecha_vigencia DATE NULL DEFAULT NULL,
+  tipo VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (cod_norma),
   CONSTRAINT fk_cod_catalogo_contigencia
     FOREIGN KEY (cod_catalogo_contigencia)
