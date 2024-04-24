@@ -1108,7 +1108,7 @@ VALUES
 (222527960, 822168329, 822168338, 9.3, 'Urbana', 0.2);
 
 ```
-
+```sql
 -- Poblamiento de datos 
 
 INSERT INTO cliente (cod_cliente, estado, prioridad, fecha_registro) 
