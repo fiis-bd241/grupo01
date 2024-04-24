@@ -61,9 +61,8 @@ Semántica: Representa los productos ofrecidos por sanfernando
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
 | cod_elemento_catalogo | CHAR | 999999999 | 9 dígitos | --  | --  | Identificador del elemento en el catálogo. | 
 | nombre | CHAR | X(32) | NO NULL  | - | - | Nombre del elemento en el catálogo. |
-| tipo_elemento  | INT  | 9 | NO NULL | TAB  | - | Tipo de elemento según su relación con el proceso de producción. |
+| categoría | INT  | 99 | NO NULL | TAB  | - | Es la forma de categorizar los elementos | 
 | segmento | INT  | 9 | NO NULL | TAB  | - | Es la segmentación del material y las materias primas |
-| categoría | CHAR | X(32) | - | - | - | Es la forma de categorizar los productos | 
 | descripcion | CHAR| X(256) | NO NULL | -  | - | Descripción del elemento en el catálogo. | 
 | unidad  | CHAR  | X(32) | NO NULL | -  | - | Unidad de medida del elemento en el catálogo. | 
 | temperatura_maxima | INT | 999 | - | Grados Celsius | - | Temperatura máxima permitida para la materia prima | 
@@ -71,12 +70,28 @@ Semántica: Representa los productos ofrecidos por sanfernando
 | vida_util | INT | 999 | - | Días | - | Vida útil de la materia prima | 
 | peso_unitario | CHAR | X(64) | - | - | - | Segmento al que pertenece el material en el catálogo|
 
-TAB: Tipo de elemento
-|Código|Semántica|
-|------|---------|
-|1|Materia prima|
-|2|Material|
-|3|Producto|
+TAB: Categoría de elemento
+<table>
+  <tr><th>Valor</th><th>Categoría</th><th>Descripción</th></tr>
+  <tr><td>11</td><td rowspan="9">Materia Prima</td><td>Especias y condimentos</td></tr>
+  <tr><td>12</td><td>Aditivos alimentarios</td></tr>
+  <tr><td>13</td><td>Aceites y grasas</td></tr>
+  <tr><td>14</td><td>Harinas</td></tr>
+  <tr><td>15</td><td>Huevos</td></tr>
+  <tr><td>16</td><td>Conservantes</td></tr>
+  <tr><td>17</td><td>Colorantes</td></tr>
+  <tr><td>18</td><td>Emulsionantes</td></tr>
+  <tr><td>19</td><td>Otras materias primas</td></tr>
+  <tr><td>21</td><td rowspan="6">Material</td><td>Herramientas</td></tr>
+  <tr><td>22</td><td>Repuestos</td></tr>
+  <tr><td>23</td><td>Químicos</td></tr>
+  <tr><td>24</td><td>Detergentes industriales</td></tr>
+  <tr><td>25</td><td>Etiquetas</td></tr>
+  <tr><td>26</td><td>Otros materiales</td></tr>
+  <tr><td>31</td><td rowspan="3">Producto</td><td>Pollo congelado</td></tr>
+  <tr><td>32</td><td>Pollo fresco</td></tr>
+  <tr><td>33</td><td>Saborizado</td></tr>
+</table>
 
 TAB: Segmentación
 |Código|Semántica|
