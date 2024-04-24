@@ -873,26 +873,6 @@ CREATE TABLE IF NOT EXISTS detalle_local_tramo (
 ```sql
 
 -- Poblamiento de datos para la entidad Elemento_catalogo
-INSERT INTO elemento_catalogo (cod_elemento_catalogo, nombre, categoria, segmento, descripcion, unidad, temperatura_maxima, temperatura_minima, vida_util, peso_unitario) VALUES
-('123456789', 'Filete de pechuga de pollo San Fernando congelado', 31, 4, 'Filete de pechuga de pollo San Fernando congelado, listo para su uso en la preparación de platos.', 'unidad', -18, -20, 90, 900),
-('223456789', 'Pierna de pollo San Fernando congelada', 31, 4, 'Pierna de pollo San Fernando congelada, perfecta para su uso en la elaboración de diversos platos.', 'unidad', -18, -20, 90, 1200),
-('323456789', 'Ala de pollo San Fernando congelada', 31, 4, 'Ala de pollo San Fernando congelada, ideal para recetas fáciles y deliciosas.', 'unidad', -18, -20, 90, 800),
-('423456789', 'Muslo de pollo San Fernando congelado', 31, 4, 'Muslo de pollo San Fernando congelado, versátil y sabroso para preparaciones culinarias.', 'unidad', -18, -20, 90, 1000),
-('523456789', 'Pechuga entera de pollo San Fernando congelada', 31, 4, 'Pechuga entera de pollo San Fernando congelada, fresca y de alta calidad para diversas recetas.', 'unidad', -18, -20, 90, 1500),
-('623456789', 'Pierna con encuentro San Fernando fresca', 32, 4, 'Pierna con encuentro de pollo San Fernando fresca, perfecta para asados y platos principales.', 'unidad', 0, -2, 7, 1300),
-('723456789', 'Muslo de pollo San Fernando fresco', 32, 4, 'Muslo de pollo San Fernando fresco, jugoso y listo para su uso en una amplia variedad de platos.', 'unidad', 0, -2, 7, 1100),
-('823456789', 'Pechuga especial de pollo San Fernando fresca', 32, 4, 'Pechuga especial de pollo San Fernando fresca, de la más alta calidad para platos gourmet.', 'unidad', 0, -2, 7, 1200),
-('923456789', 'Pechuga entera de pollo San Fernando fresca', 32, 4, 'Pechuga entera de pollo San Fernando fresca, versátil y perfecta para diversas preparaciones culinarias.', 'unidad', 0, -2, 7, 1400),
-('123456719', 'Carne molida de pollo San Fernando fresca', 32, 4, 'Carne molida de pollo San Fernando fresca, ideal para hamburguesas, albóndigas y más.', 'unidad', 0, -2, 7, 900),
-('112456719', 'Especias y condimentos Jardín del Sabor para pollo', 11, 1, 'Mezcla de especias y condimentos Jardín del Sabor especialmente seleccionados para realzar el sabor del pollo.', 'gramo', NULL, NULL, 180, 80),
-('223456719', 'Aceite de oliva Aceitunas del Sur para cocinar', 13, 1, 'Aceite de oliva Aceitunas del Sur de alta calidad, perfecto para cocinar y aderezar platos.', 'mililitro', NULL, NULL, 365, 1000),
-('323456719', 'Harina de trigo Trigomar para empanizar', 14, 1, 'Harina de trigo Trigomar ideal para empanizar y darle un acabado crujiente a tus platillos favoritos.', 'gramo', NULL, NULL, 180, 500),
-('423456719', 'Huevo fresco Granja Real para rebozar', 15, 1, 'Huevo fresco Granja Real para rebozar y darle un toque especial a tus recetas.', 'unidad', NULL, NULL, 30, 50),
-('523456719', 'Conservante natural Biolife para prolongar la vida útil del producto', 16, 1, 'Conservante natural Biolife para prolongar la vida útil del producto, sin aditivos artificiales.', 'gramo', NULL, NULL, 365, 30),
-('623456719', 'Colorante natural Chroma para mejorar la apariencia del producto', 17, 1, 'Colorante natural Chroma para mejorar la apariencia del producto, seguro y confiable.', 'gramo', NULL, NULL, 365, 20),
-('723456719', 'Emulsionante Quality para mejorar la textura del producto', 18, 1, 'Emulsionante Quality para mejorar la textura del producto, ideal para aplicaciones culinarias.', 'gramo', NULL, NULL, 365, 40),
-('923456720', 'Detergente SuperClean', 23, 2, 'Detergente SuperClean para uso industrial, ideal para limpieza profunda y desengrase de equipos y superficies.', 'litro', NULL, NULL, NULL, 1000);
-
 
 -- Poblamiento de datos para la entidad Mercancía
 
@@ -1193,6 +1173,26 @@ VALUES
 ('CAT010123', 'INC010123', 'Se realizó un mantenimiento de emergencia y se continuó con el traslado'),
 ('CAT011234', 'INC011234', 'Se reportó el incidente a las autoridades correspondientes y se procedió con las medidas de seguridad'),
 ('CAT012345', 'INC012345', 'Se prestó asistencia médica a los involucrados y se coordinó con las autoridades para la atención del incidente');
+
+INSERT INTO elemento_catalogo (cod_elemento_catalogo, nombre, categoria, segmento, descripcion, unidad, temperatura_maxima, temperatura_minima, vida_util, peso_unitario) VALUES
+('123456789', 'Filete de pechuga de pollo San Fernando congelado', 31, 4, 'Filete de pechuga de pollo San Fernando congelado, listo para su uso en la preparación de platos.', 'unidad', -18, -20, 90, 900),
+('223456789', 'Pierna de pollo San Fernando congelada', 31, 4, 'Pierna de pollo San Fernando congelada, perfecta para su uso en la elaboración de diversos platos.', 'unidad', -18, -20, 90, 1200),
+('323456789', 'Ala de pollo San Fernando congelada', 31, 4, 'Ala de pollo San Fernando congelada, ideal para recetas fáciles y deliciosas.', 'unidad', -18, -20, 90, 800),
+('423456789', 'Muslo de pollo San Fernando congelado', 31, 4, 'Muslo de pollo San Fernando congelado, versátil y sabroso para preparaciones culinarias.', 'unidad', -18, -20, 90, 1000),
+('523456789', 'Pechuga entera de pollo San Fernando congelada', 31, 4, 'Pechuga entera de pollo San Fernando congelada, fresca y de alta calidad para diversas recetas.', 'unidad', -18, -20, 90, 1500),
+('623456789', 'Pierna con encuentro San Fernando fresca', 32, 4, 'Pierna con encuentro de pollo San Fernando fresca, perfecta para asados y platos principales.', 'unidad', 0, -2, 7, 1300),
+('723456789', 'Muslo de pollo San Fernando fresco', 32, 4, 'Muslo de pollo San Fernando fresco, jugoso y listo para su uso en una amplia variedad de platos.', 'unidad', 0, -2, 7, 1100),
+('823456789', 'Pechuga especial de pollo San Fernando fresca', 32, 4, 'Pechuga especial de pollo San Fernando fresca, de la más alta calidad para platos gourmet.', 'unidad', 0, -2, 7, 1200),
+('923456789', 'Pechuga entera de pollo San Fernando fresca', 32, 4, 'Pechuga entera de pollo San Fernando fresca, versátil y perfecta para diversas preparaciones culinarias.', 'unidad', 0, -2, 7, 1400),
+('123456719', 'Carne molida de pollo San Fernando fresca', 32, 4, 'Carne molida de pollo San Fernando fresca, ideal para hamburguesas, albóndigas y más.', 'unidad', 0, -2, 7, 900),
+('112456719', 'Especias y condimentos Jardín del Sabor para pollo', 11, 1, 'Mezcla de especias y condimentos Jardín del Sabor especialmente seleccionados para realzar el sabor del pollo.', 'gramo', NULL, NULL, 180, 80),
+('223456719', 'Aceite de oliva Aceitunas del Sur para cocinar', 13, 1, 'Aceite de oliva Aceitunas del Sur de alta calidad, perfecto para cocinar y aderezar platos.', 'mililitro', NULL, NULL, 365, 1000),
+('323456719', 'Harina de trigo Trigomar para empanizar', 14, 1, 'Harina de trigo Trigomar ideal para empanizar y darle un acabado crujiente a tus platillos favoritos.', 'gramo', NULL, NULL, 180, 500),
+('423456719', 'Huevo fresco Granja Real para rebozar', 15, 1, 'Huevo fresco Granja Real para rebozar y darle un toque especial a tus recetas.', 'unidad', NULL, NULL, 30, 50),
+('523456719', 'Conservante natural Biolife para prolongar la vida útil del producto', 16, 1, 'Conservante natural Biolife para prolongar la vida útil del producto, sin aditivos artificiales.', 'gramo', NULL, NULL, 365, 30),
+('623456719', 'Colorante natural Chroma para mejorar la apariencia del producto', 17, 1, 'Colorante natural Chroma para mejorar la apariencia del producto, seguro y confiable.', 'gramo', NULL, NULL, 365, 20),
+('723456719', 'Emulsionante Quality para mejorar la textura del producto', 18, 1, 'Emulsionante Quality para mejorar la textura del producto, ideal para aplicaciones culinarias.', 'gramo', NULL, NULL, 365, 40),
+('923456720', 'Detergente SuperClean', 23, 2, 'Detergente SuperClean para uso industrial, ideal para limpieza profunda y desengrase de equipos y superficies.', 'litro', NULL, NULL, NULL, 1000);
 
 INSERT INTO representante (cod_representante, cod_cliente, dni, tipo_representante, num_telefono, correo_empresarial, cargo)
 VALUES
