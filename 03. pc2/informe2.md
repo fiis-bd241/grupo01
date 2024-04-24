@@ -589,7 +589,7 @@ CREATE TABLE IF NOT EXISTS traslado (
 
 CREATE TABLE IF NOT EXISTS incidencia (
   cod_incidencia CHAR(9) NOT NULL,
-  cod_traslado CHAR(9) NOT NULL,
+  cod_traslado CHAR(10) NOT NULL,
   descripcion VARCHAR(45) NULL DEFAULT NULL,
   tipo VARCHAR(45) NULL DEFAULT NULL,
   fecha_ocurrencia DATE NULL DEFAULT NULL,
