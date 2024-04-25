@@ -649,7 +649,7 @@ CREATE TABLE IF NOT EXISTS pedido (
     REFERENCES representante (cod_representante));
 	
 CREATE TABLE IF NOT EXISTS detalle_pedido_producto (
-  pedido_cod_pedido CHAR(9) NOT NULL,
+  cod_pedido CHAR(9) NOT NULL,
   cod_elemento_catalogo CHAR(9) NOT NULL,
   cantidad INT NOT NULL CHECK (cantidad > 0),
   PRIMARY KEY (pedido_cod_pedido, cod_elemento_catalogo),
@@ -657,18 +657,18 @@ CREATE TABLE IF NOT EXISTS detalle_pedido_producto (
     FOREIGN KEY (cod_elemento_catalogo)
     REFERENCES elemento_catalogo (cod_elemento_catalogo),
   CONSTRAINT fk_pedido_has_elemento_catalogo_pedido1
-    FOREIGN KEY (pedido_cod_pedido)
+    FOREIGN KEY (cod_pedido)
     REFERENCES pedido (cod_pedido));
 	
 CREATE TABLE IF NOT EXISTS detalle_pedido_traslado (
-  traslado_cod_traslado CHAR(9) NOT NULL,
-  pedido_cod_pedido CHAR(9) NOT NULL,
+  cod_traslado CHAR(9) NOT NULL,
+  cod_pedido CHAR(9) NOT NULL,
   PRIMARY KEY (traslado_cod_traslado, pedido_cod_pedido),
   CONSTRAINT fk_detalle_pedido_traslado_pedido1
-    FOREIGN KEY (pedido_cod_pedido)
+    FOREIGN KEY (cod_pedido)
     REFERENCES pedido (cod_pedido),
   CONSTRAINT fk_pedido_has_traslado_traslado1
-    FOREIGN KEY (traslado_cod_traslado)
+    FOREIGN KEY (cod_traslado)
     REFERENCES traslado (cod_traslado));
 	
 CREATE TABLE IF NOT EXISTS evidencia (
@@ -701,7 +701,6 @@ CREATE TABLE IF NOT EXISTS gps (
   CONSTRAINT cod_vehiculo
     FOREIGN KEY (cod_vehiculo)
     REFERENCES vehiculo (cod_vehiculo));
-	
 
 CREATE TABLE IF NOT EXISTS local (
   cod_local CHAR(9) NOT NULL,
@@ -788,7 +787,6 @@ CREATE TABLE IF NOT EXISTS seguimiento (
   CONSTRAINT cod_cliente_interno_seguimiento
     FOREIGN KEY (cod_cliente_interno)
     REFERENCES cliente_interno (cod_area));
-	
 
 CREATE TABLE IF NOT EXISTS reclamo (
   cod_reclamo CHAR(9) NOT NULL,
@@ -818,8 +816,7 @@ CREATE TABLE IF NOT EXISTS reclamo (
   CONSTRAINT cod_seguimiento
     FOREIGN KEY (cod_seguimiento)
     REFERENCES seguimiento (cod_seguimiento));
-	
-	
+
 CREATE TABLE IF NOT EXISTS reporte (
   cod_reporte CHAR(9) NOT NULL,
   cod_programacion_reporte CHAR(9) NOT NULL,
@@ -856,15 +853,15 @@ CREATE TABLE IF NOT EXISTS tramo (
     REFERENCES ruta (cod_ruta));
 	
 CREATE TABLE IF NOT EXISTS detalle_local_tramo (
-  local_cod_local CHAR(9) NOT NULL,
-  tramo_cod_tramo CHAR(9) NOT NULL,
+  cod_local CHAR(9) NOT NULL,
+  cod_tramo CHAR(9) NOT NULL,
   tipo_punto VARCHAR(120) NULL,
   PRIMARY KEY (local_cod_local, tramo_cod_tramo),
   CONSTRAINT fk_local_has_tramo_local1
-    FOREIGN KEY (local_cod_local)
+    FOREIGN KEY (cod_local)
     REFERENCES "local" (cod_local),
   CONSTRAINT fk_local_has_tramo_tramo1
-    FOREIGN KEY (tramo_cod_tramo)
+    FOREIGN KEY (cod_tramo)
     REFERENCES tramo (cod_tramo));
 
 ```
