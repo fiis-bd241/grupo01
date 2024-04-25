@@ -651,6 +651,7 @@ CREATE TABLE IF NOT EXISTS pedido (
 CREATE TABLE IF NOT EXISTS detalle_pedido_producto (
   pedido_cod_pedido CHAR(9) NOT NULL,
   cod_elemento_catalogo CHAR(9) NOT NULL,
+  cantidad INT NOT NULL CHECK (cantidad > 0),
   PRIMARY KEY (pedido_cod_pedido, cod_elemento_catalogo),
   CONSTRAINT fk_pedido_has_elemento_catalogo_elemento_catalogo1
     FOREIGN KEY (cod_elemento_catalogo)
