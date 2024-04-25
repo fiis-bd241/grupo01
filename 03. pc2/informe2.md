@@ -489,7 +489,7 @@ CREATE TABLE IF NOT EXISTS ruta (
   punto_destino VARCHAR(120) NULL,
   distancia_total INT NOT NULL CHECK (distancia_total > 0),
   tipo_ruta VARCHAR(6) NULL,
-  duracion INT NOT NULL CHECK (distancia_total > 0),
+  duracion FLOAT NOT NULL CHECK (duracion > 0),
   PRIMARY KEY (cod_ruta));
   
 CREATE TABLE IF NOT EXISTS persona (
