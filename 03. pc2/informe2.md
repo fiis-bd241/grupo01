@@ -167,7 +167,7 @@ Semántica: Lugar físico que cuenta con una dirección legal registrada.
 | peso_total | INT | 999 | >=0 | - | - | Peso total de la mercancía |  
 | cod_operacion | CHAR | 999999999 | 9 dígitos | - | - | Identificador de la operación tipo picking que asignó las existencias a la mercancía |  
 
- **Entidad:** Normas  
+ **Entidad:** Norma  
 
  Semántica: Conjunto de reglas o directrices establecidas para regular un comportamiento específico o para guiar una actividad particular. 
 
@@ -176,7 +176,16 @@ Semántica: Lugar físico que cuenta con una dirección legal registrada.
 | código_norma | CHAR| 999999999 | 9 dígitos | - | -- | Identificador de la norma |  
 | fecha_emisión | DATE | AAAAMMDD |NO NULL| --- | --- | Indica la fecha de publicación de la norma |  
 | fecha_vigencia | DATE | AAAAMMDD |NO NULL | - | - | Indica la vigencia de la norma para su cumplimiento|  
-| tipo | CHAR | X | X, Y,Z, etc. | - | - | Indica el tipo de norma  |  
+| tipo | CHAR | X | TAB | - | - | Indica el tipo de norma  |  
+
+TAB: Tipo de Norma
+|Código|Semántica|
+|------|---------|
+|X|NTP 209.027|
+|Y|ISO 17712|
+|Z|ISO 22000|
+|W|ISO 9001|
+
 
 **Entidad**: Operación  
 
