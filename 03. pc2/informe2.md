@@ -138,9 +138,19 @@ Semántica: Problema, situación anormal o evento no planificado.
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
 | cod_incidencia | CHAR | 999999999 | 9 digitos | - | - | - | Código único que identifica la incidencia.|  
-| tipo_incidencia | CHAR | x(32)| - | - | - | Tipo de incidencia que ha ocurrido. Puede ser de diferentes categorías, como técnica, operativa, etc. |  
+| tipo_incidencia | CHAR | X | TAB | - | - | Tipo de incidencia que ha ocurrido. Puede ser de diferentes categorías, como técnica, operativa, etc. |  
 | descripcion | CHAR | x(128) | - | - | - | Descripción detallada de la incidencia.|  
 | fecha_incidencia | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que ocurrió la incidencia. |  
+
+TAB: Tipo de incidencia
+|Código|Semántica|
+|------|---------|
+|A|Retraso en entrega|
+|B|Error en etiquetado|
+|C|Falta de documentacion|
+|D|Problemas mecanicos del vehiculo|
+|E|Error en ruta asignada|
+
 
 **Entidad**: Local  
 
@@ -259,7 +269,17 @@ Semántica: Recurso que engloba una lista da pasos.
 | cod_procedimiento | CHAR| 999999999 | 9 dígitos | - | -- | Identificador del procedimiento |  
 | descripción| CHAR | X(64) | NO NULL | - | - | Explicación detallada del procedimiento | 
 | duracion | INT | 999 | >0 | horas | - | Representa la duración estimada de la aplicación del procedimeiento. | 
-| tipo | CHAR | X | X,Y,Z, etc | - | - | Indica el tipo de procedimiento | 
+| tipo | CHAR | X | TAB | - | - | Indica el tipo de procedimiento |
+
+TAB: Tipo de procedimiento
+|Código|Semántica|
+|------|---------|
+|A|Retraso en entrega|
+|B|Error en etiquetado|
+|C|Falta de documentacion|
+|D|Problemas mecanicos del vehiculo|
+|E|Error en ruta asignada|
+
 
 **Entidad:** Programacion_reporte  
 
