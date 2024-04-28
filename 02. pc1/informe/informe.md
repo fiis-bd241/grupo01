@@ -1096,7 +1096,8 @@ Entidades involucradas:
 
 El siguiente prototipo aborda la disponibilidad de los conductores, basándose en sus atributos y las políticas de negocio establecidas por San Fernando. Por ejemplo, para prevenir la fatiga y reducir el riesgo de accidentes, la empresa implementó una política que requiere que los conductores permanezcan inactivos durante dos días después de completar un traslado. Esta información se recopila en nuestro sistema, donde destacan atributos como la fecha de vencimiento de la licencia, el tipo de licencia y la fecha del último traslado. Estos datos son fundamentales para facilitar la toma de decisiones y determinar la disponibilidad de los conductores.
 
-![FIGMA 1](https://github.com/fiis-bd241/grupo01/assets/164266999/36906d1e-8af0-4549-889c-452f071d7e1d)
+![transportista](https://github.com/fiis-bd241/grupo01/assets/164266999/d31345d9-736e-4fca-ac9d-69f86f45adfe)
+
 
 Entidades involucradas:
 - Trasportista
@@ -1107,7 +1108,8 @@ Entidades involucradas:
 
 Siguiendo la línea del prototipo anterior, en este nos enfocaremos en la disponibilidad de los vehículos, considerando sus atributos y las políticas establecidas por la empresa. Por ejemplo, en términos de inocuidad, si un vehículo ha estado en planta realizando un traslado, debe someterse a un proceso de desinfección antes de poder ser utilizado nuevamente para otro pedido. Este proceso suele tomar alrededor de un día. Sin embargo, si el traslado no implica visitar la planta, el vehículo puede realizar traslados de manera continua, con la única variación siendo el conductor asignado.
 
-![FIGMA 2](https://github.com/fiis-bd241/grupo01/assets/164266999/5676b6bf-3b02-4e3b-b071-ceddd068980f)
+![vehiculo](https://github.com/fiis-bd241/grupo01/assets/164266999/077851e6-df94-4735-a16d-6dbdf6882b51)
+
 
 Entidades involucradas:
 - Vehículo
