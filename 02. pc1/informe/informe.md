@@ -1344,10 +1344,10 @@ Semántica: Problema, situación anormal o evento no planificado.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_incidencia | CHAR | 999999999 | 9 digitos | - | - | - | Código único que identifica la incidencia.|  
-| tipo_incidencia | CHAR | x(32)| - | - | - | Tipo de incidencia que ha ocurrido. Puede ser de diferentes categorías, como técnica, operativa, etc. |  
+| cod_incidencia | INT | 9 | >0 | - | - | - | Código único que identifica la incidencia.|  
+| cod_tipo_incidencia | CHAR | X| - | - | - | Tipo de incidencia que ha ocurrido |  
 | descripcion | CHAR | x(128) | - | - | - | Descripción detallada de la incidencia.|  
-| fecha_incidencia | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que ocurrió la incidencia. |  
+| fecha_ocurrencia | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que ocurrió la incidencia. |  
 
 **Entidad**: Local  
 
