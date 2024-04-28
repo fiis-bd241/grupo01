@@ -137,19 +137,19 @@ Semántica: Problema, situación anormal o evento no planificado.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_incidencia | CHAR | 999999999 | 9 digitos | - | - | - | Código único que identifica la incidencia.|  
-| tipo_incidencia | CHAR | X | TAB | - | - | Tipo de incidencia que ha ocurrido. Puede ser de diferentes categorías, como técnica, operativa, etc. |  
+| cod_incidencia | INT | 9 | >0 | - | - | - | Código único que identifica la incidencia.|  
+| cod_tipo_incidencia | CHAR | X| TAB | - | - | Tipo de incidencia que ha ocurrido |  
 | descripcion | CHAR | x(128) | - | - | - | Descripción detallada de la incidencia.|  
-| fecha_incidencia | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que ocurrió la incidencia. |  
+| fecha_ocurrencia | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que ocurrió la incidencia. |  
 
 TAB: Tipo de incidencia
-|Código|Semántica|
+|Código|Descripción|
 |------|---------|
-|A|Retraso en entrega|
-|B|Error en etiquetado|
-|C|Falta de documentacion|
-|D|Problemas mecanicos del vehiculo|
-|E|Error en ruta asignada|
+|A|Incidencia de tipo A: Retraso en la entrega|
+|B|Incidencia de tipo B: Error en el etiquetado o embalaje|
+|C|Incidencia de tipo C: Fallos en la documentación|
+|D|Incidencia de tipo D: Problemas mecánicos con el vehículo|
+|E|Incidencia de tipo E: Error en la asignación de la ruta|
 
 
 **Entidad**: Local  
@@ -183,13 +183,13 @@ Semántica: Lugar físico que cuenta con una dirección legal registrada.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| código_norma | CHAR| 999999999 | 9 dígitos | - | -- | Identificador de la norma |  
-| fecha_emisión | DATE | AAAAMMDD |NO NULL| --- | --- | Indica la fecha de publicación de la norma |  
-| fecha_vigencia | DATE | AAAAMMDD |NO NULL | - | - | Indica la vigencia de la norma para su cumplimiento|  
-| tipo | CHAR | X | TAB | - | - | Indica el tipo de norma  |  
+| cod_norma | INT| 9 | >0 | - | -- | Identificador de la norma |  
+| cod_tipo_norma | CHAR | X |TAB| --- | --- | Registra el identificador del tipo de norma a utilizar |  
+| fecha_emision | DATE | AAAAMMDD |NO NULL | - | - | Indica la fecha de emisión de la norma para su cumplimiento|  
+| fecha_vigencia | DATE | AAAAMMDD | TAB | - | - | Indica la vigencia de la norma para su cumplimiento |  
 
 TAB: Tipo de Norma
-|Código|Semántica|
+|Código|Descripción|
 |------|---------|
 |X|NTP 209.027|
 |Y|ISO 17712|
@@ -224,16 +224,7 @@ TAB: Tipo de operación
 |6|Recepción|
 |7|Descarga|
 
-**Entidad:** Pasos  
-
-Semántica: Conjunto de actividades pertenecientes a un procedimiento. 
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
-|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-|cod_paso| CHAR | 999999999 | 9 dígitos | - | - | Identificador de paso| 
-|descripcion|CHAR|X(64)|-|-|-|Describe en que consiste un conjunto de pasos| 
-
-**Entidad**: Pedido  
+ **Entidad**: Pedido  
 
 Semántica: La entidad que representa las solicitudes de compra o de suministros realizadas por la empresa San Fernando.  
 
@@ -262,23 +253,23 @@ Semántica: Entidad que interactúan con la empresa San fernando.
 
 **Entidad:** Procedimiento  
 
-Semántica: Recurso que engloba una lista da pasos. 
+Semántica: Recurso que engloba una lista da pasos a seguir para abordar una determinada incidencia de traslado.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_procedimiento | CHAR| 999999999 | 9 dígitos | - | -- | Identificador del procedimiento |  
-| descripción| CHAR | X(64) | NO NULL | - | - | Explicación detallada del procedimiento | 
-| duracion | INT | 999 | >0 | horas | - | Representa la duración estimada de la aplicación del procedimeiento. | 
-| tipo | CHAR | X | TAB | - | - | Indica el tipo de procedimiento |
+| cod_procedimiento | INT| 9 | >0 | - | -- | Identificador del procedimiento |  
+| cod_tipo_procedimiento | CHAR | X | TAB | - | - | Identificador del tipo de procedimiento |
+| nombre| VARCHAR | X(70) | NO NULL | - | - | Indica en resumen el problema específico que requiere procedimiento | 
+| tiempo estimado | INT | 9 | >0 | horas | - | Representa la duración estimada de la aplicación del procedimeiento | 
 
 TAB: Tipo de procedimiento
-|Código|Semántica|
+|Código|Descripción|
 |------|---------|
-|A|Retraso en entrega|
-|B|Error en etiquetado|
-|C|Falta de documentacion|
-|D|Problemas mecanicos del vehiculo|
-|E|Error en ruta asignada|
+|A|Procedimiento de tipo A: Retraso en la entrega|
+|B|Procedimiento de tipo B: Errores en el etiquetado o embalaje|
+|C|Procedimiento de tipo C: Fallas en la documentación|
+|D|Procedimiento de tipo D: Problemas mecánicos con el vehículo|
+|E|Procedimiento de tipo E: Error en la asignación de la ruta|
 
 
 **Entidad:** Programacion_reporte  
@@ -392,11 +383,27 @@ Semántica: Entidad que representa a los empleados de la empresa San Fernando qu
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_transportista | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del transportista dentro de la organización. |  
-| fecha_ultima_traslado | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que el transportista realizó su última actividad. |  
-| estado | CHAR | X(16) | "Activo", "Inactivo" | - | - | Indica si el transportista se encuentra activo o inactivo en este momento. |  
-| numero_licencia | CHAR | 9999999999 | 9 digitos | - | - | Código de la licencia de conducir del transportista. |  
-| tipo_licencia | CHAR | X(32) |- | - | - | Tipo de licencia de conducir que posee el transportista. |  
+| cod_transportista | INT | 99 | >0| - | - | Identificador único del transportista dentro de la empresa. |  
+| cod_estado_transportista | CHAR | X | TAB | - | - | Indica el estado de determinado transportista para determinar su disponibilidad.|  
+| cod_tipo_licencia | CHAR | X |TAB | - | - | Identificador del tipo de licencia de conducir que posee el transportista. |  
+| numero_licencia | CHAR | X(7) | 9 digitos | - | - | Número de licencia de conducir del transportista. |  
+| fecha_vencimiento_licencia | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que vence la licencia del transportista. |  
+| fecha_ultimo_traslado | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que el transportista realizó su último traslado. |  
+
+TAB: Estado del Tranportista
+|Código|Descripción|
+|------|---------|
+|D|Disponible|
+|N|No disponible|
+|C|Cuarentena|
+
+
+TAB: Tipo de licencia de tranportista
+|Código|Descripción|
+|------|---------|
+|X|A-IIb|
+|Y|A-IIIb|
+
 
 **Entidad**: Traslado  
 
@@ -427,14 +434,30 @@ Semántica:
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_vehiculo | CHAR | 999999999 | 9 dígitos | - | - | Identificador del vehículo en el sistema. |  
-| placa | CHAR | XXX999 | Alfanumérico | - | - | Número de placa del vehículo. |  
-| estado | CHAR | X(32) | Activo, Inactivo | - | - | Estado actual del vehículo. |  
-| anio_fabricacion | INT | 9999 | Año válido | - | - | Año en que fue fabricado el vehículo. |  
-| capacidad_carga | FLOAT | 999.99 | x>0 | - | - | Capacidad máxima de carga del vehículo. |  
-| modelo | CHAR | X(64) | NO NULO | - | - | Modelo del vehículo. |  
-| fecha_último_viaje | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que el vehículo realizó su último viaje. | 
+| cod_vehiculo | INT | 99 | >0 | - | - | Identificador del vehículo en el sistema. |  
+| cod_estado_vehiculo | CHAR | X | TAB | - | - | Indicador del Estado actual del vehículo. |
+| cod_modelo_vehiculo | CHAR | X | TAB | - | - | indicador del modelo del vehículo. |  
+| año_fabricacion | INT | 9999 | Año válido | - | - | Año en que fue fabricado el vehículo. |  
+| capacidad_carga | FLOAT | 999.99 | x>0 | - | - | Capacidad máxima de carga del vehículo. | 
 | fecha_último_mantenimiento | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que el vehículo realizó su último mantenimiento. | 
+| fecha_último_viaje | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que el vehículo realizó su último viaje. | 
+| placa | CHAR | X(7) | NO NULL | - | - | Identificador único de placa del vehículo. | 
+
+TAB: Estado del Vehículo
+|Código|Descripción|
+|------|---------|
+|D|Disponible|
+|N|No disponible|
+|C|Cuarentena|
+
+
+TAB: Tipo de modelo del vehículo
+|Código|Descripción|
+|------|---------|
+|F|Furgoneta|
+|C|Camión|
+|S|SUV|
+
 
 ##### Relaciones
 
