@@ -164,7 +164,15 @@ Semántica: Lugar físico que cuenta con una dirección legal registrada.
 | distrito | CHAR | X(64) | NO NULL | - | - | Ciudad donde se encuentra el local |  
 | calle | CHAR | X(64) | NO NULL | - | - | Calle, Jirón, Avenida, Pasaje donde se encuentra el local |  
 | numero | INT | 9999 | 4 dígitos | - | - | Identificador numérico de domicilio |  
-| tipo_local | CHAR | X(16) | Refrigerante, almacén, recepción,etc | - | - | Indica el tipo de local |  
+| tipo_local | INT | 9 | TAB | - | - | Indica el tipo de local |  
+
+TAB: Tipo Local
+|Código|Descripción|
+|------|---------|
+|1|Almacén|
+|2|Recepción|
+|3|Venta|
+|4|Distribuidora|
 
 **Entidad**: Mercancía  
 
