@@ -456,9 +456,9 @@ Semántica:
 | cod_modelo_vehiculo | CHAR | X | TAB | - | - | indicador del modelo del vehículo. |  
 | año_fabricacion | INT | 9999 | Año válido | - | - | Año en que fue fabricado el vehículo. |  
 | capacidad_carga | FLOAT | 999.99 | x>0 | - | - | Capacidad máxima de carga del vehículo. | 
-| fecha_último_mantenimiento | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que el vehículo realizó su último mantenimiento. | 
-| fecha_último_viaje | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que el vehículo realizó su último viaje. | 
-| placa | CHAR | X(7) | NO NULL | - | - | Identificador único de placa del vehículo. | 
+| fecha_último_mantenimiento | DATE | AAAAMMDD | De acuerdo a calendario | - | - | Fecha en que el vehículo realizó su último mantenimiento. | 
+| fecha_último_viaje | DATE | AAAAMMDD | De acuerdo a calendario | - | - | Fecha en que el vehículo realizó su último viaje. | 
+| placa | CHAR | XXX-XXX | NO NULL | - | - | Identificador único de placa del vehículo. | 
 
 TAB: Estado del Vehículo
 |Código|Descripción|
