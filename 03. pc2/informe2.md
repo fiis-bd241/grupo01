@@ -161,7 +161,7 @@ Semántica: Lugar físico que cuenta con una dirección legal registrada.
 | cod_local | CHAR | 999999999 | 9 dígitos | - | - | Identificador del local |  
 | pais | CHAR | xxx | ISO 3166-1 alfa-3 | - | - | República donde se encuentra el local |  
 | region | CHAR | xx-xxx | ISO 3166-2 | - | - | Departamento / Estado donde se encuentra el local |  
-| distrito | CHAR | X(64) | NO NULL | - | - | Ciudad donde se encuentra el local |  
+| distrito | INT | 999999 | Ubigeo | - | - | Ciudad donde se encuentra el local |  
 | calle | CHAR | X(64) | NO NULL | - | - | Calle, Jirón, Avenida, Pasaje donde se encuentra el local |  
 | numero | INT | 9999 | 4 dígitos | - | - | Identificador numérico de domicilio |  
 | tipo_local | INT | 9 | TAB | - | - | Indica el tipo de local |  
