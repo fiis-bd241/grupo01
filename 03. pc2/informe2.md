@@ -327,11 +327,15 @@ Semántica: Conjunto de ubicaciones que va a visitar el vehículo en su transcur
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
 | cod_ruta | CHAR | 999999999 | 9 dígitos | - | - | Identificador primario para relacionar y referenciar la ruta en el sistema. |  
-| punto_origen | CHAR | 999999999 | 9 dígitos | - | - | Representa la ubicación exacta del local de donde parte el vehículo. |  
-| punto_destino | CHAR | 999999999 | 9 dígitos | - | - | Representa la ubicación exacta del local a donde llega el vehículo. |  
 | distancia_total | INT | 9999 | >0 | Kilómetros | - | Indica la distancia total en unidades específicas entre el punto de origen y el punto de destino. |  
-| tipo_ruta | CHAR | X(6) | Urbana, Rural | - | - | Clasificación que define la naturaleza y características principales de la ruta. |  
-| duracion | INT | 999 | >0 | horas | - | Representa la duración estimada de la ruta en el sistema. |  
+| tipo_ruta | CHAR | X(6) | TAB | - | - | Clasificación que define la naturaleza y características principales de la ruta. |  
+| duracion | INT | 999 | >0 | horas | ditancia_total/30 | Representa la duración estimada de la ruta en el sistema a una velocidad promedio de 30km/h. |  
+
+TAB: Tipo de ruta
+|Código|Semántica|
+|------|---------|
+|1|Urbana|
+|2|Rural|
 
 **Entidad**: Seguimiento Reclamo
 
@@ -365,17 +369,22 @@ TAB: Tipo de stock
 |2|Material|
 |3|Producto|
 
-**Entidad:** Tramo 
+**Entidad:** Paradero 
 
 Semántica: Segmento transitable de ruta entre dos locales  
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN | 
 |----------|------------|---------|------------------|--------|-------------|--------------| 
-| local_origen | CHAR | 999999999| 9 dígitos | - | - | Ubicación del local donde inicia el tramo| 
-| local_destino | CHAR | 999999999 | 9 dígitos | - | - | Ubicación del local destino del tramo | 
-| distancia | FLOAT | 9999 | >0 | Kilómetros | - | Distancia entre el punto origen y destino en kilómetros | 
-| tiempo_estimado | FLOAT| 999 | >0 | Horas | - | Tiempo estimado para recorrer el tramo | 
-| estado_tramo | CHAR| x(32) | "Disponible”, “Tráfico”, “Cerrado” | - | - | Circunstancias en las que se encuentra el tramo | 
+| cod_paradero | CHAR | 999999999| 9 dígitos | - | - | Identificador único del paradero en una ruta| 
+| paradero_tipo | INT | 9 | TAB | - | - | Identifica si el local es un punto de origen, de paso o el final de la ruta | 
+| orden | INT| 9 |>0| - | - | Identifica el orden correlativo de la parada en la ruta | 
+
+TAB: Tipo de paradero
+|Código|Semántica|
+|------|---------|
+|1|Origen|
+|2|Paradero|
+|3|Destino|
 
 **Entidad**: Transportista  
 
@@ -496,8 +505,8 @@ TAB: Tipo de modelo del vehículo
 | Designado a | Seguimiento Reclamo | N | Cliente Interno | 1 | --- | No | Cod_seguimiento_rec + cod_cliente_int |
 | Posiciona | GPS | N | Vehículo | 1 | --- | No | Cod_gps + cod_vehículo |
 | Registra | GPS | N | Ubicación | 1 | --- | No | Cod_gps + cod_ubicacion |
-| Conforma | Local | 2 | Tramo | 1 | --- | No | Cod_local + cod_tramo |
-| Conforma | Tramo | N | Ruta | 1 | --- | No | Cod_tramo + cod_ruta |
+| Corresponde | Paradero | 1 | Local | 1 | --- | No | Cod_paradero + cod_local |
+| Visita | Ruta | 1 | Paradero | N | --- | No | Cod_ruta + cod_paradero |
 | Sigue | Traslado | N | Ruta | 1 | --- | No | Cod_traslado +cod_ruta |
 
 ## 3. Validación del esquema utilizando las Formas Normales
