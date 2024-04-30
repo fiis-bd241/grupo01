@@ -36,6 +36,8 @@ Semántica: Persona o entidad que utiliza productos o servicios de una empresa.
 | ruc | CHAR | X(11) | Cadena de 11 caracteres alfanuméricos | - |  - | Registro Único de Contribuyente del cliente|
 | razon_social | VARCHAR | X(120)| Cadena de texto de hasta 120 caracteres | -  | - | Razón social del cliente | 
 | fecha_registro | DATE | AAAA-MM-DD | valido calendario | - | - | Fecha de registro del cliente |
+
+
 **Entidad**: Cliente_interno 
 
 Semántica: Representa un área interna de la empresa San Fernando, que puede ser un departamento, una sección o cualquier otra subdivisión dentro de la organización. 
