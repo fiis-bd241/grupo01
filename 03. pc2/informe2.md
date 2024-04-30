@@ -128,6 +128,7 @@ Semántica: Implica la representación de archivos adjuntos que respaldan o docu
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------|  
+| cod_gps | CHAR | 9999999 | NO NULL | - | - |  Fecha específica en las que el vehículo se encuentra en la ubicación |  
 | fecha_ubicacion | DATE | AAAAMMDD | NO NULL | - | - |  Fecha específica en las que el vehículo se encuentra en la ubicación |  
 | hora_ubicacion | TIME| HHMMSS | NO NULL | - | - |  Hora específica en las que el vehículo se encuentra en la ubicación | 
 
