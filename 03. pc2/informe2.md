@@ -8,7 +8,7 @@
 
 ## 2. Modelo lógico
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/771d1604-ef48-46ea-9e4b-09985b94b583"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/be4736a0-d29b-465b-bf55-7dd568f9e5ed"></p>
 
 [Modelo lógico](https://app.diagrams.net/#G1GrupzXPfoShdgRXzAIGe09sujAwB4f1J)
 
