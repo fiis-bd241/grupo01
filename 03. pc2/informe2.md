@@ -338,7 +338,6 @@ Semántica: Representa los dos tipos de pedidos que existen en el sistema.
 
 | ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
 |----------------|------------|-----------|-----------------|--------|-------------|---------------|
-
 |cod_pedido_tipo| CHAR | X(1) | 'A' , 'V' | - | - | Código que identifica el tipo de pedido.|
 |tipo_pedido| VARCHAR| X(20)| 'Abastecimiento' , 'Venta'| - | - |Descripción del tipo de pedido. | 
 
