@@ -30,32 +30,31 @@ Semántica: Persona o entidad que utiliza productos o servicios de una empresa.
 | ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN| 
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
 | cod_cliente| INT| SERIAL | Enteros positivos generados automáticamente | -  | -  | Código único que identifica al cliente. | 
-| cod_cliente_tipo | CHAR | X | Un carácter alfanumérico | -  | cliente_tipo | codigo unico que identifica al tipo de cliente |
-| cod_cliente_estado | CHAR  | X| 1 Un carácter alfanumérico | - | cliente_estado | codigo unico que identifica el estado actual del cliente en la plataforma. | 
+| cod_cliente_tipo | CHAR | X(1) | - | -  | cliente_tipo | codigo unico que identifica al tipo de cliente |
+| cod_cliente_estado | CHAR  | X(1) | - | - | cliente_estado | codigo unico que identifica el estado actual del cliente en la plataforma. | 
 | nombre | CHAR  |  X(32)  | NOT NULL  | -  | -  | Nombre de la empresa | 
 | ruc | CHAR | X(11) | Cadena de 11 caracteres alfanuméricos | - |  - | Registro Único de Contribuyente del cliente|
 | razon_social | VARCHAR | X(120)| Cadena de texto de hasta 120 caracteres | -  | - | Razón social del cliente | 
 | fecha_registro | DATE | AAAA-MM-DD | valido calendario | - | - | Fecha de registro del cliente |
 
 
-**Entidad**: Cliente_interno 
+**Entidad**: Cliente_tipo
 
-Semántica: Representa un área interna de la empresa San Fernando, que puede ser un departamento, una sección o cualquier otra subdivisión dentro de la organización. 
+Semántica: Representa la informacion sobre los dos tipos de clientes que puede tener la organización.
 
 | ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN| 
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_area | CHAR | 999999999 | 9 dígitos | -  | -  | Nombre del área interna de la empresa | 
-| nombre_area | CHAR | X(255) | NOT NULL | - | - | Nombre del área interna de la empresa | 
+| cod_cliente_tipo | CHAR | X(1) |'I' , 'E' | -  | -  | Código que identifica el tipo de cliente de manera única | 
+| tipo_cliente | VARCHAR | X(20) | 'Cliente interno' , 'Cliente externo' | - | - | Descripción del tipo de cliente al que pertenece | 
 
-**Entidad**: Cliente_externo 
+**Entidad**: Cliente_estado 
 
-Semántica: Representa a una empresa externa que interactúa con la empresa San Fernando como cliente. 
+Semántica: Representa los estados en los que se encuentra un cliente de la organización en el sistema.
 
 | Atributo | Naturaleza | Formato | Valores validos | Unidad | Derivada de | Descripción | 
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-|ruc| INT | 99999999999 | 11 dígitos |- |- | Registro Único de Contribuyente de la empresa cliente| 
-| nombre_empresa | CHAR | X(32) | NOT NULL | - | - | Nombre de la empresa cliente | 
-|razon_social| CHAR | X(32) | - | - | - | Razón  social de la empresa cliente | 
+|cod_cliente_estado | CHAR | X(1) | 'A' , 'I' |- |- | Código que identifica el estado del cliente| 
+| estado_cliente | VARCHAR | X(20) | 'Activo' , 'Inactivo' | - | - | Descripción del estado del cliente | 
 
 **Entidad:** Elemento_catalogo 
 
