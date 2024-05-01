@@ -2370,6 +2370,12 @@ alt="IMAGE ALT TEXT HERE" width="500" height="500" border="10" /></a>
 ### Módulo de Seguimiento
 Dennis Leopoldo Campos Herrera
 
+<div align="center">
+    <a href="http://www.youtube.com/watch?feature=player_embedded&v=ulZll301u2g" target="_blank">
+        <img src="http://img.youtube.com/vi/ulZll301u2g/0.jpg" alt="Hola k ase 2.0" width="700" height="400" border="10" />
+    </a>
+</div>
+
 ### Módulo de Almacén
 José Joaquín Alvarado Usucachi
 
