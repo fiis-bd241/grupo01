@@ -1044,12 +1044,15 @@ CREATE TABLE IF NOT EXISTS paradero (
 );
 
 CREATE TABLE IF NOT EXISTS stock (
- id_stock SERIAL NOT NULL PRIMARY KEY,
+ id_stock SERIAL NOT NULL,
  cod_stock CHAR(17) NOT NULL,
  id_elemento_catalogo INT NOT NULL,
  nro_lote INT NULL DEFAULT NULL,
  fecha_caducidad DATE NOT NULL,
- FOREIGN KEY (id_elemento_catalogo) REFERENCES elemento_catalogo (id_elemento_catalogo)
+ PRIMARY KEY (id_stock),
+ CONSTRAINT id_elemento_catalogo
+ FOREIGN KEY (id_elemento_catalogo)
+ REFERENCES elemento_catalogo (id_elemento_catalogo)
 );
 
 CREATE TABLE IF NOT EXISTS detalle_mercancia_stock(
