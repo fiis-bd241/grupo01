@@ -2368,11 +2368,11 @@ Integrante: [Inocente Caro Miguel Anderson](../../01.%20integrantes/Miguel%20Ino
 alt="IMAGE ALT TEXT HERE" width="500" height="500" border="10" /></a>
 
 ### Módulo de Seguimiento
-Dennis Leopoldo Campos Herrera
+Integrante: [Dennis Leopoldo Campos Herrera](https://github.com/fiis-bd241/grupo01/blob/e11964c8d98cf930b2a1f7a0ef1d839365c7b5ca/01.%20integrantes/Dennis%20Campos%20/Dennis%20Campos.md)
 
 <div align="center">
     <a href="http://www.youtube.com/watch?feature=player_embedded&v=ulZll301u2g" target="_blank">
-        <img src="http://img.youtube.com/vi/ulZll301u2g/0.jpg" alt="Hola k ase 2.0" width="700" height="400" border="10" />
+        <img src="http://img.youtube.com/vi/ulZll301u2g/0.jpg" alt="Hola k ase 2.0" width="600" height="400" border="10" />
     </a>
 </div>
 
