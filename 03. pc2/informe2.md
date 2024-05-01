@@ -2520,3 +2520,8 @@ José Joaquín Alvarado Usucachi
 Alex Espinoza Cerna
 
 [![image](https://github.com/fiis-bd241/grupo01/assets/161625149/cb6520b9-e740-4e97-bfe1-e740bd51fcf6)](https://www.youtube.com/watch?v=h2IKE750-18)
+
+### Módulo de Reclamos
+Leonardo Gustavo Cárdenas Palacios
+
+[![Almacén](https://github.com/fiis-bd241/grupo01/assets/130238034/64542abe-f7e9-48f8-b495-39fe6e28e70d)](https://www.youtube.com/watch?v=NU0QbpPnlTI)
