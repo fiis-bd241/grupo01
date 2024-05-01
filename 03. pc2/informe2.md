@@ -1874,7 +1874,7 @@ BEGIN
     SELECT id_operacion_picking
     INTO id_picking
     FROM operacion
-    WHERE id_operacion = NEW.id_operacion AND cod_tipo_operacion = 3;
+    WHERE id_operacion = NEW.id_operacion AND cod_tipo_operacion = 2;
  
     -- Consultar la fila correspondiente en la tabla operacion utilizando id_operacion_picking
     SELECT id_operacion, fecha, hora_inicio
@@ -1900,7 +1900,7 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER generar_codigo_precinto_trigger
 AFTER INSERT ON operacion
 FOR EACH ROW
-WHEN (NEW.cod_tipo_operacion = 3)
+WHEN (NEW.cod_tipo_operacion = 2)
 EXECUTE FUNCTION generar_codigo_precinto();
  
 -- Trigger para generar el código de remision
