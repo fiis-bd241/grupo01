@@ -575,7 +575,6 @@ DROP TABLE IF EXISTS empleado_cargo;
 DROP TABLE IF EXISTS local_tipo;
 DROP TABLE IF EXISTS local_region;
 DROP TABLE IF EXISTS local_distrito;
-DROP TABLE IF EXISTS stock_tipo;
 DROP TABLE IF EXISTS paradero_tipo;
 DROP TABLE IF EXISTS pedido_tipo;
 DROP TABLE IF EXISTS pedido_estado;
@@ -692,12 +691,6 @@ CREATE TABLE IF NOT EXISTS local_distrito (
  cod_local_distrito INT NOT NULL,
  descripcion VARCHAR(64),
  PRIMARY KEY (cod_local_distrito)
-);
-
-CREATE TABLE IF NOT EXISTS stock_tipo (
- id_stock_tipo INT NOT NULL,
- descripcion VARCHAR(20),
- PRIMARY KEY (id_stock_tipo)
 );
 
 CREATE TABLE IF NOT EXISTS paradero_tipo (
@@ -1039,17 +1032,14 @@ CREATE TABLE IF NOT EXISTS paradero (
 
 CREATE TABLE IF NOT EXISTS stock (
  id_stock SERIAL NOT NULL,
+ cod_stock CHAR(17) NOT NULL,
  id_elemento_catalogo INT NOT NULL,
  nro_lote INT NULL DEFAULT NULL,
- id_stock_tipo INT NOT NULL,
  fecha_caducidad DATE NOT NULL,
  PRIMARY KEY (id_stock),
  CONSTRAINT id_elemento_catalogo
  FOREIGN KEY (id_elemento_catalogo)
  REFERENCES elemento_catalogo (id_elemento_catalogo),
- CONSTRAINT id_stock_tipo
- FOREIGN KEY (id_stock_tipo)
- REFERENCES stock_tipo (id_stock_tipo)
 );
 
 CREATE TABLE IF NOT EXISTS detalle_mercancia_stock(
@@ -1377,11 +1367,6 @@ INSERT INTO transportista_estado (cod_estado_transportista,descripcion) VALUES
 INSERT INTO licencia_tipo (cod_tipo_licencia,descripcion) VALUES
  ( 'X', 'A-IIb'),
  ( 'Y', 'A-IIIb');
-
-INSERT INTO stock_tipo (id_stock_tipo, descripcion) VALUES
- (1, 'Materia prima'),
- (2, 'Material'),
- (3, 'Producto');
 
 INSERT INTO operacion_tipo (cod_tipo_operacion, descripcion) VALUES
  (1, 'Picking'),
@@ -1760,33 +1745,50 @@ INSERT INTO representante (cod_representante,num_telefono,correo_empresarial,car
   ( 8, '(+51) 945 678 901',               'luis.hernandez@delosi.com',             'Gerente de Operaciones',  8,  8),
   ( 9, '(+51) 965 123 456',     'laura.gonzalez@sanguchesdelperu.com',             'Supervisora de Compras',  9,  9),
   (10, '(+51) 954 789 012',           'carlos.ramirez@gruporokys.com',               'Gerente de Logística', 10, 10);
-  
-INSERT INTO stock (id_stock, id_elemento_catalogo, nro_lote, id_stock_tipo, fecha_caducidad) VALUES
-  ( 1,1, 123, 3, '2024-04-01'),
-  ( 2,2, 124, 3, '2024-04-02'),
-  ( 3,3, 125, 3, '2024-04-03'),
-  ( 4,4, 126, 3, '2024-04-04'),
-  ( 5,5, 127, 3, '2024-04-05'),
-  ( 6,6, 128, 3, '2024-04-06'),
-  ( 7,7, 129, 3, '2024-04-07'),
-  ( 8,8, 130, 3, '2024-04-08'),
-  ( 9,9, 131, 3, '2024-04-09'),
-  (10,1, 132, 3, '2024-04-10'),
-  (11,11, 223, 1, '2024-04-01'),
-  (12,11, 224, 1, '2024-04-02'),
-  (13,12, 225, 1, '2024-04-03'),
-  (14,12, 226, 1, '2024-04-04'),
-  (15,13, 227, 1, '2024-04-05'),
-  (16,14, 228, 1, '2024-04-06'),
-  (17,15, 229, 1, '2024-04-07'),
-  (18,16, 230, 1, '2024-04-08'),
-  (19,17, 231, 1, '2024-04-09'),
-  (20,10, 232, 3, '2024-04-10'),
-  (21, 9, 233, 3, '2024-04-11'),
-  (22, 8, 234, 3, '2024-04-12'),
-  (23, 7, 235, 3, '2024-04-13'),  
-  (24, 7, 236, 3, '2024-04-14'),  
-  (25, 7, 237, 3, '2024-04-15');  
+
+-- Trigger para generar cod_stock
+CREATE OR REPLACE FUNCTION generar_cod_stock()
+RETURNS TRIGGER AS $$
+DECLARE
+    cod_stock CHAR(17);
+BEGIN
+    cod_stock := LPAD(NEW.id_stock::TEXT, 5, '0') || '-' || LPAD(NEW.id_elemento_catalogo::TEXT, 5, '0') || '-' || LPAD(NEW.nro_lote::TEXT, 5, '0');
+    NEW.cod_stock := cod_stock;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER before_insert_stock
+BEFORE INSERT ON stock
+FOR EACH ROW
+EXECUTE FUNCTION generar_cod_stock();
+
+INSERT INTO stock (id_elemento_catalogo, nro_lote, fecha_caducidad) VALUES
+  (1, 123, '2024-04-01'),
+  (2, 124, '2024-04-02'),
+  (3, 125, '2024-04-03'),
+  (4, 126, '2024-04-04'),
+  (5, 127, '2024-04-05'),
+  (6, 128, '2024-04-06'),
+  (7, 129, '2024-04-07'),
+  (8, 130, '2024-04-08'),
+  (9, 131, '2024-04-09'),
+  (1, 132, '2024-04-10'),
+  (11, 223, '2024-04-01'),
+  (11, 224, '2024-04-02'),
+  (12, 225, '2024-04-03'),
+  (12, 226, '2024-04-04'),
+  (13, 227, '2024-04-05'),
+  (14, 228, '2024-04-06'),
+  (15, 229, '2024-04-07'),
+  (16, 230, '2024-04-08'),
+  (17, 231, '2024-04-09'),
+  (10, 232, '2024-04-10'),
+  (9, 233, '2024-04-11'),
+  (8, 234, '2024-04-12'),
+  (7, 235, '2024-04-13'),  
+  (7, 236, '2024-04-14'),  
+  (7, 237, '2024-04-15');  
 
 -- Trigger para calcular el peso total de una mercancia
  
