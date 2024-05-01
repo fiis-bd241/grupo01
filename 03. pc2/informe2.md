@@ -2359,6 +2359,14 @@ INSERT INTO evidencia (nombre_evidencia, cod_reclamo, cod_tipo_evidencia, cod_ti
 
 ## 5. Videos individuales
 
+### Módulo de pedidos
+
+Integrante: [Inocente Caro Miguel Anderson](../../01.%20integrantes/Miguel%20Inocente/Miguel-Inocente.md)
+
+<a href="https://www.youtube.com/watch?v=UmgMCh6Ru-g
+" target="_blank"><img src="http://img.youtube.com/vi/UmgMCh6Ru-g/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="500" height="500" border="10" /></a>
+
 ### Módulo de Almacén
 José Joaquín Alvarado Usucachi
 
