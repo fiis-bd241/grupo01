@@ -1208,7 +1208,7 @@ Entidades Involucradas:
 - Reclamo
 - Estado_reclamo
 
-#### Pantallas de Crear o Regitrar el Reclamo de un Cliente
+#### Pantallas de Crear o Registrar el Reclamo de un Cliente
 
 <p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/76aaf4cd-b4a2-4be4-bb6c-425372f02f1a
 "></p>
