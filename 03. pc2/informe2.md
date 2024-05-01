@@ -404,7 +404,9 @@ Semántica: Datos necesarios para la generación automática de cada reporte.
 | fecha_fin | DATE | AAAAMMDD | NO NULL | - | - | Fecha donde termina la programación |  
 
 **Entidad**: Reclamo  
+
 Semántica: Queja formal expresada por un cliente sobre un producto o servicio.  
+
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|----------------| 
 | cod_reclamo| INT| SERIAL | Enteros positivos generados automáticamente | -  | -  | Código único que identifica al reclamo. |
@@ -485,7 +487,9 @@ TAB: Tipo de ruta
 |2|Rural|
 
 **Entidad**: Seguimiento
-Semántica: Permitir el seguimiento y la gestión de casos, incidencias o eventos dentro de San Fernando.  
+
+Semántica: Entidad que registra la información del seguimiento realizado por un área para saber como proceder el reclamo presentado.
+
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|----------------| 
 | cod_seguimiento | INT| SERIAL | Enteros positivos generados automáticamente | - | - | Código único de identificación del seguimiento del reclamo|  
