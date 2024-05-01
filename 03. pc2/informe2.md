@@ -160,15 +160,51 @@ Semántica: Entidad que representa a los trabajadores de la empresa San fernando
 | fecha_contrato | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que empezó a trabajar el empleado | 
 
 **Entidad**: Evidencia  
-
 Semántica: Implica la representación de archivos adjuntos que respaldan o documentan reclamos, incidencias o eventos en un sistema o proceso.  
- 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
-|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_evidencia | CHAR | 999999999 | 9 dígitos | - | - | Código único de identificación de la evidencia |  
-| nombre_evidencia | CHAR | X(32) | - | - | - | Nombre o descripción de la evidencia. |  
-| tipo_evidencia | CHAR | X(16) | foto, video, documento, etc | - | - | Tipo de evidencia (formato del archivo).|  
-| tipo_archivo | CHAR | X(4) | jpg, png, mp4, pdf, etc | - | - | Tipo de archivo asociado a la evidencia.|  
+|----------------|------------|-----------|-----------------|--------|-------------|----------------| 
+| cod_evidencia | INT| SERIAL | Enteros positivos generados automáticamente | -  | -  | Código único de identificación de la evidencia |  
+| cod_reclamo| INT| X | NOT NULL| - | reclamo | Código único que identifica al reclamo. |
+| cod_tipo_evidencia | CHAR| X(1) | TAB | - | - | Código único que identifica al tipo de evidencia. |
+| cod_tipo_archivo| INT| 99 | TAB | - | - | Código único que identifica al tipo de archivo. |
+| nombre_evidencia | VARCHAR | X(60) | - | - | - | Nombre o descripción de la evidencia. |  
+
+TAB: Tipo de evidencia
+|Código|Descripción|
+|------|---------|
+|C|Captura de pantalla|
+|D|Documento|
+|E|Escaneo|
+|F|Fotografía|
+|G|Grabación de audio|
+|T|Testimonio escrito|
+|V|Video|
+
+TAB: Tipo de evidencia
+|Código|Descripción|
+|------|---------|
+|1|AAC|
+|2|AVI|
+|3|BMP|
+|4|CSV|
+|5|DOCX|
+|6|FLAC|
+|7|GIF|
+|8|JPG|
+|9|MKV|
+|10|MOV|
+|11|MP3|
+|12|MP4|
+|13|OGG|
+|14|PDF|
+|15|PNG|
+|16|PPTX|
+|17|RTF|
+|18|TIFF|
+|19|TXT|
+|20|WAV|
+|21|WMV|
+|22|XLSX|
 
  **Entidad**: GPS  
 
@@ -368,17 +404,45 @@ Semántica: Datos necesarios para la generación automática de cada reporte.
 | fecha_fin | DATE | AAAAMMDD | NO NULL | - | - | Fecha donde termina la programación |  
 
 **Entidad**: Reclamo  
-
 Semántica: Queja formal expresada por un cliente sobre un producto o servicio.  
-
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
-|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_reclamo | CHAR| 999999999 | 9 dígitos | - | - | Código único que identifica el reclamo.|  
-| tipo_reclamo | CHAR| X(32) | - | - | - | Tipo de reclamo, puede ser de diferentes categorías, como técnico, operativo, etc.|  
-| nivel_urgencia | CHAR | X(32) | 1 (Baja), 2 (Media), 3 (Alta) | - | - | Nivel de urgencia del reclamo, indicando la prioridad con la que debe ser atendido.|  
-| estado_reclamo | CHAR| X(16)| Pendiente, En Proceso, Resuelto, Cerrado | - | - | Estado actual del reclamo.|  
-| comentario | CHAR| X(128) | - | - | - | Comentario detallado sobre el reclamo, describiendo el problema o situación reportada.|  
-| fecha_incidente | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que el cliente encontró el problema/incidente. Puede ser el código único de la fecha. |  
+|----------------|------------|-----------|-----------------|--------|-------------|----------------| 
+| cod_reclamo| INT| SERIAL | Enteros positivos generados automáticamente | -  | -  | Código único que identifica al reclamo. |
+| cod_representante | INT | X | NOT NULL   | - | representante | Código del representante asociado al pedido |
+| cod_pedido| INT| X | NOT NULL| - | pedido | Código único que identifica al pedido. |
+| cod_seguimiento| INT| X | NOT NULL| - | seguimiento | Código único que identifica al seguimiento. |
+| cod_tipo_reclamo| CHAR | X(1) | TAB| - | - | Código único que identifica al tipo de reclamo. |
+| cod_nivel_urgencia| CHAR| X(1) | TAB| - | -| Código único que identifica el nivel de urgencia de un reclamo. |
+| cod_estado_reclamo| CHAR| X(1) | TAB| - | - | Código único que identifica al estado de un reclamo. |
+| comentario | CHAR| X(200) | - | - | - | Comentario detallado sobre el reclamo, describiendo el problema o situación reportada.|  
+| fecha_reclamo | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que se registra el reclamo en el sistema. |  
+| fecha_suceso | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que el cliente encontró el problema/incidente. |  
+
+TAB: Estado del reclamo
+|Código|Descripción|
+|------|---------|
+|A|Pendiente|
+|B|En Proceso|
+|C|Resuelto|
+|D|Rechazado|
+
+TAB: Tipo del reclamo
+|Código|Descripción|
+|------|---------|
+|A|Productos en mal estado o de calidad inferior|
+|B|Cantidad incorrecta de productos recibidos|
+|C|Productos incorrectos o diferentes a los solicitados|
+|D|Embalaje inadecuado que afecta la frescura o la calidad de los productos|
+|E|Retraso en la entrega del pedido|
+|F|Problemas con la facturación o el proceso de pago
+|G|Problemas relacionados con la limpieza, higiene o seguridad de los productos|
+
+TAB: Nivel de Urgencia
+|Código|Descripción|
+|------|---------|
+|B|Baja|
+|M|Media|
+|A|Alta|
 
 **Entidad**: Reporte  
 
@@ -420,17 +484,24 @@ TAB: Tipo de ruta
 |1|Urbana|
 |2|Rural|
 
-**Entidad**: Seguimiento Reclamo
-
+**Entidad**: Seguimiento
 Semántica: Permitir el seguimiento y la gestión de casos, incidencias o eventos dentro de San Fernando.  
-
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
-|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+|----------------|------------|-----------|-----------------|--------|-------------|----------------| 
+| cod_seguimiento | INT| SERIAL | Enteros positivos generados automáticamente | - | - | Código único de identificación del seguimiento del reclamo|  
+| cod_cliente_interno| INT| X | NOT NULL | -  | cliente  | Código único que identifica al área a quien se le va a designar el seguimiento del reclamo. |
+| cod_tipo_accion | CHAR| X(1) | TAB | - | - | Código único que identifica al tipo de acción realizada por el área designada respecto al reclamo. |
+| comentario | CHAR | X(250) | - | - | - |Comentario o descripción detallada del seguimiento del reclamo |  
+| fecha_resolucion | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que se espera resolver el reclamo |
 | numero_caso | INT | 9999 | >0 | - | - | Número de caso asociado al seguimiento (Cola) de reclamos |  
-| tipo_accion | CHAR | X(150) | - | - | - | Tipo de acción realizada en el seguimiento del reclamo|  
-| area_responsable | CHAR | X(10) | - | - | - | Área responsable del seguimiento de la queja |  
-| comentario | CHAR | X(200) | - | - | - |Comentario o descripción detallada del seguimiento del reclamo |  
-| fecha_resolucion | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que se espera resolver el reclamo | 
+
+TAB: Tipo de acción
+|Código|Descripción|
+|------|---------|
+|I|Investigación|
+|E|Evaluación|
+|R|Resarcimiento|
+|C|Corrección|
 
 **Entidad:** Stock  
 
