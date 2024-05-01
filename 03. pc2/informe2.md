@@ -633,10 +633,23 @@ CREATE TABLE IF NOT EXISTS vehiculo_modelo (
  PRIMARY KEY (cod_vehiculo_modelo)
 );
 
+CREATE TABLE IF NOT EXISTS elemento_produccion (
+ id_elemento_produccion INT NOT NULL PRIMARY KEY,
+ descripcion VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS segmento (
+ id_segmento INT NOT NULL PRIMARY KEY,
+ descripcion VARCHAR(25) NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS elemento_catalogo_tipo (
- id_elemento_catalogo_tipo INT NOT NULL,
+ id_elemento_catalogo_tipo INT NOT NULL PRIMARY KEY,
+ id_elemento_produccion INT NOT NULL,
+ id_segmento INT NOT NULL,
  descripcion VARCHAR(30) NOT NULL,
- PRIMARY KEY (id_elemento_catalogo_tipo)
+ FOREIGN KEY (id_elemento_produccion) REFERENCES elemento_produccion (id_elemento_produccion),
+ FOREIGN KEY (id_segmento) REFERENCES segmento (id_segmento)
 );
 
 CREATE TABLE IF NOT EXISTS elemento_catalogo_unidad (
@@ -1031,15 +1044,12 @@ CREATE TABLE IF NOT EXISTS paradero (
 );
 
 CREATE TABLE IF NOT EXISTS stock (
- id_stock SERIAL NOT NULL,
+ id_stock SERIAL NOT NULL PRIMARY KEY,
  cod_stock CHAR(17) NOT NULL,
  id_elemento_catalogo INT NOT NULL,
  nro_lote INT NULL DEFAULT NULL,
  fecha_caducidad DATE NOT NULL,
- PRIMARY KEY (id_stock),
- CONSTRAINT id_elemento_catalogo
- FOREIGN KEY (id_elemento_catalogo)
- REFERENCES elemento_catalogo (id_elemento_catalogo),
+ FOREIGN KEY (id_elemento_catalogo) REFERENCES elemento_catalogo (id_elemento_catalogo)
 );
 
 CREATE TABLE IF NOT EXISTS detalle_mercancia_stock(
@@ -1325,25 +1335,36 @@ INSERT INTO elemento_catalogo_unidad (cod_unidad, descripcion) VALUES
  (15, 'Barril'),
  (16, 'Galón');
 
-INSERT INTO elemento_catalogo_tipo (id_elemento_catalogo_tipo, descripcion) VALUES
- (11, 'Especias y condimentos'),
- (12, 'Aditivos alimentarios'),
- (13, 'Aceites y grasas'),
- (14, 'Harinas'),
- (15, 'Huevos'),
- (16, 'Conservantes'),
- (17, 'Colorantes'),
- (18, 'Emulsionantes'),
- (19, 'Otras materias primas'),
- (21, 'Herramientas'),
- (22, 'Repuestos'),
- (23, 'Químicos'),
- (24, 'Detergentes industriales'),
- (25, 'Etiquetas'),
- (26, 'Otros materiales'),
- (31, 'Pollo congelado'),
- (32, 'Pollo fresco'),
- (33, 'Saborizado');
+INSERT INTO elemento_produccion (id_elemento_produccion, descripcion) VALUES
+ (1, 'Materia prima'),
+ (2, 'Material'),
+ (3, 'Producto');
+
+INSERT INTO segmento (id_segmento, descripcion) VALUES
+ (1, 'Materiales peligrosos'),
+ (2, 'Suministros y repuestos'),
+ (3, 'Insumos y etiquetas'),
+ (4, 'No aplica');
+
+INSERT INTO elemento_catalogo_tipo (id_elemento_catalogo_tipo, id_elemento_produccion, id_segmento, descripcion) VALUES
+ (11, 1, 3, 'Especias y condimentos'),
+ (12, 1, 3, 'Aditivos alimentarios'),
+ (13, 1, 3, 'Aceites y grasas'),
+ (14, 1, 3, 'Harinas'),
+ (15, 1, 3, 'Huevos'),
+ (16, 1, 3, 'Conservantes'),
+ (17, 1, 3, 'Colorantes'),
+ (18, 1, 3, 'Emulsionantes'),
+ (19, 1, 3, 'Otras materias primas'),
+ (21, 2, 2, 'Herramientas'),
+ (22, 2, 2, 'Repuestos'),
+ (23, 2, 1, 'Químicos'),
+ (24, 2, 1, 'Detergentes industriales'),
+ (25, 2, 3, 'Etiquetas'),
+ (26, 2, 2, 'Otros materiales'),
+ (31, 3, 4, 'Pollo congelado'),
+ (32, 3, 4, 'Pollo fresco'),
+ (33, 3, 4, 'Saborizado');
 
 INSERT INTO ruta_tipo (cod_ruta_tipo,descripcion) VALUES
  ( 1, 'Urbana'),
