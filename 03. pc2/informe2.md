@@ -2423,6 +2423,75 @@ INSERT INTO evidencia (nombre_evidencia, cod_reclamo, cod_tipo_evidencia, cod_ti
 
 ```
 
+### Prototipo de pedidos
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/8b9b2412-c462-4ba8-9dba-23bdddde411f)
+
+``` sql
+SELECT p.dni, p.prenombre, p.primer_apellido, p.segundo_apellido, 
+       r.num_telefono, r.correo_empresarial, r.cargo,
+       c.nombre, c.ruc, c.razon_social, ct.tipo_cliente
+FROM representante r
+INNER JOIN cliente c ON r.cod_cliente = c.cod_cliente
+INNER JOIN persona p ON r.cod_persona = p.cod_persona
+INNER JOIN cliente_tipo ct ON c.cod_cliente_tipo = ct.cod_cliente_tipo;
+
+```
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/3d937cda-01e6-4015-9c16-30da1f4c11ed)
+
+``` sql
+SELECT c.cod_cliente, c.nombre, c.ruc, c.razon_social, 
+       r.cod_representante, r.num_telefono, r.correo_empresarial, r.cargo,
+       p.cod_pedido, p.fecha_registro, 
+       t.cod_ticket, t.fecha_entrega,
+       ec.id_elemento_catalogo, ec.nombre, dtp.cantidad
+FROM cliente c
+INNER JOIN representante r ON c.cod_cliente = r.cod_cliente
+INNER JOIN pedido p ON r.cod_representante = p.cod_representante
+INNER JOIN ticket t ON p.cod_ticket = t.cod_ticket
+INNER JOIN detalle_ticket_producto dtp ON t.cod_ticket = dtp.cod_ticket
+INNER JOIN elemento_catalogo ec ON dtp.id_elemento_catalogo = ec.id_elemento_catalogo;
+
+```
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/2b7d378e-1114-42fb-8bfc-1a988b3b565e)
+
+
+``` sql
+SELECT p.cod_pedido, p.fecha_registro, t.fecha_entrega, r.cod_representante,
+       pes.estado_pedido, s.cod_seguimiento,
+       e.cod_empleado, CONCAT(pe.primer_apellido, ' ', pe.segundo_apellido, ' ', pe.prenombre) AS nombre_empleado,
+	   CONCAT(pe.prenombre, ' ', pe.primer_apellido, ' ', pe.segundo_apellido) AS nombre_representante
+		
+FROM pedido p
+INNER JOIN representante r ON p.cod_representante = r.cod_representante
+INNER JOIN pedido_estado pes ON p.cod_pedido_estado = pes.cod_pedido_estado
+INNER JOIN ticket t ON p.cod_ticket = t.cod_ticket
+INNER JOIN seguimiento s ON p.cod_pedido = s.numero_caso
+INNER JOIN empleado e ON p.cod_empleado = e.cod_empleado
+INNER JOIN persona pe ON e.cod_persona = pe.cod_persona;
+
+```
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/d641e284-3424-4ebc-b8b1-50eb7a18e424)
+
+``` sql
+SELECT 
+    p.cod_pedido, 
+    p.fecha_registro,
+    pe.prenombre, 
+    pe.primer_apellido, 
+    pe.segundo_apellido,
+    ec.descripcion AS cargo
+FROM pedido p
+INNER JOIN representante r ON p.cod_representante = r.cod_representante
+INNER JOIN empleado e ON p.cod_empleado = e.cod_empleado
+INNER JOIN persona pe ON e.cod_persona = pe.cod_persona
+INNER JOIN empleado_cargo ec ON e.cod_empleado_cargo = ec.cod_empleado_cargo;
+
+```
+
 ## 5. Videos individuales
 
 ### Módulo de pedidos
