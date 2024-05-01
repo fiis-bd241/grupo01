@@ -37,7 +37,6 @@ Semántica: Persona o entidad que utiliza productos o servicios de una empresa.
 | razon_social | VARCHAR | X(120)| Cadena de texto de hasta 120 caracteres | -  | - | Razón social del cliente | 
 | fecha_registro | DATE | AAAA-MM-DD | valido calendario | - | - | Fecha de registro del cliente |
 
-
 **Entidad**: Cliente_tipo
 
 Semántica: Representa la informacion sobre los dos tipos de clientes que puede tener la organización.
@@ -60,26 +59,20 @@ Semántica: Representa los estados en los que se encuentra un cliente de la orga
 
 Semántica: Representa la relacion que asocia los tickets con los traslados correspondientes.
 
-
 | ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
 |----------------|------------|-----------|-----------------|--------|-------------|---------------|
 |id_traslado| INT | X | NOT NULL | - | traslado | Identificador del traslado asociado al ticket.|
 |codigo_ticket| INT| X | NOT NULL| - | ticket |Código del ticket asociado al traslado. | 
 
-
 **Entidad**: detalle_ticket_producto
 
 Semántica: Representa los detalles de los productos asociados a cada ticket
-
 
 | ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
 |----------------|------------|-----------|-----------------|--------|-------------|---------------|
 |cod_ticket| INT | X | NOT NULL | - | ticket | Código del ticket al que pertenece este detalle.|
 |id_elemento_catalogo| INT| X | NOT NULL| - | elemento_catalogo |Identificador del elemento del catálogo (producto). | 
 |cantidad| INT | 999 | Números enteros positivos mayores que cero. | - | - | Cantidad del producto en este detalle de ticket. |
-
-
-
 
 **Entidad:** Elemento_catalogo 
 
@@ -604,8 +597,7 @@ TAB: Tipo de modelo del vehículo
 | Visita | Ruta | 1 | Paradero | N | --- | No | Cod_ruta + cod_paradero |
 | Sigue | Traslado | N | Ruta | 1 | --- | No | Cod_traslado +cod_ruta |
 
-## 3. Validación del esquema utilizando las Formas Normales
-## 4. Creación de tablas y poblamiento de datos
+## 3. Creación de tablas y poblamiento de datos
 
 ```sql
 DROP TABLE IF EXISTS reporte;
