@@ -1177,66 +1177,65 @@ Entidades involucradas:
 
 #### Pantalla Principal
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/0a80b13a-7b1e-4bc4-85ec-191fbd589fcf"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/9c1efe3a-53a9-4c79-976c-2e318365dda9"></p>
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/a5f52099-5d42-4cc9-b0ee-05dde22fa572"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/604d3a42-835f-4150-8a74-8711842dfe7c"></p>
 
 Entidades Involucradas:
 - Reclamo
-- Cliente
-- Cliente Interno
-- Cliente Externo
-
-#### Pantallas de Crear Reclamo de Cliente Interno
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/c2f43051-d0bb-4d39-a5b0-2b953c7f9c16"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/9fef7f12-466e-4a03-b6ea-c769ab700640"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/b6ff9845-39f9-4e73-9ee2-16bdb016f749"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/7a6bd1f1-494e-43c2-8e9b-2491286c038b"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/d21db883-c515-4f2e-800f-ba75c587a550"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/6742ef99-e2d6-4106-bc2b-dee30bdafce7"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/9fd3d7ce-c3ff-410a-a6f2-9f50afeb7fe6"></p>
-
-Entidades Involucradas:
-- Cliente
-- Cliente Interno
+- Estado_reclamo
 - Representante
-- Pedido
-- Reclamo
-- Evidencia
-- Seguimiento Reclamo
+- Cliente
+- Cliente_tipo
+- Reclamo_tipo
+- Seguimiento
 
-#### Pantallas de Crear Reclamo de Cliente Externo
+#### Pantalla de Visor de Reclamo
 
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/1e57978b-2aba-4fa5-a26d-ac3a4375c357"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/7f5d7bf1-0108-4b2f-b6e5-35959e933b8c"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/8b1a6ff5-bbde-4ef0-a437-02a6e11f45a5"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/5d95728b-f6ab-449b-919a-90c0fd90aa88"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/d912d7c6-32e3-4306-9c7a-a80bae940abc"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/635b40a4-2d96-4135-9acc-4a0e4c564956"></p>
-
-<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/ebea0333-9c8b-43fe-8aba-55d5b4f75daf"></p>
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/c3c70195-a4af-43f0-8da5-b865dce6aa19"></p>
 
 Entidades Involucradas:
-- Cliente
-- Cliente Externo
-- Cliente Interno
+
+- Persona
 - Representante
+- Cliente
+- Ticket
 - Pedido
-- Reclamo
 - Evidencia
-- Seguimiento Reclamo
+- Cliente_tipo
+- Reclamo_tipo
+- Seguimiento
+- Reclamo
+- Estado_reclamo
+
+#### Pantallas de Crear o Regitrar el Reclamo de un Cliente
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/76aaf4cd-b4a2-4be4-bb6c-425372f02f1a
+"></p>
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/ef3faac0-a5ec-4d4a-89de-46bd954fb732"></p>
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/154a535c-0c6d-4d6d-afd9-b94fc5775345"></p>
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/f3ff6da2-d23a-475b-bedf-bd24a47d3d4c"></p>
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/94a1f437-0ff4-4eb9-952f-c1db9e3594aa"></p>
+
+<p align="center" width="90%"><img width="90%" src="https://github.com/fiis-bd241/grupo01/assets/130238034/b1878d03-f029-428d-96f7-5534caddb825"></p>
+
+Entidades Involucradas:
+
+- Persona
+- Representante
+- Cliente
+- Ticket
+- Pedido
+- Evidencia
+- Cliente_tipo
+- Reclamo_tipo
+- Seguimiento
+- Reclamo
+- Estado_reclamo
 
 [Prototipo en Figma](https://www.figma.com/file/kZLR8sf4PPRQyQf9dsDxDp/PROTOTIPO-DE-RECLAMOS?type=design&node-id=0-1&mode=design&t=7KtYyZiyPe04xOE2-0)
 
