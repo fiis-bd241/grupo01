@@ -56,6 +56,31 @@ Semántica: Representa los estados en los que se encuentra un cliente de la orga
 |cod_cliente_estado | CHAR | X(1) | 'A' , 'I' |- |- | Código que identifica el estado del cliente| 
 | estado_cliente | VARCHAR | X(20) | 'Activo' , 'Inactivo' | - | - | Descripción del estado del cliente | 
 
+**Entidad**: detalle_ticket_traslado
+
+Semántica: Representa la relacion que asocia los tickets con los traslados correspondientes.
+
+
+| ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
+|----------------|------------|-----------|-----------------|--------|-------------|---------------|
+|id_traslado| INT | X | NOT NULL | - | traslado | Identificador del traslado asociado al ticket.|
+|codigo_ticket| INT| X | NOT NULL| - | ticket |Código del ticket asociado al traslado. | 
+
+
+**Entidad**: detalle_ticket_producto
+
+Semántica: Representa los detalles de los productos asociados a cada ticket
+
+
+| ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
+|----------------|------------|-----------|-----------------|--------|-------------|---------------|
+|cod_ticket| INT | X | NOT NULL | - | ticket | Código del ticket al que pertenece este detalle.|
+|id_elemento_catalogo| INT| X | NOT NULL| - | elemento_catalogo |Identificador del elemento del catálogo (producto). | 
+|cantidad| INT | 999 | Números enteros positivos mayores que cero. | - | - | Cantidad del producto en este detalle de ticket. |
+
+
+
+
 **Entidad:** Elemento_catalogo 
 
 Semántica: Representa los productos ofrecidos por San Fernando.  
@@ -262,17 +287,43 @@ TAB: Tipo de operación
 |6|Recepción|
 |7|Descarga|
 
- **Entidad**: Pedido  
+**Entidad**: pedido
 
-Semántica: La entidad que representa las solicitudes de compra o de suministros realizadas por la empresa San Fernando.  
+Semántica:  
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+| ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN| 
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_pedido | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del pedido. |  
-| descripcion | CHAR | X(32) | - | - | - | Descripcion detallada del pedido |  
-| fecha_registro | DATE | AAAAMMDD | NO NULL | - | - | Fecha de registro del pedido |  
-| tipo_pedido | CHAR | X(32) | - | - | - | Tipología del pedido registrado. |  
-| estado_pedido | CHAR | X(32) | "Pendiente", "En proceso", "Entregado", "Cancelado" | - | - | Indica el estado actual del pedido. |  
+| cod_pedido| INT| SERIAL | Enteros positivos generados automáticamente | -  | -  | Código único que identifica al pedido. | 
+| cod_representante | INT |  X  | NOT NULL   | -  | representante | Código del representante asociado al pedido |
+| cod_empleado | INT  | X| NOT NULL | - | empleado | Código del empleado asociado al pedido. | 
+| cod_pedido_tipo | CHAR  |  X(1)| NOT NULL  | -  | pedido_tipo  | Código del tipo de pedido. | 
+| cod_pedido_estado | CHAR | X(1) | NOT NULL | - |  pedido_estado | Código del estado del pedido.|
+| fecha_registro| DATE |AAAA-MM-DD| valor valido calendario | -  | - | Fecha de registro del pedido. | 
+| cod_ticket | INT | X | NOT NULL | - | ticket | Código del ticket asociado al pedido. |
+
+
+**Entidad**: pedido_tipo
+
+Semántica: Representa los dos tipos de pedidos que existen en el sistema.
+
+
+| ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
+|----------------|------------|-----------|-----------------|--------|-------------|---------------|
+
+|cod_pedido_tipo| CHAR | X(1) | 'A' , 'V' | - | - | Código que identifica el tipo de pedido.|
+|tipo_pedido| VARCHAR| X(20)| 'Abastecimiento' , 'Venta'| - | - |Descripción del tipo de pedido. | 
+
+
+**Entidad**: pedido_estado
+
+Semántica: Representa los diferentes estados que se encuentra el pedido en el sistema.
+
+
+| ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
+|----------------|------------|-----------|-----------------|--------|-------------|---------------|
+|cod_pedido_estado| CHAR | X(1) | 'A' , 'R' , 'P' , 'F' | - | - | Código que identifica el estado del pedido.|
+|estado_pedido| VARCHAR| X(20)| 'Aceptado', 'Rechazado', 'En proceso', 'Finalizado'| - | - |Descripción del estado del pedido. | 
+
 
 **Entidad**: Persona  
 
@@ -350,13 +401,14 @@ Semántica: Representación de registros que documentan incidentes, eventos o pr
 
 Semántica: Persona que actúa en nombre de una empohraresa o entidad en particular.  
 
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|  
-|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_representante | CHAR | 999999999| 9 dígitos | - | - | Código único que identifica al representante.|  
-| tipo_representante | INT |999999999| 9 dígitos | Interno, Externo | - | Indica el tipo de representante.| 
-| cargo | CHAR | X(32) | Cargo 1, Cargo 2, Cargo 3, ... | - | - | Cargo o posición del representante en la empresa.|  
-| correo_empresarial | CHAR | X(32) | - | - | - | Correo de contacto del representante en la empresa.|  
-| nro_telefono | INT |999999999| 9 dígitos | - | - | Número de contacto del representante en la empresa.|  
+| ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
+|----------------|------------|-----------|-----------------|--------|-------------|---------------|
+|cod_representante| INT| SERIAL |  Valor numérico autoincremental | - | - |Identificador único del representante.|
+|cod_cliente |  INT | X | NOT NULL | - | cliente | Código del cliente al que representa. |
+|cod_persona | INT | X | NOT NULL | - | persona | Código de la persona que es el representante.|
+|num_telefono | VARCHAR | x(20) | Caracteres alfanumericos| - | -| Número de teléfono del representante.|
+correo_empresarial | VARCHAR | X(50)| Cadena de 50 caracteres alfanuméricos| -| -| Correo electrónico empresarial del representante. |
+|cargo| VARCHAR | X(40) | Cadena de 40 caracteres alfanuméricos| - | - |Cargo que ocupa el representante en la empresa cliente. |
 
 **Entidad**: Ruta  
 
@@ -457,6 +509,18 @@ Semántica: Entidad que representa los movimientos de mercancía realizados tant
 | id_operacion_inicia | INT | 9999999999 | NO NULL | - | - | Identificador único de la operación tipo ¨Salida¨ mediante la cual se inicia el traslado. |
 | id_operacion_termina | INT | 9999999999 | - | - | - | Identificador único de la operación tipo ¨Recepción¨ mediante la cual se finaliza el traslado. |
 | cod_guia_remision | CHAR | X(21) | 21 caracteres | - | - | Identificador único de la guía de remisión asociada al evento del traslado. |
+
+
+**Entidad**: ticket
+
+Semántica: Representa informacion sobre el ticket relacionado con el pedido dentro del sistema.
+
+
+| ATRIBUTO | NATURALEZA | FORMATO| VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN|
+|----------------|------------|-----------|-----------------|--------|-------------|---------------|
+|cod_ticket| INT | SERIAL | Valor numérico autoincremental | - | - | Código único que identifica al ticket.|
+|fecha_entrega| DATE| AAAA-MM-DD| valido calendario| - | - |Fecha de entrega del pedido asociado al ticket. | 
+
 
 **Entidad**: Ubicación  
 
