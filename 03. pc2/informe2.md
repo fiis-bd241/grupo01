@@ -2367,6 +2367,9 @@ Integrante: [Inocente Caro Miguel Anderson](../../01.%20integrantes/Miguel%20Ino
 " target="_blank"><img src="http://img.youtube.com/vi/UmgMCh6Ru-g/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="500" height="500" border="10" /></a>
 
+### Módulo de Seguimiento
+Dennis Leopoldo Campos Herrera
+
 ### Módulo de Almacén
 José Joaquín Alvarado Usucachi
 
