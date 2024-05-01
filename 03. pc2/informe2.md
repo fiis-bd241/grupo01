@@ -845,8 +845,8 @@ CREATE TABLE IF NOT EXISTS vehiculo (
  fecha_ultimo_mantenimiento DATE NOT NULL,
  fecha_ultimo_viaje DATE NOT NULL,
  capacidad_carga FLOAT NOT NULL CHECK (capacidad_carga > 0),
- cod_vehiculo_modelo CHAR(1) NOT NULL, /* FALTA */
- placa CHAR(7) NOT NULL, /* CAMBIO */
+ cod_vehiculo_modelo CHAR(1) NOT NULL,
+ placa CHAR(7) NOT NULL,
  PRIMARY KEY (cod_vehiculo),
  CONSTRAINT cod_vehiculo_estado
  FOREIGN KEY (cod_vehiculo_estado)
@@ -877,8 +877,8 @@ CREATE TABLE IF NOT EXISTS elemento_catalogo (
 
 CREATE TABLE IF NOT EXISTS ruta (
  cod_ruta SERIAL NOT NULL,
- distancia_total FLOAT NOT NULL CHECK (distancia_total > 0), /* CAMBIO */
- cod_ruta_tipo INT NOT NULL, /* FALTA */
+ distancia_total FLOAT NOT NULL CHECK (distancia_total > 0),
+ cod_ruta_tipo INT NOT NULL,
  duracion FLOAT NOT NULL CHECK (duracion > 0),
  PRIMARY KEY (cod_ruta),
  CONSTRAINT cod_ruta_tipo
@@ -932,7 +932,7 @@ CREATE TABLE IF NOT EXISTS operacion (
  fecha DATE NOT NULL,
  hora_inicio TIME NOT NULL,
  hora_fin TIME NOT NULL,
- cod_tipo_operacion INT NOT NULL, /* FALTA */
+ cod_tipo_operacion INT NOT NULL,
  PRIMARY KEY (id_operacion),
  CONSTRAINT cod_empleado_ejecutor
  FOREIGN KEY (cod_empleado_ejecutor)
