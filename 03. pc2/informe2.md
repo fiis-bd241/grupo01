@@ -180,7 +180,7 @@ TAB: Tipo de evidencia
 |T|Testimonio escrito|
 |V|Video|
 
-TAB: Tipo de evidencia
+TAB: Tipo de archivo
 |Código|Descripción|
 |------|---------|
 |1|AAC|
