@@ -59,43 +59,50 @@ Semántica: Representa a una empresa externa que interactúa con la empresa San 
 
 **Entidad:** Elemento_catalogo 
 
-Semántica: Representa los productos ofrecidos por sanfernando  
+Semántica: Representa los productos ofrecidos por San Fernando.  
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN | 
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_elemento_catalogo | CHAR | 999999999 | 9 dígitos | --  | --  | Identificador del elemento en el catálogo. | 
-| nombre | CHAR | X(32) | NO NULL  | - | - | Nombre del elemento en el catálogo. |
-| categoría | INT  | 99 | NO NULL | TAB  | - | Es la forma de categorizar los elementos | 
-| segmento | INT  | 9 | NO NULL | TAB  | - | Es la segmentación del material y las materias primas |
-| descripcion | CHAR| X(256) | NO NULL | -  | - | Descripción del elemento en el catálogo. | 
-| unidad  | CHAR  | X(32) | NO NULL | -  | - | Unidad de medida del elemento en el catálogo. | 
+| id_elemento_catalogo | INT | 999999999 | NO NULL | --  | --  | Identificador del elemento en el catálogo. | 
+| id_elemento_catalogo_tipo | INT  | 99 | NO NULL | TAB  | - | Es la forma de categorizar los elementos |
+| nombre | CHAR | X(128) | NO NULL  | - | - | Nombre del elemento en el catálogo. |
+| unidad  | INT  | 99 | NO NULL | TAB  | - | Unidad de medida del elemento en el catálogo. | 
+| peso_unitario | FLOAT |  | NO NULL | - | - | Peso en gramos de una existencia del elemento. |
 | temperatura_maxima | INT | 999 | - | Grados Celsius | - | Temperatura máxima permitida para la materia prima | 
-| temperatura_mínima | INT | 999 | - | Grados Celsius | - | Temperatura mínima permitida para la materia prima |
+| temperatura_minima | INT | 999 | - | Grados Celsius | - | Temperatura mínima permitida para la materia prima |
 | vida_util | INT | 999 | - | Días | - | Vida útil de la materia prima | 
-| peso_unitario | CHAR | X(64) | - | - | - | Segmento al que pertenece el material en el catálogo|
+| descripcion | CHAR| X(256) | NO NULL | -  | - | Descripción del elemento en el catálogo. | 
 
 TAB: Categoría de elemento
-<table>
-  <tr><th>Valor</th><th>Categoría</th><th>Descripción</th></tr>
-  <tr><td>11</td><td rowspan="9">Materia Prima</td><td>Especias y condimentos</td></tr>
-  <tr><td>12</td><td>Aditivos alimentarios</td></tr>
-  <tr><td>13</td><td>Aceites y grasas</td></tr>
-  <tr><td>14</td><td>Harinas</td></tr>
-  <tr><td>15</td><td>Huevos</td></tr>
-  <tr><td>16</td><td>Conservantes</td></tr>
-  <tr><td>17</td><td>Colorantes</td></tr>
-  <tr><td>18</td><td>Emulsionantes</td></tr>
-  <tr><td>19</td><td>Otras materias primas</td></tr>
-  <tr><td>21</td><td rowspan="6">Material</td><td>Herramientas</td></tr>
-  <tr><td>22</td><td>Repuestos</td></tr>
-  <tr><td>23</td><td>Químicos</td></tr>
-  <tr><td>24</td><td>Detergentes industriales</td></tr>
-  <tr><td>25</td><td>Etiquetas</td></tr>
-  <tr><td>26</td><td>Otros materiales</td></tr>
-  <tr><td>31</td><td rowspan="3">Producto</td><td>Pollo congelado</td></tr>
-  <tr><td>32</td><td>Pollo fresco</td></tr>
-  <tr><td>33</td><td>Saborizado</td></tr>
-</table>
+| Categoría                 | Tipo                   | Segmento    | Descripción           |
+|---------------------------|------------------------|-------------|-----------------------|
+| 11                        | 1                      | 3           | Especias y condimentos|
+| 12                        | 1                      | 3           | Aditivos alimentarios|
+| 13                        | 1                      | 3           | Aceites y grasas      |
+| 14                        | 1                      | 3           | Harinas               |
+| 15                        | 1                      | 3           | Huevos                |
+| 16                        | 1                      | 3           | Conservantes          |
+| 17                        | 1                      | 3           | Colorantes            |
+| 18                        | 1                      | 3           | Emulsionantes         |
+| 19                        | 1                      | 3           | Otras materias primas|
+| 21                        | 2                      | 2           | Herramientas          |
+| 22                        | 2                      | 2           | Repuestos             |
+| 23                        | 2                      | 1           | Químicos              |
+| 24                        | 2                      | 1           | Detergentes industriales|
+| 25                        | 2                      | 3           | Etiquetas             |
+| 26                        | 2                      | 2           | Otros materiales      |
+| 31                        | 3                      | 4           | Pollo congelado       |
+| 32                        | 3                      | 4           | Pollo fresco          |
+| 33                        | 3                      | 4           | Saborizado            |
+
+TAB: Tipo de elemento
+Tipo de elemento en relación con el proceso de producción
+
+|Código|Semántica|
+|------|---------|
+|1|Materia prima|
+|2|Material|
+|3|Producto|
 
 TAB: Segmentación
 |Código|Semántica|
@@ -104,6 +111,26 @@ TAB: Segmentación
 |2|Suministros y repuestos|
 |3|Insumos y etiquetas|
 |4|No aplica|
+
+TAB: Unidad
+| Unidad     | Descripción  |
+|------------|--------------|
+| 1          | Kilogramo    |
+| 2          | Gramo        |
+| 3          | Litro        |
+| 4          | Mililitro    |
+| 5          | Metro        |
+| 6          | Centímetro   |
+| 7          | Unidad       |
+| 8          | Docena       |
+| 9          | Caja         |
+| 10         | Bolsa        |
+| 11         | Envase       |
+| 12         | Bandeja      |
+| 13         | Paquete      |
+| 14         | Saco         |
+| 15         | Barril       |
+| 16         | Galón        |
 
 **Entidad**: Empleado 
 
@@ -179,16 +206,16 @@ TAB: Tipo Local
 |3|Venta|
 |4|Distribuidora|
 
-**Entidad**: Mercancía  
+**Entidad:** Mercancía  
 
  Semántica: Representar los diferentes productos que una empresa tiene en su inventario para la venta o distribución.  
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cantidad_producto | INT | 9999 | unidades | - | - | Cantidad de productos disponibles |  
-| numero_precinto | CHAR | 999999999 | 9 dígitos | - | - | Número de precinto asociado a la mercancía |  
-| peso_total | INT | 999 | >=0 | - | - | Peso total de la mercancía |  
-| cod_operacion | CHAR | 999999999 | 9 dígitos | - | - | Identificador de la operación tipo picking que asignó las existencias a la mercancía |  
+| id_mercancia | INT | 9999 | NO NULL | - | - | Identificador de la mercancía |  
+| id_operacion_picking | INT | 9999 | NO NULL | - | - | Identificador de la operación picking asociada |  
+| nro_precinto | CHAR | X(20) | 20 dígitos | - | - | Número de precinto asociado a la mercancía |  
+| peso_total | FLOAT | 99999.99 | >=0 | - | - | Peso total de la mercancía, en gramos |    
 
  **Entidad:** Norma  
 
@@ -210,18 +237,17 @@ TAB: Tipo de Norma
 |W|ISO 9001|
 
 
-**Entidad**: Operación  
+**Entidad:** Operación  
 
 Semántica: Entidad que representa las diferentes transacciones o movimientos de mercancía que se realizan dentro de la empresa San Fernando.  
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_operacion | CHAR | 999999999 | 9 digitos | - | - | Identificador único de la operación. |
-| cod_operacion_previa | CHAR | 999999999 | 9 digitos | - | - | Identificador único de la operación previa. |
-| cod_empleado_ejecutor | CHAR | 999999999 | 9 digitos | - | - | Identificador único del empleado que ejecuta la operación. |
-| cod_empleado_supervisor | CHAR | 999999999 | 9 digitos | - | - | Identificador único del empleado que supervisó la ejecución de la operación. |
-| cod_operacion | CHAR | 999999999 | 9 digitos | - | - | Identificador único de la operación. |
-| tipo_operacion | INT | 9 | TAB | - | - | Indica el tipo de movimiento realizado en la operación. |  
+| id_operacion | INT | 999999999 | NO NULL | - | - | Identificador único de la operación. |
+| cod_operacion_picking | INT | 999999999 | - | - | - | Identificador único de la operación previa. |
+| cod_empleado_ejecutor | INT | 999999999 | NO NULL | - | - | Identificador único del empleado que ejecuta la operación. |
+| cod_empleado_supervisor | INT | 999999999 | NO NULL | - | - | Identificador único del empleado que supervisó la ejecución de la operación. |
+| cod_tipo_operacion | INT | 9 | TAB | - | - | Indica el tipo de movimiento realizado en la operación. |  
 | fecha | DATE | AAAAMMDD | NO NULL | - | - | Fecha en que la operación se realizó. |
 | hora_inicio | TIME| HHMMSS | NO NULL | - | - |  Hora en que la operación inició. | 
 | hora_fin | TIME| HHMMSS | NO NULL | - | - |  Hora en que la operación finalizó. |
@@ -362,25 +388,17 @@ Semántica: Permitir el seguimiento y la gestión de casos, incidencias o evento
 | comentario | CHAR | X(200) | - | - | - |Comentario o descripción detallada del seguimiento del reclamo |  
 | fecha_resolucion | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que se espera resolver el reclamo | 
 
-**Entidad**: Stock  
+**Entidad:** Stock  
 
-Semántica: Se refiere a la representación de los productos físicos disponibles en el inventario de una empresa en un momento dado  
+Semántica: Se refiere a la representación de los productos físicos recibidos en el inventario de un determinado elemento en catálogo y lote.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_stock | CHAR | 999999999 | - | - | - | Código único de identificación del registro de stock |
-| cod_elemento_catalogo | CHAR | 999999999 | - | - | - |  Identificador del elemento en catálogo que describe las características generales del stock |
-| cod_mercancía | CHAR | 999999999 | - | - | - | Identificador de la mercancía de la cual forma parte el stock |
-| nro_lote | INT | 999 | >=0 | - | - | Número de lote asociado al stock | 
-| tipo_stock | INT  | 9 | NO NULL | TAB  | - | Tipo de stock según su relación con el proceso de producción | 
-| fecha_caducidad | DATE | AAAAMMDD |NO NULL | - | - | Fecha en que el producto pierde su valor o propiedades |
-
-TAB: Tipo de stock
-|Código|Semántica|
-|------|---------|
-|1|Materia prima|
-|2|Material|
-|3|Producto|
+| id_stock | INT | 999999999 | NO NULL | - | - | Código único de identificación del registro de stock |
+| id_elemento_catalogo | INT | 999999999 | NO NULL | - | - |  Identificador del elemento en catálogo que describe las características generales del stock |
+| nro_lote | INT | 999 | >=0 | - | - | Número de lote asociado al stock |
+| cantidad | INT | 999999999 | >0 | - | - |  Cantidad de existencias recibidas de un determinado elemento en catálogo y lote |
+| fecha_caducidad | DATE | AAAAMMDD | - | - | - | Fecha en que el producto pierde su valor o propiedades |
 
 **Entidad:** Paradero 
 
@@ -427,18 +445,19 @@ TAB: Tipo de licencia de tranportista
 |Y|A-IIIb|
 
 
-**Entidad**: Traslado  
+**Entidad:** Traslado  
 
 Semántica: Entidad que representa los movimientos de mercancía realizados tanto dentro de la empresa San Fernando.  
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_traslado | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del traslado realizado. |
-| cod_vehiculo | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del vehículo asignado para el traslado. |
-| cod_ruta | CHAR | 9999999999 | 9 digitos | - | - | Identificador único de la ruta asignada para el traslado. |
-| cod_transportista | CHAR | 9999999999 | 9 digitos | - | - | Identificador único del transportista asignado para el traslado. |
-| cod_operacion_inicia | CHAR | 9999999999 | 9 digitos | - | - | Identificador único de la operación tipo ¨Salida¨ mediante la cual se inicia el traslado. |
-| cod_operacion_termina | CHAR | 9999999999 | 9 digitos | - | - | Identificador único de la operación tipo ¨Recepción¨ mediante la cual se finaliza el traslado. |
+| id_traslado | INT | 9999999999 | NO NULL | - | - | Identificador único del traslado realizado. |
+| cod_vehiculo | INT | 9999999999 | NO NULL | - | - | Identificador único del vehículo asignado para el traslado. |
+| cod_ruta | INT | 9999999999 | NO NULL | - | - | Identificador único de la ruta asignada para el traslado. |
+| cod_transportista | INT | 9999999999 | NO NULL | - | - | Identificador único del transportista asignado para el traslado. |
+| id_operacion_inicia | INT | 9999999999 | NO NULL | - | - | Identificador único de la operación tipo ¨Salida¨ mediante la cual se inicia el traslado. |
+| id_operacion_termina | INT | 9999999999 | - | - | - | Identificador único de la operación tipo ¨Recepción¨ mediante la cual se finaliza el traslado. |
+| cod_guia_remision | CHAR | X(21) | 21 caracteres | - | - | Identificador único de la guía de remisión asociada al evento del traslado. |
 
 **Entidad**: Ubicación  
 
