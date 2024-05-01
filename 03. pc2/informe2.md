@@ -2371,3 +2371,11 @@ alt="IMAGE ALT TEXT HERE" width="500" height="500" border="10" /></a>
 José Joaquín Alvarado Usucachi
 
 [![Almacén](https://github.com/fiis-bd241/grupo01/assets/130816094/4ee4aa72-15be-46c7-a191-bf0b297b3f29)](http://www.youtube.com/watch?v=Xn2d2_8Fau8)
+
+### Módulo de Control
+José Joaquín Alvarado Usucachi
+
+[![image](https://github.com/fiis-bd241/grupo01/assets/161625149/cb6520b9-e740-4e97-bfe1-e740bd51fcf6))](https://www.youtube.com/watch?v=h2IKE750-18)
+
+
+
