@@ -2374,4 +2374,5 @@ José Joaquín Alvarado Usucachi
 
 ### Módulo de Control
 Alex Espinoza Cerna
+
 [![image](https://github.com/fiis-bd241/grupo01/assets/161625149/cb6520b9-e740-4e97-bfe1-e740bd51fcf6)](https://www.youtube.com/watch?v=h2IKE750-18)
