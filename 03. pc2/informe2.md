@@ -453,7 +453,7 @@ Semántica: Se refiere a la representación de los productos físicos recibidos 
 
 **Entidad:** Paradero 
 
-Semántica: Segmento transitable de ruta entre dos locales  
+Semántica: Punto de la ruta donde debe realizarse una parada obligatoria.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN | 
 |----------|------------|---------|------------------|--------|-------------|--------------| 
