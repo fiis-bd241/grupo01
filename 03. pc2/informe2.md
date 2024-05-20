@@ -1920,293 +1920,103 @@ INSERT INTO representante (cod_representante,num_telefono,correo_empresarial,car
   ( 9, '(+51) 965 123 456',     'laura.gonzalez@sanguchesdelperu.com',             'Supervisora de Compras',  9,  9),
   (10, '(+51) 954 789 012',           'carlos.ramirez@gruporokys.com',               'Gerente de Logística', 10, 10);
 
--- Trigger para generar cod_stock
-CREATE OR REPLACE FUNCTION generar_cod_stock()
-RETURNS TRIGGER AS $$
-DECLARE
-    cod_stock CHAR(17);
-BEGIN
-    cod_stock := LPAD(NEW.id_stock::TEXT, 5, '0') || '-' || LPAD(NEW.id_elemento_catalogo::TEXT, 5, '0') || '-' || LPAD(NEW.nro_lote::TEXT, 5, '0');
-    NEW.cod_stock := cod_stock;
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
+INSERT INTO operacion (id_operacion, id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, fecha, hora_inicio, hora_fin, cod_tipo_operacion) VALUES
+(1, NULL, 1, 4, '2024-04-01', '08:00:00', '08:30:00', 1),
+(2, 1, 1, 4, '2024-04-01', '08:45:00', '09:15:00', 2),
+(3, 1, 1, 4, '2024-04-01', '09:30:00', '10:30:00', 3),
+(4, 1, 1, 4, '2024-04-01', '10:45:00', '11:15:00', 4),
+(5, 1, 1, 4, '2024-04-01', '11:30:00', '12:00:00', 5),
+(6, 1, 1, 4, '2024-04-01', '14:00:00', '14:30:00', 6),
+(7, NULL, 13, 4, '2024-04-02', '08:00:00', '08:35:00', 1),
+(8, 7, 13, 4, '2024-04-02', '08:45:00', '09:15:00', 2),
+(9, 7, 13, 4, '2024-04-02', '09:30:00', '10:30:00', 3),
+(10, 7, 13, 4, '2024-04-02', '10:45:00', '11:15:00', 4),
+(11, 7, 13, 4, '2024-04-02', '11:30:00', '12:00:00', 5),
+(12, 7, 1, 4, '2024-04-02', '17:00:00', '17:18:00', 6),
+(13, NULL, 13, 4, '2024-04-02', '09:15:00', '09:30:00', 1),
+(14, 13, 12, 4, '2024-04-02', '09:42:00', '10:10:00', 2),
+(15, 13, 12, 4, '2024-04-02', '10:20:00', '11:10:00', 3),
+(16, 13, 12, 4, '2024-04-02', '12:15:00', '12:05:00', 4),
+(17, 13, 12, 4, '2024-04-02', '12:20:00', '12:56:00', 5),
+(18, 13, 1, 4, '2024-04-02', '18:20:00', '18:56:00', 6),
+(19, NULL, 13, 4, '2024-04-02', '10:00:00', '10:35:00', 1),
+(20, 19, 13, 4, '2024-04-02', '10:45:00', '10:15:00', 2),
+(21, 19, 13, 4, '2024-04-02', '10:30:00', '11:30:00', 3),
+(22, 19, 13, 4, '2024-04-02', '11:45:00', '12:15:00', 4),
+(23, 19, 13, 4, '2024-04-02', '12:30:00', '13:00:00', 5),
+(24, 19, 1, 4, '2024-04-02', '18:20:00', '18:56:00', 6);
 
-CREATE TRIGGER before_insert_stock
-BEFORE INSERT ON stock
-FOR EACH ROW
-EXECUTE FUNCTION generar_cod_stock();
+INSERT INTO mercancia (id_mercancia, id_operacion_picking, cantidad_productos, nro_precinto, peso_total) VALUES
+(1, 1, 0, '0000220240401080000', 12000),
+(2, 1, 0, '0000220240401080000', 7500),
+(3, 1, 0, '0000220240401080000', 5500),
+(4, 7, 0, '0000820240402080000', 13500),
+(5, 7, 0, '0000820240402080000', 15000),
+(6, 13, 0, '0001420240402090000', 750),
+(7, 13, 0, '0001420240402090000', 600),
+(8, 19, 0, '0002020240402100000', 18000),
+(9, 19, 0, '0002020240402100000', 16500);
 
-INSERT INTO stock (id_elemento_catalogo, nro_lote, fecha_caducidad, cantidad) VALUES
-  (1, 123, '2024-04-01', 1000),
-  (2, 124, '2024-04-02', 2000),
-  (3, 125, '2024-04-03', 5000),
-  (4, 126, '2024-04-04', 3000),
-  (5, 127, '2024-04-05', 4000),
-  (6, 128, '2024-04-06', 6000),
-  (7, 129, '2024-04-07', 7000),
-  (8, 130, '2024-04-08', 8000),
-  (9, 131, '2024-04-09', 9000),
-  (1, 132, '2024-04-10', 2500),
-  (11, 223, '2024-04-01', 1000),
-  (11, 224, '2024-04-02', 2000),
-  (12, 225, '2024-04-03', 1000),
-  (12, 226, '2024-04-04', 1050),
-  (13, 227, '2024-04-05', 1010),
-  (14, 228, '2024-04-06', 1000),
-  (15, 229, '2024-04-07', 8000),
-  (16, 230, '2024-04-08', 7000),
-  (17, 231, '2024-04-09', 3000),
-  (10, 232, '2024-04-10', 4000),
-  (9, 233, '2024-04-11', 1500),
-  (8, 234, '2024-04-12', 1700),
-  (7, 235, '2024-04-13', 1600),  
-  (7, 236, '2024-04-14', 1200),  
-  (7, 237, '2024-04-15', 1030);  
+INSERT INTO stock (id_stock, cod_stock, id_elemento_catalogo, nro_lote, fecha_caducidad, cantidad) VALUES
+(1, '00001-00001-00123', 1, 123, '2024-04-01', 1000),
+(2, '00002-00002-00124', 2, 124, '2024-04-02', 2000),
+(3, '00003-00003-00125', 3, 125, '2024-04-03', 5000),
+(4, '00004-00004-00126', 4, 126, '2024-04-04', 3000),
+(5, '00005-00005-00127', 5, 127, '2024-04-05', 4000),
+(6, '00006-00006-00128', 6, 128, '2024-04-06', 6000),
+(7, '00007-00007-00129', 7, 129, '2024-04-07', 7000),
+(8, '00008-00008-00130', 8, 130, '2024-04-08', 8000),
+(9, '00009-00009-00131', 9, 131, '2024-04-09', 9000),
+(10, '00010-00001-00132', 1, 132, '2024-04-10', 2500),
+(11, '00011-00011-00223', 11, 223, '2024-04-01', 1000),
+(12, '00012-00011-00224', 11, 224, '2024-04-02', 2000),
+(13, '00013-00012-00225', 12, 225, '2024-04-03', 1000),
+(14, '00014-00012-00226', 12, 226, '2024-04-04', 1050),
+(15, '00015-00013-00227', 13, 227, '2024-04-05', 1010),
+(16, '00016-00014-00228', 14, 228, '2024-04-06', 1000),
+(17, '00017-00015-00229', 15, 229, '2024-04-07', 8000),
+(18, '00018-00016-00230', 16, 230, '2024-04-08', 7000),
+(19, '00019-00017-00231', 17, 231, '2024-04-09', 3000),
+(20, '00020-00010-00232', 10, 232, '2024-04-10', 4000),
+(21, '00021-00009-00233', 9, 233, '2024-04-11', 1500),
+(22, '00022-00008-00234', 8, 234, '2024-04-12', 1700),
+(23, '00023-00007-00235', 7, 235, '2024-04-13', 1600),
+(24, '00024-00007-00236', 7, 236, '2024-04-14', 1200),
+(25, '00025-00007-00237', 7, 237, '2024-04-15', 1030);
 
--- Trigger para calcular el peso total de una mercancia
- 
-CREATE OR REPLACE FUNCTION calcular_peso_total()
-RETURNS TRIGGER AS $$
-DECLARE
-    peso_mercancia NUMERIC;
-BEGIN
-    SELECT SUM(ec.peso_unitario * NEW.cantidad)
-    INTO peso_mercancia
-    FROM stock s
-    INNER JOIN elemento_catalogo ec ON s.id_elemento_catalogo = ec.id_elemento_catalogo
-    WHERE s.id_stock = NEW.id_stock;
- 
-    UPDATE mercancia
-    SET peso_total = peso_mercancia
-    WHERE id_mercancia = NEW.id_mercancia;
- 
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
- 
-CREATE TRIGGER calcular_peso_total_trigger
-AFTER INSERT ON detalle_mercancia_stock
-FOR EACH ROW
-EXECUTE FUNCTION calcular_peso_total();
- 
--- Trigger para generar el código de precinto de una mercancia
- 
-CREATE OR REPLACE FUNCTION generar_codigo_precinto()
-RETURNS TRIGGER AS $$
-DECLARE
-    id_picking INT;
-    fecha_op DATE;
-    hora_ini TIME;
-    codigo_precinto CHAR(20);
-BEGIN
-    -- Obtener el id_operacion_picking de la fila recién insertada
-    SELECT id_operacion_picking
-    INTO id_picking
-    FROM operacion
-    WHERE id_operacion = NEW.id_operacion AND cod_tipo_operacion = 2;
- 
-    -- Consultar la fila correspondiente en la tabla operacion utilizando id_operacion_picking
-    SELECT id_operacion, fecha, hora_inicio
-    INTO id_picking, fecha_op, hora_ini
-    FROM operacion
-    WHERE id_operacion = id_picking;
- 
-    -- Generar el código de longitud fija basado en el id, fecha_inicio y hora_inicio
-    codigo_precinto := LPAD(NEW.id_operacion::TEXT, 5, '0') ||
-                       TO_CHAR(NEW.fecha, 'YYYYMMDD') ||
-                       TO_CHAR(NEW.hora_inicio, 'HHMMSS');
-    codigo_precinto := LEFT(codigo_precinto, 20);
- 
-    -- Actualizar el atributo nro_precinto en la fila correspondiente de la tabla mercancia
-    UPDATE mercancia
-    SET nro_precinto = codigo_precinto
-    WHERE id_operacion_picking = id_picking;
- 
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
- 
-CREATE TRIGGER generar_codigo_precinto_trigger
-AFTER INSERT ON operacion
-FOR EACH ROW
-WHEN (NEW.cod_tipo_operacion = 2)
-EXECUTE FUNCTION generar_codigo_precinto();
- 
--- Trigger para generar el código de remision
- 
-CREATE OR REPLACE FUNCTION generar_cod_guia_remision()
-RETURNS TRIGGER AS $$
-DECLARE
-    cod_guia_remision CHAR(21);
-BEGIN
-    SELECT CONCAT(
-        LPAD(NEW.id_traslado::TEXT, 5, '0'),
-        TO_CHAR(o.fecha, 'YYYYMMDD'),
-        TO_CHAR(o.hora_inicio, 'HH24MI'),
-        TO_CHAR(o.hora_fin, 'HH24MI')
-    ) INTO cod_guia_remision
-    FROM operacion o
-    WHERE o.id_operacion = NEW.id_operacion_inicia;
- 
-    NEW.cod_guia_remision := cod_guia_remision;
- 
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
- 
-CREATE TRIGGER trigger_generar_cod_guia_remision
-BEFORE INSERT ON traslado
-FOR EACH ROW
-EXECUTE FUNCTION generar_cod_guia_remision();
- 
--- Poblamiento de datos para la entidad operacion y mercancia
- 
-DO $$
-DECLARE
-    variable_id_picking INT;
-    variable_id_mercancia INT;
-    variable_cod_salida INT;
-    variable_cod_recepcion INT;
-    variable_cod_remision CHAR(21);
-BEGIN
+INSERT INTO traslado (id_traslado, cod_guia_remision, cod_vehiculo, cod_ruta, cod_transportista, id_operacion_inicia, id_operacion_termina) VALUES
+(1, '000012024040111301200', 2, 2, 2, 5, 6),
+(2, '000022024040211301200', 3, 3, 2, 11, 12),
+(3, '000032024040212201256', 3, 3, 1, 17, 18),
+(4, '000042024040212301300', 3, 3, 2, 23, 24);
 
-    /* Empezamos un traslado */
- 
-    -- Ingresamos una operación de picking
-    INSERT INTO operacion (cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (1, 4, 1, '2024-04-01', '08:00:00', '08:30:00') RETURNING id_operacion INTO variable_id_picking;
-    
-    -- Ingresamos las mercancias creadas en el proceso de picking
-    INSERT INTO mercancia (id_operacion_picking) VALUES (variable_id_picking) RETURNING id_mercancia INTO variable_id_mercancia; -- Ingresamos una mercancia
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 1, 10);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 2, 5);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 3, 15);
-    INSERT INTO mercancia (id_operacion_picking) VALUES (variable_id_picking) RETURNING id_mercancia INTO variable_id_mercancia; -- Ingresamos otra mercancia
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 4, 10);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 5, 5);
-    INSERT INTO mercancia (id_operacion_picking) VALUES (variable_id_picking) RETURNING id_mercancia INTO variable_id_mercancia; -- Ingresamos otra mercancia
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 6, 10);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 7, 5);
- 
-    -- Continuamos con las fases posteriores al picking
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 1, 4, 2, '2024-04-01', '08:45:00', '09:15:00'), -- Precintado
-    (variable_id_picking, 1, 4, 3, '2024-04-01', '09:30:00', '10:30:00'), -- Paletizado
-    (variable_id_picking, 1, 4, 4, '2024-04-01', '10:45:00', '11:15:00'); -- Carga
- 
-    -- Salida
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 1, 4, 5, '2024-04-01', '11:30:00', '12:00:00') RETURNING id_operacion INTO variable_cod_salida;
-    INSERT INTO traslado (cod_vehiculo, cod_ruta, cod_transportista, id_operacion_inicia) VALUES
-    (2, 2, 2, variable_cod_salida) RETURNING cod_guia_remision INTO variable_cod_remision;
-  
-    -- Recepción
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 1, 4, 6, '2024-04-01', '14:00:00', '14:30:00') RETURNING id_operacion INTO variable_cod_recepcion;
-    UPDATE traslado SET id_operacion_termina = variable_cod_recepcion WHERE cod_guia_remision = variable_cod_remision;
- 
-    /* Empezamos otro traslado */
- 
-    -- Se realiza el picking
-    INSERT INTO operacion (cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (13, 4, 1, '2024-04-02', '08:00:00', '08:35:00') RETURNING id_operacion INTO variable_id_picking;
- 
-    -- Ingresamos las mercancias creadas en el proceso de picking
-    INSERT INTO mercancia (id_operacion_picking) VALUES (variable_id_picking) RETURNING id_mercancia INTO variable_id_mercancia;
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 8, 10);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 9, 5);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 10, 15);
-    INSERT INTO mercancia (id_operacion_picking) VALUES (variable_id_picking) RETURNING id_mercancia INTO variable_id_mercancia;
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 11, 10);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 12, 5);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 13, 15);
- 
-    -- Continuamos con las fases posteriores al picking
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 13, 4, 2, '2024-04-02', '08:45:00', '09:15:00'), -- Precintado
-    (variable_id_picking, 13, 4, 3, '2024-04-02', '09:30:00', '10:30:00'), -- Paletizado
-    (variable_id_picking, 13, 4, 4, '2024-04-02', '10:45:00', '11:15:00'); -- Carga
- 
-    -- Salida
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 13, 4, 5, '2024-04-02', '11:30:00', '12:00:00') RETURNING id_operacion INTO variable_cod_salida;
-    INSERT INTO traslado (cod_vehiculo, cod_ruta, cod_transportista, id_operacion_inicia) VALUES
-    (3, 3, 2, variable_cod_salida) RETURNING cod_guia_remision INTO variable_cod_remision;
-  
-    -- Recepción
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 1, 4, 6, '2024-04-02', '17:00:00', '17:18:00') RETURNING id_operacion INTO variable_cod_recepcion;
-    UPDATE traslado SET id_operacion_termina = variable_cod_recepcion WHERE cod_guia_remision = variable_cod_remision;
- 
-    /* Empezamos otro traslado */
- 
-    -- Se realiza el picking
-    INSERT INTO operacion (cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (13, 4, 1, '2024-04-02', '09:15:00', '09:30:00') RETURNING id_operacion INTO variable_id_picking;
- 
-    -- Ingresamos las mercancias creadas en el proceso de picking
-    INSERT INTO mercancia (id_operacion_picking) VALUES (variable_id_picking) RETURNING id_mercancia INTO variable_id_mercancia;
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 14, 10);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 15, 5);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 16, 15);
-    INSERT INTO mercancia (id_operacion_picking) VALUES (variable_id_picking) RETURNING id_mercancia INTO variable_id_mercancia;
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 17, 10);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 18, 5);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 19, 15);
- 
-    -- Continuamos con las fases posteriores al picking
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 12, 4, 2, '2024-04-02', '09:42:00', '10:10:00'), -- Precintado
-    (variable_id_picking, 12, 4, 3, '2024-04-02', '10:20:00', '11:10:00'), -- Paletizado
-    (variable_id_picking, 12, 4, 4, '2024-04-02', '12:15:00', '12:05:00'); -- Carga
- 
-    -- Salida
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 12, 4, 5, '2024-04-02', '12:20:00', '12:56:00') RETURNING id_operacion INTO variable_cod_salida;
-    INSERT INTO traslado (cod_vehiculo, cod_ruta, cod_transportista, id_operacion_inicia) VALUES
-    (3, 3, 1, variable_cod_salida) RETURNING cod_guia_remision INTO variable_cod_remision;
-  
-    -- Recepción
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 1, 4, 6, '2024-04-02', '18:20:00', '18:56:00') RETURNING id_operacion INTO variable_cod_recepcion;
-    UPDATE traslado SET id_operacion_termina = variable_cod_recepcion WHERE cod_guia_remision = variable_cod_remision;
- 
-    /* Empezamos otro traslado */
- 
-    -- Se realiza el picking
-    INSERT INTO operacion (cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (13, 4, 1, '2024-04-02', '10:00:00', '10:35:00') RETURNING id_operacion INTO variable_id_picking;
- 
-    -- Ingresamos las mercancias creadas en el proceso de picking
-    INSERT INTO mercancia (id_operacion_picking) VALUES (variable_id_picking) RETURNING id_mercancia INTO variable_id_mercancia;
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 20, 10);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 21, 5);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 22, 15);
-    INSERT INTO mercancia (id_operacion_picking) VALUES (variable_id_picking) RETURNING id_mercancia INTO variable_id_mercancia;
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 23, 10);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 24, 5);
-    INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (variable_id_mercancia, 25, 15);
- 
-    -- Continuamos con las fases posteriores al picking
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 13, 4, 2, '2024-04-02', '10:45:00', '10:15:00'), -- Precintado
-    (variable_id_picking, 13, 4, 3, '2024-04-02', '10:30:00', '11:30:00'), -- Paletizado
-    (variable_id_picking, 13, 4, 4, '2024-04-02', '11:45:00', '12:15:00'); -- Carga
- 
-    -- Salida
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 13, 4, 5, '2024-04-02', '12:30:00', '13:00:00') RETURNING id_operacion INTO variable_cod_salida;
-    INSERT INTO traslado (cod_vehiculo, cod_ruta, cod_transportista, id_operacion_inicia) VALUES
-    (3, 3, 2, variable_cod_salida) RETURNING cod_guia_remision INTO variable_cod_remision;
-  
-    -- Recepción
-    INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin) VALUES
-    (variable_id_picking, 1, 4, 6, '2024-04-02', '18:20:00', '18:56:00') RETURNING id_operacion INTO variable_cod_recepcion;
-    UPDATE traslado SET id_operacion_termina = variable_cod_recepcion WHERE cod_guia_remision = variable_cod_remision;
-END $$;
- 
- 
+INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES
+(1, 1, 10),
+(1, 2, 5),
+(1, 3, 15),
+(2, 4, 10),
+(2, 5, 5),
+(3, 6, 10),
+(3, 7, 5),
+(4, 8, 10),
+(4, 9, 5),
+(4, 10, 15),
+(5, 11, 10),
+(5, 12, 5),
+(5, 13, 15),
+(6, 14, 10),
+(6, 15, 5),
+(6, 16, 15),
+(7, 17, 10),
+(7, 18, 5),
+(7, 19, 15),
+(8, 20, 10),
+(8, 21, 5),
+(8, 22, 15),
+(9, 23, 10),
+(9, 24, 5),
+(9, 25, 15);
+
 INSERT INTO detalle_ticket_producto (cod_ticket, id_elemento_catalogo, cantidad) VALUES 
   (1, 25, 5), 
   (1, 19, 2), 
