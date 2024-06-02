@@ -17,5 +17,8 @@ Bienvenidos al repositorio del Proyecto de Diseño de Base de Datos del Grupo 1.
       * [Documentación de soporte](https://drive.google.com/drive/folders/1tnv4Kpnk2LkaWO62ETXYgzs6sObJmlSZ?usp=sharing)
 3. Segunda práctica calificada
       * [Informe](03.%20pc2/informe2.md)
-
-4. [Glosario](04.%20glosario/glosario.md)
+      * 
+4. Segunda práctica calificada
+      * [Informe](04.%20pc3/informe3.md)
+      * 
+5. [Glosario](05.%20glosario/glosario.md)
