@@ -305,6 +305,7 @@ INNER JOIN elemento_catalogo AS ec ON ec.id_elemento_catalogo = dtp.id_elemento_
 GROUP BY ec.id_elemento_catalogo
 ORDER BY cantidad DESC LIMIT <3>;
 ```
+El `<3>` corresponde a la cantidad escogida de elementos catálogos para mostrar en el gráfico de barras.
 4. Cantidad de reclamos por mes:
 ``` sql
 WITH meses AS (
