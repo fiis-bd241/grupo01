@@ -317,6 +317,7 @@ Sustentación:
    * Gráficos: Apache ECharts
    * Íconos: Font Awesome
 ### Backend 
+   * Patrón de diseño: Dao
    * Lenguaje de programación: Java
    * Dependencias:
      * Springboot
