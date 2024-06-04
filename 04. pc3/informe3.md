@@ -73,25 +73,25 @@ Caso de Uso #4: Ver gráficos de cada módulo
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R501, R502, R503, R504           |
 | Código      | P501 |
-| Prototipo   |     ![P501](https://github.com/fiis-bd241/grupo01/assets/161625149/ad771877-0791-4306-9b88-16bacd77c461)|
+| Prototipo   |     ![P501](https://github.com/fiis-bd241/grupo01/assets/161625149/eb29ab8b-8fb7-4e69-88ad-926acf086307)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R501           |
 | Código      | P502 |
-| Prototipo   | ![P502](https://github.com/fiis-bd241/grupo01/assets/161625149/1d9231b8-5eec-4b2b-82be-01d3f61c9114) |
+| Prototipo   | ![P502](https://github.com/fiis-bd241/grupo01/assets/161625149/df005dc5-7ebb-4274-94c4-523000c47962)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R502          |
 | Código      | P503 |
-| Prototipo   |  ![P503](https://github.com/fiis-bd241/grupo01/assets/161625149/20e8f6c6-ec0a-435e-9787-a251b975e0bd) |
+| Prototipo   |  ![P503](https://github.com/fiis-bd241/grupo01/assets/161625149/3adf13d0-7cb1-4e1d-902d-fe408ea98340) |
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R504          |
 | Código      | P504 |
-| Prototipo   |   ![P504](https://github.com/fiis-bd241/grupo01/assets/161625149/2e4a32c5-0ad2-41a8-a4bf-417dc081b162)|
+| Prototipo   |   ![P504](https://github.com/fiis-bd241/grupo01/assets/161625149/e62b62ae-d440-4708-9240-c5cc0fa6b39b)|
 
 ## 2. Sentencias SQL por cada prototipo
 
@@ -110,7 +110,7 @@ Caso de Uso #4: Ver gráficos de cada módulo
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/49b92b4f-8454-4796-80b5-40231c04d128">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/2acc5a60-390a-4174-baca-12bdc48e3da0">
       </td>
    </tr>
    <tr>
@@ -119,7 +119,7 @@ Caso de Uso #4: Ver gráficos de cada módulo
 </table>
 
 ``` sql 
-1. Carga de reportes programados: Cuando el usuario entre al modulo de reportes, se llenará la tabla de reportes programados.
+2. Carga de reportes programados: Cuando el usuario entre al modulo de reportes, se llenará la tabla de reportes programados según su id.
 SELECT 
 	pr.cod_programacion_reporte,
 	rfo.descripcion formato,
@@ -131,10 +131,12 @@ FROM programacion_reporte AS pr
 INNER JOIN reporte_formato AS rfo ON rfo.cod_reporte_formato = pr.cod_reporte_formato
 INNER JOIN reporte_tipo AS rt ON rt.cod_reporte_tipo = pr.cod_reporte_tipo
 INNER JOIN reporte_frecuencia AS rfe ON rfe.cod_reporte_frecuencia = pr.cod_reporte_frecuencia
-WHERE pr.cod_reporte_estado = 1
+WHERE pr.cod_reporte_estado = 1 AND pr.cod_representante = <1>
 ORDER BY pr.cod_programacion_reporte;
 
-2. Carga de inventario: Cuando el usuario entre al modulo de reportes, se llenará la tabla de elementos catálogo.
+Donde <1> corresponde al código del usuario del inicio de sesión.
+
+3. Carga de inventario: Cuando el usuario entre al modulo de reportes, se llenará la tabla de elementos catálogo.
 SELECT 
 	ec.id_elemento_catalogo, 
 	ec.nombre,
@@ -163,7 +165,7 @@ GROUP BY ec.id_elemento_catalogo, ecu.cod_unidad, ect.id_elemento_catalogo_tipo,
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/4e76cb59-7849-47a6-818f-d5e98ad1f9a7">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/535c570e-bfca-44c8-bcca-614900b5c099">
       </td>
    </tr>
    <tr>
@@ -172,16 +174,18 @@ GROUP BY ec.id_elemento_catalogo, ecu.cod_unidad, ect.id_elemento_catalogo_tipo,
 </table>
 
 ``` sql 
-1. Carga de formatos: Se llenará la lista de formatos de reportes a seleccionar.
+2. Carga de formatos: Se llenará la lista de formatos de reportes a seleccionar.
 SELECT cod_reporte_formato, descripcion FROM reporte_formato;
 
-2. Carga de tipos: Se llenará la lista de tipos de reportes a seleccionar.
+3. Carga de tipos: Se llenará la lista de tipos de reportes a seleccionar.
 SELECT cod_reporte_tipo, descripcion FROM reporte_tipo; 
 
-3. Botón generar: Cuando el usuario presione el botón generar, se generará un reporte.
+4. Botón generar: Cuando el usuario presione el botón generar, se generará un reporte.
 INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo)
 VALUES
-(cod_representante, <1>, <2>)
+(<1>, <2>, <3>);
+
+Donde <1> corresponde al código del usuario del inicio de sesión.
 ```
 #### Caso 3
 <table>
@@ -196,7 +200,7 @@ VALUES
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/cdcf6d64-c139-4470-bf06-a3e197484db5">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/e534c9ea-dca5-44ce-a337-e3b0e4dcf9bc">
       </td>
    </tr>
    <tr>
@@ -205,20 +209,23 @@ VALUES
 </table>
 
 ``` sql
-1. Carga de frecuencia: Se llenará la lista de frecuencias para programar reportes.
+2. Carga de frecuencia: Se llenará la lista de frecuencias para programar reportes.
 SELECT cod_reporte_frecuencia, descripcion FROM reporte_frecuencia;
 
-2. Carga de formatos: Se llenará la lista de formatos de reportes a seleccionar.
+3. Carga de formatos: Se llenará la lista de formatos de reportes a seleccionar.
 SELECT cod_reporte_formato, descripcion FROM reporte_formato;
 
-3. Carga de tipos: Se llenará la lista de tipos de reportes a seleccionar.
+4. Carga de tipos: Se llenará la lista de tipos de reportes a seleccionar.
 SELECT cod_reporte_tipo, descripcion FROM reporte_tipo; 
 
-6. Botón programar: Cuando el usuario presione el botón generar, se generará un reporte.
+7. Botón programar: Cuando el usuario presione el botón generar, se generará un reporte.
 INSERT INTO programacion_reporte
-(cod_representante, cod_reporte_frecuencia, cod_reporte_formato, cod_reporte_tipo,, fecha_inicio, fecha_fin ) 
+(cod_representante, cod_reporte_frecuencia, cod_reporte_formato, cod_reporte_tipo,, fecha_inicio, fecha_fin, cod_reporte_estado ) 
 VALUES
-(cod_representante, <1>, <2>, <3>, <4>, <5>);
+(<1>, <2>, <3>, <4>, <5>, <7>, 1);
+
+Donde <1> corresponde al código del usuario del inicio de sesión.
+El cod_reporte_estado = 1 corresponde a "Activo".
 ```
 #### Caso 4
 <table>
