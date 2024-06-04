@@ -307,3 +307,23 @@ Sustentación:
       <td>Ahora une vez que se llega a la fecha inicio de programación, cada cierto tiempo (indicado en la frecuencia del reporte) se generará el reporte en el backend y será enviado al usuario.</td>
    </tr>
 </table>
+
+## 5. Stack Tecnológico elegido para su aplicación
+
+### Frontend
+   * Framework: Angular
+   * UI Components: Primeng
+   * Estilos: Primeflex
+   * Gráficos: Apache ECharts
+   * Íconos: Font Awesome
+### Backend 
+   * Lenguaje de programación: Java
+   * Dependencias:
+     * Springboot
+     * Quartz
+     * PostgreSQL JDBC Driver
+     * Lombok
+### Databases
+   * Sistema gestor de base de datos: PostgreSQL 
+   * Motor de base de datos: PostgreSQL
+## 6. Primera Versión de su Aplicación
