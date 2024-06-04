@@ -440,3 +440,5 @@ ORDER BY rt.cod_tipo_reclamo;
    * Sistema gestor de base de datos: PostgreSQL 
    * Motor de base de datos: PostgreSQL
 ## 6. Primera Versión de su Aplicación
+
+## 7. Videos individuales
