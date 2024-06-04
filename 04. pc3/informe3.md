@@ -267,8 +267,8 @@ El cod_reporte_estado = 1 corresponde a "Activo".
 
 ### Funcionalidad Primaria del módulo de reportes
 
-Funcionalidad primaria elegida: Programación de reportes.
-Sustentación: 
+**Funcionalidad primaria elegida:** Programación de reportes. <br>
+**Sustentación:** <br>
 
 <table>
    <tr>
