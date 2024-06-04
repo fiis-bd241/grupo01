@@ -118,8 +118,8 @@ Caso de Uso #4: Ver gráficos de cada módulo
    </tr>
 </table>
 
-``` sql 
 2. Carga de reportes programados: Cuando el usuario entre al modulo de reportes, se llenará la tabla de reportes programados según su id.
+``` sql 
 SELECT 
 	pr.cod_programacion_reporte,
 	rfo.descripcion formato,
@@ -133,10 +133,12 @@ INNER JOIN reporte_tipo AS rt ON rt.cod_reporte_tipo = pr.cod_reporte_tipo
 INNER JOIN reporte_frecuencia AS rfe ON rfe.cod_reporte_frecuencia = pr.cod_reporte_frecuencia
 WHERE pr.cod_reporte_estado = 1 AND pr.cod_representante = <1>
 ORDER BY pr.cod_programacion_reporte;
-
-Donde <1> corresponde al código del usuario del inicio de sesión.
+```
+Donde `<1>` corresponde al código del usuario del inicio de sesión.
+El cod_reporte_estado = 1 corresponde a "Activo".
 
 3. Carga de inventario: Cuando el usuario entre al modulo de reportes, se llenará la tabla de elementos catálogo.
+``` sql 
 SELECT 
 	ec.id_elemento_catalogo, 
 	ec.nombre,
@@ -150,7 +152,7 @@ LEFT JOIN stock AS st ON st.id_elemento_catalogo = ec.id_elemento_catalogo
 LEFT JOIN elemento_catalogo_unidad AS ecu ON ecu.cod_unidad = ec.cod_unidad
 LEFT JOIN elemento_catalogo_tipo AS ect ON ect.id_elemento_catalogo_tipo = ec.id_elemento_catalogo_tipo
 LEFT JOIN elemento_produccion AS ep ON ep.id_elemento_produccion = ect.id_elemento_produccion
-GROUP BY ec.id_elemento_catalogo, ecu.cod_unidad, ect.id_elemento_catalogo_tipo, ep.id_elemento_produccion;	
+GROUP BY ec.id_elemento_catalogo, ecu.cod_unidad, ect.id_elemento_catalogo_tipo, ep.id_elemento_produccion;
 ```
 #### Caso 2
 <table>
@@ -173,20 +175,25 @@ GROUP BY ec.id_elemento_catalogo, ecu.cod_unidad, ect.id_elemento_catalogo_tipo,
    </tr>
 </table>
 
-``` sql 
 2. Carga de formatos: Se llenará la lista de formatos de reportes a seleccionar.
+``` sql 
 SELECT cod_reporte_formato, descripcion FROM reporte_formato;
-
+```
 3. Carga de tipos: Se llenará la lista de tipos de reportes a seleccionar.
-SELECT cod_reporte_tipo, descripcion FROM reporte_tipo; 
 
+``` sql 
+SELECT cod_reporte_tipo, descripcion FROM reporte_tipo; 
+```
 4. Botón generar: Cuando el usuario presione el botón generar, se generará un reporte.
-INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo)
+
+``` sql 
+INSERT INTO reporte
+(cod_representante, cod_reporte_formato, cod_reporte_tipo)
 VALUES
 (<1>, <2>, <3>);
-
-Donde <1> corresponde al código del usuario del inicio de sesión.
 ```
+Donde `<1>` corresponde al código del usuario del inicio de sesión.
+
 #### Caso 3
 <table>
    <tr>
@@ -207,26 +214,32 @@ Donde <1> corresponde al código del usuario del inicio de sesión.
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
+2. Carga de frecuencia: Se llenará la lista de frecuencias para programar reportes.
 
 ``` sql
-2. Carga de frecuencia: Se llenará la lista de frecuencias para programar reportes.
 SELECT cod_reporte_frecuencia, descripcion FROM reporte_frecuencia;
-
+```
 3. Carga de formatos: Se llenará la lista de formatos de reportes a seleccionar.
+
+``` sql
 SELECT cod_reporte_formato, descripcion FROM reporte_formato;
-
+```
 4. Carga de tipos: Se llenará la lista de tipos de reportes a seleccionar.
-SELECT cod_reporte_tipo, descripcion FROM reporte_tipo; 
 
+``` sql
+SELECT cod_reporte_tipo, descripcion FROM reporte_tipo; 
+```
 7. Botón programar: Cuando el usuario presione el botón generar, se generará un reporte.
+
+``` sql
 INSERT INTO programacion_reporte
 (cod_representante, cod_reporte_frecuencia, cod_reporte_formato, cod_reporte_tipo,, fecha_inicio, fecha_fin, cod_reporte_estado ) 
 VALUES
 (<1>, <2>, <3>, <4>, <5>, <7>, 1);
-
-Donde <1> corresponde al código del usuario del inicio de sesión.
-El cod_reporte_estado = 1 corresponde a "Activo".
 ```
+Donde `<1>` corresponde al código del usuario del inicio de sesión.
+El cod_reporte_estado = 1 corresponde a "Activo".
+
 #### Caso 4
 <table>
    <tr>
@@ -240,7 +253,7 @@ El cod_reporte_estado = 1 corresponde a "Activo".
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/a450e6c6-fd86-4fac-8730-46b13ef6402d">
       </td>
    </tr>
    <tr>
@@ -248,9 +261,6 @@ El cod_reporte_estado = 1 corresponde a "Activo".
    </tr>
 </table>
 
-``` sql
-
-```
 ## 3. Carga de Datos
 
 ## 4. Funcionalidad Primaria Elegida
@@ -267,19 +277,33 @@ Sustentación:
    </tr>
    <tr>
       <td>1</td>
-      <td></td>
+      <td>Al ingresar al módulo de Reportes (desde un usuario con cargo de representante de algún área), el usuario puede ver todas las opciones de este módulo, donde hay un cuadro que dice opciones y puede presionar el botón de "Programar reporte"
+	<p align="center">
+           <img style="width: 80%;" src="https://github.com/fiis-bd241/grupo01/assets/161625149/eb29ab8b-8fb7-4e69-88ad-926acf086307">
+	</p>
+      </td>
    </tr>
+	
    <tr>
       <td>2</td>
-      <td></td>
+      <td>Luego de presionar el botón, saldrá una ventana emergente donde saldrán los valores necesarios para programar el reporte: El tipo de reporte, el formato en el que se va a generar, la frecuencia de creación de los reportes, la fecha desde donde va a comenzar la programación y la fecha en la que termina. Une vez llenado esos campos, se va a presionar el botón "Programar".
+          <p align="center">
+             <img style="width: 80%;" src="https://github.com/fiis-bd241/grupo01/assets/161625149/df005dc5-7ebb-4274-94c4-523000c47962">
+          </p> 
+      </td>
    </tr>
+   
    <tr>
       <td>3</td>
       <td>
-         <img src="">
+	 Ahora el usuario podrá ver la programación del reporte hecha en la lista de programaciones que está al lado del cuadro de opciones.
+      <p align="center">
+        <img style="width: 80%;" src="https://github.com/fiis-bd241/grupo01/assets/161625149/eb29ab8b-8fb7-4e69-88ad-926acf086307">
+      </p> 
       </td>
    </tr>
    <tr>
-      <td colspan="2">Sentencias SQL</td>
+      <td>4</td>
+      <td>Ahora une vez que se llega a la fecha inicio de programación, cada cierto tiempo (indicado en la frecuencia del reporte) se generará el reporte en el backend y será enviado al usuario.</td>
    </tr>
 </table>
