@@ -95,7 +95,7 @@ Caso de Uso #4: Ver gráficos de cada módulo
 
 ## 2. Sentencias SQL por cada prototipo
 
-### Sentencias SQL para el módulo de Reportes
+### Sentencias SQL del módulo de Reportes
 
 #### Caso 1
 <table>
@@ -247,3 +247,32 @@ VALUES
 ## 3. Carga de Datos
 
 ## 4. Funcionalidad Primaria Elegida
+
+### Funcionalidad Primaria del módulo de reportes
+
+Funcionalidad primaria elegida: Programación de reportes.
+Sustentación: 
+
+<table>
+   <tr>
+      <th>Actividad</th>
+      <th>Descripción</th>
+   </tr>
+   <tr>
+      <td>1</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>2</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>3</td>
+      <td>
+         <img src="">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
