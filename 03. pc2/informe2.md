@@ -1106,13 +1106,13 @@ CREATE TABLE IF NOT EXISTS operacion (
 CREATE TABLE IF NOT EXISTS mercancia (
  id_mercancia SERIAL,
  id_operacion_picking INT NOT NULL,
- cantidad_productos INT NOT NULL DEFAULT 0,
  nro_precinto CHAR(20) NULL DEFAULT NULL,
  peso_total FLOAT NOT NULL DEFAULT 0,
  PRIMARY KEY (id_mercancia),
  CONSTRAINT id_operacion_picking
  FOREIGN KEY (id_operacion_picking)
- REFERENCES operacion (id_operacion)
+ REFERENCES operacion (id_operacion),
+ CONSTRAINT uk_nro_precinto UNIQUE (nro_precinto)
 );
 
 CREATE TABLE IF NOT EXISTS representante (
@@ -1198,7 +1198,7 @@ CREATE TABLE IF NOT EXISTS stock (
  id_elemento_catalogo INT NOT NULL,
  nro_lote INT NULL DEFAULT NULL,
  fecha_caducidad DATE NOT NULL,
- cantidad INT NOT NULL CHECK (cantidad > 0),
+ cantidad_disponible INT NOT NULL CHECK (cantidad_disponible > 0),
  PRIMARY KEY (id_stock),
  CONSTRAINT id_elemento_catalogo
  FOREIGN KEY (id_elemento_catalogo)
@@ -1242,7 +1242,7 @@ CREATE TABLE IF NOT EXISTS pedido (
 
 CREATE TABLE IF NOT EXISTS traslado (
  id_traslado SERIAL,
- cod_guia_remision CHAR(21) NOT NULL,
+ cod_guia_remision CHAR(21) NULL,
  cod_vehiculo INT NOT NULL,
  cod_ruta INT NOT NULL,
  cod_transportista INT NOT NULL,
@@ -1630,42 +1630,42 @@ INSERT INTO local_distrito (cod_local_distrito, descripcion) VALUES
   (43, 'Villa María del Triunfo'),
   (44, 'Huaral'),
   (45, 'Ventanilla'),
-  (46, 'Callao'); 
+  (46, 'Callao');
 
 INSERT INTO paradero_tipo (cod_paradero_tipo,descripcion) VALUES
   ( 1,  'Origen'),
   ( 2,  'Paradero'),
   ( 3,  'Destino');
 
-INSERT INTO pedido_tipo (cod_pedido_tipo,tipo_pedido) VALUES 
-  ('A', 'Abastecimiento'), 
-  ('V', 'Venta'); 
-  
-INSERT INTO pedido_estado (cod_pedido_estado, estado_pedido) VALUES 
-  ('A', 'Aceptado'), 
-  ('R', 'Rechazado'), 
-  ('P', 'En proceso'), 
-  ('F', 'Finalizado'); 
+INSERT INTO pedido_tipo (cod_pedido_tipo,tipo_pedido) VALUES
+  ('A', 'Abastecimiento'),
+  ('V', 'Venta');
+
+INSERT INTO pedido_estado (cod_pedido_estado, estado_pedido) VALUES
+  ('A', 'Aceptado'),
+  ('R', 'Rechazado'),
+  ('P', 'En proceso'),
+  ('F', 'Finalizado');
 
 INSERT INTO incidencia_tipo (cod_tipo_incidencia,descripcion) VALUES
   ( 'A',  'Incidencia de tipo A: retrasos en la entrega'),
-  ( 'B',  'Incidencia de tipo B: errores en el etiquetado o embalaje'),     
+  ( 'B',  'Incidencia de tipo B: errores en el etiquetado o embalaje'),
   ( 'C',  'Incidencia de tipo C: fallas en la documentación'),
   ( 'D',  'Incidencia de tipo D: problemas mecánicos con el vehículo'),
   ( 'E',  'Incidencia de tipo E: error en la asignación de ruta');
 
 INSERT INTO procedimiento_tipo (cod_tipo_procedimiento,descripcion) VALUES
   ( 'A',  'Procedimiento de tipo A: retrasos en la entrega'),
-  ( 'B',  'Procedimiento de tipo B: errores en el etiquetado o embalaje'),     
+  ( 'B',  'Procedimiento de tipo B: errores en el etiquetado o embalaje'),
   ( 'C',  'Procedimiento de tipo C: fallas en la documentación'),
   ( 'D',  'Procedimiento de tipo D: problemas mecánicos con el vehículo'),
   ( 'E',  'Procedimiento de tipo E: error en la asignación de ruta');
-  
+
 INSERT INTO norma_tipo (cod_norma_tipo,descripcion) VALUES
   ( 'X',  'NTP 209.027'),
-  ( 'Y',  'ISO 17712'),     
+  ( 'Y',  'ISO 17712'),
   ( 'Z',  'ISO 22000'),
-  ( 'W',  'ISO 9001');  
+  ( 'W',  'ISO 9001');
 
 INSERT INTO accion_tipo (cod_tipo_accion,descripcion) VALUES
   ('I', 'Investigación'),
@@ -1678,7 +1678,7 @@ INSERT INTO reclamo_tipo (cod_tipo_reclamo,descripcion) VALUES
   ( 'B', 'Cantidad incorrecta de productos recibidos'),
   ( 'C', 'Productos incorrectos o diferentes a los solicitados'),
   ( 'D', 'Embalaje inadecuado que afecta la frescura o la calidad de los productos'),
-  ( 'E', 'Retraso en la entrega del pedido'), 
+  ( 'E', 'Retraso en la entrega del pedido'),
   ( 'F', 'Problemas con la facturación o el proceso de pago'),
   ( 'G', 'Problemas relacionados con la limpieza, higiene o seguridad de los productos');
 
@@ -1728,15 +1728,15 @@ INSERT INTO archivo_tipo (cod_tipo_archivo, descripcion) VALUES
 
 INSERT INTO reporte_formato (cod_reporte_formato,descripcion) VALUES
   ( 1,  'DOCX'),
-  ( 2,  'PDF'), 
+  ( 2,  'PDF'),
   ( 3,  'XLSX'),
   ( 4,  'CSV');
-  
+
 INSERT INTO reporte_estado (cod_reporte_estado,descripcion) VALUES
   ( 1,  'Activo'),
-  ( 2,  'Inactivo');  
-  
-INSERT INTO persona(cod_persona, cod_estado_civil, cod_nacionalidad, cod_genero, dni, primer_apellido, segundo_apellido, prenombre, direccion ) VALUES 
+  ( 2,  'Inactivo');
+
+INSERT INTO persona(cod_persona, cod_estado_civil, cod_nacionalidad, cod_genero, dni, primer_apellido, segundo_apellido, prenombre, direccion ) VALUES
   ( 1, 1,  1,  1,  '77688137',   'López',       'García',     'Juan',      'AV BENAVIDES 1015 MIRAFLORES, Lima'),
   ( 2, 1,  1,  1,  '52359123',   'Mendoza',     'Mendoza',    'Luis',      'Av. Alameda Del Corregidor 3023, Lima'),
   ( 3, 1,  1,  1,  '76464764',   'Rodríguez',   'Valdés',     'Pedro',     'Avenida Heroes Del Cenepa, Lt. 120, Lima'),
@@ -1762,19 +1762,19 @@ INSERT INTO persona(cod_persona, cod_estado_civil, cod_nacionalidad, cod_genero,
   (23, 1,  1,  1,  '78943713',   'Pérez',       'Espinoza',   'Alejandro', 'Av Joaquín Madrid Nro 141, Lima'),
   (24, 1,  1,  1,  '78567231',   'Sánchez',     'Chávez',     'David',     'Jirón Sinchi Roca, 310, 376, La Libertad'),
   (25, 2,  1,  2,  '20220002',   'Martín',      'Cruz',       'Sara',      'Isla Sta Cruz Mza C Lt41 Los Cedros de Villa - Chorrillos, Arequipa');
- 
-INSERT INTO cliente (cod_cliente, cod_cliente_tipo, cod_cliente_estado, nombre , ruc , razon_social, fecha_registro) VALUES 
-  ( 1, 'I', 'A',   'Almacen', '20100154308','SAN FERNANDO S.A.', '2002-06-01'), 
-  ( 2, 'I', 'A' ,'Atencion al cliente' , '20100154308', 'SAN FERNANDO S.A.', '2002-06-01'), 
-  ( 3, 'I', 'A' ,'Produccion' , '20100154308', 'SAN FERNANDO S.A.', '2002-06-01'), 
-  ( 4, 'I', 'A' ,'Mantenimiento' , '20100154308', 'SAN FERNANDO S.A.', '2002-06-01'), 
-  ( 5, 'E', 'A' ,'PLAZA VEA' , '20100070970', 'SOCIEDAD ANONIMA O S.P.S.A.', '2023-05-15'), 
-  ( 6, 'E', 'A' ,'Tottus Hipermercado-Tottus' , '20508565934', 'HIPERMERCADOS TOTTUS S.A', '2022-11-28'), 
-  ( 7, 'E', 'A' ,'Wong & Metro' , '20109072177', 'Cencosud Retail Peru S.A.', '2023-07-03'), 
-  ( 8, 'E', 'A' ,'Kentucky Fried Chicken' , '20100123330', 'DELOSI S.A.', '2022-10-12'), 
-  ( 9, 'E', 'A' ,'Pardos Chicken-Planet-Pasquale' , '20510885229', 'SANGUCHES DEL PERU S.A.C', '2024-01-25'), 
-  (10, 'E', 'A' ,'Rockys' , '20513427710', 'Grupo Rokys S.A.C.', '2023-03-08'); 
-  
+
+INSERT INTO cliente (cod_cliente, cod_cliente_tipo, cod_cliente_estado, nombre , ruc , razon_social, fecha_registro) VALUES
+  ( 1, 'I', 'A',   'Almacen', '20100154308','SAN FERNANDO S.A.', '2002-06-01'),
+  ( 2, 'I', 'A' ,'Atencion al cliente' , '20100154308', 'SAN FERNANDO S.A.', '2002-06-01'),
+  ( 3, 'I', 'A' ,'Produccion' , '20100154308', 'SAN FERNANDO S.A.', '2002-06-01'),
+  ( 4, 'I', 'A' ,'Mantenimiento' , '20100154308', 'SAN FERNANDO S.A.', '2002-06-01'),
+  ( 5, 'E', 'A' ,'PLAZA VEA' , '20100070970', 'SOCIEDAD ANONIMA O S.P.S.A.', '2023-05-15'),
+  ( 6, 'E', 'A' ,'Tottus Hipermercado-Tottus' , '20508565934', 'HIPERMERCADOS TOTTUS S.A', '2022-11-28'),
+  ( 7, 'E', 'A' ,'Wong & Metro' , '20109072177', 'Cencosud Retail Peru S.A.', '2023-07-03'),
+  ( 8, 'E', 'A' ,'Kentucky Fried Chicken' , '20100123330', 'DELOSI S.A.', '2022-10-12'),
+  ( 9, 'E', 'A' ,'Pardos Chicken-Planet-Pasquale' , '20510885229', 'SANGUCHES DEL PERU S.A.C', '2024-01-25'),
+  (10, 'E', 'A' ,'Rockys' , '20513427710', 'Grupo Rokys S.A.C.', '2023-03-08');
+
 INSERT INTO ubicacion (cod_ubicacion, longitud, latitud) VALUES
   (1, -11.556595, -77.203523),
   (2, -11.501818, -77.226304),
@@ -1804,33 +1804,33 @@ INSERT INTO ubicacion (cod_ubicacion, longitud, latitud) VALUES
   (26, -12.169918, -77.023956),
   (27, -11.933034, -77.054910),
   (28, -12.086610, -77.033145);
-  
+
 INSERT INTO ticket (cod_ticket, fecha_entrega) VALUES
-  ( 1, '2019-04-27'), 
-  ( 2, '2021-04-22'), 
-  ( 3, '2022-01-20'), 
-  ( 4, '2022-01-22'), 
-  ( 5, '2022-05-22'), 
-  ( 6, '2022-11-18'), 
-  ( 7, '2023-01-20'), 
-  ( 8, '2023-01-22'), 
-  ( 9, '2023-03-20'), 
-  (10, '2023-04-20'), 
-  (11, '2023-05-20'), 
-  (12,'2023-05-22'), 
-  (13,'2023-06-20'), 
-  (14,'2023-09-16'), 
-  (15,'2023-11-22'), 
-  (16,'2023-12-19'), 
-  (17,'2024-01-22'), 
-  (18,'2024-02-22'), 
-  (19,'2024-04-20'), 
-  (20,'2024-04-22'); 
-  
+  ( 1, '2019-04-27'),
+  ( 2, '2021-04-22'),
+  ( 3, '2022-01-20'),
+  ( 4, '2022-01-22'),
+  ( 5, '2022-05-22'),
+  ( 6, '2022-11-18'),
+  ( 7, '2023-01-20'),
+  ( 8, '2023-01-22'),
+  ( 9, '2023-03-20'),
+  (10, '2023-04-20'),
+  (11, '2023-05-20'),
+  (12,'2023-05-22'),
+  (13,'2023-06-20'),
+  (14,'2023-09-16'),
+  (15,'2023-11-22'),
+  (16,'2023-12-19'),
+  (17,'2024-01-22'),
+  (18,'2024-02-22'),
+  (19,'2024-04-20'),
+  (20,'2024-04-22');
+
 INSERT INTO vehiculo (cod_vehiculo, cod_vehiculo_estado,cod_vehiculo_modelo,anio_fabricacion, capacidad_carga, fecha_ultimo_mantenimiento,fecha_ultimo_viaje, placa) VALUES
   ( 1, 'D', 'F', 2008, 850, '2022-01-10', '2024-01-24', 'A4E-123'),
   ( 2, 'N', 'C', 2009, 620.5, '2023-02-12', '2024-02-24', 'D3F-756'),
-  ( 3, 'C', 'S', 2020, 440.2, '2022-03-05', '2024-03-15', 'G5I-789'), 
+  ( 3, 'C', 'S', 2020, 440.2, '2022-03-05', '2024-03-15', 'G5I-789'),
   ( 4, 'D', 'S', 2015, 550, '2021-04-08', '2024-04-14', 'J4L-223'),
   ( 5, 'N', 'F', 2012, 650, '2023-05-15', '2024-05-27', 'M9O-456'),
   ( 6, 'C', 'C', 2021, 600, '2023-06-02', '2024-06-24', 'P3R-789'),
@@ -1838,7 +1838,7 @@ INSERT INTO vehiculo (cod_vehiculo, cod_vehiculo_estado,cod_vehiculo_modelo,anio
   ( 8, 'D', 'F', 2017, 620.2, '2022-08-10', '2024-08-24', 'V4X-456'),
   ( 9, 'N', 'F', 2020, 220, '2023-09-05','2024-09-05', 'Y7A-789'),
   (10, 'C', 'C', 2018, 430, '2022-10-15', '2024-10-22', 'B8D-413');
-  
+
 INSERT INTO elemento_catalogo (nombre, id_elemento_catalogo_tipo, descripcion, cod_unidad, temperatura_maxima, temperatura_minima, vida_util, peso_unitario) VALUES
 ('Filete de pechuga de pollo San Fernando congelado', 31, 'Filete de pechuga de pollo San Fernando congelado, listo para su uso en la preparación de platos.', 7, -18, -20, 90, 900),
 ('Pierna de pollo San Fernando congelada', 31, 'Pierna de pollo San Fernando congelada, perfecta para su uso en la elaboración de diversos platos.', 7, -18, -20, 90, 1200),
@@ -1877,7 +1877,7 @@ INSERT INTO elemento_catalogo (nombre, id_elemento_catalogo_tipo, descripcion, c
 ('Kit de herramientas eléctricas', 21, 'Kit de herramientas eléctricas para el área de mantenimiento.', 7, NULL, NULL, NULL, 3000),
 ('Material de embalaje', 21, 'Material de embalaje para el área de almacén.', 7, NULL, NULL, NULL, 2000);
 
-INSERT INTO ruta (cod_ruta, distancia_total, cod_ruta_tipo, duracion) VALUES  
+INSERT INTO ruta (cod_ruta, distancia_total, cod_ruta_tipo, duracion) VALUES
   (1, 70.9, 1, 2.4),
   (2, 23.5, 1, 0.8),
   (3, 12.3, 1, 0.4),
@@ -1888,15 +1888,15 @@ INSERT INTO ruta (cod_ruta, distancia_total, cod_ruta_tipo, duracion) VALUES
   (8, 16.4, 1, 0.5),
   (9, 7.3, 1, 0.2),
   (10, 34.8, 1, 1.2);
-  
-INSERT INTO empleado( cod_empleado, cod_cliente, cod_persona, cod_empleado_cargo, fecha_contrato ) VALUES 
+
+INSERT INTO empleado( cod_empleado, cod_cliente, cod_persona, cod_empleado_cargo, fecha_contrato ) VALUES
   ( 1, 1, 11, 1, '2021-04-09'),
   ( 2, 1, 12, 1, '2021-06-17'),
   ( 3, 1, 13, 2, '2022-03-20'),
   ( 4, 1, 14, 3, '2021-01-20'),
   ( 5, 1, 15, 4, '2022-01-07'),
-  ( 6, 1, 16, 5, '2021-08-09'),  
-  ( 7, 1, 17, 6, '2021-11-06'),  
+  ( 6, 1, 16, 5, '2021-08-09'),
+  ( 7, 1, 17, 6, '2021-11-06'),
   ( 8, 1, 18, 6, '2021-07-09'),
   ( 9, 3, 19, 7, '2021-01-09'),
   ( 10, 4, 20, 8, '2021-02-09'),
@@ -1907,7 +1907,7 @@ INSERT INTO empleado( cod_empleado, cod_cliente, cod_persona, cod_empleado_cargo
 INSERT INTO transportista (cod_transportista,cod_empleado,cod_estado_transportista,cod_tipo_licencia, num_licencia, fecha_vencimiento_licencia,fecha_ultimo_traslado) VALUES
   ( 1, 6,  'D', 'X','E567890', '2027-01-23', '2024-04-15'),
   ( 2, 12, 'N', 'Y','R487236','2025-01-08', '2024-04-24');
-  
+
 INSERT INTO representante (cod_representante,num_telefono,correo_empresarial,cargo,cod_cliente,cod_persona) VALUES
   ( 1, '(+51) 943 567 890',              'juan.lopez@sanfernando.com',                 'Gerente de Almacén',  1,  1),
   ( 2, '(+51) 976 345 678',            'diana.vargas@sanfernando.com', 'Supervisora de Atención al Cliente',  2,  2),
@@ -1920,44 +1920,44 @@ INSERT INTO representante (cod_representante,num_telefono,correo_empresarial,car
   ( 9, '(+51) 965 123 456',     'laura.gonzalez@sanguchesdelperu.com',             'Supervisora de Compras',  9,  9),
   (10, '(+51) 954 789 012',           'carlos.ramirez@gruporokys.com',               'Gerente de Logística', 10, 10);
 
-INSERT INTO operacion (id_operacion, id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, fecha, hora_inicio, hora_fin, cod_tipo_operacion) VALUES
-(1, NULL, 1, 4, '2024-04-01', '08:00:00', '08:30:00', 1),
-(2, 1, 1, 4, '2024-04-01', '08:45:00', '09:15:00', 2),
-(3, 1, 1, 4, '2024-04-01', '09:30:00', '10:30:00', 3),
-(4, 1, 1, 4, '2024-04-01', '10:45:00', '11:15:00', 4),
-(5, 1, 1, 4, '2024-04-01', '11:30:00', '12:00:00', 5),
-(6, 1, 1, 4, '2024-04-01', '14:00:00', '14:30:00', 6),
-(7, NULL, 13, 4, '2024-04-02', '08:00:00', '08:35:00', 1),
-(8, 7, 13, 4, '2024-04-02', '08:45:00', '09:15:00', 2),
-(9, 7, 13, 4, '2024-04-02', '09:30:00', '10:30:00', 3),
-(10, 7, 13, 4, '2024-04-02', '10:45:00', '11:15:00', 4),
-(11, 7, 13, 4, '2024-04-02', '11:30:00', '12:00:00', 5),
-(12, 7, 1, 4, '2024-04-02', '17:00:00', '17:18:00', 6),
-(13, NULL, 13, 4, '2024-04-02', '09:15:00', '09:30:00', 1),
-(14, 13, 12, 4, '2024-04-02', '09:42:00', '10:10:00', 2),
-(15, 13, 12, 4, '2024-04-02', '10:20:00', '11:10:00', 3),
-(16, 13, 12, 4, '2024-04-02', '12:15:00', '12:05:00', 4),
-(17, 13, 12, 4, '2024-04-02', '12:20:00', '12:56:00', 5),
-(18, 13, 1, 4, '2024-04-02', '18:20:00', '18:56:00', 6),
-(19, NULL, 13, 4, '2024-04-02', '10:00:00', '10:35:00', 1),
-(20, 19, 13, 4, '2024-04-02', '10:45:00', '10:15:00', 2),
-(21, 19, 13, 4, '2024-04-02', '10:30:00', '11:30:00', 3),
-(22, 19, 13, 4, '2024-04-02', '11:45:00', '12:15:00', 4),
-(23, 19, 13, 4, '2024-04-02', '12:30:00', '13:00:00', 5),
-(24, 19, 1, 4, '2024-04-02', '18:20:00', '18:56:00', 6);
+INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, fecha, hora_inicio, hora_fin, cod_tipo_operacion) VALUES
+(NULL, 1, 4, '2024-04-01', '08:00:00', '08:30:00', 1),
+(1, 1, 4, '2024-04-01', '08:45:00', '09:15:00', 2),
+(1, 1, 4, '2024-04-01', '09:30:00', '10:30:00', 3),
+(1, 1, 4, '2024-04-01', '10:45:00', '11:15:00', 4),
+(1, 1, 4, '2024-04-01', '11:30:00', '12:00:00', 5),
+(1, 1, 4, '2024-04-01', '14:00:00', '14:30:00', 6),
+(NULL, 13, 4, '2024-04-02', '08:00:00', '08:35:00', 1),
+(7, 13, 4, '2024-04-02', '08:45:00', '09:15:00', 2),
+(7, 13, 4, '2024-04-02', '09:30:00', '10:30:00', 3),
+(7, 13, 4, '2024-04-02', '10:45:00', '11:15:00', 4),
+(7, 13, 4, '2024-04-02', '11:30:00', '12:00:00', 5),
+(7, 1, 4, '2024-04-02', '17:00:00', '17:18:00', 6),
+(NULL, 13, 4, '2024-04-02', '09:15:00', '09:30:00', 1),
+(13, 12, 4, '2024-04-02', '09:42:00', '10:10:00', 2),
+(13, 12, 4, '2024-04-02', '10:20:00', '11:10:00', 3),
+(13, 12, 4, '2024-04-02', '12:15:00', '12:05:00', 4),
+(13, 12, 4, '2024-04-02', '12:20:00', '12:56:00', 5),
+(13, 1, 4, '2024-04-02', '18:20:00', '18:56:00', 6),
+(NULL, 13, 4, '2024-04-02', '10:00:00', '10:35:00', 1),
+(19, 13, 4, '2024-04-02', '10:45:00', '10:15:00', 2),
+(19, 13, 4, '2024-04-02', '10:30:00', '11:30:00', 3),
+(19, 13, 4, '2024-04-02', '11:45:00', '12:15:00', 4),
+(19, 13, 4, '2024-04-02', '12:30:00', '13:00:00', 5),
+(19, 1, 4, '2024-04-02', '18:20:00', '18:56:00', 6);
 
-INSERT INTO mercancia (id_mercancia, id_operacion_picking, cantidad_productos, nro_precinto, peso_total) VALUES
-(1, 1, 0, '0000220240401080000', 12000),
-(2, 1, 0, '0000220240401080000', 7500),
-(3, 1, 0, '0000220240401080000', 5500),
-(4, 7, 0, '0000820240402080000', 13500),
-(5, 7, 0, '0000820240402080000', 15000),
-(6, 13, 0, '0001420240402090000', 750),
-(7, 13, 0, '0001420240402090000', 600),
-(8, 19, 0, '0002020240402100000', 18000),
-(9, 19, 0, '0002020240402100000', 16500);
+INSERT INTO mercancia (id_operacion_picking, nro_precinto, peso_total) VALUES
+(1, '00002202404010800011', 12000),
+(1, '00002202404010800023', 7500),
+(1, '00002202404010800044', 5500),
+(7, '00008202404020800055', 13500),
+(7, '00008202404020800067', 15000),
+(13, '00014202404020900087', 750),
+(13, '00014202404020900098', 600),
+(19, '00020202404021000019', 18000),
+(19, '00020202404021000021', 16500);
 
-INSERT INTO stock (id_stock, cod_stock, id_elemento_catalogo, nro_lote, fecha_caducidad, cantidad) VALUES
+INSERT INTO stock (id_stock, cod_stock, id_elemento_catalogo, nro_lote, fecha_caducidad, cantidad_disponible) VALUES
 (1, '00001-00001-00123', 1, 123, '2024-04-01', 1000),
 (2, '00002-00002-00124', 2, 124, '2024-04-02', 2000),
 (3, '00003-00003-00125', 3, 125, '2024-04-03', 5000),
@@ -1984,11 +1984,11 @@ INSERT INTO stock (id_stock, cod_stock, id_elemento_catalogo, nro_lote, fecha_ca
 (24, '00024-00007-00236', 7, 236, '2024-04-14', 1200),
 (25, '00025-00007-00237', 7, 237, '2024-04-15', 1030);
 
-INSERT INTO traslado (id_traslado, cod_guia_remision, cod_vehiculo, cod_ruta, cod_transportista, id_operacion_inicia, id_operacion_termina) VALUES
-(1, '000012024040111301200', 2, 2, 2, 5, 6),
-(2, '000022024040211301200', 3, 3, 2, 11, 12),
-(3, '000032024040212201256', 3, 3, 1, 17, 18),
-(4, '000042024040212301300', 3, 3, 2, 23, 24);
+INSERT INTO traslado (cod_guia_remision, cod_vehiculo, cod_ruta, cod_transportista, id_operacion_inicia, id_operacion_termina) VALUES
+('000012024040111301200', 2, 2, 2, 5, 6),
+('000022024040211301200', 3, 3, 2, 11, 12),
+('000032024040212201256', 3, 3, 1, 17, 18),
+('000042024040212301300', 3, 3, 2, 23, 24);
 
 INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES
 (1, 1, 10),
@@ -2017,66 +2017,66 @@ INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES
 (9, 24, 5),
 (9, 25, 15);
 
-INSERT INTO detalle_ticket_producto (cod_ticket, id_elemento_catalogo, cantidad) VALUES 
-  (1, 25, 5), 
-  (1, 19, 2), 
-  (1, 30, 10), 
-  (2, 27, 2), 
-  (3, 20, 6), 
-  (3, 24, 3), 
-  (4, 36, 100), 
-  (4, 32, 1), 
-  (5, 31, 15), 
-  (5, 29, 12), 
-  (6, 33, 12), 
-  (7, 35, 5), 
-  (8, 28, 20), 
-  (8, 23, 2), 
-  (9, 34, 4), 
-  (10, 2, 1000), 
-  (11, 3, 1000), 
-  (12, 5, 1000), 
-  (13, 6, 1000), 
-  (14, 4, 1000), 
-  (15, 4, 1000), 
-  (16, 7, 1000), 
-  (16, 11, 1000), 
-  (17, 18, 50), 
-  (18, 1, 1000), 
-  (18, 15, 1000), 
-  (19, 9, 1000), 
+INSERT INTO detalle_ticket_producto (cod_ticket, id_elemento_catalogo, cantidad) VALUES
+  (1, 25, 5),
+  (1, 19, 2),
+  (1, 30, 10),
+  (2, 27, 2),
+  (3, 20, 6),
+  (3, 24, 3),
+  (4, 36, 100),
+  (4, 32, 1),
+  (5, 31, 15),
+  (5, 29, 12),
+  (6, 33, 12),
+  (7, 35, 5),
+  (8, 28, 20),
+  (8, 23, 2),
+  (9, 34, 4),
+  (10, 2, 1000),
+  (11, 3, 1000),
+  (12, 5, 1000),
+  (13, 6, 1000),
+  (14, 4, 1000),
+  (15, 4, 1000),
+  (16, 7, 1000),
+  (16, 11, 1000),
+  (17, 18, 50),
+  (18, 1, 1000),
+  (18, 15, 1000),
+  (19, 9, 1000),
   (20, 14, 1000);
 
-INSERT INTO detalle_ticket_traslado (cod_ticket, id_traslado) VALUES 
-(1, 1), 
-(1, 2), 
-(2, 1), 
-(3, 1), 
-(3, 2), 
-(4, 1), 
-(4, 2), 
-(4, 3 ), 
-(5, 1), 
-(6, 2), 
-(7, 3), 
-(8, 3), 
-(9, 3), 
-(10, 2), 
-(11,1), 
-(11, 3), 
-(12, 2), 
-(13, 1), 
-(14, 2), 
-(15, 4), 
-(16, 4), 
-(16, 1), 
-(17, 4), 
-(18, 4), 
-(18, 1), 
-(19, 4), 
-(20, 4); 
+INSERT INTO detalle_ticket_traslado (cod_ticket, id_traslado) VALUES
+(1, 1),
+(1, 2),
+(2, 1),
+(3, 1),
+(3, 2),
+(4, 1),
+(4, 2),
+(4, 3 ),
+(5, 1),
+(6, 2),
+(7, 3),
+(8, 3),
+(9, 3),
+(10, 2),
+(11,1),
+(11, 3),
+(12, 2),
+(13, 1),
+(14, 2),
+(15, 4),
+(16, 4),
+(16, 1),
+(17, 4),
+(18, 4),
+(18, 1),
+(19, 4),
+(20, 4);
 
-INSERT INTO gps (cod_gps, cod_ubicacion, cod_vehiculo, fecha_ubicacion, hora_ubicacion) VALUES  
+INSERT INTO gps (cod_gps, cod_ubicacion, cod_vehiculo, fecha_ubicacion, hora_ubicacion) VALUES
   (1, 1, 4, '2024-04-20', '04:53:21'),
   (2, 15, 4, '2024-04-20', '09:10:53'),
   (3, 17, 4, '2024-04-20', '11:33:14'),
@@ -2090,7 +2090,7 @@ INSERT INTO gps (cod_gps, cod_ubicacion, cod_vehiculo, fecha_ubicacion, hora_ubi
   (11, 13, 7, '2024-04-22', '13:04:10'),
   (12, 14, 7, '2024-04-22', '13:38:50');
 
-INSERT INTO local (cod_local, cod_cliente, cod_ubicacion, pais, cod_local_region, cod_local_distrito, calle, numero, cod_local_tipo) VALUES  
+INSERT INTO local (cod_local, cod_cliente, cod_ubicacion, pais, cod_local_region, cod_local_distrito, calle, numero, cod_local_tipo) VALUES
   (1, 1, 1, 'PER', 15, 44, 'Panamericana Norte', NULL, 1),
   (2, 8, 2, 'PER', 15, 44, 'Av. El Solar', NULL, 2),
   (3, 8, 3, 'PER', 7, 45, 'Av. Néstor Gambetta', 7036, 2),
@@ -2112,7 +2112,7 @@ INSERT INTO local (cod_local, cod_cliente, cod_ubicacion, pais, cod_local_region
   (19, 2, 27, 'PER', 15, 9, 'Av. Universitaria', 7718, 3),
   (20, 2, 28, 'PER', 15, 16, 'Av. Petit Thouars', 2260, 3);
 
-INSERT INTO paradero (cod_paradero, cod_ruta, cod_local, cod_paradero_tipo, orden) VALUES  
+INSERT INTO paradero (cod_paradero, cod_ruta, cod_local, cod_paradero_tipo, orden) VALUES
   (1, 1, 1, 1, 1),
   (2, 1, 2, 2, 2),
   (3, 1, 4, 2, 3),
@@ -2125,28 +2125,28 @@ INSERT INTO paradero (cod_paradero, cod_ruta, cod_local, cod_paradero_tipo, orde
   (10, 3, 6, 2, 4),
   (11, 4, 17, 1, 1),
   (12, 4, 1, 3, 2);
-  
-INSERT INTO pedido (cod_representante, cod_empleado, cod_pedido_tipo,cod_pedido_estado,fecha_registro, cod_ticket) VALUES 
-  (1,1,'A', 'P','2019-04-22', 1), 
-  (2,2,'A', 'P','2021-04-17', 2), 
-  (2,1,'A', 'P','2022-01-15', 3), 
-  (1,2,'A', 'P','2022-01-17', 4), 
-  (3,1,'A', 'P','2022-05-17', 5), 
-  (3,2,'A', 'P','2022-11-13', 6), 
-  (4,1,'A', 'P','2023-01-15', 7), 
-  (4,2,'A', 'P','2023-01-17', 8), 
-  (4,1,'A', 'P','2023-03-15', 9), 
-  (5,1,'V', 'P','2023-04-15', 10), 
-  (5,2,'V', 'P','2023-05-15', 11), 
-  (6,1,'V', 'P','2023-05-17', 12), 
-  (7,2,'V', 'P','2023-06-15', 13), 
+
+INSERT INTO pedido (cod_representante, cod_empleado, cod_pedido_tipo,cod_pedido_estado,fecha_registro, cod_ticket) VALUES
+  (1,1,'A', 'P','2019-04-22', 1),
+  (2,2,'A', 'P','2021-04-17', 2),
+  (2,1,'A', 'P','2022-01-15', 3),
+  (1,2,'A', 'P','2022-01-17', 4),
+  (3,1,'A', 'P','2022-05-17', 5),
+  (3,2,'A', 'P','2022-11-13', 6),
+  (4,1,'A', 'P','2023-01-15', 7),
+  (4,2,'A', 'P','2023-01-17', 8),
+  (4,1,'A', 'P','2023-03-15', 9),
+  (5,1,'V', 'P','2023-04-15', 10),
+  (5,2,'V', 'P','2023-05-15', 11),
+  (6,1,'V', 'P','2023-05-17', 12),
+  (7,2,'V', 'P','2023-06-15', 13),
   (8,1,'V', 'P', '2023-09-11',14),
-  (8,2,'V', 'P', '2023-11-17', 15), 
-  (8,1,'V', 'P', '2023-12-14', 16), 
-  (9,2,'V', 'P', '2024-01-17', 17), 
-  (10,1,'V', 'P','2024-02-17', 18), 
-  (9,2,'V', 'P','2024-04-17', 19), 
-  (10,1,'V', 'P','2024-04-17', 20); 
+  (8,2,'V', 'P', '2023-11-17', 15),
+  (8,1,'V', 'P', '2023-12-14', 16),
+  (9,2,'V', 'P', '2024-01-17', 17),
+  (10,1,'V', 'P','2024-02-17', 18),
+  (9,2,'V', 'P','2024-04-17', 19),
+  (10,1,'V', 'P','2024-04-17', 20);
 
 INSERT INTO incidencia (id_traslado,cod_tipo_incidencia,descripcion,fecha_ocurrencia) VALUES
   ( 1, 'A', 'La fecha de entrega no coincide con la fecha establecida de llegada','2024-04-24'),
@@ -2159,7 +2159,7 @@ INSERT INTO incidencia (id_traslado,cod_tipo_incidencia,descripcion,fecha_ocurre
   ( 2, 'E', 'La direccion asignada presenta demasiado tráfico', '2024-05-12'),
   ( 1, 'B', 'El sello del paquete está dañado', '2024-04-30'),
   ( 1, 'A', 'Ocurrió un accidente en la carretera que retrasó la entrega del pedido', '2024-05-02');
-  
+
 INSERT INTO procedimiento (cod_incidencia,cod_tipo_procedimiento,nombre, tiempo_estimado) VALUES
   ( 1,    'A', 'Nro 1:Problema con la entrega',2 ),
   ( 2,    'B', 'Nro 2:Problema con el etiquetado',1),
@@ -2170,8 +2170,8 @@ INSERT INTO procedimiento (cod_incidencia,cod_tipo_procedimiento,nombre, tiempo_
   ( 7,    'D', 'Nro 7:Problema con el vehiculo',6),
   ( 8,    'E', 'Nro 8:Problema con la ruta',3),
   ( 9,    'B', 'Nro 9:Problema con el etiquetado',1),
-  (10,   'B', 'Nro 10:Problema con el etiquetado',1);   
-  
+  (10,   'B', 'Nro 10:Problema con el etiquetado',1);
+
 INSERT INTO norma (cod_norma, cod_incidencia, cod_norma_tipo, fecha_emision, fecha_vigencia) VALUES
   (1, 1, 'X', '2019-01-24', '2025-01-24'),
   (2, 2, 'Y', '2021-02-21', '2029-02-21'),
@@ -2195,7 +2195,7 @@ INSERT INTO seguimiento (comentario,fecha_resolucion,numero_caso,cod_cliente_int
   (   'Se está evaluando la temperatura de almacenamiento y transporte de los productos congelados para corregir cualquier irregularidad que pueda causar la formación de cristales de hielo en el futuro.', '2024-03-09', 0, 1, 'E'),
   ( 'Se ha iniciado una investigación interna para determinar en qué etapa del proceso de embalaje ocurrió el daño al envase y se está tomando medidas para mejorar el proceso de manipulación y embalaje.', '2024-04-29', 1, 1, 'C'),
   ( 'Se está llevando a cabo una revisión exhaustiva de los procesos de almacenamiento y manipulación de las pechugas de pollo para identificar la fuente del problema y se han reforzado los controles de calidad para evitar errores similares en el futuro.', '2024-05-02', 2, 1, 'I');
-  
+
 INSERT INTO reclamo (comentario,fecha_suceso,fecha_reclamo,cod_representante,cod_pedido,cod_seguimiento,cod_tipo_reclamo,cod_nivel_urgencia,cod_estado_reclamo) VALUES
   (                                                    'Las estanterías metálicas recibidas están oxidadas y algunas piezas están dañadas.', '2019-04-30', '2019-05-01',  1,  1,  1, 'A', 'M', 'C'),
   (                  'La silla ergonómica recibida tiene un defecto en el respaldo y el teléfono multifuncional no funciona correctamente.', '2022-01-23', '2022-01-26',  2,  3,  2, 'C', 'A', 'B'),
