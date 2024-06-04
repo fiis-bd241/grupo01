@@ -162,7 +162,7 @@ GROUP BY ec.id_elemento_catalogo, ecu.cod_unidad, ect.id_elemento_catalogo_tipo,
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/931a7d00-c6a6-49e4-b28a-7a46bdeedb48">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/4e76cb59-7849-47a6-818f-d5e98ad1f9a7">
       </td>
    </tr>
    <tr>
@@ -180,7 +180,44 @@ SELECT cod_reporte_tipo, descripcion FROM reporte_tipo;
 3. Botón generar: Cuando el usuario presione el botón generar, se generará un reporte.
 INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo)
 VALUES
-(cod_representante, <2>, <3>)
+(cod_representante, <1>, <2>)
+```
+
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R501</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>P502</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/cdcf6d64-c139-4470-bf06-a3e197484db5">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+``` sql
+1. Carga de frecuencia: Se llenará la lista de frecuencias para programar reportes.
+SELECT cod_reporte_frecuencia, descripcion FROM reporte_frecuencia;
+
+2. Carga de formatos: Se llenará la lista de formatos de reportes a seleccionar.
+SELECT cod_reporte_formato, descripcion FROM reporte_formato;
+
+3. Carga de tipos: Se llenará la lista de tipos de reportes a seleccionar.
+SELECT cod_reporte_tipo, descripcion FROM reporte_tipo; 
+
+6. Botón programar: Cuando el usuario presione el botón generar, se generará un reporte.
+INSERT INTO programacion_reporte
+(cod_representante, cod_reporte_frecuencia, cod_reporte_formato, cod_reporte_tipo,, fecha_inicio, fecha_fin ) 
+VALUES
+(cod_representante, <1>, <2>, <3>, <4>, <5>);
 ```
 
 ## 3. Carga de Datos
