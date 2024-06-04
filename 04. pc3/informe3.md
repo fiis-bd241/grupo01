@@ -260,7 +260,117 @@ El cod_reporte_estado = 1 corresponde a "Activo".
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
+1. Carga de reportes programados: Cuando el usuario entre al modulo de reportes, se llenará la tabla de reportes programados según su id.
 
+``` sql 
+SELECT 
+    pr.cod_programacion_reporte,
+    rfo.descripcion formato,
+    rt.descripcion tipo,
+    rfe.descripcion frecuencia,
+    pr.fecha_inicio, 
+    pr.fecha_fin 
+FROM programacion_reporte AS pr
+INNER JOIN reporte_formato AS rfo ON rfo.cod_reporte_formato = pr.cod_reporte_formato
+INNER JOIN reporte_tipo AS rt ON rt.cod_reporte_tipo = pr.cod_reporte_tipo
+INNER JOIN reporte_frecuencia AS rfe ON rfe.cod_reporte_frecuencia = pr.cod_reporte_frecuencia
+WHERE pr.cod_reporte_estado = 1 AND pr.cod_representante = <1>
+ORDER BY pr.cod_programacion_reporte;
+```
+Donde `<1>` corresponde al código del usuario del inicio de sesión.
+El cod_reporte_estado = 1 corresponde a "Activo".
+
+Al haber presionado antes el botón de "Gráficos", se carga otra pantalla con diversos gráficos de:
+
+2. Carga de gráfica de pedidos por mes:
+``` sql
+WITH meses AS (
+    SELECT generate_series(1, 12) AS mes_num
+)
+SELECT 
+    TO_CHAR(TO_DATE(mes_num::text, 'MM'), 'TMMonth') AS mes,
+    COUNT(pe.fecha_registro) AS total_pedidos FROM meses
+LEFT JOIN 
+    pedido AS pe ON EXTRACT(MONTH FROM pe.fecha_registro) = meses.mes_num
+    AND EXTRACT(YEAR FROM pe.fecha_registro) = 2024
+GROUP BY meses.mes_num
+ORDER BY meses.mes_num;
+```
+3. Carga de productos más pedidos: Aparecerán barras según el límite escogido:
+``` sql
+SELECT ec.id_elemento_catalogo, ec.nombre, SUM(dtp.cantidad) AS cantidad FROM pedido AS pe
+INNER JOIN ticket AS t ON t.cod_ticket = pe.cod_ticket AND pe.cod_pedido_tipo = 'V'
+INNER JOIN detalle_ticket_producto AS dtp ON dtp.cod_ticket = t.cod_ticket
+INNER JOIN elemento_catalogo AS ec ON ec.id_elemento_catalogo = dtp.id_elemento_catalogo
+GROUP BY ec.id_elemento_catalogo
+ORDER BY cantidad DESC LIMIT <3>;
+```
+4. Cantidad de reclamos por mes:
+``` sql
+WITH meses AS (
+    SELECT generate_series(1, 12) AS mes_num
+)
+SELECT 
+    TO_CHAR(TO_DATE(mes_num::text, 'MM'), 'TMMonth') AS mes,
+    COUNT(re.fecha_reclamo) AS total_reclamos FROM meses
+LEFT JOIN 
+    reclamo AS re ON EXTRACT(MONTH FROM re.fecha_reclamo) = meses.mes_num
+    AND EXTRACT(YEAR FROM re.fecha_reclamo) = 2024
+GROUP BY meses.mes_num
+ORDER BY meses.mes_num;
+```
+5. Tiempo medio de resolución de reclamos por su nivel de urgencia:
+``` sql
+SELECT 
+    nu.cod_nivel_urgencia, 
+    nu.descripcion, 
+    COALESCE(SUM(se.fecha_resolucion - re.fecha_reclamo)/COUNT(re.cod_reclamo),0) AS tiempo_medio,
+    COUNT(re.cod_reclamo) AS cantidad
+FROM nivel_urgencia AS nu
+LEFT JOIN reclamo AS re ON re.cod_nivel_urgencia = nu.cod_nivel_urgencia
+LEFT JOIN seguimiento AS se ON se.cod_seguimiento = re.cod_seguimiento
+GROUP BY nu.cod_nivel_urgencia;
+```
+6. Cantidad de reclamos por tipo y nivel de urgencia
+``` sql
+SELECT 
+    rt.cod_tipo_reclamo,
+    rt.descripcion,
+    COUNT(re.cod_reclamo) AS total,
+    SUM(CASE WHEN nu.cod_nivel_urgencia = 'B' THEN 1 ELSE 0 END) AS urgencia_baja,
+    SUM(CASE WHEN nu.cod_nivel_urgencia = 'M' THEN 1 ELSE 0 END) AS urgencia_media,
+    SUM(CASE WHEN nu.cod_nivel_urgencia = 'A' THEN 1 ELSE 0 END) AS urgencia_alta
+FROM reclamo_tipo AS rt
+LEFT JOIN reclamo AS re ON re.cod_tipo_reclamo = rt.cod_tipo_reclamo
+LEFT JOIN nivel_urgencia AS nu ON nu.cod_nivel_urgencia = re.cod_nivel_urgencia
+GROUP BY rt.cod_tipo_reclamo
+ORDER BY rt.cod_tipo_reclamo;
+```
+7. Tiempo medio para realizar cada operación en almacén:
+``` sql
+SELECT 
+    ot.cod_tipo_operacion, 
+    ot.descripcion, 
+    COALESCE(SUM(hora_fin-hora_inicio)/COUNT(*),'00:00:00') as operacion_tipo_tiempo_medio
+FROM operacion_tipo AS ot
+LEFT JOIN operacion AS o ON o.cod_tipo_operacion = ot.cod_tipo_operacion 
+GROUP BY ot.cod_tipo_operacion;
+```
+8. Descripción de tipos de reclamos: (Se obtiene de la parte 6.)
+``` sql
+SELECT 
+    rt.cod_tipo_reclamo,
+		rt.descripcion,
+    COUNT(re.cod_reclamo) AS total,
+    SUM(CASE WHEN nu.cod_nivel_urgencia = 'B' THEN 1 ELSE 0 END) AS urgencia_baja,
+    SUM(CASE WHEN nu.cod_nivel_urgencia = 'M' THEN 1 ELSE 0 END) AS urgencia_media,
+    SUM(CASE WHEN nu.cod_nivel_urgencia = 'A' THEN 1 ELSE 0 END) AS urgencia_alta
+FROM reclamo_tipo AS rt
+LEFT JOIN reclamo AS re ON re.cod_tipo_reclamo = rt.cod_tipo_reclamo
+LEFT JOIN nivel_urgencia AS nu ON nu.cod_nivel_urgencia = re.cod_nivel_urgencia
+GROUP BY rt.cod_tipo_reclamo
+ORDER BY rt.cod_tipo_reclamo;
+```
 ## 3. Carga de Datos
 
 ## 4. Funcionalidad Primaria Elegida
