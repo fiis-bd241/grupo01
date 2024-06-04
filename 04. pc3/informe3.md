@@ -85,12 +85,104 @@ Caso de Uso #4: Ver gráficos de cada módulo
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R502          |
 | Código      | P502 |
-| Prototipo   |  ![P503](https://github.com/fiis-bd241/grupo01/assets/161625149/20e8f6c6-ec0a-435e-9787-a251b975e0bd)
-   |
+| Prototipo   |  ![P503](https://github.com/fiis-bd241/grupo01/assets/161625149/20e8f6c6-ec0a-435e-9787-a251b975e0bd) |
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R504          |
 | Código      | P502 |
-| Prototipo   |   ![P504](https://github.com/fiis-bd241/grupo01/assets/161625149/2e4a32c5-0ad2-41a8-a4bf-417dc081b162)
-  |
+| Prototipo   |   ![P504](https://github.com/fiis-bd241/grupo01/assets/161625149/2e4a32c5-0ad2-41a8-a4bf-417dc081b162)|
+
+## 2. Sentencias SQL por cada prototipo
+
+### Sentencias SQL para el módulo de Reportes
+
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R503</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>P501</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/49b92b4f-8454-4796-80b5-40231c04d128">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+``` sql 
+1. Carga de reportes programados: Cuando el usuario entre al modulo de reportes, se llenará la tabla de reportes programados.
+SELECT 
+	pr.cod_programacion_reporte,
+	rfo.descripcion formato,
+	rt.descripcion tipo,
+	rfe.descripcion frecuencia,
+	pr.fecha_inicio, 
+	pr.fecha_fin 
+FROM programacion_reporte AS pr
+INNER JOIN reporte_formato AS rfo ON rfo.cod_reporte_formato = pr.cod_reporte_formato
+INNER JOIN reporte_tipo AS rt ON rt.cod_reporte_tipo = pr.cod_reporte_tipo
+INNER JOIN reporte_frecuencia AS rfe ON rfe.cod_reporte_frecuencia = pr.cod_reporte_frecuencia
+WHERE pr.cod_reporte_estado = 1
+ORDER BY pr.cod_programacion_reporte;
+
+2. Carga de inventario: Cuando el usuario entre al modulo de reportes, se llenará la tabla de elementos catálogo.
+SELECT 
+	ec.id_elemento_catalogo, 
+	ec.nombre,
+	ec.peso_unitario,
+	ecu.descripcion AS unidad,
+	ect.descripcion AS tipo,
+	ep.descripcion AS produccion,
+	SUM(st.cantidad) AS cantidad
+FROM elemento_catalogo AS ec
+LEFT JOIN stock AS st ON st.id_elemento_catalogo = ec.id_elemento_catalogo
+LEFT JOIN elemento_catalogo_unidad AS ecu ON ecu.cod_unidad = ec.cod_unidad
+LEFT JOIN elemento_catalogo_tipo AS ect ON ect.id_elemento_catalogo_tipo = ec.id_elemento_catalogo_tipo
+LEFT JOIN elemento_produccion AS ep ON ep.id_elemento_produccion = ect.id_elemento_produccion
+GROUP BY ec.id_elemento_catalogo, ecu.cod_unidad, ect.id_elemento_catalogo_tipo, ep.id_elemento_produccion;	
+```
+
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R501</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>P502</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/931a7d00-c6a6-49e4-b28a-7a46bdeedb48">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+``` sql 
+1. Carga de formatos: Se llenará la lista de formatos de reportes a seleccionar.
+SELECT cod_reporte_formato, descripcion FROM reporte_formato;
+
+2. Carga de tipos: Se llenará la lista de tipos de reportes a seleccionar.
+SELECT cod_reporte_tipo, descripcion FROM reporte_tipo; 
+
+3. Botón generar: Cuando el usuario presione el botón generar, se generará un reporte.
+INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo)
+VALUES
+(cod_representante, <2>, <3>)
+```
+
+## 3. Carga de Datos
+
+## 4. Funcionalidad Primaria Elegida
