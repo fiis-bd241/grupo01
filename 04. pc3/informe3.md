@@ -84,19 +84,20 @@ Caso de Uso #4: Ver gráficos de cada módulo
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R502          |
-| Código      | P502 |
+| Código      | P503 |
 | Prototipo   |  ![P503](https://github.com/fiis-bd241/grupo01/assets/161625149/20e8f6c6-ec0a-435e-9787-a251b975e0bd) |
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R504          |
-| Código      | P502 |
+| Código      | P504 |
 | Prototipo   |   ![P504](https://github.com/fiis-bd241/grupo01/assets/161625149/2e4a32c5-0ad2-41a8-a4bf-417dc081b162)|
 
 ## 2. Sentencias SQL por cada prototipo
 
 ### Sentencias SQL para el módulo de Reportes
 
+#### Caso 1
 <table>
    <tr>
       <td>Código Requerimiento</td>
@@ -149,7 +150,7 @@ LEFT JOIN elemento_catalogo_tipo AS ect ON ect.id_elemento_catalogo_tipo = ec.id
 LEFT JOIN elemento_produccion AS ep ON ep.id_elemento_produccion = ect.id_elemento_produccion
 GROUP BY ec.id_elemento_catalogo, ecu.cod_unidad, ect.id_elemento_catalogo_tipo, ep.id_elemento_produccion;	
 ```
-
+#### Caso 2
 <table>
    <tr>
       <td>Código Requerimiento</td>
@@ -182,15 +183,15 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo)
 VALUES
 (cod_representante, <1>, <2>)
 ```
-
+#### Caso 3
 <table>
    <tr>
       <td>Código Requerimiento</td>
-      <td>R501</td>
+      <td>R502</td>
    </tr>
    <tr>
       <td>Código interfaz</td>
-      <td>P502</td>
+      <td>P503</td>
    </tr>
    <tr>
       <td>Imagen interfaz</td>
@@ -219,7 +220,30 @@ INSERT INTO programacion_reporte
 VALUES
 (cod_representante, <1>, <2>, <3>, <4>, <5>);
 ```
+#### Caso 4
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R504</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>P504</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
 
+``` sql
+
+```
 ## 3. Carga de Datos
 
 ## 4. Funcionalidad Primaria Elegida
