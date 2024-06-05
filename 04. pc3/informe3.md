@@ -3248,9 +3248,9 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 
 ### 1. Funcionalidad Primaria del Módulo de pedidos
 
-**Funcionalidad primaria elegida:** 
+**Funcionalidad primaria elegida:** Registrar un nuevo pedido y agregar Productos al Pedido. Este flujo se considera fundamental para el correcto funcionamiento del sistema, ya que permite al empleado de la empresa San Fernando registrar los pedidos de los clientes, incluyendo la información del representante, la empresa a la que pertenece y los productos solicitados.
 
-**Sustentación:**
+**Sustentación:** La elección de la funcionalidad primaria del modulo se basa en un proceso crítico para la operación comercial de la empresa San Fernando, ya que sin la capacidad de registrar correctamente los pedidos de los clientes, la empresa no podría llevar a cabo sus actividades principales de venta y distribución de productos. Involucra el manejo de datos relacionados de múltiples tablas de la base de datos, como clientes, representantes, productos y pedidos, demostrando la capacidad del sistema para mantener la integridad de la información. Representa un flujo de trabajo completo y coherente dentro de la aplicación, abarcando desde la captura de información del cliente y representante (R101) hasta la selección de productos específicos (R102), lo que permite una comprensión integral de su implementación en el sistema. Establece una base sólida para el desarrollo de otras funcionalidades relacionadas, como el seguimiento del estado del pedido, la generación de de guías de remisión, el control de asignacion de trasnporte y la gestión de envíos, facilitando la escalabilidad y el crecimiento futuro del sistema. Implica la interacción directa del empleado con el sistema a través de interfaces de usuario específicas, como el formulario de registro de pedidos y la selección de productos del catálogo, permitiendo evaluar y validar la usabilidad y la experiencia del usuario en el contexto de una tarea crítica. Además, permite validar y comprobar el cumplimiento de los requisitos establecidos en los casos de uso R101 (Registrar Pedido) y R102 (Agregar Productos al Pedido), asegurando que el sistema cumpla con las especificaciones definidas.
 <table>
    <tr>
       <th>Actividad</th>
