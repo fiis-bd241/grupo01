@@ -1015,7 +1015,7 @@ CREATE TABLE IF NOT EXISTS vehiculo (
  fecha_ultimo_viaje DATE NOT NULL,
  capacidad_carga FLOAT NOT NULL CHECK (capacidad_carga > 0),
  cod_vehiculo_modelo CHAR(1) NOT NULL,
- cod_vehiculo_tipo CHAR(1) NOT NULL
+ cod_vehiculo_tipo CHAR(1) NOT NULL,
  placa CHAR(7) NOT NULL,
  PRIMARY KEY (cod_vehiculo),
  CONSTRAINT cod_vehiculo_estado
@@ -1023,7 +1023,7 @@ CREATE TABLE IF NOT EXISTS vehiculo (
  REFERENCES vehiculo_estado (cod_vehiculo_estado),
  CONSTRAINT cod_vehiculo_modelo
  FOREIGN KEY (cod_vehiculo_modelo)
- REFERENCES vehiculo_modelo (cod_vehiculo_modelo)
+ REFERENCES vehiculo_modelo (cod_vehiculo_modelo),
  CONSTRAINT cod_vehiculo_tipo
  FOREIGN KEY (cod_vehiculo_tipo)
  REFERENCES vehiculo_tipo (cod_vehiculo_tipo)
