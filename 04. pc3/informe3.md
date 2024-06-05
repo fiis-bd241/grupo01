@@ -987,7 +987,7 @@ INNER JOIN detalle_ticket_producto AS dtp ON dtp.cod_ticket = ti.cod_ticket
 INNER JOIN elemento_catalogo AS ec ON ec.id_elemento_catalogo = dtp.id_elemento_catalogo 
 WHERE ti.cod_ticket = valor1;
 ```
-Donde valor1es el código del ticket escogido.
+Donde valor1 es el código del ticket escogido.
 
 2. Al elegir un producto, se llena las casillas de fecha de adquisición, nro de lote y cantidad adquirida automáticamente.
 
@@ -1014,7 +1014,7 @@ SET cod_pedido = (
 )
 WHERE reclamo.cod_reclamo = valor3;
 ```
-Donde el valor 3 es el código del reclamo actual.
+Donde el valor3 es el código del reclamo actual.
 
 #### Caso 4
 <table>
@@ -1064,7 +1064,7 @@ Donde el valor3 es el código del nivel de urgencia escogido.
 
 Donde el ‘valor4’ es la fecha escogida.
 
-Donde el valor 5 código del reclamo actual.
+Donde el valor5 código del reclamo actual.
 
 #### Caso 5
 <table>
@@ -1093,13 +1093,13 @@ Donde el valor 5 código del reclamo actual.
 INSERT INTO evidencia (cod_reclamo, cod_tipo_evidencia, cod_tipo_archivo, nombre_evidencia)
 VALUES (valor1, 'valor2', valor3, 'valor4');
 ```
-Donde el valor 1 es el código del reclamo actual.
+Donde el valor1 es el código del reclamo actual.
 
-Donde el ‘valor 2’ es el tipo de evidencia del adjunto.
+Donde el ‘valor2’ es el tipo de evidencia del adjunto.
 
-Donde el valor 3 es el tipo de archivo del adjunto.
+Donde el valor3 es el tipo de archivo del adjunto.
 
-Donde el ‘valor 4’ es el nombre del adjunto.
+Donde el ‘valor4’ es el nombre del adjunto.
 
 ## 3. Carga de Datos
 
