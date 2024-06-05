@@ -607,7 +607,8 @@ Semántica:
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
 | cod_vehiculo | INT | 99 | >0 | - | - | Identificador del vehículo en el sistema. |  
 | cod_estado_vehiculo | CHAR | X | TAB | - | - | Indicador del Estado actual del vehículo. |
-| cod_modelo_vehiculo | CHAR | X | TAB | - | - | indicador del modelo del vehículo. |  
+| cod_modelo_vehiculo | CHAR | X | TAB | - | - | indicador del modelo del vehículo. |
+| cod_tipo_vehiculo | CHAR | X | TAB | - | - | indicador del tipo del vehículo. |  
 | año_fabricacion | INT | 9999 | Año válido | - | - | Año en que fue fabricado el vehículo. |  
 | capacidad_carga | FLOAT | 999.99 | x>0 | - | - | Capacidad máxima de carga del vehículo. | 
 | fecha_último_mantenimiento | DATE | AAAAMMDD | De acuerdo a calendario | - | - | Fecha en que el vehículo realizó su último mantenimiento. | 
@@ -629,6 +630,12 @@ TAB: Tipo de modelo del vehículo
 |C|Camión|
 |S|SUV|
 
+TAB: Tipos del vehículo
+|Código|Descripción|
+|------|---------|
+|C|Carga|
+|R|Refrigerante|
+|P|Personal|
 
 ##### Relaciones
 
@@ -730,6 +737,7 @@ DROP TABLE IF EXISTS elemento_catalogo_tipo;
 DROP TABLE IF EXISTS segmento;
 DROP TABLE IF EXISTS elemento_produccion;
 DROP TABLE IF EXISTS vehiculo_modelo;
+DROP TABLE IF EXISTS vehiculo_tipo;
 DROP TABLE IF EXISTS vehiculo_estado;
 DROP TABLE IF EXISTS cliente_tipo;
 DROP TABLE IF EXISTS cliente_estado;
@@ -780,6 +788,12 @@ CREATE TABLE IF NOT EXISTS vehiculo_modelo (
  cod_vehiculo_modelo CHAR(1),
  descripcion VARCHAR(20),
  PRIMARY KEY (cod_vehiculo_modelo)
+);
+
+CREATE TABLE IF NOT EXISTS vehiculo_tipo (
+ cod_vehiculo_tipo CHAR(1),
+ descripcion VARCHAR(20),
+ PRIMARY KEY (cod_vehiculo_tipo)
 );
 
 CREATE TABLE IF NOT EXISTS elemento_produccion (
@@ -1001,6 +1015,7 @@ CREATE TABLE IF NOT EXISTS vehiculo (
  fecha_ultimo_viaje DATE NOT NULL,
  capacidad_carga FLOAT NOT NULL CHECK (capacidad_carga > 0),
  cod_vehiculo_modelo CHAR(1) NOT NULL,
+ cod_vehiculo_tipo CHAR(1) NOT NULL
  placa CHAR(7) NOT NULL,
  PRIMARY KEY (cod_vehiculo),
  CONSTRAINT cod_vehiculo_estado
@@ -1009,6 +1024,9 @@ CREATE TABLE IF NOT EXISTS vehiculo (
  CONSTRAINT cod_vehiculo_modelo
  FOREIGN KEY (cod_vehiculo_modelo)
  REFERENCES vehiculo_modelo (cod_vehiculo_modelo)
+ CONSTRAINT cod_vehiculo_tipo
+ FOREIGN KEY (cod_vehiculo_tipo)
+ REFERENCES vehiculo_tipo (cod_vehiculo_tipo)
 );
 
 CREATE TABLE IF NOT EXISTS elemento_catalogo (
@@ -1471,6 +1489,11 @@ INSERT INTO vehiculo_modelo (cod_vehiculo_modelo,descripcion) VALUES
  ( 'C', 'Camión'),
  ( 'S', 'SUV');
 
+INSERT INTO vehiculo_tipo (cod_vehiculo_tipo,descripcion) VALUES
+ ( 'C', 'Carga'),
+ ( 'R', 'Refrigerante'),
+ ( 'P', 'Personal');
+
 INSERT INTO elemento_catalogo_unidad (cod_unidad, descripcion) VALUES
  (1, 'Kilogramo'),
  (2, 'Gramo'),
@@ -1829,17 +1852,17 @@ INSERT INTO ticket (cod_ticket, fecha_entrega) VALUES
   (19,'2024-04-20'),
   (20,'2024-04-22');
 
-INSERT INTO vehiculo (cod_vehiculo, cod_vehiculo_estado,cod_vehiculo_modelo,anio_fabricacion, capacidad_carga, fecha_ultimo_mantenimiento,fecha_ultimo_viaje, placa) VALUES
-  ( 1, 'D', 'F', 2008, 850, '2022-01-10', '2024-01-24', 'A4E-123'),
-  ( 2, 'N', 'C', 2009, 620.5, '2023-02-12', '2024-02-24', 'D3F-756'),
-  ( 3, 'C', 'S', 2020, 440.2, '2022-03-05', '2024-03-15', 'G5I-789'),
-  ( 4, 'D', 'S', 2015, 550, '2021-04-08', '2024-04-14', 'J4L-223'),
-  ( 5, 'N', 'F', 2012, 650, '2023-05-15', '2024-05-27', 'M9O-456'),
-  ( 6, 'C', 'C', 2021, 600, '2023-06-02', '2024-06-24', 'P3R-789'),
-  ( 7, 'C', 'S', 2006, 620.4, '2021-07-18', '2024-07-24', 'S5U-123'),
-  ( 8, 'D', 'F', 2017, 620.2, '2022-08-10', '2024-08-24', 'V4X-456'),
-  ( 9, 'N', 'F', 2020, 220, '2023-09-05','2024-09-05', 'Y7A-789'),
-  (10, 'C', 'C', 2018, 430, '2022-10-15', '2024-10-22', 'B8D-413');
+INSERT INTO vehiculo (cod_vehiculo, cod_vehiculo_estado,cod_vehiculo_modelo, cod_vehiculo_tipo, anio_fabricacion, capacidad_carga, fecha_ultimo_mantenimiento,fecha_ultimo_viaje, placa) VALUES
+  ( 1, 'D', 'F', 'C', 2008, 850, '2022-01-10', '2024-01-24', 'A4E-123'),
+  ( 2, 'N', 'C', 'R', 2009, 620.5, '2023-02-12', '2024-02-24', 'D3F-756'),
+  ( 3, 'C', 'S', 'C', 2020, 440.2, '2022-03-05', '2024-03-15', 'G5I-789'),
+  ( 4, 'D', 'S', 'C', 2015, 550, '2021-04-08', '2024-04-14', 'J4L-223'),
+  ( 5, 'N', 'F', 'C', 2012, 650, '2023-05-15', '2024-05-27', 'M9O-456'),
+  ( 6, 'C', 'C', 'C', 2021, 600, '2023-06-02', '2024-06-24', 'P3R-789'),
+  ( 7, 'C', 'S', 'R', 2006, 620.4, '2021-07-18', '2024-07-24', 'S5U-123'),
+  ( 8, 'D', 'F', 'C', 2017, 620.2, '2022-08-10', '2024-08-24', 'V4X-456'),
+  ( 9, 'N', 'F', 'C', 2020, 220, '2023-09-05','2024-09-05', 'Y7A-789'),
+  (10, 'C', 'C', 'C', 2018, 430, '2022-10-15', '2024-10-22', 'B8D-413');
 
 INSERT INTO elemento_catalogo (nombre, id_elemento_catalogo_tipo, descripcion, cod_unidad, temperatura_maxima, temperatura_minima, vida_util, peso_unitario) VALUES
 ('Filete de pechuga de pollo San Fernando congelado', 31, 'Filete de pechuga de pollo San Fernando congelado, listo para su uso en la preparación de platos.', 7, -18, -20, 90, 900),
