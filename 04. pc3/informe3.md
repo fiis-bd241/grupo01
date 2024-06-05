@@ -1086,8 +1086,7 @@ La información obtenida de esta búsqueda (en cualquiera de los dos tipos) se m
 
 Los estados del Proceso y del Traslado se obtienen según la cantidad de operaciones registradas. Esta lógica se implementa en el backend.
 
-4. **Botón "Registrar operación":** Lleva al usuario a la pantalla adecuada para registrar una operación adicional del proceso encontrado. Es decir, si la última operación registrada del proceso encontrado es de tipo "Picking", se lleva al usuario a la pantalla I304; si es de tipo "Precintado", a la pantalla I305; si es de tipo "Paletizado", a la pantalla I306; si es de tipo "Carga", a la pantalla I307; si es de tipo "Salida", a la pantalla I309; y si es de tipo "Recepción", a la pantalla I310. Si es de tipo "Descarga", el
-botón "Registrar operación" no se habilita. Toda esta lógica descrita se implementa en el frontend. Además, el valor del atributo "id_operacion" de la primera operación (de tipo "picking") se pasa como un parámetro llamado "id_operacion_picking" a esta nueva pantalla. 
+4. **Botón "Registrar operación":** Lleva al usuario a la pantalla adecuada para registrar una operación adicional del proceso encontrado. Es decir, si la última operación registrada del proceso encontrado es de tipo "Picking", se lleva al usuario a la pantalla I304; si es de tipo "Precintado", a la pantalla I305; si es de tipo "Paletizado", a la pantalla I306; si es de tipo "Carga", a la pantalla I307; si es de tipo "Salida", a la pantalla I309; y si es de tipo "Recepción", a la pantalla I310. Si es de tipo "Descarga", el botón "Registrar operación" no se habilita. Toda esta lógica descrita se implementa en el frontend. Además, el valor del atributo "id_operacion" de la primera operación (de tipo "picking") se pasa como un parámetro llamado "id_operacion_picking" a esta nueva pantalla. 
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
@@ -1161,7 +1160,7 @@ Finalmente, se lleva al usuario a la pantalla I311.
 | Código      | I304 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/c3c802ca-5d15-412d-811f-d41d80b8db65) |
 
-1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking".
+1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
 2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
@@ -1186,7 +1185,7 @@ Se muestra al usuario la pantalla I311.
 | Código      | I305 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/67a7b049-5fbb-48b6-85ac-07ca889511ff) |
 
-1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking".
+1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
 2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
@@ -1195,7 +1194,7 @@ VALUES (
 <id_operacion_picking>,
 (SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <4>),
 (SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <5>),
-2,
+3,
 <1>,
 <2>,
 <3>
@@ -1211,7 +1210,7 @@ Se muestra al usuario la pantalla I311.
 | Código      | I306 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/df11747a-b3a6-488b-aff9-914c9bef5058) |
 
-1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking".
+1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
 2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
@@ -1220,7 +1219,7 @@ VALUES (
 <id_operacion_picking>,
 (SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <4>),
 (SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <5>),
-2,
+4,
 <1>,
 <2>,
 <3>
@@ -1234,7 +1233,71 @@ Se muestra al usuario la pantalla I311.
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R305           |
 | Código      | I307 |
-| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/0d0514fe-217d-49d3-b1e8-04c8ecdec204) |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/1dd1d070-1790-4e0d-bea9-bb417b755f72) |
+
+1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
+2. **Botón "Agregar pedido":** Identificado con el número 6 en la imagen. Lleva al usuario a la pantalla I308. Retorna un código de pedido que se agrega en pantalla.
+3. **Botón "Eliminar pedido":** Identificado con el número 7 en la imagen. Elimina un código de pedido.
+4.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+
+``` sql
+INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
+VALUES (
+<id_operacion_picking>,
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <4>),
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <5>),
+5,
+<1>,
+<2>,
+<3>
+)
+RETURNING id_operacion;
+```
+
+El valor retornado por esta sentencia se almacena en una variable en el backend. Sea esta variable "id_operacion". Esta operación de tipo "Salida" marca el inicio de un traslado. Con la siguiente sentencia se inserta la fila respectiva en la tabla traslado con el id de la operación registrada.
+
+``` sql
+INSERT INTO traslado (cod_vehiculo, cod_ruta, cod_transportista, id_operacion_inicia)
+VALUES
+((SELECT cod_vehiculo FROM vehiculo WHERE placa = <9>),
+<8>,
+(SELECT t.cod_transportista
+FROM transportista t
+INNER JOIN empleado e on t.cod_empleado = e.cod_empleado
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <10>),
+<id_operacion>)
+RETURNING id_traslado;
+```
+
+El valor retornado por esta sentencia se almacena en una variable en el backend. Sea esta variable "id_traslado". Con la siguiente sentencia se genera el código de guía remisión de 21 dígitos usando las variables "id_traslado" e "id_operacion".
+
+``` sql
+SELECT LPAD(CAST(<id_traslado> AS TEXT), 5, '0') ||
+TO_CHAR(o.fecha, 'YYYYMMDD') || TO_CHAR(o.hora_inicio, 'HH24MI') || TO_CHAR(o.hora_fin, 'HH24MI')
+FROM operacion o WHERE o.id_operacion = <id_operacion>
+```
+
+El valor retornado por esta sentencia se almacena en una variable en el backend. Sea esta variable "cod_guia_remision". Con la siguiente sentencia se actualiza en la fila de la tabla traslado insertada este código de guía remisión:
+
+``` sql
+UPDATE traslado SET cod_guia_remision = <cod_guia_remision> WHERE id_traslado = <id_traslado>
+```
+
+En la parte del frontend, se almacena en una estructura de datos los códigos de pedido ingresados por el usuario. Sea cada uno de estos códigos representado por la variable "cod_pedido". Para cada uno de estos valores se ejecuta la siguiente sentencia:
+
+``` sql
+INSERT INTO detalle_ticket_traslado(id_traslado, cod_ticket)
+VALUES (
+id_traslado>,
+(SELECT t.cod_ticket
+FROM ticket t
+INNER JOIN pedido p ON t.cod_ticket = p.cod_ticket
+WHERE p.cod_pedido = <cod_pedido>)
+);
+```
+
+Se muestra al usuario la pantalla I311.
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
@@ -1242,13 +1305,16 @@ Se muestra al usuario la pantalla I311.
 | Código      | I308 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/708bd7b5-63fb-4515-a478-a3ac052d7301) |
 
+1. **Botón "Agregar":** Agrega el código de pedido agregado en el campo `<1>`. Regresa al usuario a la pantalla I307.
+2. **Botón "Cerrar":** Regresa al usuario a la pantalla I307.
+
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R306           |
 | Código      | I309 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/dc002a04-4c28-4deb-bb7d-2da7d3f92294) |
 
-1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking".
+1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
 2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
@@ -1257,12 +1323,21 @@ VALUES (
 <id_operacion_picking>,
 (SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <4>),
 (SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <5>),
-2,
+6,
 <1>,
 <2>,
 <3>
 )
 RETURNING id_operacion;
+```
+El valor retornado por esta sentencia se almacena en una variable en el backend. Sea esta variable "id_operacion". Esta operación de tipo "Recepción" marca el fin de un traslado. Con la siguiente sentencia se actualiza la fila respectiva de la tabla traslado con el id de la operación registrada.
+
+``` sql
+UPDATE traslado
+SET id_operacion_termina = ?
+FROM traslado t
+INNER JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
+WHERE o.id_operacion_picking = ?;
 ```
 
 Se muestra al usuario la pantalla I311.
@@ -1273,7 +1348,7 @@ Se muestra al usuario la pantalla I311.
 | Código      | I310 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/895a7907-cb6d-41d8-ba74-0d42f367bc5c) |
 
-1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking".
+1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
 2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
@@ -1282,7 +1357,7 @@ VALUES (
 <id_operacion_picking>,
 (SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <4>),
 (SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <5>),
-2,
+7,
 <1>,
 <2>,
 <3>
@@ -1297,6 +1372,17 @@ Se muestra al usuario la pantalla I311.
 | Requerimientos relacionados         | R301, R302, R303, R304, R305, R306, R307       |
 | Código      | I311 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/aa2aaad7-735b-4a08-a67f-9777d4b7651f) |
+
+1. **Botón "Volver a vista de procesoss":** Lleva al usuario a la pantalla I301.
+2. **Botón "Continuar siguiente operación":** Lleva al usuario a la pantalla adecuada para registrar una operación adicional del proceso en cuestión. Es decir, si la pantalla actual es de tipo "Picking", se lleva al usuario a la pantalla I304; si es de tipo "Precintado", a la pantalla I305; si es de tipo "Paletizado", a la pantalla I306; si es de tipo "Carga", a la pantalla I307; si es de tipo "Salida", a la pantalla I309; y si es de tipo "Recepción", a la pantalla I310. Si es de tipo "Descarga", el botón "Continuar siguiente operación" no se habilita. Toda esta lógica descrita se implementa en el frontend. Además, el valor del atributo "id_operacion_picking" de la pantalla actual se pasa como un parámetro llamado "id_operacion_picking" a esta nueva pantalla. 
+
+En el caso de que la pantalla actual sea de tipo "Salida", en el mensaje de confirmación se muestra el código de guía de remisión generado, como se ve en la imagen a continuación.
+
+![Captura de Pantalla 2024-06-04 a la(s) 23 58 50](https://github.com/fiis-bd241/grupo01/assets/130816094/f6356122-ad6b-43c2-bd22-aafe36a1622b)
+
+En el caso de que la pantalla actual sea de tipo "Descarga", como se mencionó, este botón no se habilita, como se ve en la imagen a continuación.
+
+![Captura de Pantalla 2024-06-05 a la(s) 00 00 37](https://github.com/fiis-bd241/grupo01/assets/130816094/96817a5a-28b2-4a37-a0c5-ccc1b4994a06)
 
 
 ### 4. Sentencias SQL módulo de Control
