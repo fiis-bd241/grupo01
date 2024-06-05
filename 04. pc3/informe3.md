@@ -745,6 +745,7 @@ ORDER BY rt.cod_tipo_reclamo;
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
+
 1. Al presionar el botón clientes internos o externos, esto servirá para llenar la lista desplegable de los nombres de clientes de la interfaz I604.
 
 ``` sql
