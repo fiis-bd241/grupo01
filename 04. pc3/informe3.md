@@ -544,13 +544,33 @@ Donde:
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/905dfe6f-756f-48a9-8ed0-a74066b1a143">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/58aa0d59-6833-4705-bce4-398df225171e">
       </td>
    </tr>
    <tr>
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
+
+1. Carga de todos los pedidos: Cuando el usuario entre al modulo de pedidos, se mostrara todos los pedidos realizados a traves del software.
+``` sql
+
+SELECT 
+    pd.cod_pedido, 
+    c.nombre, 
+    pr.prenombre, 
+    pr.primer_apellido, 
+    pr.segundo_apellido, 
+    pd.fecha_registro, 
+    pde.estado_pedido 
+FROM 
+    pedido AS pd
+    INNER JOIN pedido_estado AS pde ON pde.cod_pedido_estado = pd.cod_pedido_estado
+    INNER JOIN representante AS r ON r.cod_representante = pd.cod_representante
+    INNER JOIN empleado AS e ON e.cod_empleado = pd.cod_empleado
+    INNER JOIN persona AS pr ON pr.cod_persona = e.cod_persona
+    INNER JOIN cliente AS c ON c.cod_cliente = r.cod_cliente;
+```
 
 #### Caso 4
 
@@ -566,13 +586,49 @@ Donde:
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/905dfe6f-756f-48a9-8ed0-a74066b1a143">
+         <img src="ttps://github.com/fiis-bd241/grupo01/assets/121084712/527812fe-ff57-4f65-abe0-3bf5ccd89447">
+	 <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/c0d3fb5b-b285-4438-9ee5-d1c45f488ae5">
       </td>
    </tr>
    <tr>
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
+
+1. Carga de informacion detalle de pedido: El usuario al dar click en detalles, obtendra informacion mas especifica o detallada del pedido.
+``` sql
+SELECT
+    p.cod_pedido,
+    p.fecha_registro AS fecha_registro_pedido,
+    t.fecha_entrega,
+    c.nombre AS nombre_cliente,
+    CONCAT(rp.prenombre, ' ', rp.primer_apellido, ' ', rp.segundo_apellido) AS nombre_representante,
+    CONCAT(ep.prenombre, ' ', ep.primer_apellido, ' ', ep.segundo_apellido) AS nombre_empleado_registro,
+    pt.tipo_pedido,
+    p.cod_ticket
+FROM
+    pedido p
+    INNER JOIN ticket t ON p.cod_ticket = t.cod_ticket
+    INNER JOIN representante r ON p.cod_representante = r.cod_representante
+    INNER JOIN persona rp ON r.cod_persona = rp.cod_persona
+    INNER JOIN cliente c ON r.cod_cliente = c.cod_cliente
+    INNER JOIN empleado e ON p.cod_empleado = e.cod_empleado
+    INNER JOIN persona ep ON e.cod_persona = ep.cod_persona
+    LEFT JOIN pedido_tipo pt ON p.cod_pedido_tipo = pt.cod_pedido_tipo;
+
+```
+
+2. Carga de informacion de los productos: El usuario tambien obtendra informacion mas especifica de los productos solicitados por cada pedido.
+
+``` sql
+SELECT 
+    dtp.id_elemento_catalogo, 
+    ec.nombre, 
+    dtp.cantidad 
+FROM 
+    detalle_ticket_producto AS dtp
+    INNER JOIN elemento_catalogo AS ec ON dtp.id_elemento_catalogo = ec.id_elemento_catalogo;
+```
 
 ### 5. Sentencias SQL módulo de Reportes
 
