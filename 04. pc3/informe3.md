@@ -635,6 +635,75 @@ FROM
     INNER JOIN elemento_catalogo AS ec ON dtp.id_elemento_catalogo = ec.id_elemento_catalogo;
 ```
 
+### 3. Sentencias SQL módulo de Almacén
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R301, R302, R303, R304, R305, R306, R307       |
+| Código      | I301 |
+| Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/2d94b52d-2399-4b9c-a0ef-335f1055378e) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R301           |
+| Código      | I302 |
+| Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/78136d2c-1f37-4b1f-a89d-61edf840dbbb) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R301           |
+| Código      | I303 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/bb65ce7e-6483-478e-acc1-372cec7aa13b) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R302           |
+| Código      | I304 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/c3c802ca-5d15-412d-811f-d41d80b8db65) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R303           |
+| Código      | I305 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/67a7b049-5fbb-48b6-85ac-07ca889511ff) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R304           |
+| Código      | I306 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/df11747a-b3a6-488b-aff9-914c9bef5058) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R305           |
+| Código      | I307 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/0d0514fe-217d-49d3-b1e8-04c8ecdec204) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R305           |
+| Código      | I308 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/708bd7b5-63fb-4515-a478-a3ac052d7301) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R306           |
+| Código      | I309 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/dc002a04-4c28-4deb-bb7d-2da7d3f92294) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R307           |
+| Código      | I310 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/895a7907-cb6d-41d8-ba74-0d42f367bc5c) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R301, R302, R303, R304, R305, R306, R307       |
+| Código      | I311 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/aa2aaad7-735b-4a08-a67f-9777d4b7651f) |
+
+
 ### 5. Sentencias SQL módulo de Reportes
 
 #### Caso 1
