@@ -922,6 +922,59 @@ Donde el valor2 es el código del representante escogido.
 
 Donde el valor3 es el código del reclamo actual.
 
+#### Caso 3
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R601</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I605</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/130238034/89933b6e-44b4-460c-af3f-e83027a88aab">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+1. Al elegir un ticket, se llena la lista desplegable siguiente con los nombres de los productos asociados al ticket.
+
+``` sql 
+SELECT ec.id_elemento_catalogo, ec.nombre FROM ticket AS ti  
+INNER JOIN detalle_ticket_producto AS dtp ON dtp.cod_ticket = ti.cod_ticket 
+INNER JOIN elemento_catalogo AS ec ON ec.id_elemento_catalogo = dtp.id_elemento_catalogo 
+WHERE ti.cod_ticket = valor1;
+```
+Donde valor1es el código del ticket escogido.
+
+2. Al elegir un producto, se llena las casillas de fecha de adquisición, nro de lote y cantidad adquirida automáticamente.
+
+``` sql 
+SELECT ti.fecha_entrega, dtp.cantidad, st.nro_lote, ec.nombre FROM ticket AS ti  
+INNER JOIN detalle_ticket_producto AS dtp ON dtp.cod_ticket = ti.cod_ticket 
+INNER JOIN elemento_catalogo AS ec ON ec.id_elemento_catalogo = dtp.id_elemento_catalogo 
+LEFT JOIN stock AS st ON st.id_elemento_catalogo = ec.id_elemento_catalogo  
+WHERE ti.cod_ticket = valor1 AND ec.cod_elemento_catalogo = valor2;
+```
+Donde valor1 es el código del ticket escogido.
+
+Donde valor2 es el código del producto escogido.
+
+3. Al apretar el botón siguiente se va a actualizar el serial del ticket en el reclamo.
+
+``` sql 
+UPDATE reclamo 
+SET cod_pedido = (SELECT cod_pedido FROM ticket INNER JOIN pedido ON pedido.cod_ticket = ticket.cod_ticket WHERE ticket.cod_ticket = valor)  
+WHERE reclamo.cod_reclamo = valor3
+```
+Donde el valor 3 es el código del reclamo actual.
+
 ## 3. Carga de Datos
 
 ```sql
