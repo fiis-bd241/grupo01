@@ -846,9 +846,9 @@ ORDER BY rt.cod_tipo_reclamo;
 SELECT cl.cod_cliente, cl.nombre FROM cliente AS cl
 WHERE cl.cod_cliente_tipo = 'valor1’ 
 ```
-Donde el valor1 puede ser ‘I’ o ‘E’
+Donde el valor1 puede ser ‘I’ o ‘E’.
 
-2. Al presionar el botón aceptar se crea una fila adicional en la tabla reclamo
+2. Al presionar el botón aceptar se crea una fila adicional en la tabla reclamo.
 
 ``` sql 
 INSERT INTO reclamo (cod_representante) VALUES (null);  
