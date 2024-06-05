@@ -362,6 +362,61 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 | Código      | I504 |
 | Prototipo   |   ![P504](https://github.com/fiis-bd241/grupo01/assets/161625149/e62b62ae-d440-4708-9240-c5cc0fa6b39b)|
 
+#### 6. Prototipos del módulo de Reclamos
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R602 |
+| Código      | I601 |
+| Prototipo   | ![I601](https://github.com/fiis-bd241/grupo01/assets/130238034/2880446e-18ba-45af-8d75-c0b165603315)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R601 |
+| Código      | I602 |
+| Prototipo   | ![I602](https://github.com/fiis-bd241/grupo01/assets/130238034/add169b8-bfb8-47bb-9c4d-56f00d445f3b) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R602 |
+| Código      | I603 |
+| Prototipo   |                                                    	|
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R601 |
+| Código      | I604 |
+| Prototipo   | ![I604](https://github.com/fiis-bd241/grupo01/assets/130238034/554a9bc4-410f-4269-b617-9148fe4d4799)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R601 |
+| Código      | I605 |
+| Prototipo   | ![I605](https://github.com/fiis-bd241/grupo01/assets/130238034/fd1e1566-9fd2-4ad8-9c23-70314b252ecc)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R601 |
+| Código      | I606 |
+| Prototipo   | ![I606](https://github.com/fiis-bd241/grupo01/assets/130238034/9100cf84-e206-4eae-8900-cf3a1b0ec3f3)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R601 |
+| Código      | I607 |
+| Prototipo   | ![I607](https://github.com/fiis-bd241/grupo01/assets/130238034/0a5d19b2-cc50-4d99-9a02-44b4f981e8ad)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R601 |
+| Código      | I608|
+| Prototipo   | ![I608](https://github.com/fiis-bd241/grupo01/assets/130238034/8bd3693d-1266-4adc-8e45-efb1dee2d7b8)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R601 |
+| Código      | I609 |
+| Prototipo   | ![I609](https://github.com/fiis-bd241/grupo01/assets/130238034/e437114d-973c-445a-98f2-3a5639cdc758)|
+
 ## 2. Sentencias SQL por cada prototipo
 
 ### 5. Sentencias SQL módulo de Reportes
