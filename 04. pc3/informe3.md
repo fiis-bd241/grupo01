@@ -722,6 +722,40 @@ LEFT JOIN nivel_urgencia AS nu ON nu.cod_nivel_urgencia = re.cod_nivel_urgencia
 GROUP BY rt.cod_tipo_reclamo
 ORDER BY rt.cod_tipo_reclamo;
 ```
+
+### 5. Sentencias SQL módulo de Reportes
+
+#### Caso 1
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R501</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I502</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/130238034/5a7d0b70-24ef-4a5b-a741-45bb156ac780">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+1. Al presionar el botón clientes internos o externos, esto servirá para llenar la lista desplegable de los nombres de clientes de la interfaz I504.
+``` sql 
+SELECT cl.cod_cliente, cl.nombre FROM cliente AS cl
+WHERE cl.cod_cliente_tipo = 'valor1’ 
+```
+Donde el valor1 puede ser ‘I’ o ‘E’
+2. Al presionar el botón aceptar se crea una fila adicional en la tabla reclamo.
+``` sql 
+INSERT INTO reclamo (cod_representante) VALUES (null);  
+```
+
 ## 3. Carga de Datos
 
 ```sql
