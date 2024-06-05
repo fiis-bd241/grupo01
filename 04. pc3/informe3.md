@@ -4,6 +4,112 @@
 
 ### Requerimientos
 
+#### 3. Requerimientos del módulo de Almacén
+
+Caso de Uso #1: Registrar picking
+| Código | R301 | 
+|----------|----------|
+|Objetivo | Registrar el proceso de agrupamiento de ítems o stock de productos, materiales o materias primas en grupos |
+|Descripción | El usuario registra los ítems seleccionados indicando sus códigos|
+|Actor Primario | Gestor de compras |
+|Actor Secundario| Supervisor de almacén |
+|Precondiciones| Ítems disponibles en el almacén |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar picking"|
+|2|Ingresa los ítems para el picking|
+|3|Asigna los ítems seleccionados a un grupo|
+|4|Ingresa los datos de fecha y hora de inicio y fin del proceso|
+|5|Confirma el registro del picking|
+|6|El sistema registra la operación de picking y almacena los grupos (mercadería) con los ítems seleccionados|
+
+Caso de Uso #2: Registrar precintado
+| Código | R302 | 
+|----------|----------|
+|Objetivo | Registrar el proceso de embalaje y sellado de seguridad de los grupos de ítems previamente seleccionados en el picking |
+|Descripción | El usuario registra los grupos de ítems que han sido previamente seleccionados en el picking para el proceso de precintado |
+|Actor Primario | Almacenero |
+|Actor Secundario| Supervisor de almacén |
+|Precondiciones| Grupos de ítems seleccionados en el proceso de picking |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar precintado"|
+|2|Selecciona los grupos de ítems previamente seleccionados en el proceso de picking|
+|3|Registra los datos de fecha y hora de inicio y fin del proceso de embalaje y sellado de seguridad de los grupos de ítems, así como los códigos de precintado de cada grupo|
+|4|Confirma el registro del precintado|
+|5|El sistema registra la operación y registra el código de precinto de la mercadería|
+
+Caso de Uso #3: Registrar paletizado
+| Código | R303 | 
+|----------|----------|
+|Objetivo | Registrar el proceso de paletizado de los grupos de ítems precintados |
+|Descripción | El usuario registra los grupos de ítems precintados que serán paletizados para su posterior carga |
+|Actor Primario | Almacenero |
+|Actor Secundario| Supervisor de almacén |
+|Precondiciones| Grupos de ítems precintados |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar paletizado"|
+|2|Selecciona los grupos de ítems precintados que serán paletizados|
+|3|Registra el proceso de paletizado de los grupos de ítems|
+|4|Confirma el registro del paletizado|
+|5|El sistema registra la operación|
+
+Caso de Uso #4: Registrar carga
+| Código | R304 | 
+|----------|----------|
+|Objetivo | Registrar el proceso de carga de los grupos de ítems paletizados |
+|Descripción | El usuario registra los grupos de ítems paletizados que serán cargados en un vehículo para su posterior envío |
+|Actor Primario | Encargado de almacén |
+|Actor Secundario| Supervisor de almacén |
+|Precondiciones| Grupos de ítems paletizados |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar carga"|
+|2|Selecciona los grupos de ítems paletizados que serán cargados|
+|3|Registra el proceso de carga de los grupos de ítems en el vehículo|
+|4|Confirma el registro de la carga|
+|5|El sistema registra la operación|
+
+Caso de Uso #5: Registrar guía de remisión
+| Código | R305 | 
+|----------|----------|
+|Objetivo | Registrar el proceso de envío de los grupos de ítems cargados |
+|Descripción | El usuario registra los datos del envío, incluyendo datos del transportista y vehículo, entre otros |
+|Actor Primario | Encargado de Almacén |
+|Actor Secundario| Supervisor de almacén |
+|Precondiciones| Grupos de ítems cargados en el vehículo |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar guía de remisión"|
+|2|Ingresa los datos del envío: código de guía de remisión, identificación del transportista y vehículo, el o los pedidos que se están atendiendo, la operación de carga, la ruta asignada y la fecha y hora de salida|
+|3|Confirma el registro del envío|
+|4|El sistema registra el inicio del traslado|
+
+Caso de Uso #6: Registrar recepción
+| Código | R306 | 
+|----------|----------|
+|Objetivo | Registrar el proceso de recepción de los grupos de ítems enviados |
+|Descripción | El usuario registra la fecha y hora de recepción de los grupos de ítems en el lugar de destino |
+|Actor Primario | Encargado de Almacén |
+|Actor Secundario| Supervisor de almacén |
+|Precondiciones| Guía de remisión |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar recepción"|
+|2|Ingresa la fecha y hora de recepción de los grupos de ítems, seleccionando la guía de remisión respectiva|
+|3|Confirma el registro de la recepción|
+|4|El sistema registra la finalización del traslado|
+
+Caso de Uso #7: Registrar descarga
+| Código | R307 | 
+|----------|----------|
+|Objetivo | Registrar el proceso de descarga de los grupos de ítems recibidos |
+|Descripción | El usuario registra la fecha y hora de inicio y finalización de la descarga de los grupos de ítems en el lugar de destino |
+|Actor Primario | Encargado de Almacén |
+|Actor Secundario| Supervisor de almacén |
+|Precondiciones| Grupos de ítems recibidos en el lugar de destino |
+|Paso| Acción |
+|1|El usuario selecciona la opción "Registrar descarga"|
+|2|Ingresa la fecha y hora de inicio de la descarga de los grupos de ítems|
+|3|Registra la fecha y hora de finalización de la descarga de los grupos de ítems|
+|4|Confirma el registro de la descarga|
+|5|El sistema actualiza el estado de los grupos de ítems como "descargados"|
+
 #### 5. Requerimientos del módulo de Reportes
 
 Caso de Uso #1: Generar reporte
