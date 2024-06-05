@@ -422,7 +422,7 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 
 ### 1. Sentencias SQL módulo de Pedidos
 
-### Caso 1
+#### Caso 1
 
 <table>
    <tr>
@@ -469,7 +469,74 @@ VALUES
 ```
 Donde: 
 `<1>` corresponde al código del usuario del inicio de sesión.
+
 `?` corresponde a valores que se asigna al momento del registro del pedido y informacion de la base datos.
+
+#### Caso 2
+
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I101</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src=>
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+#### Caso 3
+
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I101</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/905dfe6f-756f-48a9-8ed0-a74066b1a143">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+#### Caso 4
+
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I101</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/905dfe6f-756f-48a9-8ed0-a74066b1a143">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
 
 ### 5. Sentencias SQL módulo de Reportes
 
