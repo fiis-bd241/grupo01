@@ -746,12 +746,14 @@ ORDER BY rt.cod_tipo_reclamo;
    </tr>
 </table>
 1. Al presionar el botón clientes internos o externos, esto servirá para llenar la lista desplegable de los nombres de clientes de la interfaz I604.
-``` sql 
+
+``` sql
 SELECT cl.cod_cliente, cl.nombre FROM cliente AS cl
 WHERE cl.cod_cliente_tipo = 'valor1’ 
 ```
 Donde el valor1 puede ser ‘I’ o ‘E’
-2. Al presionar el botón aceptar se crea una fila adicional en la tabla reclamo.
+2. Al presionar el botón aceptar se crea una fila adicional en la tabla reclamo
+
 ``` sql 
 INSERT INTO reclamo (cod_representante) VALUES (null);  
 ```
