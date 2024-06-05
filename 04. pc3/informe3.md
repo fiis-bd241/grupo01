@@ -3246,65 +3246,6 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 
 ## 4. Funcionalidad Primaria Elegida
 
-### 1. Funcionalidad Primaria del Módulo de Pedidos
-
-<table>
-   <tr>
-      <th>Actividad</th>
-      <th>Descripción</th>
-   </tr>
-   <tr>
-      <td>1</td>
-      <td>El empleado accede a la interfaz de registro de pedido.
-	<p align="center">
-	   <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/1b62a2b4-5243-43b4-9145-c88e83a6f05c">
-	</p>
-      </td>
-   </tr>
-   <td>2</td>
-      <td>El empleado ingresa los datos del representante y del cliente, como nombres, apellidos, DNI, teléfono, correo empresarial, empresa, fecha de solicitud y fecha de entrega esperada.
-	<p align="center">
-	   <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/4dae2974-59fd-4d18-93e2-af6533c146a0">
-	</p>
-      </td>
-   </tr>
-   <td>3</td>
-      <td>Después de ingresar los datos del representante y el cliente, el empleado pasa a la siguiente etapa para seleccionar los productos solicitados.
-	<p align="center">
-	   <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/ace45da4-0654-4195-b3cb-6e3c921188c0">
-	</p>
-      </td>
-   </tr>
-   <td>4</td>
-      <td>El sistema muestra una lista de productos disponibles en el catálogo, agrupados por categorías.
-	<p align="center">
-	   <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/54a478bb-7eee-4605-b35e-73ca85793c21">
-	</p>
-      </td>
-   </tr>
-   <td>5</td>
-      <td>El empleado selecciona los productos necesarios y las cantidades correspondientes.
-	<p align="center">
-	   <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/90120b92-d76f-48c8-8f57-03b39d4745e6">
-	</p>
-      </td>
-   </tr>
-   <td>6</td>
-      <td>El empleado confirma la selección de productos.
-	<p align="center">
-           <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/bb5d8b15-fdbd-4cb4-8c42-699d83b9c8a0">
-	</p>
-      </td>
-   </tr>
-   <td>7</td>
-      <td>El sistema actualiza el pedido con los productos seleccionados.
-	<p align="center">
-	   <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/37f61980-9f61-49f8-9450-48c5f08d94e1">
-	</p>
-      </td>
-   </tr>
-
-
 ### 4. Funcionalidad Primaria del Módulo de Control
 
 **Funcionalidad primaria elegida:** Registrar una nueva incidencia durante el traslado de un pedido y verificar el estado de atención de las incidencia. <br>
