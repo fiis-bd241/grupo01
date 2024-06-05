@@ -752,6 +752,7 @@ SELECT cl.cod_cliente, cl.nombre FROM cliente AS cl
 WHERE cl.cod_cliente_tipo = 'valor1’ 
 ```
 Donde el valor1 puede ser ‘I’ o ‘E’
+
 2. Al presionar el botón aceptar se crea una fila adicional en la tabla reclamo
 
 ``` sql 
