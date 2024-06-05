@@ -2290,4 +2290,7 @@ Esta funcionalidad permitirá cumplir con los requerimientos de Generar reporte 
    * Motor de base de datos: PostgreSQL
 ## 6. Primera Versión de su Aplicación
 
+### Frontend: https://github.com/Cristhian134/sanfernando-app.git
+### Backend: https://github.com/Cristhian134/sanfernando.git
+
 ## 7. Videos individuales
