@@ -934,10 +934,13 @@ FROM
 | Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/2d94b52d-2399-4b9c-a0ef-335f1055378e) |
 
 **Flujo 1**
+
 1. **Botón "Iniciar nuevo proceso":** Lleva al usuario a la pantalla I302.
 
 **Flujo 2**
+
 2. **Selección de tipo búsqueda:** El usuario elige entre realizar la búsqueda del proceso asociado a una mercancía por medio del número de precinto o a un traslado por medio del código de guía de remisión. En base a esto, se ingresa en el campo `<3>` el tipo de entrada elegido por el usario.
+
 3. **Botón "Buscar":** Se realiza la búsqueda usando el valor ingresado por el usuario.
 
 El resultado mostrado se divide en tres secciones: Proceso, Mercancías y Traslado (de existir uno en curso).
@@ -945,6 +948,7 @@ El resultado mostrado se divide en tres secciones: Proceso, Mercancías y Trasla
 Las consultas SQL a ejecutarse son las siquientes, en cada uno de los dos tipos de búsqueda:
 
 **Búsqueda por número de precinto**
+
 Las operaciones asociadas se obtienen con la siguiente consulta:
 
 ``` sql
@@ -1012,6 +1016,7 @@ WHERE m.nro_precinto = <3>;
 ```
 
 **Búsqueda por código de guía de remisión**
+
 Las operaciones asociadas se obtienen con la siguiente consulta:
 
 ``` sql
@@ -1101,6 +1106,7 @@ Los estados del Proceso y del Traslado se obtienen según la cantidad de operaci
 ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/00796911-bc32-45a2-b0f0-d3b594f5c973)
 
 *. Este botón lleva al usuario a la pantalla I303. Se realiza el mismo proceso, con la única diferencia de que el código de stock y su cantidad a transportar se ingresan en una mercancía determinada.
+
 **. Este botón elimina el código de stock y su cantidad a transportar en una mercancía y fila determinadas.
 
 La lógica descrita se implementa en el frontend.
@@ -1161,6 +1167,7 @@ Finalmente, se lleva al usuario a la pantalla I311.
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/c3c802ca-5d15-412d-811f-d41d80b8db65) |
 
 1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
+
 2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
@@ -1186,6 +1193,7 @@ Se muestra al usuario la pantalla I311.
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/67a7b049-5fbb-48b6-85ac-07ca889511ff) |
 
 1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
+
 2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
@@ -1211,6 +1219,7 @@ Se muestra al usuario la pantalla I311.
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/df11747a-b3a6-488b-aff9-914c9bef5058) |
 
 1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
+
 2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
@@ -1236,8 +1245,11 @@ Se muestra al usuario la pantalla I311.
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/1dd1d070-1790-4e0d-bea9-bb417b755f72) |
 
 1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
+
 2. **Botón "Agregar pedido":** Identificado con el número 6 en la imagen. Lleva al usuario a la pantalla I308. Retorna un código de pedido que se agrega en pantalla.
+
 3. **Botón "Eliminar pedido":** Identificado con el número 7 en la imagen. Elimina un código de pedido.
+
 4.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
@@ -1306,6 +1318,7 @@ Se muestra al usuario la pantalla I311.
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/708bd7b5-63fb-4515-a478-a3ac052d7301) |
 
 1. **Botón "Agregar":** Agrega el código de pedido agregado en el campo `<1>`. Regresa al usuario a la pantalla I307.
+
 2. **Botón "Cerrar":** Regresa al usuario a la pantalla I307.
 
 |                  |                                                                                     |
@@ -1315,6 +1328,7 @@ Se muestra al usuario la pantalla I311.
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/dc002a04-4c28-4deb-bb7d-2da7d3f92294) |
 
 1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
+
 2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
@@ -1349,6 +1363,7 @@ Se muestra al usuario la pantalla I311.
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/895a7907-cb6d-41d8-ba74-0d42f367bc5c) |
 
 1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
+
 2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
@@ -1374,6 +1389,7 @@ Se muestra al usuario la pantalla I311.
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/aa2aaad7-735b-4a08-a67f-9777d4b7651f) |
 
 1. **Botón "Volver a vista de procesoss":** Lleva al usuario a la pantalla I301.
+
 2. **Botón "Continuar siguiente operación":** Lleva al usuario a la pantalla adecuada para registrar una operación adicional del proceso en cuestión. Es decir, si la pantalla actual es de tipo "Picking", se lleva al usuario a la pantalla I304; si es de tipo "Precintado", a la pantalla I305; si es de tipo "Paletizado", a la pantalla I306; si es de tipo "Carga", a la pantalla I307; si es de tipo "Salida", a la pantalla I309; y si es de tipo "Recepción", a la pantalla I310. Si es de tipo "Descarga", el botón "Continuar siguiente operación" no se habilita. Toda esta lógica descrita se implementa en el frontend. Además, el valor del atributo "id_operacion_picking" de la pantalla actual se pasa como un parámetro llamado "id_operacion_picking" a esta nueva pantalla. 
 
 En el caso de que la pantalla actual sea de tipo "Salida", en el mensaje de confirmación se muestra el código de guía de remisión generado, como se ve en la imagen a continuación.
