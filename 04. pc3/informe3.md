@@ -1891,7 +1891,7 @@ GROUP BY rt.cod_tipo_reclamo
 ORDER BY rt.cod_tipo_reclamo;
 ```
 
-### 5. Sentencias SQL módulo de Reclamos
+### 6. Sentencias SQL módulo de Reclamos
 
 #### Caso 1
 <table>
