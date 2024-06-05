@@ -4071,7 +4071,7 @@ Integrante: [Dennis Leopoldo Campos Herrera](https://github.com/fiis-bd241/grupo
 
 <div align="center">
     <a href="http://www.youtube.com/watch?feature=player_embedded&v=_u1CBCqJ6Z0" target="_blank">
-        <img src="http://img.youtube.com/vi/_u1CBCqJ6Z0/0.jpg" alt="Hola k ase 2.0" width="600" height="auto" border="10" />
+        <img src="http://img.youtube.com/vi/_u1CBCqJ6Z0/0.jpg" alt="Hola k ase 2.0" width="500" height="auto" border="10" />
     </a>
 </div>
 
