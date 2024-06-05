@@ -969,9 +969,14 @@ Donde valor2 es el código del producto escogido.
 3. Al apretar el botón siguiente se va a actualizar el serial del ticket en el reclamo.
 
 ``` sql 
-UPDATE reclamo 
-SET cod_pedido = (SELECT cod_pedido FROM ticket INNER JOIN pedido ON pedido.cod_ticket = ticket.cod_ticket WHERE ticket.cod_ticket = valor)  
-WHERE reclamo.cod_reclamo = valor3
+UPDATE reclamo
+SET cod_pedido = (
+    SELECT cod_pedido
+    FROM ticket
+    INNER JOIN pedido ON pedido.cod_ticket = ticket.cod_ticket
+    WHERE ticket.cod_ticket = valor
+)
+WHERE reclamo.cod_reclamo = valor3;
 ```
 Donde el valor 3 es el código del reclamo actual.
 
