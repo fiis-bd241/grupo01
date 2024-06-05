@@ -4011,6 +4011,10 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 Esta funcionalidad permite cubrir el requerimiento R203 desde la entrada al módulo, realización de búsqueda, visualización de datos y registro de cambios sobre atributos de productos, además, deberá incluir una interfaz dinámica para la busqueda de otras guías de remisión que requieran el registro de de entregas por  lo que la implementación aborta las pantallas I201, I202 y I202-E1.
 Como agregado adicional se debe realizar una restricción de registro de entregas solo a los transportistas que están realizando dicho traslado para evitar conflictos de responsabilidades, lo cual requiere un control de accesos en todo el sistema.
 
+### 3. Funcionalidad Primaria del Módulo de Almacén
+**Funcionalidad primaria elegida:** Registrar la información de todos los procesos por los que pasan las mercancías a transportar, desde el picking hasta la descarga. <br>
+**Sustentación:** Esta funcionalidad es de suma importancia dentro del proceso de negocio elegido, ya que abarca la información respectiva al traslado que es usada por los otros módulos. Por ejemplo, permite tener un control sobre la secuencia de operaciones que acontecen sobre una mercancía por medio de la trazabilidad, lo cual permite proveer la información necesaria al módulo de control para cumplir sus requerimientos. Además, esta funcionalidad permite establecer la relación entre los pedidos y los traslados, lo cual permite al módulo de seguimiento cumplir con su funcionalidad. En definitiva, la funcionalidad elegida provee la información que es la base para los demás módulos y permite soportar las demás etapas del proceso de negocio, ya que provee información de antes, durante y después del traslado en términos de las operaciones realizadas. Esta funcionalidad abarca todos los requerimientos desde R301 hasta R307.
+
 ### 4. Funcionalidad Primaria del Módulo de Control
 
 **Funcionalidad primaria elegida:** Registrar una nueva incidencia durante el traslado de un pedido y verificar el estado de atención de las incidencia. <br>
