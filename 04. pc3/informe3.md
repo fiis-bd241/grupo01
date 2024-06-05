@@ -966,7 +966,7 @@ Donde valor1 es el código del ticket escogido.
 
 Donde valor2 es el código del producto escogido.
 
-3. Al apretar el botón siguiente se va a actualizar el serial del ticket en el reclamo.
+3. Al apretar el botón siguiente se va a actualizar el código del pedido en el reclamo.
 
 ``` sql 
 UPDATE reclamo
