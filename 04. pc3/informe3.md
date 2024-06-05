@@ -1101,6 +1101,60 @@ Donde el valor3 es el tipo de archivo del adjunto.
 
 Donde el ‘valor4’ es el nombre del adjunto.
 
+#### Caso 6
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R601</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I608</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/130238034/8dda68d5-18a8-446f-a6e7-d76d379d46a1">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+1. Se llenará la lista de áreas responsables a seleccionar.
+
+``` sql 
+SELECT * FROM cliente AS cl WHERE cl.cod_cliente_tipo = 'I';
+```
+
+2. Se llenará la lista de acciones a seleccionar.
+
+``` sql 
+SELECT * FROM accion_tipo; 
+```
+
+3. Al presionar siguiente se crea un seguimiento, insertando el código de cliente interno (área encargada del seguimiento), el código de tipo de acción, el comentario en seguimiento. Además, se actualiza el código seguimiento en el reclamo.
+
+``` sql 
+INSERT INTO seguimiento (cod_cliente_interno,cod_tipo_accion,comentario) 
+VALUES (valor1,’valor2’,’valor3’);
+```
+Donde el valor1	 es el código del área elegida.
+
+Donde el ‘valor2’ es el código del tipo de acción elegida.
+
+Donde el ‘valor3’ es el comentario escrito.
+
+``` sql 
+UPDATE reclamo
+SET cod_seguimiento = valor4
+WHERE reclamo.cod_reclamo = valor5
+```
+Donde el valor4 es el código del seguimiento actual.
+
+Donde el valor5 es el código del reclamo actual.
+
 ## 3. Carga de Datos
 
 ```sql
