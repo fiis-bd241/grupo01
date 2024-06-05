@@ -2310,27 +2310,78 @@ ORDER BY cod_reclamo;
 2. Llenar el visor de reclamos
 
 ``` sql 
-
+SELECT 
+	cl.nombre, 
+	CONCAT(pe.prenombre,' ',pe.primer_apellido,' ',pe.segundo_apellido) representante,
+	cargo,
+	correo_empresarial,
+	pe.direccion
+FROM reclamo r
+INNER JOIN representante AS re ON re.cod_representante = r.cod_representante
+INNER JOIN cliente AS cl ON cl.cod_cliente = re.cod_cliente
+INNER JOIN persona AS pe ON pe.cod_persona = re.cod_persona
+WHERE r.cod_reclamo = valor1;
 ```
 
 ``` sql 
-
+SELECT 
+	ti.cod_ticket,
+	ec.nombre,
+	ti.fecha_entrega,
+	st.nro_lote,
+	dtip.cantidad
+FROM reclamo r
+INNER JOIN pedido AS pe ON r.cod_pedido = pe.cod_pedido
+INNER JOIN ticket AS ti ON pe.cod_ticket = ti.cod_ticket
+INNER JOIN detalle_ticket_producto AS dtip ON ti.cod_ticket = dtip.cod_ticket
+INNER JOIN elemento_catalogo AS ec ON dtip.cod_elemento_catalogo = ec.cod_elemento_catalogo
+INNER JOIN stock AS st ON ec.cod_elemento_catalogo = st.cod_elemento_catalogo
+WHERE r.cod_reclamo = valor1;
 ```
 
 ``` sql 
-
+SELECT 
+	rt.descripcion,
+	r.comentario,
+	r.fecha_suceso,
+	r.fecha_reclamo,
+	nu.descripcion
+FROM reclamo r
+INNER JOIN reclamo_tipo AS rt ON r.cod_tipo_reclamo = rt.cod_tipo_reclamo
+INNER JOIN nivel_urgencia AS nu ON r.cod_nivel_urgencia = nu.cod_nivel_urgencia
+WHERE r.cod_reclamo = valor1;
 ```
 
 ``` sql 
-
+SELECT 
+	CONCAT(ev.nombre_evidencia,'.',at.descripcion) evidencia
+FROM reclamo r
+INNER JOIN evidencia AS ev ON r.cod_reclamo = ev.cod_reclamo
+INNER JOIN archivo_tipo AS at ON ev.cod_tipo_archivo = at.cod_tipo_archivo
+WHERE r.cod_reclamo = valor1;
 ```
 
 ``` sql 
-
+SELECT 
+	cl.nombre,
+	at.descripcion,
+	se.comentario
+FROM reclamo r
+INNER JOIN seguimiento AS se ON r.cod_seguimiento = se.cod_seguimiento
+INNER JOIN accion_tipo AS at ON se.cod_tipo_accion = at.cod_tipo_accion
+INNER JOIN cliente AS cl ON se.cod_cliente_interno = cl.cod_cliente
+WHERE r.cod_reclamo = valor1;
 ```
 
 ``` sql 
-
+SELECT 
+	se.fecha_resolucion,
+	se.numero_caso,
+	er.descripcion
+FROM reclamo r
+INNER JOIN seguimiento AS se ON r.cod_seguimiento = se.cod_seguimiento
+INNER JOIN estado_reclamo AS er ON r.cod_estado_reclamo = er.cod_estado_reclamo
+WHERE r.cod_reclamo = valor1;
 ```
 
 #### Caso 9
