@@ -1299,6 +1299,7 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
    * Estilos: Primeflex
    * Gráficos: Apache ECharts
    * Íconos: Font Awesome
+   * Generación de pdfs: jspdf
 ### Backend 
    * Patrón de diseño: Dao
    * Lenguaje de programación: Java
