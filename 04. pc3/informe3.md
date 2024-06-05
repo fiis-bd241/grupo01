@@ -444,6 +444,33 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
    </tr>
 </table>
 
+11. Bóton siguiente: Cuando el usuario con el mouse da click el en botón siguiente, se generará el llenado del formulario para la solicitud de pedido.
+``` sql
+
+INSERT INTO persona(cod_persona, cod_estado_civil, cod_nacionalidad, cod_genero, dni, primer_apellido, segundo_apellido, prenombre, direccion )
+VALUES
+(? , ? , ? , ? , <3> , <4> , <2> , ?);
+
+INSERT INTO representante (cod_representante,num_telefono,correo_empresarial,cargo,cod_cliente,cod_persona)
+VALUES
+(? , <6> , <7> , ? , ?)
+
+INSERT INTO cliente (cod_cliente, cod_cliente_tipo, cod_cliente_estado, nombre , ruc , razon_social, fecha_registro)
+VALUES
+(?, ? , ? , <8> , ? , ? , ?)
+
+INSERT INTO pedido (cod_representante, cod_empleado, cod_pedido_tipo,cod_pedido_estado,fecha_registro, cod_ticket)
+VALUES
+(?, <1> , ? , ? , <9> , ?)
+
+INSERT INTO ticket (cod_ticket, fecha_entrega)
+VALUES
+(?, <10>)
+```
+Donde: 
+`<1>` corresponde al código del usuario del inicio de sesión.
+`?` corresponde a valores que se asigna al momento del registro del pedido y informacion de la base datos.
+
 ### 5. Sentencias SQL módulo de Reportes
 
 #### Caso 1
