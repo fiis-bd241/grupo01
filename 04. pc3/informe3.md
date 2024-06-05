@@ -3872,6 +3872,11 @@ Tendrás dos apartados, uno para registrar una nueva incidencia y otro para veri
 
 ## 7. Videos individuales
 
+### 1. Módulo de pedidos
+Miguel Anderson Inocente Caro
+
+[![Módulo de pedidos](https://img.youtube.com/vi/RnyEoHbUCNg/mqdefault.jpg)](https://www.youtube.com/watch?v=RnyEoHbUCNg)
+
 ### 4. Módulo de Control 
 Alex Espinoza Cerna
 
