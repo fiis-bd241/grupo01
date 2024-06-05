@@ -1948,14 +1948,13 @@ En el caso de que la pantalla actual sea de tipo "Descarga", como se mencionó, 
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/164266999/7e011093-b923-4e2f-bcd7-b79752030cca">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/abdea844-5d24-40e9-b98b-0b9b2b556ed4">
       </td>
    </tr>
    <tr>
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
-
 ## Evento:
 ### Ver conductores: 
 Se mostrará en pantalla la lista de todos los conductores para poder registrar su disponibilidad en base a los datos correspondiente a cada uno.
@@ -1989,14 +1988,13 @@ JOIN
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/assets/164266999/bd878778-adab-451b-bc31-8941ec9f724d">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/d5146a27-8756-4be4-9841-6010e4fc65ad">
       </td>
    </tr>
    <tr>
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
-
 ## Evento:
 ### Botón Estado: 
 El botón sirve para que el administrador pueda cambiar el estado de disponibilidad del conductor  que puede ser Disponible, No Disponible y Cuarentena.
@@ -2017,14 +2015,13 @@ UPDATE Conductor SET cod_estado_transportista = <1> WHERE cod_transportista = <2
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/60d1f8e1-606a-4945-9a68-7de18b34573a">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/4712df7b-047c-451c-be07-58071bd1cfc9">
       </td>
    </tr>
    <tr>
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
-
 ## Evento:
 ### Ver Vehículos: 
 Se mostrará en pantalla la lista de todos los vehículos para poder registrar su disponibilidad en base a los datos correspondiente a cada uno.
@@ -2064,7 +2061,7 @@ JOIN
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/667ef75e-8da5-4687-8098-1134ab6a3791">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/4589d5a1-f4a9-4e06-ba70-acbbab5b7483">
       </td>
    </tr>
    <tr>
@@ -2093,10 +2090,10 @@ UPDATE Vehículo SET cod_estado_vehiculo = <1> WHERE cod_vehiculo = <2>
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/df6a3f0e-8aa9-4057-8a2e-e6883df7b452">
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/ba0aba03-5d69-4d5c-8bce-a7fb805b1b7d">
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/4555d051-cfc8-4429-b148-a9baeae1fc67">
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/53e66fca-232a-4d5f-b750-3e882732056b">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/bafb2d2f-802f-49e7-be67-c76f43eca81d">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/443cfb43-11ca-455d-b0ca-9da48e418f0c">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/14956982-5e3d-42dd-8f10-36ba4652b3b9">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/bcb55311-c797-4c5e-9631-528cee7de53a">
       </td>
    </tr>
    <tr>
@@ -2151,7 +2148,7 @@ INSERT INTO incidencia VALUES (cod_incidencia,<6>, fecha_ocurrencia , hora_ocurr
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/233260db-d6b7-44d9-867c-23bcf10d1257">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/09d71cd9-a30f-4e68-a63a-1a12de430b09">
       </td>
    </tr>
    <tr>
@@ -2191,7 +2188,7 @@ JOIN
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/6c2860f5-ae9d-4816-9465-e2ef1818c52c">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/e83925bf-990d-4714-a962-c8b175952e15">
       </td>
    </tr>
    <tr>
@@ -2221,7 +2218,7 @@ UPDATE incidencia SET cod_estado_incidencia = <1> WHERE cod_incidencia = <2>
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/02de333f-76ab-493f-a5d7-f57006eb0581">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/bf714037-0677-4493-9d25-2f9a212324e8">
       </td>
    </tr>
    <tr>
@@ -2247,7 +2244,6 @@ WHERE
     fecha_ocurrencia >= <1> AND fecha_ocurrencia <  <1>;
 
 ```
-
 
 ### 5. Sentencias SQL módulo de Reportes
 
