@@ -1312,7 +1312,7 @@ Se muestra al usuario la pantalla I311.
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/7e011093-b923-4e2f-bcd7-b79752030cca">
+         <img src="https://github.com/assets/164266999/7e011093-b923-4e2f-bcd7-b79752030cca">
       </td>
    </tr>
    <tr>
@@ -1353,7 +1353,7 @@ JOIN
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/bd878778-adab-451b-bc31-8941ec9f724d">
+         <img src="https://github.com/assets/164266999/bd878778-adab-451b-bc31-8941ec9f724d">
       </td>
    </tr>
    <tr>
