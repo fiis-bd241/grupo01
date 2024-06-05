@@ -3065,7 +3065,7 @@ AND er.cod_estado_reclamo = ‘valor2’;
 Donde el ‘valor2’ es ‘resuelto’ o ‘rechazado’. 
 
 ## 3. Carga de Datos
-
+Los archivos para el ingreso masivo de datos se encuentran en el folder de Anexos.
 ```sql
 INSERT INTO estado_civil( cod_estado_civil, descripcion ) VALUES
  ( 1, 'Soltero'),
