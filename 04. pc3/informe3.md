@@ -4006,7 +4006,11 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
    </tr>
 </table>
 
-
+### 2. FUncionalidad Primaria del Módulo de Control
+**Funcionalidad primaria elegida:** Registrar entregas en el proceso de traslado y actualizar el estatus del pedido. <br>
+**Sustentación:** Registrar las entregas en el proceso de traslado es una de las necesidades más importantes que aborda el módulo y que registra el mismo transportista; esto es parte de la evolución del estado del pedido para pasar a una fase en la que ya no tiene influencia de traslados. 
+Esta funcionalidad permite cubrir el requerimiento R203 desde la entrada al módulo, realización de búsqueda, visualización de datos y registro de cambios sobre atributos de productos, además, deberá incluir una interfaz dinámica para la busqueda de otras guías de remisión que requieran el registro de de entregas por  lo que la implementación aborta las pantallas I201, I202 y I202-E1.
+Como agregado adicional se debe realizar una restricción de registro de entregas solo a los transportistas que están realizando dicho traslado para evitar conflictos de responsabilidades, lo cual requiere un control de accesos en todo el sistema.
 
 ### 4. Funcionalidad Primaria del Módulo de Control
 
