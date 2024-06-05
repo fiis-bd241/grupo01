@@ -51,7 +51,7 @@ Caso de Uso #3: Ver lista de pedidos.
 Caso de Uso #4: Ver detalle pedido. 
 | Código | R104 | 
 |----------|----------|
-|Objetivo | | 	Permitir al empleado ver los detalles completos de un pedido específico. |
+|Objetivo | Permitir al empleado ver los detalles completos de un pedido específico. |
 |Descripción | El empleado puede ver información detallada sobre un pedido, como los datos del cliente (nombre de la empresa), representante, los productos solicitados, las fechas de solicitud y entrega, y el estado actual del pedido. |
 |Actor Primario | Empleado |
 |Actor Secundario |N/A |
