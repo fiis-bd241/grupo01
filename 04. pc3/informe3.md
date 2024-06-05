@@ -4066,12 +4066,12 @@ Miguel Anderson Inocente Caro
     </a>
 </div>
 
-### Módulo de Seguimiento
+### 2. Módulo de Seguimiento
 Integrante: [Dennis Leopoldo Campos Herrera](https://github.com/fiis-bd241/grupo01/blob/e11964c8d98cf930b2a1f7a0ef1d839365c7b5ca/01.%20integrantes/Dennis%20Campos%20/Dennis%20Campos.md)
 
 <div align="center">
     <a href="http://www.youtube.com/watch?feature=player_embedded&v=_u1CBCqJ6Z0" target="_blank">
-        <img src="http://img.youtube.com/vi/_u1CBCqJ6Z0/0.jpg" alt="Hola k ase 2.0" width="500" height="auto" border="10" />
+        <img src="http://img.youtube.com/vi/_u1CBCqJ6Z0/0.jpg" alt="Modulo de Seguimiento" width="500" height="auto" border="10" />
     </a>
 </div>
 
