@@ -2091,7 +2091,7 @@ INSERT INTO gps (cod_gps, cod_ubicacion, cod_vehiculo, fecha_ubicacion, hora_ubi
   (11, 13, 7, '2024-04-22', '13:04:10'),
   (12, 14, 7, '2024-04-22', '13:38:50');
 
-INSERT INTO local (cod_local, cod_cliente, cod_ubicacion, pais, cod_local_region, cod_local_distrito, calle, numero, denominacion, cod_tipo_local) VALUES
+INSERT INTO local (cod_local, cod_cliente, cod_ubicacion, pais, cod_local_region, cod_local_distrito, calle, numero, denominacion, cod_local_tipo) VALUES
   (1, 1, 1, 'PER', 15, 44, 'Panamericana Norte', NULL, 'Beneficio Huaral', 1),
   (2, 8, 2, 'PER', 15, 44, 'Av. El Solar', NULL, 'KFC Huaral', 2),
   (3, 8, 3, 'PER', 7, 45, 'Av. Néstor Gambetta', 7036, 'KFC Ventanilla', 2),
