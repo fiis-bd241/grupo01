@@ -1066,6 +1066,40 @@ Donde el ‘valor4’ es la fecha escogida.
 
 Donde el valor 5 código del reclamo actual.
 
+#### Caso 5
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R601</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I607</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/130238034/bd36776a-fdfe-4236-96a1-0c108270957a">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+1. Al presionar el botón siguiente se crea una evidencia con el valor de código reclamo actual, el código del tipo de evidencia, el código de tipo de archivo y el nombre en evidencia. Todo esto se puede ejecutar “n” veces. (Uno por cada archivo adjuntado).
+
+``` sql 
+INSERT INTO evidencia (cod_reclamo, cod_tipo_evidencia, cod_tipo_archivo, nombre_evidencia) VALUES (valor1, ‘valor2’, valor3, ‘valor4’);
+```
+Donde el valor 1 es el código del reclamo actual.
+
+Donde el ‘valor 2’ es el tipo de evidencia del adjunto.
+
+Donde el valor 3 es el tipo de archivo del adjunto.
+
+Donde el ‘valor 4’ es el nombre del adjunto.
+
 ## 3. Carga de Datos
 
 ```sql
