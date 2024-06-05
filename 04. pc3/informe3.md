@@ -168,8 +168,6 @@ Caso de Uso #6: Registrar nuevo Transportista
 |3 | El usuario accede la información solicitdada y da click en Registrar Transportista. | 
 |4 | El sistema agrega el registro en la base de datos y actualiza la pantalla de transportistas. |
 
-
-[R201](#R201)
 #### 3. Requerimientos del módulo de Almacén
 
 Caso de Uso #1: Registrar picking
@@ -469,61 +467,61 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R201, R202, R203, R204, R205, R206     |
+| Requerimientos relacionados         | [R201](#R201), [R202](#R202), [R203](#R203), [R204](#R204), [R205](#R205), [R206](#R206)    |
 | Código      | I201 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/02e80a46-9583-48c4-b577-a8f3f46c9d97)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R201, R203     |
+| Requerimientos relacionados         | [R201](#R201), [R203](#R203)     |
 | Código      | I202 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/36a58d38-da47-4099-8b76-62fbdd8a1aa3)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R203     |
+| Requerimientos relacionados         | [R203](#R203)    |
 | Código      | I202-E1 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/552f8a68-c84e-4bfb-85b8-b41c0b86f939)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R202 |
+| Requerimientos relacionados         | [R202](#R202) |
 | Código      | I203 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/78d998b0-889a-4668-895d-b5ccccddd7cb)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R204     |
+| Requerimientos relacionados         | [R204](#R204)    |
 | Código      | I204 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/efb7b544-926b-4410-a17a-f3a926a42a0f)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R204     |
+| Requerimientos relacionados         | [R204](#R204)    |
 | Código      | I204-E1 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/4196ac9d-f4c2-4382-a8a5-6d6af60659a7)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R205     |
+| Requerimientos relacionados         | [R205](#R205)   |
 | Código      | I205 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/d9a1ce6b-d68b-4686-88d1-5ac69dcbb9a0)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R205     |
+| Requerimientos relacionados         | [R205](#R205)     |
 | Código      | I205-E1 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/f880dea2-3e18-4f93-92b8-272e4b8ec627)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R206    |
+| Requerimientos relacionados         | [R206](#R206)    |
 | Código      | I206 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/94c187d0-597b-466a-8472-4b690a9e8347)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R206    |
+| Requerimientos relacionados         | [R206](#R206)    |
 | Código      | I206-E1 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/df1b66eb-7f89-4736-9512-c228a7ce6286)|
 
