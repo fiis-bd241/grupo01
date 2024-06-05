@@ -915,10 +915,12 @@ FROM
 SELECT 
     dtp.id_elemento_catalogo, 
     ec.nombre, 
-    dtp.cantidad 
+    dtp.cantidad,
+    ecu.descripcion AS unidad
 FROM 
     detalle_ticket_producto AS dtp
-    INNER JOIN elemento_catalogo AS ec ON dtp.id_elemento_catalogo = ec.id_elemento_catalogo;
+    INNER JOIN elemento_catalogo AS ec ON dtp.id_elemento_catalogo = ec.id_elemento_catalogo
+    INNER JOIN elemento_catalogo_unidad AS ecu ON ec.cod_unidad = ecu.cod_unidad;
 ```
 
 ### 3. Sentencias SQL módulo de Almacén
