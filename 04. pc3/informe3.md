@@ -904,7 +904,7 @@ Donde el valor1 es el código del cliente escogido.
 
 Donde el valor2 es el código del representante escogido.
 
-3. Al presionar siguiente se inserta el codigo del representante en el reclamo y se llenan los tickets asociados al representante en la interfaz I605 (siguiente interfaz).
+3. Al presionar siguiente se inserta el codigo del representante en el reclamo y se llenan los tickets asociados al representante a una lista en la interfaz I605 (siguiente interfaz).
 
 ``` sql 
 UPDATE reclamo
