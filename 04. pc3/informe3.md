@@ -473,7 +473,7 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R202     |
+| Requerimientos relacionados         | R201, R202     |
 | Código      | I202 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/36a58d38-da47-4099-8b76-62fbdd8a1aa3)|
 
