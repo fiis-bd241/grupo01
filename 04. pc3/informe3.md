@@ -15,7 +15,7 @@ Caso de Uso #1: Registrar Pedido
 |Actor Secundario| N/A. | 
 |Precondiciones |El empleado debe estar autenticado en el sistema.
 |Paso |Acción| 
-|1| El representante accede a la interfaz de registro de pedido.|
+|1| El empleado accede a la interfaz de registro de pedido.|
 |2| El sistema muestra un formulario con campos para ingresar los datos del cliente y del pedido.|
 |3| El representante completa el formulario con la información requerida.|
 |4| El representante selecciona la opción "Siguiente" para continuar con la solicitud de productos.|
