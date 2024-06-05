@@ -586,10 +586,15 @@ FROM
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="ttps://github.com/fiis-bd241/grupo01/assets/121084712/527812fe-ff57-4f65-abe0-3bf5ccd89447">
-	 <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/c0d3fb5b-b285-4438-9ee5-d1c45f488ae5">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/b6b3d8ee-681a-46ed-8b83-14576c934ece">
       </td>
    </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/876e17e1-53ad-480b-af5e-7bb6582e1798">
+      </td>
+   </tr>	
    <tr>
       <td colspan="2">Sentencias SQL</td>
    </tr>
