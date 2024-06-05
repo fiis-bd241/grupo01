@@ -436,7 +436,7 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/905dfe6f-756f-48a9-8ed0-a74066b1a143">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/df7eafa2-113d-4cc3-98fa-2096f674661b">
       </td>
    </tr>
    <tr>
