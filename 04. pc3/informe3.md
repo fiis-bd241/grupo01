@@ -2948,6 +2948,8 @@ Ahora une vez que se llega a la fecha inicio de programación, cada cierto tiemp
 ### Databases
    * Sistema gestor de base de datos: PostgreSQL 
    * Motor de base de datos: PostgreSQL
+### Diagrama
+![app](https://github.com/fiis-bd241/grupo01/assets/161625149/118087b3-308f-4b84-9770-b74b500291f3)
 ## 6. Primera Versión de su Aplicación
 
 ### Frontend: https://github.com/Cristhian134/sanfernando-app.git
