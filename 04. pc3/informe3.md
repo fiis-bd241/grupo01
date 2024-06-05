@@ -2886,6 +2886,37 @@ Tendrás dos apartados, uno para registrar una nueva incidencia y otro para veri
    
 </table>
 
+### Verificación de estado de atención de incidencia
+
+<table>
+   <tr>
+      <th>Actividad</th>
+      <th>Descripción</th>
+   </tr>
+   <tr>
+      <td>1</td>
+      <td>Al hacer clic en la opción de “Incidencias”, accedemos al apartado de “Registro”, donde se nos mostrará la pantalla I-000. En esta pantalla se presenta un listado de todas las incidencias registradas hasta el momento, con los siguientes datos: código de incidencia, código de traslado, tipo de incidencia, fecha y hora de ocurrencia, y el estado actual de la incidencia. 
+Adicionalmente, hay un filtro que permite observar el número de incidencias por periodo, así como su estado de atención. Este filtro es útil para registrar los meses y años en los que se produce la mayor cantidad de incidencias. Con base en el estado, la fecha y la hora de ocurrencia, podemos priorizar la atención de determinadas incidencias, brindando así mayor seguridad y demostrando compromiso con el cliente.
+	<p align="center">
+           <img style="width: 80%;" src="https://github.com/Alexclb0/Holamundo/assets/164266999/3c546455-8ed7-433a-abb0-832c9bee2b56">
+	</p>
+      </td>
+   </tr>
+	
+   <tr>
+      <td>2</td>
+      <td>Al hacer clic en la opción de “Incidencias”, accedemos al apartado de “Registro”, donde se nos mostrará la pantalla I-000. En esta pantalla se presenta un listado de todas las incidencias registradas hasta el momento, con los siguientes datos: código de incidencia, código de traslado, tipo de incidencia, fecha y hora de ocurrencia, y el estado actual de la incidencia.
+Como administradores, en la pantalla I-000 podemos seleccionar el estado de atención de cada incidencia eligiendo entre las opciones “Solucionado” o “Pendiente”. De esta manera, registramos las incidencias resueltas y damos prioridad a las que faltan por abordar, evitando desconocimiento y sobreesfuerzos al intentar resolver incidencias que ya han sido cubiertas.
+          <p align="center">
+             <img style="width: 80%;" src="https://github.com/Alexclb0/Holamundo/assets/164266999/fbca4cc8-2e1e-4834-9618-625e25c3008d">
+          </p> 
+      </td>
+   </tr>
+   
+   
+</table>
+
+
 ### 5. Funcionalidad Primaria del módulo de reportes
 
 **Funcionalidad primaria elegida:** Programar la generación de un tipo de reporte en un intervalo de tiempo definido. <br>
