@@ -434,6 +434,35 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 
 ### Prototipos
 
+#### 1. Prototipos del módulo de Pedidos
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R101  |
+| Código      | I101 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/121084712/f0561a61-b1f5-4a3f-b805-1b2a2b2f0d0a) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R102  |
+| Código      | I102 |
+| Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/121084712/a5969b9b-6586-4600-9741-8adf84bc025e) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R103   |
+| Código      | I103 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/121084712/79ecb0c5-f800-4578-89aa-168b1e0b3ccd)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R104  |
+| Código      | I104 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/121084712/2cb398f1-654b-4c5a-b4b0-8d1007bd5a27) |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/121084712/0d1d5575-3acd-4e03-aa29-e1facebba757) |
+
+
+
 #### 2. Prototipos del módulo de Seguimiento
 
 |                  |                                                                                     |
