@@ -3521,8 +3521,15 @@ Tendrás dos apartados, uno para registrar una nueva incidencia y otro para veri
 
 ## 7. Videos individuales
 
+### 4. Módulo de Control 
+Alex Espinoza Cerna
+
 [![Módulo de control](https://img.youtube.com/vi/49ex4_ZWXF4/mqdefault.jpg)](https://www.youtube.com/watch?v=49ex4_ZWXF4)
 
+### 5. Módulo de Reportes
+Cristhian Samir Cruz Mamani
+
+[![Módulo de reportes](https://img.youtube.com/vi/YLxhekfsW98/mqdefault.jpg)](https://www.youtube.com/watch?v=YLxhekfsW98)
 ### 6. Módulo de Reclamos
 Leonardo Gustavo Cárdenas Palacios
 
