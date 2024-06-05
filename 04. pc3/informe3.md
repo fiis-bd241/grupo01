@@ -417,7 +417,6 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 | Código      | I609 |
 | Prototipo   | ![I609](https://github.com/fiis-bd241/grupo01/assets/130238034/e437114d-973c-445a-98f2-3a5639cdc758)|
 
-## 2. Sentencias SQL por cada prototipo
 
 ## 2. Sentencias SQL por cada prototipo
 
@@ -428,16 +427,16 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 <table>
    <tr>
       <td>Código Requerimiento</td>
-      <td>R503</td>
+      <td>R</td>
    </tr>
    <tr>
       <td>Código interfaz</td>
-      <td>I501</td>
+      <td>I101</td>
    </tr>
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src=>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/905dfe6f-756f-48a9-8ed0-a74066b1a143">
       </td>
    </tr>
    <tr>
