@@ -1250,9 +1250,9 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 
 ### Funcionalidad Primaria del módulo de reportes
 
-**Funcionalidad primaria elegida:** Programación de reportes. <br>
-**Sustentación:** <br>
-
+**Funcionalidad primaria elegida:** Programar la generación de un tipo de reporte en un intervalo de tiempo definido. <br>
+**Sustentación:** Se automatiza y facilita la generación de informes en intervalos predefinidos, brindando acceso a información crítica sin intervención manual. Además, permite personalizar los tipos, formatos, frecuencias y períodos de los informes según las necesidades específicas, organizando todas las tareas de generación de informes en un solo lugar. Esta funcionalidad se integra con los datos de otros módulos, apoyando la toma de decisiones basada en datos dentro de la empresa. <br>
+Esta funcionalidad permitirá cumplir con los requerimientos de Generar reporte (R501) y Programar reporte (R502), los cuales se encuentran relacionados con las interfaces I501 y I-503.
 <table>
    <tr>
       <th>Actividad</th>
