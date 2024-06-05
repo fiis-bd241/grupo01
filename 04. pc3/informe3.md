@@ -896,7 +896,8 @@ SELECT
     CONCAT(rp.prenombre, ' ', rp.primer_apellido, ' ', rp.segundo_apellido) AS nombre_representante,
     CONCAT(ep.prenombre, ' ', ep.primer_apellido, ' ', ep.segundo_apellido) AS nombre_empleado_registro,
     pt.tipo_pedido,
-    p.cod_ticket
+    p.cod_ticket,
+    pe.estado_pedido
 FROM
     pedido p
     INNER JOIN ticket t ON p.cod_ticket = t.cod_ticket
@@ -905,7 +906,8 @@ FROM
     INNER JOIN cliente c ON r.cod_cliente = c.cod_cliente
     INNER JOIN empleado e ON p.cod_empleado = e.cod_empleado
     INNER JOIN persona ep ON e.cod_persona = ep.cod_persona
-    LEFT JOIN pedido_tipo pt ON p.cod_pedido_tipo = pt.cod_pedido_tipo;
+    LEFT JOIN pedido_tipo pt ON p.cod_pedido_tipo = pt.cod_pedido_tipo
+    INNER JOIN pedido_estado pe ON p.cod_pedido_estado = pe.cod_pedido_estado;
 
 ```
 
