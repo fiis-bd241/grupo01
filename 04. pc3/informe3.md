@@ -1367,7 +1367,7 @@ JOIN
 ### Botón Estado: 
 El botón sirve para que el administrador pueda cambiar el estado de disponibilidad del conductor  que puede ser Disponible, No Disponible y Cuarentena.
 ``` sql
-UPDATE Conductor SET cod_estado_transportista = <1> WHERE cod_estado_transportista = 2 AND cod_transportista = <2>
+UPDATE Conductor SET cod_estado_transportista = <1> WHERE cod_transportista = <2>
 ```
 
 ### Caso 3
@@ -1442,7 +1442,7 @@ JOIN
 ### Botón estado: 
 El botón sirve para que el administrador pueda cambiar el estado de disponibilidad del vehículo  que puede ser Disponible, No Disponible y Cuarentena.
 ``` sql
-UPDATE Vehículo SET cod_estado_vehiculo = <1> WHERE cod_estado_vehiculo = 2 AND cod_vehiculo = <2>
+UPDATE Vehículo SET cod_estado_vehiculo = <1> WHERE cod_vehiculo = <2>
 
 ```
 
@@ -1570,7 +1570,7 @@ JOIN
 El botón sirve para que el administrador pueda cambiar el estado de atención de la incidencia  que puede ser Solucionado o Pendiente. 
 
 ``` sql
-UPDATE incidencia SET cod_estado_incidencia = <1> WHERE cod_estado_incidencia = 2 AND cod_incidencia = <2>
+UPDATE incidencia SET cod_estado_incidencia = <1> WHERE cod_incidencia = <2>
 
 ```
 
