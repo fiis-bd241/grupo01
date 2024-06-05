@@ -1566,7 +1566,7 @@ JOIN
 El botón sirve para que el administrador pueda cambiar el estado de atención de la incidencia  que puede ser Solucionado o Pendiente. 
 
 ``` sql
-El botón sirve para que el administrador pueda cambiar el estado de atención de la incidencia  que puede ser Solucionado o Pendiente. 
+UPDATE incidencia SET cod_estado_incidencia = <1> WHERE cod_estado_incidencia = 2 AND cod_incidencia = <2>
 
 ```
 
