@@ -664,7 +664,7 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R602 |
 | Código      | I603 |
-| Prototipo   |                                                    	|
+| Prototipo   |![I603](https://github.com/fiis-bd241/grupo01/assets/130238034/1c2338c5-bdd6-4afd-baec-8f42b68b1477)|
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R601 |
