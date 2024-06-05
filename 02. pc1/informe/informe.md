@@ -312,102 +312,115 @@ Caso de Uso #4: Ver lista de pedidos.
 
 a. Usuarios
 - Administrador: Puede visualizar todas las pantallas y editar los detalles de traslado.
-- Usuario planta Huaral (Pedido cliente interno): Visualización de pedido en progreso y acceso a detalles de traslado y guía de remisión.
 - Usuario Almacén General (Pedido cliente interno): Permisos de administrador, acceso a los documentos y vínculos adjuntos y registro de incidencias.
-- Usuario de planta Huaral (Pedido de cliente externo): Puede visualizar las pantallas y acceder a los documentos y vínculos adjuntos, registrar incidencias.
 - Usuario Transportista: Actualizar el estatus del transporte, registrar incidencias y entregas solo de traslados realizados por ellos mismos.
+- Supervisor de Transportista: Creación y asignación de rutas, vehículos y transportistas
 b. Casos de uso
 
-Caso de Uso #1: Verificar Pedido en Progreso
+Caso de Uso #1: Ver Guía de Remisión
 <a name="R201"></a>
 | Código | R201 | 
 |----------|----------|
-|Objetivo | Permitir al encargado de almacén revisar los detalles del proceso de traslado de un pedido. |
-|Descripción | El encargado ingresa al módulo en la pantalla de Pedidos en progreso y con el número de pedido que le corresponde busca y accede a los detalles del pedido en cuestión. |
-|Actor Primario | Encargado de almacén. |
+|Objetivo | Permitir al usuario acceder a una versión pdf de la guía de remisión |
+|Descripción | El encargado ingresa al módulo, accede a la sección de Traslados en Proceso, verifica los datos del traslado y da click al botón correspondiente. |
+|Actor Primario | Transportista |
 |Actor Secundario | N/A |
-|Precondiciones | El encargado debe estar registrado en el sistema SAP | 
+|Precondiciones | El transportista debe estar registrado en el sistema y haber validado su ingreso | 
 |Paso | Acción | 
-|1 | El encargado selecciona la pantalla de Pedidos en Progreso en la pantalla Menú. |
-|2 | El sistema muestra una serie de pedidos cuyo estatus se encuentra clasificado como “en progreso” | 
-|3 | El encargado busca visualmente o a través del buscador el código del pedido del cual desea consultar los detalles y da click sobre el icono de dicho pedido. |
-|4 | El sistema muestra toda la información detallada del pedido en cuestión y el proceso de traslado en el que se está realizando. |
-|Pasos opcionales | Acciones opcionales |
+|1 | El usuario ingresa al módulo y accede a la sección de Traslados en Proceso |
+|2 | El sistema muestra una serie de pedidos cuyo estatus se encuentra clasificado como “en proceso” | 
+|3 | El usuario busca a través de la herramienta de búsqueda el código del traslado y selecciona el que corresponde con lo que busca. |
+|4 | El sistema muestra toda la información detallada del proceso de traslado en cuestion. |
 |5 | El encargado puede dar click en el botón de “Ver guía de Remisión” para acceder a una versión digital del documento que consigna los detalles del traslado. |
 
-Caso de Uso #2: Registrar Incidencia de viaje
+Caso de Uso #2: Registrar Datos de Traslado programado
 <a name="R202"></a>
 | Código | R202 | 
 |----------|----------|
-|Objetivo | Permitir al transportista reportar alguna incidencia no prevista durante el proceso de traslado. |
-|Descripción | El transportista ante una situación no planeada accede al sistema de seguimiento y registra una incidencia respecto al traslado que realiza, informando a los involucrados de la situación. |
-|Actor Primario | Transportista. |
-|Actor Secundario | Encargado de almacén planta Huaral, Almacenero Almacén General |
-|Precondiciones | El transportista debe haber accedido al sistema | 
+|Objetivo | Permitir al supervisor asignar los recursos y responsables necesarios para realizar un traslado. |
+|Descripción | El supervisor toma un traslado programado y usa la interfaz para asignar la ruta, vehículo y transportista encargado de cada traslado. |
+|Actor Primario | Supervisor del transportista |
+|Actor Secundario | Encargado de almacén planta Huaral |
+|Precondiciones | Usuario logeado con los permisos necesarios | 
 |Paso | Acción | 
-|1 | El transportista entra a la pantalla de Pedidos en progreso. |
-|2 | El transportista ingresa los datos del Traslado que está llevando a cabo o el pedido con respecto al cual tuvo una incidencia. | 
-|3 | Realiza click sobre el botón “Reportar incidencia que lo redirige al módulo de Control donde realizará el llenado del formato de incidencias. |
-|4 | El sistema registra la incidencia y genera una notificación en los usuarios relacionados con los pedidos del traslado. |
+|1 | El supervisor ingresa a la sección Traslados Programados desde la pantalla de inicio. |
+|2 | El supervisor asigna la ruta que se ajusta a los requerimientos de origen y destino seleccionando la herramienta de edición y usando la ventana emergente para elegir la ruta. | 
+|3 | El supervisor asigna el vehículo que se ajusta a los requerimientos capacidad y disponibilidad seleccionando la herramienta de edición y usando la ventana emergente para elegir el vehículo. |
+|4 | El supervisor asigna el transportista que se ajusta a los requerimientos de disponibilidad y licencia válida seleccionando la herramienta de edición y usando la ventana emergente para elegir el transportista. |
+|5 | El usuario guarda los datos y genera el documento de tralsado a través del botón "Generar Guía de Remisión" |
 
-Caso de Uso #3: Revisar los pedidos pendientes de un Traslado
+Caso de Uso #3: Registrar la entrega de un pedido
 <a name="R203"></a>
 | Código | R203 | 
 |----------|----------|
-|Objetivo | Permitir a los supervisores informarse si un pedido se encuentra aún en proceso de traslado o de si ya fue registrado como entregado |
-|Descripción | El supervisor entra al sistema en la pantalla de Pedidos Pendientes, ingresa la información del Traslado que desea consultar y revisa los pedidos de ese traslado que aún faltan entregar. |
-|Actor Primario | Supervisor |
-|Actor Secundario | Encargado de almacén planta Huaral, Almacenero Almacén General |
-|Precondiciones | El supervisor debe estar logeado y tener el código de pedido y de traslado | 
+|Objetivo | Permitir al transportista cambiar el estatus de un pedido a "Entregado" |
+|Descripción | El encargado ingresa al sistema y dentro se dirige al traslado que realiza, una vez ahí usa el boton de registro de entrega para seleccionar el pedido que está entregando. |
+|Actor Primario | Transportista |
+|Actor Secundario | Encargado de almacén planta Huaral, Supervisor de Transportista |
+|Precondiciones | Usuario logeado que cuenta con el código de traslado y pedido | 
 |Paso | Acción | 
-|1 | El supervisor entra a la pantalla de Pedidos Pendientes. |
-|2 | El supervisor ingresa los datos del Traslado que está lleva el pedido en cuestión. | 
-|3 | El sistema muestra los pedidos por entregar de ese Traslado. |
-|4 | El supervisor busca visualmente en la tabla o ingresa el código del pedido en la barra de búsqueda para encontrar el pedido del cual quiere realizar el seguimiento. |
+|1 | El usuario entra a la pantalla de Traslados en proceso. |
+|2 | El usuario ingresa los datos del Traslado en el buscador y selecciona el correspondiente. | 
+|3 | El sistema muestra los datos correspondientes al traslado. |
+|4 | El usuario accede al botón "registrar entrega" y el sistema muestra una ventana emergente con la información de todos los pedidos correspondientes a ese traslado. |
+|5 | El usuario elige el pedido que se está entregando, el sistema actualiza el estatus de ese pedido y la base de datos. |
 
-Caso de Uso #4: Registrar la entrega de un pedido
+Caso de Uso #4: Generar nueva ruta
 <a name="R204"></a>
 | Código | R204 | 
 |----------|----------|
-|Objetivo | Permitir cambiar el estatus de los pedidos que están siendo transportados en el Traslado |
-|Descripción | El transportista ingresa al sistema, busca el traslado que está realizando y cambia el estado de un pedido a entregado. |
-|Actor Primario | Transportista |
-|Actor Secundario | Encargado de almacén planta Huaral, Almacenero Almacén General |
-|Precondiciones | El transportista debe estar logeado y tener el código de pedido y de traslado | 
+|Objetivo | Permitir la generación de nuevas rutas para traslados |
+|Descripción | El usuario ingresa al módulo, accede a la herramienta de creación de ruta, agrega los paraderos de la ruta y la guarda. |
+|Actor Primario | Supervisor de Transportista |
+|Actor Secundario | Encargado de almacén planta Huaral |
+|Precondiciones | El usuario debe estar logeado y tener los permisos necesarios | 
 |Paso | Acción | 
-|1 | El Transportista entra a la pantalla de Pedidos en Progreso y escribe el código del traslado actual en la barra respectiva. |
-|2 | El transportista da click en “Registrar entrega” y selecciona el pedido de dicho traslado que cambiará de estatus. | 
-|3 | El sistema guarda los cambios y se ven reflejados en las otras pantallas. |
+|1 | El usuario accede al módulo y da click al botón "Crear Ruta Nueva". |
+|Caso alternativo| --- |
+|1.1| El usuario entra a "Rutas disponibles" y el sistema le muestra las rutas existentes. |
+|1.2| El usuario realiza una busqueda de la ruta que necesita, de no existir hace click en el boton "Crear Ruta Nueva".|
+|Fin del caso alternativo| --- |
+|2 | El sistema abre una ventana emergente con una tabla que registrará los paraderos de la nueva ruta. |
+|3 | El usuario accede los paraderos que debe cubrir esa ruta uno por uno (mínimo 2) y da click en Registrar Ruta. | 
+|4 | El sistema agrega el registro en la base de datos y actualiza la pantalla de rutas. |
 
-Caso de Uso #5: Contactar con el transportista
+Caso de Uso #5: Registrar nuevo Vehículo
 <a name="R205"></a>
 | Código | R205 | 
 |----------|----------|
-|Objetivo | Facilitar el proceso de busqueda de contacto con el transportista en caso de incidencias. |
-|Descripción | EL supervisor ingresa al sistema, ubica su pedido, visualiza los detalles del proceso de transporte y obtiene la información necesaria para contactar con el transportista o iniciar el registro de una incidencia. |
-|Actor Primario | Supervisor de almacén |
+|Objetivo | Permitir el registro de nuevo vehículos |
+|Descripción | El usuario ingresa al módulo, accede a la herramienta de Nuevo Vehículo, agrega los datos del vehículo y guarda la información. |
+|Actor Primario | Supervisor de Transportista |
 |Actor Secundario | Encargado de almacén planta Huaral |
-|Precondiciones | El supervisor debe estar logueado y tener la información del pedido del cual necesita información. | 
+|Precondiciones | El usuario debe estar logeado y tener los permisos necesarios | 
 |Paso | Acción | 
-|1 | El supervisor entra a la pantalla de Pedidos en Progreso y escribe el código del pedido en la barra de busqueda respectiva. |
-|2 | El supervisor da click en “Detalles de Traslado” y será redirigido a la pantalla Detalle de Traslado con el código del traslado respectivo automáticamente cargado. | 
-|3 | El sistema muestra toda la información relacionada con el traslado, incluyendo la información de contacto del transportista, con la cual puede realizar el contacto respectivo. |
+|1 | El usuario accede al módulo y da click al botón "Nuevo Vehículo". |
+|Caso alternativo| --- |
+|1.1| El usuario entra a "Vehículos Disponibles" y el sistema le muestra los vehículos en existencia. |
+|1.2| El usuario verifica la inexistencia del vehículo nuevo en los registros y da click en "Nuevo Vehículo".|
+|Fin del caso alternativo| --- |
+|2 | El sistema abre una ventana emergente con campos que registrarán los datos necesarios del nuevo vehículo. |
+|3 | El usuario accede la información solicitdada y da click en Registrar Vehículo. | 
+|4 | El sistema agrega el registro en la base de datos y actualiza la pantalla de vehículos. |
 
-Caso de Uso #6: Notificar cambio de ruta
+Caso de Uso #6: Registrar nuevo Transportista
 <a name="R206"></a>
 | Código | R206 | 
 |----------|----------|
-|Objetivo | Permitir un cambio en la forma en la que están recorridos los tramos durante la realización del transporte en caso de ser necesario. |
-|Descripción | El conductos o el supervisor que realiza el seguimiento pueden acceder al sistema, encontrar el traslado que desean cambiar y ejecutar un cambio de tramos que será notificado a todo el personal pertinente. |
-|Actor Primario | Transportista |
-|Actor Secundario | Supervisor de almacén |
-|Precondiciones | El usuario debe haberse logeado y tener razones válidas para ejecutar el cambio de tramos. | 
+|Objetivo | Permitir el registro de nuevo Transportista |
+|Descripción | El usuario ingresa al módulo, accede a la herramienta de Nuevo Transportista, agrega los datos del transportista y guarda. |
+|Actor Primario | Supervisor de Transportista |
+|Actor Secundario | Encargado de almacén planta Huaral |
+|Precondiciones | El usuario debe estar logeado y tener los permisos necesarios | 
 |Paso | Acción | 
-|1 | El supervisor o transportista acceden a la pantalla principal del sistema. |
-|2 | El usuario da click en la sección "Detalles de Traslado" para posteriormente ser redirigido a este. | 
-|3 | El sistema muestra toda la información relacionada con el traslado, incluyendo la información de la ruta que se sigue durante el traslado asi como los tramos que conforman dicha ruta. |
-|4 | El usuario selecciona alguno de los tramos posibles mostrados en la parte baja de la pantalla y le da click generando que dicha opción se resalte. |
-|5 | El usuario da click en "Notificar cambio de ruta", lo cual cambia la ruta del traslado y genera una notificación en la bandeja de los usuarios pertinentes |
+|1 | El usuario accede al módulo y da click al botón "Nuevo Transportista". |
+|Caso alternativo| --- |
+|1.1| El usuario entra a "Transportistas" y el sistema le muestra los registros de todos los transportistas registrados. |
+|1.2| El usuario verifica la inexistencia del nuevo Transportista en los registros y da click en "Nuevo Transportista".|
+|Fin del caso alternativo| --- |
+|2 | El sistema abre una ventana emergente con una campos de ingreso de datos para registrar toda la información necesaria del nuevo transportista. |
+|3 | El usuario accede la información solicitdada y da click en Registrar Transportista. | 
+|4 | El sistema agrega el registro en la base de datos y actualiza la pantalla de transportistas. |
 
 #### 2.2. Requerimientos de atributos de calidad
 - Seguridad: Dado que el sistema manejará datos de ubicación e información sensible sobre las entregas, la seguridad es de suma importancia. Se debe procurar acceso solo a los trabajadores con las autorizaciones adecuadas para asignar lectura y escritura dependiendo del nivel de acceso.
