@@ -3423,3 +3423,9 @@ Ahora une vez que se llega a la fecha inicio de programación, cada cierto tiemp
 ## 7. Videos individuales
 
 [![Módulo de control](https://img.youtube.com/vi/49ex4_ZWXF4/mqdefault.jpg)](https://www.youtube.com/watch?v=49ex4_ZWXF4)
+
+### 6. Módulo de Reclamos
+Leonardo Gustavo Cárdenas Palacios
+
+[![Reclamos](https://github.com/fiis-bd241/grupo01/assets/130238034/1d0ebf09-f1c0-49b8-b806-a27a4e71395d)](https://www.youtube.com/watch?v=YM5b_5PBoSk)
+
