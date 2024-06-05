@@ -4,6 +4,64 @@
 
 ### Requerimientos
 
+#### 1. Requerimientos del módulo de Pedidos
+
+Caso de Uso #1: Registrar Pedido
+| Código | R101 | 
+|----------|----------|
+|Objetivo | Permitir a los Representante de cada departamento a registrar un nuevo pedido.|
+|Descripción | El almacenista ingresa la información del cliente, como nombre, correo electrónico empresarial y personal, fecha de solicitud, fecha de entrega, DNI, departamento y justificación. |
+|Actor Primario | Representante de cada area. |
+|Actor Secundario | N/A |
+|Precondiciones | El representante debe estar registrado en el sistema SAP | 
+|Paso | Acción | 
+|1 | El representante selecciona la opción para registrar un nuevo pedido. |
+|2 | El sistema muestra un formulario para que el representante ingrese los datos personales y datos del pedido. | 
+|3 | El representante completa el formulario y selecciona la opción para agregar productos. |
+
+Caso de Uso #2: Agregar productos al pedido. 
+| Código | R102 | 
+|----------|----------|
+|Objetivo | Permitir al representante (usuario) agregar los productos solicitados al pedido.|
+|Descripción | Después de ingresar la información del usuario (representante) en el formulario de registro de pedido, el usuario puede agregar los productos solicitados a través de una tabla. | 
+|Actor Primario | representante departamental |
+|Actor Secundario | N/A |
+|Precondiciones | El usuario debe haber completado el formulario de registro de pedido. |
+|Paso | Acción |
+|1 | Después de ingresar los datos del usuario y pedido, el usuario selecciona la opción para agregar productos.|
+|2 | El sistema muestra una tabla vacía para que el usuario ingrese los detalles de los productos solicitados, como código, nombre, descripción, cantidad, unidad de medida y precio unitario. |
+|3 | El usuario ingresa la información de los productos. |
+|4 | El usuario revisa la información de los productos ingresados y selecciona la opción para confirmar el pedido. |
+|5 | El sistema asigna un número de pedido único al nuevo pedido. |
+|6 | El sistema guarda la información del pedido, incluyendo los productos solicitados, y actualiza el estado a "pendiente". |
+
+Caso de Uso #3: Ver detalle pedido. 
+| Código | R103 | 
+|----------|----------|
+|Objetivo | | 	Permitir a los almacenistas de cada area (usuarios) consultar los detalles de un pedido específico. |
+|Descripción | Despúes de completar todos los productos solicitados y el sistema muestra la información detallada, incluyendo los datos del usuario, los productos solicitados y sus detalles. |
+|Actor Primario | representante de cada departamento. |
+|Actor Secundario |N/A |
+|Precondiciones | El usuario debio completar la tabla de los productos solicitados. |
+|Paso | Acción |
+|1 | Después de agregar los productos al pedido, el usuario selecciona la opción para ver el detalle del pedido. |
+|2 | El sistema muestra la información detallada del pedido, incluyendo los datos del usario, los productos solicitados y sus detalles (código de producto, unidad de medida, descripción, precio unitario), la fecha de solicitud, la fecha de entrega, el estado del pedido, el tiempo transcurridos (días) del pedido y cualquier otra información relevante.
+|3 | El usuario puede confirmar o cancelar el pedido. |
+
+Caso de Uso #4: Ver lista de pedidos.
+| Código | R104 | 
+|----------|----------|
+|Objetivo | | Permitir a los representante (usuarios) consultar la lista de todos los pedidos registrados.
+|Descripción | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
+|Actor Primario | representante de cada departamento. |
+|Actor Secundario | N/A |
+|Precondiciones | El usuario debe estar registrado en el sistema SAP. |
+|Paso | Acción |
+|1 | El usuario selecciona la opción para ver la lista de pedidos. |
+|2 | El sistema muestra la lista de todos los pedidos registrados, incluyendo el número de pedido, departamento, la fecha de solicitud, la fecha de entrega y el estado del pedido. |
+|3 | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
+|4 | El sistema SAP actualiza la lista de pedidos según los filtros y ordenamiento aplicados por el usuario. |
+
 #### 3. Requerimientos del módulo de Almacén
 
 Caso de Uso #1: Registrar picking
