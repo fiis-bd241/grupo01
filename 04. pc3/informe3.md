@@ -924,7 +924,318 @@ FROM
     INNER JOIN elemento_catalogo AS ec ON dtp.id_elemento_catalogo = ec.id_elemento_catalogo
     INNER JOIN elemento_catalogo_unidad AS ecu ON ec.cod_unidad = ecu.cod_unidad;
 ```
+### 2. Sentencias SQL módulo de Seguimiento
+#### Caso 1
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R201, R203      |
+| Código      | I202 |
+| Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/7ca92fdd-cdf6-42c0-98f1-ab701a118166)|
 
+Eventos:
+1.	Carga de página: Se llenarán los traslados en proceso:
+``` sql
+SELECT t.cod_guia_remision,  lo.denominacion AS origen, ld.denominacion AS destino
+FROM traslado t
+JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
+JOIN ruta r ON t.cod_ruta = r.cod_ruta
+JOIN paradero po ON r.cod_ruta = po.cod_ruta AND po.cod_paradero_tipo = 1
+JOIN "local" lo ON po.cod_local = lo.cod_local
+JOIN paradero pd ON r.cod_ruta = pd.cod_ruta AND pd.orden = (SELECT MAX(orden) FROM paradero WHERE cod_ruta = r.cod_ruta)
+JOIN "local" ld ON pd.cod_local = ld.cod_local;
+```
+2.	Al seleccionar uno de los traslados de la lista en la pantalla se cargará:
+``` sql
+SELECT 
+    p.prenombre || ' ' || p.primer_apellido || ' ' || p.segundo_apellido AS conductor, v.placa AS placa_vehiculo,  lo.denominacion AS origen, os.hora_fin AS hora_salida, ld.denominacion AS destino
+FROM 
+    traslado t
+    JOIN operacion os ON t.id_operacion_inicia = os.id_operacion AND os.cod_tipo_operacion = (SELECT cod_tipo_operacion FROM operacion_tipo WHERE descripcion = 'Salida')
+    JOIN transportista tr ON t.cod_transportista = tr.cod_transportista
+    JOIN empleado e ON tr.cod_empleado = e.cod_empleado
+    JOIN persona p ON e.cod_persona = p.cod_persona
+    JOIN vehiculo v ON t.cod_vehiculo = v.cod_vehiculo
+    JOIN ruta r ON t.cod_ruta = r.cod_ruta
+    JOIN paradero po ON r.cod_ruta = po.cod_ruta AND po.orden = 1
+    JOIN "local" lo ON po.cod_local = lo.cod_local
+    JOIN paradero pd ON r.cod_ruta = pd.cod_ruta AND pd.orden = (SELECT MAX(orden) FROM paradero WHERE cod_ruta = r.cod_ruta)
+    JOIN "local" ld ON pd.cod_local = ld.cod_local
+WHERE 
+    t.cod_guia_remision = '<2>'
+```
+#### Caso 2
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R203      |
+| Código      | I202-E1 |
+| Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/a63abbf8-f498-4698-a9f3-99d4d39d0066)|
+
+Eventos:
+1.	Al hacer click en el botón “Registrar Entrega” se inicializa una ventana emergente que muestra una tabla que trabaja con la sentencia:
+``` sql
+SELECT 
+    p.cod_pedido,
+    pt.tipo_pedido,
+    osa.fecha AS fecha_salida,
+    ore.fecha AS fecha_llegada,
+    ld.denominacion AS destino
+FROM 
+    traslado t
+    JOIN detalle_ticket_traslado dtt ON t.id_traslado = dtt.id_traslado
+    JOIN ticket tk ON dtt.cod_ticket = tk.cod_ticket
+    JOIN pedido p ON tk.cod_ticket = p.cod_ticket
+    JOIN pedido_tipo pt ON p.cod_pedido_tipo = pt.cod_pedido_tipo
+    JOIN operacion osa ON t.id_operacion_inicia = osa.id_operacion AND osa.cod_tipo_operacion = (SELECT cod_tipo_operacion FROM operacion_tipo WHERE descripcion = 'Salida')
+    JOIN operacion ore ON t.id_operacion_termina = ore.id_operacion AND ore.cod_tipo_operacion = (SELECT cod_tipo_operacion FROM operacion_tipo WHERE descripcion = 'Recepción')
+    JOIN ruta r ON t.cod_ruta = r.cod_ruta
+    JOIN paradero pd ON r.cod_ruta = pd.cod_ruta AND pd.orden = (SELECT MAX(orden) FROM paradero WHERE cod_ruta = r.cod_ruta)
+    JOIN "local" ld ON pd.cod_local = ld.cod_local
+WHERE 
+    t.cod_guia_remision = '<1>'
+```
+2.	Al presionar el botón “Registrar” asociado a un pedido del traslado
+``` sql
+UPDATE pedido
+SET cod_pedido_estado = 'E'
+WHERE cod_pedido = <2>;
+```
+#### Caso 3
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R202      |
+| Código      | I203 |
+| Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/6d351b1e-5907-436e-8a6e-eff2df4b8da2)|
+
+Eventos:
+1.	Al cargar la página deben aparecer una lista de traslados programados (que no tienen hora final en la operación de tipo “Salida”):
+``` sql
+SELECT 
+    t.cod_guia_remision,
+    lo.denominacion AS origen,
+    ld.denominacion AS destino
+FROM 
+    traslado t
+    JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
+    JOIN ruta r ON t.cod_ruta = r.cod_ruta
+    JOIN paradero po ON r.cod_ruta = po.cod_ruta AND po.cod_paradero_tipo = 1
+    JOIN "local" lo ON po.cod_local = lo.cod_local
+    JOIN paradero pd ON r.cod_ruta = pd.cod_ruta AND pd.orden = (SELECT MAX(orden) FROM paradero WHERE cod_ruta = r.cod_ruta)
+    JOIN "local" ld ON pd.cod_local = ld.cod_local
+WHERE
+    o.hora_fin IS NULL;
+```
+2.	Se cargan los datos a editar en función de la guía de remisión elegida de la lista anterior
+``` sql
+SELECT 
+    p.prenombre || ' ' || p.primer_apellido || ' ' || p.segundo_apellido AS conductor, v.placa AS placa_vehiculo,  lo.denominacion AS origen, os.hora_inicio AS hora_salida, ld.denominacion AS destino
+FROM 
+    traslado t
+    JOIN operacion os ON t.id_operacion_inicia = os.id_operacion AND os.cod_tipo_operacion = (SELECT cod_tipo_operacion FROM operacion_tipo WHERE descripcion = 'Salida')
+    JOIN transportista tr ON t.cod_transportista = tr.cod_transportista
+    JOIN empleado e ON tr.cod_empleado = e.cod_empleado
+    JOIN persona p ON e.cod_persona = p.cod_persona
+    JOIN vehiculo v ON t.cod_vehiculo = v.cod_vehiculo
+    JOIN ruta r ON t.cod_ruta = r.cod_ruta
+    JOIN paradero po ON r.cod_ruta = po.cod_ruta AND po.orden = 1
+    JOIN "local" lo ON po.cod_local = lo.cod_local
+    JOIN paradero pd ON r.cod_ruta = pd.cod_ruta AND pd.orden = (SELECT MAX(orden) FROM paradero WHERE cod_ruta = r.cod_ruta)
+    JOIN "local" ld ON pd.cod_local = ld.cod_local
+WHERE 
+    t.cod_guia_remision = '<2>'
+```
+3.	Al presionar el botón de actualización se realiza una actualización de la base de datos.
+``` sql
+UPDATE traslado
+SET cod_ruta = <3>,
+    cod_transportista = <4>,
+    cod_vehiculo = <5>
+WHERE cod_guia_remision = '<2>';
+```
+#### Caso 4
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R204      |
+| Código      | I204 |
+| Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/cdd5ab10-85a0-436d-ab42-3154ffa05b78)|
+
+Eventos:
+1.	Al inicializar la página se muestran todos los registros de rutas de la base de datos:
+``` sql
+SELECT 
+    r.cod_ruta,
+    rt.descripcion AS tipo_ruta,
+    r.distancia_total,
+    lo.denominacion AS origen,
+    ld.denominacion AS destino
+FROM 
+    ruta r
+    JOIN ruta_tipo rt ON r.cod_ruta_tipo = rt.cod_ruta_tipo
+    JOIN paradero po ON r.cod_ruta = po.cod_ruta AND po.orden = 1
+    JOIN "local" lo ON po.cod_local = lo.cod_local
+    JOIN paradero pd ON r.cod_ruta = pd.cod_ruta AND pd.orden = (SELECT MAX(orden) FROM paradero WHERE cod_ruta = r.cod_ruta)
+    JOIN "local" ld ON pd.cod_local = ld.cod_local;
+```
+2.	Al seleccionar alguno de los registros de la tabla generada
+``` sql
+SELECT 
+    p.orden,
+    l.denominacion AS local,
+    pt.descripcion AS tipo_paradero
+FROM 
+    paradero p
+    JOIN "local" l ON p.cod_local = l.cod_local
+    JOIN paradero_tipo pt ON p.cod_paradero_tipo = pt.cod_paradero_tipo
+WHERE
+    p.cod_ruta = <1>
+ORDER BY 
+    p.orden;
+```
+3.	Al presionar el botón “Eliminar Ruta” 
+``` sql
+DELETE FROM ruta WHERE cod_ruta = <1>
+```
+#### Caso 5
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R204      |
+| Código      | I204-E1 |
+| Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/c16fe820-8154-4f36-a87a-8b092d8c2814)|
+
+Eventos:
+1.	Al presionar el botón “Registrar Ruta” se ejecutaría una sentencia de ingreso de datos:
+``` sql
+-- Insertar la nueva ruta
+INSERT INTO ruta (distancia_total, cod_ruta_tipo, duracion)
+VALUES (<8>, <7>, <8> / 60 );
+-- Obtener el código de la ruta recién insertada
+SELECT MAX(cod_ruta) AS nueva_ruta FROM ruta;
+-- Insertar los paraderos para la nueva ruta
+INSERT INTO paradero (cod_ruta, cod_local, cod_paradero_tipo, orden)
+VALUES 
+(nueva_ruta, <1>, <4>, 1)
+(nueva_ruta, <2>, <5>, 1)
+(nueva_ruta, <3>, <6>, 1)
+--- Esto se repite con n paraderos
+```
+#### Caso 6
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R205     |
+| Código      | I205 |
+| Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/e40cc8f1-91b1-496b-a58b-215fc89fc974)|
+
+Eventos:
+1.	Al inicializar la página
+``` sql
+SELECT
+    v.placa,
+    vm.descripcion AS modelo,
+    v.anio_fabricacion,
+    v.capacidad_carga,
+    v.fecha_ultimo_viaje,
+    v.fecha_ultimo_mantenimiento,
+    ve.descripcion AS estado
+FROM vehiculo v
+JOIN vehiculo_modelo vm ON v.cod_vehiculo_modelo = vm.cod_vehiculo_modelo
+JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado;
+```
+
+2.	Al seleccionar uno de los registros de Vehículos
+``` sql
+SELECT v.cod_vehiculo_marca, v. cod_vehiculo_modelo, v.cod_vehiculo_estado, v.anio_fabricacion, v.placa, v.cod_vehiculo_tipo, v.capacidad_carga, v.fecha_ultimo_mantenimiento
+FROM vehiculo v
+JOIN vehiculo_modelo vm ON v.cod_vehiculo_modelo = vm.cod_vehiculo_modelo
+JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado;
+WHERE cod_vehiculo = <1>;
+```
+3.	Al presionar el botón “Actualizar Datos”
+``` sql
+UPDATE vehiculo
+SET
+    cod_vehiculo_marca = <2>,
+    cod_vehiculo_modelo = <3>,
+    cod_vehiculo_estado = <4>,
+    anio_fabricacion = <5>,
+    placa = '<6>',
+    cod_vehiculo_tipo = <7>,
+    capacidad_carga = <8>,
+    fecha_ultimo_mantenimiento = '<9>'
+WHERE cod_vehiculo = <1>;
+```
+#### Caso 6
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R205      |
+| Código      | I205-E1 |
+| Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/eb007177-ed71-4c47-b8de-8db543097b21)|
+
+Eventos:
+1.	Al presionar el botón “Registrar Vehículo”
+``` sql
+INSERT INTO vehiculo (  cod_vehiculo_marca, cod_vehiculo_modelo, cod_vehiculo_estado, anio_fabricacion, placa, cod_vehiculo_tipo, capacidad_carga, fecha_ultimo_mantenimiento)
+VALUES ( <1>,   <2>,  <3>,  <4>,  '<5>',  <6>, <7>,  '<8>' );
+```
+#### Caso 7
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R206      |
+| Código      | I206 |
+| Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/9ae3653b-e604-4503-af38-5c53c9199703)|
+
+Eventos:
+1.	Al inicializar la página:
+``` sql
+SELECT
+    CONCAT(p.prenombre, ' ', p.primer_apellido, ' ', p.segundo_apellido) AS nombre,
+    t.num_licencia AS licencia,
+    lt.descripcion AS tipo_licencia,
+    t.fecha_vencimiento_licencia AS vencimiento_licencia,
+    te.descripcion AS estado
+FROM transportista t
+JOIN empleado e ON t.cod_empleado = e.cod_empleado
+JOIN persona p ON e.cod_persona = p.cod_persona
+JOIN licencia_tipo lt ON t.cod_tipo_licencia = lt.cod_tipo_licencia
+JOIN transportista_estado te ON t.cod_estado_transportista = te.cod_estado_transportista;
+```
+2.	Seleccionar uno de los registros de Transportistas
+``` sql
+SELECT
+    CONCAT(p.prenombre, ' ', p.primer_apellido, ' ', p.segundo_apellido) AS nombre,
+    p.dni AS dni,
+    t.num_licencia AS licencia,
+    lt.descripcion AS tipo_licencia,
+    t.fecha_vencimiento_licencia AS vencimiento_licencia,
+    te.descripcion AS estado
+FROM transportista t
+JOIN empleado e ON t.cod_empleado = e.cod_empleado
+JOIN persona p ON e.cod_persona = p.cod_persona
+JOIN licencia_tipo lt ON t.cod_tipo_licencia = lt.cod_tipo_licencia
+JOIN transportista_estado te ON t.cod_estado_transportista = te.cod_estado_transportista
+WHERE t.cod_transportista = <1>;
+```
+3.	Al presionar el botón “Actualizar Datos”
+``` sql
+UPDATE transportista
+SET
+    num_licencia = '<2>',     
+    cod_tipo_licencia = <3>, 
+    fecha_vencimiento_licencia = '<4>', 
+    cod_estado_transportista = <5> 
+WHERE cod_transportista = <1>;  -- Código del transportista a actualizar
+```
+#### Caso 8
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R206      |
+| Código      | I206-E1 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/c37a4d1d-2f9b-4f32-af37-90166878b2a3)|
+
+Eventos:
+1.	Al presionar el botón “Registrar Transportista”
+``` sql
+INSERT INTO transportista (cod_empleado, cod_estado_transportista, cod_tipo_licencia, num_licencia, fecha_vencimiento_licencia)
+VALUES (<1>, <2>,  '<3>',  '<4>',  '<5>' );
+```
 ### 3. Sentencias SQL módulo de Almacén
 
 |                  |                                                                                     |
