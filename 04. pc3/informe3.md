@@ -3247,6 +3247,7 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 ## 4. Funcionalidad Primaria Elegida
 
 ### 4. Funcionalidad Primaria del Módulo de Pedidos
+
 <table>
    <tr>
       <th>Actividad</th>
@@ -3260,7 +3261,6 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 	</p>
       </td>
    </tr>
-
    <td>2</td>
       <td>El empleado ingresa los datos del representante y del cliente, como nombres, apellidos, DNI, teléfono, correo empresarial, empresa, fecha de solicitud y fecha de entrega esperada.
 	<p align="center">
@@ -3268,7 +3268,6 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 	</p>
       </td>
    </tr>
-
    <td>3</td>
       <td>Después de ingresar los datos del representante y el cliente, el empleado pasa a la siguiente etapa para seleccionar los productos solicitados.
 	<p align="center">
@@ -3276,7 +3275,6 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 	</p>
       </td>
    </tr>
-
    <td>4</td>
       <td>El sistema muestra una lista de productos disponibles en el catálogo, agrupados por categorías.
 	<p align="center">
@@ -3284,7 +3282,6 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 	</p>
       </td>
    </tr>
-
    <td>5</td>
       <td>El empleado selecciona los productos necesarios y las cantidades correspondientes.
 	<p align="center">
@@ -3292,7 +3289,6 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 	</p>
       </td>
    </tr>
-
    <td>6</td>
       <td>El empleado confirma la selección de productos.
 	<p align="center">
@@ -3300,7 +3296,6 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 	</p>
       </td>
    </tr>
-
    <td>7</td>
       <td>El sistema actualiza el pedido con los productos seleccionados.
 	<p align="center">
