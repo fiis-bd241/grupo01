@@ -980,6 +980,56 @@ WHERE reclamo.cod_reclamo = valor3;
 ```
 Donde el valor 3 es el código del reclamo actual.
 
+#### Caso 4
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R601</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I606</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/130238034/0fb7177f-64e7-4ef2-b616-34985d9844eb">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+1. Se llenará la lista de tipos de reclamo a seleccionar.
+
+``` sql 
+SELECT * FROM reclamo_tipo;
+```
+
+2. Se llenará la lista de niveles de urgencia a seleccionar.
+
+``` sql 
+SELECT * FROM nivel_urgencia;
+```
+
+3. Al apretar el botón siguiente se actualiza el código del tipo, la descripción, el código del nivel de urgencia y la fecha de incidencia en el reclamo.
+
+``` sql 
+UPDATE reclamo
+SET cod_tipo_reclamo = valor1, comentario = ‘valor2’, cod_nivel_urgencia = valor3, fecha_suceso = ‘valor4’ 
+WHERE reclamo.cod_reclamo = valor5
+```
+Donde el valor1 es el código del tipo de reclamo escogido.
+
+Donde el ‘valor2’ es el comentario escrito.
+
+Donde el valor3 es el código del nivel de urgencia escogido.
+
+Donde el ‘valor4’ es la fecha escogida.
+
+Donde el valor 5 código del reclamo actual.
+
 ## 3. Carga de Datos
 
 ```sql
