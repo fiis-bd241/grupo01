@@ -4075,6 +4075,11 @@ Integrante: [Dennis Leopoldo Campos Herrera](https://github.com/fiis-bd241/grupo
     </a>
 </div>
 
+### 3. Módulo de Almacén
+José Joaquín Alvarado Usucachi
+
+[![Almacén](https://github.com/fiis-bd241/grupo01/assets/130816094/3384df56-01cd-44e4-ba59-666440a257f6)](https://www.youtube.com/watch?v=EJHsDP4KYko)
+
 ### 4. Módulo de Control 
 Alex Espinoza Cerna
 
