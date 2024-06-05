@@ -3412,3 +3412,5 @@ Ahora une vez que se llega a la fecha inicio de programación, cada cierto tiemp
 ### Backend: https://github.com/Cristhian134/sanfernando.git
 
 ## 7. Videos individuales
+
+[![Módulo de control](https://img.youtube.com/vi/49ex4_ZWXF4/mqdefault.jpg)](https://www.youtube.com/watch?v=49ex4_ZWXF4)
