@@ -879,8 +879,8 @@ INSERT INTO reclamo (cod_representante) VALUES (null);
 
 ``` sql 
 SELECT 
-             re.cod_representante, 
-             CONCAT(pe.prenombre,' ',pe.primer_apellido,' ',pe.segundo_apellido) representante
+	re.cod_representante, 
+	CONCAT(pe.prenombre,' ',pe.primer_apellido,' ',pe.segundo_apellido) representante
 FROM representante AS re 
 INNER JOIN cliente AS cl ON cl.cod_cliente = re.cod_cliente
 INNER JOIN persona AS pe ON pe.cod_persona = re.cod_persona
