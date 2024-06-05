@@ -1090,7 +1090,8 @@ Donde el valor 5 código del reclamo actual.
 1. Al presionar el botón siguiente se crea una evidencia con el valor de código reclamo actual, el código del tipo de evidencia, el código de tipo de archivo y el nombre en evidencia. Todo esto se puede ejecutar “n” veces. (Uno por cada archivo adjuntado).
 
 ``` sql 
-INSERT INTO evidencia (cod_reclamo, cod_tipo_evidencia, cod_tipo_archivo, nombre_evidencia) VALUES (valor1, ‘valor2’, valor3, ‘valor4’);
+INSERT INTO evidencia (cod_reclamo, cod_tipo_evidencia, cod_tipo_archivo, nombre_evidencia)
+VALUES (valor1, 'valor2', valor3, 'valor4');
 ```
 Donde el valor 1 es el código del reclamo actual.
 
