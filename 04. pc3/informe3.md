@@ -419,6 +419,32 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 
 ## 2. Sentencias SQL por cada prototipo
 
+## 2. Sentencias SQL por cada prototipo
+
+### 1. Sentencias SQL módulo de Pedidos
+
+### Caso 1
+
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R503</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I501</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src=>
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
 ### 5. Sentencias SQL módulo de Reportes
 
 #### Caso 1
