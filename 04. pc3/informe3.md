@@ -1283,13 +1283,13 @@ Pero antes, se realizan las siguientes validaciones (dependiendo del tipo de bú
 Validación del número de precinto:
 
 ``` sql
-SELECT EXISTS (SELECT * FROM mercancia WHERE nro_precinto = ?)
+SELECT EXISTS (SELECT * FROM mercancia WHERE nro_precinto = <1>)
 ```
 
 Validación del código de guía de remisión:
 
 ``` sql
-SELECT EXISTS (SELECT * FROM traslado WHERE cod_guia_remision = ?)
+SELECT EXISTS (SELECT * FROM traslado WHERE cod_guia_remision = <1>)
 ```
 
 Si alguna validación falla, se muestra un mensaje de error describiendo el problema. De lo contrario, se procede con la búsqueda.
@@ -1518,7 +1518,7 @@ INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (<
 ```
 
 ``` sql
-UPDATE stock SET cantidad_disponible = cantidad_disponible - ? WHERE id_stock = <id_stock>
+UPDATE stock SET cantidad_disponible = cantidad_disponible - <cantidad> WHERE id_stock = <id_stock>
 ```
 
 Se exporta en PDF los números de precinto generados con los detalles de cada mercancía.
@@ -1863,10 +1863,10 @@ El valor retornado por esta sentencia se almacena en una variable en el backend.
 
 ``` sql
 UPDATE traslado
-SET id_operacion_termina = ?
+SET id_operacion_termina = <id_operacion>
 FROM traslado t
 INNER JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
-WHERE o.id_operacion_picking = ?;
+WHERE o.id_operacion_picking = <id_operacion_picking>;
 ```
 
 Se muestra al usuario la pantalla I311.
