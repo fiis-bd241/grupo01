@@ -1278,6 +1278,22 @@ VALUES (<1>, <2>,  '<3>',  '<4>',  '<5>' );
 
 3. **Botón "Buscar":** Se realiza la búsqueda usando el valor ingresado por el usuario.
 
+Pero antes, se realizan las siguientes validaciones (dependiendo del tipo de búsqueda):
+
+Validación del número de precinto:
+
+``` sql
+SELECT EXISTS (SELECT * FROM mercancia WHERE nro_precinto = ?)
+```
+
+Validación del código de guía de remisión:
+
+``` sql
+SELECT EXISTS (SELECT * FROM traslado WHERE cod_guia_remision = ?)
+```
+
+Si alguna validación falla, se muestra un mensaje de error describiendo el problema. De lo contrario, se procede con la búsqueda.
+
 El resultado mostrado se divide en tres secciones: Proceso, Mercancías y Traslado (de existir uno en curso).
 
 Las consultas SQL a ejecutarse son las siquientes, en cada uno de los dos tipos de búsqueda:
@@ -1446,7 +1462,27 @@ Los estados del Proceso y del Traslado se obtienen según la cantidad de operaci
 
 La lógica descrita se implementa en el frontend.
 
-3. **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+3. **Botón "Ingresar":** Se realizan las siguientes validaciones:
+
+Validación del DNI del empleado ejecutor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <5>)
+```
+
+Validación del DNI del empleado supervisor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <6>)
+```
+
+Si alguna validación falla, se muestra un mensaje de error describiendo el problema. De lo contrario, se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
 INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
@@ -1485,6 +1521,8 @@ INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (<
 UPDATE stock SET cantidad_disponible = cantidad_disponible - ? WHERE id_stock = <id_stock>
 ```
 
+Se exporta en PDF los números de precinto generados con los detalles de cada mercancía.
+
 Finalmente, se lleva al usuario a la pantalla I311.
 
 |                  |                                                                                     |
@@ -1519,7 +1557,26 @@ WHERE st.cod_stock = <1>
 
 1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
 
-2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+2.  **Botón "Ingresar":** Se realizan las siguientes validaciones:
+
+Validación del DNI del empleado ejecutor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <4>)
+```
+
+Validación del DNI del empleado supervisor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <5>)
+```
+Si alguna validación falla, se muestra un mensaje de error describiendo el problema. De lo contrario, se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
 INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
@@ -1545,7 +1602,26 @@ Se muestra al usuario la pantalla I311.
 
 1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
 
-2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+2.  **Botón "Ingresar":** Se realizan las siguientes validaciones:
+
+Validación del DNI del empleado ejecutor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <4>)
+```
+
+Validación del DNI del empleado supervisor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <5>)
+```
+Si alguna validación falla, se muestra un mensaje de error describiendo el problema. De lo contrario, se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
 INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
@@ -1571,7 +1647,26 @@ Se muestra al usuario la pantalla I311.
 
 1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
 
-2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+2.  **Botón "Ingresar":** Se realizan las siguientes validaciones:
+
+Validación del DNI del empleado ejecutor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <4>)
+```
+
+Validación del DNI del empleado supervisor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <5>)
+```
+Si alguna validación falla, se muestra un mensaje de error describiendo el problema. De lo contrario, se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
 INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
@@ -1601,7 +1696,49 @@ Se muestra al usuario la pantalla I311.
 
 3. **Botón "Eliminar pedido":** Identificado con el número 7 en la imagen. Elimina un código de pedido.
 
-4.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+4.  **Botón "Ingresar":** Se realizan las siguientes validaciones:
+
+Validación del DNI del empleado ejecutor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <4>)
+```
+
+Validación del DNI del empleado supervisor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <5>)
+```
+
+Validación del código de ruta:
+
+``` sql
+SELECT EXISTS (SELECT * FROM ruta WHERE cod_ruta = <8>)
+```
+
+Validación de la placa del vehículo:
+
+``` sql
+SELECT EXISTS (SELECT * FROM vehiculo WHERE placa = <9>)
+```
+
+Validación del DNI del transportista:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM transportista t
+INNER JOIN empleado e ON t.cod_empleado = e.cod_empleado
+INNER JOIN persona p ON e.cod_persona = p.cod_persona
+WHERE p.dni = <10>)
+```
+
+Si alguna validación falla, se muestra un mensaje de error describiendo el problema. De lo contrario, se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
 INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
@@ -1668,7 +1805,15 @@ Se muestra al usuario la pantalla I311.
 | Código      | I308 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/708bd7b5-63fb-4515-a478-a3ac052d7301) |
 
-1. **Botón "Agregar":** Agrega el código de pedido agregado en el campo `<1>`. Regresa al usuario a la pantalla I307.
+1. **Botón "Agregar":** Se realiza la siguiente validación:
+
+Validación del código de pedido:
+
+``` sql
+SELECT EXISTS (SELECT * FROM pedido WHERE cod_pedido = <1>)
+```
+
+Si alguna validación falla, se muestra un mensaje de error describiendo el problema. De lo contrario, se agrega el código de pedido agregado en el campo `<1>`. Regresa al usuario a la pantalla I307.
 
 2. **Botón "Cerrar":** Regresa al usuario a la pantalla I307.
 
@@ -1680,7 +1825,26 @@ Se muestra al usuario la pantalla I311.
 
 1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
 
-2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+2.  **Botón "Ingresar":** Se realizan las siguientes validaciones:
+
+Validación del DNI del empleado ejecutor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <4>)
+```
+
+Validación del DNI del empleado supervisor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <5>)
+```
+Si alguna validación falla, se muestra un mensaje de error describiendo el problema. De lo contrario, se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
 INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
@@ -1715,7 +1879,26 @@ Se muestra al usuario la pantalla I311.
 
 1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking". El campo "Fecha" se autocompleta con la fecha actual.
 
-2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+2.  **Botón "Ingresar":** Se realizan las siguientes validaciones:
+
+Validación del DNI del empleado ejecutor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <4>)
+```
+
+Validación del DNI del empleado supervisor:
+
+``` sql
+SELECT EXISTS (SELECT *
+FROM empleado e
+INNER JOIN persona p on p.cod_persona = e.cod_persona
+WHERE p.dni = <5>)
+```
+Si alguna validación falla, se muestra un mensaje de error describiendo el problema. De lo contrario, se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
 
 ``` sql
 INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
@@ -1750,7 +1933,6 @@ En el caso de que la pantalla actual sea de tipo "Salida", en el mensaje de conf
 En el caso de que la pantalla actual sea de tipo "Descarga", como se mencionó, este botón no se habilita, como se ve en la imagen a continuación.
 
 ![Captura de Pantalla 2024-06-05 a la(s) 00 00 37](https://github.com/fiis-bd241/grupo01/assets/130816094/96817a5a-28b2-4a37-a0c5-ccc1b4994a06)
-
 
 ### 4. Sentencias SQL módulo de Control
 
