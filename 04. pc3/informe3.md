@@ -486,13 +486,49 @@ Donde:
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src=>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/85710bc2-57a4-452e-8732-94f30f191810">
       </td>
    </tr>
    <tr>
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
+
+2. Carga de los productos: Cuando el usuario continue con el llenado del formulario , se cargara todos los productos que ofrece san fernando para la venta y los productos que necesita para el abastecimiento
+``` sql
+
+SELECT 
+    ec.id_elemento_catalogo, 
+    ec.nombre, 
+    ec.descripcion,
+    ect.descripcion AS tipo,
+    ec.id_elemento_catalogo_tipo, 
+    ec.peso_unitario, 
+    ecu.descripcion AS unidad
+FROM 
+    elemento_catalogo AS ec
+LEFT JOIN 
+    elemento_catalogo_tipo AS ect 
+    ON ect.id_elemento_catalogo_tipo = ec.id_elemento_catalogo_tipo
+INNER JOIN 
+    elemento_catalogo_unidad AS ecu 
+    ON ecu.cod_unidad = ec.cod_unidad;
+```
+5. Bóton confirmar: Cuando el usuario con el mouse da click el en botón confirmar, se generará el llenado de los productos para la solicitud de pedido.
+``` sql
+INSERT INTO elemento_catalogo (nombre, id_elemento_catalogo_tipo, descripcion, cod_unidad, temperatura_maxima, temperatura_minima, vida_util, peso_unitario) VALUES
+(<3>, <3> , <3> , <3>, <3> ,<3> ,<3> ,<3>)
+
+INSERT INTO detalle_ticket_producto (cod_ticket, id_elemento_catalogo, cantidad)
+VALUES 
+(?, ? , <4>)
+```
+
+Donde: 
+
+`<1>` corresponde al código del usuario del inicio de sesión.
+
+`?` corresponde a valores que estan en la base de datos.
 
 #### Caso 3
 
