@@ -1312,7 +1312,7 @@ Se muestra al usuario la pantalla I311.
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/assets/164266999/7e011093-b923-4e2f-bcd7-b79752030cca">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/164266999/7e011093-b923-4e2f-bcd7-b79752030cca">
       </td>
    </tr>
    <tr>
