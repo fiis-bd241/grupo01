@@ -1211,6 +1211,64 @@ Donde el valor4 es el código del seguimiento actual.
 
 Donde el valor5 es el código del reclamo actual.
 
+#### Caso 7
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R601</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I609</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/130238034/3e68dad1-074e-401c-b2c9-22fe86555604">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+1. Seleccionar el mayor valor más uno del número de caso de un área.
+
+``` sql 
+SELECT MAX(numero_caso) + 1
+FROM seguimiento
+WHERE cod_cliente_interno = valor1
+```
+Donde el valor1 es el código del área elegida.
+
+2. Se llenará la lista de estados a seleccionar.
+
+``` sql 
+SELECT * FROM estado_reclamo
+```
+
+3. Se actualiza la fecha de resolución y el número de caso en evidencia; y el código del estado en reclamo.
+
+``` sql 
+UPDATE seguimiento
+SET fecha_resolucion = 'valor2', numero_caso = valor3
+WHERE cod_seguimiento = valor4 AND 'valor2' > (SELECT MAX(fecha_resolucion) FROM seguimiento WHERE cod_seguimiento != valor4);
+```
+Donde el ‘valor2’ es la fecha de resolución elegida.
+
+Donde el valor3 es el número de caso.
+
+Donde el valor4 es el código del seguimiento actual.
+
+``` sql 
+UPDATE reclamo
+SET cod_estado_reclamo = valor4
+WHERE reclamo.cod_reclamo = valor5
+```
+Donde el valor4 es el código del estado del reclamo elegido.
+
+Donde el valor5 es el código reclamo actual.
+
 ## 3. Carga de Datos
 
 ```sql
