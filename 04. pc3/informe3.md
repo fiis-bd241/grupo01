@@ -1951,6 +1951,121 @@ Donde el valor4 es el código del estado del reclamo elegido.
 
 Donde el valor5 es el código reclamo actual.
 
+#### Caso 8
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R602</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I601</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/130238034/b35d196f-c59b-4635-bd8d-5b391d3b2808">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+1. Mostrar la lista de reclamos.
+
+``` sql 
+SELECT
+	r.cod_reclamo,
+	er.descripcion,
+	r.fecha_reclamo,
+	c.nombre || ' (' || c.ruc || ')' AS "cliente (ruc)",
+	ct.tipo_cliente,
+	rt.cod_tipo_reclamo,
+	c1.nombre AS "área responsable"
+FROM
+	reclamo r
+INNER JOIN
+	estado_reclamo er ON r.cod_estado_reclamo = er.cod_estado_reclamo
+INNER JOIN
+	representante re ON r.cod_representante = re.cod_representante
+INNER JOIN
+	cliente c ON re.cod_cliente = c.cod_cliente
+INNER JOIN
+	cliente_tipo ct ON c.cod_cliente_tipo = ct.cod_cliente_tipo
+INNER JOIN
+	reclamo_tipo rt ON r.cod_tipo_reclamo = rt.cod_tipo_reclamo
+INNER JOIN
+	seguimiento s ON r.cod_seguimiento = s.cod_seguimiento
+INNER JOIN
+	cliente c1 ON s.cod_cliente_interno = c1.cod_cliente
+ORDER BY cod_reclamo;
+```
+
+2. Llenar el visor de reclamos
+
+``` sql 
+
+```
+
+``` sql 
+
+```
+
+``` sql 
+
+```
+
+``` sql 
+
+```
+
+``` sql 
+
+```
+
+``` sql 
+
+```
+
+#### Caso 9
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R602</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I603</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/130238034/db5c55fe-47b2-4c0e-8673-87cddf7cdc71">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+1. Se llenará la lista de estados a seleccionar.
+
+``` sql 
+SELECT * FROM estado_reclamo
+```
+
+2. Se actualizará el estado_reclamo
+``` sql 
+UPDATE seguimiento s
+JOIN reclamo r ON s.cod_seguimiento = r.cod_seguimiento
+SET s.numero_caso = s.numero_caso - 1
+WHERE s.numero_caso > 0 
+AND s.cod_cliente_interno = valor1
+AND r.cod_reclamo = valor2;
+```
+Donde el ‘valor2’ es ‘resuelto’ o ‘rechazado’. 
+
 ## 3. Carga de Datos
 
 ```sql
