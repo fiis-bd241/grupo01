@@ -373,6 +373,13 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 
 ### Prototipos
 
+#### 2. Prototipos del módulo de Seguimiento
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R201, R202, R203, R204, R205, R206     |
+| Código      | P201 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/02e80a46-9583-48c4-b577-a8f3f46c9d97)|
+
 #### 3. Prototipos del módulo de Almacén
 
 |                  |                                                                                     |
