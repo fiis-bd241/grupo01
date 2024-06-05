@@ -35,21 +35,8 @@ Caso de Uso #2: Agregar productos al pedido.
 |5 | El sistema asigna un número de pedido único al nuevo pedido. |
 |6 | El sistema guarda la información del pedido, incluyendo los productos solicitados, y actualiza el estado a "pendiente". |
 
-Caso de Uso #3: Ver detalle pedido. 
+Caso de Uso #3: Ver lista de pedidos.
 | Código | R103 | 
-|----------|----------|
-|Objetivo | | 	Permitir a los almacenistas de cada area (usuarios) consultar los detalles de un pedido específico. |
-|Descripción | Despúes de completar todos los productos solicitados y el sistema muestra la información detallada, incluyendo los datos del usuario, los productos solicitados y sus detalles. |
-|Actor Primario | representante de cada departamento. |
-|Actor Secundario |N/A |
-|Precondiciones | El usuario debio completar la tabla de los productos solicitados. |
-|Paso | Acción |
-|1 | Después de agregar los productos al pedido, el usuario selecciona la opción para ver el detalle del pedido. |
-|2 | El sistema muestra la información detallada del pedido, incluyendo los datos del usario, los productos solicitados y sus detalles (código de producto, unidad de medida, descripción, precio unitario), la fecha de solicitud, la fecha de entrega, el estado del pedido, el tiempo transcurridos (días) del pedido y cualquier otra información relevante.
-|3 | El usuario puede confirmar o cancelar el pedido. |
-
-Caso de Uso #4: Ver lista de pedidos.
-| Código | R104 | 
 |----------|----------|
 |Objetivo | | Permitir a los representante (usuarios) consultar la lista de todos los pedidos registrados.
 |Descripción | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
@@ -61,6 +48,19 @@ Caso de Uso #4: Ver lista de pedidos.
 |2 | El sistema muestra la lista de todos los pedidos registrados, incluyendo el número de pedido, departamento, la fecha de solicitud, la fecha de entrega y el estado del pedido. |
 |3 | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
 |4 | El sistema SAP actualiza la lista de pedidos según los filtros y ordenamiento aplicados por el usuario. |
+
+Caso de Uso #4: Ver detalle pedido. 
+| Código | R104 | 
+|----------|----------|
+|Objetivo | | 	Permitir a los almacenistas de cada area (usuarios) consultar los detalles de un pedido específico. |
+|Descripción | Despúes de completar todos los productos solicitados y el sistema muestra la información detallada, incluyendo los datos del usuario, los productos solicitados y sus detalles. |
+|Actor Primario | representante de cada departamento. |
+|Actor Secundario |N/A |
+|Precondiciones | El usuario debio completar la tabla de los productos solicitados. |
+|Paso | Acción |
+|1 | Después de agregar los productos al pedido, el usuario selecciona la opción para ver el detalle del pedido. |
+|2 | El sistema muestra la información detallada del pedido, incluyendo los datos del usario, los productos solicitados y sus detalles (código de producto, unidad de medida, descripción, precio unitario), la fecha de solicitud, la fecha de entrega, el estado del pedido, el tiempo transcurridos (días) del pedido y cualquier otra información relevante.
+|3 | El usuario puede confirmar o cancelar el pedido. |
 
 #### 3. Requerimientos del módulo de Almacén
 
