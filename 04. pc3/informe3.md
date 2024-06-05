@@ -1158,7 +1158,23 @@ Finalmente, se lleva al usuario a la pantalla I311.
 | Código      | I303 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/bb65ce7e-6483-478e-acc1-372cec7aa13b) |
 
+1. **Botón "Buscar":** Se busca el código de stock ingresado por el usuario. Se muestra en pantalla la información de este stock usando la siguiente consulta:
 
+``` sql
+SELECT st.id_stock as id, ec.nombre as nombre, ect.descripcion as categoria,
+ep.descripcion as tipo, se.descripcion as segmento, ecu.descripcion as unidad
+FROM stock st
+INNER JOIN elemento_catalogo ec ON st.id_elemento_catalogo = ec.id_elemento_catalogo
+INNER JOIN elemento_catalogo_tipo ect ON ec.id_elemento_catalogo_tipo = ect.id_elemento_catalogo_tipo
+INNER JOIN elemento_produccion ep ON ect.id_elemento_produccion = ep.id_elemento_produccion
+INNER JOIN elemento_catalogo_unidad ecu ON ec.cod_unidad = ecu.cod_unidad
+INNER JOIN segmento se ON ect.id_segmento = se.id_segmento
+WHERE st.cod_stock = <1>
+```
+
+2. **Botón "Ingresar":** Ingresa el código de stock especificado a la pantalla I302. Lleva al usuario de vuelta a la pantalla I302.
+
+3. **Botón "Cerrar":** Lleva al usuario de vuelta a la pantalla I302. 
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
