@@ -644,7 +644,7 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R504          |
 | Código      | I504 |
-| Prototipo   |   ![P504](https://github.com/fiis-bd241/grupo01/assets/161625149/e62b62ae-d440-4708-9240-c5cc0fa6b39b)|
+| Prototipo   |   ![P504](https://github.com/fiis-bd241/grupo01/assets/161625149/752ac55b-51b6-4da6-be8e-dbd6c56e554c) ![P504](https://github.com/fiis-bd241/grupo01/assets/161625149/8ca6ae08-eea2-42dd-b6e9-449054f24593)|
 
 #### 6. Prototipos del módulo de Reclamos
 
@@ -1626,7 +1626,7 @@ WHERE
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/2acc5a60-390a-4174-baca-12bdc48e3da0">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/e2477c32-ac19-4a19-932b-ab8a4c5217a2">
       </td>
    </tr>
    <tr>
@@ -1770,6 +1770,7 @@ El cod_reporte_estado = 1 corresponde a "Activo".
       <td>Imagen interfaz</td>
       <td>
          <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/a450e6c6-fd86-4fac-8730-46b13ef6402d">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/0d2bc1d4-874c-495d-8059-e85b779a0076">
       </td>
    </tr>
    <tr>
