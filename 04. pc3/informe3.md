@@ -711,7 +711,7 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 <table>
    <tr>
       <td>Código Requerimiento</td>
-      <td>R</td>
+      <td>R101</td>
    </tr>
    <tr>
       <td>Código interfaz</td>
@@ -762,11 +762,11 @@ Donde:
 <table>
    <tr>
       <td>Código Requerimiento</td>
-      <td>R</td>
+      <td>R102</td>
    </tr>
    <tr>
       <td>Código interfaz</td>
-      <td>I101</td>
+      <td>I102</td>
    </tr>
    <tr>
       <td>Imagen interfaz</td>
@@ -820,11 +820,11 @@ Donde:
 <table>
    <tr>
       <td>Código Requerimiento</td>
-      <td>R</td>
+      <td>R103</td>
    </tr>
    <tr>
       <td>Código interfaz</td>
-      <td>I101</td>
+      <td>I103</td>
    </tr>
    <tr>
       <td>Imagen interfaz</td>
@@ -862,11 +862,11 @@ FROM
 <table>
    <tr>
       <td>Código Requerimiento</td>
-      <td>R</td>
+      <td>R104</td>
    </tr>
    <tr>
       <td>Código interfaz</td>
-      <td>I101</td>
+      <td>I104</td>
    </tr>
    <tr>
       <td>Imagen interfaz</td>
