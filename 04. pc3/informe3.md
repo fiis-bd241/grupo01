@@ -1,4 +1,4 @@
-# Tercera práctica calificada - Informe     
+# Tercera práctica calificada - Informe      
 
 ## 1. Asignación de Códigos por Requerimientos y Prototipos de Interfaces de Usuario
 
