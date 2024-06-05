@@ -374,6 +374,7 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 ### Prototipos
 
 #### 2. Prototipos del módulo de Seguimiento
+
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R201, R202, R203, R204, R205, R206     |
