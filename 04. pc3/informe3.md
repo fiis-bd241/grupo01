@@ -854,6 +854,72 @@ Donde el valor1 puede ser ‘I’ o ‘E’
 INSERT INTO reclamo (cod_representante) VALUES (null);  
 ```
 
+#### Caso 2
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R601</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I604</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/130238034/f270af31-ee31-46ea-acba-55c338a22938">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+1. Al elegir un cliente, se llena la lista desplegable siguiente con los nombres de los representantes asociados al cliente.
+
+``` sql 
+SELECT 
+             re.cod_representante, 
+             CONCAT(pe.prenombre,' ',pe.primer_apellido,' ',pe.segundo_apellido) representante
+FROM representante AS re 
+INNER JOIN cliente AS cl ON cl.cod_cliente = re.cod_cliente
+INNER JOIN persona AS pe ON pe.cod_persona = re.cod_persona
+WHERE cl.cod_cliente = valor1;
+```
+Donde el valor1 es el código del cliente escogido.
+
+2. Al elegir un representante, se llena las casillas de cargo o posición, correo electrónico empresarial y dirección personal automáticamente.
+
+``` sql 
+SELECT 
+	re.cargo,
+	re.correo_empresarial,
+	pe.direccion
+FROM representante AS re 
+INNER JOIN cliente AS cl ON cl.cod_cliente = re.cod_cliente
+INNER JOIN persona AS pe ON pe.cod_persona = re.cod_persona
+WHERE cl.cod_cliente = valor1 AND re.cod_representante = valor2;
+```
+Donde el valor1 es el código del cliente escogido.
+Donde el valor2 es el código del representante escogido.
+
+3. Al presionar siguiente se inserta el codigo del representante en el reclamo y se llenan los tickets asociados al representante en la interfaz I605 (siguiente interfaz).
+
+``` sql 
+UPDATE reclamo
+SET cod_representante = valor2
+WHERE reclamo.cod_reclamo = valor3 
+```
+
+``` sql 
+SELECT ti.cod_ticket FROM pedido AS pe
+INNER JOIN representante AS re ON re.cod_representante = pe.cod_representante
+INNER JOIN ticket AS ti ON ti.cod_ticket = pe.cod_ticket
+WHERE re.cod_representante = valor2;
+```
+Donde el valor2 es el código del representante escogido.
+Donde el valor3 es el código del reclamo actual.
+
 ## 3. Carga de Datos
 
 ```sql
