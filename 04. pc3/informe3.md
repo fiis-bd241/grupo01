@@ -3384,6 +3384,11 @@ Luego de presionar el botón, saldrá una ventana emergente donde saldrán los v
 Ahora el usuario podrá ver la programación del reporte hecha en la lista de programaciones que está al lado del cuadro de opciones.
 Ahora une vez que se llega a la fecha inicio de programación, cada cierto tiempo (indicado en la frecuencia del reporte) se generará el reporte en el backend y será enviado al usuario.
 
+### 6. Funcionalidad Primaria del Módulo de Reclamos
+**Funcionalidad primaria elegida:** Registrar un nuevo reclamo sobre un pedido, visualizarlo completamente. <br>
+**Sustentación:** Registrar un nuevo reclamo permite una rápida identificación y registro de problemas que ocurren durante cualquier proceso, asegurando que sean abordados de manera oportuna. Análogamente, visualizar el estado de un reclamo es esencial para monitorizar el progreso de la resolución mediante un seguimiento, garantizando que se tomen las acciones necesarias y se mantenga la transparencia en el proceso resolución de reclamos. Esta funcionalidad permitirá cumplir con los requerimientos de Registrar un reclamo realizado por un cliente (R601) relacionado con las interfaces I602, I604, I605, I606, I607, I608, I609. Y el requerimiento Visualizar la información detallada y editar el estado de un reclamo registrado en el sistema. (R602) relacionado con las interfaces I601, I603. Tendrá dos apartados, uno para registrar un nuevo reclamo y otro para poder visualizar el estado del reclamo.
+
+
 ## 5. Stack Tecnológico elegido para su aplicación
 
 ### Frontend
