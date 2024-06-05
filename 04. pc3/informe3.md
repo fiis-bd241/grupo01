@@ -228,6 +228,43 @@ Caso de Uso #4: Ver gráficos de cada módulo
 | 2                | El usuario debe presionar el botón de "Gráficos"                                                    |
 | 3                | Se muestran diversos gráficos relacionados con cada módulo                                          |
 
+#### 6. Requerimientos del módulo de Reclamos
+
+Caso de Uso #1: Registrar un reclamo
+
+| Código           | R601                                                                                                                        |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Objetivo         | Registrar un reclamo realizado por un cliente                                                  |
+| Descripción      | Este caso de uso describe el proceso mediante el cual el Encargado de Atención a Reclamos registra a un reclamo generado por un cliente, relacionado con algún problema con el pedido. |
+| Actor Primario   | Encargado de Atención a Reclamos|
+| Actor Secundario | -                                                                                                                       |
+| Precondiciones   | El encargado de Atención a Reclamos tiene acceso al sistema de registro de reclamos.                                                                                                                                      |
+| Paso             | Acción                                                                                                                     |
+| 1                | El usuario selecciona el módulo "Reclamos"                                                       |
+| 2                | El usuario presiona el de botón de "Crear" y selecciona el tipo de cliente           |
+| 3                | Identificar los datos del cliente                                                      |
+| 4                | Identificar el producto problemático                                        |
+| 5              | Identificar la naturaleza del reclamo                                                                                  |
+| 6              | Identificar la evidencia del reclamo                                                                                 |
+| 7              | Identificar la resolución deseada para el reclamo                                        |
+| 8              | Confirmar el seguimiento del reclamo|
+
+Caso de Uso #2: Visualizar y editar el estado de un reclamo
+
+| Código           | R602                                                                                                                        |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Objetivo         | Visualizar la información detallada y editar el estado de un reclamo registrado en el sistema. |
+| Descripción      | Este caso de uso describe el proceso mediante el cual el Encargado de Atención a Reclamos puede acceder y visualizar todos los detalles de un reclamo específico registrado en el sistema, incluyendo la descripción, estado, fecha de registro, y acciones tomadas.|
+| Actor Primario   | Encargado de Atención a Reclamos|
+| Actor Secundario | -                                                                                                                       |
+| Precondiciones   | El encargado de Atención a Reclamos tiene acceso al sistema de registro de reclamos.                                                                                                                                      |
+| Paso             | Acción                                                                                                                     |
+| 1                | El usuario selecciona el módulo "Reclamos"                                                       |
+| 2                | Buscar el reclamo en la lista editando los diferentes campos. |
+| 3                | Seleccionar el reclamo a visualizar |
+| 4                | Visualizar los datos asociados al reclamo|
+| 5              | Posibilidad de editar el estado del reclamo en ciertos casos|
+
 ### Prototipos
 
 
