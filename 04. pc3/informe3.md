@@ -929,11 +929,219 @@ FROM
 | Código      | I301 |
 | Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/2d94b52d-2399-4b9c-a0ef-335f1055378e) |
 
+**Flujo 1**
+1. **Botón "Iniciar nuevo proceso":** Lleva al usuario a la pantalla I302.
+
+**Flujo 2**
+2. **Selección de tipo búsqueda:** El usuario elige entre realizar la búsqueda del proceso asociado a una mercancía por medio del número de precinto o a un traslado por medio del código de guía de remisión. En base a esto, se ingresa en el campo `<3>` el tipo de entrada elegido por el usario.
+3. **Botón "Buscar":** Se realiza la búsqueda usando el valor ingresado por el usuario.
+
+El resultado mostrado se divide en tres secciones: Proceso, Mercancías y Traslado (de existir uno en curso).
+
+Las consultas SQL a ejecutarse son las siquientes, en cada uno de los dos tipos de búsqueda:
+
+**Búsqueda por número de precinto**
+Las operaciones asociadas se obtienen con la siguiente consulta:
+
+``` sql
+WITH op_picking_cte AS (
+SELECT o.id_operacion AS id_op_picking
+FROM mercancia m
+INNER JOIN operacion o ON m.id_operacion_picking = o.id_operacion
+WHERE m.nro_precinto = <3>
+)
+SELECT o.id_operacion, o.fecha, o.hora_inicio, o.hora_fin,
+ot.descripcion AS tipo_operacion,
+p1.dni AS dni_emp_ejecutor, p2.dni AS dni_emp_supervisor
+FROM operacion o
+INNER JOIN operacion_tipo ot ON o.cod_tipo_operacion = ot.cod_tipo_operacion
+INNER JOIN empleado e1 ON o.cod_empleado_ejecutor = e1.cod_empleado
+INNER JOIN persona p1 ON e1.cod_persona = p1.cod_persona
+INNER JOIN empleado e2 ON o.cod_empleado_supervisor = e2.cod_empleado
+INNER JOIN persona p2 ON e2.cod_persona = p2.cod_persona
+WHERE o.id_operacion = (SELECT id_op_picking FROM op_picking_cte)
+OR o.id_operacion_picking = (SELECT id_op_picking FROM op_picking_cte)
+ORDER BY o.cod_tipo_operacion;
+```
+
+Las mercancías asociadas (es decir, el grupo de mercancías, incluyendo la correspondiente al número de precinto ingresado, que pasaron por las mismas operaciones) se obtienen con la siguiente consulta:
+
+``` sql
+SELECT m1.nro_precinto, st.cod_stock, ec.nombre as nombre_stock, ect.descripcion as categoria,
+ep.descripcion as tipo, se.descripcion as segmento, ecu.descripcion as unidad,
+dm.cantidad as cantidad_transportar
+FROM mercancia m1
+INNER JOIN mercancia m2 ON m1.id_operacion_picking = m2.id_operacion_picking
+INNER JOIN detalle_mercancia_stock dm ON m1.id_mercancia = dm.id_mercancia
+INNER JOIN stock st ON dm.id_stock = st.id_stock
+INNER JOIN elemento_catalogo ec ON st.id_elemento_catalogo = ec.id_elemento_catalogo
+INNER JOIN elemento_catalogo_tipo ect ON ec.id_elemento_catalogo_tipo = ect.id_elemento_catalogo_tipo
+INNER JOIN elemento_produccion ep ON ect.id_elemento_produccion = ep.id_elemento_produccion
+INNER JOIN elemento_catalogo_unidad ecu ON ec.cod_unidad = ecu.cod_unidad
+INNER JOIN segmento se ON ect.id_segmento = se.id_segmento
+WHERE m2.nro_precinto = <3>
+ORDER BY m1.id_mercancia;
+```
+
+El conjunto de filas obtenidas se agrupan por las que tienen el mismo valor del atributo nro_precinto por medio de la lógica implementada en el backend de la aplicación.
+
+Si la mercancía referida ya ha pasado por una operación de tipo "Carga" o, lo que es lo mismo, si la cantidad de operaciones por las que pasó es mayor a 4, se busca la información de traslado (esta lógica se implementa en el backend). La información del traslado se obtiene con la siguiente consulta:
+
+``` sql
+SELECT t.cod_guia_remision, r.cod_ruta, rt.descripcion AS tipo_ruta, r.distancia_total, r.duracion,
+p.dni AS dni_transportista,
+CONCAT(p.primer_apellido, ' ', p.segundo_apellido, ', ', p.prenombre) AS nombre_completo,
+n.descripcion AS nacionalidad, v.placa AS placa_vehiculo, vm.descripcion AS modelo_vehiculo,
+v.anio_fabricacion, v.capacidad_carga, v.fecha_ultimo_mantenimiento, v.fecha_ultimo_viaje
+FROM traslado t
+INNER JOIN transportista tr ON t.cod_transportista = tr.cod_transportista
+INNER JOIN empleado e ON tr.cod_empleado = e.cod_empleado
+INNER JOIN persona p ON e.cod_persona = p.cod_persona
+INNER JOIN nacionalidad n ON p.cod_nacionalidad = n.cod_nacionalidad
+INNER JOIN ruta r ON t.cod_ruta = r.cod_ruta
+INNER JOIN ruta_tipo rt ON r.cod_ruta_tipo = rt.cod_ruta_tipo
+INNER JOIN vehiculo v ON t.cod_vehiculo = v.cod_vehiculo
+INNER JOIN vehiculo_modelo vm ON v.cod_vehiculo_modelo = vm.cod_vehiculo_modelo
+INNER JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
+INNER JOIN mercancia m ON o.id_operacion_picking = m.id_operacion_picking
+WHERE m.nro_precinto = <3>;
+```
+
+**Búsqueda por código de guía de remisión**
+Las operaciones asociadas se obtienen con la siguiente consulta:
+
+``` sql
+WITH op_picking_cte AS(
+SELECT o.id_operacion_picking AS id_op_picking
+FROM traslado t
+INNER JOIN operacion o on t.id_operacion_inicia = o.id_operacion
+WHERE t.cod_guia_remision = <3>
+)
+SELECT o.id_operacion, o.fecha, o.hora_inicio, o.hora_fin,
+ot.descripcion AS tipo_operacion,
+p1.dni AS dni_emp_ejecutor, p2.dni AS dni_emp_supervisor
+FROM operacion o
+INNER JOIN operacion_tipo ot ON o.cod_tipo_operacion = ot.cod_tipo_operacion
+INNER JOIN empleado e1 ON o.cod_empleado_ejecutor = e1.cod_empleado
+INNER JOIN persona p1 ON e1.cod_persona = p1.cod_persona
+INNER JOIN empleado e2 ON o.cod_empleado_supervisor = e2.cod_empleado
+INNER JOIN persona p2 ON e2.cod_persona = p2.cod_persona
+WHERE o.id_operacion = (SELECT id_op_picking FROM op_picking_cte)
+OR o.id_operacion_picking = (SELECT id_op_picking FROM op_picking_cte)
+ORDER BY o.cod_tipo_operacion;
+```
+
+Las mercancías asociadas al traslado referido se obtienen con la siguiente consulta:
+
+``` sql
+SELECT m.nro_precinto, st.cod_stock, ec.nombre as nombre_stock, ect.descripcion as categoria,
+ep.descripcion as tipo, se.descripcion as segmento, ecu.descripcion as unidad,
+dm.cantidad as cantidad_transportar
+FROM traslado t
+INNER JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
+INNER JOIN mercancia m ON o.id_operacion_picking = m.id_operacion_picking
+INNER JOIN detalle_mercancia_stock dm ON m.id_mercancia = dm.id_mercancia
+INNER JOIN stock st ON dm.id_stock = st.id_stock
+INNER JOIN elemento_catalogo ec ON st.id_elemento_catalogo = ec.id_elemento_catalogo
+INNER JOIN elemento_catalogo_tipo ect ON ec.id_elemento_catalogo_tipo = ect.id_elemento_catalogo_tipo
+INNER JOIN elemento_produccion ep ON ect.id_elemento_produccion = ep.id_elemento_produccion
+INNER JOIN elemento_catalogo_unidad ecu ON ec.cod_unidad = ecu.cod_unidad
+INNER JOIN segmento se ON ect.id_segmento = se.id_segmento
+WHERE t.cod_guia_remision = <3>
+ORDER BY m.id_mercancia;
+```
+
+El conjunto de filas obtenidas se agrupan por las que tienen el mismo valor del atributo nro_precinto por medio de la lógica implementada en el backend de la aplicación.
+
+La información del traslado se obtiene con la siguiente consulta:
+
+``` sql
+SELECT t.cod_guia_remision, r.cod_ruta, rt.descripcion AS tipo_ruta, r.distancia_total, r.duracion,
+p.dni AS dni_transportista,
+CONCAT(p.primer_apellido, ' ', p.segundo_apellido, ', ', p.prenombre) AS nombre_completo,
+n.descripcion AS nacionalidad, v.placa AS placa_vehiculo, vm.descripcion AS modelo_vehiculo,
+v.anio_fabricacion, v.capacidad_carga, v.fecha_ultimo_mantenimiento, v.fecha_ultimo_viaje
+FROM traslado t
+INNER JOIN transportista tr ON t.cod_transportista = tr.cod_transportista
+INNER JOIN empleado e ON tr.cod_empleado = e.cod_empleado
+INNER JOIN persona p ON e.cod_persona = p.cod_persona
+INNER JOIN nacionalidad n ON p.cod_nacionalidad = n.cod_nacionalidad
+INNER JOIN ruta r ON t.cod_ruta = r.cod_ruta
+INNER JOIN ruta_tipo rt ON r.cod_ruta_tipo = rt.cod_ruta_tipo
+INNER JOIN vehiculo v ON t.cod_vehiculo = v.cod_vehiculo
+INNER JOIN vehiculo_modelo vm ON v.cod_vehiculo_modelo = vm.cod_vehiculo_modelo
+WHERE t.cod_guia_remision = <3>;
+```
+
+La información obtenida de esta búsqueda (en cualquiera de los dos tipos) se muestra en pantalla de la siguiente forma:
+
+![Captura de Pantalla 2024-06-04 a la(s) 23 42 25](https://github.com/fiis-bd241/grupo01/assets/130816094/f21b91f3-6815-45e0-b428-7541b48b2d23)
+![Captura de Pantalla 2024-06-04 a la(s) 23 42 41](https://github.com/fiis-bd241/grupo01/assets/130816094/004eff8e-4a0e-41df-9be1-df70fbad82cf)
+![Captura de Pantalla 2024-06-04 a la(s) 23 43 13](https://github.com/fiis-bd241/grupo01/assets/130816094/7d6d8ff5-7f65-4f7d-9d41-65183f76c654)
+![Captura de Pantalla 2024-06-04 a la(s) 23 43 22](https://github.com/fiis-bd241/grupo01/assets/130816094/f1ca591b-c45d-4224-95e6-de6d5207876f)
+
+Los estados del Proceso y del Traslado se obtienen según la cantidad de operaciones registradas. Esta lógica se implementa en el backend.
+
+4. **Botón "Registrar operación":** Lleva al usuario a la pantalla adecuada para registrar una operación adicional del proceso encontrado. Es decir, si la última operación registrada del proceso encontrado es de tipo "Picking", se lleva al usuario a la pantalla I304; si es de tipo "Precintado", a la pantalla I305; si es de tipo "Paletizado", a la pantalla I306; si es de tipo "Carga", a la pantalla I307; si es de tipo "Salida", a la pantalla I309; y si es de tipo "Recepción", a la pantalla I310. Si es de tipo "Descarga", el
+botón "Registrar operación" no se habilita. Toda esta lógica descrita se implementa en el frontend. Además, el valor del atributo "id_operacion" de la primera operación (de tipo "picking") se pasa como un parámetro llamado "id_operacion_picking" a esta nueva pantalla. 
+
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R301           |
 | Código      | I302 |
 | Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/78136d2c-1f37-4b1f-a89d-61edf840dbbb) |
+
+1.  **Carga de página:** El campo "Fecha" se autocompleta con la fecha actual.
+
+2. **Botón "Agregar mercancía":** Al presionar este botón, se muestra la pantalla I303. Se retorna con un código de stock y su cantidad a transportar, que forman una mercancía. Al hacer esto, se crean dos tipos de botones por cada mercancía, los cuales identificaremos como "*" y "**", como se muestra en la siguiente imagen:
+
+![image](https://github.com/fiis-bd241/grupo01/assets/130816094/00796911-bc32-45a2-b0f0-d3b594f5c973)
+
+*. Este botón lleva al usuario a la pantalla I303. Se realiza el mismo proceso, con la única diferencia de que el código de stock y su cantidad a transportar se ingresan en una mercancía determinada.
+**. Este botón elimina el código de stock y su cantidad a transportar en una mercancía y fila determinadas.
+
+La lógica descrita se implementa en el frontend.
+
+3. **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+
+``` sql
+INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
+VALUES (
+NULL,
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <5>),
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <6>),
+1,
+<2>,
+<3>,
+<4>
+)
+RETURNING id_operacion;
+```
+El valor retornado por esta sentencia se almacena en una variable en el backend. Sea esta variable "id_operacion_picking".
+
+Para cada "mercancía", conformada por varios pares de valores de id_stock y su cantidad a transportar, se ejecuta la siguiente sentencia SQL:
+
+``` sql
+INSERT INTO mercancia (id_operacion_picking) VALUES (<id_operacion_picking>) RETURNING id_mercancia
+```
+
+Sea "id_mercancia" el valor retornado por esta sentencia. Mediante un método implementado en el backend que toma como entradas los valores de las variables "id_operacion_picking" e "id_mercancia" se genera el valor del número de precinto de esta mercancía y se almacena en la variable "nro_precinto". Para cada mercancía se ejecuta la siguiente sentencia SQL:
+
+``` sql
+UPDATE mercancia SET nro_precinto = <nro_precinto> WHERE id_mercancia = <id_mercancia>
+```
+
+Para cada par de valores id_stock y cantidad de esta mercancía se ejecutan las siguientes sentencias SQL:
+
+``` sql
+INSERT INTO detalle_mercancia_stock (id_mercancia, id_stock, cantidad) VALUES (<id_mercancia>, <id_stock>, <cantidad>)
+```
+
+``` sql
+UPDATE stock SET cantidad_disponible = cantidad_disponible - ? WHERE id_stock = <id_stock>
+```
+
+Finalmente, se lleva al usuario a la pantalla I311.
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
@@ -941,11 +1149,32 @@ FROM
 | Código      | I303 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/bb65ce7e-6483-478e-acc1-372cec7aa13b) |
 
+
+
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R302           |
 | Código      | I304 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/c3c802ca-5d15-412d-811f-d41d80b8db65) |
+
+1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking".
+2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+
+``` sql
+INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
+VALUES (
+<id_operacion_picking>,
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <4>),
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <5>),
+2,
+<1>,
+<2>,
+<3>
+)
+RETURNING id_operacion;
+```
+
+Se muestra al usuario la pantalla I311.
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
@@ -953,11 +1182,49 @@ FROM
 | Código      | I305 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/67a7b049-5fbb-48b6-85ac-07ca889511ff) |
 
+1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking".
+2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+
+``` sql
+INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
+VALUES (
+<id_operacion_picking>,
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <4>),
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <5>),
+2,
+<1>,
+<2>,
+<3>
+)
+RETURNING id_operacion;
+```
+
+Se muestra al usuario la pantalla I311.
+
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R304           |
 | Código      | I306 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/df11747a-b3a6-488b-aff9-914c9bef5058) |
+
+1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking".
+2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+
+``` sql
+INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
+VALUES (
+<id_operacion_picking>,
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <4>),
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <5>),
+2,
+<1>,
+<2>,
+<3>
+)
+RETURNING id_operacion;
+```
+
+Se muestra al usuario la pantalla I311.
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
@@ -977,11 +1244,49 @@ FROM
 | Código      | I309 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/dc002a04-4c28-4deb-bb7d-2da7d3f92294) |
 
+1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking".
+2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+
+``` sql
+INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
+VALUES (
+<id_operacion_picking>,
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <4>),
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <5>),
+2,
+<1>,
+<2>,
+<3>
+)
+RETURNING id_operacion;
+```
+
+Se muestra al usuario la pantalla I311.
+
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R307           |
 | Código      | I310 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/130816094/895a7907-cb6d-41d8-ba74-0d42f367bc5c) |
+
+1.  **Carga de página:** Para llegar a esta pantalla, necesariamente se debe partir desde la pantalla I301 o I311. En ambos casos, se asigna el valor pasado como parámetro a la variable "id_operacion_picking".
+2.  **Botón "Ingresar":** Se ingresan a la base de datos los valores ingresados por medio de la siguiente sentencia SQL:
+
+``` sql
+INSERT INTO operacion (id_operacion_picking, cod_empleado_ejecutor, cod_empleado_supervisor, cod_tipo_operacion, fecha, hora_inicio, hora_fin)
+VALUES (
+<id_operacion_picking>,
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <4>),
+(SELECT e.cod_empleado FROM empleado e JOIN persona p ON e.cod_persona = p.cod_persona WHERE p.dni = <5>),
+2,
+<1>,
+<2>,
+<3>
+)
+RETURNING id_operacion;
+```
+
+Se muestra al usuario la pantalla I311.
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
