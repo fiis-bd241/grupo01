@@ -468,6 +468,7 @@ VALUES
 (?, <10>)
 ```
 Donde: 
+
 `<1>` corresponde al código del usuario del inicio de sesión.
 
 `?` corresponde a valores que se asigna al momento del registro del pedido y informacion de la base datos.
