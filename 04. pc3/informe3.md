@@ -2322,6 +2322,7 @@ INNER JOIN cliente AS cl ON cl.cod_cliente = re.cod_cliente
 INNER JOIN persona AS pe ON pe.cod_persona = re.cod_persona
 WHERE r.cod_reclamo = valor1;
 ```
+Donde valor1 es el código del reclamo elegido.
 
 ``` sql 
 SELECT 
@@ -2338,6 +2339,7 @@ INNER JOIN elemento_catalogo AS ec ON dtip.cod_elemento_catalogo = ec.cod_elemen
 INNER JOIN stock AS st ON ec.cod_elemento_catalogo = st.cod_elemento_catalogo
 WHERE r.cod_reclamo = valor1;
 ```
+Donde valor1 es el código del reclamo elegido.
 
 ``` sql 
 SELECT 
@@ -2351,6 +2353,7 @@ INNER JOIN reclamo_tipo AS rt ON r.cod_tipo_reclamo = rt.cod_tipo_reclamo
 INNER JOIN nivel_urgencia AS nu ON r.cod_nivel_urgencia = nu.cod_nivel_urgencia
 WHERE r.cod_reclamo = valor1;
 ```
+Donde valor1 es el código del reclamo elegido.
 
 ``` sql 
 SELECT 
@@ -2360,6 +2363,7 @@ INNER JOIN evidencia AS ev ON r.cod_reclamo = ev.cod_reclamo
 INNER JOIN archivo_tipo AS at ON ev.cod_tipo_archivo = at.cod_tipo_archivo
 WHERE r.cod_reclamo = valor1;
 ```
+Donde valor1 es el código del reclamo elegido.
 
 ``` sql 
 SELECT 
@@ -2372,6 +2376,7 @@ INNER JOIN accion_tipo AS at ON se.cod_tipo_accion = at.cod_tipo_accion
 INNER JOIN cliente AS cl ON se.cod_cliente_interno = cl.cod_cliente
 WHERE r.cod_reclamo = valor1;
 ```
+Donde valor1 es el código del reclamo elegido.
 
 ``` sql 
 SELECT 
@@ -2383,6 +2388,7 @@ INNER JOIN seguimiento AS se ON r.cod_seguimiento = se.cod_seguimiento
 INNER JOIN estado_reclamo AS er ON r.cod_estado_reclamo = er.cod_estado_reclamo
 WHERE r.cod_reclamo = valor1;
 ```
+Donde valor1 es el código del reclamo elegido.
 
 #### Caso 9
 <table>
