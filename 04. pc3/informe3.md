@@ -4070,7 +4070,12 @@ Alex Espinoza Cerna
 ### 5. Módulo de Reportes
 Cristhian Samir Cruz Mamani
 
-[![Módulo de reportes](https://img.youtube.com/vi/YLxhekfsW98/mqdefault.jpg)](https://www.youtube.com/watch?v=YLxhekfsW98)
+<div align="center">
+    <a href="https://www.youtube.com/watch?v=YLxhekfsW98" target="_blank">
+        <img src="http://img.youtube.com/vi/YLxhekfsW98/0.jpg" alt="Modulo de Reportes" width="500" height="auto" border="10" />
+    </a>
+</div>
+
 ### 6. Módulo de Reclamos
 Leonardo Gustavo Cárdenas Palacios
 
