@@ -72,25 +72,25 @@ Caso de Uso #4: Ver gráficos de cada módulo
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R501, R502, R503, R504           |
-| Código      | P501 |
+| Código      | I501 |
 | Prototipo   |     ![P501](https://github.com/fiis-bd241/grupo01/assets/161625149/eb29ab8b-8fb7-4e69-88ad-926acf086307)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R501           |
-| Código      | P502 |
+| Código      | I502 |
 | Prototipo   | ![P502](https://github.com/fiis-bd241/grupo01/assets/161625149/df005dc5-7ebb-4274-94c4-523000c47962)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R502          |
-| Código      | P503 |
+| Código      | I503 |
 | Prototipo   |  ![P503](https://github.com/fiis-bd241/grupo01/assets/161625149/3adf13d0-7cb1-4e1d-902d-fe408ea98340) |
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R504          |
-| Código      | P504 |
+| Código      | I504 |
 | Prototipo   |   ![P504](https://github.com/fiis-bd241/grupo01/assets/161625149/e62b62ae-d440-4708-9240-c5cc0fa6b39b)|
 
 ## 2. Sentencias SQL por cada prototipo
@@ -105,7 +105,7 @@ Caso de Uso #4: Ver gráficos de cada módulo
    </tr>
    <tr>
       <td>Código interfaz</td>
-      <td>P501</td>
+      <td>I501</td>
    </tr>
    <tr>
       <td>Imagen interfaz</td>
@@ -162,7 +162,7 @@ GROUP BY ec.id_elemento_catalogo, ecu.cod_unidad, ect.id_elemento_catalogo_tipo,
    </tr>
    <tr>
       <td>Código interfaz</td>
-      <td>P502</td>
+      <td>I502</td>
    </tr>
    <tr>
       <td>Imagen interfaz</td>
@@ -202,7 +202,7 @@ Donde `<1>` corresponde al código del usuario del inicio de sesión.
    </tr>
    <tr>
       <td>Código interfaz</td>
-      <td>P503</td>
+      <td>I503</td>
    </tr>
    <tr>
       <td>Imagen interfaz</td>
@@ -248,7 +248,7 @@ El cod_reporte_estado = 1 corresponde a "Activo".
    </tr>
    <tr>
       <td>Código interfaz</td>
-      <td>P504</td>
+      <td>I504</td>
    </tr>
    <tr>
       <td>Imagen interfaz</td>
