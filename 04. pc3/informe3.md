@@ -723,17 +723,17 @@ GROUP BY rt.cod_tipo_reclamo
 ORDER BY rt.cod_tipo_reclamo;
 ```
 
-### 5. Sentencias SQL módulo de Reportes
+### 5. Sentencias SQL módulo de Reclamos
 
 #### Caso 1
 <table>
    <tr>
       <td>Código Requerimiento</td>
-      <td>R501</td>
+      <td>R601</td>
    </tr>
    <tr>
       <td>Código interfaz</td>
-      <td>I502</td>
+      <td>I602</td>
    </tr>
    <tr>
       <td>Imagen interfaz</td>
@@ -745,7 +745,7 @@ ORDER BY rt.cod_tipo_reclamo;
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
-1. Al presionar el botón clientes internos o externos, esto servirá para llenar la lista desplegable de los nombres de clientes de la interfaz I504.
+1. Al presionar el botón clientes internos o externos, esto servirá para llenar la lista desplegable de los nombres de clientes de la interfaz I604.
 ``` sql 
 SELECT cl.cod_cliente, cl.nombre FROM cliente AS cl
 WHERE cl.cod_cliente_tipo = 'valor1’ 
