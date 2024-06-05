@@ -267,6 +267,74 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 
 ### Prototipos
 
+#### 3. Prototipos del módulo de Almacén
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R301, R302, R303, R304, R305, R306, R307       |
+| Código      | I301 |
+| Prototipo   |  ![Captura de Pantalla 2024-06-04 a la(s) 23 41 49](https://github.com/fiis-bd241/grupo01/assets/130816094/3fe88474-f72e-40ed-94e7-71000489e492) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R301           |
+| Código      | I302 |
+| Prototipo   |  ![Captura de Pantalla 2024-06-04 a la(s) 23 48 17](https://github.com/fiis-bd241/grupo01/assets/130816094/e93f318d-f9bb-4e21-84d1-0821946d0f0b) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R301           |
+| Código      | I303 |
+| Prototipo   | ![Captura de Pantalla 2024-06-04 a la(s) 23 48 53](https://github.com/fiis-bd241/grupo01/assets/130816094/855539c9-cbd2-4d66-9219-567d27dc8b70) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R302           |
+| Código      | I304 |
+| Prototipo   | ![Captura de Pantalla 2024-06-04 a la(s) 23 56 04](https://github.com/fiis-bd241/grupo01/assets/130816094/1aca11e7-41d9-4699-88ab-e5d634186122) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R303           |
+| Código      | I305 |
+| Prototipo   | ![Captura de Pantalla 2024-06-04 a la(s) 23 56 28](https://github.com/fiis-bd241/grupo01/assets/130816094/d4cf7cfa-51df-4f7e-8d7a-d244a05ef89f) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R304           |
+| Código      | I306 |
+| Prototipo   | ![Captura de Pantalla 2024-06-04 a la(s) 23 56 54](https://github.com/fiis-bd241/grupo01/assets/130816094/b6fb1a6c-452e-4180-aa3a-48accfefbeb2) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R305           |
+| Código      | I307 |
+| Prototipo   | ![Captura de Pantalla 2024-06-04 a la(s) 23 58 39](https://github.com/fiis-bd241/grupo01/assets/130816094/d0d74edb-dbe2-4fb6-8335-da9dd5d0bbcf) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R305           |
+| Código      | I308 |
+| Prototipo   | ![Captura de Pantalla 2024-06-04 a la(s) 23 58 27](https://github.com/fiis-bd241/grupo01/assets/130816094/5699b0bf-7787-4912-a833-61eaeb90bfc3) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R306           |
+| Código      | I309 |
+| Prototipo   | ![Captura de Pantalla 2024-06-05 a la(s) 00 00 04](https://github.com/fiis-bd241/grupo01/assets/130816094/80d60d08-f3e0-4886-807b-482fbedad15c) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R307           |
+| Código      | I310 |
+| Prototipo   | ![Captura de Pantalla 2024-06-05 a la(s) 00 00 29](https://github.com/fiis-bd241/grupo01/assets/130816094/76dbd489-d054-4e6d-ba74-5c2581f8c69c) |
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R301, R302, R303, R304, R305, R306, R307       |
+| Código      | I311 |
+| Prototipo   | ![Captura de Pantalla 2024-06-04 a la(s) 23 55 12](https://github.com/fiis-bd241/grupo01/assets/130816094/fe07d02e-b301-4048-800a-3e43986904e9) |
+
 
 #### 5. Prototipos del módulo de Reportes
 
