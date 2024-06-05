@@ -3246,6 +3246,11 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 
 ## 4. Funcionalidad Primaria Elegida
 
+### 1. Funcionalidad Primaria del Módulo de pedidos
+
+**Funcionalidad primaria elegida:** 
+
+**Sustentación:**
 <table>
    <tr>
       <th>Actividad</th>
@@ -3301,6 +3306,7 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 	</p>
       </td>
    </tr>
+</table>
 
 
 
