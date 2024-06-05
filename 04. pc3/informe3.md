@@ -901,6 +901,7 @@ INNER JOIN persona AS pe ON pe.cod_persona = re.cod_persona
 WHERE cl.cod_cliente = valor1 AND re.cod_representante = valor2;
 ```
 Donde el valor1 es el código del cliente escogido.
+
 Donde el valor2 es el código del representante escogido.
 
 3. Al presionar siguiente se inserta el codigo del representante en el reclamo y se llenan los tickets asociados al representante en la interfaz I605 (siguiente interfaz).
@@ -918,6 +919,7 @@ INNER JOIN ticket AS ti ON ti.cod_ticket = pe.cod_ticket
 WHERE re.cod_representante = valor2;
 ```
 Donde el valor2 es el código del representante escogido.
+
 Donde el valor3 es el código del reclamo actual.
 
 ## 3. Carga de Datos
