@@ -95,7 +95,7 @@ Caso de Uso #4: Ver gráficos de cada módulo
 
 ## 2. Sentencias SQL por cada prototipo
 
-### Sentencias SQL del módulo de Reportes
+### 5. Sentencias SQL módulo de Reportes
 
 #### Caso 1
 <table>
@@ -1248,7 +1248,7 @@ INSERT INTO reporte (cod_representante, cod_reporte_formato, cod_reporte_tipo, f
 
 ## 4. Funcionalidad Primaria Elegida
 
-### Funcionalidad Primaria del módulo de reportes
+### 5. Funcionalidad Primaria del módulo de reportes
 
 **Funcionalidad primaria elegida:** Programar la generación de un tipo de reporte en un intervalo de tiempo definido. <br>
 **Sustentación:** Se automatiza y facilita la generación de informes en intervalos predefinidos, brindando acceso a información crítica sin intervención manual. Además, permite personalizar los tipos, formatos, frecuencias y períodos de los informes según las necesidades específicas, organizando todas las tareas de generación de informes en un solo lugar. Esta funcionalidad se integra con los datos de otros módulos, apoyando la toma de decisiones basada en datos dentro de la empresa. <br>
