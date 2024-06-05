@@ -544,7 +544,7 @@ Donde:
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/58aa0d59-6833-4705-bce4-398df225171e">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/48b1ea73-0db9-4686-bc98-20bf501296c0">
       </td>
    </tr>
    <tr>
