@@ -4060,12 +4060,20 @@ Tendrás dos apartados, uno para registrar una nueva incidencia y otro para veri
 ### 1. Módulo de pedidos
 Miguel Anderson Inocente Caro
 
-[![Módulo de pedidos](https://img.youtube.com/vi/RnyEoHbUCNg/mqdefault.jpg)](https://www.youtube.com/watch?v=RnyEoHbUCNg)
+<div align="center">
+    <a href="https://www.youtube.com/watch?v=RnyEoHbUCNg" target="_blank">
+        <img src="http://img.youtube.com/vi/RnyEoHbUCNg/0.jpg" alt="Modulo de Control" width="500" height="auto" border="10" />
+    </a>
+</div>
 
 ### 4. Módulo de Control 
 Alex Espinoza Cerna
 
-[![Módulo de control](https://img.youtube.com/vi/49ex4_ZWXF4/mqdefault.jpg)](https://www.youtube.com/watch?v=49ex4_ZWXF4)
+<div align="center">
+    <a href="https://www.youtube.com/watch?v=49ex4_ZWXF4" target="_blank">
+        <img src="http://img.youtube.com/vi/49ex4_ZWXF4/0.jpg" alt="Modulo de Control" width="500" height="auto" border="10" />
+    </a>
+</div>
 
 ### 5. Módulo de Reportes
 Cristhian Samir Cruz Mamani
