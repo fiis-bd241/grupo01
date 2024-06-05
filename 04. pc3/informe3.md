@@ -599,50 +599,49 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R401          |
 | Código      | I401 |
-| Prototipo   | ![R401](https://github.com/Alexclb0/Holamundo/assets/164266999/9cdf7c07-27b2-4cc3-b576-9ac2389683b7)|
+| Prototipo   | ![R401](https://github.com/fiis-bd241/grupo01/assets/161625149/69dec382-c13c-4b5e-b39e-96c9d04555be)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R402       |
 | Código      | I402 |
-| Prototipo   | ![R402](https://github.com/Alexclb0/Holamundo/assets/164266999/24619fd5-47ed-4a3d-bba8-b5b3b7d63904)|
+| Prototipo   | ![R402](https://github.com/fiis-bd241/grupo01/assets/161625149/175afcd4-25fa-48d5-ad94-5b6dbe021a4a)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403       |
 | Código      | I403 |
-| Prototipo   | ![I403](https://github.com/Alexclb0/Holamundo/assets/164266999/45c1ca0e-3ef6-4144-90cc-b59abe11e684)|
+| Prototipo   | ![I403](https://github.com/fiis-bd241/grupo01/assets/161625149/ea25df77-0f09-4bc2-8c6e-b55dbd53990c)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403       |
 | Código      | I404 |
-| Prototipo   | ![I404](https://github.com/Alexclb0/Holamundo/assets/164266999/b466e32e-4415-4f81-bf46-35f6e0b22c18)|
+| Prototipo   | ![I404](https://github.com/fiis-bd241/grupo01/assets/161625149/c6ffab2b-1910-45a7-ac14-3c5dc980a8d2)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403       |
 | Código      | I405 |
-| Prototipo   | ![I405](https://github.com/Alexclb0/Holamundo/assets/164266999/013d3635-7659-4656-8e46-75d7d298ede3)|
+| Prototipo   | ![I405](https://github.com/fiis-bd241/grupo01/assets/161625149/acebbbda-9f3c-4c8b-809e-75d5911e16e0)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403       |
 | Código      | I406 |
-| Prototipo   | ![I406](https://github.com/Alexclb0/Holamundo/assets/164266999/84b912d9-8e3e-43ef-8daa-cc4835a6b450)|
+| Prototipo   | ![I406](https://github.com/fiis-bd241/grupo01/assets/161625149/6740a843-8a0e-47e4-b34e-feac62c1254a)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403, R404   |
 | Código      | I407 |
-| Prototipo   | ![I407](https://github.com/Alexclb0/Holamundo/assets/164266999/3bc9ccdb-40e9-4dda-bea0-03a954c754b0)|
+| Prototipo   | ![I407](https://github.com/fiis-bd241/grupo01/assets/161625149/8925730a-3ddd-44d7-9d92-8c947e18fa58)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R404   |
 | Código      | I408 |
-| Prototipo   | ![I408](https://github.com/Alexclb0/Holamundo/assets/164266999/6808cc05-3860-4f85-8c8d-91d7226a1ea2)|
-
+| Prototipo   | ![I408](https://github.com/fiis-bd241/grupo01/assets/161625149/dccab0da-87ea-4217-bfaa-71c9a190a6f6)|
 
 #### 5. Prototipos del módulo de Reportes
 
