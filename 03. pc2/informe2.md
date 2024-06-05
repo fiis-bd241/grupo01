@@ -1646,6 +1646,7 @@ INSERT INTO pedido_estado (cod_pedido_estado, estado_pedido) VALUES
   ('A', 'Aceptado'),
   ('R', 'Rechazado'),
   ('P', 'En proceso'),
+  ('E', 'Entregado'),
   ('F', 'Finalizado');
 
 INSERT INTO incidencia_tipo (cod_tipo_incidencia,descripcion) VALUES
