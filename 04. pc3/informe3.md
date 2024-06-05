@@ -37,7 +37,7 @@ Caso de Uso #2: Agregar productos al pedido.
 Caso de Uso #3: Ver lista de pedidos.
 | Código | R103 | 
 |----------|----------|
-|Objetivo | | Permitir al empleado ver todos los pedidos realizados en el software. |
+|Objetivo |  Permitir al empleado ver todos los pedidos realizados en el software. |
 |Descripción | El empleado puede ver una lista de todos los pedidos realizados en el software, junto con su estado actual. |
 |Actor Primario | Empleado. |
 |Actor Secundario | N/A |
