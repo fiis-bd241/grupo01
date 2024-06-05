@@ -9,58 +9,58 @@
 Caso de Uso #1: Registrar Pedido
 | Código | R101 | 
 |----------|----------|
-|Objetivo | Permitir a los Representante de cada departamento a registrar un nuevo pedido.|
-|Descripción | El almacenista ingresa la información del cliente, como nombre, correo electrónico empresarial y personal, fecha de solicitud, fecha de entrega, DNI, departamento y justificación. |
-|Actor Primario | Representante de cada area. |
-|Actor Secundario | N/A |
-|Precondiciones | El representante debe estar registrado en el sistema SAP | 
-|Paso | Acción | 
-|1 | El representante selecciona la opción para registrar un nuevo pedido. |
-|2 | El sistema muestra un formulario para que el representante ingrese los datos personales y datos del pedido. | 
-|3 | El representante completa el formulario y selecciona la opción para agregar productos. |
+|Objetivo| Permitir al empleado de la empresa San Fernando ingresar los datos del cliente, representante y el pedido.|
+|Descripción | El empleado ingresa la información del representante, como nombres, apellidos, DNI, teléfono, correo empresarial, empresa, fecha de solicitud y fecha de entrega esperada.|
+|Actor Primario| Empleado de la empresa San fernando.|
+|Actor Secundario| N/A. | 
+|Precondiciones |El empleado debe estar autenticado en el sistema.
+|Paso |Acción| 
+|1| El representante accede a la interfaz de registro de pedido.|
+|2| El sistema muestra un formulario con campos para ingresar los datos del cliente y del pedido.|
+|3| El representante completa el formulario con la información requerida.|
+|4| El representante selecciona la opción "Siguiente" para continuar con la solicitud de productos.|
 
 Caso de Uso #2: Agregar productos al pedido. 
 | Código | R102 | 
 |----------|----------|
-|Objetivo | Permitir al representante (usuario) agregar los productos solicitados al pedido.|
-|Descripción | Después de ingresar la información del usuario (representante) en el formulario de registro de pedido, el usuario puede agregar los productos solicitados a través de una tabla. | 
-|Actor Primario | representante departamental |
-|Actor Secundario | N/A |
-|Precondiciones | El usuario debe haber completado el formulario de registro de pedido. |
+|Objetivo | Permitir al empleado seleccionar los productos solicitados para el pedido.|
+|Descripción | Después de ingresar los datos del representante en el pedido, el empleado puede seleccionar los productos requeridos de una lista de catálogo. | 
+|Actor Primario | Empleado. |
+|Actor Secundario | N/A. |
+|Precondiciones | El empleado debe haber ingresado los datos del pedido correctamente. |
 |Paso | Acción |
-|1 | Después de ingresar los datos del usuario y pedido, el usuario selecciona la opción para agregar productos.|
-|2 | El sistema muestra una tabla vacía para que el usuario ingrese los detalles de los productos solicitados, como código, nombre, descripción, cantidad, unidad de medida y precio unitario. |
-|3 | El usuario ingresa la información de los productos. |
-|4 | El usuario revisa la información de los productos ingresados y selecciona la opción para confirmar el pedido. |
-|5 | El sistema asigna un número de pedido único al nuevo pedido. |
-|6 | El sistema guarda la información del pedido, incluyendo los productos solicitados, y actualiza el estado a "pendiente". |
+|1| El sistema muestra una lista de productos disponibles en el catálogo, agrupados por categorías.| 
+|2| El empleado selecciona los productos necesarios y las cantidades correspondientes.|
+|3| El empleado confirma la selección de productos.|
+|4| El sistema actualiza el pedido con los productos seleccionados.|
 
 Caso de Uso #3: Ver lista de pedidos.
 | Código | R103 | 
 |----------|----------|
-|Objetivo | | Permitir a los representante (usuarios) consultar la lista de todos los pedidos registrados.
-|Descripción | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
-|Actor Primario | representante de cada departamento. |
+|Objetivo | | Permitir al empleado ver todos los pedidos realizados en el software. |
+|Descripción | El empleado puede ver una lista de todos los pedidos realizados en el software, junto con su estado actual. |
+|Actor Primario | Empleado. |
 |Actor Secundario | N/A |
-|Precondiciones | El usuario debe estar registrado en el sistema SAP. |
+|Precondiciones | Debe haber pedidos registrados previamente en el sistema. |
 |Paso | Acción |
-|1 | El usuario selecciona la opción para ver la lista de pedidos. |
-|2 | El sistema muestra la lista de todos los pedidos registrados, incluyendo el número de pedido, departamento, la fecha de solicitud, la fecha de entrega y el estado del pedido. |
-|3 | El usuario puede filtrar y ordenar la lista de pedidos según diferentes criterios, como número de pedido, departamento, fecha de solicitud y estado del pedido. |
-|4 | El sistema SAP actualiza la lista de pedidos según los filtros y ordenamiento aplicados por el usuario. |
+|1| El empleado accede a la interfaz de lista de pedidos.|
+|2| El sistema muestra una lista de todos los pedidos, incluyendo información como el número de pedido, el nombre del cliente, el encargado, la fecha del pedido y el estado actual.|
+|3| El representante puede filtrar la lista por diferentes criterios, como estado del pedido (todos, aceptado, rechazado, otros) o utilizar el campo de búsqueda.|
+|4| El representante puede seleccionar un pedido específico para ver más detalles.|
 
 Caso de Uso #4: Ver detalle pedido. 
 | Código | R104 | 
 |----------|----------|
-|Objetivo | | 	Permitir a los almacenistas de cada area (usuarios) consultar los detalles de un pedido específico. |
-|Descripción | Despúes de completar todos los productos solicitados y el sistema muestra la información detallada, incluyendo los datos del usuario, los productos solicitados y sus detalles. |
-|Actor Primario | representante de cada departamento. |
+|Objetivo | | 	Permitir al empleado ver los detalles completos de un pedido específico. |
+|Descripción | El empleado puede ver información detallada sobre un pedido, como los datos del cliente (nombre de la empresa), representante, los productos solicitados, las fechas de solicitud y entrega, y el estado actual del pedido. |
+|Actor Primario | Empleado |
 |Actor Secundario |N/A |
-|Precondiciones | El usuario debio completar la tabla de los productos solicitados. |
+|Precondiciones | Debe haber pedidos registrados previamente en el sistema. |
 |Paso | Acción |
-|1 | Después de agregar los productos al pedido, el usuario selecciona la opción para ver el detalle del pedido. |
-|2 | El sistema muestra la información detallada del pedido, incluyendo los datos del usario, los productos solicitados y sus detalles (código de producto, unidad de medida, descripción, precio unitario), la fecha de solicitud, la fecha de entrega, el estado del pedido, el tiempo transcurridos (días) del pedido y cualquier otra información relevante.
-|3 | El usuario puede confirmar o cancelar el pedido. |
+|1| El empleado selecciona un pedido de la lista de pedidos.|
+|2| El sistema muestra los detalles completos del pedido seleccionado, incluyendo el código del pedido, las fechas de solicitud y entrega, el nombre del cliente, el representante, el empleado que registró el pedido, y el estado actual del pedido.|
+|3| El empleado puede ver información adicional, como el tipo de pedido (que en este caso seria venta).|
+|4| El empleado puede volver a la lista de pedidos o realizar otras acciones relacionadas con el pedido.|
 
 #### 2. Requerimientos del módulo de Seguimiento
 Caso de Uso #1: Ver Guía de Remisión
