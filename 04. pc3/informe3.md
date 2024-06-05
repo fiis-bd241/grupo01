@@ -738,7 +738,7 @@ ORDER BY rt.cod_tipo_reclamo;
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/130238034/5a7d0b70-24ef-4a5b-a741-45bb156ac780">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/130238034/062cd47b-2932-4d35-a0cb-1d06bda1eea8">
       </td>
    </tr>
    <tr>
