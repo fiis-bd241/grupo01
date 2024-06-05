@@ -586,7 +586,7 @@ FROM
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/b6b3d8ee-681a-46ed-8b83-14576c934ece">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/121084712/4ef1753e-bab0-4254-96be-8c48d2148341">
       </td>
    </tr>
    <tr>
