@@ -1155,6 +1155,7 @@ CREATE TABLE IF NOT EXISTS "local" (
  cod_local_distrito INT NOT NULL,
  calle VARCHAR(64) NULL,
  numero INT NULL,
+ denominacion VARCHAR(64) NOT NULL,
  pais VARCHAR(8) NOT NULL,
  PRIMARY KEY (cod_local),
  CONSTRAINT cod_cliente
@@ -2090,27 +2091,27 @@ INSERT INTO gps (cod_gps, cod_ubicacion, cod_vehiculo, fecha_ubicacion, hora_ubi
   (11, 13, 7, '2024-04-22', '13:04:10'),
   (12, 14, 7, '2024-04-22', '13:38:50');
 
-INSERT INTO local (cod_local, cod_cliente, cod_ubicacion, pais, cod_local_region, cod_local_distrito, calle, numero, cod_local_tipo) VALUES
-  (1, 1, 1, 'PER', 15, 44, 'Panamericana Norte', NULL, 1),
-  (2, 8, 2, 'PER', 15, 44, 'Av. El Solar', NULL, 2),
-  (3, 8, 3, 'PER', 7, 45, 'Av. Néstor Gambetta', 7036, 2),
-  (4, 8, 4, 'PER', 15, 25, 'Av. Puente Piedra', 266, 2),
-  (5, 7, 10, 'PER', 15, 11, 'Av. Tomás Valle', 1400, 2),
-  (6, 6, 12, 'PER', 15, 11, 'Av. Alfredo Mendiola', 3698, 2),
-  (7, 2, 15, 'PER', 15, 15, 'Jr. Iquitos', 347, 3),
-  (8, 10, 16, 'PER', 15, 15, 'Av. España', 1337, 2),
-  (9, 2, 17, 'PER', 15, 15, 'Jr. Puno', 370, 4),
-  (10, 3, 18, 'PER', 15, 7, 'C. Constelación Austral', 135, 1),
-  (11, 2, 19, 'PER', 15, 35, 'Tomas Cochrane', NULL, 4),
-  (12, 2, 20, 'PER', 15, 35, 'Jr. Mártir Olaya', 413, 4),
-  (13, 2, 21, 'PER', 15, 24, 'Av. Simón Bolívar', 1149, 4),
-  (14, 2, 22, 'PER', 15, 15, 'Jr. 3 de Febrero', 1234, 4),
-  (15, 2, 23, 'PER', 7, 46, 'Av. Argentina', 3093, 3),
-  (16, 2, 24, 'PER', 15, 32, 'Av. 13 de Enero', 1592, 4),
-  (17, 3, 25, 'PER', 15, 7, 'Av. Los Faisanes', 179, 1),
-  (18, 2, 26, 'PER', 15, 7, 'Jr. Justo Naveda', 136, 4),
-  (19, 2, 27, 'PER', 15, 9, 'Av. Universitaria', 7718, 3),
-  (20, 2, 28, 'PER', 15, 16, 'Av. Petit Thouars', 2260, 3);
+INSERT INTO local (cod_local, cod_cliente, cod_ubicacion, pais, cod_local_region, cod_local_distrito, calle, numero, denominacion, cod_tipo_local) VALUES
+  (1, 1, 1, 'PER', 15, 44, 'Panamericana Norte', NULL, 'Beneficio Huaral', 1),
+  (2, 8, 2, 'PER', 15, 44, 'Av. El Solar', NULL, 'KFC Huaral', 2),
+  (3, 8, 3, 'PER', 7, 45, 'Av. Néstor Gambetta', 7036, 'KFC Ventanilla', 2),
+  (4, 8, 4, 'PER', 15, 25, 'Av. Puente Piedra', 266, 'KFC Puente Piedra', 2),
+  (5, 7, 10, 'PER', 15, 11, 'Av. Tomás Valle', 1400, 'Plaza Norte', 2),
+  (6, 6, 12, 'PER', 15, 11, 'Av. Alfredo Mendiola', 3698, 'Mega Plaza', 2),
+  (7, 2, 15, 'PER', 15, 15, 'Jr. Iquitos', 347, 'Tienda Jr Iquitos', 3),
+  (8, 10, 16, 'PER', 15, 15, 'Av. España', 1337, 'Real Plaza - Centro Cívico', 2),
+  (9, 2, 17, 'PER', 15, 15, 'Jr. Puno', 370, 'Distribuidora Jr Puno', 4),
+  (10, 3, 18, 'PER', 15, 7, 'C. Constelación Austral', 135, 'Almacén Chorrillos', 1),
+  (11, 2, 19, 'PER', 15, 35, 'Tomas Cochrane', NULL, 'Distribuidora Tomas Cochrane', 4),
+  (12, 2, 20, 'PER', 15, 35, 'Jr. Mártir Olaya', 413, 'Distribuidora Jr Mártir Olaya', 4),
+  (13, 2, 21, 'PER', 15, 24, 'Av. Simón Bolívar', 1149, 'Distribuidora Av Simón Bolívar', 4),
+  (14, 2, 22, 'PER', 15, 15, 'Jr. 3 de Febrero', 1234, 'Distribuidora Jr 3 de Febrero', 4),
+  (15, 2, 23, 'PER', 7, 46, 'Av. Argentina', 3093, 'Distribuidora Av Argentina', 3),
+  (16, 2, 24, 'PER', 15, 32, 'Av. 13 de Enero', 1592, 'Distribuidora Av 13 de Enero', 4),
+  (17, 3, 25, 'PER', 15, 7, 'Av. Los Faisanes', 179, 'Almacén Central', 1),
+  (18, 2, 26, 'PER', 15, 7, 'Jr. Justo Naveda', 136, 'Distribuidora Jr Justo Naveda', 4),
+  (19, 2, 27, 'PER', 15, 9, 'Av. Universitaria', 7718, 'Distribuidora Av Universitaria', 3),
+  (20, 2, 28, 'PER', 15, 16, 'Av. Petit Thouars', 2260, 'Distribuidora Av Petit Thouars', 3);
 
 INSERT INTO paradero (cod_paradero, cod_ruta, cod_local, cod_paradero_tipo, orden) VALUES
   (1, 1, 1, 1, 1),
