@@ -1251,8 +1251,14 @@ SELECT * FROM estado_reclamo
 
 ``` sql 
 UPDATE seguimiento
-SET fecha_resolucion = 'valor2', numero_caso = valor3
-WHERE cod_seguimiento = valor4 AND 'valor2' > (SELECT MAX(fecha_resolucion) FROM seguimiento WHERE cod_seguimiento != valor4);
+SET fecha_resolucion = 'valor2', 
+    numero_caso = valor3
+WHERE cod_seguimiento = valor4 
+  AND 'valor2' > (
+      SELECT MAX(fecha_resolucion) 
+      FROM seguimiento 
+      WHERE cod_seguimiento != valor4
+  );
 ```
 Donde el ‘valor2’ es la fecha de resolución elegida.
 
