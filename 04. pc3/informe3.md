@@ -479,6 +479,12 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R202     |
+| Código      | I202-E1 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/552f8a68-c84e-4bfb-85b8-b41c0b86f939)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R203|
 | Código      | I203 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/78d998b0-889a-4668-895d-b5ccccddd7cb)|
@@ -491,15 +497,33 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R204     |
+| Código      | I204-E1 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/4196ac9d-f4c2-4382-a8a5-6d6af60659a7)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R205     |
 | Código      | I205 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/d9a1ce6b-d68b-4686-88d1-5ac69dcbb9a0)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R205     |
+| Código      | I205-E1 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/f880dea2-3e18-4f93-92b8-272e4b8ec627)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R206    |
 | Código      | I206 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/94c187d0-597b-466a-8472-4b690a9e8347)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R206    |
+| Código      | I206-E1 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/df1b66eb-7f89-4736-9512-c228a7ce6286)|
 
 #### 3. Prototipos del módulo de Almacén
 
