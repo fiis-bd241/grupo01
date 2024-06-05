@@ -2422,10 +2422,11 @@ SELECT * FROM estado_reclamo
 ``` sql 
 UPDATE seguimiento s
 JOIN reclamo r ON s.cod_seguimiento = r.cod_seguimiento
+JOIN estado_reclamo er ON er.cod_estado_reclamo = r.cod_estado_reclamo
 SET s.numero_caso = s.numero_caso - 1
 WHERE s.numero_caso > 0 
 AND s.cod_cliente_interno = valor1
-AND r.cod_reclamo = valor2;
+AND er.cod_estado_reclamo = ‘valor2’;
 ```
 Donde el ‘valor2’ es ‘resuelto’ o ‘rechazado’. 
 
