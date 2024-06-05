@@ -4066,6 +4066,15 @@ Miguel Anderson Inocente Caro
     </a>
 </div>
 
+### Módulo de Seguimiento
+Integrante: [Dennis Leopoldo Campos Herrera](https://github.com/fiis-bd241/grupo01/blob/e11964c8d98cf930b2a1f7a0ef1d839365c7b5ca/01.%20integrantes/Dennis%20Campos%20/Dennis%20Campos.md)
+
+<div align="center">
+    <a href="http://www.youtube.com/watch?feature=player_embedded&v=u1CBCqJ6Z0" target="_blank">
+        <img src="http://img.youtube.com/vi/u1CBCqJ6Z0/0.jpg" alt="Hola k ase 2.0" width="600" height="400" border="10" />
+    </a>
+</div>
+
 ### 4. Módulo de Control 
 Alex Espinoza Cerna
 
