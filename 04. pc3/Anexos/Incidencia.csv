@@ -284,9 +284,9 @@ id_traslado,cod_tipo_incidencia,descripcion,fecha_ocurrencia, hora_ocurrencia,co
 283,C,La documentación presenta datos erróneos,2026-03-21,18:25:40,S
 284,D,El vehiculo sufrió derrame de aceite,2026-05-01,20:35:45,P
 285,E,La direccion no coincide con el pedido del cliente,2026-06-12,22:45:50,S
-286,C,El transportista no se le dio la documentación correspondiente,2026-07-23,01:55:55,P
+286,C,El transportista no se le dio la documentación correspondiente,2024-07-23,01:55:55,P
 287,B,El sello del paquete está dañado,2026-09-03,04:05:00,S
-288,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2026-10-14,06
+288,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-07-23,01:55:55,P
 289, D, El vehículo asignado no enciende, 2026-11-24, 08:15:05, S
 290, E, La direccion asignada presenta demasiado tráfico, 2026-01-04, 10:25:10, P
 291, A, La fecha de entrega no coincide con la fecha establecida de llegada, 2026-02-14, 12:35:15, S
