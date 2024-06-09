@@ -396,15 +396,15 @@ id_traslado,cod_tipo_incidencia,descripcion,fecha_ocurrencia, hora_ocurrencia,co
 395,B,Hay paquetes que no están sellados correctamente,2025-01-26,03:55:25,P
 396,C,La documentación presenta datos erróneos,2025-03-08,06:05:30,S
 397,D,El vehiculo sufrió derrame de aceite,2025-04-19,08:15:35,P
-398,E,La direccion no coincide con el pedido del cliente,2025-05-31,10:25:40,S
+398,E,La direccion no coincide con el pedido del cliente,2023-05-31,10:25:40,S
 399,C,El transportista no se le dio la documentación correspondiente,2025-07-11,12:35:45,P
 400,B,El sello del paquete está dañado,2025-08-22,14:45:50,S
-401,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2025-10-03,16:55:55,P
+401,A,Ocurrió un accidente en la carretera que retrasó la entrega del pedido,2024-10-03,16:55:55,P
 402,D,El vehículo asignado no enciende,2025-11-14,19:05:00,S
 403,E,La direccion asignada presenta demasiado tráfico,2025-12-25,21:15:05,P
 404,A,La fecha de entrega no coincide con la fecha establecida de llegada,2026-02-05,23:25:10,S
 405,B,Hay paquetes que no están sellados correctamente,2026-03-18,01:35:15,P
-406,C,La documentación presenta datos erróneos,2026-04-29,03:45:20,S
-407,D,El vehiculo sufrió derrame de aceite,2026-06-09,05:55:25,P
-408,E,La direccion no coincide con el pedido del cliente,2026-07-20
+406,C,La documentación presenta datos erróneos,2024-04-29,03:45:20,S
+407,D,El vehiculo sufrió derrame de aceite,2024-06-09,05:55:25,P
+408,E,La direccion no coincide con el pedido del cliente,2023-07-24,10:25:40,S
 
