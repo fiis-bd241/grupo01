@@ -1955,9 +1955,11 @@ En el caso de que la pantalla actual sea de tipo "Descarga", como se mencionó, 
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
+
 ## Evento:
 ### Ver conductores: 
 Se mostrará en pantalla la lista de todos los conductores para poder registrar su disponibilidad en base a los datos correspondiente a cada uno.
+
 ``` sql
 SELECT 
     t.cod_transportista AS "Código del Conductor",
@@ -1995,9 +1997,11 @@ JOIN
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
+
 ## Evento:
 ### Botón Estado: 
 El botón sirve para que el administrador pueda cambiar el estado de disponibilidad del conductor  que puede ser Disponible, No Disponible y Cuarentena.
+
 ``` sql
 UPDATE Conductor SET cod_estado_transportista = <1> WHERE cod_transportista = <2>
 ```
@@ -2022,9 +2026,11 @@ UPDATE Conductor SET cod_estado_transportista = <1> WHERE cod_transportista = <2
       <td colspan="2">Sentencias SQL</td>
    </tr>
 </table>
+
 ## Evento:
 ### Ver Vehículos: 
 Se mostrará en pantalla la lista de todos los vehículos para poder registrar su disponibilidad en base a los datos correspondiente a cada uno.
+
 ``` sql
 SELECT 
     v.cod_vehiculo AS "Código del Vehículo",
