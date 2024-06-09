@@ -1,1 +1,11 @@
-
+id_traslado,cod_tipo_incidencia,descripcion,fecha_ocurrencia, hora_ocurrencia,cod_estado_incidencia) VALUES
+1, A, La fecha de entrega no coincide con la fecha establecida de llegada,2024-04-24,04:53:21,S
+2, B, Hay paquetes que no están sellados correctamente, 2024-05-03,04:53:21,P
+2, C, El transportista no se le dio la documentación correspondiente, 2024-05-05,04:53:21,S
+1, D, El vehículo asignado no enciende, 2024-04-28,04:53:21, P
+2, E, La direccion no coincide con el pedido del cliente, 2024-05-08,04:53:21,S
+2, C, La documentación presenta datos erróneos, 2024-05-10,04:53:21, S
+1, D, El vehiculo sufrió derrame de aceite , 2024-04-30, 04:53:21, S
+2, E, La direccion asignada presenta demasiado tráfico, 2024-05-12,04:53:21,P
+1, B, El sello del paquete está dañado, 2024-04-30,04:53:21,P
+1, A, Ocurrió un accidente en la carretera que retrasó la entrega del pedido, 2024-05-02,04:53:21,S
