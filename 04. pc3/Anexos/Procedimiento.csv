@@ -1,0 +1,11 @@
+cod_incidencia,cod_tipo_procedimiento,nombre, tiempo_estimado
+1,  A, Problema con la entrega,2
+2,  B, Problema con el etiquetado,1
+3,  C, Problema con la documentacion,4
+4,  D, Problema con el vehiculo,6
+5,  E, Problema con la ruta,3
+6,  C, Problema con el vehiculo,6
+7,  D, Problema con el vehiculo,6
+8,  E, Problema con la ruta,3
+9,  B, Problema con el etiquetado,1
+10, B, Problema con el etiquetado,1
