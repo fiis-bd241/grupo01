@@ -1,0 +1,12 @@
+cod_cliente,cod_cliente_tipo,cod_cliente_estado,nombre,ruc,razon_social,fecha_registro
+1,E,A,Mantenimiento,97873814540,San Fernando S.A.,2016-09-03
+2,E,A,Producción,23326050228,San Fernando S.A.,2016-12-14
+3,E,A,Lavanderia,48574787639,San Fernando S.A.,2015-06-01
+4,E,A,Camara,66296993094,San Fernando S.A.,2016-04-28
+5,E,A,Recursos Humanos,55536546702,San Fernando S.A.,2017-10-14
+6,E,A,Almacen,19414105408,San Fernando S.A.,2016-06-01
+7,E,V,plazaVea y Vivanda,94658940637,plazaVea y Vivanda S.A.,2016-07-27
+8,E,V,Tottus,71673785837,Tottus S.A.,2017-08-08
+9,E,V,Wong y Metro,96597111266,Wong y Metro S.A.,2017-02-23
+10,E,V,Makro,52236357491,Makro S.A.,2017-01-22
+11,E,V,Bodega: Mass,84372860493,Bodega: Mass S.A.,2016-10-16
