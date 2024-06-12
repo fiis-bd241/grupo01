@@ -3535,7 +3535,6 @@ CREATE TABLE IF NOT EXISTS mercancia (
  id_mercancia SERIAL,
  id_operacion_picking INT NOT NULL,
  nro_precinto CHAR(20) NULL DEFAULT NULL,
- peso_total FLOAT NOT NULL DEFAULT 0,
  PRIMARY KEY (id_mercancia),
  CONSTRAINT id_operacion_picking
  FOREIGN KEY (id_operacion_picking)
