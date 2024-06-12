@@ -3104,6 +3104,8 @@ DROP TABLE IF EXISTS cliente;
 DROP TABLE IF EXISTS persona;
 DROP TABLE IF EXISTS reporte_estado;
 DROP TABLE IF EXISTS reporte_formato;
+DROP TABLE IF EXISTS reporte_frecuencia;
+DROP TABLE IF EXISTS reporte_tipo;
 DROP TABLE IF EXISTS archivo_tipo;
 DROP TABLE IF EXISTS evidencia_tipo;
 DROP TABLE IF EXISTS nivel_urgencia;
@@ -3112,12 +3114,12 @@ DROP TABLE IF EXISTS reclamo_tipo;
 DROP TABLE IF EXISTS accion_tipo;
 DROP TABLE IF EXISTS norma_tipo;
 DROP TABLE IF EXISTS procedimiento_tipo;
+DROP TABLE IF EXISTS incidencia_estado;
 DROP TABLE IF EXISTS incidencia_tipo;
 DROP TABLE IF EXISTS pedido_estado;
 DROP TABLE IF EXISTS pedido_tipo;
 DROP TABLE IF EXISTS paradero_tipo;
-DROP TABLE IF EXISTS local_distrito;
-DROP TABLE IF EXISTS local_region;
+DROP TABLE IF EXISTS local_ubigeo;
 DROP TABLE IF EXISTS local_tipo;
 DROP TABLE IF EXISTS operacion_tipo;
 DROP TABLE IF EXISTS licencia_tipo;
@@ -3249,16 +3251,15 @@ CREATE TABLE IF NOT EXISTS local_tipo (
  PRIMARY KEY (cod_local_tipo)
 );
 
-CREATE TABLE IF NOT EXISTS local_region (
- cod_local_region INT NOT NULL,
- descripcion VARCHAR(16),
- PRIMARY KEY (cod_local_region)
-);
-
-CREATE TABLE IF NOT EXISTS local_distrito (
- cod_local_distrito INT NOT NULL,
- descripcion VARCHAR(64),
- PRIMARY KEY (cod_local_distrito)
+CREATE TABLE IF NOT EXISTS local_ubigeo (
+    cod_local_ubigeo INT NOT NULL,
+    departamento VARCHAR(50),
+    provincia VARCHAR(50),
+    distrito VARCHAR(50),
+    capital VARCHAR(50),
+    cod_region_natural INT NOT NULL,
+    region_natural VARCHAR(50),
+    PRIMARY KEY (cod_local_ubigeo)
 );
 
 CREATE TABLE IF NOT EXISTS paradero_tipo (
@@ -3283,6 +3284,11 @@ CREATE TABLE IF NOT EXISTS incidencia_tipo (
  cod_tipo_incidencia CHAR(1) NOT NULL,
  descripcion VARCHAR(60) NULL DEFAULT NULL,
  PRIMARY KEY (cod_tipo_incidencia)
+);
+
+CREATE TABLE IF NOT EXISTS incidencia_estado (
+    cod_estado_incidencia CHAR(1) PRIMARY KEY,
+    descripcion VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS procedimiento_tipo (
@@ -3333,10 +3339,22 @@ CREATE TABLE IF NOT EXISTS archivo_tipo (
  PRIMARY KEY (cod_tipo_archivo)
 );
 
+CREATE TABLE IF NOT EXISTS reporte_frecuencia (
+    cod_reporte_frecuencia INT PRIMARY KEY,
+    descripcion VARCHAR(50) NOT NULL,
+    cantidad_tiempo INT NOT NULL,
+    unidad_tiempo VARCHAR(20) NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS reporte_formato (
  cod_reporte_formato INT NOT NULL,
  descripcion VARCHAR(32),
  PRIMARY KEY (cod_reporte_formato)
+);
+
+CREATE TABLE IF NOT EXISTS reporte_tipo (
+    cod_reporte_tipo INT PRIMARY KEY,
+    descripcion VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS reporte_estado (
@@ -3474,7 +3492,7 @@ cod_transportista SERIAL NOT NULL,
 cod_empleado INT NOT NULL,
 cod_estado_transportista CHAR(1) DEFAULT NULL,
 cod_tipo_licencia CHAR(1) NULL DEFAULT NULL,
-num_licencia VARCHAR(7) NULL DEFAULT NULL,
+num_licencia CHAR(9) NULL DEFAULT NULL,
 fecha_vencimiento_licencia DATE NOT NULL,
 fecha_ultimo_traslado DATE NULL DEFAULT NULL,
 PRIMARY KEY (cod_transportista),
@@ -3546,7 +3564,6 @@ CREATE TABLE IF NOT EXISTS gps (
  cod_ubicacion INT NOT NULL,
  cod_vehiculo INT NOT NULL,
  fecha_ubicacion DATE NOT NULL,
- hora_ubicacion TIME NOT NULL,
  PRIMARY KEY (cod_gps),
  CONSTRAINT cod_ubicacion
  FOREIGN KEY (cod_ubicacion)
@@ -3561,11 +3578,10 @@ CREATE TABLE IF NOT EXISTS "local" (
  cod_cliente INT NOT NULL,
  cod_ubicacion INT NOT NULL,
  cod_local_tipo INT NOT NULL,
- cod_local_region INT NOT NULL,
- cod_local_distrito INT NOT NULL,
+ cod_local_ubigeo INT NOT NULL,
  calle VARCHAR(64) NULL,
  numero INT NULL,
- denominacion VARCHAR(64) NOT NULL,
+ denominacion VARCHAR(64) NULL DEFAULT NULL,
  pais VARCHAR(8) NOT NULL,
  PRIMARY KEY (cod_local),
  CONSTRAINT cod_cliente
@@ -3577,12 +3593,9 @@ CREATE TABLE IF NOT EXISTS "local" (
  CONSTRAINT cod_local_tipo
  FOREIGN KEY (cod_local_tipo)
  REFERENCES local_tipo (cod_local_tipo),
- CONSTRAINT cod_local_region
- FOREIGN KEY (cod_local_region)
- REFERENCES local_region (cod_local_region),
- CONSTRAINT cod_local_distrito
- FOREIGN KEY (cod_local_distrito)
- REFERENCES local_distrito (cod_local_distrito)
+ CONSTRAINT cod_local_ubigeo
+ FOREIGN KEY (cod_local_ubigeo)
+ REFERENCES local_ubigeo (cod_local_ubigeo)
 );
 
 CREATE TABLE IF NOT EXISTS paradero (
@@ -3653,12 +3666,12 @@ CREATE TABLE IF NOT EXISTS pedido (
 
 CREATE TABLE IF NOT EXISTS traslado (
  id_traslado SERIAL,
- cod_guia_remision CHAR(21) NULL,
  cod_vehiculo INT NOT NULL,
  cod_ruta INT NOT NULL,
  cod_transportista INT NOT NULL,
  id_operacion_inicia INT NOT NULL,
  id_operacion_termina INT NULL DEFAULT NULL,
+ cod_guia_remision CHAR(21) NULL,
  PRIMARY KEY (id_traslado),
  CONSTRAINT id_operacion_inicia
  FOREIGN KEY (id_operacion_inicia)
@@ -3708,14 +3721,19 @@ CREATE TABLE IF NOT EXISTS incidencia (
  id_traslado INT NOT NULL,
  cod_tipo_incidencia CHAR(1) NOT NULL,
  descripcion VARCHAR(128) NULL DEFAULT NULL,
- fecha_ocurrencia DATE NULL DEFAULT NULL,
+ fecha_ocurrencia DATE NOT NULL,
+ hora_ocurrencia TIME NOT NULL,
+ cod_estado_incidencia CHAR(1) NOT NULL,
  PRIMARY KEY (cod_incidencia),
  CONSTRAINT id_traslado
  FOREIGN KEY (id_traslado)
  REFERENCES traslado (id_traslado),
  CONSTRAINT cod_tipo_incidencia
  FOREIGN KEY (cod_tipo_incidencia)
- REFERENCES incidencia_tipo (cod_tipo_incidencia)
+ REFERENCES incidencia_tipo (cod_tipo_incidencia),
+ CONSTRAINT cod_estado_incidencia
+ FOREIGN KEY (cod_estado_incidencia)
+ REFERENCES incidencia_estado (cod_estado_incidencia)
 );
 
 CREATE TABLE IF NOT EXISTS procedimiento (
@@ -3818,9 +3836,9 @@ CREATE TABLE IF NOT EXISTS programacion_reporte (
  cod_programacion_reporte SERIAL NOT NULL,
  cod_representante INT NOT NULL,
  cod_reporte_formato INT NOT NULL,
- cod_reporte_estado INT NULL DEFAULT NULL,
- frecuencia VARCHAR(32) NULL DEFAULT NULL,
- filtros VARCHAR(32)[] NULL DEFAULT NULL,
+ cod_reporte_estado INT NOT NULL,
+ cod_reporte_tipo INT NOT NULL,
+ cod_reporte_frecuencia INT NOT NULL,
  fecha_inicio DATE NOT NULL,
  fecha_fin TIME NOT NULL,
  PRIMARY KEY (cod_programacion_reporte),
@@ -3832,25 +3850,39 @@ CREATE TABLE IF NOT EXISTS programacion_reporte (
  REFERENCES reporte_formato (cod_reporte_formato),
  CONSTRAINT cod_reporte_estado
  FOREIGN KEY (cod_reporte_estado)
- REFERENCES reporte_estado (cod_reporte_estado)
+ REFERENCES reporte_estado (cod_reporte_estado),
+ CONSTRAINT cod_reporte_tipo
+ FOREIGN KEY (cod_reporte_tipo)
+ REFERENCES reporte_tipo (cod_reporte_tipo),
+ CONSTRAINT cod_reporte_frecuencia
+ FOREIGN KEY (cod_reporte_frecuencia)
+ REFERENCES reporte_frecuencia (cod_reporte_frecuencia)
 );
 
 CREATE TABLE IF NOT EXISTS reporte (
  cod_reporte SERIAL NOT NULL,
- cod_programacion_reporte INT NOT NULL,
+ cod_representante INT NOT NULL,
+ cod_reporte_formato INT NOT NULL,
+ cod_reporte_tipo INT NOT NULL,
  fecha_generacion DATE NOT NULL,
  hora_generacion TIME NOT NULL,
  PRIMARY KEY (cod_reporte),
- CONSTRAINT cod_programacion_reporte
- FOREIGN KEY (cod_programacion_reporte)
- REFERENCES programacion_reporte (cod_programacion_reporte)
+ CONSTRAINT cod_reporte_representante
+ FOREIGN KEY (cod_representante)
+ REFERENCES representante (cod_representante),
+ CONSTRAINT cod_reporte_formato_fk
+ FOREIGN KEY (cod_reporte_formato)
+ REFERENCES reporte_formato (cod_reporte_formato),
+ CONSTRAINT cod_reporte_tipo_fk
+ FOREIGN KEY (cod_reporte_tipo)
+ REFERENCES reporte_tipo (cod_reporte_tipo)
 );
 
 /* LLENAR TABLAS */
 
 DO $$
 DECLARE
-    base_path TEXT := '/path/to/csv/'; --Cambiar a la ruta donde se almacenan los csv
+    base_path TEXT := '/Users/Joaquín/dbd/csv/'; --Cambiar a la ruta donde se almacenan los csv
 BEGIN
     EXECUTE 'COPY estado_civil FROM ' || quote_literal(base_path || 'Estado_civil.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY nacionalidad FROM ' || quote_literal(base_path || 'Nacionalidad.csv') || ' DELIMITER '','' CSV HEADER';
@@ -3870,12 +3902,12 @@ BEGIN
     EXECUTE 'COPY licencia_tipo FROM ' || quote_literal(base_path || 'Licencia_tipo.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY operacion_tipo FROM ' || quote_literal(base_path || 'Operacion_tipo.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY local_tipo FROM ' || quote_literal(base_path || 'Local_tipo.csv') || ' DELIMITER '','' CSV HEADER';
-    EXECUTE 'COPY local_region FROM ' || quote_literal(base_path || 'Local_region.csv') || ' DELIMITER '','' CSV HEADER';
-    EXECUTE 'COPY local_distrito FROM ' || quote_literal(base_path || 'Local_distrito.csv') || ' DELIMITER '','' CSV HEADER';
+    EXECUTE 'COPY local_ubigeo FROM ' || quote_literal(base_path || 'UBIGEOS_2022_1891_distritos.csv') || ' DELIMITER '';'' CSV HEADER';
     EXECUTE 'COPY paradero_tipo FROM ' || quote_literal(base_path || 'Paradero_tipo.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY pedido_tipo FROM ' || quote_literal(base_path || 'Pedido_tipo.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY pedido_estado FROM ' || quote_literal(base_path || 'Pedido_estado.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY incidencia_tipo FROM ' || quote_literal(base_path || 'Incidencia_tipo.csv') || ' DELIMITER '','' CSV HEADER';
+    EXECUTE 'COPY incidencia_estado FROM ' || quote_literal(base_path || 'Incidencia_estado.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY procedimiento_tipo FROM ' || quote_literal(base_path || 'Procedimiento_tipo.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY norma_tipo FROM ' || quote_literal(base_path || 'Norma_tipo.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY accion_tipo FROM ' || quote_literal(base_path || 'Accion_tipo.csv') || ' DELIMITER '','' CSV HEADER';
@@ -3884,7 +3916,9 @@ BEGIN
     EXECUTE 'COPY nivel_urgencia FROM ' || quote_literal(base_path || 'Nivel_urgencia.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY evidencia_tipo FROM ' || quote_literal(base_path || 'Evidencia_tipo.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY archivo_tipo FROM ' || quote_literal(base_path || 'Archivo_tipo.csv') || ' DELIMITER '','' CSV HEADER';
+    EXECUTE 'COPY reporte_frecuencia FROM ' || quote_literal(base_path || 'Reporte_frecuencia.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY reporte_formato FROM ' || quote_literal(base_path || 'Reporte_formato.csv') || ' DELIMITER '','' CSV HEADER';
+    EXECUTE 'COPY reporte_tipo FROM ' || quote_literal(base_path || 'Reporte_tipo.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY reporte_estado FROM ' || quote_literal(base_path || 'Reporte_estado.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY persona FROM ' || quote_literal(base_path || 'Persona.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY cliente FROM ' || quote_literal(base_path || 'Cliente.csv') || ' DELIMITER '','' CSV HEADER';
@@ -3916,6 +3950,86 @@ BEGIN
     EXECUTE 'COPY programacion_reporte FROM ' || quote_literal(base_path || 'Programacion_reporte.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY reporte FROM ' || quote_literal(base_path || 'Reporte.csv') || ' DELIMITER '','' CSV HEADER';
 END $$;
+
+/* ACTUALIZAMOS VALORES DE LAS SECUENCIAS */
+
+-- Actualizar la secuencia para la tabla "persona"
+SELECT setval('persona_cod_persona_seq', (SELECT MAX(cod_persona) FROM persona));
+
+-- Actualizar la secuencia para la tabla "cliente"
+SELECT setval('cliente_cod_cliente_seq', (SELECT MAX(cod_cliente) FROM cliente));
+
+-- Actualizar la secuencia para la tabla "ubicacion"
+SELECT setval('ubicacion_cod_ubicacion_seq', (SELECT MAX(cod_ubicacion) FROM ubicacion));
+
+-- Actualizar la secuencia para la tabla "ticket"
+SELECT setval('ticket_cod_ticket_seq', (SELECT MAX(cod_ticket) FROM ticket));
+
+-- Actualizar la secuencia para la tabla "vehiculo"
+SELECT setval('vehiculo_cod_vehiculo_seq', (SELECT MAX(cod_vehiculo) FROM vehiculo));
+
+-- Actualizar la secuencia para la tabla "elemento_catalogo"
+SELECT setval('elemento_catalogo_id_elemento_catalogo_seq', (SELECT MAX(id_elemento_catalogo) FROM elemento_catalogo));
+
+-- Actualizar la secuencia para la tabla "ruta"
+SELECT setval('ruta_cod_ruta_seq', (SELECT MAX(cod_ruta) FROM ruta));
+
+-- Actualizar la secuencia para la tabla "empleado"
+SELECT setval('empleado_cod_empleado_seq', (SELECT MAX(cod_empleado) FROM empleado));
+
+-- Actualizar la secuencia para la tabla "transportista"
+SELECT setval('transportista_cod_transportista_seq', (SELECT MAX(cod_transportista) FROM transportista));
+
+-- Actualizar la secuencia para la tabla "operacion"
+SELECT setval('operacion_id_operacion_seq', (SELECT MAX(id_operacion) FROM operacion));
+
+-- Actualizar la secuencia para la tabla "mercancia"
+SELECT setval('mercancia_id_mercancia_seq', (SELECT MAX(id_mercancia) FROM mercancia));
+
+-- Actualizar la secuencia para la tabla "representante"
+SELECT setval('representante_cod_representante_seq', (SELECT MAX(cod_representante) FROM representante));
+
+-- Actualizar la secuencia para la tabla "gps"
+SELECT setval('gps_cod_gps_seq', (SELECT MAX(cod_gps) FROM gps));
+
+-- Actualizar la secuencia para la tabla "local"
+SELECT setval('"local_cod_local_seq"', (SELECT MAX(cod_local) FROM "local"));
+
+-- Actualizar la secuencia para la tabla "paradero"
+SELECT setval('paradero_cod_paradero_seq', (SELECT MAX(cod_paradero) FROM paradero));
+
+-- Actualizar la secuencia para la tabla "stock"
+SELECT setval('stock_id_stock_seq', (SELECT MAX(id_stock) FROM stock));
+
+-- Actualizar la secuencia para la tabla "pedido"
+SELECT setval('pedido_cod_pedido_seq', (SELECT MAX(cod_pedido) FROM pedido));
+
+-- Actualizar la secuencia para la tabla "traslado"
+SELECT setval('traslado_id_traslado_seq', (SELECT MAX(id_traslado) FROM traslado));
+
+-- Actualizar la secuencia para la tabla "incidencia"
+SELECT setval('incidencia_cod_incidencia_seq', (SELECT MAX(cod_incidencia) FROM incidencia));
+
+-- Actualizar la secuencia para la tabla "procedimiento"
+SELECT setval('procedimiento_cod_procedimiento_seq', (SELECT MAX(cod_procedimiento) FROM procedimiento));
+
+-- Actualizar la secuencia para la tabla "norma"
+SELECT setval('norma_cod_norma_seq', (SELECT MAX(cod_norma) FROM norma));
+
+-- Actualizar la secuencia para la tabla "seguimiento"
+SELECT setval('seguimiento_cod_seguimiento_seq', (SELECT MAX(cod_seguimiento) FROM seguimiento));
+
+-- Actualizar la secuencia para la tabla "reclamo"
+SELECT setval('reclamo_cod_reclamo_seq', (SELECT MAX(cod_reclamo) FROM reclamo));
+
+-- Actualizar la secuencia para la tabla "evidencia"
+SELECT setval('evidencia_cod_evidencia_seq', (SELECT MAX(cod_evidencia) FROM evidencia));
+
+-- Actualizar la secuencia para la tabla "programacion_reporte"
+SELECT setval('programacion_reporte_cod_programacion_reporte_seq', (SELECT MAX(cod_programacion_reporte) FROM programacion_reporte));
+
+-- Actualizar la secuencia para la tabla "reporte"
+SELECT setval('reporte_cod_reporte_seq', (SELECT MAX(cod_reporte) FROM reporte));
 
 ```
 
