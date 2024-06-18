@@ -1,0 +1,13 @@
+# Cuarta práctica calificada - Informe      
+
+## 1. Índices y otros objetos de BD
+
+## 2. PL/pgSQL – Proceso Batch
+
+## 3. Actualizaciones a la Arquitectura de la Aplicación
+
+## 4. Versión Final de la Aplicación
+
+## 5. Próximos Pasos
+
+## 6. Bonus: NoSQL
