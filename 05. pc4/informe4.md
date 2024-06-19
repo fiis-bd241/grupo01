@@ -22,12 +22,11 @@ Cada fin de mes se actualiza el estado del vehículo a 'No disponible' para los 
 ```sql
 CREATE OR REPLACE FUNCTION actualizar_mantenimiento_y_estado() RETURNS void AS $$
 BEGIN
-    -- Actualizar la fecha de último mantenimiento a la fecha actual para vehículos cuyo mantenimiento vence dentro del próximo mes
     UPDATE vehiculo
     SET
         cod_vehiculo_estado = 'N'
     WHERE 
-        fecha_ultimo_mantenimiento <= CURRENT_DATE - INTERVAL '11 months';
+        EXTRACT(year FROM AGE(v.fecha_ultimo_mantenimiento))>=1;
 END;
 $$ LANGUAGE plpgsql;
 ```
@@ -39,7 +38,6 @@ Anualmente se actualiza el estado  a 'No disponible' a los vehículos que están
 ```sql
 CREATE OR REPLACE FUNCTION actualizar_estado_vehiculos_antiguos() RETURNS void AS $$
 BEGIN
-    -- Actualizar el estado del vehículo a 'N' para vehículos que están por cumplir 15 años de antigüedad
     UPDATE vehiculo
     SET 
         cod_vehiculo_estado = 'N'
