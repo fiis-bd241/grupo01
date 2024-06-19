@@ -26,7 +26,7 @@ DECLARE
         SELECT cod_vehiculo, fecha_ultimo_mantenimiento
         FROM vehiculo;
 BEGIN
-	FOR v IN vehiculo_cursor LOOP       
+    FOR v IN vehiculo_cursor LOOP       
         IF EXTRACT(YEAR FROM AGE(CURRENT_DATE, v.fecha_ultimo_mantenimiento)) * 12 +
            EXTRACT(MONTH FROM AGE(CURRENT_DATE, v.fecha_ultimo_mantenimiento)) >= 11
 	THEN
@@ -35,7 +35,6 @@ BEGIN
             WHERE cod_vehiculo = v.cod_vehiculo;
         END IF;
     END LOOP;
-    CLOSE vehiculo_cursor;
 END;
 $$ LANGUAGE plpgsql;
 ```
@@ -46,12 +45,20 @@ Anualmente se actualiza el estado  a 'No disponible' a los vehículos que están
 
 ```sql
 CREATE OR REPLACE FUNCTION actualizar_estado_vehiculos_antiguos() RETURNS void AS $$
+DECLARE
+	vehiculo_cursor CURSOR FOR
+		SELECT cod_vehiculo, anio_fabricacion
+        FROM vehiculo;
 BEGIN
-    UPDATE vehiculo
-    SET 
-        cod_vehiculo_estado = 'N'
-    WHERE 
-        anio_fabricacion <= EXTRACT(YEAR FROM CURRENT_DATE) - 15;
+	FOR v IN vehiculo_cursor LOOP
+		IF 
+			v.anio_fabricacion <= EXTRACT(YEAR FROM CURRENT_DATE) - 15
+		THEN
+	    	UPDATE vehiculo
+        	SET cod_vehiculo_estado = 'N'
+        	WHERE cod_vehiculo = v.cod_vehiculo;
+		END IF;
+    END LOOP;
 END;
 $$ LANGUAGE plpgsql;
 ```
