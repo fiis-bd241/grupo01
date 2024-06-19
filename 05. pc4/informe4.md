@@ -46,19 +46,19 @@ Anualmente se actualiza el estado  a 'No disponible' a los vehículos que están
 ```sql
 CREATE OR REPLACE FUNCTION actualizar_estado_vehiculos_antiguos() RETURNS void AS $$
 DECLARE
-	vehiculo_cursor CURSOR FOR
-		SELECT cod_vehiculo, anio_fabricacion
+   vehiculo_cursor CURSOR FOR
+	SELECT cod_vehiculo, anio_fabricacion
         FROM vehiculo;
 BEGIN
-	FOR v IN vehiculo_cursor LOOP
-		IF 
-			v.anio_fabricacion <= EXTRACT(YEAR FROM CURRENT_DATE) - 15
-		THEN
-	    	UPDATE vehiculo
-        	SET cod_vehiculo_estado = 'N'
-        	WHERE cod_vehiculo = v.cod_vehiculo;
-		END IF;
-    END LOOP;
+   FOR v IN vehiculo_cursor LOOP
+	IF 
+	   v.anio_fabricacion <= EXTRACT(YEAR FROM CURRENT_DATE) - 15
+	THEN
+	   UPDATE vehiculo
+   	   SET cod_vehiculo_estado = 'N'
+	   WHERE cod_vehiculo = v.cod_vehiculo;
+	END IF;
+   END LOOP;
 END;
 $$ LANGUAGE plpgsql;
 ```
