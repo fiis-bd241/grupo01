@@ -56,4 +56,4 @@ $$ LANGUAGE plpgsql;
 
 ## 5. Próximos Pasos
 
-## 6. Bonus: NoSQL
+## 6. NoSQL
