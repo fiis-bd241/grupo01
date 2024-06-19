@@ -26,8 +26,8 @@ BEGIN
     SET
         cod_vehiculo_estado = 'N'
     WHERE 
-        WHERE EXTRACT(YEAR FROM AGE(CURRENT_DATE, v.fecha_ultimo_mantenimiento))*12+
-	    EXTRACT(MONTH FROM AGE(CURRENT_DATE, v.fecha_ultimo_mantenimiento))>=11
+        EXTRACT(YEAR FROM AGE(CURRENT_DATE, v.fecha_ultimo_mantenimiento))*12+
+	EXTRACT(MONTH FROM AGE(CURRENT_DATE, v.fecha_ultimo_mantenimiento))>=11
 END;
 $$ LANGUAGE plpgsql;
 ```
