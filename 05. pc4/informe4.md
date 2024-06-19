@@ -21,14 +21,23 @@ Cada fin de mes se actualiza el estado del vehículo a 'No disponible' para los 
 
 ```sql
 CREATE OR REPLACE FUNCTION actualizar_mantenimiento_y_estado() RETURNS void AS $$
+DECLARE
+    vehiculo_cursor CURSOR FOR
+        SELECT cod_vehiculo, fecha_ultimo_mantenimiento
+        FROM vehiculo;
 BEGIN
-    UPDATE vehiculo
-    SET
-        cod_vehiculo_estado = 'N'
-    WHERE 
-        EXTRACT(YEAR FROM AGE(CURRENT_DATE, v.fecha_ultimo_mantenimiento))*12+
-	EXTRACT(MONTH FROM AGE(CURRENT_DATE, v.fecha_ultimo_mantenimiento))>=11
+	FOR v IN vehiculo_cursor LOOP       
+        IF EXTRACT(YEAR FROM AGE(CURRENT_DATE, v.fecha_ultimo_mantenimiento)) * 12 +
+           EXTRACT(MONTH FROM AGE(CURRENT_DATE, v.fecha_ultimo_mantenimiento)) >= 11
+	THEN
+            UPDATE vehiculo
+            SET cod_vehiculo_estado = 'N'
+            WHERE cod_vehiculo = v.cod_vehiculo;
+        END IF;
+    END LOOP;
+    CLOSE vehiculo_cursor;
 END;
+$$ LANGUAGE plpgsql;
 $$ LANGUAGE plpgsql;
 ```
 
