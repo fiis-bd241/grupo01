@@ -38,7 +38,6 @@ BEGIN
     CLOSE vehiculo_cursor;
 END;
 $$ LANGUAGE plpgsql;
-$$ LANGUAGE plpgsql;
 ```
 
 ### Proceso B002: Actualización del estado del vehículo por años de antigüedad
