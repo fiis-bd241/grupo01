@@ -9,3 +9,93 @@ cod_reclamo,cod_representante,cod_pedido,cod_seguimiento,cod_tipo_reclamo,cod_ni
 8,8,15,8,A,A,B,El muslo de pollo congelado recibido está congelado en exceso y presenta cristales de hielo.,2024-02-26,2024-02-29
 9,9,17,9,D,M,C,El detergente SuperClean recibido tiene el envase roto y parte del contenido se ha derramado.,2024-04-21,2024-04-22
 10,10,19,10,C,A,A,Las pechugas enteras de pollos frescas recibidas están en mal estado y los colorantes naturales Chroma no se incluyeron en el pedido.,2024-04-22,2024-04-23
+11,11,21,11,E,B,A,El pedido de alas de pollo frescas llegó con un retraso significativo.,2024-04-24,2024-04-25
+12,12,23,12,F,M,D,La factura del pedido tiene errores en los importes y no coincide con los productos recibidos.,2024-04-26,2024-04-26
+13,13,25,13,G,A,B,Las bandejas de pollo no cumplían con las normas de higiene y seguridad alimentaria.,2024-04-27,2024-04-29
+14,14,27,14,B,M,C,La cantidad de muslos de pollo recibidos es incorrecta, faltan unidades.,2024-04-30,2024-05-01
+15,15,29,15,A,A,C,Los filetes de pollo frescos están en mal estado y huelen mal.,2024-05-02,2024-05-02
+16,16,31,16,D,B,B,Las cajas de embalaje del pollo congelado estaban dañadas y el producto no estaba bien protegido.,2024-05-04,2024-05-06
+17,17,33,17,C,M,A,Las piezas de pollo recibidas no coinciden con lo solicitado, enviaron pechugas en lugar de muslos.,2024-05-07,2024-05-07
+18,18,35,18,A,A,D,Las alas de pollo están mal cortadas y algunas piezas tienen huesos astillados.,2024-05-08,2024-05-09
+19,19,37,19,E,M,C,El pedido de pollo llegó tarde y afectó la producción.,2024-05-10,2024-05-11
+20,20,39,20,F,B,A,El pago de la factura no se registró correctamente y generó retrasos en la entrega.,2024-05-12,2024-05-13
+21,21,41,21,G,A,C,Los muslos de pollo frescos no cumplían con las normas de higiene esperadas.,2024-05-14,2024-05-15
+22,22,43,22,B,M,D,La cantidad de pollos enteros recibidos no coincide con lo solicitado.,2024-05-16,2024-05-18
+23,23,45,23,A,A,B,Los nuggets de pollo congelado llegaron en mal estado y presentan quemaduras de congelación.,2024-05-19,2024-05-20
+24,24,47,24,D,B,A,El embalaje del pollo fresco estaba roto y afectó la calidad del producto.,2024-05-21,2024-05-22
+25,25,49,25,C,M,C,El pedido incluía productos incorrectos, recibimos pechugas en lugar de muslos.,2024-05-23,2024-05-23
+26,26,51,26,A,A,D,Las alitas de pollo no cumplen con el tamaño especificado en el pedido.,2024-05-24,2024-05-25
+27,27,53,27,E,M,B,El pedido de productos de oficina llegó con un retraso significativo.,2024-05-26,2024-05-27
+28,28,55,28,F,B,A,Hubo problemas con la facturación del pedido de suministros industriales.,2024-05-28,2024-05-29
+29,29,57,29,G,A,C,Los guantes de protección no cumplían con las normas de seguridad.,2024-05-30,2024-05-31
+30,30,59,30,B,M,D,La cantidad de mascarillas recibidas no coincide con lo solicitado.,2024-06-01,2024-06-02
+31,31,61,31,A,A,B,Los pollos frescos llegaron con quemaduras de frío y no son aptos para su venta.,2024-06-03,2024-06-04
+32,32,63,32,D,B,A,El embalaje del pollo fresco estaba roto y afectó la calidad del producto.,2024-06-05,2024-06-06
+33,33,65,33,C,M,C,El pedido incluía productos incorrectos, recibimos muslos en lugar de pechugas.,2024-06-07,2024-06-08
+34,34,67,34,A,A,D,Las alitas de pollo no cumplen con el tamaño especificado en el pedido.,2024-06-09,2024-06-10
+35,35,69,35,E,M,B,El pedido de productos de oficina llegó con un retraso significativo.,2024-06-11,2024-06-12
+36,36,71,36,F,B,A,Hubo problemas con la facturación del pedido de suministros industriales.,2024-06-13,2024-06-14
+37,37,73,37,G,A,C,Los guantes de protección no cumplían con las normas de seguridad.,2024-06-15,2024-06-16
+38,38,75,38,B,M,D,La cantidad de mascarillas recibidas no coincide con lo solicitado.,2024-06-17,2024-06-18
+39,39,77,39,A,A,B,Los pollos frescos llegaron con quemaduras de frío y no son aptos para su venta.,2024-06-19,2024-06-20
+40,40,79,40,D,B,A,El embalaje del pollo fresco estaba roto y afectó la calidad del producto.,2024-06-21,2024-06-22
+41,41,81,41,C,M,C,El pedido incluía productos incorrectos, recibimos muslos en lugar de pechugas.,2024-06-23,2024-06-24
+42,42,83,42,A,A,D,Las alitas de pollo no cumplen con el tamaño especificado en el pedido.,2024-06-25,2024-06-26
+43,43,85,43,E,M,B,El pedido de productos de oficina llegó con un retraso significativo.,2024-06-27,2024-06-28
+44,44,87,44,F,B,A,Hubo problemas con la facturación del pedido de suministros industriales.,2024-06-29,2024-06-30
+45,45,89,45,G,A,C,Los guantes de protección no cumplían con las normas de seguridad.,2024-07-01,2024-07-02
+46,46,91,46,B,M,D,La cantidad de mascarillas recibidas no coincide con lo solicitado.,2024-07-03,2024-07-04
+47,47,93,47,A,A,B,Los pollos frescos llegaron con quemaduras de frío y no son aptos para su venta.,2024-07-05,2024-07-06
+48,48,95,48,D,B,A,El embalaje del pollo fresco estaba roto y afectó la calidad del producto.,2024-07-07,2024-07-08
+49,49,97,49,C,M,C,El pedido incluía productos incorrectos, recibimos muslos en lugar de pechugas.,2024-07-09,2024-07-10
+50,50,99,50,A,A,D,Las alitas de pollo no cumplen con el tamaño especificado en el pedido.,2024-07-11,2024-07-12
+51,51,101,51,E,M,B,El pedido de productos de oficina llegó con un retraso significativo.,2024-07-13,2024-07-14
+52,52,103,52,F,B,A,Hubo problemas con la facturación del pedido de suministros industriales.,2024-07-15,2024-07-16
+53,53,105,53,G,A,C,Los guantes de protección no cumplían con las normas de seguridad.,2024-07-17,2024-07-18
+54,54,107,54,B,M,D,La cantidad de mascarillas recibidas no coincide con lo solicitado.,2024-07-19,2024-07-20
+55,55,109,55,A,A,B,Los pollos frescos llegaron con quemaduras de frío y no son aptos para su venta.,2024-07-21,2024-07-22
+56,56,111,56,D,B,A,El embalaje del pollo fresco estaba roto y afectó la calidad del producto.,2024-07-23,2024-07-24
+57,57,113,57,C,M,C,El pedido incluía productos incorrectos, recibimos muslos en lugar de pechugas.,2024-07-25,2024-07-26
+58,58,115,58,A,A,D,Las alitas de pollo no cumplen con el tamaño especificado en el pedido.,2024-07-27,2024-07-28
+59,117,59,E,M,B,El pedido de productos de oficina llegó con un retraso significativo.,2024-07-29,2024-07-30
+60,60,119,60,F,B,A,Hubo problemas con la facturación del pedido de suministros industriales.,2024-07-31,2024-08-01
+61,61,121,61,G,A,C,Los guantes de protección no cumplían con las normas de seguridad.,2024-08-02,2024-08-03
+62,62,123,62,B,M,D,La cantidad de mascarillas recibidas no coincide con lo solicitado.,2024-08-04,2024-08-05
+63,63,125,63,A,A,B,Los pollos frescos llegaron con quemaduras de frío y no son aptos para su venta.,2024-08-06,2024-08-07
+64,64,127,64,D,B,A,El embalaje del pollo fresco estaba roto y afectó la calidad del producto.,2024-08-08,2024-08-09
+65,65,129,65,C,M,C,El pedido incluía productos incorrectos, recibimos muslos en lugar de pechugas.,2024-08-10,2024-08-11
+66,66,131,66,A,A,D,Las alitas de pollo no cumplen con el tamaño especificado en el pedido.,2024-08-12,2024-08-13
+67,67,133,67,E,M,B,El pedido de productos de oficina llegó con un retraso significativo.,2024-08-14,2024-08-15
+68,68,135,68,F,B,A,Hubo problemas con la facturación del pedido de suministros industriales.,2024-08-16,2024-08-17
+69,69,137,69,G,A,C,Los guantes de protección no cumplían con las normas de seguridad.,2024-08-18,2024-08-19
+70,70,139,70,B,M,D,La cantidad de mascarillas recibidas no coincide con lo solicitado.,2024-08-20,2024-08-21
+71,71,141,71,A,A,B,Los pollos frescos llegaron con quemaduras de frío y no son aptos para su venta.,2024-08-22,2024-08-23
+72,72,143,72,D,B,A,El embalaje del pollo fresco estaba roto y afectó la calidad del producto.,2024-08-24,2024-08-25
+73,73,145,73,C,M,C,El pedido incluía productos incorrectos, recibimos muslos en lugar de pechugas.,2024-08-26,2024-08-27
+74,74,147,74,A,A,D,Las alitas de pollo no cumplen con el tamaño especificado en el pedido.,2024-08-28,2024-08-29
+75,75,149,75,E,M,B,El pedido de productos de oficina llegó con un retraso significativo.,2024-08-30,2024-08-31
+76,76,151,76,F,B,A,Hubo problemas con la facturación del pedido de suministros industriales.,2024-09-01,2024-09-02
+77,77,153,77,G,A,C,Los guantes de protección no cumplían con las normas de seguridad.,2024-09-03,2024-09-04
+78,78,155,78,B,M,D,La cantidad de mascarillas recibidas no coincide con lo solicitado.,2024-09-05,2024-09-06
+79,79,157,79,A,A,B,Los pollos frescos llegaron con quemaduras de frío y no son aptos para su venta.,2024-09-07,2024-09-08
+80,80,159,80,D,B,A,El embalaje del pollo fresco estaba roto y afectó la calidad del producto.,2024-09-09,2024-09-10
+81,81,161,81,C,M,C,El pedido incluía productos incorrectos, recibimos muslos en lugar de pechugas.,2024-09-11,2024-09-12
+82,82,163,82,A,A,D,Las alitas de pollo no cumplen con el tamaño especificado en el pedido.,2024-09-13,2024-09-14
+83,83,165,83,E,M,B,El pedido de productos de oficina llegó con un retraso significativo.,2024-09-15,2024-09-16
+84,84,167,84,F,B,A,Hubo problemas con la facturación del pedido de suministros industriales.,2024-09-17,2024-09-18
+85,85,169,85,G,A,C,Los guantes de protección no cumplían con las normas de seguridad.,2024-09-19,2024-09-20
+86,86,171,86,B,M,D,La cantidad de mascarillas recibidas no coincide con lo solicitado.,2024-09-21,2024-09-22
+87,87,173,87,A,A,B,Los pollos frescos llegaron con quemaduras de frío y no son aptos para su venta.,2024-09-23,2024-09-24
+88,88,175,88,D,B,A,El embalaje del pollo fresco estaba roto y afectó la calidad del producto.,2024-09-25,2024-09-26
+89,89,177,89,C,M,C,El pedido incluía productos incorrectos, recibimos muslos en lugar de pechugas.,2024-09-27,2024-09-28
+90,90,179,90,A,A,D,Las alitas de pollo no cumplen con el tamaño especificado en el pedido.,2024-09-29,2024-09-30
+91,91,181,91,E,B,A,El pedido de pechugas de pollo llegó con retraso y afectó la producción.,2024-10-01,2024-10-02
+92,92,183,92,F,M,D,La factura del pedido de pollos frescos contiene errores en los importes.,2024-10-03,2024-10-04
+93,93,185,93,G,A,B,Las alas de pollo frescas no cumplían con las normas de higiene.,2024-10-05,2024-10-06
+94,94,187,94,B,M,C,La cantidad de pollos enteros recibidos es incorrecta, faltan unidades.,2024-10-07,2024-10-08
+95,95,189,95,A,A,C,Los muslos de pollo frescos están en mal estado y huelen mal.,2024-10-09,2024-10-10
+96,96,191,96,D,B,B,El embalaje del pollo congelado estaba dañado y el producto no estaba bien protegido.,2024-10-11,2024-10-12
+97,97,193,97,C,M,A,Los filetes de pollo recibidos no coinciden con lo solicitado, enviaron muslos en lugar de pechugas.,2024-10-13,2024-10-14
+98,98,195,98,A,A,D,Las alas de pollo congeladas están mal cortadas y algunas piezas tienen huesos astillados.,2024-10-15,2024-10-16
+99,99,197,99,E,M,C,El pedido de pollo llegó tarde y afectó la operación del restaurante.,2024-10-17,2024-10-18
+100,100,199,100,A,B,B,La carne de pollo fresca no estaba bien refrigerada y presentaba mal olor.,2024-10-01,2024-10-02
