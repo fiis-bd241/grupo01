@@ -11,5 +11,3 @@ cod_reclamo,cod_representante,cod_pedido,cod_seguimiento,cod_tipo_reclamo,cod_ni
 10,10,19,10,C,A,A,Las pechugas enteras de pollos frescas recibidas están en mal estado y los colorantes naturales Chroma no se incluyeron en el pedido.,2024-04-22,2024-04-23
 11,11,21,11,E,B,A,El pedido de alas de pollo frescas llegó con un retraso significativo.,2024-04-24,2024-04-25
 12,12,23,12,F,M,D,La factura del pedido tiene errores en los importes y no coincide con los productos recibidos.,2024-04-26,2024-04-26
-13,13,25,13,G,A,B,Las bandejas de pollo no cumplían con las normas de higiene y seguridad alimentaria.,2024-04-27,2024-04-29
-14,14,27,14,B,M,C,La cantidad de muslos de pollo recibidos es incorrecta, faltan unidades.,2024-04-30,2024-05-01
