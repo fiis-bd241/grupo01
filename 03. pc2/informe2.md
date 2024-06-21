@@ -226,6 +226,8 @@ Semántica: Problema, situación anormal o evento no planificado.
 | cod_tipo_incidencia | CHAR | X| TAB | - | - | Tipo de incidencia que ha ocurrido |  
 | descripcion | CHAR | x(128) | - | - | - | Descripción detallada de la incidencia.|  
 | fecha_ocurrencia | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que ocurrió la incidencia. |  
+| hora_ocurrencia | TIME | HHMMSS | NO NULL | - | - |Hora específica en la que ocurrió la incidencia. | 
+| cod_estado_incidencia | CHAR | X | TAB | - | - |Estado de atención de la incidencia presentada | 
 
 TAB: Tipo de incidencia
 |Código|Descripción|
@@ -236,6 +238,11 @@ TAB: Tipo de incidencia
 |D|Incidencia de tipo D: Problemas mecánicos con el vehículo|
 |E|Incidencia de tipo E: Error en la asignación de la ruta|
 
+TAB: Estado de incidencia
+|Código|Descripción|
+|------|---------|
+|S|Solucionado|
+|P|Pendiente|
 
 **Entidad**: Local  
 
@@ -269,25 +276,6 @@ TAB: Tipo Local
 | id_operacion_picking | INT | 9999 | NO NULL | - | - | Identificador de la operación picking asociada |  
 | nro_precinto | CHAR | X(20) | 20 dígitos | - | - | Número de precinto asociado a la mercancía |  
 | peso_total | FLOAT | 99999.99 | >=0 | - | - | Peso total de la mercancía, en gramos |    
-
- **Entidad:** Norma  
-
- Semántica: Conjunto de reglas o directrices establecidas para regular un comportamiento específico o para guiar una actividad particular. 
-
-| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
-|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_norma | INT| 9 | >0 | - | -- | Identificador de la norma |  
-| cod_tipo_norma | CHAR | X |TAB| --- | --- | Registra el identificador del tipo de norma a utilizar |  
-| fecha_emision | DATE | AAAAMMDD |NO NULL | - | - | Indica la fecha de emisión de la norma para su cumplimiento|  
-| fecha_vigencia | DATE | AAAAMMDD | TAB | - | - | Indica la vigencia de la norma para su cumplimiento |  
-
-TAB: Tipo de Norma
-|Código|Descripción|
-|------|---------|
-|X|NTP 209.027|
-|Y|ISO 17712|
-|Z|ISO 22000|
-|W|ISO 9001|
 
 
 **Entidad:** Operación  
@@ -368,26 +356,32 @@ Semántica: Entidad que interactúan con la empresa San fernando.
 | estado_civil | CHAR | X(16) | "Soltero", "Casado", "Divorciado", "Viudo" | - | - | Estado civil de la persona. |  
 | direccion | CHAR | X(32) | - | - | - | Dirección de residencia de la persona. |  
 
-**Entidad:** Procedimiento  
 
-Semántica: Recurso que engloba una lista da pasos a seguir para abordar una determinada incidencia de traslado.
+**Entidad:** Detalle_norma_procedimiento 
+
+Semántica: Lista de los tipos de procedimientos a realizar en base a determinado tipo de incidencia. 
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_procedimiento | INT| 9 | >0 | - | -- | Identificador del procedimiento |  
-| cod_tipo_procedimiento | CHAR | X | TAB | - | - | Identificador del tipo de procedimiento |
-| nombre| VARCHAR | X(70) | NO NULL | - | - | Indica en resumen el problema específico que requiere procedimiento | 
-| tiempo estimado | INT | 9 | >0 | horas | - | Representa la duración estimada de la aplicación del procedimeiento | 
+| cod_tipo_procedimiento | CHAR| X | TAB | - | - | Identificador del tipo de procedimiento |  
+| cod_tipo_norma| CHAR |X | TAB | - | - | Identificador del tipo de norma |
 
 TAB: Tipo de procedimiento
 |Código|Descripción|
 |------|---------|
-|A|Procedimiento de tipo A: Retraso en la entrega|
-|B|Procedimiento de tipo B: Errores en el etiquetado o embalaje|
-|C|Procedimiento de tipo C: Fallas en la documentación|
-|D|Procedimiento de tipo D: Problemas mecánicos con el vehículo|
-|E|Procedimiento de tipo E: Error en la asignación de la ruta|
+|A| Retraso en la entrega|
+|B| Errores en el etiquetado o embalaje|
+|C| Fallas en la documentación|
+|D| Problemas mecánicos con el vehículo|
+|E| Error en la asignación de la ruta|
 
+TAB: Tipo de Norma
+|Código|Descripción|
+|------|---------|
+|X|NTP 209.027|
+|Y|ISO 17712|
+|Z|ISO 22000|
+|W|ISO 9001|
 
 **Entidad:** Programacion_reporte  
 
