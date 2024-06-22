@@ -3228,7 +3228,7 @@ CREATE TABLE IF NOT EXISTS vehiculo_estado (
 );
 
 CREATE TABLE IF NOT EXISTS vehiculo_marca (
- cod_vehiculo_marca CHAR(1),
+ cod_vehiculo_marca INT,
  descripcion VARCHAR(20),
  PRIMARY KEY (cod_vehiculo_marca)
 );
