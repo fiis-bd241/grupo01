@@ -294,13 +294,13 @@ Caso de Uso #2: Registro de disponibilidad de vehículos
 | Código | R402 | 
 |----------|----------|
 |Objetivo |Asignar a un conductor como medio de traslado del pedido|
-|Descripción | El usuario verifica en base a los datos del vehículo como número de placa, modelo,año de fabricación, capacidad de carga, fecha de último mantenimiento, fecha y hora de última de actividad, para registrar su disponibilidad y poder asignarle como medio de traslado de un pedido. |
+|Descripción | El usuario verifica en base a los datos del vehículo como número de placa, marca,año de fabricación, capacidad de carga, fecha de último mantenimiento, fecha y hora de última de actividad, para registrar su disponibilidad y poder asignarle como medio de traslado de un pedido. |
 |Actor Primario | Transportista|
 |Actor Secundario|N/A |
 |Precondiciones|Registro de vehículos en sistema|
 |Paso|Acción|
 |1|El usuario selecciona la opción "Transporte" y le da a segunda opción "Vehículo"|
-|2|Verifica los atributos específicos del vehículo como: número de placa, modelo,año de fabricación, capacidad de carga, fecha de último mantenimiento, fecha y hora de última de actividad |
+|2|Verifica los atributos específicos del vehículo como: número de placa, marca,año de fabricación, capacidad de carga, fecha de último mantenimiento, fecha y hora de última de actividad |
 |3|Registra su disponibilidad |
 |4|Verifica los datos y confirma el registro|
 |5|El sistema actualiza el registro con el nuevo ingreso|
@@ -1132,18 +1132,19 @@ DELETE FROM ruta WHERE cod_ruta = <1>
 
 Eventos:
 1.	Al presionar el botón “Registrar Ruta” se ejecutaría una sentencia de ingreso de datos:
+Primero se crea la ruta nueva
 ``` sql
 -- Insertar la nueva ruta
 INSERT INTO ruta (distancia_total, cod_ruta_tipo, duracion)
 VALUES (<8>, <7>, <8> / 60 );
--- Obtener el código de la ruta recién insertada
-SELECT MAX(cod_ruta) AS nueva_ruta FROM ruta;
--- Insertar los paraderos para la nueva ruta
+```
+Se introducen los paraderos correspondientes a dicha ruta
+``` sql
 INSERT INTO paradero (cod_ruta, cod_local, cod_paradero_tipo, orden)
 VALUES 
-(nueva_ruta, <1>, <4>, 1)
-(nueva_ruta, <2>, <5>, 1)
-(nueva_ruta, <3>, <6>, 1)
+(SELECT MAX(cod_ruta), <1>, <4>, 1)
+(SELECT MAX(cod_ruta), <2>, <5>, 1)
+(SELECT MAX(cod_ruta), <3>, <6>, 1)
 --- Esto se repite con n paraderos
 ```
 #### Caso 6
@@ -1159,14 +1160,14 @@ Eventos:
 SELECT
     v.cod_vehiculo,
     v.placa,
-    vm.descripcion AS modelo,
+    vm.descripcion AS marca,
     v.anio_fabricacion,
     v.capacidad_carga,
     v.fecha_ultimo_viaje,
     v.fecha_ultimo_mantenimiento,
     ve.descripcion AS estado
 FROM vehiculo v
-JOIN vehiculo_modelo vm ON v.cod_vehiculo_modelo = vm.cod_vehiculo_modelo
+JOIN vehiculo_marca vm ON v.cod_vehiculo_marca = vm.cod_vehiculo_marca
 JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado;
 ```
 
@@ -1174,7 +1175,7 @@ JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado;
 ``` sql
 SELECT v.cod_vehiculo,
     v.cod_vehiculo_marca,
-    v.cod_vehiculo_modelo,
+    v.cod_vehiculo_marca,
     v.cod_vehiculo_estado,
     v.anio_fabricacion,
     v.placa,
@@ -1182,7 +1183,7 @@ SELECT v.cod_vehiculo,
     v.capacidad_carga,
     v.fecha_ultimo_mantenimiento
 FROM vehiculo v
-JOIN vehiculo_modelo vm ON v.cod_vehiculo_modelo = vm.cod_vehiculo_modelo
+JOIN vehiculo_marca vm ON v.cod_vehiculo_marca = vm.cod_vehiculo_marca
 JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado;
 WHERE v.cod_vehiculo = <1>;
 ```
@@ -1190,17 +1191,16 @@ WHERE v.cod_vehiculo = <1>;
 ``` sql
 UPDATE vehiculo
 SET
-    cod_vehiculo_marca = <2>,
-    cod_vehiculo_modelo = <3>,
-    cod_vehiculo_estado = <4>,
-    anio_fabricacion = <5>,
-    placa = '<6>',
-    cod_vehiculo_tipo = <7>,
-    capacidad_carga = <8>,
-    fecha_ultimo_mantenimiento = '<9>'
+    cod_vehiculo_marca = SELECT vm.cod_vehiculo_marca FROM vehiculo_marca vm WHERE vm.descripcion = <2>,
+    cod_vehiculo_estado = SELECT ve.cod_vehiculo_estado FROM vehiculo_estado ve WHERE ve.descripcion = <3>,
+    anio_fabricacion = <4>,
+    placa = <5>,
+    cod_vehiculo_tipo = SELECT vt.cod_vehiculo_tipo FROM vehiculo_marca vt WHERE vt.descripcion = <6>,
+    capacidad_carga = <7>,
+    fecha_ultimo_mantenimiento = <8>
 WHERE cod_vehiculo = <1>;
 ```
-#### Caso 6
+#### Caso 7
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R205      |
@@ -1210,10 +1210,10 @@ WHERE cod_vehiculo = <1>;
 Eventos:
 1.	Al presionar el botón “Registrar Vehículo”
 ``` sql
-INSERT INTO vehiculo (  cod_vehiculo_marca, cod_vehiculo_modelo, cod_vehiculo_estado, anio_fabricacion, placa, cod_vehiculo_tipo, capacidad_carga, fecha_ultimo_mantenimiento)
-VALUES ( <1>,   <2>,  <3>,  <4>,  '<5>',  <6>, <7>,  '<8>' );
+INSERT INTO vehiculo ( cod_vehiculo_marca, cod_vehiculo_estado, anio_fabricacion, placa, cod_vehiculo_tipo, capacidad_carga, fecha_ultimo_mantenimiento)
+VALUES ( <1>, <2>, <3>, <4>, <5>, <6>, <7> );
 ```
-#### Caso 7
+#### Caso 8
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R206      |
@@ -1262,7 +1262,7 @@ SET
     cod_estado_transportista = <5> 
 WHERE cod_transportista = <1>;  -- Código del transportista a actualizar
 ```
-#### Caso 8
+#### Caso 9
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R206      |
@@ -3146,7 +3146,7 @@ DROP TABLE IF EXISTS elemento_catalogo_unidad;
 DROP TABLE IF EXISTS elemento_catalogo_tipo;
 DROP TABLE IF EXISTS segmento;
 DROP TABLE IF EXISTS elemento_produccion;
-DROP TABLE IF EXISTS vehiculo_modelo;
+DROP TABLE IF EXISTS vehiculo_marca;
 DROP TABLE IF EXISTS vehiculo_tipo;
 DROP TABLE IF EXISTS vehiculo_estado;
 DROP TABLE IF EXISTS cliente_tipo;
@@ -3194,10 +3194,10 @@ CREATE TABLE IF NOT EXISTS vehiculo_estado (
  PRIMARY KEY (cod_vehiculo_estado)
 );
 
-CREATE TABLE IF NOT EXISTS vehiculo_modelo (
- cod_vehiculo_modelo CHAR(1),
+CREATE TABLE IF NOT EXISTS vehiculo_marca (
+ cod_vehiculo_marca CHAR(1),
  descripcion VARCHAR(20),
- PRIMARY KEY (cod_vehiculo_modelo)
+ PRIMARY KEY (cod_vehiculo_marca)
 );
 
 CREATE TABLE IF NOT EXISTS vehiculo_tipo (
@@ -3440,16 +3440,16 @@ CREATE TABLE IF NOT EXISTS vehiculo (
  fecha_ultimo_mantenimiento DATE NOT NULL,
  fecha_ultimo_viaje DATE NOT NULL,
  capacidad_carga FLOAT NOT NULL CHECK (capacidad_carga > 0),
- cod_vehiculo_modelo CHAR(1) NOT NULL,
+ cod_vehiculo_marca CHAR(1) NOT NULL,
  cod_vehiculo_tipo CHAR(1) NOT NULL,
  placa CHAR(7) NOT NULL,
  PRIMARY KEY (cod_vehiculo),
  CONSTRAINT cod_vehiculo_estado
  FOREIGN KEY (cod_vehiculo_estado)
  REFERENCES vehiculo_estado (cod_vehiculo_estado),
- CONSTRAINT cod_vehiculo_modelo
- FOREIGN KEY (cod_vehiculo_modelo)
- REFERENCES vehiculo_modelo (cod_vehiculo_modelo),
+ CONSTRAINT cod_vehiculo_marca
+ FOREIGN KEY (cod_vehiculo_marca)
+ REFERENCES vehiculo_marca (cod_vehiculo_marca),
  CONSTRAINT cod_vehiculo_tipo
  FOREIGN KEY (cod_vehiculo_tipo)
  REFERENCES vehiculo_tipo (cod_vehiculo_tipo)
@@ -3906,7 +3906,7 @@ BEGIN
     EXECUTE 'COPY cliente_tipo FROM ' || quote_literal(base_path || 'Cliente_tipo.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY vehiculo_estado FROM ' || quote_literal(base_path || 'Vehiculo_estado.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY vehiculo_tipo FROM ' || quote_literal(base_path || 'Vehiculo_tipo.csv') || ' DELIMITER '','' CSV HEADER';
-    EXECUTE 'COPY vehiculo_modelo FROM ' || quote_literal(base_path || 'Vehiculo_modelo.csv') || ' DELIMITER '','' CSV HEADER';
+    EXECUTE 'COPY vehiculo_marca FROM ' || quote_literal(base_path || 'Vehiculo_marca.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY elemento_produccion FROM ' || quote_literal(base_path || 'Elemento_produccion.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY segmento FROM ' || quote_literal(base_path || 'Segmento.csv') || ' DELIMITER '','' CSV HEADER';
     EXECUTE 'COPY elemento_catalogo_tipo FROM ' || quote_literal(base_path || 'Elemento_catalogo_tipo.csv') || ' DELIMITER '','' CSV HEADER';
