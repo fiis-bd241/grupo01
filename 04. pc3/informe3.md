@@ -994,7 +994,7 @@ WHERE
 | Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/a63abbf8-f498-4698-a9f3-99d4d39d0066)|
 
 Eventos:
-1.	Al hacer click en el botón “Registrar Entrega” se inicializa una ventana emergente que muestra una tabla que trabaja con la sentencia:
+1.	Al hacer click en el botón “Registrar Entrega” de la interfaz I202 se inicializa esta ventana emergente que muestra una tabla que trabaja con la sentencia:
 ``` sql
 SELECT
     t.cod_guia_remision,
