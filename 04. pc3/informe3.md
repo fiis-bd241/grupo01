@@ -958,7 +958,7 @@ FROM
 Eventos:
 1.	Carga de página: Se llenarán los traslados en proceso:
 ``` sql
-SELECT t.cod_guia_remision,  lo.denominacion AS origen, ld.denominacion AS destino
+SELECT t.cod_guia_remision, lo.denominacion AS origen, ld.denominacion AS destino
 FROM traslado t
 JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
 JOIN ruta r ON t.cod_ruta = r.cod_ruta
@@ -997,6 +997,7 @@ Eventos:
 1.	Al hacer click en el botón “Registrar Entrega” se inicializa una ventana emergente que muestra una tabla que trabaja con la sentencia:
 ``` sql
 SELECT 
+    t.cod_guia_remision,
     p.cod_pedido,
     pt.tipo_pedido,
     osa.fecha AS fecha_salida,
@@ -1050,7 +1051,12 @@ WHERE
 2.	Se cargan los datos a editar en función de la guía de remisión elegida de la lista anterior
 ``` sql
 SELECT 
-    p.prenombre || ' ' || p.primer_apellido || ' ' || p.segundo_apellido AS conductor, v.placa AS placa_vehiculo,  lo.denominacion AS origen, os.hora_inicio AS hora_salida, ld.denominacion AS destino
+    t.cod_guia_remision,
+    p.prenombre || ' ' || p.primer_apellido || ' ' || p.segundo_apellido AS conductor,
+    v.placa AS placa_vehiculo,
+    lo.denominacion AS origen,
+    os.hora_inicio AS hora_salida,
+    ld.denominacion AS destino
 FROM 
     traslado t
     JOIN operacion os ON t.id_operacion_inicia = os.id_operacion AND os.cod_tipo_operacion = (SELECT cod_tipo_operacion FROM operacion_tipo WHERE descripcion = 'Salida')
@@ -1151,6 +1157,7 @@ Eventos:
 1.	Al inicializar la página
 ``` sql
 SELECT
+    v.cod_vehiculo,
     v.placa,
     vm.descripcion AS modelo,
     v.anio_fabricacion,
@@ -1165,11 +1172,19 @@ JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado;
 
 2.	Al seleccionar uno de los registros de Vehículos
 ``` sql
-SELECT v.cod_vehiculo_marca, v. cod_vehiculo_modelo, v.cod_vehiculo_estado, v.anio_fabricacion, v.placa, v.cod_vehiculo_tipo, v.capacidad_carga, v.fecha_ultimo_mantenimiento
+SELECT v.cod_vehiculo,
+    v.cod_vehiculo_marca,
+    v. cod_vehiculo_modelo,
+    v.cod_vehiculo_estado,
+    v.anio_fabricacion,
+    v.placa,
+    v.cod_vehiculo_tipo,
+    v.capacidad_carga,
+    v.fecha_ultimo_mantenimiento
 FROM vehiculo v
 JOIN vehiculo_modelo vm ON v.cod_vehiculo_modelo = vm.cod_vehiculo_modelo
 JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado;
-WHERE cod_vehiculo = <1>;
+WHERE v.cod_vehiculo = <1>;
 ```
 3.	Al presionar el botón “Actualizar Datos”
 ``` sql
@@ -1223,6 +1238,7 @@ JOIN transportista_estado te ON t.cod_estado_transportista = te.cod_estado_trans
 2.	Seleccionar uno de los registros de Transportistas
 ``` sql
 SELECT
+    t.cod_transportista,
     CONCAT(p.prenombre, ' ', p.primer_apellido, ' ', p.segundo_apellido) AS nombre,
     p.dni AS dni,
     t.num_licencia AS licencia,
