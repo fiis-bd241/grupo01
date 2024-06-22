@@ -1148,7 +1148,7 @@ VALUES
 --- Esto se repite con n paraderos
 ```
 #### Caso 6
-|                  |                                                                                     |
+|                  |                                                                                     		 |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R205     |
 | Código      | I205 |
@@ -1160,31 +1160,37 @@ Eventos:
 SELECT
     v.cod_vehiculo,
     v.placa,
+    vm.cod_vehiculo_marca,
     vm.descripcion AS marca,
     v.anio_fabricacion,
     v.capacidad_carga,
     v.fecha_ultimo_viaje,
     v.fecha_ultimo_mantenimiento,
+    ve.cod_vehiculo_estado,
     ve.descripcion AS estado
+    vt.cod_vehiculo_tipo,
+    vt.descripcion
 FROM vehiculo v
 JOIN vehiculo_marca vm ON v.cod_vehiculo_marca = vm.cod_vehiculo_marca
-JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado;
+JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado
+JOIN vehiculo_tipo vt ON v.cod_vehiculo_tipo = vt.cod_vehiculo_tipo;
 ```
 
 2.	Al seleccionar uno de los registros de Vehículos
 ``` sql
-SELECT v.cod_vehiculo,
-    v.cod_vehiculo_marca,
-    v.cod_vehiculo_marca,
-    v.cod_vehiculo_estado,
+SELECT
+    v.cod_vehiculo,
+    vm.descripcion,
+    ve.descripcion,
     v.anio_fabricacion,
     v.placa,
-    v.cod_vehiculo_tipo,
+    vt.descripcion,
     v.capacidad_carga,
     v.fecha_ultimo_mantenimiento
 FROM vehiculo v
 JOIN vehiculo_marca vm ON v.cod_vehiculo_marca = vm.cod_vehiculo_marca
-JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado;
+JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado
+JOIN vehiculo_tipo vt ON v.cod_vehiculo_tipo = vt.cod_vehiculo_tipo
 WHERE v.cod_vehiculo = <1>;
 ```
 3.	Al presionar el botón “Actualizar Datos”
