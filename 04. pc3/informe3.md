@@ -3473,7 +3473,7 @@ CREATE TABLE IF NOT EXISTS vehiculo (
  fecha_ultimo_mantenimiento DATE NOT NULL,
  fecha_ultimo_viaje DATE NOT NULL,
  capacidad_carga FLOAT NOT NULL CHECK (capacidad_carga > 0),
- cod_vehiculo_marca CHAR(1) NOT NULL,
+ cod_vehiculo_marca INT NOT NULL,
  cod_vehiculo_tipo CHAR(1) NOT NULL,
  placa CHAR(7) NOT NULL,
  PRIMARY KEY (cod_vehiculo),
