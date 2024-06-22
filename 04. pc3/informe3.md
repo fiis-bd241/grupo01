@@ -1174,7 +1174,7 @@ JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado;
 ``` sql
 SELECT v.cod_vehiculo,
     v.cod_vehiculo_marca,
-    v. cod_vehiculo_modelo,
+    v.cod_vehiculo_modelo,
     v.cod_vehiculo_estado,
     v.anio_fabricacion,
     v.placa,
