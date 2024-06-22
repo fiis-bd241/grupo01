@@ -3489,7 +3489,7 @@ CREATE TABLE IF NOT EXISTS vehiculo (
  cod_vehiculo_estado CHAR(1) NOT NULL,
  anio_fabricacion INT NOT NULL,
  fecha_ultimo_mantenimiento DATE NOT NULL,
- fecha_ultimo_viaje DATE NOT NULL,
+ fecha_ultimo_viaje DATE,
  capacidad_carga FLOAT NOT NULL CHECK (capacidad_carga > 0),
  cod_vehiculo_marca INT NOT NULL,
  cod_vehiculo_tipo CHAR(1) NOT NULL,
@@ -3561,7 +3561,7 @@ cod_estado_transportista CHAR(1) DEFAULT NULL,
 cod_tipo_licencia CHAR(1) NULL DEFAULT NULL,
 num_licencia CHAR(9) NULL DEFAULT NULL,
 fecha_vencimiento_licencia DATE NOT NULL,
-fecha_ultimo_traslado DATE NULL DEFAULT NULL,
+fecha_ultimo_traslado DATE DEFAULT NULL,
 PRIMARY KEY (cod_transportista),
 CONSTRAINT cod_empleado
  FOREIGN KEY (cod_empleado)
