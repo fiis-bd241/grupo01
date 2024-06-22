@@ -357,14 +357,16 @@ Semántica: Entidad que interactúan con la empresa San fernando.
 | direccion | CHAR | X(32) | - | - | - | Dirección de residencia de la persona. |  
 
 
-**Entidad:** Detalle_norma_procedimiento 
+**Entidad:** Procedimiento  
 
-Semántica: Lista de los tipos de procedimientos a realizar en base a determinado tipo de incidencia. 
+Semántica: Recurso que engloba una lista da pasos a seguir para abordar una determinada incidencia de traslado.
 
 | ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
 |----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
-| cod_tipo_procedimiento | CHAR| X | TAB | - | - | Identificador del tipo de procedimiento |  
-| cod_tipo_norma| CHAR |X | TAB | - | - | Identificador del tipo de norma |
+| cod_procedimiento | INT| 9 | >0 | - | -- | Identificador del procedimiento |  
+| cod_tipo_procedimiento | CHAR | X | TAB | - | - | Identificador del tipo de procedimiento |
+| nombre| VARCHAR | X(70) | NO NULL | - | - | Indica en resumen el problema específico que requiere procedimiento | 
+| tiempo estimado | INT | 9 | >0 | horas | - | Representa la duración estimada de la aplicación del procedimeiento | 
 
 TAB: Tipo de procedimiento
 |Código|Descripción|
@@ -374,6 +376,18 @@ TAB: Tipo de procedimiento
 |C| Fallas en la documentación|
 |D| Problemas mecánicos con el vehículo|
 |E| Error en la asignación de la ruta|
+
+**Entidad:** Norma  
+
+ Semántica: Conjunto de reglas o directrices establecidas para regular un comportamiento específico o para guiar una actividad particular. 
+
+| ATRIBUTO | NATURALEZA | FORMATO | VALORES VÁLIDOS | UNIDAD | DERIVADA DE | DESCRIPCIÓN |  
+|----------------|------------|-----------|-----------------|--------|-------------|--------------------------------------------------| 
+| cod_norma | INT| 9 | >0 | - | -- | Identificador de la norma |  
+| cod_tipo_norma | CHAR | X |TAB| --- | --- | Registra el identificador del tipo de norma a utilizar |  
+| fecha_emision | DATE | AAAAMMDD |NO NULL | - | - | Indica la fecha de emisión de la norma para su cumplimiento|  
+| fecha_vigencia | DATE | AAAAMMDD | TAB | - | - | Indica la vigencia de la norma para su cumplimiento |  
+
 
 TAB: Tipo de Norma
 |Código|Descripción|
