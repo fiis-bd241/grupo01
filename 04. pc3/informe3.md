@@ -3818,7 +3818,7 @@ CREATE TABLE IF NOT EXISTS seguimiento (
  cod_seguimiento SERIAL NOT NULL,
  cod_cliente_interno INT NOT NULL,
  cod_tipo_accion CHAR(1) NOT NULL,
- comentario VARCHAR(250) NULL DEFAULT NULL,
+ comentario VARCHAR(500) NULL DEFAULT NULL,
  fecha_resolucion DATE NOT NULL,
  numero_caso INT NOT NULL,
  PRIMARY KEY (cod_seguimiento),
