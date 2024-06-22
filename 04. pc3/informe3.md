@@ -987,7 +987,7 @@ WHERE
     t.cod_guia_remision = '<2>'
 ```
 #### Caso 2
-|                  |                                                                                     |
+|                  |                                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R203      |
 | Código      | I202-E1 |
@@ -996,14 +996,15 @@ WHERE
 Eventos:
 1.	Al hacer click en el botón “Registrar Entrega” se inicializa una ventana emergente que muestra una tabla que trabaja con la sentencia:
 ``` sql
-SELECT 
+SELECT
     t.cod_guia_remision,
     p.cod_pedido,
     pt.tipo_pedido,
     osa.fecha AS fecha_salida,
     ore.fecha AS fecha_llegada,
-    ld.denominacion AS destino
-FROM 
+    ld.denominacion AS destino,
+    p.pedido_estado
+FROM
     traslado t
     JOIN detalle_ticket_traslado dtt ON t.id_traslado = dtt.id_traslado
     JOIN ticket tk ON dtt.cod_ticket = tk.cod_ticket
@@ -1014,7 +1015,7 @@ FROM
     JOIN ruta r ON t.cod_ruta = r.cod_ruta
     JOIN paradero pd ON r.cod_ruta = pd.cod_ruta AND pd.orden = (SELECT MAX(orden) FROM paradero WHERE cod_ruta = r.cod_ruta)
     JOIN "local" ld ON pd.cod_local = ld.cod_local
-WHERE 
+WHERE
     t.cod_guia_remision = '<1>'
 ```
 2.	Al presionar el botón “Registrar” asociado a un pedido del traslado
@@ -1036,7 +1037,9 @@ Eventos:
 SELECT 
     t.cod_guia_remision,
     lo.denominacion AS origen,
-    ld.denominacion AS destino
+    ld.denominacion AS destino,
+    o.hora_inicio,
+    o.
 FROM 
     traslado t
     JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
@@ -1214,7 +1217,19 @@ WHERE cod_vehiculo = <1>;
 | Prototipo   |  ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/eb007177-ed71-4c47-b8de-8db543097b21)|
 
 Eventos:
-1.	Al presionar el botón “Registrar Vehículo”
+1.	Al inicializar la pantalla
+``` sql
+SELECT
+	vm.descripcion
+FROM vehiculo_marca vm;
+SELECT
+	vt.descripcion
+FROM vehiculo_tipo vt;
+SELECT
+	ve.descripcion
+FROM vehiculo_estado ve;
+```
+2.	Al presionar el botón "Registrar Vehículo"
 ``` sql
 INSERT INTO vehiculo ( cod_vehiculo_marca, cod_vehiculo_estado, anio_fabricacion, placa, cod_vehiculo_tipo, capacidad_carga, fecha_ultimo_mantenimiento)
 VALUES ( <1>, <2>, <3>, <4>, <5>, <6>, <7> );
@@ -1230,6 +1245,7 @@ Eventos:
 1.	Al inicializar la página:
 ``` sql
 SELECT
+    t.cod_transportista,
     CONCAT(p.prenombre, ' ', p.primer_apellido, ' ', p.segundo_apellido) AS nombre,
     t.num_licencia AS licencia,
     lt.descripcion AS tipo_licencia,
@@ -1276,10 +1292,21 @@ WHERE cod_transportista = <1>;  -- Código del transportista a actualizar
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/c37a4d1d-2f9b-4f32-af37-90166878b2a3)|
 
 Eventos:
-1.	Al presionar el botón “Registrar Transportista”
+1.	Al inicializar la pantalla
 ``` sql
+SELECT
+	lt.descripcion
+FROM licencia_tipo lt;
+SELECT
+	te.descripcion
+FROM transportista te;
+```
+2.	Al presionar el botón “Registrar Transportista”
+``` sql
+
 INSERT INTO transportista (cod_empleado, cod_estado_transportista, cod_tipo_licencia, num_licencia, fecha_vencimiento_licencia)
-VALUES (<1>, <2>,  '<3>',  '<4>',  '<5>' );
+VALUES (SELECT e.cod_empleado FROM empleado e JOIN persona p ON p.cod_persona = e.cod_persona WHERE p.dni = <1>,
+	<5>, SELECT lt.cod_tipo_licencia FROM licencia_tipo lt WHERE lt.descripcion= <3>, <4>,  <5>);
 ```
 ### 3. Sentencias SQL módulo de Almacén
 
