@@ -4095,8 +4095,8 @@ Como agregado adicional se debe realizar una restricción de registro de entrega
 
 **Funcionalidad primaria elegida:** Registrar una nueva incidencia durante el traslado de un pedido y verificar el estado de atención de las incidencia. <br>
 **Sustentación:** Registrar una nueva incidencia permite una rápida identificación y registro de problemas que ocurren durante el proceso de traslado, asegurando que sean abordados de manera oportuna. Análogamente, verificar el estado de atención de una incidencia es esencial para monitorizar el progreso de la resolución, garantizando que se tomen las acciones necesarias y se mantenga la transparencia en el proceso de gestión de incidencias.
-Esta funcionalidad permitirá cumplir con los requerimientos de Registrar Nueva Incidencia (R403), Pantalla de Incidencias (I407), Estado de atención a Incidencia (I408), Mostrar Incidencias filtradas (I408) los cuales se encuentran relacionados con las interfaces I401,I402,I403, I404, I405, I406, I407,I408.
-Tendrás dos apartados, uno para registrar una nueva incidencia y otro para verificar el estado de atención de las incidencias.
+Esta funcionalidad permitirá cumplir con los requerimientos de Registrar Nueva Incidencia (R403), Pantalla de Incidencias (I407), Mostrar Incidencias filtradas los cuales se encuentran relacionados con las interfaces I401,I402,I403, I404, I405, I406, I407.
+Tendrás dos apartados, uno para registrar una nueva incidencia y otro para observar el listado a manera de historial de todas las incidencias registradas hasta la fecha. 
 
 ### 5. Funcionalidad Primaria del módulo de reportes
 
