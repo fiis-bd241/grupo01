@@ -320,20 +320,6 @@ Caso de Uso #3: Registro de nueva incidencia
 |3|Verifica los datos y confirma el registro|
 |4|El sistema actualiza el registro con el nuevo ingreso que será enviado al listado general de incidencias|
 
-Caso de Uso #4: Registro de estado de incidencia
-| Código | R404 | 
-|----------|----------|
-|Objetivo |Gestionar y actualizar el estado de las incidencias registradas. |
-|Descripción | El usuario actualiza el estado de una incidencia previamente registrada que puede ser "Solucionada" o "Pendiente".|
-|Actor Primario | Encargado de almacén|
-|Actor Secundario|Almacenero y Transportista|
-|Precondiciones|Existencia de incidencias previamente registradas en el sistema.|
-|Paso|Acción|
-|1|El usuario selecciona la opción "Incidencia"|
-|2|El usurario selecciona el apartado "Registro"|
-|3|Accede a un listado de incidencias registradas hasta el momento|
-|4| Selecciona el estado de atención de determinada incidencia |
-|5|El sistema actualiza el registro con el nuevo ingreso|
 
 #### 5. Requerimientos del módulo de Reportes
 
@@ -617,49 +603,45 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R401          |
 | Código      | I401 |
-| Prototipo   | ![R401](https://github.com/fiis-bd241/grupo01/assets/161625149/69dec382-c13c-4b5e-b39e-96c9d04555be)|
+| Prototipo   | ![image](https://github.com/Alexclb0/Holamundo/assets/164266999/19f371dd-9641-432a-be42-277e3a5aeff5)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R402       |
 | Código      | I402 |
-| Prototipo   | ![R402](https://github.com/fiis-bd241/grupo01/assets/161625149/175afcd4-25fa-48d5-ad94-5b6dbe021a4a)|
+| Prototipo   | ![image](https://github.com/Alexclb0/Holamundo/assets/164266999/d60ac6e0-63a1-442b-a8ad-cb4c5f553f57)
+|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403       |
 | Código      | I403 |
-| Prototipo   | ![I403](https://github.com/fiis-bd241/grupo01/assets/161625149/ea25df77-0f09-4bc2-8c6e-b55dbd53990c)|
+| Prototipo   | ![image](https://github.com/Alexclb0/Holamundo/assets/164266999/b3f27df0-6695-4dea-9ffd-e92b6dde286f)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403       |
 | Código      | I404 |
-| Prototipo   | ![I404](https://github.com/fiis-bd241/grupo01/assets/161625149/c6ffab2b-1910-45a7-ac14-3c5dc980a8d2)|
+| Prototipo   | ![image](https://github.com/Alexclb0/Holamundo/assets/164266999/daa1d0bb-037f-431b-85c7-b8c02fc70725)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403       |
 | Código      | I405 |
-| Prototipo   | ![I405](https://github.com/fiis-bd241/grupo01/assets/161625149/acebbbda-9f3c-4c8b-809e-75d5911e16e0)|
+| Prototipo   | ![image](https://github.com/Alexclb0/Holamundo/assets/164266999/9076b0dd-ac6e-4d68-a282-e7b3456107f0)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403       |
 | Código      | I406 |
-| Prototipo   | ![I406](https://github.com/fiis-bd241/grupo01/assets/161625149/6740a843-8a0e-47e4-b34e-feac62c1254a)|
+| Prototipo   | ![image](https://github.com/Alexclb0/Holamundo/assets/164266999/b96ec223-9a34-4d13-8ab2-387a5b8aa16e)|
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403, R404   |
 | Código      | I407 |
-| Prototipo   | ![I407](https://github.com/fiis-bd241/grupo01/assets/161625149/8925730a-3ddd-44d7-9d92-8c947e18fa58)|
+| Prototipo   | ![image](https://github.com/Alexclb0/Holamundo/assets/164266999/4fe0cbda-ba9d-496b-8b3f-856d9b24307c)|
 
-|                  |                                                                                     |
-| ---------------- | --------------------------------------------------------------------------------------------------- |
-| Requerimientos relacionados         | R404   |
-| Código      | I408 |
-| Prototipo   | ![I408](https://github.com/fiis-bd241/grupo01/assets/161625149/dccab0da-87ea-4217-bfaa-71c9a190a6f6)|
 
 #### 5. Prototipos del módulo de Reportes
 
@@ -2015,7 +1997,7 @@ En el caso de que la pantalla actual sea de tipo "Descarga", como se mencionó, 
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/abdea844-5d24-40e9-b98b-0b9b2b556ed4">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/5468b073-0253-46e4-9c92-a86ee9ddae30">
       </td>
    </tr>
    <tr>
@@ -2026,7 +2008,6 @@ En el caso de que la pantalla actual sea de tipo "Descarga", como se mencionó, 
 ## Evento:
 ### Ver conductores: 
 Se mostrará en pantalla la lista de todos los conductores para poder registrar su disponibilidad en base a los datos correspondiente a cada uno.
-
 ``` sql
 SELECT 
     t.cod_transportista AS "Código del Conductor",
@@ -2034,7 +2015,6 @@ SELECT
     lt.descripcion AS "Tipo de Licencia",
     t.fecha_vencimiento_licencia AS "Fecha de Vencimiento de Licencia",
     t.fecha_ultimo_traslado AS "Fecha Último Traslado",
-    t.hora_ultimo_traslado AS "Hora Último Traslado",
     te.descripcion AS "Estado del Conductor"
 FROM 
     transportista t
@@ -2057,7 +2037,7 @@ JOIN
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/d5146a27-8756-4be4-9841-6010e4fc65ad">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/a36b2b4b-8654-44ec-a3ba-df7ff85c4d1e">
       </td>
    </tr>
    <tr>
@@ -2068,9 +2048,8 @@ JOIN
 ## Evento:
 ### Botón Estado: 
 El botón sirve para que el administrador pueda cambiar el estado de disponibilidad del conductor  que puede ser Disponible, No Disponible y Cuarentena.
-
 ``` sql
-UPDATE Conductor SET cod_estado_transportista = <1> WHERE cod_transportista = <2>
+UPDATE Transportista SET cod_estado_transportista = <1> WHERE cod_estado_transportista = 2 AND cod_transportista = <2>
 ```
 
 ### Caso 3
@@ -2086,7 +2065,7 @@ UPDATE Conductor SET cod_estado_transportista = <1> WHERE cod_transportista = <2
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/4712df7b-047c-451c-be07-58071bd1cfc9">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/41c637e5-bdc6-4ed0-8dd5-562eeef707cb">
       </td>
    </tr>
    <tr>
@@ -2097,18 +2076,15 @@ UPDATE Conductor SET cod_estado_transportista = <1> WHERE cod_transportista = <2
 ## Evento:
 ### Ver Vehículos: 
 Se mostrará en pantalla la lista de todos los vehículos para poder registrar su disponibilidad en base a los datos correspondiente a cada uno.
-
 ``` sql
 SELECT 
-    v.cod_vehiculo AS "Código del Vehículo",
-    v.año_fabricacion AS "Año de Fabricación",
-    v.fecha_ultimo_mantenimiento AS "Fecha de Último Mantenimiento",
+    v.cod_vehiculo AS "Código Vehículo",
+    v.año_fabricacion AS "Año Fabricación",
+    v.fecha_ultimo_mantenimiento AS "Fecha Último Mantenimiento",
     v.capacidad_carga AS "Capacidad de Carga",
-    vm.descripcion AS "Modelo",
+    vm.descripcion AS "Marca",
     v.placa AS "Placa",
-    pt.tipo_pedido AS "Tipo de Pedido",
     v.fecha_ultimo_viaje AS "Fecha Último Viaje",
-    v.hora_ultimo_viaje AS "Hora Último Viaje",
     ve.descripcion AS "Estado del Vehículo"
 FROM 
     vehiculo v
@@ -2116,8 +2092,6 @@ JOIN
     vehiculo_modelo vm ON v.cod_vehiculo_modelo = vm.cod_vehiculo_modelo
 JOIN 
     vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado
-JOIN 
-    pedido_tipo pt ON v.cod_pedido_tipo = pt.cod_pedido_tipo;
 
 ```
 
@@ -2134,7 +2108,7 @@ JOIN
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/4589d5a1-f4a9-4e06-ba70-acbbab5b7483">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/edd1ee65-2adb-45c4-9058-8d5c27c0e206">
       </td>
    </tr>
    <tr>
@@ -2146,7 +2120,7 @@ JOIN
 ### Botón estado: 
 El botón sirve para que el administrador pueda cambiar el estado de disponibilidad del vehículo  que puede ser Disponible, No Disponible y Cuarentena.
 ``` sql
-UPDATE Vehículo SET cod_estado_vehiculo = <1> WHERE cod_vehiculo = <2>
+UPDATE Vehículo SET cod_estado_vehiculo = <1> WHERE cod_estado_vehiculo = 2 AND cod_vehiculo = <2>
 
 ```
 
@@ -2163,10 +2137,10 @@ UPDATE Vehículo SET cod_estado_vehiculo = <1> WHERE cod_vehiculo = <2>
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/bafb2d2f-802f-49e7-be67-c76f43eca81d">
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/443cfb43-11ca-455d-b0ca-9da48e418f0c">
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/14956982-5e3d-42dd-8f10-36ba4652b3b9">
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/bcb55311-c797-4c5e-9631-528cee7de53a">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/a54903b4-1a59-4620-bf74-38885420d54e">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/7721353f-20f2-41e9-a837-bc1c2005fd9c">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/617f5b07-1d3c-4370-ab8c-39bd08ad88d3">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/e95d453b-0427-48ee-8a46-e54368231569">
       </td>
    </tr>
    <tr>
@@ -2176,37 +2150,51 @@ UPDATE Vehículo SET cod_estado_vehiculo = <1> WHERE cod_vehiculo = <2>
 
 ## Evento:
 ### Nueva incidencia: 
-El administrador podrá registrar una nueva incidencia primero seleccionando el tipo de incidencia que se presenta, dependiendo de la opción del tipo de incidencia que elija le corresponderá un tipo de procedimiento específico basado en un tipo de norma respectivamente.
-### Opción 1
-Al elegirse esta opción, se está eligiendo un tipo de incidencia relacionado con retraso en la entrega, por ello el tipo de procedimiento también debe ser correspondiente al tipo de incidencia, es decir de tipo A; análogamente sucede con el tipo de norma en el cual se basa el procedimiento para posteriormente darle a registrar. 
-``` sql
-INSERT INTO incidencia VALUES (cod_incidencia, <6>, fecha_ocurrencia , hora_ocurrencia , <1>, <7> ,<12>)
+El administrador podrá registrar una nueva incidencia seleccionando primero el tipo de incidencia que se presenta. Dependiendo de la opción elegida, se determinará un tipo de procedimiento específico, cuya selección dependerá del empleado y del contexto de la situación. Este procedimiento elegido se basará en un tipo de norma aplicable.
 
-```
-### Opción 2
-Al elegirse esta opción, se está eligiendo un tipo de incidencia relacionado con errores en el etiquetado o embalaje, por ello el tipo de procedimiento también debe ser correspondiente al tipo de incidencia, es decir de tipo B; análogamente sucede con el tipo de norma en el cual se basa el procedimiento para posteriormente darle a registrar. 
-``` sql
-INSERT INTO incidencia VALUES (cod_incidencia,<6>, fecha_ocurrencia , hora_ocurrencia , <2>, <8> ,<12>)
+1. Se llenará la lista de tipos de incidencia según el contexto que se presentase.
 
+``` sql 
+SELECT * FROM incidencia_tipo;
 ```
-### Opción 3
-Al elegirse esta opción, se está eligiendo un tipo de incidencia relacionado con fallas en la documentación, por ello el tipo de procedimiento también debe ser correspondiente al tipo de incidencia, es decir de tipo C; análogamente sucede con el tipo de norma en el cual se basa el procedimiento para posteriormente darle a registrar. 
-``` sql
-INSERT INTO incidencia VALUES (cod_incidencia,<6>, fecha_ocurrencia , hora_ocurrencia , <3>, <9> ,<13>)
 
-```
-### Opción 4
-Al elegirse esta opción, se está eligiendo un tipo de incidencia relacionado con problemas mecánicos del vehículo, por ello el tipo de procedimiento también debe ser correspondiente al tipo de incidencia, es decir de tipo D; análogamente sucede con el tipo de norma en el cual se basa el procedimiento para posteriormente darle a registrar. 
-``` sql
-INSERT INTO incidencia VALUES (cod_incidencia,<6>, fecha_ocurrencia , hora_ocurrencia , <4>, <10> ,<14>)
+2. Se seleccionará el tipo de procedimiento a efectuar en base a determinado tipo de incidencia. 
 
+``` sql 
+SELECT * FROM procedimiento_tipo;
 ```
-### Opción 5
-Al elegirse esta opción, se está eligiendo un tipo de incidencia relacionado con error en la asignación de la ruta, por ello el tipo de procedimiento también debe ser correspondiente al tipo de incidencia, es decir de tipo E; análogamente sucede con el tipo de norma en el cual se basa el procedimiento para posteriormente darle a registrar. 
-``` sql
-INSERT INTO incidencia VALUES (cod_incidencia,<6>, fecha_ocurrencia , hora_ocurrencia , <5>, <11> ,<15>)
 
+3. Se seleccionará el tipo de norma en las cuales se basa cada procedimiento.
+
+``` sql 
+SELECT * FROM norma_tipo;
 ```
+
+4. Al apretar el botón Registrar se actualiza el código del tipo de incidencia, el tipo de procedimiento, la descripción detallada de la incidencia, tipo de norma, fecha de ocurrencia, hora de ocurrencia, tiempo estimado de procedimiento (en horas).
+
+``` sql 
+UPDATE incidencia
+SET cod_tipo_incidencia = <1>, cod_tipo_procedimiento =<2>, descripcion = <3>, cod_norma_tipo = <4>, fecha_ocurrencia=<5>, hora_ocurrencia=<6>, id_traslado=<7>, tiempo_estimado=<8> 
+WHERE incidencia.cod_incidencia = <9>
+```
+Donde <1> es el código del tipo de incidencia escogido por el empleado, tomando en cuenta el contexto presentado. 
+
+Donde <2> es el código del tipo de procedimiento escogido por el empleado, tomando en cuenta el contexto presentado. 
+
+Donde <3> es la descripción a detalle de la incidencia, escrita por el empleado.
+
+Donde <4> es el código del tipo de norma escogido por el empleado, tomando en cuenta el contexto presentado. 
+
+Donde <5> es la fecha en la que ocurrió la incidencia, registrada por el empleado. 
+
+Donde <6> es la hora exacta en la que ocurrió la incidencia, registrada por el empleado. 
+
+Donde <7> es el código del traslado, en el cual se presentó determinada incidencia. 
+
+Donde <8> es el tiempo estimado en horas de la duración del procedimiento.
+
+Donde <9> es el código de la incidencia actual. 
+
 
 ### Caso 6
 <table>
@@ -2221,7 +2209,7 @@ INSERT INTO incidencia VALUES (cod_incidencia,<6>, fecha_ocurrencia , hora_ocurr
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/09d71cd9-a30f-4e68-a63a-1a12de430b09">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/50551045-f432-4e68-aa76-8895af85cf41">
       </td>
    </tr>
    <tr>
@@ -2235,86 +2223,16 @@ Se mostrará en pantalla la lista de todas las incidencias para poder registrar 
 
 ``` sql
 SELECT 
-    i.cod_incidencia AS "Código de Incidencia",
-    i.id_traslado AS "Código de Traslado",
-    it.descripcion AS "Descripción del Tipo de Incidencia",
+    i.cod_incidencia AS "Código Incidencia",
+    i.id_traslado AS "Código Traslado",
+    it.descripcion AS "Tipo de Incidencia",
     i.fecha_ocurrencia AS "Fecha de Ocurrencia",
     i.hora_ocurrencia AS "Hora de Ocurrencia",
-    i.cod_estado_incidencia AS "Código de Estado de Incidencia"
+    i.cod_estado_incidencia AS "Estado Incidencia"
 FROM 
     incidencia i
 JOIN 
     incidencia_tipo it ON i.cod_tipo_incidencia = it.cod_tipo_incidencia;
-
-```
-
-### Caso 7
-<table>
-   <tr>
-      <td>Código Requerimiento</td>
-      <td>R404</td>
-   </tr>
-   <tr>
-      <td>Código interfaz</td>
-      <td>I408</td>
-   </tr>
-   <tr>
-      <td>Imagen interfaz</td>
-      <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/e83925bf-990d-4714-a962-c8b175952e15">
-      </td>
-   </tr>
-   <tr>
-      <td colspan="2">Sentencias SQL</td>
-   </tr>
-</table>
-
-## Evento:
-### Botón Estado: 
-El botón sirve para que el administrador pueda cambiar el estado de atención de la incidencia  que puede ser Solucionado o Pendiente. 
-
-``` sql
-UPDATE incidencia SET cod_estado_incidencia = <1> WHERE cod_incidencia = <2>
-
-```
-
-### Caso 8
-<table>
-   <tr>
-      <td>Código Requerimiento</td>
-      <td>R404</td>
-   </tr>
-   <tr>
-      <td>Código interfaz</td>
-      <td>I409</td>
-   </tr>
-   <tr>
-      <td>Imagen interfaz</td>
-      <td>
-         <img src="https://github.com/fiis-bd241/grupo01/assets/161625149/bf714037-0677-4493-9d25-2f9a212324e8">
-      </td>
-   </tr>
-   <tr>
-      <td colspan="2">Sentencias SQL</td>
-   </tr>
-</table>
-
-## Evento:
-### Mostrar incidencias filtradas: 
-Se mostrará en pantalla el listado de incidencias filtradas por determinado periodo. 
-
-``` sql
-SELECT 
-    cod_incidencia AS "Código de Incidencia",
-    id_traslado AS "Código de Traslado",
-    (SELECT descripcion FROM incidencia_tipo WHERE incidencia_tipo.cod_tipo_incidencia = incidencia.cod_tipo_incidencia) AS "Descripción del Tipo de Incidencia",
-    fecha_ocurrencia AS "Fecha de Ocurrencia",
-    hora_ocurrencia AS "Hora de Ocurrencia",
-    cod_estado_incidencia AS "Código de Estado de Incidencia"
-FROM 
-    incidencia
-WHERE 
-    fecha_ocurrencia >= <1> AND fecha_ocurrencia <  <1>;
 
 ```
 
