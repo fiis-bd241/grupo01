@@ -1,4 +1,4 @@
-****# Segunda práctica calificada - Informe
+# Segunda práctica calificada - Informe
 
 ## 1. Modelo conceptual
 
