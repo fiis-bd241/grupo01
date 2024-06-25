@@ -60,6 +60,52 @@ FOR EACH ROW
 WHEN (NEW.cod_tipo_operacion = 6)
 EXECUTE FUNCTION actualizar_fechas_ultimo_traslado_y_viaje();
 ```
+#### Trigger para la generación de un registro cuando se actualiza el estado de un vehículo
+Este trigger se ejecuta cuando, a través de la interfaz de la aplicación o el proceso B001, se actualiza la variable de estado de `vehiculo` (`cod_vehiculo _estado`) que define si este está "Disponible", "No Disponible" o "Cuatentena".
+
+Para esta necesidad se ha creado una nueva tabla denominada `vehiculo_logs`, la cual almacenará toda la información de las actualizaciones antes mencionadas.
+```sql
+DROP TABLE IF EXISTS vehiculo_logs;
+CREATE TABLE IF NOT EXISTS vehiculo_logs (
+	cod_vehiculo_log SERIAL NOT NULL,
+	cod_vehiculo INT NOT NULL,
+	cod_estado_anterior CHAR NOT NULL,
+	cod_estado_actual CHAR NOT NULL,
+	fecha_log TIMESTAMP NOT NULL,
+	PRIMARY KEY (cod_vehiculo_log),
+	CONSTRAINT cod_estado_anterior
+	FOREIGN KEY (cod_estado_anterior)
+	REFERENCES vehiculo_estado (cod_vehiculo_estado),
+	CONSTRAINT cod_estado_actual
+	FOREIGN KEY (cod_estado_actual)
+	REFERENCES vehiculo_estado (cod_vehiculo_estado)	
+);
+```
+Cuando se actualiza este atributo:
+ - Se crea un nuevo registro en `vehiculo_logs`
+ - Se almacena el estado anterior a la actualización
+ - Se almacena el nuevo estado que está tomando el vehículo
+ - Se registra la fecha y hora del cambio
+
+**Creación de la función para el trigger**
+```sql
+CREATE OR REPLACE FUNCTION validar_transportista()
+RETURNS TRIGGER
+LANGUAGE plpgsql AS $$
+BEGIN
+	INSERT INTO vehiculo_logs (cod_vehiculo, cod_estado_anterior, cod_estado_actual, fecha_log)
+    VALUES (NEW.cod_vehiculo, OLD.cod_vehiculo_estado, NEW.cod_vehiculo_estado, CURRENT_TIMESTAMP);
+    RETURN NEW;
+END $$;
+```
+**Creación del Trigger**
+```sql
+CREATE TRIGGER cambio_estado_vehiculo
+AFTER UPDATE OF cod_vehiculo_estado ON vehiculo
+FOR EACH ROW
+WHEN (OLD.cod_vehiculo_estado IS DISTINCT FROM NEW.cod_vehiculo_estado)
+EXECUTE FUNCTION validar_transportista();
+```
 
 ## 2. PL/pgSQL – Proceso Batch
 
