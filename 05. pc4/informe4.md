@@ -16,7 +16,7 @@ Proceso B001 con Índice:
 ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/e84c9605-59f5-482d-adc0-d94f9467e6d0)
 
 ### Triggers
-#### Trigger para actualizar la fecha de último traslado de un transportista
+#### 1. Trigger para actualizar la fecha de último traslado de un transportista
 
 Este trigger se encarga de actualizar las fechas de último traslado y último viaje en las tablas `transportista` y `vehiculo` cada vez que se registra una nueva operación de tipo 6 ('Recepción'). 
 
@@ -60,7 +60,7 @@ FOR EACH ROW
 WHEN (NEW.cod_tipo_operacion = 6)
 EXECUTE FUNCTION actualizar_fechas_ultimo_traslado_y_viaje();
 ```
-#### Trigger para la generación de un registro cuando se actualiza el estado de un vehículo
+#### 2. Trigger para la generación de un registro cuando se actualiza el estado de un vehículo
 Este trigger se ejecuta cuando, a través de la interfaz de la aplicación o el proceso B001, se actualiza la variable de estado de `vehiculo` (`cod_vehiculo _estado`) que define si este está "Disponible", "No Disponible" o "Cuatentena".
 
 Para esta necesidad se ha creado una nueva tabla denominada `vehiculo_logs`, la cual almacenará toda la información de las actualizaciones antes mencionadas.
