@@ -1,4 +1,4 @@
-# Segunda práctica calificada - Informe
+****# Segunda práctica calificada - Informe
 
 ## 1. Modelo conceptual
 
@@ -554,7 +554,7 @@ Semántica: Entidad que representa a los empleados de la empresa San Fernando qu
 | cod_tipo_licencia | CHAR | X |TAB | - | - | Identificador del tipo de licencia de conducir que posee el transportista. |  
 | numero_licencia | CHAR | X(7) | 9 digitos | - | - | Número de licencia de conducir del transportista. |  
 | fecha_vencimiento_licencia | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que vence la licencia del transportista. |  
-| fecha_ultimo_traslado | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que el transportista realizó su último traslado. |  
+| fecha_ultimo_traslado | DATE | AAAAMMDD | NO NULL | - | - | Fecha en la que el transportista finalizó su último traslado. |  
 
 TAB: Estado del Tranportista
 |Código|Descripción|
