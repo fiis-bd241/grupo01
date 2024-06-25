@@ -18,10 +18,16 @@ Proceso B001 con Índice:
 ### Triggers
 #### Trigger para actualizar la fecha de último traslado de un transportista
 
-Se crea una función que actualiza la fecha de último traslado de un transportista a la fecha en que se registra el fin de un traslado asociado a este transportista. Esta función se llama cuando se ingresa una nueva operación de tipo 'Recepción'.
+Este trigger se encarga de actualizar las fechas de último traslado y último viaje en las tablas `transportista` y `vehiculo` cada vez que se registra una nueva operación de tipo 6 ('Recepción'). 
+
+Cuando se inserta una nueva operación:
+   - **Si el tipo de operación es de 'Recepción'**:
+     - Busca el `transportista` y el `vehiculo` asociados con la operación.
+     - Actualiza la fecha del último traslado del `transportista` con la fecha de la nueva operación.
+     - Actualiza la fecha del último viaje del `vehiculo` con la misma fecha.
 
 ```sql
-CREATE OR REPLACE FUNCTION actualizar_fecha_ultimo_traslado()
+CREATE OR REPLACE FUNCTION actualizar_fechas_ultimo_traslado_y_viaje()
 RETURNS TRIGGER AS $$
 BEGIN
     UPDATE transportista
@@ -29,19 +35,30 @@ BEGIN
     WHERE cod_transportista = (
         SELECT t.cod_transportista
         FROM traslado t
-        INNER JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
+        JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
         WHERE o.id_operacion_picking = NEW.id_operacion_picking
         LIMIT 1
     );
+    
+    UPDATE vehiculo
+    SET fecha_ultimo_viaje = NEW.fecha
+    WHERE cod_vehiculo = (
+        SELECT t.cod_vehiculo
+        FROM traslado t
+        JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
+        WHERE o.id_operacion_picking = NEW.id_operacion_picking
+        LIMIT 1
+    );
+    
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER trg_actualizar_fecha_ultimo_traslado
+CREATE TRIGGER trg_actualizar_fechas_ultimo_traslado_y_viaje
 AFTER INSERT ON operacion
 FOR EACH ROW
 WHEN (NEW.cod_tipo_operacion = 6)
-EXECUTE FUNCTION actualizar_fecha_ultimo_traslado();
+EXECUTE FUNCTION actualizar_fechas_ultimo_traslado_y_viaje();
 ```
 
 ## 2. PL/pgSQL – Proceso Batch
