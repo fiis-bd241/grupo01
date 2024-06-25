@@ -66,6 +66,18 @@ $$ LANGUAGE plpgsql;
 
 ## 3. Actualizaciones a la Arquitectura de la Aplicación
 
+### Estructura de la aplicación
+
+### Tecnología utilizada
+
+#### Herramientas
+
+#### Frontend
+
+#### Backend
+
+#### Base de datos
+
 ## 4. Versión Final de la Aplicación
 
 ## 5. Próximos Pasos
