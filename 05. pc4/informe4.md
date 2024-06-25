@@ -1,7 +1,9 @@
 # Cuarta práctica calificada - Informe      
 
 ## 1. Índices y otros objetos de BD
-### Índice Fecha_mantenimiento:
+
+### Índices
+#### Índice Fecha_mantenimiento:
 ```sql
 DROP INDEX IF EXISTS fecha_mantenimiento;
 CREATE INDEX fecha_mantenimiento
@@ -12,6 +14,35 @@ Proceso B001 sin Índice:
 
 Proceso B001 con Índice:
 ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/e84c9605-59f5-482d-adc0-d94f9467e6d0)
+
+### Triggers
+#### Trigger para actualizar la fecha de último traslado de un transportista
+
+Se crea una función que actualiza la fecha de último traslado de un transportista a la fecha en que se registra el fin de un traslado asociado a este transportista. Esta función se llama cuando se ingresa una nueva operación de tipo 'Recepción'.
+
+```sql
+CREATE OR REPLACE FUNCTION actualizar_fecha_ultimo_traslado()
+RETURNS TRIGGER AS $$
+BEGIN
+    UPDATE transportista
+    SET fecha_ultimo_traslado = NEW.fecha
+    WHERE cod_transportista = (
+        SELECT t.cod_transportista
+        FROM traslado t
+        INNER JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
+        WHERE o.id_operacion_picking = NEW.id_operacion_picking
+        LIMIT 1
+    );
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_actualizar_fecha_ultimo_traslado
+AFTER INSERT ON operacion
+FOR EACH ROW
+WHEN (NEW.cod_tipo_operacion = 6)
+EXECUTE FUNCTION actualizar_fecha_ultimo_traslado();
+```
 
 ## 2. PL/pgSQL – Proceso Batch
 
