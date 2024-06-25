@@ -18,7 +18,7 @@
 
 8. [Sentencias SQL por cada Prototipo](8.SentenciasSQL.md)
 
-9. [Carga%20de%20Datos](9.Carga de Datos.md)
+9. [CargaDatos](9.CargaDatos.md)
 
 10. [Objectos de BD](10.ObjectosBD.md)
 
