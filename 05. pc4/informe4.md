@@ -198,7 +198,7 @@ $$ LANGUAGE plpgsql;
 ### Módulo de Seguimiento
 
 #### Requerimientos Relacionados
-- R201, R202
+- R201
 
 #### Códigos de pantallas
 - I201, I202, I201-E1
