@@ -207,6 +207,13 @@ $$ LANGUAGE plpgsql;
 
 ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/2fe5f59b-68e1-41a3-a08d-b9e3806ce967)
 
+#### Interfaz I202: Traslados en Proceso
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164358065/e340a36b-c84f-4e87-b5f6-e6c7162e8507)
+
+#### Interfaz I202-E1: Realizar entrega de Pedido
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164358065/b197c897-338d-47f5-a865-34f538d4ae35)
 
 ### Módulo de Almacén
 
