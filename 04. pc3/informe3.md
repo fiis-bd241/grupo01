@@ -1018,7 +1018,7 @@ SELECT
     osa.fecha AS fecha_salida,
     ore.fecha AS fecha_llegada,
     ld.denominacion AS destino,
-    p.pedido_estado
+    p.cod_pedido_estado
 FROM
     traslado t
     JOIN detalle_ticket_traslado dtt ON t.id_traslado = dtt.id_traslado
