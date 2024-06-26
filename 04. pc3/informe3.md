@@ -2230,7 +2230,7 @@ Donde <9> es el código de la incidencia actual.
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/50551045-f432-4e68-aa76-8895af85cf41">
+         <img src="https://github.com/fiis-bd241/grupo01/assets/164266999/dfd1cd46-edc9-4934-a378-9dac58e0f49a">
       </td>
    </tr>
    <tr>
@@ -2257,6 +2257,34 @@ JOIN
 
 ```
 
+### Caso 7
+<table>
+   <tr>
+      <td>Código Requerimiento</td>
+      <td>R402</td>
+   </tr>
+   <tr>
+      <td>Código interfaz</td>
+      <td>I402</td>
+   </tr>
+   <tr>
+      <td>Imagen interfaz</td>
+      <td>
+         <img src="https://github.com/fiis-bd241/grupo01/assets/164266999/98f05098-900c-4e63-9d0b-eab06cd2cac9">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">Sentencias SQL</td>
+   </tr>
+</table>
+
+## Evento:
+### Botón estado: 
+El botón sirve para que el administrador pueda cambiar el estado de atención de la incidencia  que puede ser Solucionado o Pendiente. 
+``` sql
+UPDATE incidencia SET cod_estado_incidencia = <1> WHERE cod_estado_incidencia = 2 AND cod_incidencia = <2>
+
+```
 ### 5. Sentencias SQL módulo de Reportes
 
 #### Caso 1
