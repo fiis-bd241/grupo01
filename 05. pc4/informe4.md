@@ -210,6 +210,73 @@ Considerando que la misión del módulo de seguimiento es conocer el estado y ub
 En un escenario ideal no muy lejano se debe poder verificar y controlar señales de múltiples sensores, como el de velocidad instantánea, temperatura del compartimiento de refrigeración, disposición de los productos, etc. Esta cantidad de información instantánea podría suponer un sobrecargo para una base de datos relacional.
 Debido a esto los siguientes proyectos pueden enfocarse a un cambio de base de datos a una que soporte esa cantidad masiva de datos y tenga alta disponibilidad. Como criterio inicial podría considerarse usar Casandra como la base de datos adicional debido a su escalabilidad, alta disponibilidad y manejo de grandes volúmenes de datos.
 
+### Módulo de Almacén
+Algunas funcionalidades que se pueden implementar en este módulo son:
+- **Soporte para lector de códigos de barras:** Implementar soporte para la entrada de códigos por medio de un lector de código de barras, ya que de esta forma el usuario ingresará los números de precinto o códigos de guía de remisión para la búsqueda en la pantalla de "Vista de procesos de traslado".
+- **Vista de todas las mercancías y traslados:** Implementar una pantalla que permita visualizar las mercancías y los traslados ordenados por la fecha y hora de finalización de su última operación, como alternativa a la búsqueda por número de precinto o código de guía de remisión.
+
+Por ejemplo, para el caso de las mercancías, la consulta a la base de datos sería de la siguiente forma:
+
+```sql
+SELECT
+    m.nro_precinto,
+    ot.descripcion AS tipo_operacion,
+    o.fecha,
+    o.hora_inicio,
+    o.hora_fin
+FROM
+    mercancia m
+INNER JOIN
+    operacion o ON o.id_operacion = (
+        SELECT o2.id_operacion
+        FROM operacion o2
+        WHERE o2.id_operacion = m.id_operacion_picking
+           OR o2.id_operacion_picking = m.id_operacion_picking
+        ORDER BY o2.cod_tipo_operacion DESC
+        LIMIT 1
+    )
+INNER JOIN
+    operacion_tipo ot ON ot.cod_tipo_operacion = o.cod_tipo_operacion
+ORDER BY fecha DESC, hora_fin DESC;
+```
+
+![image](https://github.com/fiis-bd241/grupo01/assets/130816094/981fc228-8276-4893-9b48-64ad4f69ca45)
+
+Para el caso de los traslados, la consulta a la base de datos sería:
+
+```sql
+SELECT
+    t.cod_guia_remision,
+    ot.descripcion AS tipo_operacion,
+    o2.fecha,
+    o2.hora_inicio,
+    o2.hora_fin
+FROM
+    traslado t
+INNER JOIN
+    operacion o1 ON t.id_operacion_inicia = o1.id_operacion
+INNER JOIN
+    operacion o2 ON o2.id_operacion = (
+        SELECT o3.id_operacion
+        FROM operacion o3
+        WHERE o3.id_operacion = o1.id_operacion_picking
+           OR o3.id_operacion_picking = o1.id_operacion_picking
+        ORDER BY o3.cod_tipo_operacion DESC
+        LIMIT 1
+    )
+INNER JOIN
+    operacion_tipo ot ON ot.cod_tipo_operacion = o2.cod_tipo_operacion
+ORDER BY fecha DESC, hora_fin DESC;
+```
+
+![image](https://github.com/fiis-bd241/grupo01/assets/130816094/59000bd7-62fb-40ba-b13d-c4d5412d7533)
+
+Debido a que el usuario cuenta físicamente con la mercancía o la guía de remisión y un lector de códigos de barras a su disposición, el ingreso de estos códigos no suele tomar demasiado tiempo, por lo que no se consideró necesario implementar estas pantallas. Sin embargo, en situaciones donde las operaciones se registran con reducidos intervalos entre una operación y su consecutiva (generalmente es así con excepción de las operaciones de Salida y Recepción, debido a que tienen un intervalo considerable que los separa), tener una pantalla con todas las mercancías y traslados ordenados por la fecha y hora de su operación más reciente puede resultar útil, por lo que se pueden implementar estas pantallas como opción adicional a la búsqueda por código.
+
+- **Integración con el módulo de Control:** En la pantalla de "Vista de procesos de traslado", cuando se encuentra un traslado como resultado de la búsqueda, se puede habilitar un botón que redirija al usuario al módulo de Control para el registro de una incidencia respectiva a este traslado.
+
+- **Integración con los módulos de Pedidos y Seguimiento:** Dado que las entidades `pedido` y `ruta` pertenecen a estos módulos, respectivamente, en la pantalla de "Registro de salida" se decidió simplificar el ingreso de los pedidos y la ruta asociados al traslado por medio del ingreso de sus códigos. Sin embargo, estos códigos son de uso de la base de datos únicamente, por lo que esto no sería lo ideal. En lugar de esto, se podría implementar ventanas modales que permitan buscar una ruta o pedidos por medio de atributos o información que el usuario maneja, lo cual implica una integración del módulo de Almacén con los módulos de Pedidos y Seguimiento en cuanto a funcionalidad.
+
 ### Módulo de Control
 Las próximas funcionalidades que podría desarrollar el Módulo de Control incluyen la capacidad de eliminar incidencias resueltas que lleven más de un mes registradas en ese estado, mientras conserva el registro de incidencias resueltas durante el último mes para estudios futuros. Estos estudios permitirían analizar los planes de acción para determinar su efectividad en la reducción de incidencias, mejorando así las decisiones estratégicas de San Fernando. Adicionalmente, se podría implementar la funcionalidad de notificaciones en tiempo real, proporcionando alertas inmediatas sobre nuevas incidencias o cambios de estado. Para mejorar la gestión de incidencias, el sistema podría permitir la adición de detalles más completos en los registros, incluyendo fotos u otros materiales significativos que ayuden a identificar rápidamente el tipo de incidencia, el procedimiento adecuado a seguir y la norma en la que se basa. Esto facilitaría una respuesta más rápida y eficiente, optimizando la gestión general de las incidencias.
 
