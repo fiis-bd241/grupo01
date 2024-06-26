@@ -320,7 +320,7 @@ Caso de Uso #3: Registro de nueva incidencia
 |3|Verifica los datos y confirma el registro|
 |4|El sistema actualiza el registro con el nuevo ingreso que será enviado al listado general de incidencias|
 
-Caso de Uso #4: Registro de estado de incidencia
+Caso de Uso #4: Registro de estado de atención a la incidencia
 | Código | R404 | 
 |----------|----------|
 |Objetivo |Gestionar y actualizar el estado de las incidencias registradas. |
@@ -655,7 +655,13 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403, R404   |
 | Código      | I407 |
-| Prototipo   | ![image](https://github.com/Alexclb0/Holamundo/assets/164266999/4fe0cbda-ba9d-496b-8b3f-856d9b24307c)|
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164266999/131f03bd-4127-4173-aab2-8901efaf9d4c)|
+
+|                  |                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Requerimientos relacionados         | R403, R404   |
+| Código      | I408 |
+| Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164266999/802d2a56-4398-4f13-b630-d6fa83a6fa0a)|
 
 
 #### 5. Prototipos del módulo de Reportes
