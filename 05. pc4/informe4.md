@@ -176,6 +176,18 @@ $$ LANGUAGE plpgsql;
 
 ## 5. Próximos Pasos
 
+### Módulo de Seguimiento
+#### Disponibilidad para dispositivos móviles.
+Como parte del planeamiento de los requerimientos iniciales se consideró que los usuarios principales de este módulo serían tanto en transportista como su supervisor. Sin embargo, no se consideró que durante la realización de los traslados lo más probable es que el transportista solo pueda acceder a su dispositivo móvil.
+Por lo tanto, la siguiente iniciativa podría enfocarse de dos formas: 
+-	Una solución sería mejorar la adaptabilidad de la aplicación web haciéndola compatible con los dispositivos móviles a través del Responsive Design. Este cambio tendría un impacto solo a nivel de lógica del frontend de la aplicación, sin embargo, obligaría a un acceso a través del navegador del dispositivo móvil.
+-	 Una aplicación móvil conectada a la misma base de datos. A través de enfoques como el MBaaS para agilizar tanto el desarrollo como la escalabilidad y seguridad. Esto no solo permitiría a los transportistas acceder a este módulo, sino que ahora los demás trabajadores de la empresa podrían acceder a sistemas como los de almacén y pedidos desde dispositivos móviles. En este punto se debe recalcar que son una industria de trabajo físico donde las verificaciones y recogida de información se realiza en campo donde no se accede inmediatamente a un computador de escritorio.
+Esta aplicación podría contar con funcionalidades adicionales como lectora de códigos qr o de barras para facilitar el registro de los códigos impresos en los pedidos y paquetes.
+#### Capacidad de trabajar con IoT
+Considerando que la misión del módulo de seguimiento es conocer el estado y ubicación de los pedidos que están siendo llevados en un traslado esto no puede restringirse a solo realizar un seguimiento de ubicación, por lo que con la influencia de la tecnología del internet de las cosas se podrían acceder a datos proporcionados por más tipos de sensores.
+En un escenario ideal no muy lejano se debe poder verificar y controlar señales de múltiples sensores, como el de velocidad instantánea, temperatura del compartimiento de refrigeración, disposición de los productos, etc. Esta cantidad de información instantánea podría suponer un sobrecargo para una base de datos relacional.
+Debido a esto los siguientes proyectos pueden enfocarse a un cambio de base de datos a una que soporte esa cantidad masiva de datos y tenga alta disponibilidad. Como criterio inicial podría considerarse usar Casandra como la base de datos adicional debido a su escalabilidad, alta disponibilidad y manejo de grandes volúmenes de datos.
+
 ### Módulo de Control
 Las próximas funcionalidades que podría desarrollar el Módulo de Control incluyen la capacidad de eliminar incidencias resueltas que lleven más de un mes registradas en ese estado, mientras conserva el registro de incidencias resueltas durante el último mes para estudios futuros. Estos estudios permitirían analizar los planes de acción para determinar su efectividad en la reducción de incidencias, mejorando así las decisiones estratégicas de San Fernando. Adicionalmente, se podría implementar la funcionalidad de notificaciones en tiempo real, proporcionando alertas inmediatas sobre nuevas incidencias o cambios de estado. Para mejorar la gestión de incidencias, el sistema podría permitir la adición de detalles más completos en los registros, incluyendo fotos u otros materiales significativos que ayuden a identificar rápidamente el tipo de incidencia, el procedimiento adecuado a seguir y la norma en la que se basa. Esto facilitaría una respuesta más rápida y eficiente, optimizando la gestión general de las incidencias.
 
