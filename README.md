@@ -24,4 +24,7 @@ Bienvenidos al repositorio del Proyecto de Diseño de Base de Datos del Grupo 1.
 5. Cuarta práctica calificada
       * [Informe](05.%20pc4/informe4.md)
 
-6. [Glosario](06.%20glosario/glosario.md)
+6. Monografía
+     * [Informe](06.%20Monografía/00.Indice.md)
+       
+7. [Glosario](06.%20glosario/glosario.md)
