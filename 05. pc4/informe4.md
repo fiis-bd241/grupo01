@@ -195,6 +195,18 @@ $$ LANGUAGE plpgsql;
 #### Base de datos
 
 ## 4. Versión Final de la Aplicación
+### Módulo de Seguimiento
+
+#### Requerimientos Relacionados
+- R201, R202
+
+#### Códigos de pantallas
+- I201, I202, I201-E1
+
+#### Interfaz I201: Pantalla Inicial
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164358065/2fe5f59b-68e1-41a3-a08d-b9e3806ce967)
+
 
 ### Módulo de Almacén
 
