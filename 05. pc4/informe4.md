@@ -460,6 +460,16 @@ Miguel Anderson Inocente Caro
     </a>
 </div>
 
+### Módulo de Seguimiento
+
+Dennis Leopoldo Campos Herrera
+
+<div align="center">
+    <a href="https://www.youtube.com/watch?v=EFCcUfZexKg" target="_blank">
+        <img src="http://img.youtube.com/vi/EFCcUfZexKg/0.jpg" alt="Modulo de Control" width="500" height="auto" border="10" />
+    </a>
+</div>
+
 ### Módulo de Almacén
 
 José Joaquín Alvarado Usucachi
