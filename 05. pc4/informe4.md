@@ -2,6 +2,28 @@
 
 ## 1. Índices y otros objetos de BD
 
+### Vista 
+```sql
+CREATE VIEW PEDIDO_LISTA AS
+	SELECT 
+    pd.cod_pedido, 
+    c.nombre, 
+    CONCAT(pr.prenombre, ' ', pr.primer_apellido, ' ', pr.segundo_apellido) AS Encargado, 
+    pd.fecha_registro, 
+    pde.estado_pedido 
+	FROM 
+		pedido AS pd
+	INNER JOIN 
+		pedido_estado AS pde ON pde.cod_pedido_estado = pd.cod_pedido_estado
+	INNER JOIN 
+		representante AS r ON r.cod_representante = pd.cod_representante
+	INNER JOIN 
+		empleado AS e ON e.cod_empleado = pd.cod_empleado
+	INNER JOIN 
+		persona AS pr ON pr.cod_persona = e.cod_persona
+	INNER JOIN 
+		cliente AS c ON c.cod_cliente = r.cod_cliente;
+```
 ### Índices
 #### Índice Fecha_mantenimiento:
 ```sql
