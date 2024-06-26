@@ -1,0 +1,49 @@
+@if ( reporteReclamos.length > 0 ) {
+  <p-table [value]="reporteReclamos" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th [style]='{width: "26%"}'>Código de reclamo</th>
+            <th>Descripción de la causa</th>
+            <th>A favor de la empresa</th>
+            <th>En contra de la empresa</th>
+            <th>Total</th>
+            <th>Tiempo medio de resolución</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-reporteReclamo>
+        <tr>
+            <td>{{ reporteReclamo.idReclamoTipo }}</td>
+            <td>{{ reporteReclamo.reclamoTipo }}</td>
+            <td>{{ reporteReclamo.favor }}</td>
+            <td>{{ reporteReclamo.contra }}</td>
+            <td>{{ reporteReclamo.total }}</td>
+            <td>{{ reporteReclamo.tiempoMedio }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-table [value]="reporteReclamos">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Total general</th>
+      <th></th>
+      <th>{{ totalFavor }}</th>
+      <th>{{ totalContra }}</th>
+      <th>{{ totalGeneral }}</th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <tr>
+      <td>Tiempo Promedio</td>
+      <td></td>
+      <td></td>
+      <td>{{ tiempoMedio }}</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </ng-template>
+</p-table>
+}
+@else {
+  <h1>Cargando reporte de Raclamos...</h1>
+}
