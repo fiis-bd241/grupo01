@@ -37,6 +37,90 @@ Proceso B001 sin Índice:
 Proceso B001 con Índice:
 ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/e84c9605-59f5-482d-adc0-d94f9467e6d0)
 
+### Secuencias
+Los PK de las tablas creadas, al ser de tipo SERIAL, generan una secuencia que empieza de 1 y se va incrementando en 1 cada vez que se ingresa un registro sin especificar el PK. Debido a que en los csv de la carga masiva de datos se especifican los PK de las tablas, es necesario ejecutar el siguiente script SQL para actualizar los valores de las secuencias y así poder ingresar nuevos registros desde el backend sin necesidad de especificar el PK.
+
+```
+-- Actualizar la secuencia para la tabla "persona"
+SELECT setval('persona_cod_persona_seq', (SELECT MAX(cod_persona) FROM persona));
+
+-- Actualizar la secuencia para la tabla "cliente"
+SELECT setval('cliente_cod_cliente_seq', (SELECT MAX(cod_cliente) FROM cliente));
+
+-- Actualizar la secuencia para la tabla "ubicacion"
+SELECT setval('ubicacion_cod_ubicacion_seq', (SELECT MAX(cod_ubicacion) FROM ubicacion));
+
+-- Actualizar la secuencia para la tabla "ticket"
+SELECT setval('ticket_cod_ticket_seq', (SELECT MAX(cod_ticket) FROM ticket));
+
+-- Actualizar la secuencia para la tabla "vehiculo"
+SELECT setval('vehiculo_cod_vehiculo_seq', (SELECT MAX(cod_vehiculo) FROM vehiculo));
+
+-- Actualizar la secuencia para la tabla "elemento_catalogo"
+SELECT setval('elemento_catalogo_id_elemento_catalogo_seq', (SELECT MAX(id_elemento_catalogo) FROM elemento_catalogo));
+
+-- Actualizar la secuencia para la tabla "ruta"
+SELECT setval('ruta_cod_ruta_seq', (SELECT MAX(cod_ruta) FROM ruta));
+
+-- Actualizar la secuencia para la tabla "empleado"
+SELECT setval('empleado_cod_empleado_seq', (SELECT MAX(cod_empleado) FROM empleado));
+
+-- Actualizar la secuencia para la tabla "transportista"
+SELECT setval('transportista_cod_transportista_seq', (SELECT MAX(cod_transportista) FROM transportista));
+
+-- Actualizar la secuencia para la tabla "operacion"
+SELECT setval('operacion_id_operacion_seq', (SELECT MAX(id_operacion) FROM operacion));
+
+-- Actualizar la secuencia para la tabla "mercancia"
+SELECT setval('mercancia_id_mercancia_seq', (SELECT MAX(id_mercancia) FROM mercancia));
+
+-- Actualizar la secuencia para la tabla "representante"
+SELECT setval('representante_cod_representante_seq', (SELECT MAX(cod_representante) FROM representante));
+
+-- Actualizar la secuencia para la tabla "gps"
+SELECT setval('gps_cod_gps_seq', (SELECT MAX(cod_gps) FROM gps));
+
+-- Actualizar la secuencia para la tabla "local"
+SELECT setval('"local_cod_local_seq"', (SELECT MAX(cod_local) FROM "local"));
+
+-- Actualizar la secuencia para la tabla "paradero"
+SELECT setval('paradero_cod_paradero_seq', (SELECT MAX(cod_paradero) FROM paradero));
+
+-- Actualizar la secuencia para la tabla "stock"
+SELECT setval('stock_id_stock_seq', (SELECT MAX(id_stock) FROM stock));
+
+-- Actualizar la secuencia para la tabla "pedido"
+SELECT setval('pedido_cod_pedido_seq', (SELECT MAX(cod_pedido) FROM pedido));
+
+-- Actualizar la secuencia para la tabla "traslado"
+SELECT setval('traslado_id_traslado_seq', (SELECT MAX(id_traslado) FROM traslado));
+
+-- Actualizar la secuencia para la tabla "incidencia"
+SELECT setval('incidencia_cod_incidencia_seq', (SELECT MAX(cod_incidencia) FROM incidencia));
+
+-- Actualizar la secuencia para la tabla "procedimiento"
+SELECT setval('procedimiento_cod_procedimiento_seq', (SELECT MAX(cod_procedimiento) FROM procedimiento));
+
+-- Actualizar la secuencia para la tabla "norma"
+SELECT setval('norma_cod_norma_seq', (SELECT MAX(cod_norma) FROM norma));
+
+-- Actualizar la secuencia para la tabla "seguimiento"
+SELECT setval('seguimiento_cod_seguimiento_seq', (SELECT MAX(cod_seguimiento) FROM seguimiento));
+
+-- Actualizar la secuencia para la tabla "reclamo"
+SELECT setval('reclamo_cod_reclamo_seq', (SELECT MAX(cod_reclamo) FROM reclamo));
+
+-- Actualizar la secuencia para la tabla "evidencia"
+SELECT setval('evidencia_cod_evidencia_seq', (SELECT MAX(cod_evidencia) FROM evidencia));
+
+-- Actualizar la secuencia para la tabla "programacion_reporte"
+SELECT setval('programacion_reporte_cod_programacion_reporte_seq', (SELECT MAX(cod_programacion_reporte) FROM programacion_reporte));
+
+-- Actualizar la secuencia para la tabla "reporte"
+SELECT setval('reporte_cod_reporte_seq', (SELECT MAX(cod_reporte) FROM reporte));
+
+```
+
 ### Triggers
 #### 1. Trigger para actualizar la fecha de último traslado de un transportista
 
