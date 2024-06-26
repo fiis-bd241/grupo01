@@ -320,6 +320,21 @@ Caso de Uso #3: Registro de nueva incidencia
 |3|Verifica los datos y confirma el registro|
 |4|El sistema actualiza el registro con el nuevo ingreso que será enviado al listado general de incidencias|
 
+Caso de Uso #4: Registro de estado de incidencia
+| Código | R404 | 
+|----------|----------|
+|Objetivo |Gestionar y actualizar el estado de las incidencias registradas. |
+|Descripción | El usuario actualiza el estado de una incidencia previamente registrada que puede ser "Solucionada" o "Pendiente".|
+|Actor Primario | Encargado de almacén|
+|Actor Secundario|Almacenero y Transportista|
+|Precondiciones|Existencia de incidencias previamente registradas en el sistema.|
+|Paso|Acción|
+|1|El usuario selecciona la opción "Incidencia"|
+|2|El usurario selecciona el apartado "Registro"|
+|3|Accede a un listado de incidencias registradas hasta el momento|
+|4| Selecciona el estado de atención de determinada incidencia |
+|5|El sistema actualiza el registro con el nuevo ingreso|
+
 
 #### 5. Requerimientos del módulo de Reportes
 
