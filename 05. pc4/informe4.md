@@ -196,6 +196,167 @@ $$ LANGUAGE plpgsql;
 
 ## 4. Versión Final de la Aplicación
 
+### Módulo de Almacén
+
+#### Requerimientos Relacionados
+- R301, R302, R303, R304, R305, R306, R307
+
+#### Códigos de pantallas
+- I301, I302, I303, I304, I305, I306, I307, I308, I309, I310, I311
+
+#### Pantalla I301: Vista de Procesos
+
+![Captura de Pantalla 2024-06-04 a la(s) 23 41 49](https://github.com/fiis-bd241/grupo01/assets/130816094/3fe88474-f72e-40ed-94e7-71000489e492)
+
+1. **Botón "Iniciar nuevo proceso"**
+   - Lleva al usuario a la pantalla I302 para comenzar un nuevo proceso.
+
+2. **Selección de tipo de búsqueda**
+   - El usuario elige entre buscar el proceso asociado a una mercancía por el número de precinto o a un traslado por el código de guía de remisión. 
+   - Según la elección, se ingresa en el campo el tipo de entrada correspondiente.
+
+3. **Botón "Buscar"**
+   - Realiza la búsqueda usando el valor ingresado por el usuario y valida el número de precinto o el código de guía de remisión.
+   - Si alguna validación falla, se muestra un mensaje de error. Si es exitosa, se procede con la búsqueda y se muestran los resultados en tres secciones: Proceso, Mercancías y Traslado (si existe).
+
+4. **Botón "Registrar operación"**
+   - Lleva al usuario a la pantalla adecuada para registrar una operación adicional del proceso encontrado. Dependiendo de la última operación registrada, se redirige a la pantalla correspondiente:
+     - Picking: I304
+     - Precintado: I305
+     - Paletizado: I306
+     - Carga: I307
+     - Salida: I309
+     - Recepción: I310
+     - Si es "Descarga", el botón no se habilita.
+
+#### Pantalla I302: Inicio de Nuevo Proceso
+
+![Captura de Pantalla 2024-06-04 a la(s) 23 48 17](https://github.com/fiis-bd241/grupo01/assets/130816094/e93f318d-f9bb-4e21-84d1-0821946d0f0b)
+
+1. **Carga de Página**
+   - El campo "Fecha" se autocompleta con la fecha actual.
+
+2. **Botón "Agregar mercancía"**
+   - Abre la pantalla I303 para agregar una mercancía. 
+   - Retorna con un código de stock y su cantidad a transportar, mostrando botones para editar o eliminar la mercancía.
+
+3. **Botón "Ingresar"**
+   - Valida los DNIs de los empleados ejecutor y supervisor.
+   - Si las validaciones son exitosas, se ingresan los valores a la base de datos y se genera un número de precinto para cada mercancía.
+   - Se exporta un PDF con los números de precinto y se redirige a la pantalla I311.
+
+#### Pantalla I303: Agregar Mercancía
+
+![Captura de Pantalla 2024-06-04 a la(s) 23 48 53](https://github.com/fiis-bd241/grupo01/assets/130816094/855539c9-cbd2-4d66-9219-567d27dc8b70)
+
+1. **Botón "Buscar"**
+   - Busca el código de stock ingresado y muestra la información del stock en pantalla.
+
+2. **Botón "Ingresar"**
+   - Ingresa el código de stock especificado y redirige al usuario a la pantalla I302.
+
+3. **Botón "Cerrar"**
+   - Lleva al usuario de vuelta a la pantalla I302.
+
+#### Pantalla I304: Registro de Operación de Picking
+
+![Captura de Pantalla 2024-06-04 a la(s) 23 56 04](https://github.com/fiis-bd241/grupo01/assets/130816094/1aca11e7-41d9-4699-88ab-e5d634186122)
+
+1. **Carga de Página**
+   - La pantalla se carga con la fecha actual y el valor de `id_operacion_picking` (variable interna usada para seguimiento de la operación).
+
+2. **Botón "Ingresar"**
+   - Valida los DNIs de los empleados ejecutor y supervisor.
+   - Si las validaciones son exitosas, se ingresan los valores a la base de datos y se redirige a la pantalla I311.
+
+#### Pantalla I305: Registro de Operación de Precintado
+
+![Captura de Pantalla 2024-06-04 a la(s) 23 56 28](https://github.com/fiis-bd241/grupo01/assets/130816094/d4cf7cfa-51df-4f7e-8d7a-d244a05ef89f)
+
+1. **Carga de Página**
+   - Igual que I304, se carga con la fecha actual y el valor de `id_operacion_picking` (variable interna usada para seguimiento de la operación).
+
+2. **Botón "Ingresar"**
+   - Valida los DNIs de los empleados ejecutor y supervisor.
+   - Si las validaciones son exitosas, se ingresan los valores a la base de datos y se redirige a la pantalla I311.
+
+#### Pantalla I306: Registro de Operación de Paletizado
+
+![Captura de Pantalla 2024-06-04 a la(s) 23 56 54](https://github.com/fiis-bd241/grupo01/assets/130816094/b6fb1a6c-452e-4180-aa3a-48accfefbeb2)
+
+1. **Carga de Página**
+   - Igual que I304 e I305, se carga con la fecha actual y el valor de `id_operacion_picking` (variable interna usada para seguimiento de la operación).
+
+2. **Botón "Ingresar"**
+   - Valida los DNIs de los empleados ejecutor y supervisor.
+   - Si las validaciones son exitosas, se ingresan los valores a la base de datos y se redirige a la pantalla I311.
+
+#### Pantalla I307: Registro de Operación de Carga
+
+![Captura de Pantalla 2024-06-04 a la(s) 23 58 39](https://github.com/fiis-bd241/grupo01/assets/130816094/d0d74edb-dbe2-4fb6-8335-da9dd5d0bbcf)
+
+1. **Carga de Página**
+   - Igual que las anteriores, se carga con la fecha actual y el valor de `id_operacion_picking` (variable interna usada para seguimiento de la operación).
+
+2. **Botón "Agregar pedido"**
+   - Abre la pantalla I308 para agregar un código de pedido.
+
+3. **Botón "Eliminar pedido"**
+   - Elimina un código de pedido de la lista.
+
+4. **Botón "Ingresar"**
+   - Valida los DNIs de los empleados, código de ruta, placa del vehículo y DNI del transportista.
+   - Si las validaciones son exitosas, se ingresan los valores a la base de datos y se genera el código de guía de remisión.
+   - Se redirige al usuario a la pantalla I311.
+
+#### Pantalla I308: Agregar Pedido
+
+![Captura de Pantalla 2024-06-04 a la(s) 23 58 27](https://github.com/fiis-bd241/grupo01/assets/130816094/5699b0bf-7787-4912-a833-61eaeb90bfc3)
+
+1. **Botón "Agregar"**
+   - Valida el código de pedido ingresado. 
+   - Si es válido, lo agrega a la lista y redirige al usuario a la pantalla I307.
+
+2. **Botón "Cerrar"**
+   - Lleva al usuario de vuelta a la pantalla I307.
+
+#### Pantalla I309: Registro de Operación de Salida
+
+![Captura de Pantalla 2024-06-05 a la(s) 00 00 04](https://github.com/fiis-bd241/grupo01/assets/130816094/80d60d08-f3e0-4886-807b-482fbedad15c)
+
+1. **Carga de Página**
+   - Igual que las anteriores, se carga con la fecha actual y el valor de `id_operacion_picking` (variable interna usada para seguimiento de la operación).
+
+2. **Botón "Ingresar"**
+   - Valida los DNIs de los empleados ejecutor y supervisor.
+   - Si las validaciones son exitosas, se ingresan los valores a la base de datos y se actualiza la información del traslado.
+   - Se redirige al usuario a la pantalla I311.
+
+#### Pantalla I310: Registro de Operación de Recepción
+
+![Captura de Pantalla 2024-06-05 a la(s) 00 00 29](https://github.com/fiis-bd241/grupo01/assets/130816094/76dbd489-d054-4e6d-ba74-5c2581f8c69c)
+
+1. **Carga de Página**
+   - Igual que las anteriores, se carga con la fecha actual y el valor de `id_operacion_picking` (variable interna usada para seguimiento de la operación).
+
+2. **Botón "Ingresar"**
+   - Valida los DNIs de los empleados ejecutor y supervisor.
+   - Si las validaciones son exitosas, se ingresan los valores a la base de datos y se actualiza la información del traslado.
+   - Se redirige al usuario a la pantalla I311.
+
+#### Pantalla I311: Confirmación de Operación
+
+![Captura de Pantalla 2024-06-04 a la(s) 23 55 12](https://github.com/fiis-bd241/grupo01/assets/130816094/fe07d02e-b301-4048-800a-3e43986904e9)
+
+1. **Botón "Volver a vista de procesos"**
+   - Lleva al usuario de vuelta a la pantalla I301.
+
+2. **Botón "Continuar siguiente operación"**
+   - Lleva al usuario a la pantalla correspondiente para registrar la siguiente operación del proceso. 
+   - Dependiendo del tipo de operación actual, se redirige a las pantallas I304 a I310. Si es una operación de "Descarga", el botón no se habilita.
+
+En el caso de una operación de "Salida", se muestra un mensaje de confirmación con el código de guía de remisión generado.
+
 ## 5. Próximos Pasos
 
 ### Módulo de Seguimiento
