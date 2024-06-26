@@ -232,6 +232,12 @@ Miguel Anderson Inocente Caro
     </a>
 </div>
 
+### Módulo de Almacén
+
+José Joaquín Alvarado Usucachi
+
+[![Almacén](https://github.com/fiis-bd241/grupo01/assets/130816094/57578ece-dc46-4e34-8e9a-79b474344e4e)](https://www.youtube.com/watch?v=wdnBdCbLu0M)
+
 ### Módulo de Control
 
 Alex Espinoza Cerna 
