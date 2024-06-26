@@ -249,7 +249,15 @@ Alex Espinoza Cerna
     </a>
 </div>
 
+### Módulo de Reportes
 
+Cruz Mamani Cristhian Samir
+
+<div align="center">
+    <a href="https://youtu.be/TYnVb20MsJs" target="_blank">
+        <img src="http://img.youtube.com/vi/TYnVb20MsJs/0.jpg" alt="Modulo de Control" width="500" height="auto" border="10" />
+    </a>
+</div>
 
 
 
