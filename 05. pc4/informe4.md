@@ -182,17 +182,26 @@ $$ LANGUAGE plpgsql;
 
 ## 3. Actualizaciones a la Arquitectura de la Aplicación
 
-### Estructura de la aplicación
-
-### Tecnología utilizada
-
-#### Herramientas
-
-#### Frontend
-
-#### Backend
-
-#### Base de datos
+### Frontend
+   * Framework: Angular
+   * UI Components: Primeng
+   * Estilos: Primeflex
+   * Gráficos: Apache ECharts
+   * Íconos: Font Awesome
+   * Generación de pdfs: jspdf
+### Backend 
+   * Patrón de diseño: Dao
+   * Lenguaje de programación: Java
+   * Dependencias:
+     * Springboot
+     * Quartz
+     * PostgreSQL JDBC Driver
+     * Lombok
+### Databases
+   * Sistema gestor de base de datos: PostgreSQL 
+   * Motor de base de datos: PostgreSQL
+### Diagrama
+![app](https://github.com/fiis-bd241/grupo01/assets/161625149/118087b3-308f-4b84-9770-b74b500291f3)
 
 ## 4. Versión Final de la Aplicación
 ### Módulo de Seguimiento
