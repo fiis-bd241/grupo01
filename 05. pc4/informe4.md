@@ -221,7 +221,7 @@ En la creación de un reclamo, el apartado de evidencia podría mejorarse signif
 
 ## 7. Videos Individuales
 
-### 1. Módulo de pedidos
+### Módulo de pedidos
 
 Miguel Anderson Inocente Caro
 
@@ -231,3 +231,20 @@ Miguel Anderson Inocente Caro
         <img src="http://img.youtube.com/vi/neDWn9OWGkY/0.jpg" alt="Modulo de Control" width="500" height="auto" border="10" />
     </a>
 </div>
+
+### Módulo de Control
+
+Alex Espinoza Cerna 
+
+
+<div align="center">
+    <a href="https://www.youtube.com/watch?v=z81TUZU8u2g" target="_blank">
+        <img src="http://img.youtube.com/vi/z81TUZU8u2g/0.jpg" alt="Modulo de Control" width="500" height="auto" border="10" />
+    </a>
+</div>
+
+
+
+
+
+
