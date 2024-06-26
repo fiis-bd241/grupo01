@@ -287,6 +287,51 @@ $$ LANGUAGE plpgsql;
 ![app](https://github.com/fiis-bd241/grupo01/assets/161625149/118087b3-308f-4b84-9770-b74b500291f3)
 
 ## 4. Versión Final de la Aplicación
+### Módulo de Pedidos
+
+#### Requerimientos Relacionados
+R101 , R102 , R103 y R104
+
+#### Codigos de pantallas
+I101, I102, I103 y I104
+
+#### Interfaz I103: Pantalla de todos los pedidos
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/590ee867-7837-49cd-aec2-37d3d998c3a5)
+
+Al dar click al boton "Nuevo Pedido" lleva al usuario a la interfaz I101.
+
+#### Interfaz I101:
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/1b0c8b33-b7e5-4751-ac15-39fe1471d62d)
+ 
+El empleado ingresa los datos del representante y del cliente, como nombres, apellidos, DNI, teléfono, correo empresarial, empresa, fecha de solicitud y fecha de entrega esperada.
+
+Al dar click al boton "siguiente" lleva al usuario a la interfaz I102
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/7f1a7d47-18c1-4a73-bcf8-96ac4f98b792)
+
+#### Interfaz I102:
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/f798940c-71b0-45d9-9319-855fb42c021b)
+
+El sistema muestra una lista de productos disponibles en el catálogo, agrupados por categorías.
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/f055e85b-0663-45c3-8f95-3ab309b48588)
+
+El empleado selecciona los productos necesarios y las cantidades correspondientes.
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/5d1ca309-4813-4337-b685-92dcc2c2f629)
+
+Al dar al boton "Confirmar" lleva al usuario a la interfaz I104
+
+#### Interfaz I104:
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/aadabba8-8667-404c-8926-475ee465a968)
+
+![image](https://github.com/fiis-bd241/grupo01/assets/121084712/aaf7c5ec-3486-42fc-9119-16aa5cfa242a)
+
+Aqui se muestra mas a detalle, los datos especificos del cliente (Empresa), representante y empleado , asi como el codigo del ticket asignado, el estado del pedido. También se muestra los productos solicitados, con datos especificos como su codigo, nombre, cantidad y unidad.
 ### Módulo de Seguimiento
 
 #### Requerimientos Relacionados
