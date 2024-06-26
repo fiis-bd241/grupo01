@@ -220,3 +220,14 @@ En la creación de un reclamo, el apartado de evidencia podría mejorarse signif
 ## 6. NoSQL
 
 ## 7. Videos Individuales
+
+### 1. Módulo de pedidos
+
+Miguel Anderson Inocente Caro
+
+
+<div align="center">
+    <a href="https://www.youtube.com/watch?v=neDWn9OWGkY" target="_blank">
+        <img src="http://img.youtube.com/vi/neDWn9OWGkY/0.jpg" alt="Modulo de Control" width="500" height="auto" border="10" />
+    </a>
+</div>
