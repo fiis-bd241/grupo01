@@ -121,7 +121,7 @@ SELECT setval('reporte_cod_reporte_seq', (SELECT MAX(cod_reporte) FROM reporte))
 ```
 
 ### Triggers
-#### 1. Trigger para actualizar la fecha de último traslado de un transportista
+#### 1. Trigger para actualizar la fecha de último traslado de un transportista y fecha de último viaje de un vehículo
 
 Este trigger se encarga de actualizar las fechas de último traslado y último viaje en las tablas `transportista` y `vehiculo` cada vez que se registra una nueva operación de tipo 6 ('Recepción'). 
 
