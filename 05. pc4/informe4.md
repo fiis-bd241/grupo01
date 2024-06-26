@@ -40,7 +40,7 @@ Proceso B001 con Índice:
 ### Secuencias
 Los PK de las tablas creadas, al ser de tipo SERIAL, generan una secuencia que empieza de 1 y se va incrementando en 1 cada vez que se ingresa un registro sin especificar el PK. Debido a que en los csv de la carga masiva de datos se especifican los PK de las tablas, es necesario ejecutar el siguiente script SQL para actualizar los valores de las secuencias y así poder ingresar nuevos registros desde el backend sin necesidad de especificar el PK.
 
-```
+```sql
 -- Actualizar la secuencia para la tabla "persona"
 SELECT setval('persona_cod_persona_seq', (SELECT MAX(cod_persona) FROM persona));
 
@@ -118,7 +118,6 @@ SELECT setval('programacion_reporte_cod_programacion_reporte_seq', (SELECT MAX(c
 
 -- Actualizar la secuencia para la tabla "reporte"
 SELECT setval('reporte_cod_reporte_seq', (SELECT MAX(cod_reporte) FROM reporte));
-
 ```
 
 ### Triggers
