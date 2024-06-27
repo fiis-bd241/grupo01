@@ -3554,7 +3554,7 @@ CREATE TABLE IF NOT EXISTS operacion (
  cod_empleado_supervisor INT NOT NULL,
  fecha DATE NOT NULL,
  hora_inicio TIME NOT NULL,
- hora_fin TIME,
+ hora_fin TIME NOT NULL,
  cod_tipo_operacion INT NOT NULL,
  PRIMARY KEY (id_operacion),
  CONSTRAINT cod_empleado_ejecutor
