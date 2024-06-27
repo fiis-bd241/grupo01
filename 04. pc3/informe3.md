@@ -979,13 +979,15 @@ FROM
 Eventos:
 1.	Carga de página: Se llenarán los traslados en proceso:
 ``` sql
-SELECT t.cod_guia_remision, lo.denominacion AS origen, ld.denominacion AS destino
+SELECT 
+	t.cod_guia_remision, 
+	lo.denominacion AS origen, 
+	ld.denominacion AS destino
 FROM traslado t
 JOIN operacion o ON t.id_operacion_inicia = o.id_operacion
-JOIN ruta r ON t.cod_ruta = r.cod_ruta
-JOIN paradero po ON r.cod_ruta = po.cod_ruta AND po.cod_paradero_tipo = 1
+JOIN paradero po ON t.cod_ruta = po.cod_ruta AND po.cod_paradero_tipo = 1
 JOIN "local" lo ON po.cod_local = lo.cod_local
-JOIN paradero pd ON r.cod_ruta = pd.cod_ruta AND pd.orden = (SELECT MAX(orden) FROM paradero WHERE cod_ruta = r.cod_ruta)
+JOIN paradero pd ON t.cod_ruta = pd.cod_ruta AND pd.cod_paradero_tipo = 3
 JOIN "local" ld ON pd.cod_local = ld.cod_local;
 ```
 2.	Al seleccionar uno de los traslados de la lista en la pantalla se cargará:
