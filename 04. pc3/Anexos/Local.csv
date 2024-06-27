@@ -7,7 +7,7 @@ cod_local,cod_cliente,cod_ubicacion,cod_local_tipo,cod_local_ubigeo,calle,numero
 6,5,16,1,150719,Sugar,9401,Oil & Gas Production,PER
 7,4,949,4,150508,Southridge,1306,Medical/Nursing Services,PER
 8,2,83,3,150725,Onsgard,6221,Industrial Machinery/Components,PER
-9,10,44,3,150607,Cordelia,9643,,PER
+9,10,44,3,150607,Cordelia,9643,Acá se come rico,PER
 10,5,979,4,150725,Sachtjen,7093,EDP Services,PER
 11,8,680,2,150601,Dahle,280,Electric Utilities: Central,PER
 12,5,318,4,150129,Portage,3352,,PER
@@ -37,13 +37,13 @@ cod_local,cod_cliente,cod_ubicacion,cod_local_tipo,cod_local_ubigeo,calle,numero
 36,4,799,3,150804,Mayer,3177,Packaged Foods,PER
 37,2,272,1,150515,Lindbergh,379,Business Services,PER
 38,11,767,2,150110,Loftsgordon,2582,Computer Software: Prepackaged Software,PER
-39,2,762,4,150506,4th,6349,,PER
+39,2,762,4,150506,4th,6349,Pollitos al vapor,PER
 40,8,10,4,150611,Kedzie,6173,Hotels/Resorts,PER
 41,5,329,3,150805,Michigan,2597,Real Estate Investment Trusts,PER
-42,8,988,2,150140,Westerfield,2504,,PER
+42,8,988,2,150140,Westerfield,2504,El lugar de la mancha,PER
 43,1,160,2,150407,New Castle,7139,Major Banks,PER
 44,3,600,1,150501,Alpine,4136,Electrical Products,PER
-45,6,247,1,150729,Eastlawn,1336,,PER
+45,6,247,1,150729,Eastlawn,1336,Come lo que quieras,PER
 46,6,961,2,150731,Waxwing,9248,Biotechnology: Laboratory Analytical Instruments,PER
 47,11,317,2,150109,Barby,2388,Oil & Gas Production,PER
 48,8,626,1,151026,Summit,9583,Industrial Machinery/Components,PER
@@ -76,7 +76,7 @@ cod_local,cod_cliente,cod_ubicacion,cod_local_tipo,cod_local_ubigeo,calle,numero
 75,11,128,4,151027,Grim,207,Real Estate Investment Trusts,PER
 76,1,156,1,150731,Tennyson,1318,Semiconductors,PER
 77,3,797,1,150118,Pine View,7242,Other Consumer Services,PER
-78,3,973,4,150112,Buhler,3220,,PER
+78,3,973,4,150112,Buhler,3220,Al fondo hay sitio,PER
 79,5,109,3,150612,Elgar,378,Telecommunications Equipment,PER
 80,2,190,1,150512,Chinook,5064,Medical Specialities,PER
 81,11,860,3,150501,Kim,8263,Oilfield Services/Equipment,PER
