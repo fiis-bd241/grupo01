@@ -992,8 +992,12 @@ JOIN "local" ld ON pd.cod_local = ld.cod_local;
 ```
 2.	Al seleccionar uno de los traslados de la lista en la pantalla se cargará:
 ``` sql
-SELECT 
-    p.prenombre || ' ' || p.primer_apellido || ' ' || p.segundo_apellido AS conductor, v.placa AS placa_vehiculo,  lo.denominacion AS origen, os.hora_fin AS hora_salida, ld.denominacion AS destino
+SELECT
+	p.prenombre || ' ' || p.primer_apellido || ' ' || p.segundo_apellido AS conductor,
+	v.placa AS placa_vehiculo,
+	lo.denominacion AS origen,
+	os.hora_fin AS hora_salida,
+	ld.denominacion AS destino
 FROM 
     traslado t
     JOIN operacion os ON t.id_operacion_inicia = os.id_operacion AND os.cod_tipo_operacion = (SELECT cod_tipo_operacion FROM operacion_tipo WHERE descripcion = 'Salida')
