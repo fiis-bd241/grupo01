@@ -3633,8 +3633,8 @@ CREATE TABLE IF NOT EXISTS "local" (
 
 CREATE TABLE IF NOT EXISTS paradero (
  cod_paradero SERIAL NOT NULL,
- cod_ruta INT NOT NULL,
  cod_local INT NOT NULL,
+ cod_ruta INT NOT NULL,
  cod_paradero_tipo INT NOT NULL,
  orden INT NOT NULL CHECK (orden > 0),
  PRIMARY KEY (cod_paradero),
