@@ -22,7 +22,6 @@ import com.sanfernando.sanfernando.dtos.responses.reporte.ReportePedidoMesRespon
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReportePedidoTopResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteProgramacionResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoMesResponse;
-import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoTiempoResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoUrgenciaResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteTipoResponse;
@@ -114,12 +113,6 @@ public class ReporteController {
   @GetMapping(value = "pedido/top")
   public ResponseEntity<Object> getReportePedidoTop() {
     List<ReportePedidoTopResponse> response = reporteService.getReportePedidoTop();
-    return ResponseEntity.ok(response);
-  }
-
-  @GetMapping(value = "reclamos")
-  public ResponseEntity<Object> getReporteReclamo() {
-    List<ReporteReclamoResponse> response = reporteService.getReporteReclamo();
     return ResponseEntity.ok(response);
   }
 }

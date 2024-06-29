@@ -17,7 +17,6 @@ import com.sanfernando.sanfernando.dtos.responses.reporte.ReportePedidoMesRespon
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReportePedidoTopResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteProgramacionResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoMesResponse;
-import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoTiempoResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoUrgenciaResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteTipoResponse;
@@ -103,10 +102,5 @@ public class ReporteServiceImpl implements ReporteService{
   @Override
   public ReporteRequest newReporte(ReporteRequest reporteRequest) {
     return reporteDao.newReporte(reporteRequest);
-  }
-
-  @Override
-  public List<ReporteReclamoResponse> getReporteReclamo() {
-    return reporteDao.getReporteReclamo();
   }
 }

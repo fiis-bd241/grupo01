@@ -89,9 +89,6 @@ export class ReportesHomeComponent implements OnInit {
       this.reportesService.postDatosGenerarReporte(reporteGenerarRequest).subscribe((response) => {
         console.log(response);
       })
-      if ((this.reporteGenerarForm.value.reporteTipoModel?.idReporteTipo == 2)) {
-        this.router.navigate(['pages/reportes/reclamos']);
-      }
     } else {
       console.log("Llene todos los campos")
     }

@@ -22,7 +22,6 @@ import com.sanfernando.sanfernando.dtos.responses.reporte.ReportePedidoMesRespon
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReportePedidoTopResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteProgramacionResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoMesResponse;
-import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoTiempoResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoUrgenciaResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteTipoResponse;
@@ -540,47 +539,5 @@ public class ReporteDaoImpl implements ReporteDao {
     }
     con.closeConexion();
     return reporteRequest;
-  }
-
-  @Override
-  public List<ReporteReclamoResponse> getReporteReclamo() {
-    con.startConexion();
-    List<ReporteReclamoResponse> reporteReclamoResponses = new ArrayList<>();
-    try {
-      String query = 
-          "SELECT rt.cod_tipo_reclamo AS codTipoReclamo, " +
-          "rt.descripcion AS descripcion, " +
-          "COUNT(CASE WHEN re.cod_estado_reclamo = 'D' THEN 1 END) AS favor, " +
-          "COUNT(CASE WHEN re.cod_estado_reclamo = 'C' THEN 1 END) AS contra, " +
-          "COUNT( " +
-          " CASE WHEN re.cod_estado_reclamo = 'D' " +
-          " OR re.cod_estado_reclamo = 'C' THEN 1 END " +
-          ") AS total, " +
-          "ROUND(AVG(se.fecha_resolucion-re.fecha_reclamo),1) tiempo_medio " +
-          "FROM reclamo AS re " +
-          "JOIN reclamo_tipo AS rt ON rt.cod_tipo_reclamo = re.cod_tipo_reclamo " +
-          "JOIN seguimiento AS se ON se.cod_seguimiento = re.cod_seguimiento " +
-          "GROUP BY rt.cod_tipo_reclamo; ";
-      PreparedStatement ps = con.getCon().prepareStatement(query);
-      ResultSet rs = ps.executeQuery();
-      while (rs.next()) {
-        ReporteReclamoResponse reporteReclamoResponse = ReporteReclamoResponse
-          .builder()
-          .idReclamoTipo(rs.getString("codTipoReclamo"))
-          .reclamoTipo(rs.getString("descripcion"))
-          .contra(rs.getInt("contra"))
-          .favor(rs.getInt("favor"))
-          .total(rs.getInt("total"))
-          .tiempoMedio(rs.getDouble("tiempo_medio"))
-          .build();
-        reporteReclamoResponses.add(reporteReclamoResponse);
-      }
-      rs.close();
-      ps.close();
-    } catch (SQLException e) {
-      e.printStackTrace();
-    }
-    con.closeConexion();
-    return reporteReclamoResponses;
   }
 }

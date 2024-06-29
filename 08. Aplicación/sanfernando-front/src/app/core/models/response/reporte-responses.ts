@@ -77,12 +77,3 @@ export interface ReporteProgramacionMostrarResponse {
   fechaInicio?: string;
   fechaFin?: string;
 }
-
-export interface ReporteReclamoResponse {
-  idReclamoTipo: string;
-  reclamoTipo: string;
-  favor: number;
-  contra: number;
-  total: number;
-  tiempoMedio: number;
-}

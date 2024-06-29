@@ -4,7 +4,6 @@ import { authGuard } from "../../core/guards/auth.guard";
 import { ReportesHomeComponent } from "./reportes-home/reportes-home.component";
 import { AlmacenInventarioComponent } from "./almacen-inventario/almacen-inventario.component";
 import { GraficosReportesComponent } from "./graficos-reportes/graficos-reportes.component";
-import { ReportesReclamoComponent } from "./reportes-vista/reportes-reclamo/reportes-reclamo.component";
 
 export const REPORTES_ROUTES: Routes = [
   {
@@ -21,10 +20,6 @@ export const REPORTES_ROUTES: Routes = [
       {
         path: '',
         component: ReportesHomeComponent
-      },
-      {
-        path: 'reclamos',
-        component: ReportesReclamoComponent
       }
     ],
     canActivate: [authGuard]

@@ -77,7 +77,7 @@ export class VistaProcesosComponent {
         }
       });
     } else {
-      this.mensajeError = 'Por favor ingrese un número de precinto de 20 dígitos o un código de guía de remisión de 21 dígitos.';
+      this.mensajeError = 'Por favor ingrese un número de precinto de 19 dígitos o un código de guía de remisión de 21 dígitos.';
     }
   }
 

@@ -231,7 +231,7 @@ public class ControlDaoImpl implements ControlDao {
       "v.fecha_ultimo_viaje AS fechaUltimoViaje, " +
       "ve.descripcion AS estadoDelVehiculo " +
       "FROM vehiculo v " +
-      "JOIN vehiculo_marca vm ON v.cod_vehiculo_marca = vm.cod_vehiculo_marca " +
+      "JOIN vehiculo_modelo vm ON v.cod_vehiculo_modelo = vm.cod_vehiculo_modelo " +
       "JOIN vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado " +
       "ORDER BY v.cod_vehiculo ASC";
     try {

@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { LoginResponse } from "../models/response/login-response";
 import { API_URL } from "../../shared/constants/urls.constant";
-import { ReporteAlmacenStockResponse, ReporteLookUpTablesResponse, ReporteOperacionResponse, ReportePedidoMesResponse, ReportePedidoTopResponse, ReporteProgramacionMostrarResponse, ReporteProgramacionResponse, ReporteReclamoMesResponse, ReporteReclamoResponse, ReporteReclamoTiempoResponse, ReporteReclamoUrgenciaResponse, ReporteTipoResponse } from "../models/response/reporte-responses";
+import { ReporteAlmacenStockResponse, ReporteLookUpTablesResponse, ReporteOperacionResponse, ReportePedidoMesResponse, ReportePedidoTopResponse, ReporteProgramacionMostrarResponse, ReporteProgramacionResponse, ReporteReclamoMesResponse, ReporteReclamoTiempoResponse, ReporteReclamoUrgenciaResponse, ReporteTipoResponse } from "../models/response/reporte-responses";
 import { ReporteGenerarRequest, ReporteProgramacionRequest } from "../models/request/reporte-requests";
 
 @Injectable({
@@ -62,9 +62,5 @@ export class ReportesService {
 
   postDatosGenerarReporte(reporteGenerarRequest: ReporteGenerarRequest) {
     return this.http.post<ReporteGenerarRequest>(`${this.apiurl}/new`, reporteGenerarRequest, this.httpOptions);
-  }
-
-  getReportesReclamos() {
-    return this.http.get<ReporteReclamoResponse[]>(`${this.apiurl}/reclamos`, this.httpOptions);
   }
 }

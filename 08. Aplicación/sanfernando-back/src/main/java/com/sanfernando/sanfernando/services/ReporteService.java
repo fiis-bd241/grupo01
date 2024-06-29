@@ -13,7 +13,6 @@ import com.sanfernando.sanfernando.dtos.responses.reporte.ReportePedidoMesRespon
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReportePedidoTopResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteProgramacionResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoMesResponse;
-import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoTiempoResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteReclamoUrgenciaResponse;
 import com.sanfernando.sanfernando.dtos.responses.reporte.ReporteTipoResponse;
@@ -33,5 +32,4 @@ public interface ReporteService {
   public void stopProgramacionReporte(int idProgramacionReporte);
   public List<ReporteMostrarProgramacionResponse> getReporteProgramacionAll();
   public ReporteRequest newReporte(ReporteRequest reporteRequest);
-public List<ReporteReclamoResponse> getReporteReclamo();
 }
