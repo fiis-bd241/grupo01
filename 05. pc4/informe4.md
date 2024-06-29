@@ -690,6 +690,9 @@ Al dar click al a la lista “Estado de Reclamo”, se obtiene los estados de re
 
 ## 5. Próximos Pasos
 
+### Módulo de Pedidos: 
+Hacer la filtracion de los productos cuando el empleado ingresa los datos del representante y debe haber un input donde se puede poner si es de tipo venta o abastecimiento para que luego en la solicitud de productos se presentes productos filtrados por el tipo de venta ya sea abastecimiento y venta. Con esta implementacion evitar que el empleado este buscando los productos en una lista donde se muestra todos los productos y que lo haga por la filtracion del tipo de venta
+
 ### Módulo de Seguimiento
 #### Disponibilidad para dispositivos móviles.
 Como parte del planeamiento de los requerimientos iniciales se consideró que los usuarios principales de este módulo serían tanto en transportista como su supervisor. Sin embargo, no se consideró que durante la realización de los traslados lo más probable es que el transportista solo pueda acceder a su dispositivo móvil.
