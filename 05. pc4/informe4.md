@@ -36,7 +36,7 @@ Proceso B001 sin Índice:
 
 Proceso B001 con Índice:
 ![image](https://github.com/fiis-bd241/grupo01/assets/164358065/e84c9605-59f5-482d-adc0-d94f9467e6d0)
-
+ 
 ### Secuencias
 Los PK de las tablas creadas, al ser de tipo SERIAL, generan una secuencia que empieza de 1 y se va incrementando en 1 cada vez que se ingresa un registro sin especificar el PK. Debido a que en los csv de la carga masiva de datos se especifican los PK de las tablas, es necesario ejecutar el siguiente script SQL para actualizar los valores de las secuencias y así poder ingresar nuevos registros desde el backend sin necesidad de especificar el PK.
 
