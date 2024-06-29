@@ -522,21 +522,21 @@ R401 , R402 , R403 y R404
 I401, I402, I403,I404,I405,I406 Y I407
 
 
-### Interfaz I401: Pantalla de registro de disponibilidad de todos los conductores 
+#### Interfaz I401: Pantalla de registro de disponibilidad de todos los conductores 
 Una vez ingresemos al módulo de control, lo primero que se muestra es la pantalla correspondiente a la lista de todos los conductores, donde podemos acceder a cambiarle su estado de disponibilidad para asignarle un vehículo en función de sus atributos los cuales son código de conductor, código de empleado, tipo de licencia, fecha de vencimiento de licencia, fecha de último traslado.
 
 ![image](https://github.com/fiis-bd241/grupo01/assets/164266999/1bc521ac-d983-45d8-8f71-91fd58ec0526)
 
 ![image](https://github.com/fiis-bd241/grupo01/assets/164266999/debd5270-76d0-4e2a-8a45-90671700ad0a)
 
-### Interfaz I402: Pantalla de registro de disponibilidad de todos los vehículos
+#### Interfaz I402: Pantalla de registro de disponibilidad de todos los vehículos
 Al darle click en la opción de vehículos accedemos a la lista de todos los vehículos , donde podemos acceder a cambiarle su estado de disponibilidad para efectuar un futuro traslado en función de sus atributos los cuales son código de vehículo, año fabricación, fecha último mantenimiento, capacidad de carga, modelo, placa y fecha de último viaje.
 
 ![image](https://github.com/fiis-bd241/grupo01/assets/164266999/1367a08b-878c-4a76-a0f8-49fd2a051133)
 
 ![image](https://github.com/fiis-bd241/grupo01/assets/164266999/0ff562c0-d325-4eb6-a8d4-ad119f7ab5af)
 
-### Interfaz I407: Pantalla de registro de atención a las incidencias 
+#### Interfaz I407: Pantalla de registro de atención a las incidencias 
 Al darle click en la opción de Incidencias, accedemos a la lista de todos las incidencias , donde podemos acceder a cambiarle su estado de atención, es decir si ya fue solucionado o está en proceso, todo eso se efectuará en función de sus atributos los cuales son código de incidencia, código de traslado, tipo de incidencia, fecha de ocurrencia, hora de ocurrencia. 
 
 ![image](https://github.com/fiis-bd241/grupo01/assets/164266999/473c34ce-c848-4fff-a216-1fe975accdee)
@@ -545,7 +545,7 @@ Al darle click en la opción de Incidencias, accedemos a la lista de todos las i
 
 ![image](https://github.com/fiis-bd241/grupo01/assets/164266999/276c00bc-e641-40ad-b24e-72ba78bf500f)
 
-### Interfaz I403: Pantalla de registro de Nueva Incidencia
+#### Interfaz I403: Pantalla de registro de Nueva Incidencia
 Al darle click en la opción Nueva Incidencia, accedemos a una pantalla donde nos solicita llenar una serie de campos como tipo de incidencia, tipo de procedimiento, descripción de la incidencia para ser un poco más específico, tipo de norma sobre la que se basa el determinado procedimiento, la fecha y hora de la ocurrencia de la incidencia, código de traslado y el tiempo estimado de de procedimiento en minutos.
 Dentro de este pantallazo están involucrados las siguientes interfaces:
 
@@ -554,6 +554,74 @@ Dentro de este pantallazo están involucrados las siguientes interfaces:
 ![image](https://github.com/fiis-bd241/grupo01/assets/164266999/7a508f16-20ab-43bd-86b9-068ff38a657d)
 
 Dentro de este pantallazo están involucrados las interfaces de Tipo de Incidencia, Tipo de Procedimiento,Tipo de Norma con código I404, I405,I406 respectivamente. 
+
+### Módulo de Reclamos
+
+#### Requerimientos Relacionados
+R601, R602, R603
+
+#### Códigos de pantallas
+I601, I602, I603, I604, I605, I606, I607 y I608
+
+#### Pantalla I601: Pantalla de todos los reclamos
+
+![I1](https://github.com/fiis-bd241/grupo01/assets/130238034/3cb8bff3-c158-448f-87de-b9c464241705)
+
+Al dar click al a la lista “Tipo de cliente”, se puede filtrar clientes internos o externos.
+Al dar click al código de un reclamo lleva al usuario a la interfaz I602.
+Al dar click al botón "Crear Nuevo Reclamo" lleva al usuario a la interfaz I603.
+
+#### Pantalla I602: Pantalla de la visualización de un reclamo
+
+![I2-1](https://github.com/fiis-bd241/grupo01/assets/130238034/60b30eb3-6487-404c-9483-1f43bd3e3b86)
+![I2-2](https://github.com/fiis-bd241/grupo01/assets/130238034/915da37f-e10e-45c0-9c06-44f5cf939a42)
+
+#### Pantalla I603: Pantalla 1 de la creación de un reclamo
+
+![I3](https://github.com/fiis-bd241/grupo01/assets/130238034/8a79e4af-f030-4306-88d7-3a4c8c6c0bc0)
+
+Al dar click al a la lista “Nombre del cliente”, se obtiene una serie de clientes a seleccionar.
+Al dar click al a la lista “Nombre del representante”, se obtiene una serie de representante a seleccionar relacionados con el cliente escogido. Además de forma automática se autocompletan los demás campos.
+
+#### Pantalla I604: Pantalla 2 de la creación de un reclamo
+
+![I4](https://github.com/fiis-bd241/grupo01/assets/130238034/6fc45218-1f66-49ce-abe6-1695cc87e046)
+
+Al dar click al a la lista “Código Ticket”, se obtiene una serie de tickets a seleccionar relacionados con el representante escogido.
+Al dar click al a la lista “Nombre del producto”, se obtiene una serie de productos a seleccionar relacionados con el ticket escogido. Además de forma automática se autocompletan los demás campos.
+
+#### Pantalla I605: Pantalla 3 de la creación de un reclamo
+
+![I5](https://github.com/fiis-bd241/grupo01/assets/130238034/e2698acf-647d-4925-aa55-d1a4324743fc)
+
+Al dar click al a la lista “Tipo de reclamo”, se obtiene una serie de tipos de reclamos a seleccionar.
+Se puede describir el problema en el recuadro designado.
+Se puede escoger la fecha en la fecha de incidencia.
+Al dar click al a la lista “Urgencia”, se obtiene una serie de urgencias a seleccionar.
+
+#### Pantalla I606: Pantalla 4 de la creación de un reclamo
+
+![I6](https://github.com/fiis-bd241/grupo01/assets/130238034/80ed4fcd-8ecf-483c-9dda-04dc1cd3a2c9)
+
+Se puede escribir el nombre de la evidencia.
+Al dar click al a la lista “Tipo de Evidencia”, se obtiene una serie de tipos de evidencia a seleccionar.
+Al dar click al a la lista “Tipo de Archivo”, se obtiene una serie de tipos de archivo a seleccionar.
+
+#### Pantalla I607: Pantalla 5 de la creación de un reclamo
+
+![I7](https://github.com/fiis-bd241/grupo01/assets/130238034/62bb9f6c-ab50-4b60-a9f4-23b229ac85e0)
+
+Al dar click al a la lista “Área responsable”, se obtiene las áreas responsables a seleccionar.	
+Al dar click al a la lista “Acción solicitada”, se obtiene una serie de acciones solicitadas a seleccionar.
+Se puede describir un comentario adicional en el recuadro designado.
+
+#### Pantalla I608: Pantalla 6 de la creación de un reclamo
+
+![I8](https://github.com/fiis-bd241/grupo01/assets/130238034/40b38e3b-e552-4491-aa0b-78f74bdb0d91)
+
+Se puede escoger la fecha en la fecha esperada de resolución.
+El número de caso se autocompleta.
+Al dar click al a la lista “Estado de Reclamo”, se obtiene los estados de reclamo a seleccionar.
 
 ## 5. Próximos Pasos
 
