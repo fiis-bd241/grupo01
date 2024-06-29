@@ -1003,15 +1003,14 @@ FROM
     JOIN operacion os ON t.id_operacion_inicia = os.id_operacion AND os.cod_tipo_operacion = (SELECT cod_tipo_operacion FROM operacion_tipo WHERE descripcion = 'Salida')
     JOIN transportista tr ON t.cod_transportista = tr.cod_transportista
     JOIN empleado e ON tr.cod_empleado = e.cod_empleado
-    JOIN persona p ON e.cod_persona = p.cod_persona
+    JOIN persona p ON e.cod_persona = p.cod_persona 
     JOIN vehiculo v ON t.cod_vehiculo = v.cod_vehiculo
-    JOIN ruta r ON t.cod_ruta = r.cod_ruta
-    JOIN paradero po ON r.cod_ruta = po.cod_ruta AND po.orden = 1
+    JOIN paradero po ON t.cod_ruta = po.cod_ruta AND po.cod_paradero_tipo = 1
     JOIN "local" lo ON po.cod_local = lo.cod_local
-    JOIN paradero pd ON r.cod_ruta = pd.cod_ruta AND pd.orden = (SELECT MAX(orden) FROM paradero WHERE cod_ruta = r.cod_ruta)
+    JOIN paradero pd ON t.cod_ruta = pd.cod_ruta AND pd.cod_paradero_tipo = 3
     JOIN "local" ld ON pd.cod_local = ld.cod_local
 WHERE 
-    t.cod_guia_remision = '<2>'
+    t.cod_guia_remision = '2'
 ```
 #### Caso 2
 |                  |                                                                                                     |
