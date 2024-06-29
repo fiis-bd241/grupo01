@@ -332,48 +332,6 @@ Al dar al boton "Confirmar" lleva al usuario a la interfaz I104
 ![image](https://github.com/fiis-bd241/grupo01/assets/121084712/aaf7c5ec-3486-42fc-9119-16aa5cfa242a)
 
 Aqui se muestra mas a detalle, los datos especificos del cliente (Empresa), representante y empleado , asi como el codigo del ticket asignado, el estado del pedido. También se muestra los productos solicitados, con datos especificos como su codigo, nombre, cantidad y unidad.
-
-
-### Módulo de Control 
-#### Requerimientos Relacionados
-R401 , R402 , R403 y R404
-
-#### Codigos de pantallas
-I401, I402, I403,I404,I405,I406 Y I407
-
-
-### Interfaz I401: Pantalla de registro de disponibilidad de todos los conductores 
-Una vez ingresemos al módulo de control, lo primero que se muestra es la pantalla correspondiente a la lista de todos los conductores, donde podemos acceder a cambiarle su estado de disponibilidad para asignarle un vehículo en función de sus atributos los cuales son código de conductor, código de empleado, tipo de licencia, fecha de vencimiento de licencia, fecha de último traslado.
-
-![image](https://github.com/fiis-bd241/grupo01/assets/164266999/1bc521ac-d983-45d8-8f71-91fd58ec0526)
-
-![image](https://github.com/fiis-bd241/grupo01/assets/164266999/debd5270-76d0-4e2a-8a45-90671700ad0a)
-
-### Interfaz I402: Pantalla de registro de disponibilidad de todos los vehículos
-Al darle click en la opción de vehículos accedemos a la lista de todos los vehículos , donde podemos acceder a cambiarle su estado de disponibilidad para efectuar un futuro traslado en función de sus atributos los cuales son código de vehículo, año fabricación, fecha último mantenimiento, capacidad de carga, modelo, placa y fecha de último viaje.
-
-![image](https://github.com/fiis-bd241/grupo01/assets/164266999/1367a08b-878c-4a76-a0f8-49fd2a051133)
-
-![image](https://github.com/fiis-bd241/grupo01/assets/164266999/0ff562c0-d325-4eb6-a8d4-ad119f7ab5af)
-
-### Interfaz I407: Pantalla de registro de atención a las incidencias 
-Al darle click en la opción de Incidencias, accedemos a la lista de todos las incidencias , donde podemos acceder a cambiarle su estado de atención, es decir si ya fue solucionado o está en proceso, todo eso se efectuará en función de sus atributos los cuales son código de incidencia, código de traslado, tipo de incidencia, fecha de ocurrencia, hora de ocurrencia. 
-
-![image](https://github.com/fiis-bd241/grupo01/assets/164266999/473c34ce-c848-4fff-a216-1fe975accdee)
-
-![image](https://github.com/fiis-bd241/grupo01/assets/164266999/6f7b8316-4a1a-41df-8d1a-89bbc993cc52)
-
-![image](https://github.com/fiis-bd241/grupo01/assets/164266999/276c00bc-e641-40ad-b24e-72ba78bf500f)
-
-### Interfaz I403: Pantalla de registro de Nueva Incidencia
-Al darle click en la opción Nueva Incidencia, accedemos a una pantalla donde nos solicita llenar una serie de campos como tipo de incidencia, tipo de procedimiento, descripción de la incidencia para ser un poco más específico, tipo de norma sobre la que se basa el determinado procedimiento, la fecha y hora de la ocurrencia de la incidencia, código de traslado y el tiempo estimado de de procedimiento en minutos.
-Dentro de este pantallazo están involucrados las siguientes interfaces:
-
-![image](https://github.com/fiis-bd241/grupo01/assets/164266999/2ccce023-8530-452a-8a16-e3de1db60cd2)
-
-![image](https://github.com/fiis-bd241/grupo01/assets/164266999/7a508f16-20ab-43bd-86b9-068ff38a657d)
-
-Dentro de este pantallazo están involucrados las interfaces de Tipo de Incidencia, Tipo de Procedimiento,Tipo de Norma con código I404, I405,I406 respectivamente. 
      
 ### Módulo de Seguimiento
 
@@ -555,6 +513,47 @@ Dentro de este pantallazo están involucrados las interfaces de Tipo de Incidenc
    - Dependiendo del tipo de operación actual, se redirige a las pantallas I304 a I310. Si es una operación de "Descarga", el botón no se habilita.
 
 En el caso de una operación de "Salida", se muestra un mensaje de confirmación con el código de guía de remisión generado.
+
+### Módulo de Control 
+#### Requerimientos Relacionados
+R401 , R402 , R403 y R404
+
+#### Codigos de pantallas
+I401, I402, I403,I404,I405,I406 Y I407
+
+
+### Interfaz I401: Pantalla de registro de disponibilidad de todos los conductores 
+Una vez ingresemos al módulo de control, lo primero que se muestra es la pantalla correspondiente a la lista de todos los conductores, donde podemos acceder a cambiarle su estado de disponibilidad para asignarle un vehículo en función de sus atributos los cuales son código de conductor, código de empleado, tipo de licencia, fecha de vencimiento de licencia, fecha de último traslado.
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164266999/1bc521ac-d983-45d8-8f71-91fd58ec0526)
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164266999/debd5270-76d0-4e2a-8a45-90671700ad0a)
+
+### Interfaz I402: Pantalla de registro de disponibilidad de todos los vehículos
+Al darle click en la opción de vehículos accedemos a la lista de todos los vehículos , donde podemos acceder a cambiarle su estado de disponibilidad para efectuar un futuro traslado en función de sus atributos los cuales son código de vehículo, año fabricación, fecha último mantenimiento, capacidad de carga, modelo, placa y fecha de último viaje.
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164266999/1367a08b-878c-4a76-a0f8-49fd2a051133)
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164266999/0ff562c0-d325-4eb6-a8d4-ad119f7ab5af)
+
+### Interfaz I407: Pantalla de registro de atención a las incidencias 
+Al darle click en la opción de Incidencias, accedemos a la lista de todos las incidencias , donde podemos acceder a cambiarle su estado de atención, es decir si ya fue solucionado o está en proceso, todo eso se efectuará en función de sus atributos los cuales son código de incidencia, código de traslado, tipo de incidencia, fecha de ocurrencia, hora de ocurrencia. 
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164266999/473c34ce-c848-4fff-a216-1fe975accdee)
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164266999/6f7b8316-4a1a-41df-8d1a-89bbc993cc52)
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164266999/276c00bc-e641-40ad-b24e-72ba78bf500f)
+
+### Interfaz I403: Pantalla de registro de Nueva Incidencia
+Al darle click en la opción Nueva Incidencia, accedemos a una pantalla donde nos solicita llenar una serie de campos como tipo de incidencia, tipo de procedimiento, descripción de la incidencia para ser un poco más específico, tipo de norma sobre la que se basa el determinado procedimiento, la fecha y hora de la ocurrencia de la incidencia, código de traslado y el tiempo estimado de de procedimiento en minutos.
+Dentro de este pantallazo están involucrados las siguientes interfaces:
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164266999/2ccce023-8530-452a-8a16-e3de1db60cd2)
+
+![image](https://github.com/fiis-bd241/grupo01/assets/164266999/7a508f16-20ab-43bd-86b9-068ff38a657d)
+
+Dentro de este pantallazo están involucrados las interfaces de Tipo de Incidencia, Tipo de Procedimiento,Tipo de Norma con código I404, I405,I406 respectivamente. 
 
 ## 5. Próximos Pasos
 
