@@ -341,7 +341,8 @@ R401 , R402 , R403 y R404
 #### Codigos de pantallas
 I401, I402, I403,I404,I405,I406 Y I407
 
-#### Interfaz I401: Pantalla de registro de disponibilidad de todos los conductores 
+
+### Interfaz I401: Pantalla de registro de disponibilidad de todos los conductores 
 Una vez ingresemos al módulo de control, lo primero que se muestra es la pantalla correspondiente a la lista de todos los conductores, donde podemos acceder a cambiarle su estado de disponibilidad para asignarle un vehículo en función de sus atributos los cuales son código de conductor, código de empleado, tipo de licencia, fecha de vencimiento de licencia, fecha de último traslado.
 
 ![image](https://github.com/fiis-bd241/grupo01/assets/164266999/1bc521ac-d983-45d8-8f71-91fd58ec0526)
