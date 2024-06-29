@@ -660,7 +660,7 @@ Caso de Uso #2: Visualizar y editar el estado de un reclamo
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
 | Requerimientos relacionados         | R403, R404   |
-| Código      | I408 |
+| Código      | I407 |
 | Prototipo   | ![image](https://github.com/fiis-bd241/grupo01/assets/164266999/802d2a56-4398-4f13-b630-d6fa83a6fa0a)|
 
 
@@ -2266,11 +2266,11 @@ JOIN
 <table>
    <tr>
       <td>Código Requerimiento</td>
-      <td>I408</td>
+      <td>R404</td>
    </tr>
    <tr>
       <td>Código interfaz</td>
-      <td>I402</td>
+      <td>I407</td>
    </tr>
    <tr>
       <td>Imagen interfaz</td>
